@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<handout>
+<worksheet>
 <title>Handout Title</title>
-
-  <page>
-    <p workspace="1in">
-      A first paragraph with some space for notes below it.
-    </p>
-
-  </page>
-</handout>
+  <exercise workspace="1in">
+    <statement>
+      <p>
+        A first paragraph with some space for notes below it.
+      </p>
+    </statement>
+  </exercise>
+</worksheet>
