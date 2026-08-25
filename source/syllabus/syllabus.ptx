@@ -479,9 +479,6 @@
             following rubric.
           </p>
 
-          <table>
-            <title>Lab Report Grading Rubric</title>
-
             <tabular
               row-headers="yes"
               halign="left"
@@ -594,7 +591,6 @@
               </row>
 
   </tabular>
-</table>
         </li>
       </dl>
     </p>
@@ -611,8 +607,8 @@
       requirements below. Your final course grade will be the lowest of the four
       category grades.
     </p>
-
-    <table>
+    <ol>
+    <li>
       <title>Video Notes</title>
 
       <tabular
@@ -658,9 +654,9 @@
         </row>
 
       </tabular>
-    </table>
+    </li>
 
-    <table>
+    <li>
       <title>Worksheets</title>
 
       <tabular
@@ -706,9 +702,9 @@
         </row>
 
       </tabular>
-    </table>
+    </li>
 
-    <table>
+    <li>
       <title>Quizzes</title>
 
       <tabular
@@ -754,9 +750,9 @@
         </row>
 
       </tabular>
-    </table>
+    </li>
 
-    <table>
+    <li>
       <title>Lab Reports</title>
 
       <tabular
@@ -802,7 +798,8 @@
         </row>
 
       </tabular>
-    </table>
+    </li>
+  </ol>
 
     <p>
       Here are some examples showing how final course grades are determined:
