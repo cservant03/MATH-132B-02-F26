@@ -601,110 +601,246 @@
   </subsection>
 
   <subsection xml:id="grade">
+
     <title>Grading</title>
-    <p>Your final course grade will be determined by your performance in three categories: Video Notes, Worksheets, and Quizzes. A letter grade will be determined separately for each category using the requirements below. Your final course grade will be the lowest of the three category grades.</p>
-    <dl>
-    <li>
+
+    <p>
+      Your final course grade will be determined by your performance in four
+      categories: Video Notes, Worksheets, Quizzes, and Lab Reports. A letter
+      grade will be determined separately for each category using the
+      requirements below. Your final course grade will be the lowest of the four
+      category grades.
+    </p>
+
+    <table>
       <title>Video Notes</title>
-      <dl>
-        <li>
-          <title>A:</title>
-          <p>At least 90% of the video notes completed.</p>
-        </li>
-        <li>
-          <title>B:</title>
-          <p>At least 80% but less than 90% of the video notes completed.</p>
-        </li>
-        <li>
-          <title>C:</title>
-          <p>At least 70% but less than 80% of the video notes completed.</p>
-        </li>
-        <li>
-          <title>D:</title>
-          <p>At least 60% but less than 70% of the video notes completed.</p>
-        </li>
-        <li>
-          <title>F:</title>
-          <p>Less than 60% of the video notes completed.</p>
-        </li>
-      </dl>
-    </li>
 
-    <li>
+      <tabular
+        row-headers="yes"
+        halign="left"
+        valign="top"
+        top="medium"
+        left="medium"
+        bottom="medium"
+        right="medium">
+
+        <col width="20%"/>
+        <col width="80%"/>
+
+        <row header="yes">
+          <cell>Letter Grade</cell>
+          <cell>Requirement</cell>
+        </row>
+
+        <row>
+          <cell>A</cell>
+          <cell>At least 90% of the video notes completed.</cell>
+        </row>
+
+        <row>
+          <cell>B</cell>
+          <cell>At least 80% but less than 90% of the video notes completed.</cell>
+        </row>
+
+        <row>
+          <cell>C</cell>
+          <cell>At least 70% but less than 80% of the video notes completed.</cell>
+        </row>
+
+        <row>
+          <cell>D</cell>
+          <cell>At least 60% but less than 70% of the video notes completed.</cell>
+        </row>
+
+        <row>
+          <cell>F</cell>
+          <cell>Less than 60% of the video notes completed.</cell>
+        </row>
+
+      </tabular>
+    </table>
+
+    <table>
       <title>Worksheets</title>
-      <dl>
-        <li>
-          <title>A:</title>
-          <p>At least 90% of the worksheets completed.</p>
-        </li>
-        <li>
-          <title>B:</title>
-          <p>At least 80% but less than 90% of the worksheets completed.</p>
-        </li>
-        <li>
-          <title>C:</title>
-          <p>At least 70% but less than 80% of the worksheets completed.</p>
-        </li>
-        <li>
-          <title>D:</title>
-          <p>At least 60% but less than 70% of the worksheets completed.</p>
-        </li>
-        <li>
-          <title>F:</title>
-          <p>Less than 60% of the worksheets completed.</p>
-        </li>
-      </dl>
-    </li>
 
-    <li>
+      <tabular
+        row-headers="yes"
+        halign="left"
+        valign="top"
+        top="medium"
+        left="medium"
+        bottom="medium"
+        right="medium">
+
+        <col width="20%"/>
+        <col width="80%"/>
+
+        <row header="yes">
+          <cell>Letter Grade</cell>
+          <cell>Requirement</cell>
+        </row>
+
+        <row>
+          <cell>A</cell>
+          <cell>At least 90% of the worksheets completed.</cell>
+        </row>
+
+        <row>
+          <cell>B</cell>
+          <cell>At least 80% but less than 90% of the worksheets completed.</cell>
+        </row>
+
+        <row>
+          <cell>C</cell>
+          <cell>At least 70% but less than 80% of the worksheets completed.</cell>
+        </row>
+
+        <row>
+          <cell>D</cell>
+          <cell>At least 60% but less than 70% of the worksheets completed.</cell>
+        </row>
+
+        <row>
+          <cell>F</cell>
+          <cell>Less than 60% of the worksheets completed.</cell>
+        </row>
+
+      </tabular>
+    </table>
+
+    <table>
       <title>Quizzes</title>
-      <dl>
-        <li>
-          <title>A:</title>
-          <p>At least 43 quiz points earned.</p>
-        </li>
-        <li>
-          <title>B:</title>
-          <p>At least 38 but fewer than 43 quiz points earned.</p>
-        </li>
-        <li>
-          <title>C:</title>
-          <p>At least 33 but fewer than 38 quiz points earned.</p>
-        </li>
-        <li>
-          <title>D:</title>
-          <p>At least 28 but fewer than 33 quiz points earned.</p>
-        </li>
-        <li>
-          <title>F:</title>
-          <p>Fewer than 28 quiz points earned.</p>
-        </li>
-      </dl>
-    </li>
-  </dl>
 
-  <p>Here are some examples showing how final course grades are determined:</p>
-  
-  <ol>
-    <li>
-      <p>
-        A student completes 94% of the Video Notes, completes 92% of the Worksheets, and earns 56 Quiz points. The student earns an A in all three categories. Therefore, the student's final course grade is an A.
-      </p>
-    </li>
+      <tabular
+        row-headers="yes"
+        halign="left"
+        valign="top"
+        top="medium"
+        left="medium"
+        bottom="medium"
+        right="medium">
 
-    <li>
-      <p>
-        A student completes 95% of the Video Notes, completes 84% of the Worksheets, and earns 55 Quiz points. The student earns an A for Video Notes, a B for Worksheets, and an A for Quizzes. Since the lowest category grade is a B, the student's final course grade is a B.
-      </p>
-    </li>
+        <col width="20%"/>
+        <col width="80%"/>
 
-    <li>
-      <p>
-        A student completes 83% of the Video Notes, completes 74% of the Worksheets, and earns 51 Quiz points. The student earns a B for Video Notes, a C for Worksheets, and a B for Quizzes. Since the lowest category grade is a C, the student's final course grade is a C.
-      </p>
-    </li>
-  </ol>
+        <row header="yes">
+          <cell>Letter Grade</cell>
+          <cell>Requirement</cell>
+        </row>
+
+        <row>
+          <cell>A</cell>
+          <cell>At least 43 quiz points earned.</cell>
+        </row>
+
+        <row>
+          <cell>B</cell>
+          <cell>At least 38 but fewer than 43 quiz points earned.</cell>
+        </row>
+
+        <row>
+          <cell>C</cell>
+          <cell>At least 33 but fewer than 38 quiz points earned.</cell>
+        </row>
+
+        <row>
+          <cell>D</cell>
+          <cell>At least 28 but fewer than 33 quiz points earned.</cell>
+        </row>
+
+        <row>
+          <cell>F</cell>
+          <cell>Fewer than 28 quiz points earned.</cell>
+        </row>
+
+      </tabular>
+    </table>
+
+    <table>
+      <title>Lab Reports</title>
+
+      <tabular
+        row-headers="yes"
+        halign="left"
+        valign="top"
+        top="medium"
+        left="medium"
+        bottom="medium"
+        right="medium">
+
+        <col width="20%"/>
+        <col width="80%"/>
+
+        <row header="yes">
+          <cell>Letter Grade</cell>
+          <cell>Requirement</cell>
+        </row>
+
+        <row>
+          <cell>A</cell>
+          <cell>At least 128 lab report points earned.</cell>
+        </row>
+
+        <row>
+          <cell>B</cell>
+          <cell>At least 105 but fewer than 128 lab report points earned.</cell>
+        </row>
+
+        <row>
+          <cell>C</cell>
+          <cell>At least 83 but fewer than 105 lab report points earned.</cell>
+        </row>
+
+        <row>
+          <cell>D</cell>
+          <cell>At least 60 but fewer than 83 lab report points earned.</cell>
+        </row>
+
+        <row>
+          <cell>F</cell>
+          <cell>Fewer than 60 lab report points earned.</cell>
+        </row>
+
+      </tabular>
+    </table>
+
+    <p>
+      Here are some examples showing how final course grades are determined:
+    </p>
+
+    <ol>
+      <li>
+        <p>
+          A student completes 94% of the Video Notes, completes 92% of the
+          Worksheets, earns 56 Quiz points, and earns 140 Lab Report points.
+          The student earns an A in all four categories. Therefore, the
+          student's final course grade is an A.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          A student completes 95% of the Video Notes, completes 84% of the
+          Worksheets, earns 55 Quiz points, and earns 135 Lab Report points.
+          The student earns an A for Video Notes, a B for Worksheets, an A for
+          Quizzes, and an A for Lab Reports. Since the lowest category grade is
+          a B, the student's final course grade is a B.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          A student completes 83% of the Video Notes, completes 84% of the
+          Worksheets, earns 51 Quiz points, and earns 100 Lab Report points.
+          The student earns a B for Video Notes, a B for Worksheets, a B for
+          Quizzes, and a C for Lab Reports. Since the lowest category grade is
+          a C, the student's final course grade is a C.
+        </p>
+      </li>
+    </ol>
+
   </subsection>
+
   <subsection xml:id="tips">
     <title>Tips for Success</title>
     <p>
