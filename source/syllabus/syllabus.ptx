@@ -1,86 +1,848 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<section xml:id="syllabus" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="syllabus">
   <title>Syllabus</title>
-
-  <introduction>
+  
+  <subsection xml:id="instructor-info">
+    <title>Instructor Information</title>
     <p>
-    </p>
-  </introduction>
-  <!-- Include chapters -->
-  <subsection xml:id="sec-course-info">
-    <title>Course Information</title>
-
-    <p>
-      This is the syllabus for <term>course name (MATH xxx, section xxx)</term> for [term] 20xx.
-      It is a [n] credit course.
-      <!-- use a description list (dl) for short items -->
       <dl>
         <li>
           <title>Instructor</title>
-
           <p>
-            Prof. Lastname, Office Location, <url href="mailto:prof.lastname@example.edu">prof.lastname@example.edu</url>.
+            Christopher Servant
           </p>
         </li>
-
+        <li>
+          <title>Pronouns</title>
+          <p>
+            he/him
+          </p>
+        </li>
+        <li>
+          <title>Phone Number</title>
+          <p>
+            <url href="tel:19899644894">(989) 964-4894</url>
+          </p>
+        </li>
+        <li>
+          <title>Email</title>
+          <p>
+            <url href="mailto:cservant@svsu.edu">cservant@svsu.edu</url>  
+          </p>
+        </li>
+        <li>
+          <title>Office</title>
+          <p>
+            SW 340
+          </p>
+        </li>
         <li>
           <title>Student Hours</title>
-
           <p>
-            TBD
-          </p>
-        </li>
-
-        <li>
-          <title>Class meets</title>
-
-          <p>
-            course times and location.
-          </p>
-        </li>
-
-        <li>
-          <title>Course Description</title>
-
-          <p>
-            course description from catalog
-          </p>
-        </li>
-
-        <li>
-          <title>Prerequisite</title>
-
-          <p>
-            list of prerequisites
-          </p>
-        </li>
-
-        <li>
-          <title>Textbook and course materials</title>
-
-          <p>
-            <pubtitle>textbook name</pubtitle>
-            by textbook author.
+            <dl>
+              <li>
+                <title>Monday</title>
+                <p>
+                  1:00 PM - 2:00 PM
+                </p>
+              </li>
+              <li>
+                <title>Tuesday</title>
+                <p>
+                  12:00 PM - 2:00 PM
+                </p>
+              </li>
+              <li>
+                <title>Wednesday</title>
+                <p>
+                  1:00 PM - 2:00 PM
+                </p>
+              </li>
+            </dl>
           </p>
         </li>
       </dl>
     </p>
 
-  <!-- Use paragraphs to break apart subsections -->
-    <paragraphs>
-      <title>Course Overview</title>
-
-      <p>
-      </p>
-    </paragraphs>
-  </subsection>
-
-  <!-- Other subsections for larger dividers -->
-  <subsection xml:id="sec-assessments">
-    <title>Assessments and Grades</title>
+    <p>
+      <alert>Note:</alert> Please do not contact your instructor via Canvas. Only use his email or phone above.
+    </p>
 
     <p>
+      <alert>Note:</alert> If you need a more private appoinment to discuss grades or another personal matter, additional student hours can be made to meet in my office or via ZOOM.
+    </p>
+  </subsection>
+
+  <subsection xml:id="course-info">
+    <title>Course Information</title>
+    <p>
+      <dl>
+        <li>
+          <title>Course Dates</title>
+          <p>
+            August 31, 2026 - December 19, 2026
+          </p>
+        </li>
+        <li>
+          <title>Meeting Times</title>              
+          <p>
+            M, W: 10:30 AM - 12:20 PM
+          </p>
+        </li>
+        <li>
+          <title>Location</title>              
+          <p>
+            Brown Hall 115
+          </p>
+        </li>
+        <li>
+          <title>Credits</title>              
+          <p>
+            4
+          </p>
+        </li>
+        <li>
+          <title>Prerequisites</title>              
+          <p>
+            All Math Basic Skills or equivalent must be completed prior to taking this course. This is done by passing MATH 082 or MATH 072 with a C or higher.
+          </p>
+        </li>
+      </dl>
+    </p>
+  </subsection>
+
+  <subsection xml:id="course-desc">
+    <title>Course Description</title>
+    <p>
+      In this introduction to statistical methodology, students identify methods of acquiring, organizing and analyzing data so as to make decisions and respond to arguments. Topics include graphical representation of data, probability distributions, confidence intervals and hypothesis test, parametric and non-parametric techniques, regression and correlation, and analysis of variance. Special emphasis on applications from biology and the health sciences.
+    </p>
+  </subsection>
+
+  <subsection xml:id="course-materials">
+    <title>Course Matrials</title>
+    <p>
+      <dl>
+        <li>
+          <title>Text</title>
+          <p>
+            <pubtitle>Mike's Biostatistics Book</pubtitle> by Michael R Dohm
+          </p>
+          <p>
+            You can view an online copy of this free, open source textbook at <url href="https://stats.libretexts.org/Bookshelves/Applied_Statistics/Mikes_Biostatistics_Book_(Dohm)">Mike's Biostatistics Book</url>.
+          </p>
+        </li>
+        <li>
+          <title>Software</title>
+          <p>
+            A statistical program called R via R studio to perform statistical calculations in this course. This is free software. There will tutorial videos and lectures provided to learn this program.
+          </p>
+        </li>
+        <li>
+          <title>Three Ring Binder</title>
+          <p>
+            This will be helpful to keep your notes and class worksheets in.
+          </p>
+        </li>
+      </dl>
+    </p>
+  </subsection>
+
+  <subsection xml:id="online-course-comp">
+    <title>Online Course Component</title>
+    <p>
+      In this class, you will have access to course notes, lecture videos, handouts, deadlines, and announcements on
+      Canvas. If you are absent or class is canceled due to weather or other circumstances, it is your
+      responsibility to log on and obtain missed notes, work, etc. Grades will be updated periodically on
+      Canvas. It is also important to check your SVSU email regularly.
+    </p>
+  </subsection>
+
+  <subsection xml:id="course-outcomes">
+    <title>Course Outcomes</title>
+    <p>
+      This General Education course introduces fundamental algebraic terminology and skills; demonstrates how ingenuity and creativity are essential in developing mathematical models to solve real world problems; cultivates critical thinking and logical reasoning for effective problem solving and rational decision-making in a complex technological society; and develops communication skills for translating real world situations into symbolic mathematical relationships and for interpreting mathematical results within their real world contexts.
+    </p>
+
+    <p>
+      The following lists the set of outcomes covered in this course:
+      <ol>
+        <li>
+          <p>Statistical Language</p>
+          <ol marker="(a)">
+            <li><p>Distinguish between a parameter and a statistic.</p></li>
+            <li><p>Distinguish between the different sampling methods: random, systematic, stratified, cluster, and convenience.</p></li>
+            <li><p>Identify the types of variables in a statistical study.</p></li>
+          </ol>
+        </li>
+
+        <li>
+          <p>Numerical Data</p>
+          <ol marker="(a)">
+            <li><p>Interpret different statistical diagrams such as box plots and histograms.</p></li>
+            <li><p>Measure the center of data by finding the mean or median.</p></li>
+            <li><p>Measure the variation of data by finding the standard deviation or quartiles.</p></li>
+          </ol>
+        </li>
+
+        <li>
+          <p>Categorical Data</p>
+          <ol marker="(a)">
+            <li><p>Interpret different statistical diagrams such as bar plots and frequency tables.</p></li>
+            <li><p>Calculate the proportion of the data.</p></li>
+          </ol>
+        </li>
+
+        <li>
+          <p>Correlation</p>
+          <ol marker="(a)">
+            <li><p>Interpret different statistical diagrams such as scatter plots.</p></li>
+            <li><p>Find the correlation coefficient between two variables.</p></li>
+            <li><p>Interpret what the correlation coefficient represents.</p></li>
+          </ol>
+        </li>
+
+        <li>
+          <p>Compute Probabilities</p>
+          <ol marker="(a)">
+            <li><p>Compute probabilities with equally likely outcomes.</p></li>
+            <li><p>Use the Complement Rule and Addition Rule to compute probabilities.</p></li>
+            <li><p>Calculate the probability that in a single trial, some event or multiple events occur, and apply the addition rule and multiplication rule appropriately.</p></li>
+            <li><p>Distinguish between independent and dependent events.</p></li>
+            <li><p>Distinguish between mutually exclusive and non-mutually exclusive events.</p></li>
+          </ol>
+        </li>
+
+        <li>
+          <p>Binomial Distribution</p>
+          <ol marker="(a)">
+            <li><p>Describe a binomial distribution.</p></li>
+            <li><p>Compute probabilities for a given binomial distribution.</p></li>
+            <li><p>Compute the mean and standard deviation of a binomial distribution.</p></li>
+          </ol>
+        </li>
+
+        <li>
+          <p>Normal Distribution</p>
+          <ol marker="(a)">
+            <li><p>Understand and utilize important properties of the normal distribution.</p></li>
+            <li><p>Compute probabilities for a given normal distribution.</p></li>
+            <li><p>Compute probabilities for the standard normal distribution.</p></li>
+          </ol>
+        </li>
+
+        <li>
+          <p>Central Limit Theorem</p>
+          <ol marker="(a)">
+            <li><p>Describe the sampling distribution of a statistic.</p></li>
+            <li><p>Apply the Central Limit Theorem.</p></li>
+          </ol>
+        </li>
+
+        <li>
+          <p>Confidence Intervals</p>
+          <ol marker="(a)">
+            <li><p>Understand and interpret confidence intervals.</p></li>
+            <li><p>Calculate the standard error and point estimate given a confidence interval.</p></li>
+            <li><p>Construct a z-interval.</p></li>
+          </ol>
+        </li>
+
+        <li>
+          <p>Hypothesis Tests</p>
+          <ol marker="(a)">
+            <li><p>Understand and interpret hypothesis tests.</p></li>
+            <li><p>Identify the claim, null hypothesis, alternative hypothesis, and significance level of a hypothesis test.</p></li>
+            <li><p>Draw conclusions from a hypothesis test.</p></li>
+            <li><p>Perform a z-test.</p></li>
+            <li><p>Understand and interpret Type I and Type II errors.</p></li>
+          </ol>
+        </li>
+
+        <li>
+          <p>Inference for One and Two Sample Means</p>
+          <ol marker="(a)">
+            <li><p>Perform a t-test.</p></li>
+            <li><p>Perform a paired t-test.</p></li>
+            <li><p>Perform a non-pooled two sample t-test.</p></li>
+          </ol>
+        </li>
+
+        <li>
+          <p>ANOVA</p>
+          <ol marker="(a)">
+            <li><p>Understand and interpret an ANOVA table.</p></li>
+            <li><p>Perform an ANOVA test.</p></li>
+            <li><p>Describe why an ANOVA test is preferred over pairwise t-tests.</p></li>
+            <li><p>Describe the next steps if the null hypothesis is rejected in an ANOVA test.</p></li>
+          </ol>
+        </li>
+
+        <li>
+          <p>Inference for One and Two Sample Proportions</p>
+          <ol marker="(a)">
+            <li><p>Perform a one proportion z-test.</p></li>
+            <li><p>Perform a two proportion z-test.</p></li>
+          </ol>
+        </li>
+
+        <li>
+          <p>Multinomial and <m>\chi^2</m> Tests</p>
+          <ol marker="(a)">
+            <li><p>Perform a multinomial test.</p></li>
+            <li><p>Perform a <m>\chi^2</m> test.</p></li>
+          </ol>
+        </li>
+
+        <li>
+          <p>Inference on Regression</p>
+          <ol marker="(a)">
+            <li><p>Calculate a least squares linear regression line.</p></li>
+            <li><p>Interpret the meaning of the slope and vertical intercept of the regression line.</p></li>
+            <li><p>Perform a hypothesis test on the correlation coefficient of the regression line.</p></li>
+          </ol>
+        </li>
+
+        <li>
+          <p>Nonparametric Tests</p>
+          <ol marker="(a)">
+            <li><p>Describe the difference between parametric and nonparametric tests.</p></li>
+            <li><p>Calculate the ranks of a data set.</p></li>
+            <li><p>Perform a Wilcoxon Signed-Rank Test.</p></li>
+            <li><p>Perform a Wilcoxon Signed-Rank Test for paired differences.</p></li>
+            <li><p>Perform a Wilcoxon Rank-Sum Test.</p></li>
+          </ol>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+
+  <subsection xml:id="eval">
+    <title>Evaluatation</title>
+    <p>
+      <dl>
+        <li>
+          <title>Video Notes</title>
+            <p>
+              For each section covered in class, students are required to submit completed notes based on the assigned lecture videos. One submission is required per section and is due before the start of class on the day that section is covered. Notes are graded on a 0–2 scale:
+            </p>
+
+            <dl>
+              <li>
+                <title>2:</title>
+                <p>Notes are submitted on time, are complete, and reflect engagement with the assigned videos.</p></li>
+              <li>
+                <title>1:</title>
+                <p>Notes are submitted on time but are missing significant portions.</p></li>
+              <li>
+                <title>0:</title>
+                <p>Notes are not submitted on time.</p></li>
+            </dl>
+
+            <p>
+              Notes are graded for completion only, not for correctness. No late submissions are accepted. Notes may be handwritten, typed, or completed on a tablet, but all submissions must be uploaded as a single PDF file. Students are expected to know how to scan or create a PDF of their notes; guidance will be provided as needed.
+            </p>
+        </li>
+        <li>
+          <title>Worksheets</title>
+          <p> Worksheets are completed during class and are intended to help students practice and apply the concepts being studied. Each worksheet is paired with a MyOpenMath assignment. Students are expected to answer the questions in MyOpenMath and show supporting work on the worksheet packet. Both the completed worksheet and completion of the associated MyOpenMath assignment are required for credit. </p> 
+          <p> Students may collaborate with classmates while working on worksheets and may use their notes and classroom laptops. The use of cell phones, generative AI tools, or other unauthorized resources is not permitted. Worksheets are due at the end of class and may be submitted up until the beginning of the next class period without penalty. Worksheets submitted after the start of the next class period will not be accepted. </p> 
+          <p> While correctness is primarily assessed through MyOpenMath, students are expected to show clear and meaningful work on their worksheet packets. Work that is incomplete, inconsistent with the submitted answers, or does not demonstrate an attempt to solve the problem may result in reduced credit. </p>
+        </li>
+        <li>
+          <title>Quizzes</title>
+          <p> Quizzes are administered approximately every fourth class meeting throughout most of the semester. Quizzes assess a student's ability to independently apply the concepts and skills developed through class activities, worksheets, and assigned course materials. </p> 
+          <p> Each quiz is scored on a 0-3 scale: </p> 
+          <dl> 
+            <li> 
+              <title>3:</title> 
+              <p>Demonstrates a strong understanding of the outcome with little to no error. Work is complete, mathematically correct, and clearly communicates the solution process.</p> 
+            </li> 
+            <li> 
+              <title>2:</title> 
+              <p>Demonstrates substantial understanding of the outcome but contains one or more minor errors. The overall solution process is appropriate and most of the work is correct.</p> 
+            </li> 
+            <li> 
+              <title>1:</title> 
+              <p>Demonstrates partial understanding of the outcome but contains significant errors or omissions. Some correct work is shown, but the student has not yet demonstrated competency.</p> 
+            </li> 
+            <li> 
+              <title>0:</title> 
+              <p>The outcome is not attempted or the work submitted does not demonstrate an understanding of the outcome.</p> 
+            </li> 
+          </dl> 
+          <p> Each quiz includes two in-class attempts. For each quiz, the highest score earned across all attempts is used when calculating the Quiz portion of the course grade. </p> 
+          <p> A third attempt is available only after attending tutoring. Students must work with a tutor to review the relevant worksheet problems and their first two attempts before a third attempt will be granted. </p> 
+          <p> Quizzes are not given as make-ups. The multiple-attempt structure is intended to accommodate absences and scheduling conflicts. Students who miss an in-class attempt may use a remaining attempt to demonstrate competency. </p> 
+          <p> For the final quizzes of the course, only one in-class attempt may be provided during the final exam period. Additional attempts must be completed outside of class time by appointment. </p>
+        </li>
+        <li>
+          <title>Lab Reports</title>
+          <p>
+            Students will complete three lab reports during the semester. Each report
+            requires students to locate an appropriate data set, analyze the data using
+            the statistical methods studied in the course, and communicate their
+            findings clearly. The source of the data set must be identified in the
+            report.
+          </p>
+
+          <p>
+            The three lab reports have the following data requirements:
+            <ol marker="1.">
+              <li>
+                <title>Inference for Numerical Data</title>
+                <p>
+                  The data set must contain a quantitative response variable and a
+                  categorical explanatory variable with at least three groups. There
+                  must be enough observations in each group to perform an ANOVA and
+                  evaluate the conditions required for the analysis.
+                </p>
+              </li>
+
+              <li>
+                <title>Inference for Categorical Data</title>
+                <p>
+                  The data set must contain at least two categorical variables. Each
+                  variable must have at least two categories so that the data can be
+                  organized into a contingency table of at least size
+                  <m>2\times 2</m>. There must be enough observations to perform an
+                  appropriate chi-square test.
+                </p>
+              </li>
+
+              <li>
+                <title>Regression</title>
+                <p>
+                  The data set must contain at least two quantitative variables with
+                  paired observations. There must be enough observations to construct
+                  and analyze a regression model.
+                </p>
+              </li>
+            </ol>
+          </p>
+
+          <p>
+            Each lab report must contain the following components:
+            <ol marker="1.">
+              <li>
+                <title>Data Set Summary</title>
+                <p>
+                  In no more than one page, describe the source and context of the data,
+                  identify the variables being studied, explain how the data were
+                  collected when that information is available, and state the
+                  question or questions being investigated.
+                </p>
+              </li>
+
+              <li>
+                <title>Graphical Analysis</title>
+                <p>
+                  Construct appropriate statistical graphics that help describe the
+                  data and address the questions being investigated. All graphics must
+                  include appropriate titles, labels, units, and legends when needed.
+                </p>
+              </li>
+
+              <li>
+                <title>Statistical Analysis</title>
+                <p>
+                  Perform the required statistical procedures and several appropriate
+                  statistical tests on the data. Include the relevant calculations,
+                  verify the conditions or assumptions for each procedure, and report
+                  the results using appropriate statistical notation.
+                </p>
+              </li>
+
+              <li>
+                <title>Summary of Results</title>
+                <p>
+                  Explain the results of the statistical procedures in the context of
+                  the data. The discussion should identify the important findings and
+                  explain what the numerical results, confidence intervals,
+                  significance tests, or models indicate.
+                </p>
+              </li>
+
+              <li>
+                <title>Conclusion</title>
+                <p>
+                  In no more than one page, summarize the principal findings, answer
+                  the questions posed at the beginning of the report, and discuss any
+                  important limitations of the data or analysis.
+                </p>
+              </li>
+            </ol>
+          </p>
+
+          <p>
+            Each lab report is worth 50 points and will be evaluated using the
+            following rubric.
+          </p>
+
+          <table>
+            <title>Lab Report Grading Rubric</title>
+            <tabular row-headers="yes">
+              <row header="yes">
+                <cell>Criterion</cell>
+                <cell>Full-Credit Expectations</cell>
+                <cell>Points</cell>
+              </row>
+
+              <row>
+                <cell>Data Set Selection and Documentation</cell>
+                <cell>
+                  The data set satisfies the requirements of the assigned report, is
+                  appropriate for the required analyses, and is accompanied by a
+                  clearly identified source.
+                </cell>
+                <cell>5</cell>
+              </row>
+
+              <row>
+                <cell>Data Set Summary and Research Questions</cell>
+                <cell>
+                  The summary clearly explains the context, variables, collection
+                  method when available, and questions being investigated. The summary
+                  is no longer than one page.
+                </cell>
+                <cell>5</cell>
+              </row>
+
+              <row>
+                <cell>Graphical Analysis</cell>
+                <cell>
+                  Appropriate graphics are constructed correctly and support the
+                  analysis. Graphics are readable and contain suitable titles, labels,
+                  units, and legends.
+                </cell>
+                <cell>10</cell>
+              </row>
+
+              <row>
+                <cell>Statistical Methods and Computations</cell>
+                <cell>
+                  The required procedures and tests are selected and performed
+                  correctly. Relevant calculations are included, statistical notation
+                  is used appropriately, and required conditions or assumptions are
+                  addressed.
+                </cell>
+                <cell>10</cell>
+              </row>
+
+              <row>
+                <cell>Results and Interpretation</cell>
+                <cell>
+                  Results are reported accurately and interpreted in the context of
+                  the data. The discussion explains the meaning of the statistical
+                  findings rather than merely listing software output or numerical
+                  results.
+                </cell>
+                <cell>10</cell>
+              </row>
+
+              <row>
+                <cell>Conclusion</cell>
+                <cell>
+                  The conclusion answers the questions being investigated, summarizes
+                  the principal findings, and discusses important limitations. The
+                  conclusion is no longer than one page.
+                </cell>
+                <cell>5</cell>
+              </row>
+
+              <row>
+                <cell>Organization and Presentation</cell>
+                <cell>
+                  The report is clearly organized, professionally presented, and
+                  written in complete sentences. Tables, graphics, calculations, and
+                  statistical output are placed logically and referenced in the text.
+                </cell>
+                <cell>5</cell>
+              </row>
+
+              <row>
+                <cell>Total</cell>
+                <cell></cell>
+                <cell>50</cell>
+              </row>
+            </tabular>
+          </table>
+        </li>
+      </dl>
+    </p>
+  </subsection>
+
+  <subsection xml:id="grade">
+    <title>Grading</title>
+    <p>Your final course grade will be determined by your performance in three categories: Video Notes, Worksheets, and Quizzes. A letter grade will be determined separately for each category using the requirements below. Your final course grade will be the lowest of the three category grades.</p>
+    <dl>
+    <li>
+      <title>Video Notes</title>
+      <dl>
+        <li>
+          <title>A:</title>
+          <p>At least 90% of the video notes completed.</p>
+        </li>
+        <li>
+          <title>B:</title>
+          <p>At least 80% but less than 90% of the video notes completed.</p>
+        </li>
+        <li>
+          <title>C:</title>
+          <p>At least 70% but less than 80% of the video notes completed.</p>
+        </li>
+        <li>
+          <title>D:</title>
+          <p>At least 60% but less than 70% of the video notes completed.</p>
+        </li>
+        <li>
+          <title>F:</title>
+          <p>Less than 60% of the video notes completed.</p>
+        </li>
+      </dl>
+    </li>
+
+    <li>
+      <title>Worksheets</title>
+      <dl>
+        <li>
+          <title>A:</title>
+          <p>At least 90% of the worksheets completed.</p>
+        </li>
+        <li>
+          <title>B:</title>
+          <p>At least 80% but less than 90% of the worksheets completed.</p>
+        </li>
+        <li>
+          <title>C:</title>
+          <p>At least 70% but less than 80% of the worksheets completed.</p>
+        </li>
+        <li>
+          <title>D:</title>
+          <p>At least 60% but less than 70% of the worksheets completed.</p>
+        </li>
+        <li>
+          <title>F:</title>
+          <p>Less than 60% of the worksheets completed.</p>
+        </li>
+      </dl>
+    </li>
+
+    <li>
+      <title>Quizzes</title>
+      <dl>
+        <li>
+          <title>A:</title>
+          <p>At least 43 quiz points earned.</p>
+        </li>
+        <li>
+          <title>B:</title>
+          <p>At least 38 but fewer than 43 quiz points earned.</p>
+        </li>
+        <li>
+          <title>C:</title>
+          <p>At least 33 but fewer than 38 quiz points earned.</p>
+        </li>
+        <li>
+          <title>D:</title>
+          <p>At least 28 but fewer than 33 quiz points earned.</p>
+        </li>
+        <li>
+          <title>F:</title>
+          <p>Fewer than 28 quiz points earned.</p>
+        </li>
+      </dl>
+    </li>
+  </dl>
+
+  <p>Here are some examples showing how final course grades are determined:</p>
+  
+  <ol>
+    <li>
+      <p>
+        A student completes 94% of the Video Notes, completes 92% of the Worksheets, and earns 56 Quiz points. The student earns an A in all three categories. Therefore, the student's final course grade is an A.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        A student completes 95% of the Video Notes, completes 84% of the Worksheets, and earns 55 Quiz points. The student earns an A for Video Notes, a B for Worksheets, and an A for Quizzes. Since the lowest category grade is a B, the student's final course grade is a B.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        A student completes 83% of the Video Notes, completes 74% of the Worksheets, and earns 51 Quiz points. The student earns a B for Video Notes, a C for Worksheets, and a B for Quizzes. Since the lowest category grade is a C, the student's final course grade is a C.
+      </p>
+    </li>
+  </ol>
+  </subsection>
+  <subsection xml:id="tips">
+    <title>Tips for Success</title>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Read the textbook before attending class. The instructors explanations will make more sense and when they don't you will be more likely able to ask a relevant question.
+          </p>
+        </li>
+        <li>
+          <p>
+            Attend each class session, both physically and mentally.
+          </p>
+        </li>
+        <li>
+          <p>
+            Read the syllabus and look over the schedule on the last page of the syllabus.
+          </p>
+        </li>
+        <li>
+          <p>
+            Build community with other students in the course and create study groups.
+          </p>
+        </li>
+        <li>
+          <p>
+            Work outside of class. Math is learned by doing not seeing.
+          </p>
+        </li>
+        <li>
+          <p>
+            Ask for help. Stop in to see me, email me, call me, or ask others in class for help.
+          </p>
+        </li>
+        <li>
+          <p>
+            For free math tutoring; find information about the Math &amp; Physics Learning Center at <url href="https://www.svsu.edu/mathandphysicslearningcenter/">MPLC</url>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+
+  <subsection xml:id="academic-integrity">
+    <title>Academic Integrity Policy</title>
+
+    <p>
+      In MATH 132B, any occurrence of cheating or academic dishonesty may be
+      officially documented. The student or students involved may then receive a
+      copy of the documentation. The first occurrence may result in failure of
+      the coursework and will be reported to the Office of Student Conduct
+      Programs for the record. Any additional occurrence will be reported to the
+      Office of Student Conduct Programs for adjudication.
+    </p>
+
+    <p>
+      You may work in groups or with tutors on homework and lab reports when
+      permitted, but you must complete your own work. Quizzes must be completed
+      independently without resources. Inappropriate use of laptops, cell phones,
+      calculators, tablets, websites, outside assistance, or other resources is
+      considered cheating. If you are unsure whether something is permitted, ask
+      your instructor before using it.
+    </p>
+
+    <p>
+      See
+      <url href="https://www.svsu.edu/studentconductprograms/academicintegrity/academicintegritypolicy/">
+        SVSU's Academic Integrity Policy
+      </url>
+      for additional information.
+    </p>
+  </subsection>
+
+  <subsection xml:id="withdrawal-policy">
+    <title>Withdrawal Policy</title>
+
+    <p>
+      Please consult an academic advisor and the Student Financial Services
+      Center before withdrawing from any course. They can help you understand
+      the possible effects that withdrawing may have on your degree progress and
+      financial aid.
+    </p>
+
+    <p>
+      See
+      <url href="https://www.svsu.edu/officeoftheregistrar/policiescatalog/withdrawals/">
+        SVSU's withdrawal information
+      </url>
+      for additional details.
+    </p>
+  </subsection>
+
+  <subsection xml:id="important-dates">
+    <title>Important Dates</title>
+
+    <ul>
+      <li>
+        <p>
+          September 4, 2026, is the last day to withdraw with a 100% refund
+          and have the course deleted.
+        </p>
+      </li>
+      <li>
+        <p>
+          September 18, 2026, is the last day to withdraw with a 100% refund
+          and a <q>W</q> grade.
+        </p>
+      </li>
+      <li>
+        <p>
+          October 2, 2026, is the last day to withdraw with a 50% refund and
+          a <q>W</q> grade.
+        </p>
+      </li>
+      <li>
+        <p>
+          November 13, 2026, is the last day to withdraw with a <q>W</q>
+          grade.
+        </p>
+      </li>
+    </ul>
+  </subsection>
+
+  <subsection xml:id="disability-statement">
+    <title>Disability Statement</title>
+
+    <p>
+      Students with disabilities that may restrict their full participation in
+      course activities are encouraged to meet with the instructor or contact
+      the SVSU Office of Accessibility Resources and Accommodations, located in
+      Wickes 260, at 964-7000 for assistance.
+    </p>
+  </subsection>
+
+  <subsection xml:id="nondiscrimination-statement">
+    <title>Non-Discrimination Statement</title>
+
+    <p>
+      SVSU does not discriminate based on race, religion, color, gender, sexual
+      orientation, national origin, age, physical impairment, disability, or
+      veteran status in the provision of education, employment, and other
+      services.
+    </p>
+  </subsection>
+
+  <subsection xml:id="land-acknowledgment">
+    <title>Land Acknowledgment Statement</title>
+
+    <p>
+      At Saginaw Valley State University, we recognize that we are located on the
+      ancestral homelands of the Anishinaabe, Wyandot, and Sauk. We specifically
+      acknowledge the Saginaw Chippewa Tribe and the land ceded in the Saginaw
+      Treaty of 1819, on which we reside. We appreciate the importance of
+      preserving and honoring the traditions of Indigenous People who are an
+      integral part of our shared history. As we pledge to serve as responsible
+      stewards of the land, we endeavor for this history to inform our teaching,
+      scholarship, and commitment to community.
+    </p>
+  </subsection>
+
+  <subsection xml:id="tentative-syllabus">
+    <title>Tentative Syllabus</title>
+
+    <p>
+      This syllabus and course schedule are subject to change if class needs
+      warrant changes due to illness, inclement weather, or other circumstances.
     </p>
   </subsection>
 </section>

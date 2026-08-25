@@ -21,9 +21,29 @@
   <subsection>
     <title>Wednesday 8/24</title>
 
-    <p>
-    </p>
+    <figure>
+      <caption>
+        Something
+      </caption>
+      <image width="60%">
+        <prefigure xmlns="https://prefigure.org"
+                  label="prefigure-rectangle">
+          <diagram dimensions="(300,300)" margins="5">
+            <coordinates bbox="(0,0,10,10)">
+              <grid-axes/>
+              <rectangle style="diamond" size="5" fill="blue" outline="yes" stroke="green" center="(5,5)" dimensions="(6,6)"/>
+              <label anchor="(9.25,9.25)" clear-background="yes">
+                The derivative is <m>\dfrac{dy}{dx}</m>.
+              </label>
+            </coordinates>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
   </subsection>
+
+
+  
 
 
   <subsection>
