@@ -481,7 +481,20 @@
 
           <table>
             <title>Lab Report Grading Rubric</title>
-            <tabular row-headers="yes">
+
+            <tabular
+              row-headers="yes"
+              halign="left"
+              valign="top"
+              top="medium"
+              left="medium"
+              bottom="medium"
+              right="medium">
+
+              <col width="30%"/>
+              <col width="60%"/>
+              <col width="10%"/>
+
               <row header="yes">
                 <cell>Criterion</cell>
                 <cell>Full-Credit Expectations</cell>
@@ -491,9 +504,11 @@
               <row>
                 <cell>Data Set Selection and Documentation</cell>
                 <cell>
-                  The data set satisfies the requirements of the assigned report, is
-                  appropriate for the required analyses, and is accompanied by a
-                  clearly identified source.
+                  <p>
+                    The data set satisfies the requirements of the assigned report, is
+                    appropriate for the required analyses, and is accompanied by a
+                    clearly identified source.
+                  </p>
                 </cell>
                 <cell>5</cell>
               </row>
@@ -501,9 +516,11 @@
               <row>
                 <cell>Data Set Summary and Research Questions</cell>
                 <cell>
-                  The summary clearly explains the context, variables, collection
-                  method when available, and questions being investigated. The summary
-                  is no longer than one page.
+                  <p>
+                    The summary clearly explains the context, variables, collection
+                    method when available, and questions being investigated. The summary
+                    is no longer than one page.
+                  </p>
                 </cell>
                 <cell>5</cell>
               </row>
@@ -511,9 +528,11 @@
               <row>
                 <cell>Graphical Analysis</cell>
                 <cell>
-                  Appropriate graphics are constructed correctly and support the
-                  analysis. Graphics are readable and contain suitable titles, labels,
-                  units, and legends.
+                  <p>
+                    Appropriate graphics are constructed correctly and support the
+                    analysis. Graphics are readable and contain suitable titles, labels,
+                    units, and legends.
+                  </p>
                 </cell>
                 <cell>10</cell>
               </row>
@@ -521,10 +540,12 @@
               <row>
                 <cell>Statistical Methods and Computations</cell>
                 <cell>
-                  The required procedures and tests are selected and performed
-                  correctly. Relevant calculations are included, statistical notation
-                  is used appropriately, and required conditions or assumptions are
-                  addressed.
+                  <p>
+                    The required procedures and tests are selected and performed
+                    correctly. Relevant calculations are included, statistical notation
+                    is used appropriately, and required conditions or assumptions are
+                    addressed.
+                  </p>
                 </cell>
                 <cell>10</cell>
               </row>
@@ -532,10 +553,12 @@
               <row>
                 <cell>Results and Interpretation</cell>
                 <cell>
-                  Results are reported accurately and interpreted in the context of
-                  the data. The discussion explains the meaning of the statistical
-                  findings rather than merely listing software output or numerical
-                  results.
+                  <p>
+                    Results are reported accurately and interpreted in the context of
+                    the data. The discussion explains the meaning of the statistical
+                    findings rather than merely listing software output or numerical
+                    results.
+                  </p>
                 </cell>
                 <cell>10</cell>
               </row>
@@ -543,9 +566,11 @@
               <row>
                 <cell>Conclusion</cell>
                 <cell>
-                  The conclusion answers the questions being investigated, summarizes
-                  the principal findings, and discusses important limitations. The
-                  conclusion is no longer than one page.
+                  <p>
+                    The conclusion answers the questions being investigated, summarizes
+                    the principal findings, and discusses important limitations. The
+                    conclusion is no longer than one page.
+                  </p>
                 </cell>
                 <cell>5</cell>
               </row>
@@ -553,9 +578,11 @@
               <row>
                 <cell>Organization and Presentation</cell>
                 <cell>
-                  The report is clearly organized, professionally presented, and
-                  written in complete sentences. Tables, graphics, calculations, and
-                  statistical output are placed logically and referenced in the text.
+                  <p>
+                    The report is clearly organized, professionally presented, and
+                    written in complete sentences. Tables, graphics, calculations, and
+                    statistical output are placed logically and referenced in the text.
+                  </p>
                 </cell>
                 <cell>5</cell>
               </row>
@@ -565,8 +592,9 @@
                 <cell></cell>
                 <cell>50</cell>
               </row>
-            </tabular>
-          </table>
+
+  </tabular>
+</table>
         </li>
       </dl>
     </p>
