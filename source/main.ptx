@@ -24,12 +24,6 @@
     <chapter xml:id="handouts">
       <title>Handouts</title>
 
-      <introduction>
-        <p>
-          These are copies of the handouts distributed during the semester.
-        </p>
-      </introduction>
-
       <!-- Remove the example and replace with your own activities -->
       <xi:include href="./handouts/notes-intro-to-prob.ptx"/>
 
