@@ -13,19 +13,100 @@ var ptx_lunr_docs = [
   "id": "notes-intro-to-prob",
   "level": "1",
   "url": "notes-intro-to-prob.html",
-  "type": "Worksheet",
+  "type": "Section",
   "number": "",
   "title": "Introduction to Probability",
-  "body": " Introduction to Probability    This is the introduction to the activity.      This is the first exercise.    "
+  "body": " Introduction to Probability     Distinguish between empirical and theoretical probability.    Explain the law of large numbers.    Identify sample spaces and events.    Calculate and interpret basic probabilities.      Definitons   Sample Space        Events        Seed Germination   A biologist plants three seeds labeled , , and . After seven days, each seed has either germinated or not germinated. An outcome records the results for seeds , , and , in that order.    Identify the sample space.    Identify the event that exactly two seeds germinate.       Empirical Probability        Theoretical Probability        Pea Plant Genetics   In a simplified model of pea plant genetics, each parent has one dominant allele and one recessive allele . An offspring receives one allele from each parent. The four equally likely allele combinations are , , , and . A plant has purple flowers if it receives at least one .  A scientist crosses the two plants and grows 80 offspring. Of these, 57 have purple flowers.    Find the theoretical probability that an offspring has purple flowers.    Find the empirical probability that an offspring has purple flowerslaw-large-num.        Why do the two answers above not match?     Law of Large Numbers         Exmaples   Probabilities of Sums from Two Dice    A 6-by-6 grid showing all 36 ordered outcomes from rolling two dice.   The diagram is a 6-by-6 grid representing all possible outcomes from rolling two six-sided dice. Die A labels the rows from 1 through 6, and Die B labels the columns from 1 through 6.  Each cell contains a pair of red dice. The first die displays the number associated with that row, and the second die displays the number associated with that column. For example, the cell in row 3 and column 5 represents Die A showing 3 and Die B showing 5. Each of the 36 possible ordered outcomes appears exactly once.    Consider rolling two fair six-sided dice and recording the sum of the numbers rolled. Find the probability of obtaining each sum from 1 through 12. Write each probability first as a reduced fraction and then as a decimal rounded to four decimal places.     "
 },
 {
-  "id": "notes-intro-to-prob-3",
+  "id": "notes-intro-to-prob-2",
   "level": "2",
-  "url": "notes-intro-to-prob.html#notes-intro-to-prob-3",
-  "type": "Worksheet Exercise",
-  "number": "1",
+  "url": "notes-intro-to-prob.html#notes-intro-to-prob-2",
+  "type": "Outcomes",
+  "number": "",
   "title": "",
-  "body": "  This is the first exercise.   "
+  "body": "   Distinguish between empirical and theoretical probability.    Explain the law of large numbers.    Identify sample spaces and events.    Calculate and interpret basic probabilities.    "
+},
+{
+  "id": "def-sample-space",
+  "level": "2",
+  "url": "notes-intro-to-prob.html#def-sample-space",
+  "type": "Definition",
+  "number": "1",
+  "title": "Sample Space.",
+  "body": " Sample Space      "
+},
+{
+  "id": "def-events",
+  "level": "2",
+  "url": "notes-intro-to-prob.html#def-events",
+  "type": "Definition",
+  "number": "2",
+  "title": "Events.",
+  "body": " Events      "
+},
+{
+  "id": "ex-germination",
+  "level": "2",
+  "url": "notes-intro-to-prob.html#ex-germination",
+  "type": "Example",
+  "number": "3",
+  "title": "Seed Germination.",
+  "body": " Seed Germination   A biologist plants three seeds labeled , , and . After seven days, each seed has either germinated or not germinated. An outcome records the results for seeds , , and , in that order.    Identify the sample space.    Identify the event that exactly two seeds germinate.     "
+},
+{
+  "id": "def-emp-prob",
+  "level": "2",
+  "url": "notes-intro-to-prob.html#def-emp-prob",
+  "type": "Definition",
+  "number": "4",
+  "title": "Empirical Probability.",
+  "body": " Empirical Probability      "
+},
+{
+  "id": "def-theo-prob",
+  "level": "2",
+  "url": "notes-intro-to-prob.html#def-theo-prob",
+  "type": "Definition",
+  "number": "5",
+  "title": "Theoretical Probability.",
+  "body": " Theoretical Probability      "
+},
+{
+  "id": "ex-pea-prob",
+  "level": "2",
+  "url": "notes-intro-to-prob.html#ex-pea-prob",
+  "type": "Example",
+  "number": "6",
+  "title": "Pea Plant Genetics.",
+  "body": " Pea Plant Genetics   In a simplified model of pea plant genetics, each parent has one dominant allele and one recessive allele . An offspring receives one allele from each parent. The four equally likely allele combinations are , , , and . A plant has purple flowers if it receives at least one .  A scientist crosses the two plants and grows 80 offspring. Of these, 57 have purple flowers.    Find the theoretical probability that an offspring has purple flowers.    Find the empirical probability that an offspring has purple flowerslaw-large-num.     "
+},
+{
+  "id": "ques-1",
+  "level": "2",
+  "url": "notes-intro-to-prob.html#ques-1",
+  "type": "Question",
+  "number": "7",
+  "title": "",
+  "body": "  Why do the two answers above not match?   "
+},
+{
+  "id": "law-large-num",
+  "level": "2",
+  "url": "notes-intro-to-prob.html#law-large-num",
+  "type": "Definition",
+  "number": "8",
+  "title": "Law of Large Numbers.",
+  "body": " Law of Large Numbers      "
+},
+{
+  "id": "ex-two-dice",
+  "level": "2",
+  "url": "notes-intro-to-prob.html#ex-two-dice",
+  "type": "Example",
+  "number": "9",
+  "title": "Probabilities of Sums from Two Dice.",
+  "body": " Probabilities of Sums from Two Dice    A 6-by-6 grid showing all 36 ordered outcomes from rolling two dice.   The diagram is a 6-by-6 grid representing all possible outcomes from rolling two six-sided dice. Die A labels the rows from 1 through 6, and Die B labels the columns from 1 through 6.  Each cell contains a pair of red dice. The first die displays the number associated with that row, and the second die displays the number associated with that column. For example, the cell in row 3 and column 5 represents Die A showing 3 and Die B showing 5. Each of the 36 possible ordered outcomes appears exactly once.    Consider rolling two fair six-sided dice and recording the sum of the numbers rolled. Find the probability of obtaining each sum from 1 through 12. Write each probability first as a reduced fraction and then as a decimal rounded to four decimal places.   "
 }
 ]
 

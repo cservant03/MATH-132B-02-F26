@@ -5,3 +5,39 @@ a.runestone-link,
 a.mathjax-link {
   display: none !important;
 }
+
+#def-sample-space {
+  padding-bottom: 1.25in;
+}
+
+#def-events {
+  padding-bottom: 1.25in;
+}
+
+#ex-germination{
+  padding-bottom: 2in;
+}
+
+#def-emp-prob {
+  padding-bottom: 1.25in;
+}
+
+#def-theo-prob {
+  padding-bottom: 1.25in;
+}
+
+#ex-pea-prob {
+  padding-bottom: 2in;
+}
+
+#ques-1 {
+  padding-bottom: 1.25in;
+}
+
+#law-large-num {
+  padding-bottom: 1.25in;
+}
+
+#ex-two-dice {
+  padding-bottom: 4in;
+}
