@@ -126,10 +126,10 @@
         <li>
           <title>Text</title>
           <p>
-            <pubtitle>Mike's Biostatistics Book</pubtitle> by Michael R Dohm
+            <pubtitle>Introductory Statistics</pubtitle> by Hannah Seidler-Wright
           </p>
           <p>
-            You can view an online copy of this free, open source textbook at <url href="https://stats.libretexts.org/Bookshelves/Applied_Statistics/Mikes_Biostatistics_Book_(Dohm)">Mike's Biostatistics Book</url>.
+            You can view an online copy of this free, open source textbook at <url href="https://stats.libretexts.org/Bookshelves/Introductory_Statistics/Introductory_Statistics_(Hannah_Seidler-Wright)">Introductory Statistics</url>.
           </p>
         </li>
         <li>
@@ -168,150 +168,58 @@
       The following lists the set of outcomes covered in this course:
       <ol>
         <li>
-          <p>Statistical Language</p>
-          <ol marker="(a)">
-            <li><p>Distinguish between a parameter and a statistic.</p></li>
-            <li><p>Distinguish between the different sampling methods: random, systematic, stratified, cluster, and convenience.</p></li>
-            <li><p>Identify the types of variables in a statistical study.</p></li>
-          </ol>
+          <p>Basic Probabilities</p>
         </li>
-
         <li>
-          <p>Numerical Data</p>
-          <ol marker="(a)">
-            <li><p>Interpret different statistical diagrams such as box plots and histograms.</p></li>
-            <li><p>Measure the center of data by finding the mean or median.</p></li>
-            <li><p>Measure the variation of data by finding the standard deviation or quartiles.</p></li>
-          </ol>
+          <p>Describing Categorical Data</p>
         </li>
-
-        <li>
-          <p>Categorical Data</p>
-          <ol marker="(a)">
-            <li><p>Interpret different statistical diagrams such as bar plots and frequency tables.</p></li>
-            <li><p>Calculate the proportion of the data.</p></li>
-          </ol>
-        </li>
-
-        <li>
-          <p>Correlation</p>
-          <ol marker="(a)">
-            <li><p>Interpret different statistical diagrams such as scatter plots.</p></li>
-            <li><p>Find the correlation coefficient between two variables.</p></li>
-            <li><p>Interpret what the correlation coefficient represents.</p></li>
-          </ol>
-        </li>
-
-        <li>
-          <p>Compute Probabilities</p>
-          <ol marker="(a)">
-            <li><p>Compute probabilities with equally likely outcomes.</p></li>
-            <li><p>Use the Complement Rule and Addition Rule to compute probabilities.</p></li>
-            <li><p>Calculate the probability that in a single trial, some event or multiple events occur, and apply the addition rule and multiplication rule appropriately.</p></li>
-            <li><p>Distinguish between independent and dependent events.</p></li>
-            <li><p>Distinguish between mutually exclusive and non-mutually exclusive events.</p></li>
-          </ol>
-        </li>
-
         <li>
           <p>Binomial Distribution</p>
-          <ol marker="(a)">
-            <li><p>Describe a binomial distribution.</p></li>
-            <li><p>Compute probabilities for a given binomial distribution.</p></li>
-            <li><p>Compute the mean and standard deviation of a binomial distribution.</p></li>
-          </ol>
         </li>
-
         <li>
-          <p>Normal Distribution</p>
-          <ol marker="(a)">
-            <li><p>Understand and utilize important properties of the normal distribution.</p></li>
-            <li><p>Compute probabilities for a given normal distribution.</p></li>
-            <li><p>Compute probabilities for the standard normal distribution.</p></li>
-          </ol>
+          <p>Normal and <m>\chi^2</m> Distributions</p>
         </li>
-
         <li>
-          <p>Central Limit Theorem</p>
-          <ol marker="(a)">
-            <li><p>Describe the sampling distribution of a statistic.</p></li>
-            <li><p>Apply the Central Limit Theorem.</p></li>
-          </ol>
+          <p>Sampling Distribution for <m>\hat{p}</m></p>
         </li>
-
         <li>
-          <p>Confidence Intervals</p>
-          <ol marker="(a)">
-            <li><p>Understand and interpret confidence intervals.</p></li>
-            <li><p>Calculate the standard error and point estimate given a confidence interval.</p></li>
-            <li><p>Construct a z-interval.</p></li>
-          </ol>
+          <p>Inference for One Proportion</p>
         </li>
-
         <li>
-          <p>Hypothesis Tests</p>
-          <ol marker="(a)">
-            <li><p>Understand and interpret hypothesis tests.</p></li>
-            <li><p>Identify the claim, null hypothesis, alternative hypothesis, and significance level of a hypothesis test.</p></li>
-            <li><p>Draw conclusions from a hypothesis test.</p></li>
-            <li><p>Perform a z-test.</p></li>
-            <li><p>Understand and interpret Type I and Type II errors.</p></li>
-          </ol>
+          <p>Inference for Two Proportions</p>
         </li>
-
         <li>
-          <p>Inference for One and Two Sample Means</p>
-          <ol marker="(a)">
-            <li><p>Perform a t-test.</p></li>
-            <li><p>Perform a paired t-test.</p></li>
-            <li><p>Perform a non-pooled two sample t-test.</p></li>
-          </ol>
+          <p>Inference for More than Two Proportions</p>
         </li>
-
         <li>
-          <p>ANOVA</p>
-          <ol marker="(a)">
-            <li><p>Understand and interpret an ANOVA table.</p></li>
-            <li><p>Perform an ANOVA test.</p></li>
-            <li><p>Describe why an ANOVA test is preferred over pairwise t-tests.</p></li>
-            <li><p>Describe the next steps if the null hypothesis is rejected in an ANOVA test.</p></li>
-          </ol>
+          <p>Describing Numerical Data</p>
         </li>
-
         <li>
-          <p>Inference for One and Two Sample Proportions</p>
-          <ol marker="(a)">
-            <li><p>Perform a one proportion z-test.</p></li>
-            <li><p>Perform a two proportion z-test.</p></li>
-          </ol>
+          <p>Student <m>t</m> and <m>F</m> Distributions</p>
         </li>
-
         <li>
-          <p>Multinomial and <m>\chi^2</m> Tests</p>
-          <ol marker="(a)">
-            <li><p>Perform a multinomial test.</p></li>
-            <li><p>Perform a <m>\chi^2</m> test.</p></li>
-          </ol>
+          <p>Sampling Distribution for <m>\bar{x}</m></p>
         </li>
-
         <li>
-          <p>Inference on Regression</p>
-          <ol marker="(a)">
-            <li><p>Calculate a least squares linear regression line.</p></li>
-            <li><p>Interpret the meaning of the slope and vertical intercept of the regression line.</p></li>
-            <li><p>Perform a hypothesis test on the correlation coefficient of the regression line.</p></li>
-          </ol>
+          <p>Inference for One Mean</p>
         </li>
-
+        <li>
+          <p>Inference for Two Means</p>
+        </li>
+        <li>
+          <p>Inference for More than Two Means</p>
+        </li>
+        <li>
+          <p>Describing Two Variables</p>
+        </li>
+        <li>
+          <p>Correlation and Linear Regression</p>
+        </li>
+        <li>
+          <p>Inference for Correlation Coefficient</p>
+        </li>
         <li>
           <p>Nonparametric Tests</p>
-          <ol marker="(a)">
-            <li><p>Describe the difference between parametric and nonparametric tests.</p></li>
-            <li><p>Calculate the ranks of a data set.</p></li>
-            <li><p>Perform a Wilcoxon Signed-Rank Test.</p></li>
-            <li><p>Perform a Wilcoxon Signed-Rank Test for paired differences.</p></li>
-            <li><p>Perform a Wilcoxon Rank-Sum Test.</p></li>
-          </ol>
         </li>
       </ol>
     </p>
@@ -507,7 +415,7 @@
                     clearly identified source.
                   </p>
                 </cell>
-                <cell>5</cell>
+                <cell>2</cell>
               </row>
 
               <row>
@@ -519,7 +427,7 @@
                     is no longer than one page.
                   </p>
                 </cell>
-                <cell>5</cell>
+                <cell>4</cell>
               </row>
 
               <row>
@@ -531,7 +439,7 @@
                     units, and legends.
                   </p>
                 </cell>
-                <cell>10</cell>
+                <cell>5</cell>
               </row>
 
               <row>
@@ -544,7 +452,7 @@
                     addressed.
                   </p>
                 </cell>
-                <cell>10</cell>
+                <cell>5</cell>
               </row>
 
               <row>
@@ -557,7 +465,7 @@
                     results.
                   </p>
                 </cell>
-                <cell>10</cell>
+                <cell>5</cell>
               </row>
 
               <row>
@@ -581,13 +489,13 @@
                     statistical output are placed logically and referenced in the text.
                   </p>
                 </cell>
-                <cell>5</cell>
+                <cell>4</cell>
               </row>
 
               <row>
                 <cell>Total</cell>
                 <cell></cell>
-                <cell>50</cell>
+                <cell>30</cell>
               </row>
 
   </tabular>
@@ -607,199 +515,70 @@
       requirements below. Your final course grade will be the lowest of the four
       category grades.
     </p>
-    <ol>
-    <li>
-      <title>Video Notes</title>
+    <tabular
+    row-headers="yes"
+    halign="left"
+    valign="top"
+    top="medium"
+    left="medium"
+    bottom="medium"
+    right="medium">
 
-      <tabular
-        row-headers="yes"
-        halign="left"
-        valign="top"
-        top="medium"
-        left="medium"
-        bottom="medium"
-        right="medium">
+    <col width="12%"/>
+    <col width="22%"/>
+    <col width="22%"/>
+    <col width="20%"/>
+    <col width="24%"/>
 
-        <col width="20%"/>
-        <col width="80%"/>
+    <row header="yes">
+      <cell>Letter Grade</cell>
+      <cell>Video Notes Completed</cell>
+      <cell>Worksheets Completed</cell>
+      <cell>Quiz Points</cell>
+      <cell>Lab Report Points</cell>
+    </row>
 
-        <row header="yes">
-          <cell>Letter Grade</cell>
-          <cell>Requirement</cell>
-        </row>
+    <row>
+      <cell>A</cell>
+      <cell>90%–100%</cell>
+      <cell>90%–100%</cell>
+      <cell>40-45</cell>
+      <cell>77-90</cell>
+    </row>
 
-        <row>
-          <cell>A</cell>
-          <cell>At least 90% of the video notes completed.</cell>
-        </row>
+    <row>
+      <cell>B</cell>
+      <cell>80% to less than 90%</cell>
+      <cell>80% to less than 90%</cell>
+      <cell>33-39</cell>
+      <cell>63-76</cell>
+    </row>
 
-        <row>
-          <cell>B</cell>
-          <cell>At least 80% but less than 90% of the video notes completed.</cell>
-        </row>
+    <row>
+      <cell>C</cell>
+      <cell>70% to less than 80%</cell>
+      <cell>70% to less than 80%</cell>
+      <cell>27-32</cell>
+      <cell>50-62</cell>
+    </row>
 
-        <row>
-          <cell>C</cell>
-          <cell>At least 70% but less than 80% of the video notes completed.</cell>
-        </row>
+    <row>
+      <cell>D</cell>
+      <cell>60% to less than 70%</cell>
+      <cell>60% to less than 70%</cell>
+      <cell>18-26</cell>
+      <cell>36-49</cell>
+    </row>
 
-        <row>
-          <cell>D</cell>
-          <cell>At least 60% but less than 70% of the video notes completed.</cell>
-        </row>
+    <row>
+      <cell>F</cell>
+      <cell>Less than 60%</cell>
+      <cell>Less than 60%</cell>
+      <cell>0-17</cell>
+      <cell>0-35</cell>
+    </row>
 
-        <row>
-          <cell>F</cell>
-          <cell>Less than 60% of the video notes completed.</cell>
-        </row>
-
-      </tabular>
-    </li>
-
-    <li>
-      <title>Worksheets</title>
-
-      <tabular
-        row-headers="yes"
-        halign="left"
-        valign="top"
-        top="medium"
-        left="medium"
-        bottom="medium"
-        right="medium">
-
-        <col width="20%"/>
-        <col width="80%"/>
-
-        <row header="yes">
-          <cell>Letter Grade</cell>
-          <cell>Requirement</cell>
-        </row>
-
-        <row>
-          <cell>A</cell>
-          <cell>At least 90% of the worksheets completed.</cell>
-        </row>
-
-        <row>
-          <cell>B</cell>
-          <cell>At least 80% but less than 90% of the worksheets completed.</cell>
-        </row>
-
-        <row>
-          <cell>C</cell>
-          <cell>At least 70% but less than 80% of the worksheets completed.</cell>
-        </row>
-
-        <row>
-          <cell>D</cell>
-          <cell>At least 60% but less than 70% of the worksheets completed.</cell>
-        </row>
-
-        <row>
-          <cell>F</cell>
-          <cell>Less than 60% of the worksheets completed.</cell>
-        </row>
-
-      </tabular>
-    </li>
-
-    <li>
-      <title>Quizzes</title>
-
-      <tabular
-        row-headers="yes"
-        halign="left"
-        valign="top"
-        top="medium"
-        left="medium"
-        bottom="medium"
-        right="medium">
-
-        <col width="20%"/>
-        <col width="80%"/>
-
-        <row header="yes">
-          <cell>Letter Grade</cell>
-          <cell>Requirement</cell>
-        </row>
-
-        <row>
-          <cell>A</cell>
-          <cell>At least 43 quiz points earned.</cell>
-        </row>
-
-        <row>
-          <cell>B</cell>
-          <cell>At least 38 but fewer than 43 quiz points earned.</cell>
-        </row>
-
-        <row>
-          <cell>C</cell>
-          <cell>At least 33 but fewer than 38 quiz points earned.</cell>
-        </row>
-
-        <row>
-          <cell>D</cell>
-          <cell>At least 28 but fewer than 33 quiz points earned.</cell>
-        </row>
-
-        <row>
-          <cell>F</cell>
-          <cell>Fewer than 28 quiz points earned.</cell>
-        </row>
-
-      </tabular>
-    </li>
-
-    <li>
-      <title>Lab Reports</title>
-
-      <tabular
-        row-headers="yes"
-        halign="left"
-        valign="top"
-        top="medium"
-        left="medium"
-        bottom="medium"
-        right="medium">
-
-        <col width="20%"/>
-        <col width="80%"/>
-
-        <row header="yes">
-          <cell>Letter Grade</cell>
-          <cell>Requirement</cell>
-        </row>
-
-        <row>
-          <cell>A</cell>
-          <cell>At least 128 lab report points earned.</cell>
-        </row>
-
-        <row>
-          <cell>B</cell>
-          <cell>At least 105 but fewer than 128 lab report points earned.</cell>
-        </row>
-
-        <row>
-          <cell>C</cell>
-          <cell>At least 83 but fewer than 105 lab report points earned.</cell>
-        </row>
-
-        <row>
-          <cell>D</cell>
-          <cell>At least 60 but fewer than 83 lab report points earned.</cell>
-        </row>
-
-        <row>
-          <cell>F</cell>
-          <cell>Fewer than 60 lab report points earned.</cell>
-        </row>
-
-      </tabular>
-    </li>
-  </ol>
+  </tabular>
 
     <p>
       Here are some examples showing how final course grades are determined:
@@ -835,7 +614,18 @@
         </p>
       </li>
     </ol>
-
+    
+    <p>
+      Plus and minus grades may be assigned based on a student's overall
+      participation and effort throughout the semester, including class
+      participation and attendance at office hours or tutoring sessions. For
+      example, a student whose category grade is a B but who demonstrates limited
+      participation and effort may receive a B-, while a student whose category
+      grade is a C and who demonstrates a high level of participation and effort
+      may receive a C+. A student who demonstrates the expected level of
+      participation and effort will receive the unmodified letter grade. SVSU does
+      not award C-, D+, or D- grades, so these grades will not be assigned.
+    </p>
   </subsection>
 
   <subsection xml:id="tips">
