@@ -147,7 +147,9 @@
     <!-- https://pretextbook.org/doc/guide/html/publication-file-online.html#online-style-options -->
     <css
         theme="salem"
-        provide-dark-mode="yes"
+        color-main="#335B41"
+        color-fact="#335B7A"
+        color-do="#43075F"
     />
 
     <!-- Search can be default or none, or you can use a Google-cx number to use google's search

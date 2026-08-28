@@ -29,7 +29,7 @@
   </outcomes>
 
   <subsection xml:id="definitions">
-    <title>Definitons</title>
+    <title>Definitions</title>
     
     <definition xml:id="def-sample-space">
       <title>Sample Space</title>
@@ -163,6 +163,69 @@
         </p>
       </statement>
     </example>
+    
+    <example xml:id="ex-cards">
+      <title>Probabilities from a Deck of Cards</title>
+      <statement>
+        <image source="images/deck-of-cards.jpg" width="90%">
+          <shortdescription>
+            The 52 cards in a standard deck arranged by suit and rank.
+          </shortdescription>
 
+          <description>
+            <p>
+              The image displays all 52 cards in a standard deck with no
+              jokers. The cards are arranged in four rows, one for each
+              suit. From top to bottom, the suits are clubs, spades, hearts,
+              and diamonds. Clubs and spades are black, while hearts and
+              diamonds are red.
+            </p>
+            <p>
+              Each suit contains 13 cards. From left to right, they are the
+              ace, the numbered cards 2 through 10, the jack, the queen, and
+              the king. The jack, queen, and king are called face cards.
+              Therefore, each suit has three face cards and the full deck
+              has 12 face cards.
+            </p>
+            <p>
+              The ace is a separate rank and is not considered a face card.
+              Although an ace may represent a high or low value in some
+              card games, it is not considered a numbered card in this
+              example. The numbered cards are 2 through 10.
+            </p>
+          </description>
+        </image>
+
+        <p>
+          One card is selected at random from a standard 52-card deck with
+          no jokers. Find each probability. Write each answer first as a
+          reduced fraction and then as a decimal rounded to four decimal
+          places.
+        </p>
+
+        <ol>
+          <li>
+            <p>
+              <m>P(\text{heart})</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>P(\text{black card})</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>P(\text{face card})</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>P(\text{even-numbered card})</m> 
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </example>
   </subsection>
 </section>

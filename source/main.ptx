@@ -21,11 +21,11 @@
       <!-- Other documents could go here, like a schedule, project description, etc. -->
     </chapter>
 
-    <chapter xml:id="handouts">
-      <title>Handouts</title>
+    <chapter xml:id="notes">
+      <title>Notes</title>
 
       <!-- Remove the example and replace with your own activities -->
-      <xi:include href="./handouts/notes-intro-to-prob.ptx"/>
+      <xi:include href="./notes/intro-to-prob.ptx"/>
 
       <!-- Add more xi:include files here to include them in the main course -->
     </chapter>
