@@ -138,12 +138,6 @@
             A statistical program called R via R studio to perform statistical calculations in this course. This is free software. There will tutorial videos and lectures provided to learn this program.
           </p>
         </li>
-        <li>
-          <title>Three Ring Binder</title>
-          <p>
-            This will be helpful to keep your notes and class worksheets in.
-          </p>
-        </li>
       </dl>
     </p>
   </subsection>
@@ -213,7 +207,7 @@
           <p>Describing Two Variables</p>
         </li>
         <li>
-          <p>Correlation and Linear Regression</p>
+          <p>Linear Regression</p>
         </li>
         <li>
           <p>Inference for Correlation Coefficient</p>
@@ -230,36 +224,12 @@
     <p>
       <dl>
         <li>
-          <title>Video Notes</title>
-            <p>
-              For each section covered in class, students are required to submit completed notes based on the assigned lecture videos. One submission is required per section and is due before the start of class on the day that section is covered. Notes are graded on a 0–2 scale:
-            </p>
-
-            <dl>
-              <li>
-                <title>2:</title>
-                <p>Notes are submitted on time, are complete, and reflect engagement with the assigned videos.</p></li>
-              <li>
-                <title>1:</title>
-                <p>Notes are submitted on time but are missing significant portions.</p></li>
-              <li>
-                <title>0:</title>
-                <p>Notes are not submitted on time.</p></li>
-            </dl>
-
-            <p>
-              Notes are graded for completion only, not for correctness. No late submissions are accepted. Notes may be handwritten, typed, or completed on a tablet, but all submissions must be uploaded as a single PDF file. Students are expected to know how to scan or create a PDF of their notes; guidance will be provided as needed.
-            </p>
-        </li>
-        <li>
-          <title>Worksheets</title>
-          <p> Worksheets are completed during class and are intended to help students practice and apply the concepts being studied. Each worksheet is paired with a MyOpenMath assignment. Students are expected to answer the questions in MyOpenMath and show supporting work on the worksheet packet. Both the completed worksheet and completion of the associated MyOpenMath assignment are required for credit. </p> 
-          <p> Students may collaborate with classmates while working on worksheets and may use their notes and classroom laptops. The use of cell phones, generative AI tools, or other unauthorized resources is not permitted. Worksheets are due at the end of class and may be submitted up until the beginning of the next class period without penalty. Worksheets submitted after the start of the next class period will not be accepted. </p> 
-          <p> While correctness is primarily assessed through MyOpenMath, students are expected to show clear and meaningful work on their worksheet packets. Work that is incomplete, inconsistent with the submitted answers, or does not demonstrate an attempt to solve the problem may result in reduced credit. </p>
+          <title>Homework</title>
+          <p> Each learning outcome in the course has one 10-point homework assignment in MyOpenMath. These assignments provide practice applying the concepts and skills associated with each outcome and help students prepare for quizzes and lab reports. A student's Homework score is the total number of points earned across all MyOpenMath homework assignments.</p>
         </li>
         <li>
           <title>Quizzes</title>
-          <p> Quizzes are administered approximately every fourth class meeting throughout most of the semester. Quizzes assess a student's ability to independently apply the concepts and skills developed through class activities, worksheets, and assigned course materials. </p> 
+          <p> Quizzes are administered approximately every fourth class meeting throughout most of the semester. Quizzes assess a student's ability to independently apply the concepts and skills developed through class notes and assigned course materials. </p> 
           <p> Each quiz is scored on a 0-3 scale: </p> 
           <dl> 
             <li> 
@@ -526,54 +496,47 @@
 
     <col width="12%"/>
     <col width="22%"/>
-    <col width="22%"/>
     <col width="20%"/>
     <col width="24%"/>
 
     <row header="yes">
       <cell>Letter Grade</cell>
-      <cell>Video Notes Completed</cell>
-      <cell>Worksheets Completed</cell>
+      <cell>Homework Points</cell>
       <cell>Quiz Points</cell>
       <cell>Lab Report Points</cell>
     </row>
 
     <row>
       <cell>A</cell>
-      <cell>90%–100%</cell>
-      <cell>90%–100%</cell>
+      <cell>162-180</cell>
       <cell>40-45</cell>
       <cell>77-90</cell>
     </row>
 
     <row>
       <cell>B</cell>
-      <cell>80% to less than 90%</cell>
-      <cell>80% to less than 90%</cell>
+      <cell>144-161</cell>
       <cell>33-39</cell>
       <cell>63-76</cell>
     </row>
 
     <row>
       <cell>C</cell>
-      <cell>70% to less than 80%</cell>
-      <cell>70% to less than 80%</cell>
+      <cell>126-143</cell>
       <cell>27-32</cell>
       <cell>50-62</cell>
     </row>
 
     <row>
       <cell>D</cell>
-      <cell>60% to less than 70%</cell>
-      <cell>60% to less than 70%</cell>
+      <cell>108-125</cell>
       <cell>18-26</cell>
       <cell>36-49</cell>
     </row>
 
     <row>
       <cell>F</cell>
-      <cell>Less than 60%</cell>
-      <cell>Less than 60%</cell>
+      <cell>0-107</cell>
       <cell>0-17</cell>
       <cell>0-35</cell>
     </row>
@@ -587,30 +550,28 @@
     <ol>
       <li>
         <p>
-          A student completes 94% of the Video Notes, completes 92% of the
-          Worksheets, earns 56 Quiz points, and earns 140 Lab Report points.
-          The student earns an A in all four categories. Therefore, the
+          A student earns 171 Homework points, 42 Quiz points, and 84 Lab Report
+          points. These scores correspond to an A in Homework, an A in Quizzes,
+          and an A in Lab Reports. Since the lowest category grade is an A, the
           student's final course grade is an A.
         </p>
       </li>
 
       <li>
         <p>
-          A student completes 95% of the Video Notes, completes 84% of the
-          Worksheets, earns 55 Quiz points, and earns 135 Lab Report points.
-          The student earns an A for Video Notes, a B for Worksheets, an A for
-          Quizzes, and an A for Lab Reports. Since the lowest category grade is
-          a B, the student's final course grade is a B.
+          A student earns 168 Homework points, 37 Quiz points, and 82 Lab Report
+          points. These scores correspond to an A in Homework, a B in Quizzes,
+          and an A in Lab Reports. Since the lowest category grade is a B, the
+          student's final course grade is a B.
         </p>
       </li>
 
       <li>
         <p>
-          A student completes 83% of the Video Notes, completes 84% of the
-          Worksheets, earns 51 Quiz points, and earns 100 Lab Report points.
-          The student earns a B for Video Notes, a B for Worksheets, a B for
-          Quizzes, and a C for Lab Reports. Since the lowest category grade is
-          a C, the student's final course grade is a C.
+          A student earns 150 Homework points, 24 Quiz points, and 58 Lab Report
+          points. These scores correspond to a B in Homework, a D in Quizzes,
+          and a C in Lab Reports. Since the lowest category grade is a D, the
+          student's final course grade is a D.
         </p>
       </li>
     </ol>

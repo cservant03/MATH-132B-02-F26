@@ -27,6 +27,9 @@
       <!-- Remove the example and replace with your own activities -->
       <xi:include href="./notes/intro-to-prob.ptx"/>
 
+      <xi:include href="./notes/marg-joint-cond-prob.ptx"/>
+
+      <xi:include href="./notes/addition-complement-rules.ptx"/>
       <!-- Add more xi:include files here to include them in the main course -->
     </chapter>
 

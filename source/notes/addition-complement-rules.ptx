@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="addition-complement-rules">
+    <title>The Addition and Complement Rules</title>
+
+    <outcomes>
+        <ol marker="1)">
+            <li>
+                <p>Determine whether two events are mutually exclusive.</p>
+            </li>
+            <li>
+                <p>Use the addition rule to calculate the probability that at least one of two events occurs.</p>
+            </li>
+            <li>
+                <p>Use probability notation to represent unions, intersections, and complements.</p>
+            </li>
+            <li>
+                <p>Identify the complement of an event and calculate its probability.</p>
+            </li>
+            <li>
+                <p>Combine the multiplication, addition, and complement rules to calculate probabilities involving more than one event.</p>
+            </li>
+        </ol>
+    </outcomes>
+
+    <subsection>
+        <title>The Addition Rule</title>
+
+        <definition xml:id="def-mutually-exclusive-events">
+            <title>Mutually Exclusive Events</title>
+
+            <statement>
+                <p>
+
+                </p>
+            </statement>
+        </definition>
+
+        <definition xml:id="def-addition-rule">
+            <title>Addition Rule</title>
+
+            <statement>
+                <p>
+
+                </p>
+            </statement>
+        </definition>
+
+        <example xml:id="ex-pollinator-survey">
+            <title>Pollinator Survey</title>
+
+            <p>
+                Biologists observed 180 insects visiting flowers in a restored meadow. For each insect, they recorded the type of insect and whether visible pollen was present on its body.
+            </p>
+
+            <table xml:id="table-pollinator-survey">
+                <title>Pollinator Type and Visible Pollen</title>
+                <tabular row-headers="yes"
+                        top="minor"
+                        bottom="minor"
+                        left="minor"
+                        right="minor"
+                        halign="center">
+
+                    <row header="yes" bottom="medium">
+                        <cell>Pollinator Type</cell>
+                        <cell>Visible Pollen</cell>
+                        <cell>No Visible Pollen</cell>
+                        <cell>Total</cell>
+                    </row>
+
+                    <row>
+                        <cell>Bumblebee</cell>
+                        <cell>38</cell>
+                        <cell>12</cell>
+                        <cell>50</cell>
+                    </row>
+
+                    <row>
+                        <cell>Honeybee</cell>
+                        <cell>44</cell>
+                        <cell>6</cell>
+                        <cell>50</cell>
+                    </row>
+
+                    <row>
+                        <cell>Butterfly</cell>
+                        <cell>16</cell>
+                        <cell>24</cell>
+                        <cell>40</cell>
+                    </row>
+
+                    <row>
+                        <cell>Hoverfly</cell>
+                        <cell>14</cell>
+                        <cell>26</cell>
+                        <cell>40</cell>
+                    </row>
+
+                    <row top="medium">
+                        <cell>Total</cell>
+                        <cell>112</cell>
+                        <cell>68</cell>
+                        <cell>180</cell>
+                    </row>
+                </tabular>
+            </table>
+
+            <ol marker="1)">
+                <li>
+                    <p>
+                        Let <m>B</m> be the event that a randomly selected insect is a bumblebee and let <m>F</m> be the event that it is a butterfly. Are <m>B</m> and <m>F</m> mutually exclusive? Explain.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Find the probability that a randomly selected insect is a bumblebee or a butterfly. Use probability notation in your answer.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Let <m>E</m> be the event that a randomly selected insect is a bee (a bumblebee or honeybee) and let <m>P</m> be the event that visible pollen is present. Are <m>E</m> and <m>P</m> mutually exclusive? Explain.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Find the probability that a randomly selected insect is a bee or has visible pollen. Use probability notation in your answer.
+                    </p>
+                </li>
+            </ol>
+        </example>
+
+        <example xml:id="ex-mosquito-pools">
+            <title>West Nile Virus in Mosquito Pools</title>
+
+            <p>
+                A public-health laboratory tests one mosquito pool from each of two distant wetlands. The test results from the two wetlands are independent. The probability that the pool from the first wetland tests positive for West Nile virus is <m>0.08</m>, and the probability that the pool from the second wetland tests positive is <m>0.12</m>.
+            </p>
+
+            <ol marker="1)">
+                <li>
+                    <p>What is the probability that both mosquito pools test positive?</p>
+                </li>
+                <li>
+                    <p>What is the probability that both mosquito pools test negative?</p>
+                </li>
+                <li>
+                    <p>
+                        What is the probability that the two mosquito pools have the same test result? Use probability notation and the addition rule in your answer.
+                    </p>
+                </li>
+            </ol>
+        </example>
+    </subsection>
+
+    <subsection>
+        <title>The Complement Rule</title>
+
+        <definition xml:id="def-complement-event">
+            <title>Complement of an Event</title>
+
+            <statement>
+                <p>
+
+                </p>
+            </statement>
+        </definition>
+
+        <definition xml:id="def-complement-rule">
+            <title>Complement Rule</title>
+
+            <statement>
+                <p>
+
+                </p>
+            </statement>
+        </definition>
+
+        <example xml:id="ex-contaminated-dishes">
+            <title>Contaminated Petri Dishes</title>
+
+            <p>
+                A microbiology laboratory prepares eight Petri dishes. Each dish has a <m>0.04</m> probability of being contaminated, independently of the other dishes.
+            </p>
+
+            <ol marker="1)">
+                <li>
+                    <p>
+                        Let <m>A</m> be the event that at least one of the eight dishes is contaminated. Describe <m>A^c</m> in words.
+                    </p>
+                </li>
+                <li>
+                    <p>Find <m>P(A^c)</m>.</p>
+                </li>
+                <li>
+                    <p>Use the complement rule to find <m>P(A)</m>.</p>
+                </li>
+            </ol>
+        </example>
+    </subsection>
+
+    <subsection>
+        <title>Examples</title>
+
+        <example xml:id="ex-seal-health-assessments">
+            <title>Seal Health Assessments</title>
+
+            <p>
+                Veterinarians examined 150 seals at a marine-animal rehabilitation center. They recorded whether each seal was underweight and whether it had a respiratory infection.
+            </p>
+
+            <table xml:id="table-seal-health-assessments">
+                <title>Weight Status and Respiratory Infection Among Seals</title>
+                <tabular row-headers="yes"
+                        top="minor"
+                        bottom="minor"
+                        left="minor"
+                        right="minor"
+                        halign="center">
+
+                    <row header="yes">
+                        <cell></cell>
+                        <cell colspan="2">Respiratory Infection</cell>
+                        <cell></cell>
+                    </row>
+
+                    <row header="yes" bottom="medium">
+                        <cell>Weight Status</cell>
+                        <cell>Present</cell>
+                        <cell>Not Present</cell>
+                        <cell>Total</cell>
+                    </row>
+
+                    <row>
+                        <cell>Underweight</cell>
+                        <cell>24</cell>
+                        <cell>36</cell>
+                        <cell>60</cell>
+                    </row>
+
+                    <row>
+                        <cell>Not Underweight</cell>
+                        <cell>18</cell>
+                        <cell>72</cell>
+                        <cell>90</cell>
+                    </row>
+
+                    <row top="medium">
+                        <cell>Total</cell>
+                        <cell>42</cell>
+                        <cell>108</cell>
+                        <cell>150</cell>
+                    </row>
+                </tabular>
+            </table>
+
+            <ol marker="1)">
+                <li>
+                    <p>
+                        Are the events <q>underweight</q> and <q>respiratory infection present</q> mutually exclusive? Explain.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Find the probability that a randomly selected seal is underweight or has a respiratory infection. Use probability notation in your answer.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Are the events <q>underweight</q> and <q>not underweight</q> mutually exclusive? Explain.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Find the probability that a randomly selected seal is underweight or is not underweight. Explain why your answer makes sense.
+                    </p>
+                </li>
+            </ol>
+        </example>
+
+        <example xml:id="ex-fruit-fly-allele">
+            <title>A Rare Allele in Fruit Flies</title>
+
+            <p>
+                In a large laboratory population of fruit flies, the probability that a randomly selected fly carries a particular allele is <m>0.06</m>. Four flies are selected independently from the population.
+            </p>
+
+            <ol marker="1)">
+                <li>
+                    <p>What is the probability that none of the four flies carries the allele?</p>
+                </li>
+                <li>
+                    <p>What is the probability that at least one of the four flies carries the allele?</p>
+                </li>
+            </ol>
+        </example>
+
+        <example xml:id="ex-vaccine-side-effects">
+            <title>Side Effects in a Vaccine Study</title>
+
+            <p>
+                In a vaccine study, <m>18\%</m> of participants experienced fatigue, <m>11\%</m> experienced a headache, and <m>5\%</m> experienced both fatigue and a headache.
+            </p>
+
+            <ol marker="1)">
+                <li>
+                    <p>
+                        Are the events <q>experienced fatigue</q> and <q>experienced a headache</q> mutually exclusive? Explain.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Find the probability that a randomly selected participant experienced fatigue or a headache.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Find the probability that a randomly selected participant experienced neither fatigue nor a headache.
+                    </p>
+                </li>
+            </ol>
+        </example>
+    </subsection>
+</section>

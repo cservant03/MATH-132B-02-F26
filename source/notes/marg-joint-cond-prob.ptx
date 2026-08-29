@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="marg-joint-cond-prob">
+    <title>Marginal, Joint, and Conditional Probability</title>
+
+    <outcomes>
+        <ol marker="1)">
+            <li>
+            <p>Calculate marginal, joint, and conditional probabilities from a two-way table.</p>
+            </li>
+            <li>
+            <p>Use probability notation to represent marginal, joint, and conditional probabilities.</p>
+            </li>
+            <li>
+            <p>Determine whether two events are independent or dependent.</p>
+            </li>
+            <li>
+            <p>Use the multiplication rule to calculate the probability that two events both occur.</p>
+            </li>
+            <li>
+            <p>Explain how sampling with or without replacement affects the independence of events.</p>
+            </li>
+        </ol>
+    </outcomes>
+
+    <subsection>
+        <title>Marginal Probability</title>
+        
+        <definition xml:id="def-marg-prob">
+            <title>Marginal Probability</title>
+            
+            <statement>
+                <p>
+                    
+                </p>
+            </statement>
+        </definition>
+
+        <example xml:id="ex-marg-prob">
+            <title>Blood Type Distribution</title>
+            
+            <p>
+                Human blood can be classified using the ABO blood group and the Rh factor. The ABO system classifies blood as type A, B, AB, or O based on the antigens found on the surface of red blood cells. The Rh factor classifies blood as positive or negative based on whether the Rh antigen is present. These are estimated frequencies for educational purposes, not observations from a sample of exactly 1,000 people.
+            </p>
+
+                <table xml:id="table-blood-type-rh-factor">
+                    <title>Estimated Blood-Type Frequencies Among 1,000 People in the United States</title>
+                    <tabular row-headers="yes"
+                            top="minor"
+                            bottom="minor"
+                            left="minor"
+                            right="minor"
+                            halign="center">
+                        <row header="yes">
+                        <cell>Rh Factor</cell>
+                        <cell>Type A</cell>
+                        <cell>Type B</cell>
+                        <cell>Type AB</cell>
+                        <cell>Type O</cell>
+                        <cell>Total</cell>
+                        </row>
+                        <row>
+                        <cell>Positive</cell>
+                        <cell>357</cell>
+                        <cell>85</cell>
+                        <cell>34</cell>
+                        <cell>374</cell>
+                        <cell>850</cell>
+                        </row>
+                        <row>
+                        <cell>Negative</cell>
+                        <cell>63</cell>
+                        <cell>15</cell>
+                        <cell>6</cell>
+                        <cell>66</cell>
+                        <cell>150</cell>
+                        </row>
+                        <row>
+                        <cell>Total</cell>
+                        <cell>420</cell>
+                        <cell>100</cell>
+                        <cell>40</cell>
+                        <cell>440</cell>
+                        <cell>1,000</cell>
+                        </row>
+                    </tabular>
+                </table>
+            <ol>
+                <li>
+                    <p>
+                        What is the probability that a randomly selected individual from the US has AB blood?
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        What is the probability that a randomly selected individual from the US has RH negative blood?
+                    </p>
+                </li>
+            </ol>
+        </example>
+    </subsection>
+
+    <subsection>
+        <title>Joint Probability</title>
+        
+        <definition xml:id="def-joint-prob">
+            <title>Joint Probability</title>
+            
+            <statement>
+                <p>
+                    
+                </p>
+            </statement>
+        </definition>
+
+        <example xml:id="ex-joint-prob">
+            <title>Chloroplast Levels</title>
+            
+            <p>
+                A study is conducted to consider the association between the sulfur dioxide level in the air and the mean number of chloroplasts per leaf cell of trees in the area. A sample is chosen of 10 areas known to have a high sulfur dioxide concentration, 10 known to have a normal level of sulfur dioxide, and 10 known to have a low sulfur dioxide concentration. Twenty trees are randomly selected from each level, and the mean number of chloroplasts per leaf cell is determined for each tree. On this basis, each tree is classified as having a low, normal, or high chloroplast count.
+            </p>
+
+                <table xml:id="table-chloro-levels">
+                    <title>Data used for Chloroplast and Sulfuer Dioxide Exposure Association</title>
+                    <tabular row-headers="yes"
+                        top="minor"
+                        bottom="minor"
+                        left="minor"
+                        right="minor"
+                        halign="center">
+
+                    <row header="yes">
+                    <cell></cell>
+                    <cell colspan="3">Chloroplast level</cell>
+                    </row>
+
+                    <row header="yes" bottom="medium">
+                    <cell><m>\mathrm{SO}_2</m> level</cell>
+                    <cell>High</cell>
+                    <cell>Normal</cell>
+                    <cell>Low</cell>
+                    </row>
+
+                    <row>
+                    <cell>High</cell>
+                    <cell>3</cell>
+                    <cell>4</cell>
+                    <cell>13</cell>
+                    </row>
+
+                    <row>
+                    <cell>Normal</cell>
+                    <cell>5</cell>
+                    <cell>10</cell>
+                    <cell>5</cell>
+                    </row>
+
+                    <row>
+                    <cell>Low</cell>
+                    <cell>7</cell>
+                    <cell>11</cell>
+                    <cell>2</cell>
+                    </row>
+
+                </tabular>
+                </table>
+            <ol>
+                <li>
+                    <p>
+                        What is the probability that a randomly selected tree was from an area with high <m>\mathrm{SO}_2</m> levels and had a low chloroplast count?
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        What is the probability that a randomly selected tree was from an area with low <m>\mathrm{SO}_2</m> levels and didn't have a high chloroplast count?
+                    </p>
+                </li>
+            </ol>
+        </example>
+    </subsection>
+
+    <subsection>
+        <title>Multiplication for Independent Events</title>
+        
+        <definition xml:id="def-ind-events">
+            <title>Independent Events</title>
+            
+            <statement>
+                <p>
+                    
+                </p>
+            </statement>
+        </definition>
+
+        <definition xml:id="def-mult-ind">
+            <title>Multiplication Rule for Independent Events</title>
+            
+            <statement>
+                <p>
+                    
+                </p>
+            </statement>
+        </definition>
+
+        <example xml:id="ex-fung-inf">
+            <title>Fungal Infections in Wildlife</title>
+            <p>
+                A wildlife biologist studies fungal infections in two separate animal
+                populations. Of the 60 bats tested, 9 have a fungal infection. Of the
+                70 frogs tested, 14 have a fungal infection. The biologist randomly
+                selects one bat and one frog.
+            </p>
+            <ol marker="1)">
+                <li>
+                    What is the probability that both selected animals have fungal infections?
+                </li>
+                <li>
+                    What is the probability that neither selected animal has a fungal infection?
+                </li>
+                <li>
+                    What is the probability that only the selected frog has a fungal infection?
+                </li>
+                <li>
+                    What is the probability that only the selected bat has a fungal infection?
+                </li>
+            </ol>
+        </example>
+    </subsection>
+
+    <subsection>
+        <title>Conditional Probability</title>
+        
+        <definition xml:id="def-dep-events">
+            <title>Dependent Events</title>
+            
+            <statement>
+                <p>
+                    
+                </p>
+            </statement>
+        </definition>
+
+        <definition xml:id="def-cond-prob">
+            <title>Conditional Probability</title>
+            
+            <statement>
+                <p>
+                    
+                </p>
+            </statement>
+        </definition>
+
+        <example xml:id="ex-blood-inf">
+            <title>Blood Infusion Neccesity</title>
+            <p>
+                A study was conducted to ascertain factors that influence a physician's decision to transfuse a patient. A sample of 49 attending physicians was selected. Each physician was asked a question concerning the frequency with which an unnecessary transfusion was given because anout physician suggested it. The same question was asked of a smaple of 71 residents.
+            </p>
+
+            <table xml:id="table-blood-inf">
+                <title>Data used for Physician Type and Blood Infusion Association</title>
+                <tabular row-headers="yes"
+                    top="minor"
+                    bottom="minor"
+                    left="minor"
+                    right="minor"
+                    halign="center">
+
+                    <row header="yes">
+                    <cell></cell>
+                    <cell colspan="5">Frequency of Unnecessary Transfusion</cell>
+                    </row>
+
+                    <row header="yes" bottom="medium">
+                    <cell>Physician Type</cell>
+                    <cell>
+                        <line>Very Frequent</line>
+                        <line>(1 per week)</line>
+                    </cell>
+                        <cell>
+                        <line>Frequent</line>
+                        <line>(1 per 2 weeks)</line>
+                    </cell>
+                        <cell>
+                        <line>Occasionally</line>
+                        <line>(1 per month)</line>
+                    </cell>
+                        <cell>
+                        <line>Rarely</line>
+                        <line>(1 per 2 months)</line>
+                    </cell>
+                    <cell>Never</cell>
+                    </row>
+
+                    <row>
+                    <cell>Attending</cell>
+                    <cell>1</cell>
+                    <cell>1</cell>
+                    <cell>3</cell>
+                    <cell>31</cell>
+                    <cell>13</cell>
+                    </row>
+
+                    <row>
+                    <cell>Resident</cell>
+                    <cell>2</cell>
+                    <cell>13</cell>
+                    <cell>28</cell>
+                    <cell>23</cell>
+                    <cell>4</cell>
+                    </row>
+                </tabular>
+            </table>
+
+            <ol>
+                <li>
+                What is the probability that a randomly selected physician is an attending
+                physician, given that the physician answered <q>Rarely</q>? Round your answer to three decimal places.
+                </li>
+
+                <li>
+                Find the proportion of physicians who answered <q>Rarely</q> who are resident physicians. Include probability notation in your answer and round to three decimal places.
+                </li>
+
+                <li>
+                Thirteen attending physicians answered <q>Never</q>, and thirteen
+                resident physicians answered <q>Frequent</q>. Does this mean that
+                the probability that an attending physician answered
+                <q>Never</q> is equal to the probability that a resident physician
+                answered <q>Frequent</q>? Calculate both probabilities and explain.
+                </li>
+
+                <li>
+                Find the probability that a randomly selected attending physician
+                answered <q>Rarely</q>. Compare this with the probability found in
+                the first question. Explain why the probabilities are different
+                even though both calculations use the same table entry.
+                </li>
+            </ol>
+        </example>
+
+        <definition xml:id="def-mult-dep">
+            <title>Multiplication Rule for Dependent Events</title>
+            <statement>
+                <p>
+                    
+                </p>
+            </statement>
+        </definition>
+
+        <example xml:id="ex-joint-prob-2">
+            <title>Chloroplast Levels 2</title>
+            <p>
+                Return to <xref ref="ex-joint-prob"/> and answer the first question again using the multiplication rule for dependent events.
+            </p>
+        </example>
+    </subsection>
+
+    <subsection>
+        <title>Examples</title>
+        <example xml:id="ex-anti-res">
+            <title>Antibiotic-Resistant Cultures</title>
+
+            <p>
+                A microbiology laboratory has 18 bacterial cultures in identical
+                tubes. Six contain bacteria resistant to an antibiotic, and 12
+                contain bacteria susceptible to it. A technician randomly selects
+                two tubes.
+
+                <ol>
+                <li>
+                    Suppose the technician records the first tube's result and
+                    returns it to the rack before selecting the second tube. Find
+                    the probability that both selected cultures are resistant.
+                </li>
+
+                <li>
+                    Suppose the technician sets the first tube aside before
+                    selecting the second tube. Find the probability that both
+                    selected cultures are resistant.
+                </li>
+
+                <li>
+                    Explain why the probabilities with replacement and without
+                    replacement are different.
+                </li>
+
+                <li>
+                    In which sampling method are the two selections independent?
+                    Explain.
+                </li>
+                </ol>
+            </p>
+            </example>
+
+            <example xml:id="ex-nest-loc-fled">
+            <title>Nest Location and Fledging Success</title>
+
+            <p>
+                Ecologists monitored 180 songbird nests. They recorded whether each
+                nest was located in a natural tree cavity or an artificial nest box
+                and whether the nest successfully produced at least one fledgling.
+            </p>
+            
+            <table xml:id="table-nest-loc-fled">
+                <title>Songbird Nest Location and Fledging Success</title>
+                <tabular row-headers="yes"
+                        top="minor"
+                        bottom="minor"
+                        left="minor"
+                        right="minor"
+                        halign="center">
+
+                    <row header="yes" bottom="medium">
+                    <cell>Nest Location</cell>
+                    <cell>Successful</cell>
+                    <cell>Unsuccessful</cell>
+                    <cell>Total</cell>
+                    </row>
+
+                    <row>
+                    <cell>Natural Tree Cavity</cell>
+                    <cell>54</cell>
+                    <cell>18</cell>
+                    <cell>72</cell>
+                    </row>
+
+                    <row>
+                    <cell>Artificial Nest Box</cell>
+                    <cell>72</cell>
+                    <cell>36</cell>
+                    <cell>108</cell>
+                    </row>
+
+                    <row top="medium">
+                    <cell>Total</cell>
+                    <cell>126</cell>
+                    <cell>54</cell>
+                    <cell>180</cell>
+                    </row>
+                </tabular>
+            </table>
+
+            <p>
+                <ol>
+                <li>
+                    Find the probability that a randomly selected nest was located
+                    in an artificial nest box and was successful.
+                </li>
+
+                <li>
+                    Among nests located in artificial nest boxes, find the
+                    probability that a randomly selected nest was successful.
+                </li>
+
+                <li>
+                    Among successful nests, find the probability that a randomly
+                    selected nest was located in an artificial nest box.
+                </li>
+
+                <li>
+                    The same table entry is used in all three calculations. Explain
+                    why the resulting probabilities are different.
+                </li>
+                </ol>
+            </p>
+            </example>
+
+            <example xml:id="ex-sea-turtles">
+            <title>Plastic Ingestion in Sea Turtles</title>
+
+            <p>
+                At a wildlife rehabilitation center, <m>60\%</m> of admitted sea
+                turtles are juveniles and <m>40\%</m> are adults. Evidence of plastic
+                ingestion is found in <m>30\%</m> of the juvenile turtles and
+                <m>15\%</m> of the adult turtles.
+
+                <ol>
+                <li>
+                    Find the probability that a randomly selected admitted turtle
+                    is a juvenile with evidence of plastic ingestion.
+                </li>
+
+                <li>
+                    Find the probability that a randomly selected admitted turtle
+                    is an adult with evidence of plastic ingestion.
+                </li>
+
+                <li>
+                    Find the probability that a randomly selected admitted turtle
+                    has evidence of plastic ingestion.
+                </li>
+
+                <li>
+                    Given that an admitted turtle has evidence of plastic ingestion,
+                    find the probability that it is a juvenile.
+                </li>
+                </ol>
+            </p>
+            </example>
+    </subsection>
+</section>

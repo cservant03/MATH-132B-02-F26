@@ -28,7 +28,7 @@
     </ol>
   </outcomes>
 
-  <subsection xml:id="definitions">
+  <subsection>
     <title>Definitions</title>
     
     <definition xml:id="def-sample-space">
@@ -128,7 +128,7 @@
     </definition>
   </subsection>
 
-  <subsection xml:id="examples">
+  <subsection>
     <title>Exmaples</title>
     
     <example xml:id="ex-two-dice">
