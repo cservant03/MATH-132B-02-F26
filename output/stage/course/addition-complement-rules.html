@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Addition and Complement Rules</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="external/custom.css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Biostatistics">
+<meta property="og:title" content="Biostatistics">
+<meta property="book:title" content="Biostatistics">
+<meta name="twitter:description" content="MATH 132B Semester Fall 2026">
+<meta property="og:description" content="MATH 132B Semester Fall 2026">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.45"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.10';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.e3f9706509fcf6f7.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.c5ba0ffa5f963084.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.efe427683fc41f98.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="root-1-2.html"><span class="title">Biostatistics</span> <span class="subtitle">MATH 132B Semester Fall 2026</span></a></div>
+<p class="byline">Instructor Christopher</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-embed-button" class="ptx-embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><dialog class="ptx-dialog ptx-embed-popup" id="ptx-embed-popup"><div class="ptx-embed-popup-controls">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<button class="ptx-embed-close-button button" id="ptx-embed-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-embed-code-container">
+<textarea class="ptx-embed-code-textbox" id="ptx-embed-code-textbox" readonly aria-label="Embed"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button autofocus="autofocus" class="ptx-embed-copy-button button" id="ptx-embed-copy-button" title="Copy"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="marg-joint-cond-prob.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="notes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="course-documents.html" class="internal"><span class="title">Course Documents</span></a></div>
+<ul id="ptx-toc-group-course-documents" class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="syllabus.html" class="internal"><span class="title">Syllabus</span></a></div>
+<ul id="ptx-toc-group-syllabus" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#instructor-info" class="internal"><span class="title">Instructor Information</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#course-info" class="internal"><span class="title">Course Information</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#course-desc" class="internal"><span class="title">Course Description</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#course-materials" class="internal"><span class="title">Course Matrials</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#online-course-comp" class="internal"><span class="title">Online Course Component</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#course-outcomes" class="internal"><span class="title">Course Outcomes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#eval" class="internal"><span class="title">Evaluatation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#grade" class="internal"><span class="title">Grading</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#tips" class="internal"><span class="title">Tips for Success</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#academic-integrity" class="internal"><span class="title">Academic Integrity Policy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#withdrawal-policy" class="internal"><span class="title">Withdrawal Policy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#important-dates" class="internal"><span class="title">Important Dates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#disability-statement" class="internal"><span class="title">Disability Statement</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#nondiscrimination-statement" class="internal"><span class="title">Non-Discrimination Statement</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#land-acknowledgment" class="internal"><span class="title">Land Acknowledgment Statement</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#tentative-syllabus" class="internal"><span class="title">Tentative Syllabus</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="notes.html" class="internal"><span class="title">Notes</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-notes">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-intro-to-prob.html" class="internal"><span class="title">Introduction to Probability</span></a></div>
+<ul id="ptx-toc-group-notes-intro-to-prob" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-intro-to-prob.html#notes-intro-to-prob-3" class="internal"><span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-intro-to-prob.html#notes-intro-to-prob-4" class="internal"><span class="title">Exmaples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="marg-joint-cond-prob.html" class="internal"><span class="title">Marginal, Joint, and Conditional Probability</span></a></div>
+<ul id="ptx-toc-group-marg-joint-cond-prob" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-3" class="internal"><span class="title">Marginal Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-4" class="internal"><span class="title">Joint Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-5" class="internal"><span class="title">Multiplication for Independent Events</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-6" class="internal"><span class="title">Conditional Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-7" class="internal"><span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="addition-complement-rules.html" class="internal"><span class="title">The Addition and Complement Rules</span></a></div>
+<ul class="structural toc-item-list active" id="ptx-toc-group-addition-complement-rules">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="addition-complement-rules.html#addition-complement-rules-3" class="internal"><span class="title">The Addition Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="addition-complement-rules.html#addition-complement-rules-4" class="internal"><span class="title">The Complement Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="addition-complement-rules.html#addition-complement-rules-5" class="internal"><span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="addition-complement-rules">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Addition and Complement Rules</span>
+</h1>
+<article class="outcomes goal-like" id="addition-complement-rules-2"><h2 class="heading"><span class="type">Outcomes</span></h2>
+<ol class="decimal ol-marker-2" id="addition-complement-rules-2-1">
+<li id="addition-complement-rules-2-1-1">
+<div class="para" id="addition-complement-rules-2-1-1-1">Determine whether two events are mutually exclusive.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#addition-complement-rules-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Outcome 1"><a tabindex="-1" href="#addition-complement-rules-2-1-1" title="Copy heading and permalink for Outcome 1" aria-label="Copy heading and permalink for Outcome 1">🔗</a></div>
+</li>
+<li id="addition-complement-rules-2-1-2">
+<div class="para" id="addition-complement-rules-2-1-2-1">Use the addition rule to calculate the probability that at least one of two events occurs.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#addition-complement-rules-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Outcome 2"><a tabindex="-1" href="#addition-complement-rules-2-1-2" title="Copy heading and permalink for Outcome 2" aria-label="Copy heading and permalink for Outcome 2">🔗</a></div>
+</li>
+<li id="addition-complement-rules-2-1-3">
+<div class="para" id="addition-complement-rules-2-1-3-1">Use probability notation to represent unions, intersections, and complements.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#addition-complement-rules-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Outcome 3"><a tabindex="-1" href="#addition-complement-rules-2-1-3" title="Copy heading and permalink for Outcome 3" aria-label="Copy heading and permalink for Outcome 3">🔗</a></div>
+</li>
+<li id="addition-complement-rules-2-1-4">
+<div class="para" id="addition-complement-rules-2-1-4-1">Identify the complement of an event and calculate its probability.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#addition-complement-rules-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Outcome 4"><a tabindex="-1" href="#addition-complement-rules-2-1-4" title="Copy heading and permalink for Outcome 4" aria-label="Copy heading and permalink for Outcome 4">🔗</a></div>
+</li>
+<li id="addition-complement-rules-2-1-5">
+<div class="para" id="addition-complement-rules-2-1-5-1">Combine the multiplication, addition, and complement rules to calculate probabilities involving more than one event.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#addition-complement-rules-2-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Outcome 5"><a tabindex="-1" href="#addition-complement-rules-2-1-5" title="Copy heading and permalink for Outcome 5" aria-label="Copy heading and permalink for Outcome 5">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Outcomes"><a tabindex="-1" href="#addition-complement-rules-2" title="Copy heading and permalink for Outcomes" aria-label="Copy heading and permalink for Outcomes">🔗</a></div>
+</article>
+<section class="subsection" id="addition-complement-rules-3">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Addition Rule</span>
+</h2>
+<article class="definition definition-like" id="def-mutually-exclusive-events"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">30</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Mutually Exclusive Events.</span>
+</h3>
+<div class="para" id="def-mutually-exclusive-events-2-1"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-mutually-exclusive-events-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 30: Mutually Exclusive Events"><a tabindex="-1" href="#def-mutually-exclusive-events" title="Copy heading and permalink for Definition 30: Mutually Exclusive Events" aria-label="Copy heading and permalink for Definition 30: Mutually Exclusive Events">🔗</a></div>
+</article>
+<article class="definition definition-like" id="def-addition-rule"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">31</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Addition Rule.</span>
+</h3>
+<div class="para" id="def-addition-rule-2-1"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-addition-rule-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 31: Addition Rule"><a tabindex="-1" href="#def-addition-rule" title="Copy heading and permalink for Definition 31: Addition Rule" aria-label="Copy heading and permalink for Definition 31: Addition Rule">🔗</a></div>
+</article>
+<article class="example example-like" id="ex-pollinator-survey"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">32</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Pollinator Survey.</span>
+</h3>
+<div class="para" id="ex-pollinator-survey-2">Biologists observed 180 insects visiting flowers in a restored meadow. For each insect, they recorded the type of insect and whether visible pollen was present on its body.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-pollinator-survey-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="table-pollinator-survey"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">33<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Pollinator Type and Visible Pollen<div class="autopermalink" aria-hidden="true" data-description="Table 33: Pollinator Type and Visible Pollen"><a tabindex="-1" href="#table-pollinator-survey" title="Copy heading and permalink for Table 33: Pollinator Type and Visible Pollen" aria-label="Copy heading and permalink for Table 33: Pollinator Type and Visible Pollen">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b2 r1 l1 t1 lines">Pollinator Type</th>
+<th scope="col" class="c m b2 r1 l0 t1 lines">Visible Pollen</th>
+<th scope="col" class="c m b2 r1 l0 t1 lines">No Visible Pollen</th>
+<th scope="col" class="c m b2 r1 l0 t1 lines">Total</th>
+</tr>
+<tr>
+<th scope="row" class="c m b1 r1 l1 t0 lines">Bumblebee</th>
+<td class="c m b1 r1 l0 t0 lines">38</td>
+<td class="c m b1 r1 l0 t0 lines">12</td>
+<td class="c m b1 r1 l0 t0 lines">50</td>
+</tr>
+<tr>
+<th scope="row" class="c m b1 r1 l1 t0 lines">Honeybee</th>
+<td class="c m b1 r1 l0 t0 lines">44</td>
+<td class="c m b1 r1 l0 t0 lines">6</td>
+<td class="c m b1 r1 l0 t0 lines">50</td>
+</tr>
+<tr>
+<th scope="row" class="c m b1 r1 l1 t0 lines">Butterfly</th>
+<td class="c m b1 r1 l0 t0 lines">16</td>
+<td class="c m b1 r1 l0 t0 lines">24</td>
+<td class="c m b1 r1 l0 t0 lines">40</td>
+</tr>
+<tr>
+<th scope="row" class="c m b1 r1 l1 t0 lines">Hoverfly</th>
+<td class="c m b1 r1 l0 t0 lines">14</td>
+<td class="c m b1 r1 l0 t0 lines">26</td>
+<td class="c m b1 r1 l0 t0 lines">40</td>
+</tr>
+<tr>
+<th scope="row" class="c m b1 r1 l1 t0 lines">Total</th>
+<td class="c m b1 r1 l0 t0 lines">112</td>
+<td class="c m b1 r1 l0 t0 lines">68</td>
+<td class="c m b1 r1 l0 t0 lines">180</td>
+</tr>
+</table></div>
+</figure>
+<ol class="decimal ol-marker-2" id="ex-pollinator-survey-4">
+<li id="ex-pollinator-survey-4-1">
+<div class="para" id="ex-pollinator-survey-4-1-1">Let <span class="process-math">\(B\)</span> be the event that a randomly selected insect is a bumblebee and let <span class="process-math">\(F\)</span> be the event that it is a butterfly. Are <span class="process-math">\(B\)</span> and <span class="process-math">\(F\)</span> mutually exclusive? Explain.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-pollinator-survey-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#ex-pollinator-survey-4-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="ex-pollinator-survey-4-2">
+<div class="para" id="ex-pollinator-survey-4-2-1">Find the probability that a randomly selected insect is a bumblebee or a butterfly. Use probability notation in your answer.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-pollinator-survey-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#ex-pollinator-survey-4-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="ex-pollinator-survey-4-3">
+<div class="para" id="ex-pollinator-survey-4-3-1">Let <span class="process-math">\(E\)</span> be the event that a randomly selected insect is a bee (a bumblebee or honeybee) and let <span class="process-math">\(P\)</span> be the event that visible pollen is present. Are <span class="process-math">\(E\)</span> and <span class="process-math">\(P\)</span> mutually exclusive? Explain.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-pollinator-survey-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#ex-pollinator-survey-4-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="ex-pollinator-survey-4-4">
+<div class="para" id="ex-pollinator-survey-4-4-1">Find the probability that a randomly selected insect is a bee or has visible pollen. Use probability notation in your answer.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-pollinator-survey-4-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#ex-pollinator-survey-4-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Example 32: Pollinator Survey"><a tabindex="-1" href="#ex-pollinator-survey" title="Copy heading and permalink for Example 32: Pollinator Survey" aria-label="Copy heading and permalink for Example 32: Pollinator Survey">🔗</a></div>
+</article>
+<article class="example example-like" id="ex-mosquito-pools"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">34</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">West Nile Virus in Mosquito Pools.</span>
+</h3>
+<div class="para" id="ex-mosquito-pools-2">A public-health laboratory tests one mosquito pool from each of two distant wetlands. The test results from the two wetlands are independent. The probability that the pool from the first wetland tests positive for West Nile virus is <span class="process-math">\(0.08\text{,}\)</span> and the probability that the pool from the second wetland tests positive is <span class="process-math">\(0.12\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-mosquito-pools-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal ol-marker-2" id="ex-mosquito-pools-3">
+<li id="ex-mosquito-pools-3-1">
+<div class="para" id="ex-mosquito-pools-3-1-1">What is the probability that both mosquito pools test positive?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-mosquito-pools-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#ex-mosquito-pools-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="ex-mosquito-pools-3-2">
+<div class="para" id="ex-mosquito-pools-3-2-1">What is the probability that both mosquito pools test negative?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-mosquito-pools-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#ex-mosquito-pools-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="ex-mosquito-pools-3-3">
+<div class="para" id="ex-mosquito-pools-3-3-1">What is the probability that the two mosquito pools have the same test result? Use probability notation and the addition rule in your answer.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-mosquito-pools-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#ex-mosquito-pools-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Example 34: West Nile Virus in Mosquito Pools"><a tabindex="-1" href="#ex-mosquito-pools" title="Copy heading and permalink for Example 34: West Nile Virus in Mosquito Pools" aria-label="Copy heading and permalink for Example 34: West Nile Virus in Mosquito Pools">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection: The Addition Rule"><a tabindex="-1" href="#addition-complement-rules-3" title="Copy heading and permalink for Subsection: The Addition Rule" aria-label="Copy heading and permalink for Subsection: The Addition Rule">🔗</a></div>
+</section>
+<section class="subsection" id="addition-complement-rules-4">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Complement Rule</span>
+</h2>
+<article class="definition definition-like" id="def-complement-event"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">35</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Complement of an Event.</span>
+</h3>
+<div class="para" id="def-complement-event-2-1"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-complement-event-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 35: Complement of an Event"><a tabindex="-1" href="#def-complement-event" title="Copy heading and permalink for Definition 35: Complement of an Event" aria-label="Copy heading and permalink for Definition 35: Complement of an Event">🔗</a></div>
+</article>
+<article class="definition definition-like" id="def-complement-rule"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">36</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Complement Rule.</span>
+</h3>
+<div class="para" id="def-complement-rule-2-1"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-complement-rule-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 36: Complement Rule"><a tabindex="-1" href="#def-complement-rule" title="Copy heading and permalink for Definition 36: Complement Rule" aria-label="Copy heading and permalink for Definition 36: Complement Rule">🔗</a></div>
+</article>
+<article class="example example-like" id="ex-contaminated-dishes"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">37</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Contaminated Petri Dishes.</span>
+</h3>
+<div class="para" id="ex-contaminated-dishes-2">A microbiology laboratory prepares eight Petri dishes. Each dish has a <span class="process-math">\(0.04\)</span> probability of being contaminated, independently of the other dishes.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-contaminated-dishes-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal ol-marker-2" id="ex-contaminated-dishes-3">
+<li id="ex-contaminated-dishes-3-1">
+<div class="para" id="ex-contaminated-dishes-3-1-1">Let <span class="process-math">\(A\)</span> be the event that at least one of the eight dishes is contaminated. Describe <span class="process-math">\(A^c\)</span> in words.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-contaminated-dishes-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#ex-contaminated-dishes-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="ex-contaminated-dishes-3-2">
+<div class="para" id="ex-contaminated-dishes-3-2-1">Find <span class="process-math">\(P(A^c)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-contaminated-dishes-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#ex-contaminated-dishes-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="ex-contaminated-dishes-3-3">
+<div class="para" id="ex-contaminated-dishes-3-3-1">Use the complement rule to find <span class="process-math">\(P(A)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-contaminated-dishes-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#ex-contaminated-dishes-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Example 37: Contaminated Petri Dishes"><a tabindex="-1" href="#ex-contaminated-dishes" title="Copy heading and permalink for Example 37: Contaminated Petri Dishes" aria-label="Copy heading and permalink for Example 37: Contaminated Petri Dishes">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection: The Complement Rule"><a tabindex="-1" href="#addition-complement-rules-4" title="Copy heading and permalink for Subsection: The Complement Rule" aria-label="Copy heading and permalink for Subsection: The Complement Rule">🔗</a></div>
+</section>
+<section class="subsection" id="addition-complement-rules-5">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Examples</span>
+</h2>
+<article class="example example-like" id="ex-seal-health-assessments"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">38</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Seal Health Assessments.</span>
+</h3>
+<div class="para" id="ex-seal-health-assessments-2">Veterinarians examined 150 seals at a marine-animal rehabilitation center. They recorded whether each seal was underweight and whether it had a respiratory infection.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-seal-health-assessments-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="table-seal-health-assessments"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">39<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Weight Status and Respiratory Infection Among Seals<div class="autopermalink" aria-hidden="true" data-description="Table 39: Weight Status and Respiratory Infection Among Seals"><a tabindex="-1" href="#table-seal-health-assessments" title="Copy heading and permalink for Table 39: Weight Status and Respiratory Infection Among Seals" aria-label="Copy heading and permalink for Table 39: Weight Status and Respiratory Infection Among Seals">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b1 r1 l1 t1 lines"></th>
+<th scope="col" class="c m b1 r1 l0 t1 lines" colspan="2">Respiratory Infection</th>
+<th scope="col" class="c m b1 r1 l0 t1 lines"></th>
+</tr>
+<tr class="header-horizontal">
+<th scope="col" class="c m b2 r1 l1 t0 lines">Weight Status</th>
+<th scope="col" class="c m b2 r1 l0 t0 lines">Present</th>
+<th scope="col" class="c m b2 r1 l0 t0 lines">Not Present</th>
+<th scope="col" class="c m b2 r1 l0 t0 lines">Total</th>
+</tr>
+<tr>
+<th scope="row" class="c m b1 r1 l1 t0 lines">Underweight</th>
+<td class="c m b1 r1 l0 t0 lines">24</td>
+<td class="c m b1 r1 l0 t0 lines">36</td>
+<td class="c m b1 r1 l0 t0 lines">60</td>
+</tr>
+<tr>
+<th scope="row" class="c m b1 r1 l1 t0 lines">Not Underweight</th>
+<td class="c m b1 r1 l0 t0 lines">18</td>
+<td class="c m b1 r1 l0 t0 lines">72</td>
+<td class="c m b1 r1 l0 t0 lines">90</td>
+</tr>
+<tr>
+<th scope="row" class="c m b1 r1 l1 t0 lines">Total</th>
+<td class="c m b1 r1 l0 t0 lines">42</td>
+<td class="c m b1 r1 l0 t0 lines">108</td>
+<td class="c m b1 r1 l0 t0 lines">150</td>
+</tr>
+</table></div>
+</figure>
+<ol class="decimal ol-marker-2" id="ex-seal-health-assessments-4">
+<li id="ex-seal-health-assessments-4-1">
+<div class="para" id="ex-seal-health-assessments-4-1-1">Are the events “underweight” and “respiratory infection present” mutually exclusive? Explain.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-seal-health-assessments-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#ex-seal-health-assessments-4-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="ex-seal-health-assessments-4-2">
+<div class="para" id="ex-seal-health-assessments-4-2-1">Find the probability that a randomly selected seal is underweight or has a respiratory infection. Use probability notation in your answer.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-seal-health-assessments-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#ex-seal-health-assessments-4-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="ex-seal-health-assessments-4-3">
+<div class="para" id="ex-seal-health-assessments-4-3-1">Are the events “underweight” and “not underweight” mutually exclusive? Explain.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-seal-health-assessments-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#ex-seal-health-assessments-4-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="ex-seal-health-assessments-4-4">
+<div class="para" id="ex-seal-health-assessments-4-4-1">Find the probability that a randomly selected seal is underweight or is not underweight. Explain why your answer makes sense.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-seal-health-assessments-4-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#ex-seal-health-assessments-4-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Example 38: Seal Health Assessments"><a tabindex="-1" href="#ex-seal-health-assessments" title="Copy heading and permalink for Example 38: Seal Health Assessments" aria-label="Copy heading and permalink for Example 38: Seal Health Assessments">🔗</a></div>
+</article>
+<article class="example example-like" id="ex-fruit-fly-allele"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">40</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Rare Allele in Fruit Flies.</span>
+</h3>
+<div class="para" id="ex-fruit-fly-allele-2">In a large laboratory population of fruit flies, the probability that a randomly selected fly carries a particular allele is <span class="process-math">\(0.06\text{.}\)</span> Four flies are selected independently from the population.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-fruit-fly-allele-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal ol-marker-2" id="ex-fruit-fly-allele-3">
+<li id="ex-fruit-fly-allele-3-1">
+<div class="para" id="ex-fruit-fly-allele-3-1-1">What is the probability that none of the four flies carries the allele?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-fruit-fly-allele-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#ex-fruit-fly-allele-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="ex-fruit-fly-allele-3-2">
+<div class="para" id="ex-fruit-fly-allele-3-2-1">What is the probability that at least one of the four flies carries the allele?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-fruit-fly-allele-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#ex-fruit-fly-allele-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Example 40: A Rare Allele in Fruit Flies"><a tabindex="-1" href="#ex-fruit-fly-allele" title="Copy heading and permalink for Example 40: A Rare Allele in Fruit Flies" aria-label="Copy heading and permalink for Example 40: A Rare Allele in Fruit Flies">🔗</a></div>
+</article>
+<article class="example example-like" id="ex-vaccine-side-effects"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">41</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Side Effects in a Vaccine Study.</span>
+</h3>
+<div class="para" id="ex-vaccine-side-effects-2">In a vaccine study, <span class="process-math">\(18\%\)</span> of participants experienced fatigue, <span class="process-math">\(11\%\)</span> experienced a headache, and <span class="process-math">\(5\%\)</span> experienced both fatigue and a headache.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-vaccine-side-effects-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal ol-marker-2" id="ex-vaccine-side-effects-3">
+<li id="ex-vaccine-side-effects-3-1">
+<div class="para" id="ex-vaccine-side-effects-3-1-1">Are the events “experienced fatigue” and “experienced a headache” mutually exclusive? Explain.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-vaccine-side-effects-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#ex-vaccine-side-effects-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="ex-vaccine-side-effects-3-2">
+<div class="para" id="ex-vaccine-side-effects-3-2-1">Find the probability that a randomly selected participant experienced fatigue or a headache.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-vaccine-side-effects-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#ex-vaccine-side-effects-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="ex-vaccine-side-effects-3-3">
+<div class="para" id="ex-vaccine-side-effects-3-3-1">Find the probability that a randomly selected participant experienced neither fatigue nor a headache.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-vaccine-side-effects-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#ex-vaccine-side-effects-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Example 41: Side Effects in a Vaccine Study"><a tabindex="-1" href="#ex-vaccine-side-effects" title="Copy heading and permalink for Example 41: Side Effects in a Vaccine Study" aria-label="Copy heading and permalink for Example 41: Side Effects in a Vaccine Study">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection: Examples"><a tabindex="-1" href="#addition-complement-rules-5" title="Copy heading and permalink for Subsection: Examples" aria-label="Copy heading and permalink for Subsection: Examples">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section: The Addition and Complement Rules"><a tabindex="-1" href="#addition-complement-rules" title="Copy heading and permalink for Section: The Addition and Complement Rules" aria-label="Copy heading and permalink for Section: The Addition and Complement Rules">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="marg-joint-cond-prob.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

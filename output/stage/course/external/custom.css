@@ -45,3 +45,127 @@ a.mathjax-link {
 #ex-cards {
   padding-bottom: 4in;
 }
+
+#def-marg-prob {
+  padding-bottom: 1.25in;
+}
+
+#table-blood-type-rh-factor table tr:nth-child(2n) > * {
+  background-color: #F6E4FC;
+}
+
+#ex-marg-prob {
+  padding-bottom: 2in;
+}
+
+#def-joint-prob {
+  padding-bottom: 1.25in;
+}
+
+#ex-joint-prob {
+  padding-bottom: 2in;
+}
+
+#table-chloro-levels table tr:nth-child(2n+3) > * {
+  background-color: #F6E4FC;
+}
+
+#def-ind-events {
+  padding-bottom: 1.25in;
+}
+
+#def-mult-ind {
+  padding-bottom: 1.25in;
+}
+
+#ex-fung-inf {
+  padding-bottom: 3in;
+}
+
+#def-dep-events {
+  padding-bottom: 1.25in;
+}
+
+#def-cond-prob {
+  padding-bottom: 1.25in;
+}
+
+#table-blood-inf table tr:nth-child(2n+3) > * {
+  background-color: #F6E4FC;
+}
+
+#ex-blood-inf {
+  padding-bottom: 3in;
+}
+
+#def-mult-dep {
+  padding-bottom: 1.25in;
+}
+
+#ex-joint-prob-2 {
+  padding-bottom: 2in;
+}
+
+#ex-anti-res {
+  padding-bottom: 3in;
+}
+
+#ex-nest-loc-fled {
+  padding-bottom: 3in;
+}
+
+#ex-sea-turtles {
+  padding-bottom: 3in;
+}
+
+#table-nest-loc-fled table tr:nth-child(2n) > * {
+  background-color: #F6E4FC;
+}
+
+#def-mutually-exclusive-events {
+  padding-bottom: 1.25in;
+}
+
+#def-addition-rule {
+  padding-bottom: 1.25in;
+}
+
+#ex-pollinator-survey {
+  padding-bottom: 3in;
+}
+
+#ex-mosquito-pools {
+  padding-bottom: 2in;
+}
+
+#def-complement-event {
+  padding-bottom: 1.25in;
+}
+
+#def-complement-rule {
+  padding-bottom: 1.25in;
+}
+
+#ex-contaminated-dishes {
+  padding-bottom: 3in;
+}
+
+#ex-seal-health-assessments {
+  padding-bottom: 3in;
+}
+
+#ex-fruit-fly-allele {
+  padding-bottom: 3in;
+}
+
+#ex-vaccine-side-effects {
+  padding-bottom: 3in;
+}
+
+#table-pollinator-survey table tr:nth-child(2n) > * {
+  background-color: #F6E4FC;
+}
+
+#table-seal-health-assessments table tr:nth-child(2n+3) > * {
+  background-color: #F6E4FC;
+}
