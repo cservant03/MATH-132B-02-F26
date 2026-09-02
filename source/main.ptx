@@ -10,30 +10,22 @@
 
     <subtitle>MATH 132B Semester Fall 2026</subtitle>
 
-    <!-- Optional: include frontmatter with author info and date -->
     <xi:include href="./frontmatter.ptx" />
 
     <chapter xml:id="course-documents">
       <title>Course Documents</title>
 
-      <!-- Course syllabus -->
       <xi:include href="./syllabus/syllabus.ptx" />
-      <!-- Other documents could go here, like a schedule, project description, etc. -->
     </chapter>
 
     <chapter xml:id="notes">
       <title>Notes</title>
 
-      <!-- Remove the example and replace with your own activities -->
       <xi:include href="./notes/intro-to-prob.ptx"/>
-
       <xi:include href="./notes/marg-joint-cond-prob.ptx"/>
-
       <xi:include href="./notes/addition-complement-rules.ptx"/>
-      <!-- Add more xi:include files here to include them in the main course -->
+      <xi:include href="./notes/describing-categorical-data.ptx"/>
     </chapter>
-
-    <!-- Include additional chapters for other categories -->
 
     </book>
   </pretext>

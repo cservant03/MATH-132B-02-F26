@@ -1,0 +1,482 @@
+<section xml:id="sec-describing-categorical-data">
+  <title>Describing Categorical Data</title>
+
+  <introduction>
+    <p>
+      A dataset contains information about <term>individuals</term> or
+      <term>observational units</term>. For example, the individuals in a
+      biological study might be bacterial isolates, patients, plants, or
+      animals. A <term>variable</term> records a characteristic of each
+      individual. Before summarizing a variable, we must determine whether its
+      data are categorical or numerical.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-types-of-data">
+    <title>Categorical and Numerical Data</title>
+
+    <definition xml:id="def-categorical-data">
+      <title>Categorical Data</title>
+      <p> </p>
+    </definition>
+
+    <definition xml:id="def-numerical-data">
+      <title>Numerical Data</title>
+      <p> </p>
+    </definition>
+
+    <note xml:id="rem-numerical-labels">
+      <p>
+        A variable is not necessarily numerical just because numbers are used as its labels. For example, the numbers on jerseys are numbers that identify categories. Adding or averaging those numbers would not have a meaningful interpretation, so the variable is categorical.
+      </p>
+    </note>
+
+    <example xml:id="ex-classify-biological-variables">
+      <title>Classifying Biological Variables</title>
+      <p>
+        Determine whether each variable is categorical or numerical.
+      </p>
+      <ol>
+        <li>
+          <p>The blood type of a patient</p>
+        </li>
+        <li>
+          <p>The number of bacterial colonies on a plate</p>
+        </li>
+        <li>
+          <p>Whether a seed germinated</p>
+        </li>
+        <li>
+          <p>The body mass of a penguin in grams</p>
+        </li>
+      </ol>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-frequency-and-proportion">
+    <title>Frequencies and Proportions</title>
+
+    <p>
+      We summarize a categorical variable by counting how often each category
+      occurs. We can report these counts directly or express them as proportions.
+    </p>
+
+    <definition xml:id="def-frequency">
+      <title>Frequency</title>
+      <p> </p>
+    </definition>
+
+    <definition xml:id="def-proportion">
+      <title>Proportion</title>
+      <p> </p>
+    </definition>
+
+    <example xml:id="ex-antibiotic-response-frequency">
+      <title>Antibiotic Responses of Bacterial Isolates</title>
+      <p>
+        Twelve bacterial isolates were tested for their response to an
+        antibiotic. Each isolate was classified as resistant, intermediate, or
+        susceptible. The observed responses were:
+      </p>
+      <p>
+        resistant, resistant, resistant, intermediate, susceptible,
+        susceptible, resistant, intermediate, intermediate, susceptible,
+        susceptible, susceptible.
+      </p>
+      
+      <p>What is the frequency and proportion of isolates that are resistant?</p>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-one-variable-frequency-distributions">
+    <title>Frequency Distributions for One Categorical Variable</title>
+
+    <definition xml:id="def-one-variable-frequency-distribution">
+      <title>One-Variable Frequency Distribution</title>
+      <p> </p>
+    </definition>
+
+    <example xml:id="ex-freq-anti-data">
+      <title>Frequency Distribution for Bacteria Resistance</title>
+      
+      <p>
+        Use the antibiotic-response data from <xref ref="ex-antibiotic-response-frequency"/> to produce a frequency distribution.
+      </p>
+      
+    </example>
+
+    <note>
+      <p>
+        The frequencies must add to the total sample size. Except for small
+        rounding differences, the proportions must add to 1 and the percentages
+        must add to <m>100\%</m>.
+      </p>
+    </note>
+
+    <example xml:id="pollinators-dist">
+      <p>
+        An ecologist studied insect visitors to common milkweed flowers in a
+        restored prairie. During 19 separate observation periods, the ecologist
+        recorded the type of the first insect that visited a selected flower. The
+        categorical variable measured was pollinator type.
+      </p>
+
+      <table xml:id="tab-pollinator-raw-data">
+        <title>Pollinator Types Recorded During 19 Observation Periods</title>
+        <tabular row-headers="yes"
+                halign="center"
+                valign="middle"
+                top="medium"
+                left="medium"
+                bottom="medium"
+                right="medium">
+
+          <row header="yes" bottom="medium">
+            <cell>Observation</cell>
+            <cell>Pollinator Type</cell>
+          </row>
+
+          <row>
+            <cell>1</cell>
+            <cell>Native bee</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>Butterfly</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>Honey bee</cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell>Native bee</cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell>Hoverfly</cell>
+          </row>
+          <row>
+            <cell>6</cell>
+            <cell>Native bee</cell>
+          </row>
+          <row>
+            <cell>7</cell>
+            <cell>Beetle</cell>
+          </row>
+          <row>
+            <cell>8</cell>
+            <cell>Honey bee</cell>
+          </row>
+          <row>
+            <cell>9</cell>
+            <cell>Native bee</cell>
+          </row>
+          <row>
+            <cell>10</cell>
+            <cell>Butterfly</cell>
+          </row>
+          <row>
+            <cell>11</cell>
+            <cell>Hoverfly</cell>
+          </row>
+          <row>
+            <cell>12</cell>
+            <cell>Honey bee</cell>
+          </row>
+          <row>
+            <cell>13</cell>
+            <cell>Beetle</cell>
+          </row>
+          <row>
+            <cell>14</cell>
+            <cell>Native bee</cell>
+          </row>
+          <row>
+            <cell>15</cell>
+            <cell>Honey bee</cell>
+          </row>
+          <row>
+            <cell>16</cell>
+            <cell>Butterfly</cell>
+          </row>
+          <row>
+            <cell>17</cell>
+            <cell>Native bee</cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>
+        Let's create a frequency distribution and a relative frequency distribution for this data. Since we will be typing this dat in let's use some abbreviations.
+      </p>
+
+      <p>
+        <term>NB</term> = Native bee;
+        <term>HB</term> = Honey bee;
+        <term>BF</term> = Butterfly;
+        <term>HF</term> = Hoverfly; and
+        <term>BT</term> = Beetle.
+      </p>
+
+      <program language="r">
+        <input>
+pollinator = c("NB", "BF", "HB", "NB", "HF", "NB", "BT", "HB", "NB", 
+"BF", "HF", "HB", "BT", "NB", "HB", "BF", "NB")
+
+poll.freq = table(pollinator)
+poll.freq
+
+poll.rel.freq = prop.table(poll.freq)
+poll.rel.freq
+        </input>
+      </program>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-two-variable-frequency-distributions">
+    <title>Frequency Distributions for Two Categorical Variables</title>
+
+    <definition xml:id="def-two-way-table">
+      <title>Two-Way Frequency Table</title>
+      <p> </p>
+    </definition>
+
+    <example xml:id="ex-antibiotic-response-proportion-table">
+      <title>Constructing a Proportion Table from a Frequency Table</title>
+
+      <p>
+        Twelve bacterial isolates were tested for their response to an antibiotic.
+        Six isolates came from hospital samples, and six came from community
+        samples. The frequency distribution for antibiotic response and sample
+        source is shown below.
+      </p>
+
+      <table xml:id="tab-antibiotic-response-frequency-example">
+        <title>Antibiotic Response by Sample Source</title>
+
+        <tabular row-headers="yes"
+                halign="center"
+                valign="middle"
+                top="medium"
+                left="medium"
+                bottom="medium"
+                right="medium">
+
+          <row header="yes" bottom="medium">
+            <cell>Sample Source</cell>
+            <cell>Resistant</cell>
+            <cell>Intermediate</cell>
+            <cell>Susceptible</cell>
+            <cell>Total</cell>
+          </row>
+
+          <row>
+            <cell>Hospital</cell>
+            <cell>3</cell>
+            <cell>1</cell>
+            <cell>2</cell>
+            <cell>6</cell>
+          </row>
+
+          <row>
+            <cell>Community</cell>
+            <cell>1</cell>
+            <cell>2</cell>
+            <cell>3</cell>
+            <cell>6</cell>
+          </row>
+
+          <row top="medium">
+            <cell>Total</cell>
+            <cell>4</cell>
+            <cell>3</cell>
+            <cell>5</cell>
+            <cell>12</cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>
+        Use the frequency table to construct a table containing the proportion of
+        isolates.
+      </p>
+    </example>
+
+    
+    <example xml:id="ex-germination-proportion-table-r">
+      <title>Creating a Proportion Table in R</title>
+
+      <p>
+        A botanist randomly assigned 10 seeds from the same plant species to one
+        of two growing conditions. Five seeds received the control treatment, and
+        five received a nutrient treatment. After 14 days, each seed was classified
+        according to whether it germinated.
+      </p>
+
+      <p>
+        The following abbreviations are used:
+        <term>C</term> = Control;
+        <term>NT</term> = Nutrient treatment;
+        <term>G</term> = Germinated; and
+        <term>NG</term> = Did not germinate.
+      </p>
+
+      <table xml:id="tab-germination-raw-data">
+        <title>Raw Seed-Germination Data</title>
+
+        <tabular row-headers="yes"
+                halign="center"
+                valign="middle"
+                top="medium"
+                left="medium"
+                bottom="medium"
+                right="medium">
+
+          <row header="yes" bottom="medium">
+            <cell>Seed</cell>
+            <cell>Treatment</cell>
+            <cell>Outcome</cell>
+          </row>
+
+          <row>
+            <cell>1</cell>
+            <cell>C</cell>
+            <cell>G</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>C</cell>
+            <cell>NG</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>C</cell>
+            <cell>G</cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell>C</cell>
+            <cell>NG</cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell>C</cell>
+            <cell>G</cell>
+          </row>
+          <row>
+            <cell>6</cell>
+            <cell>NT</cell>
+            <cell>G</cell>
+          </row>
+          <row>
+            <cell>7</cell>
+            <cell>NT</cell>
+            <cell>G</cell>
+          </row>
+          <row>
+            <cell>8</cell>
+            <cell>NT</cell>
+            <cell>NG</cell>
+          </row>
+          <row>
+            <cell>9</cell>
+            <cell>NT</cell>
+            <cell>G</cell>
+          </row>
+          <row>
+            <cell>10</cell>
+            <cell>NT</cell>
+            <cell>G</cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>
+        Use R to create a two-way frequency table and calculate the proportions
+        within each treatment group.
+      </p>
+
+      <program language="r">
+        <input>
+trmt = c("C", "C", "C", "C", "C", "NT", "NT", "NT", "NT", "NT")
+
+outc = c("G", "NG", "G", "NG", "G", "G", "G", "NG", "G", "G")
+
+seed.data = data.frame(trmt, outc)
+seed.data
+
+seed.freq = table(seed.data)
+seed.freq
+
+seed.prop = prop.table(seed.freq)
+seed.prop
+        </input>
+      </program>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-bar-graphs">
+    <title>Bar Graphs</title>
+
+    <definition xml:id="def-bar-graph">
+      <title>Bar Graph</title>
+      <p> </p>
+    </definition>
+
+    <p>
+      A useful bar graph has clearly labeled axes, identifies whether the bar
+      heights represent frequencies or proportions, and begins its vertical axis
+      at zero.
+    </p>
+
+    <example xml:id="bar-plot-in-R">
+      <p>Using the pollinator data from <xref ref="pollinators-dist"/> create a barplot in R. Use <c>?barplot</c> to get the help menu for <c>barplot</c></p>
+    </example>
+
+    <example xml:id="two-var-bar-plot-in-R">
+      <p>Using the pollinator data from <xref ref="ex-germination-proportion-table-r"/> create a side-by-side and stacked barplot in R. Use <c>?barplot</c> to get the help menu for <c>barplot</c></p>
+    </example>
+
+  </subsection>
+
+  <subsection xml:id="subsec-large-categorical-dataset">
+    <title>Working with a Larger Biological Dataset</title>
+
+    <p>
+      The <c>penguins</c> dataset in the <c>palmerpenguins</c> R package contains
+      measurements and categorical information for 344 penguins from three
+      species observed on three islands in the Palmer Archipelago, Antarctica.
+      With a dataset of this size, using R is more efficient and less prone to
+      counting errors than constructing frequency tables by hand.
+    </p>
+
+    <program language="r">
+      <input>
+install.packages("palmerpenguins")
+library(palmerpenguins)
+
+dim(penguins)
+head(penguins)
+View(penguins)
+      </input>
+    </program>
+
+    <example xml:id="ex-penguin-one-variable-frequency">
+      <title>A One-Variable Distribution for a Large Dataset</title>
+      <p>
+        Create a frequency distribution for penguin species. To access a particular
+        variable, or column, in an R data frame, use the <c>$</c> operator. For
+        example, <c>penguins$species</c> accesses the <c>species</c> column of the
+        <c>penguins</c> data frame. Then create a barplot of this data.
+      </p>
+    </example>
+
+    <example xml:id="ex-penguin-two-variable-frequency">
+      <title>A Two-Variable Distribution for a Large Dataset</title>
+      <p>
+        Create a contingency table to compare penguin species and sex. Then create a barplot of this data.
+      </p>
+    </example>  
+  </subsection>
+</section>

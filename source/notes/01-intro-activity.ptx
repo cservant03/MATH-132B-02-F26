@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="notes-intro-to-prob">
+  <title>Introduction to Probability</title>
+
+  <outcomes>
+    <ol marker="1)">
+      <li>
+        <p>
+          Distinguish between empirical and theoretical probability.
+        </p>
+      </li>
+      <li>
+        <p>
+          Explain the law of large numbers.
+        </p>
+      </li>
+      <li>
+        <p>
+          Identify sample spaces and events.
+        </p>
+      </li>
+      <li>
+        <p>
+          Calculate and interpret basic probabilities.
+        </p>
+      </li>
+    </ol>
+  </outcomes>
+
+  <subsection>
+    <title>Definitions</title>
+    
+    <definition xml:id="def-sample-space">
+      <title>Sample Space</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+
+    <definition xml:id="def-events">
+      <title>Events</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+
+    <example xml:id="ex-germination">
+      <title>Seed Germination</title>
+      <statement>
+        <p>
+          A biologist plants three seeds labeled <m>A</m>, <m>B</m>, and <m>C</m>. After seven days, each seed has either germinated or not germinated. An outcome records the results for seeds <m>A</m>, <m>B</m>, and <m>C</m>, in that order.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Identify the sample space.
+            </p>
+          </li>
+          <li>
+            <p>
+              Identify the event that exactly two seeds germinate.
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </example>
+
+    <definition xml:id="def-emp-prob">
+      <title>Empirical Probability</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+
+    <definition xml:id="def-theo-prob">
+      <title>Theoretical Probability</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+
+    <example xml:id="ex-pea-prob">
+      <title>Pea Plant Genetics</title>
+      <statement>
+        <p>
+          In a simplified model of pea plant genetics, each parent has one
+          dominant allele <m>P</m> and one recessive allele <m>p</m>. An
+          offspring receives one allele from each parent. The four equally
+          likely allele combinations are <m>PP</m>, <m>Pp</m>, <m>pP</m>,
+          and <m>pp</m>. A plant has purple flowers if it receives at least
+          one <m>P</m>.
+        </p>
+        <p>
+          A scientist crosses the two plants and grows 80 offspring. Of
+          these, 57 have purple flowers.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Find the theoretical probability that an offspring has
+              purple flowers.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find the empirical probability that an offspring has
+              purple flowerslaw-large-num.
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </example>
+
+    <question xml:id="ques-1">
+      <statement>
+        <p>
+          Why do the two answers above not match?
+        </p>
+      </statement>
+    </question>
+
+    <definition xml:id="law-large-num">
+      <title>Law of Large Numbers</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+  </subsection>
+
+  <subsection>
+    <title>Exmaples</title>
+    
+    <example xml:id="ex-two-dice">
+      <title>Probabilities of Sums from Two Dice</title>
+      <statement>
+        <image source="images/two-dice.jpg" width="70%">
+          <shortdescription>
+            A 6-by-6 grid showing all 36 ordered outcomes from rolling two dice.
+          </shortdescription>
+
+          <description>
+            <p>
+              The diagram is a 6-by-6 grid representing all possible outcomes
+              from rolling two six-sided dice. Die A labels the rows from 1
+              through 6, and Die B labels the columns from 1 through 6.
+            </p>
+            <p>
+              Each cell contains a pair of red dice. The first die displays the
+              number associated with that row, and the second die displays the
+              number associated with that column. For example, the cell in row
+              3 and column 5 represents Die A showing 3 and Die B showing 5.
+              Each of the 36 possible ordered outcomes appears exactly once.
+            </p>
+          </description>
+        </image>
+
+        <p>
+          Consider rolling two fair six-sided dice and recording the sum of
+          the numbers rolled. Find the probability of obtaining each sum
+          from 1 through 12. Write each probability first as a reduced
+          fraction and then as a decimal rounded to four decimal places.
+        </p>
+      </statement>
+    </example>
+    
+    <example xml:id="ex-cards">
+      <title>Probabilities from a Deck of Cards</title>
+      <statement>
+        <image source="images/deck-of-cards.jpg" width="90%">
+          <shortdescription>
+            The 52 cards in a standard deck arranged by suit and rank.
+          </shortdescription>
+
+          <description>
+            <p>
+              The image displays all 52 cards in a standard deck with no
+              jokers. The cards are arranged in four rows, one for each
+              suit. From top to bottom, the suits are clubs, spades, hearts,
+              and diamonds. Clubs and spades are black, while hearts and
+              diamonds are red.
+            </p>
+            <p>
+              Each suit contains 13 cards. From left to right, they are the
+              ace, the numbered cards 2 through 10, the jack, the queen, and
+              the king. The jack, queen, and king are called face cards.
+              Therefore, each suit has three face cards and the full deck
+              has 12 face cards.
+            </p>
+            <p>
+              The ace is a separate rank and is not considered a face card.
+              Although an ace may represent a high or low value in some
+              card games, it is not considered a numbered card in this
+              example. The numbered cards are 2 through 10.
+            </p>
+          </description>
+        </image>
+
+        <p>
+          One card is selected at random from a standard 52-card deck with
+          no jokers. Find each probability. Write each answer first as a
+          reduced fraction and then as a decimal rounded to four decimal
+          places.
+        </p>
+
+        <ol>
+          <li>
+            <p>
+              <m>P(\text{heart})</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>P(\text{black card})</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>P(\text{face card})</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>P(\text{even-numbered card})</m> 
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </example>
+  </subsection>
+</section>

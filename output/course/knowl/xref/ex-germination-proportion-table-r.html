@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">57</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Creating a Proportion Table in R.</span>
+</h2>
+<div class="para">A botanist randomly assigned 10 seeds from the same plant species to one of two growing conditions. Five seeds received the control treatment, and five received a nutrient treatment. After 14 days, each seed was classified according to whether it germinated.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-germination-proportion-table-r-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">The following abbreviations are used: <dfn class="terminology">C</dfn> = Control; <dfn class="terminology">NT</dfn> = Nutrient treatment; <dfn class="terminology">G</dfn> = Germinated; and <dfn class="terminology">NG</dfn> = Did not germinate.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-germination-proportion-table-r-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">58<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Raw Seed-Germination Data<div class="autopermalink" aria-hidden="true" data-description="Table 58: Raw Seed-Germination Data"><a tabindex="-1" href="#tab-germination-raw-data" title="Copy heading and permalink for Table 58: Raw Seed-Germination Data" aria-label="Copy heading and permalink for Table 58: Raw Seed-Germination Data">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b2 r2 l2 t2 lines">Seed</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Treatment</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Outcome</th>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">1</th>
+<td class="c m b2 r2 l0 t0 lines">C</td>
+<td class="c m b2 r2 l0 t0 lines">G</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">2</th>
+<td class="c m b2 r2 l0 t0 lines">C</td>
+<td class="c m b2 r2 l0 t0 lines">NG</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">3</th>
+<td class="c m b2 r2 l0 t0 lines">C</td>
+<td class="c m b2 r2 l0 t0 lines">G</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">4</th>
+<td class="c m b2 r2 l0 t0 lines">C</td>
+<td class="c m b2 r2 l0 t0 lines">NG</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">5</th>
+<td class="c m b2 r2 l0 t0 lines">C</td>
+<td class="c m b2 r2 l0 t0 lines">G</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">6</th>
+<td class="c m b2 r2 l0 t0 lines">NT</td>
+<td class="c m b2 r2 l0 t0 lines">G</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">7</th>
+<td class="c m b2 r2 l0 t0 lines">NT</td>
+<td class="c m b2 r2 l0 t0 lines">G</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">8</th>
+<td class="c m b2 r2 l0 t0 lines">NT</td>
+<td class="c m b2 r2 l0 t0 lines">NG</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">9</th>
+<td class="c m b2 r2 l0 t0 lines">NT</td>
+<td class="c m b2 r2 l0 t0 lines">G</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">10</th>
+<td class="c m b2 r2 l0 t0 lines">NT</td>
+<td class="c m b2 r2 l0 t0 lines">G</td>
+</tr>
+</table></div>
+</figure>
+<div class="para">Use R to create a two-way frequency table and calculate the proportions within each treatment group.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-germination-proportion-table-r-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program clipboardable"><code class="language-r">trmt = c("C", "C", "C", "C", "C", "NT", "NT", "NT", "NT", "NT")
+
+outc = c("G", "NG", "G", "NG", "G", "G", "G", "NG", "G", "G")
+
+seed.data = data.frame(trmt, outc)
+seed.data
+
+seed.freq = table(seed.data)
+seed.freq
+
+seed.prop = prop.table(seed.freq)
+seed.prop
+</code></pre></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 57: Creating a Proportion Table in R"><a tabindex="-1" href="#ex-germination-proportion-table-r" title="Copy heading and permalink for Example 57: Creating a Proportion Table in R" aria-label="Copy heading and permalink for Example 57: Creating a Proportion Table in R">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="sec-describing-categorical-data.html#ex-germination-proportion-table-r">In Context</a></span>
+</body>
+</html>

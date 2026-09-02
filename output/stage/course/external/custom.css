@@ -79,27 +79,25 @@ a.mathjax-link {
 }
 
 #ex-fung-inf {
-  padding-bottom: 3in;
+  padding-bottom: 1.7in;
 }
 
 #def-dep-events {
-  padding-bottom: 1.25in;
+  padding-bottom: 1.2in;
 }
 
 #def-cond-prob {
-  padding-bottom: 1.25in;
+  padding-bottom: 1.2in;
 }
 
 #table-blood-inf table tr:nth-child(2n+3) > * {
   background-color: #F6E4FC;
 }
 
-#ex-blood-inf {
-  padding-bottom: 3in;
-}
-
 #def-mult-dep {
   padding-bottom: 1.25in;
+  break-before: page;
+  page-break-before: always;
 }
 
 #ex-joint-prob-2 {
@@ -107,10 +105,6 @@ a.mathjax-link {
 }
 
 #ex-anti-res {
-  padding-bottom: 3in;
-}
-
-#ex-nest-loc-fled {
   padding-bottom: 3in;
 }
 
@@ -135,7 +129,7 @@ a.mathjax-link {
 }
 
 #ex-mosquito-pools {
-  padding-bottom: 2in;
+  padding-bottom: 1.5in;
 }
 
 #def-complement-event {
@@ -147,19 +141,21 @@ a.mathjax-link {
 }
 
 #ex-contaminated-dishes {
-  padding-bottom: 3in;
+  padding-bottom: 1.5in;
 }
 
 #ex-seal-health-assessments {
-  padding-bottom: 3in;
+  padding-bottom: 2in;
 }
 
 #ex-fruit-fly-allele {
-  padding-bottom: 3in;
+  padding-bottom: 2in;
 }
 
 #ex-vaccine-side-effects {
-  padding-bottom: 3in;
+  padding-bottom: 2in;
+  break-before: page;
+  page-break-before: always;
 }
 
 #table-pollinator-survey table tr:nth-child(2n) > * {
@@ -168,4 +164,14 @@ a.mathjax-link {
 
 #table-seal-health-assessments table tr:nth-child(2n+3) > * {
   background-color: #F6E4FC;
+}
+
+#ex-joint-prob {
+  break-before: page;
+  page-break-before: always;
+}
+
+#ex-fung-inf {
+  break-before: page;
+  page-break-before: always;
 }
