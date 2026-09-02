@@ -79,25 +79,27 @@ a.mathjax-link {
 }
 
 #ex-fung-inf {
-  padding-bottom: 1.7in;
+  padding-bottom: 3in;
 }
 
 #def-dep-events {
-  padding-bottom: 1.2in;
+  padding-bottom: 1.25in;
 }
 
 #def-cond-prob {
-  padding-bottom: 1.2in;
+  padding-bottom: 1.25in;
 }
 
 #table-blood-inf table tr:nth-child(2n+3) > * {
   background-color: #F6E4FC;
 }
 
+#ex-blood-inf {
+  padding-bottom: 3in;
+}
+
 #def-mult-dep {
   padding-bottom: 1.25in;
-  break-before: page;
-  page-break-before: always;
 }
 
 #ex-joint-prob-2 {
@@ -105,6 +107,10 @@ a.mathjax-link {
 }
 
 #ex-anti-res {
+  padding-bottom: 3in;
+}
+
+#ex-nest-loc-fled {
   padding-bottom: 3in;
 }
 
@@ -129,7 +135,7 @@ a.mathjax-link {
 }
 
 #ex-mosquito-pools {
-  padding-bottom: 1.5in;
+  padding-bottom: 2in;
 }
 
 #def-complement-event {
@@ -141,21 +147,19 @@ a.mathjax-link {
 }
 
 #ex-contaminated-dishes {
-  padding-bottom: 1.5in;
+  padding-bottom: 3in;
 }
 
 #ex-seal-health-assessments {
-  padding-bottom: 2in;
+  padding-bottom: 3in;
 }
 
 #ex-fruit-fly-allele {
-  padding-bottom: 2in;
+  padding-bottom: 3in;
 }
 
 #ex-vaccine-side-effects {
-  padding-bottom: 2in;
-  break-before: page;
-  page-break-before: always;
+  padding-bottom: 3in;
 }
 
 #table-pollinator-survey table tr:nth-child(2n) > * {
@@ -164,78 +168,4 @@ a.mathjax-link {
 
 #table-seal-health-assessments table tr:nth-child(2n+3) > * {
   background-color: #F6E4FC;
-}
-
-#ex-joint-prob {
-  break-before: page;
-  page-break-before: always;
-}
-
-#ex-fung-inf {
-  break-before: page;
-  page-break-before: always;
-}
-
-#def-categorical-data {
-  padding-bottom: 1in;
-}
-
-#def-numerical-data {
-  padding-bottom: 1in;
-}
-
-#def-frequency {
-  padding-bottom: 1in;
-}
-
-#def-proportion {
-  padding-bottom: 1in;
-}
-
-#ex-antibiotic-response-frequency {
-  padding-bottom: .5in;
-}
-
-#def-one-variable-frequency-distribution {
-  padding-bottom: 1in;
-}
-
-#ex-freq-anti-data {
-  padding-bottom: 2in;
-}
-
-#tab-pollinator-raw-data table tr:nth-child(2n) > * {
-  background-color: #F6E4FC;
-}
-
-#def-two-way-table {
-  padding-bottom: 1in;
-}
-
-#ex-antibiotic-response-proportion-table {
-  padding-bottom: 2in;
-}
-
-#tab-germination-raw-data table tr:nth-child(2n) > * {
-  background-color: #F6E4FC;
-}
-
-#def-bar-graph {
-  padding-bottom: 1in;
-}
-
-#bar-plot-in-R {
-  padding-bottom: 2in;
-}
-
-#two-var-bar-plot-in-R {
-  padding-bottom: 2in;
-}
-
-#ex-penguin-one-variable-frequency {
-  padding-bottom: 4in;
-}
-
-#ex-penguin-two-variable-frequency {
-  padding-bottom: 4in;
 }

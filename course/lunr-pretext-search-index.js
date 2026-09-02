@@ -377,6 +377,195 @@ var ptx_lunr_docs = [
   "number": "41",
   "title": "Side Effects in a Vaccine Study.",
   "body": " Side Effects in a Vaccine Study  In a vaccine study, of participants experienced fatigue, experienced a headache, and experienced both fatigue and a headache.    Are the events experienced fatigue and experienced a headache mutually exclusive? Explain.    Find the probability that a randomly selected participant experienced fatigue or a headache.    Find the probability that a randomly selected participant experienced neither fatigue nor a headache.    "
+},
+{
+  "id": "sec-describing-categorical-data",
+  "level": "1",
+  "url": "sec-describing-categorical-data.html",
+  "type": "Section",
+  "number": "",
+  "title": "Describing Categorical Data",
+  "body": " Describing Categorical Data   A dataset contains information about individuals or observational units . For example, the individuals in a biological study might be bacterial isolates, patients, plants, or animals. A variable records a characteristic of each individual. Before summarizing a variable, we must determine whether its data are categorical or numerical.    Categorical and Numerical Data   Categorical Data      Numerical Data      A variable is not necessarily numerical just because numbers are used as its labels. For example, the numbers on jerseys are numbers that identify categories. Adding or averaging those numbers would not have a meaningful interpretation, so the variable is categorical.    Classifying Biological Variables  Determine whether each variable is categorical or numerical.    The blood type of a patient    The number of bacterial colonies on a plate    Whether a seed germinated    The body mass of a penguin in grams       Frequencies and Proportions  We summarize a categorical variable by counting how often each category occurs. We can report these counts directly or express them as proportions.   Frequency      Proportion      Antibiotic Responses of Bacterial Isolates  Twelve bacterial isolates were tested for their response to an antibiotic. Each isolate was classified as resistant, intermediate, or susceptible. The observed responses were:  resistant, resistant, resistant, intermediate, susceptible, susceptible, resistant, intermediate, intermediate, susceptible, susceptible, susceptible.  What is the frequency and proportion of isolates that are resistant?     Frequency Distributions for One Categorical Variable   One-Variable Frequency Distribution      Frequency Distribution for Bacteria Resistance  Use the antibiotic-response data from to produce a frequency distribution.    The frequencies must add to the total sample size. Except for small rounding differences, the proportions must add to 1 and the percentages must add to .    An ecologist studied insect visitors to common milkweed flowers in a restored prairie. During 19 separate observation periods, the ecologist recorded the type of the first insect that visited a selected flower. The categorical variable measured was pollinator type.   Pollinator Types Recorded During 19 Observation Periods    Observation  Pollinator Type    1  Native bee    2  Butterfly    3  Honey bee    4  Native bee    5  Hoverfly    6  Native bee    7  Beetle    8  Honey bee    9  Native bee    10  Butterfly    11  Hoverfly    12  Honey bee    13  Beetle    14  Native bee    15  Honey bee    16  Butterfly    17  Native bee     Let's create a frequency distribution and a relative frequency distribution for this data. Since we will be typing this dat in let's use some abbreviations.   NB = Native bee; HB = Honey bee; BF = Butterfly; HF = Hoverfly; and BT = Beetle.   pollinator = c(\"NB\", \"BF\", \"HB\", \"NB\", \"HF\", \"NB\", \"BT\", \"HB\", \"NB\", \"BF\", \"HF\", \"HB\", \"BT\", \"NB\", \"HB\", \"BF\", \"NB\") poll.freq = table(pollinator) poll.freq poll.rel.freq = prop.table(poll.freq) poll.rel.freq      Frequency Distributions for Two Categorical Variables   Two-Way Frequency Table      Constructing a Proportion Table from a Frequency Table  Twelve bacterial isolates were tested for their response to an antibiotic. Six isolates came from hospital samples, and six came from community samples. The frequency distribution for antibiotic response and sample source is shown below.   Antibiotic Response by Sample Source    Sample Source  Resistant  Intermediate  Susceptible  Total    Hospital  3  1  2  6    Community  1  2  3  6    Total  4  3  5  12     Use the frequency table to construct a table containing the proportion of isolates.    Creating a Proportion Table in R  A botanist randomly assigned 10 seeds from the same plant species to one of two growing conditions. Five seeds received the control treatment, and five received a nutrient treatment. After 14 days, each seed was classified according to whether it germinated.  The following abbreviations are used: C = Control; NT = Nutrient treatment; G = Germinated; and NG = Did not germinate.   Raw Seed-Germination Data    Seed  Treatment  Outcome    1  C  G    2  C  NG    3  C  G    4  C  NG    5  C  G    6  NT  G    7  NT  G    8  NT  NG    9  NT  G    10  NT  G     Use R to create a two-way frequency table and calculate the proportions within each treatment group.   trmt = c(\"C\", \"C\", \"C\", \"C\", \"C\", \"NT\", \"NT\", \"NT\", \"NT\", \"NT\") outc = c(\"G\", \"NG\", \"G\", \"NG\", \"G\", \"G\", \"G\", \"NG\", \"G\", \"G\") seed.data = data.frame(trmt, outc) seed.data seed.freq = table(seed.data) seed.freq seed.prop = prop.table(seed.freq) seed.prop      Bar Graphs   Bar Graph     A useful bar graph has clearly labeled axes, identifies whether the bar heights represent frequencies or proportions, and begins its vertical axis at zero.   Using the pollinator data from create a barplot in R. Use ?barplot to get the help menu for barplot    Using the pollinator data from create a side-by-side and stacked barplot in R. Use ?barplot to get the help menu for barplot     Working with a Larger Biological Dataset  The penguins dataset in the palmerpenguins R package contains measurements and categorical information for 344 penguins from three species observed on three islands in the Palmer Archipelago, Antarctica. With a dataset of this size, using R is more efficient and less prone to counting errors than constructing frequency tables by hand.   install.packages(\"palmerpenguins\") library(palmerpenguins) dim(penguins) head(penguins) View(penguins)    A One-Variable Distribution for a Large Dataset  Create a frequency distribution for penguin species. To access a particular variable, or column, in an R data frame, use the $ operator. For example, penguins$species accesses the species column of the penguins data frame. Then create a barplot of this data.    A Two-Variable Distribution for a Large Dataset  Create a contingency table to compare penguin species and sex. Then create a barplot of this data.    "
+},
+{
+  "id": "sec-describing-categorical-data-2-1",
+  "level": "2",
+  "url": "sec-describing-categorical-data.html#sec-describing-categorical-data-2-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "individuals observational units variable "
+},
+{
+  "id": "def-categorical-data",
+  "level": "2",
+  "url": "sec-describing-categorical-data.html#def-categorical-data",
+  "type": "Definition",
+  "number": "42",
+  "title": "Categorical Data.",
+  "body": " Categorical Data    "
+},
+{
+  "id": "def-numerical-data",
+  "level": "2",
+  "url": "sec-describing-categorical-data.html#def-numerical-data",
+  "type": "Definition",
+  "number": "43",
+  "title": "Numerical Data.",
+  "body": " Numerical Data    "
+},
+{
+  "id": "rem-numerical-labels",
+  "level": "2",
+  "url": "sec-describing-categorical-data.html#rem-numerical-labels",
+  "type": "Note",
+  "number": "44",
+  "title": "",
+  "body": " A variable is not necessarily numerical just because numbers are used as its labels. For example, the numbers on jerseys are numbers that identify categories. Adding or averaging those numbers would not have a meaningful interpretation, so the variable is categorical.  "
+},
+{
+  "id": "ex-classify-biological-variables",
+  "level": "2",
+  "url": "sec-describing-categorical-data.html#ex-classify-biological-variables",
+  "type": "Example",
+  "number": "45",
+  "title": "Classifying Biological Variables.",
+  "body": " Classifying Biological Variables  Determine whether each variable is categorical or numerical.    The blood type of a patient    The number of bacterial colonies on a plate    Whether a seed germinated    The body mass of a penguin in grams    "
+},
+{
+  "id": "def-frequency",
+  "level": "2",
+  "url": "sec-describing-categorical-data.html#def-frequency",
+  "type": "Definition",
+  "number": "46",
+  "title": "Frequency.",
+  "body": " Frequency    "
+},
+{
+  "id": "def-proportion",
+  "level": "2",
+  "url": "sec-describing-categorical-data.html#def-proportion",
+  "type": "Definition",
+  "number": "47",
+  "title": "Proportion.",
+  "body": " Proportion    "
+},
+{
+  "id": "ex-antibiotic-response-frequency",
+  "level": "2",
+  "url": "sec-describing-categorical-data.html#ex-antibiotic-response-frequency",
+  "type": "Example",
+  "number": "48",
+  "title": "Antibiotic Responses of Bacterial Isolates.",
+  "body": " Antibiotic Responses of Bacterial Isolates  Twelve bacterial isolates were tested for their response to an antibiotic. Each isolate was classified as resistant, intermediate, or susceptible. The observed responses were:  resistant, resistant, resistant, intermediate, susceptible, susceptible, resistant, intermediate, intermediate, susceptible, susceptible, susceptible.  What is the frequency and proportion of isolates that are resistant?  "
+},
+{
+  "id": "def-one-variable-frequency-distribution",
+  "level": "2",
+  "url": "sec-describing-categorical-data.html#def-one-variable-frequency-distribution",
+  "type": "Definition",
+  "number": "49",
+  "title": "One-Variable Frequency Distribution.",
+  "body": " One-Variable Frequency Distribution    "
+},
+{
+  "id": "ex-freq-anti-data",
+  "level": "2",
+  "url": "sec-describing-categorical-data.html#ex-freq-anti-data",
+  "type": "Example",
+  "number": "50",
+  "title": "Frequency Distribution for Bacteria Resistance.",
+  "body": " Frequency Distribution for Bacteria Resistance  Use the antibiotic-response data from to produce a frequency distribution.  "
+},
+{
+  "id": "subsec-one-variable-frequency-distributions-4",
+  "level": "2",
+  "url": "sec-describing-categorical-data.html#subsec-one-variable-frequency-distributions-4",
+  "type": "Note",
+  "number": "51",
+  "title": "",
+  "body": " The frequencies must add to the total sample size. Except for small rounding differences, the proportions must add to 1 and the percentages must add to .  "
+},
+{
+  "id": "pollinators-dist",
+  "level": "2",
+  "url": "sec-describing-categorical-data.html#pollinators-dist",
+  "type": "Example",
+  "number": "52",
+  "title": "",
+  "body": " An ecologist studied insect visitors to common milkweed flowers in a restored prairie. During 19 separate observation periods, the ecologist recorded the type of the first insect that visited a selected flower. The categorical variable measured was pollinator type.   Pollinator Types Recorded During 19 Observation Periods    Observation  Pollinator Type    1  Native bee    2  Butterfly    3  Honey bee    4  Native bee    5  Hoverfly    6  Native bee    7  Beetle    8  Honey bee    9  Native bee    10  Butterfly    11  Hoverfly    12  Honey bee    13  Beetle    14  Native bee    15  Honey bee    16  Butterfly    17  Native bee     Let's create a frequency distribution and a relative frequency distribution for this data. Since we will be typing this dat in let's use some abbreviations.   NB = Native bee; HB = Honey bee; BF = Butterfly; HF = Hoverfly; and BT = Beetle.   pollinator = c(\"NB\", \"BF\", \"HB\", \"NB\", \"HF\", \"NB\", \"BT\", \"HB\", \"NB\", \"BF\", \"HF\", \"HB\", \"BT\", \"NB\", \"HB\", \"BF\", \"NB\") poll.freq = table(pollinator) poll.freq poll.rel.freq = prop.table(poll.freq) poll.rel.freq   "
+},
+{
+  "id": "def-two-way-table",
+  "level": "2",
+  "url": "sec-describing-categorical-data.html#def-two-way-table",
+  "type": "Definition",
+  "number": "54",
+  "title": "Two-Way Frequency Table.",
+  "body": " Two-Way Frequency Table    "
+},
+{
+  "id": "ex-antibiotic-response-proportion-table",
+  "level": "2",
+  "url": "sec-describing-categorical-data.html#ex-antibiotic-response-proportion-table",
+  "type": "Example",
+  "number": "55",
+  "title": "Constructing a Proportion Table from a Frequency Table.",
+  "body": " Constructing a Proportion Table from a Frequency Table  Twelve bacterial isolates were tested for their response to an antibiotic. Six isolates came from hospital samples, and six came from community samples. The frequency distribution for antibiotic response and sample source is shown below.   Antibiotic Response by Sample Source    Sample Source  Resistant  Intermediate  Susceptible  Total    Hospital  3  1  2  6    Community  1  2  3  6    Total  4  3  5  12     Use the frequency table to construct a table containing the proportion of isolates.  "
+},
+{
+  "id": "ex-germination-proportion-table-r",
+  "level": "2",
+  "url": "sec-describing-categorical-data.html#ex-germination-proportion-table-r",
+  "type": "Example",
+  "number": "57",
+  "title": "Creating a Proportion Table in R.",
+  "body": " Creating a Proportion Table in R  A botanist randomly assigned 10 seeds from the same plant species to one of two growing conditions. Five seeds received the control treatment, and five received a nutrient treatment. After 14 days, each seed was classified according to whether it germinated.  The following abbreviations are used: C = Control; NT = Nutrient treatment; G = Germinated; and NG = Did not germinate.   Raw Seed-Germination Data    Seed  Treatment  Outcome    1  C  G    2  C  NG    3  C  G    4  C  NG    5  C  G    6  NT  G    7  NT  G    8  NT  NG    9  NT  G    10  NT  G     Use R to create a two-way frequency table and calculate the proportions within each treatment group.   trmt = c(\"C\", \"C\", \"C\", \"C\", \"C\", \"NT\", \"NT\", \"NT\", \"NT\", \"NT\") outc = c(\"G\", \"NG\", \"G\", \"NG\", \"G\", \"G\", \"G\", \"NG\", \"G\", \"G\") seed.data = data.frame(trmt, outc) seed.data seed.freq = table(seed.data) seed.freq seed.prop = prop.table(seed.freq) seed.prop   "
+},
+{
+  "id": "def-bar-graph",
+  "level": "2",
+  "url": "sec-describing-categorical-data.html#def-bar-graph",
+  "type": "Definition",
+  "number": "59",
+  "title": "Bar Graph.",
+  "body": " Bar Graph    "
+},
+{
+  "id": "bar-plot-in-R",
+  "level": "2",
+  "url": "sec-describing-categorical-data.html#bar-plot-in-R",
+  "type": "Example",
+  "number": "60",
+  "title": "",
+  "body": " Using the pollinator data from create a barplot in R. Use ?barplot to get the help menu for barplot  "
+},
+{
+  "id": "two-var-bar-plot-in-R",
+  "level": "2",
+  "url": "sec-describing-categorical-data.html#two-var-bar-plot-in-R",
+  "type": "Example",
+  "number": "61",
+  "title": "",
+  "body": " Using the pollinator data from create a side-by-side and stacked barplot in R. Use ?barplot to get the help menu for barplot  "
+},
+{
+  "id": "ex-penguin-one-variable-frequency",
+  "level": "2",
+  "url": "sec-describing-categorical-data.html#ex-penguin-one-variable-frequency",
+  "type": "Example",
+  "number": "62",
+  "title": "A One-Variable Distribution for a Large Dataset.",
+  "body": " A One-Variable Distribution for a Large Dataset  Create a frequency distribution for penguin species. To access a particular variable, or column, in an R data frame, use the $ operator. For example, penguins$species accesses the species column of the penguins data frame. Then create a barplot of this data.  "
+},
+{
+  "id": "ex-penguin-two-variable-frequency",
+  "level": "2",
+  "url": "sec-describing-categorical-data.html#ex-penguin-two-variable-frequency",
+  "type": "Example",
+  "number": "63",
+  "title": "A Two-Variable Distribution for a Large Dataset.",
+  "body": " A Two-Variable Distribution for a Large Dataset  Create a contingency table to compare penguin species and sex. Then create a barplot of this data.  "
 }
 ]
 
