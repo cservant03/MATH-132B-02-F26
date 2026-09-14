@@ -239,3 +239,86 @@ a.mathjax-link {
 #ex-penguin-two-variable-frequency {
   padding-bottom: 4in;
 }
+
+#rubric-cat-organization {
+  border-bottom: 3px solid #335B41;
+  padding-bottom: 1em;
+  margin-bottom: 1.5em;
+}
+
+#def-random-variable {
+  padding-bottom: 1in;
+}
+
+#def-discrete {
+  padding-bottom: 1in;
+}
+
+#def-disc-dist {
+  padding-bottom: 2.2in;
+}
+
+#ex-nest-probs {
+  padding-bottom: 1in;
+}
+
+#def-expected {
+  padding-bottom: 1in;
+}
+
+#ex-nest-mean {
+  padding-bottom: 2in;
+}
+
+#def-sd {
+  padding-bottom: 1.5in;
+}
+
+#ex-nest-sd {
+  padding-bottom: 2in;
+}
+
+#ex-clinic {
+  padding-bottom: 2in;
+}
+
+#def-binomial {
+  padding-bottom: 3in;
+}
+
+#ex-formula {
+  padding-bottom: 0.7in;
+}
+
+#ex-contaminated-samples {
+  padding-bottom: 1.25in;
+  break-before: page;
+  page-break-before: always;
+}
+
+#ex-health {
+  padding-bottom: 1.25in;
+}
+
+#ex-intervals {
+  padding-bottom: 2in;
+}
+
+#def-binomial-moments {
+  padding-bottom: 2.5in;
+}
+
+#ex-restoration {
+  padding-bottom: 2in;
+  break-before: page;
+  page-break-before: always;
+}
+
+#ex-screening {
+  padding-bottom: 2in;
+}
+
+#def-formula {
+  break-before: page;
+  page-break-before: always;
+}
