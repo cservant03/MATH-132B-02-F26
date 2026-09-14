@@ -28,8 +28,8 @@
       <xi:include href="./notes/binomial.ptx"/>
     </chapter>
 
-    <chapter xml:id="projects">
-      <title>Projects</title>
+    <chapter xml:id="lab-reports">
+      <title>Lab Reports</title>
 
       <xi:include href="./projects/07-project-rubric.ptx"/>   
       <xi:include href="./projects/01-data-set-selection.ptx"/>

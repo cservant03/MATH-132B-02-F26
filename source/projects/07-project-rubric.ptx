@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="subsec-cat-project-rubric">
-  <title>Inference for Categorical Data: Project Rubric</title>
+  <title>Inference for Categorical Data: Lab Report Rubric</title>
 
   <p>
-    The Categorical Data Project is worth <alert>30 points</alert>. The
-    rubric below expands the general project rubric from the syllabus to
-    describe the expectations for this particular project.
+    The Categorical Data Lab Report is worth <alert>30 points</alert>. The
+    rubric below expands the general lab report rubric from the syllabus to
+    describe the expectations for this particular lab report.
   </p>
 
   <paragraphs xml:id="rubric-cat-selection">
     <title>Data Set Selection and Documentation: 2 points</title>
     <ul>
-      <li><p><alert>1 point:</alert> The selected data set or data sets satisfy the requirements of the project and contain appropriate categorical variables for the required analyses.</p></li>
+      <li><p><alert>1 point:</alert> The selected data set or data sets satisfy the requirements of the lab report and contain appropriate categorical variables for the required analyses.</p></li>
       <li><p><alert>1 point:</alert> The source of each data set is clearly identified. The original source and relevant documentation are included when available, and important modifications to the original data are documented.</p></li>
     </ul>
   </paragraphs>
@@ -61,7 +61,7 @@
   <paragraphs xml:id="rubric-cat-conclusion">
     <title>Conclusion: 5 points</title>
     <ul>
-      <li><p><alert>2 points:</alert> The conclusion clearly answers the research questions and accurately summarizes the principal findings of the project.</p></li>
+      <li><p><alert>2 points:</alert> The conclusion clearly answers the research questions and accurately summarizes the principal findings of the lab report.</p></li>
       <li><p><alert>2 point:</alert> Statistical findings are explained in the context of the topic rather than simply repeated as numerical results.</p></li>
       <li><p><alert>1 point:</alert> The conclusion is a clear and coherent summary and is no longer than one page.</p></li>
     </ul>
