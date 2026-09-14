@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="subsec-cat-project-data-selection">
+  <title>ICD: Data Set Selection and Documentation</title>
+
+  <p>
+    The first step of this project is to find data that you are interested
+    in studying. You are responsible for finding your own data set.
+    You may use <alert>one data set</alert> if it contains everything that
+    you need for the project, or you may use <alert>two data sets</alert>
+    if necessary.
+  </p>
+
+  <paragraphs>
+    <title>What Kind of Data Should I Find?</title>
+
+    <p>
+      Look for data in which the rows represent individual observations
+      and the columns represent variables. An observation could represent
+      a person, patient, animal, organism, specimen, location, event, or
+      another individual unit being studied.
+    </p>
+
+    <p>
+      Your data should contain several useful
+      <alert>categorical variables</alert>. Some numerical variables may
+      also be present in the data, but this project will focus on the
+      categorical variables.
+    </p>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Data Selection Checklist</title>
+
+    <p>
+      You do not need to know why each item on this checklist is important
+      yet. These requirements are designed to make sure that your data can
+      be used for the statistical methods that we will learn later.
+    </p>
+
+    <p>
+      Your data set, or combination of two data sets, should allow you to
+      answer <alert>yes</alert> to each of the following questions.
+    </p>
+
+    <ul>
+      <li>
+        <p>
+          Do you have at least one categorical variable with
+          <alert>two possible outcomes</alert>?
+        </p>
+
+        <p>
+          Examples include yes/no, present/absent, positive/negative,
+          survived/did not survive, infected/not infected, or another
+          variable that can reasonably be divided into two categories.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Can you compare the proportion of one of those outcomes between
+          <alert>two meaningful groups</alert>?
+        </p>
+
+        <p>
+          For example, the groups might represent two treatments, two
+          populations, two locations, two age groups, two species, or two
+          other meaningful groups.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Do you have at least one categorical variable with
+          <alert>three or more outcomes</alert>?
+        </p>
+      </li>
+
+      <li>
+        <p>
+          For one of your variables with three or more categories, can you
+          identify a <alert>meaningful expected distribution</alert> that
+          could be used for comparison?
+        </p>
+
+        <p>
+          The expected percentages might come from previously published
+          research, a government or scientific source, a historical
+          distribution, a biological model, or another justified
+          benchmark. You may make a guess yourself if you want; for example
+          you may expect them to be distributed equally.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Does your data allow you to investigate a relationship involving
+          <alert>two categorical variables</alert>?
+        </p>
+
+        <p>
+          This might mean that two categorical variables are recorded for
+          the same observations, or that a categorical outcome can be
+          compared across several populations or groups.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Does the data set contain enough observations that the categories
+          you want to study are reasonably represented?
+        </p>
+
+        <p>
+          As a starting guideline, try to find a data set with at least
+          100 observations. Avoid choosing variables for which important
+          categories contain only a very small number of observations.
+        </p>
+      </li>
+    </ul>
+
+    <p>
+      The same variables may be used for more than one part of the project.
+      You do <alert>not</alert> need a completely different variable for
+      each analysis.
+    </p>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Document Your Data Source</title>
+
+    <p>
+      As soon as you choose your data, save the information needed to find
+      the original source again. You should record:
+    </p>
+
+    <ul>
+      <li><p>the name of the data set,</p></li>
+      <li><p>the organization, researcher, or other source that produced the data,</p></li>
+      <li><p>the webpage where you found the data,</p></li>
+      <li><p>the original source of the data, when it is different from the website where you downloaded it, and</p></li>
+      <li><p>any documentation explaining the variables or how the data were collected.</p></li>
+    </ul>
+
+    <p>
+      You will need to include a proper <alert>APA 7th edition citation</alert>
+      for each data set that you use. As you select your data, save enough
+      information to create that citation later, including the author or
+      organization responsible for the data, the date or year of publication
+      when available, the title of the data set, the name of the website or
+      repository, and the URL. If the repository provides a recommended
+      citation, save that information as well. Do not wait until the final
+      report to try to relocate the citation information.
+    </p>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Places to Look for Data</title>
+
+    <p>
+      The following websites are good places to begin. You are not required
+      to use one of these sources. Some sites provide individual data sets,
+      while others provide searchable collections or links to data from many
+      different organizations.
+    </p>
+
+    <ul>
+      <li>
+        <p>
+          <url href="https://www.openintro.org/data/">OpenIntro Data Sets</url>
+          provides data sets designed for use in introductory statistics.
+          Many include documentation and can be downloaded directly for use
+          in statistical software.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <url href="https://github.com/rfordatascience/tidytuesday">TidyTuesday</url>
+          is a large collection of real-world data sets released for data
+          exploration and visualization. Each week's materials typically
+          include information about the original source of the data.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <url href="https://data.cdc.gov/">CDC Open Data</url>
+          provides public-health data from the Centers for Disease Control
+          and Prevention. It is especially useful for projects involving
+          health, disease, behavior, or population health.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <url href="https://archive.ics.uci.edu/">UCI Machine Learning Repository</url>
+          contains data sets from many subject areas, including biology,
+          medicine, and health. Many data sets include descriptions of the
+          variables and the original source.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <url href="https://www.data.gov/">Data.gov</url>
+          provides public access to a large collection of data sets produced
+          by U.S. federal, state, and local government agencies. The site is
+          searchable by topic and includes data from many different fields.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <url href="https://causeweb.org/cause/resources/library?field_material_type_tid=104">CAUSEweb Data Sets</url>
+          provides statistics-education resources contributed by educators
+          through the Consortium for the Advancement of Undergraduate
+          Statistics Education. The data sets cover a variety of topics and
+          are often accompanied by teaching materials.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <url href="https://www.ncdc.noaa.gov">NOAA National Centers for Environmental Information</url>
+          provides climate and historical weather data collected and
+          maintained by the National Oceanic and Atmospheric Administration.
+          This can be useful for environmental, ecological, and climate
+          questions.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <url href="https://www.data-is-plural.com/archive/">Data Is Plural</url>
+          is an archive of a newsletter highlighting interesting and useful
+          data sets. Each entry briefly describes a data source and includes
+          links for locating or downloading the data.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <url href="https://github.com/awesomedata/awesome-public-datasets">Awesome Public Datasets</url>
+          is a topic-organized collection of links to real-world data sets.
+          Categories include agriculture, biology, education, government,
+          economics, and many others. Most of the listed data sets are free.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <url href="https://data.cityofchicago.org/">City of Chicago Data Portal</url>
+          provides public data on topics such as transportation, public
+          services, salaries, traffic, and city operations. Some data sets
+          may require cleaning before they are ready for analysis.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <url href="https://data.lacity.org/">City of Los Angeles Open Data</url>
+          provides public data from the City of Los Angeles on a wide range
+          of city services, transportation, public safety, neighborhoods,
+          and other topics.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <url href="https://vital-signs-bniajfi.hub.arcgis.com/">Baltimore Neighborhood Indicators Alliance</url>
+          provides neighborhood-level data and indicators for Baltimore on
+          topics such as health, housing, education, demographics, and
+          community conditions.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <url href="https://www.causeweb.org/tshs/category/dataset/">Teaching of Statistics in the Health Sciences Resources Portal</url>
+          provides data sets specifically related to health-science studies.
+          Many entries include background information, downloadable data,
+          and explanations of the statistical methods used in the study.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <url href="http://data.un.org/">UN Data</url>
+          provides international data from the United Nations on population,
+          health, economics, education, the environment, and many other
+          topics. Filters can be used to create smaller, more manageable data
+          sets.
+        </p>
+      </li>
+    </ul>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Before Moving On</title>
+
+    <p>
+      Before beginning the next part of the project, you should be able to
+      identify:
+    </p>
+
+    <ul>
+      <li><p>the data set or data sets you plan to use,</p></li>
+      <li><p>the source of each data set,</p></li>
+      <li><p>what one row of the data represents,</p></li>
+      <li><p>the categorical variables that you are considering, and</p></li>
+      <li><p>how your data satisfy the requirements in the Data Selection Checklist.</p></li>
+    </ul>
+  </paragraphs>
+</section>

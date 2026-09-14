@@ -566,6 +566,285 @@ var ptx_lunr_docs = [
   "number": "63",
   "title": "A Two-Variable Distribution for a Large Dataset.",
   "body": " A Two-Variable Distribution for a Large Dataset  Create a contingency table to compare penguin species and sex. Then create a barplot of this data.  "
+},
+{
+  "id": "discrete-random-variables-binomial",
+  "level": "1",
+  "url": "discrete-random-variables-binomial.html",
+  "type": "Section",
+  "number": "",
+  "title": "Discrete Random Variables and the Binomial Distribution",
+  "body": " Discrete Random Variables and the Binomial Distribution     Identify discrete random variables and verify discrete probability distributions.    Calculate and interpret the expected value and standard deviation of a discrete random variable.    Determine whether a setting satisfies the conditions for a binomial model.    Use the binomial probability formula and R to calculate probabilities.    Calculate and interpret the expected value and standard deviation of a binomial random variable.      Counts occur throughout the life and environmental sciences: the number of hatchlings in a nest, contaminated water samples, or patients who respond to a treatment. A probability distribution describes which counts are possible and how likely they are. All probabilities and rates in these notes are hypothetical values chosen for instruction.    Discrete Random Variables and Probability Distributions   Random Variable      Discrete Random Variable      Discrete Probability Distribution      Fledglings per Nest   Let be the number of young birds that fledge from a randomly selected nest. The table below gives the probability distribution of the number of young birds that fledge.     0  1  2  3     .10  .20  .40  .30      Verify that this is a true distribution.    Find the probability of no fledgings.    Find the probability of at least two fledgings.    Find the probability of fewer than two fledgings.       Missing Probability in a Water-Quality Model   Let be the number of samples that exceed a specified nitrate threshold among three samples. Find the missing probability.     0  1  2  3     .50  .30  ?  .05        Expected Value and Standard Deviation   Expected Value      Expected Number of Fledglings   Find and interpret the expected value for the distribution in .     Variance and Standard Deviation      Variation in Fledgling Counts   Calculate and interpret the standard deviation for the fledgling distribution.     Follow-up Visits   Let be the number of follow-up visits needed by a patient in a hypothetical program. Calculate the expected value and standard deviation using R.     0  1  2  3     .40  .35  .20  .05        The Binomial Model and General Formula   Binomial Random Variable      Does a Binomial Model Fit?   Decide whether each setting meets the binomial conditions.    Twenty seeds are grown in separate controlled containers. Each independently germinates with probability 0.80. Count the seeds that germinate.    Sample 10 fish without replacement from a tank containing 20 fish, exactly 8 of which carry a parasite. Count carriers.    Inspect water samples until the first contaminated sample is found. Count samples inspected.    Count infections among 15 animals housed together, where an infected animal can transmit the infection to others.       Binomial Probability Formula  If , then   The combination counts the ways to place the successes among the trials:   Here and . Each particular arrangement has successes and failures, giving probability .    Exactly Three Seeds Germinate   Five seeds are grown separately. Assume independent germination, each with probability 0.70. Find the probability that exactly three germinate.      Binomial Probabilities in R  R uses size for the number of trials and prob for the probability of success on each trial. These functions are available in base R's standard stats package.   Core R Functions    Function  Meaning     dbinom(x, size, prob)    : exactly successes.     pbinom(q, size, prob)    : at most successes.     pbinom(q, size, prob, lower.tail = FALSE)    : more than successes.     For an integer cutoff , use the following translations. Before calculating, list the counts the event includes.   Translating Words and Inequalities into R    Words  Event  R command    Exactly       dbinom(k, size = n, prob = p)     Fewer than       pbinom(k - 1, size = n, prob = p)     At most       pbinom(k, size = n, prob = p)     More than       pbinom(k, size = n, prob = p, lower.tail = FALSE)     At least       pbinom(k - 1, size = n, prob = p, lower.tail = FALSE)      In particular, and because counts are integers. Also,   The option lower.tail = FALSE returns the upper-tail probability directly and can be more accurate than subtracting from 1 when that probability is very small.   Contaminated Water Samples   Ten water samples are collected independently. Each has probability 0.20 of contamination. Let count contaminated samples. Find the probability that:   Exactly two are contaminated.  Fewer than two are contaminated.  At most two are contaminated.  More than two are contaminated.  At least two are contaminated.      Response to a Health Intervention   Twelve patients participate in a hypothetical intervention. Assume their responses are independent and each patient has probability 0.60 of meeting a specified improvement criterion. Find each probability.    Exactly 7 patients meet the criterion.    Fewer than 7 patients meet the criterion.    At most 7 patients meet the criterion.    More than 7 patients meet the criterion.    At least 7 patients meet the criterion.       A Range of Resistant Isolates   Twenty bacterial isolates are sampled independently from a large source population. Each has probability 0.15 of resistance to a specified antibiotic. Let count resistant isolates. Find the probability that more than two but fewer than five are resistant.      Expected Value and Standard Deviation of a Binomial Variable   Binomial Mean and Standard Deviation      Seedling Survival in a Restoration Project   Fifty seedlings are planted under conditions that allow independent survival, each with probability 0.80 of surviving the first season. Find and interpret the expected value and standard deviation of the number surviving.     Positive Screening Results   A hypothetical screening program tests 25 independently selected people. Each has probability 0.10 of a positive result. Let count positive results. Find the mean, standard deviation, and probability of more than the expected number of positive results.     "
+},
+{
+  "id": "discrete-random-variables-binomial-2",
+  "level": "2",
+  "url": "discrete-random-variables-binomial.html#discrete-random-variables-binomial-2",
+  "type": "Objectives",
+  "number": "",
+  "title": "",
+  "body": "   Identify discrete random variables and verify discrete probability distributions.    Calculate and interpret the expected value and standard deviation of a discrete random variable.    Determine whether a setting satisfies the conditions for a binomial model.    Use the binomial probability formula and R to calculate probabilities.    Calculate and interpret the expected value and standard deviation of a binomial random variable.    "
+},
+{
+  "id": "def-random-variable",
+  "level": "2",
+  "url": "discrete-random-variables-binomial.html#def-random-variable",
+  "type": "Definition",
+  "number": "64",
+  "title": "Random Variable.",
+  "body": " Random Variable    "
+},
+{
+  "id": "def-discrete",
+  "level": "2",
+  "url": "discrete-random-variables-binomial.html#def-discrete",
+  "type": "Definition",
+  "number": "65",
+  "title": "Discrete Random Variable.",
+  "body": " Discrete Random Variable    "
+},
+{
+  "id": "def-disc-dist",
+  "level": "2",
+  "url": "discrete-random-variables-binomial.html#def-disc-dist",
+  "type": "Definition",
+  "number": "66",
+  "title": "Discrete Probability Distribution.",
+  "body": " Discrete Probability Distribution    "
+},
+{
+  "id": "ex-nest-probs",
+  "level": "2",
+  "url": "discrete-random-variables-binomial.html#ex-nest-probs",
+  "type": "Example",
+  "number": "67",
+  "title": "Fledglings per Nest.",
+  "body": " Fledglings per Nest   Let be the number of young birds that fledge from a randomly selected nest. The table below gives the probability distribution of the number of young birds that fledge.     0  1  2  3     .10  .20  .40  .30      Verify that this is a true distribution.    Find the probability of no fledgings.    Find the probability of at least two fledgings.    Find the probability of fewer than two fledgings.     "
+},
+{
+  "id": "ex-missing",
+  "level": "2",
+  "url": "discrete-random-variables-binomial.html#ex-missing",
+  "type": "Example",
+  "number": "68",
+  "title": "Missing Probability in a Water-Quality Model.",
+  "body": " Missing Probability in a Water-Quality Model   Let be the number of samples that exceed a specified nitrate threshold among three samples. Find the missing probability.     0  1  2  3     .50  .30  ?  .05     "
+},
+{
+  "id": "def-expected",
+  "level": "2",
+  "url": "discrete-random-variables-binomial.html#def-expected",
+  "type": "Definition",
+  "number": "69",
+  "title": "Expected Value.",
+  "body": " Expected Value    "
+},
+{
+  "id": "ex-nest-mean",
+  "level": "2",
+  "url": "discrete-random-variables-binomial.html#ex-nest-mean",
+  "type": "Example",
+  "number": "70",
+  "title": "Expected Number of Fledglings.",
+  "body": " Expected Number of Fledglings   Find and interpret the expected value for the distribution in .   "
+},
+{
+  "id": "def-sd",
+  "level": "2",
+  "url": "discrete-random-variables-binomial.html#def-sd",
+  "type": "Definition",
+  "number": "71",
+  "title": "Variance and Standard Deviation.",
+  "body": " Variance and Standard Deviation    "
+},
+{
+  "id": "ex-nest-sd",
+  "level": "2",
+  "url": "discrete-random-variables-binomial.html#ex-nest-sd",
+  "type": "Example",
+  "number": "72",
+  "title": "Variation in Fledgling Counts.",
+  "body": " Variation in Fledgling Counts   Calculate and interpret the standard deviation for the fledgling distribution.   "
+},
+{
+  "id": "ex-clinic",
+  "level": "2",
+  "url": "discrete-random-variables-binomial.html#ex-clinic",
+  "type": "Example",
+  "number": "73",
+  "title": "Follow-up Visits.",
+  "body": " Follow-up Visits   Let be the number of follow-up visits needed by a patient in a hypothetical program. Calculate the expected value and standard deviation using R.     0  1  2  3     .40  .35  .20  .05     "
+},
+{
+  "id": "def-binomial",
+  "level": "2",
+  "url": "discrete-random-variables-binomial.html#def-binomial",
+  "type": "Definition",
+  "number": "74",
+  "title": "Binomial Random Variable.",
+  "body": " Binomial Random Variable    "
+},
+{
+  "id": "ex-conditions",
+  "level": "2",
+  "url": "discrete-random-variables-binomial.html#ex-conditions",
+  "type": "Example",
+  "number": "75",
+  "title": "Does a Binomial Model Fit?",
+  "body": " Does a Binomial Model Fit?   Decide whether each setting meets the binomial conditions.    Twenty seeds are grown in separate controlled containers. Each independently germinates with probability 0.80. Count the seeds that germinate.    Sample 10 fish without replacement from a tank containing 20 fish, exactly 8 of which carry a parasite. Count carriers.    Inspect water samples until the first contaminated sample is found. Count samples inspected.    Count infections among 15 animals housed together, where an infected animal can transmit the infection to others.     "
+},
+{
+  "id": "def-formula",
+  "level": "2",
+  "url": "discrete-random-variables-binomial.html#def-formula",
+  "type": "Definition",
+  "number": "76",
+  "title": "Binomial Probability Formula.",
+  "body": " Binomial Probability Formula  If , then   The combination counts the ways to place the successes among the trials:   Here and . Each particular arrangement has successes and failures, giving probability .  "
+},
+{
+  "id": "ex-formula",
+  "level": "2",
+  "url": "discrete-random-variables-binomial.html#ex-formula",
+  "type": "Example",
+  "number": "77",
+  "title": "Exactly Three Seeds Germinate.",
+  "body": " Exactly Three Seeds Germinate   Five seeds are grown separately. Assume independent germination, each with probability 0.70. Find the probability that exactly three germinate.   "
+},
+{
+  "id": "drb-r-3",
+  "level": "2",
+  "url": "discrete-random-variables-binomial.html#drb-r-3",
+  "type": "Table",
+  "number": "78",
+  "title": "Core R Functions",
+  "body": " Core R Functions    Function  Meaning     dbinom(x, size, prob)    : exactly successes.     pbinom(q, size, prob)    : at most successes.     pbinom(q, size, prob, lower.tail = FALSE)    : more than successes.    "
+},
+{
+  "id": "drb-r-5",
+  "level": "2",
+  "url": "discrete-random-variables-binomial.html#drb-r-5",
+  "type": "Table",
+  "number": "79",
+  "title": "Translating Words and Inequalities into R",
+  "body": " Translating Words and Inequalities into R    Words  Event  R command    Exactly       dbinom(k, size = n, prob = p)     Fewer than       pbinom(k - 1, size = n, prob = p)     At most       pbinom(k, size = n, prob = p)     More than       pbinom(k, size = n, prob = p, lower.tail = FALSE)     At least       pbinom(k - 1, size = n, prob = p, lower.tail = FALSE)     "
+},
+{
+  "id": "ex-contaminated-samples",
+  "level": "2",
+  "url": "discrete-random-variables-binomial.html#ex-contaminated-samples",
+  "type": "Example",
+  "number": "80",
+  "title": "Contaminated Water Samples.",
+  "body": " Contaminated Water Samples   Ten water samples are collected independently. Each has probability 0.20 of contamination. Let count contaminated samples. Find the probability that:   Exactly two are contaminated.  Fewer than two are contaminated.  At most two are contaminated.  More than two are contaminated.  At least two are contaminated.    "
+},
+{
+  "id": "ex-health",
+  "level": "2",
+  "url": "discrete-random-variables-binomial.html#ex-health",
+  "type": "Example",
+  "number": "81",
+  "title": "Response to a Health Intervention.",
+  "body": " Response to a Health Intervention   Twelve patients participate in a hypothetical intervention. Assume their responses are independent and each patient has probability 0.60 of meeting a specified improvement criterion. Find each probability.    Exactly 7 patients meet the criterion.    Fewer than 7 patients meet the criterion.    At most 7 patients meet the criterion.    More than 7 patients meet the criterion.    At least 7 patients meet the criterion.     "
+},
+{
+  "id": "ex-intervals",
+  "level": "2",
+  "url": "discrete-random-variables-binomial.html#ex-intervals",
+  "type": "Example",
+  "number": "82",
+  "title": "A Range of Resistant Isolates.",
+  "body": " A Range of Resistant Isolates   Twenty bacterial isolates are sampled independently from a large source population. Each has probability 0.15 of resistance to a specified antibiotic. Let count resistant isolates. Find the probability that more than two but fewer than five are resistant.   "
+},
+{
+  "id": "def-binomial-moments",
+  "level": "2",
+  "url": "discrete-random-variables-binomial.html#def-binomial-moments",
+  "type": "Definition",
+  "number": "83",
+  "title": "Binomial Mean and Standard Deviation.",
+  "body": " Binomial Mean and Standard Deviation    "
+},
+{
+  "id": "ex-restoration",
+  "level": "2",
+  "url": "discrete-random-variables-binomial.html#ex-restoration",
+  "type": "Example",
+  "number": "84",
+  "title": "Seedling Survival in a Restoration Project.",
+  "body": " Seedling Survival in a Restoration Project   Fifty seedlings are planted under conditions that allow independent survival, each with probability 0.80 of surviving the first season. Find and interpret the expected value and standard deviation of the number surviving.   "
+},
+{
+  "id": "ex-screening",
+  "level": "2",
+  "url": "discrete-random-variables-binomial.html#ex-screening",
+  "type": "Example",
+  "number": "85",
+  "title": "Positive Screening Results.",
+  "body": " Positive Screening Results   A hypothetical screening program tests 25 independently selected people. Each has probability 0.10 of a positive result. Let count positive results. Find the mean, standard deviation, and probability of more than the expected number of positive results.   "
+},
+{
+  "id": "subsec-cat-project-rubric",
+  "level": "1",
+  "url": "subsec-cat-project-rubric.html",
+  "type": "Section",
+  "number": "",
+  "title": "Inference for Categorical Data: Project Rubric",
+  "body": " Inference for Categorical Data: Project Rubric  The Categorical Data Project is worth 30 points . The rubric below expands the general project rubric from the syllabus to describe the expectations for this particular project.   Data Set Selection and Documentation: 2 points   1 point: The selected data set or data sets satisfy the requirements of the project and contain appropriate categorical variables for the required analyses.  1 point: The source of each data set is clearly identified. The original source and relevant documentation are included when available, and important modifications to the original data are documented.     Data Set Summary and Research Questions: 4 points   1 point: The context, observational units, sample size, and population of interest are clearly explained.  1 point: The variables and their categories are clearly identified and explained.  2 point: The research questions are clearly stated, meaningful in the context of the data, and appropriate for the analyses performed. The entire section is no longer than one page.     Graphical Analysis: 5 points   1 point: Appropriate frequency or relative-frequency tables are constructed correctly.  1 point: Appropriate contingency tables and relevant conditional proportions are constructed correctly.  1 point: Appropriate bar plots are constructed correctly and support the research questions.  1 point: Appropriate stacked bar plots are constructed correctly and support comparisons involving two categorical variables.  1 point: Graphics and tables are readable and contain suitable titles, labels, category names, and legends. They are discussed in the report rather than presented without explanation.     Statistical Methods and Computations: 5 points   1 point: The one-proportion z test or confidence interval is appropriate for the question and is performed correctly.  1 point: The two-proportion z test is appropriate for the question and is performed correctly.  1 point: The multinomial distribution test is appropriate for the question and is performed correctly using a justified expected distribution.  1 point: The test of homogeneity or test of independence is selected appropriately and performed correctly.  1 point: Hypotheses, parameters, relevant calculations, statistical notation, and required conditions or assumptions are handled appropriately throughout the analyses.     Results and Interpretation: 5 points   1 point: Results from the one-proportion analysis are reported accurately and interpreted in context.  1 point: Results from the two-proportion analysis are reported accurately and interpreted in context.  1 point: Results from the goodness-of-fit analysis are reported accurately and interpreted in context.  1 point: Results from the homogeneity or independence analysis are reported accurately and interpreted in context.  1 point: The discussion explains the meaning of the statistical findings rather than merely listing test statistics, p-values, confidence intervals, or software output.     Conclusion: 5 points   2 points: The conclusion clearly answers the research questions and accurately summarizes the principal findings of the project.  2 point: Statistical findings are explained in the context of the topic rather than simply repeated as numerical results.  1 point: The conclusion is a clear and coherent summary and is no longer than one page.     Organization and Presentation: 4 points   1 point: The report is organized into a logical sequence and the reader can easily follow the progression from the research questions to the analysis and conclusions.  1 point: The report is written in complete sentences using clear, professional language.  1 point: Tables, graphs, calculations, and statistical results are placed logically within the report and are referenced in the surrounding text.  1 point: The finished report is readable and professionally presented, with consistent formatting and without unnecessary raw software output.        Criterion  Points   Data Set Selection and Documentation 2  Data Set Summary and Research Questions 4  Graphical Analysis 5  Statistical Methods and Computations 5  Results and Interpretation 5  Conclusion 5  Organization and Presentation 4  Total 30   "
+},
+{
+  "id": "subsec-cat-project-data-selection",
+  "level": "1",
+  "url": "subsec-cat-project-data-selection.html",
+  "type": "Section",
+  "number": "",
+  "title": "ICD: Data Set Selection and Documentation",
+  "body": " ICD: Data Set Selection and Documentation  The first step of this project is to find data that you are interested in studying. You are responsible for finding your own data set. You may use one data set if it contains everything that you need for the project, or you may use two data sets if necessary.   What Kind of Data Should I Find?  Look for data in which the rows represent individual observations and the columns represent variables. An observation could represent a person, patient, animal, organism, specimen, location, event, or another individual unit being studied.  Your data should contain several useful categorical variables . Some numerical variables may also be present in the data, but this project will focus on the categorical variables.    Data Selection Checklist  You do not need to know why each item on this checklist is important yet. These requirements are designed to make sure that your data can be used for the statistical methods that we will learn later.  Your data set, or combination of two data sets, should allow you to answer yes to each of the following questions.    Do you have at least one categorical variable with two possible outcomes ?  Examples include yes\/no, present\/absent, positive\/negative, survived\/did not survive, infected\/not infected, or another variable that can reasonably be divided into two categories.    Can you compare the proportion of one of those outcomes between two meaningful groups ?  For example, the groups might represent two treatments, two populations, two locations, two age groups, two species, or two other meaningful groups.    Do you have at least one categorical variable with three or more outcomes ?    For one of your variables with three or more categories, can you identify a meaningful expected distribution that could be used for comparison?  The expected percentages might come from previously published research, a government or scientific source, a historical distribution, a biological model, or another justified benchmark. You may make a guess yourself if you want; for example you may expect them to be distributed equally.    Does your data allow you to investigate a relationship involving two categorical variables ?  This might mean that two categorical variables are recorded for the same observations, or that a categorical outcome can be compared across several populations or groups.    Does the data set contain enough observations that the categories you want to study are reasonably represented?  As a starting guideline, try to find a data set with at least 100 observations. Avoid choosing variables for which important categories contain only a very small number of observations.    The same variables may be used for more than one part of the project. You do not need a completely different variable for each analysis.    Document Your Data Source  As soon as you choose your data, save the information needed to find the original source again. You should record:   the name of the data set,  the organization, researcher, or other source that produced the data,  the webpage where you found the data,  the original source of the data, when it is different from the website where you downloaded it, and  any documentation explaining the variables or how the data were collected.   You will need to include a proper APA 7th edition citation for each data set that you use. As you select your data, save enough information to create that citation later, including the author or organization responsible for the data, the date or year of publication when available, the title of the data set, the name of the website or repository, and the URL. If the repository provides a recommended citation, save that information as well. Do not wait until the final report to try to relocate the citation information.    Places to Look for Data  The following websites are good places to begin. You are not required to use one of these sources. Some sites provide individual data sets, while others provide searchable collections or links to data from many different organizations.     OpenIntro Data Sets provides data sets designed for use in introductory statistics. Many include documentation and can be downloaded directly for use in statistical software.     TidyTuesday is a large collection of real-world data sets released for data exploration and visualization. Each week's materials typically include information about the original source of the data.     CDC Open Data provides public-health data from the Centers for Disease Control and Prevention. It is especially useful for projects involving health, disease, behavior, or population health.     UCI Machine Learning Repository contains data sets from many subject areas, including biology, medicine, and health. Many data sets include descriptions of the variables and the original source.     Data.gov provides public access to a large collection of data sets produced by U.S. federal, state, and local government agencies. The site is searchable by topic and includes data from many different fields.     CAUSEweb Data Sets provides statistics-education resources contributed by educators through the Consortium for the Advancement of Undergraduate Statistics Education. The data sets cover a variety of topics and are often accompanied by teaching materials.     NOAA National Centers for Environmental Information provides climate and historical weather data collected and maintained by the National Oceanic and Atmospheric Administration. This can be useful for environmental, ecological, and climate questions.     Data Is Plural is an archive of a newsletter highlighting interesting and useful data sets. Each entry briefly describes a data source and includes links for locating or downloading the data.     Awesome Public Datasets is a topic-organized collection of links to real-world data sets. Categories include agriculture, biology, education, government, economics, and many others. Most of the listed data sets are free.     City of Chicago Data Portal provides public data on topics such as transportation, public services, salaries, traffic, and city operations. Some data sets may require cleaning before they are ready for analysis.     City of Los Angeles Open Data provides public data from the City of Los Angeles on a wide range of city services, transportation, public safety, neighborhoods, and other topics.     Baltimore Neighborhood Indicators Alliance provides neighborhood-level data and indicators for Baltimore on topics such as health, housing, education, demographics, and community conditions.     Teaching of Statistics in the Health Sciences Resources Portal provides data sets specifically related to health-science studies. Many entries include background information, downloadable data, and explanations of the statistical methods used in the study.     UN Data provides international data from the United Nations on population, health, economics, education, the environment, and many other topics. Filters can be used to create smaller, more manageable data sets.      Before Moving On  Before beginning the next part of the project, you should be able to identify:   the data set or data sets you plan to use,  the source of each data set,  what one row of the data represents,  the categorical variables that you are considering, and  how your data satisfy the requirements in the Data Selection Checklist.    "
+},
+{
+  "id": "subsec-cat-project-summary",
+  "level": "1",
+  "url": "subsec-cat-project-summary.html",
+  "type": "Section",
+  "number": "",
+  "title": "ICD: Data Set Summary and Research Questions",
+  "body": " ICD: Data Set Summary and Research Questions  The next step is to explain your data and identify the questions that you would like to investigate. Your reader should be able to understand what the data represent without having to locate and study the original data source.  Your Data Set Summary and Research Questions should be no more than one page .   Data Set Summary  Write your summary in complete sentences. Include the following information when it is available.   Context. What is the data set about? Briefly explain the topic being studied.  Observational units. What does one row or one observation in the data represent?  Sample size. How many observations are in the portion of the data that you plan to analyze?  Population and sample. Who or what was actually observed? What larger population, if any, might the observations be intended to represent?  Variables. Identify the categorical variables that you plan to use and explain what their categories represent.  Data preparation. Describe any changes that you make to the original data. This includes filtering observations, removing missing values, combining categories, creating new categorical variables, or making other modifications.     Research Questions  Write research questions that describe what you would like to learn from the data. Your questions should refer to the variables and populations in your actual data rather than simply naming a statistical procedure.  By the end of the project, your questions should allow you to investigate each of the following ideas.   A question about the proportion of a population having a particular characteristic.  A question comparing the proportion with a particular characteristic between two groups .  A question comparing the distribution of a categorical variable with three or more categories to a meaningful expected distribution.  A question about whether there is a relationship between categorical variables or whether the distribution of a categorical outcome differs among several groups.   Your research questions may change slightly as you learn the statistical procedures used to answer them. If a question changes, revise it so that the final report contains the question that you actually investigated.   "
+},
+{
+  "id": "subsec-cat-project-graphical",
+  "level": "1",
+  "url": "subsec-cat-project-graphical.html",
+  "type": "Section",
+  "number": "",
+  "title": "ICD: Graphical Analysis",
+  "body": " ICD: Graphical Analysis  Before performing formal statistical tests, explore the categorical variables involved in your research questions. Your tables and graphs should help the reader understand the patterns in the data and should support the analyses that you perform later.   Required Tables  Include appropriate tables that summarize the categorical variables used in your project.   Create frequency tables for important individual categorical variables.  Include relative frequencies or proportions when they are useful for interpreting the data.  Create appropriate contingency tables when investigating two categorical variables or comparing a categorical outcome among groups.  Include row or column proportions when they make comparisons between groups easier to understand.     Required Graphs  Your graphical analysis should include both bar plots and stacked bar plots . Select variables so that the graphs contribute to your research questions rather than simply creating graphs of every categorical variable in the data set.   Use bar plots to display the distribution of important categorical variables.  Use stacked bar plots to investigate relationships or compare distributions involving two categorical variables.  When comparing groups, consider whether frequencies or proportions provide the more useful comparison.     Presentation of Tables and Graphics  Tables and graphs are part of your report and should be designed for the reader. Do not submit an unexplained collection of R output.  Each table or graph should:   have a meaningful title,  use clear category and variable labels,  include a legend when one is necessary,  be large enough to read easily, and  be discussed in the surrounding text so that the reader understands why it is included and what pattern it illustrates.    "
+},
+{
+  "id": "subsec-cat-project-methods",
+  "level": "1",
+  "url": "subsec-cat-project-methods.html",
+  "type": "Section",
+  "number": "",
+  "title": "ICD: Statistical Methods and Computations",
+  "body": " ICD: Statistical Methods and Computations  Use the statistical methods that we learn in class to answer your research questions. Your report should make it clear which variables are being analyzed, why each procedure is appropriate, and how the calculations relate to your research question.   Required Analyses  Your project must include each of the following.    One-Proportion Analysis  Perform a one-proportion z test or construct a confidence interval for one population proportion.    Two-Proportion z Test  Use a two-proportion z test to compare a categorical outcome between two groups.    Multinomial Distribution Test  Perform a multinomial distribution test to compare the observed distribution of a categorical variable with three or more categories to a justified expected distribution.    Test of Homogeneity or Test of Independence  Use either a test of homogeneity or a test of independence, depending on the structure of your data and the research question that you are investigating.      For Each Statistical Procedure  Include the information needed for the reader to understand and evaluate your analysis.   Clearly identify the research question being answered.  State the appropriate null and alternative hypotheses when performing a hypothesis test.  Define the parameters used in your hypotheses.  Identify and check the required conditions or assumptions.  Include relevant sample statistics or observed counts.  Report the appropriate test statistic, degrees of freedom when applicable, p-value, confidence interval, or other required calculations.  Use appropriate statistical notation.   Software may be used to perform calculations, but software output should support your analysis rather than replace it. Include the relevant results in the report instead of pasting large amounts of unexplained output.   "
+},
+{
+  "id": "subsec-cat-project-results",
+  "level": "1",
+  "url": "subsec-cat-project-results.html",
+  "type": "Section",
+  "number": "",
+  "title": "ICD: Results and Interpretation",
+  "body": " ICD: Results and Interpretation  Statistical calculations are only useful when they are connected back to the question being investigated. After each statistical analysis, explain what the results mean in the context of your data.   Reporting Your Results  Report the important numerical results from each analysis. Depending on the procedure, this may include:   sample proportions,  differences between sample proportions,  observed and expected counts,  test statistics,  degrees of freedom,  p-values, and  confidence intervals.   Do not simply paste software output into the report. Select the results that are relevant to the analysis and present them clearly.    Interpreting Your Results  Interpret statistical results using the context of your research question.  For a hypothesis test, your discussion should:   state the statistical decision using the p-value and appropriate significance level,  explain what that decision means for the original research question, and  avoid claiming that a result proves that the null or alternative hypothesis is true.   For a confidence interval, explain the interval in terms of the population parameter being estimated. Your interpretation should make clear what the endpoints of the interval represent.    Connect the Analyses  Your report should not read like four unrelated homework problems. Explain how the results relate to your data and research questions. When two analyses investigate related aspects of the data, discuss how their findings fit together.   "
+},
+{
+  "id": "subsec-cat-project-conclusion",
+  "level": "1",
+  "url": "subsec-cat-project-conclusion.html",
+  "type": "Section",
+  "number": "",
+  "title": "ICD: Conclusion",
+  "body": " ICD: Conclusion  End your report with a concise conclusion that brings together the important findings from the entire project.  Your conclusion should be no more than one page .   What to Include  Your conclusion should:   return to the research questions that you introduced at the beginning of the project,  summarize the major findings from your tables, graphs, and statistical analyses,  explain what those findings mean in the context of the topic being studied, and  explain what conclusions can reasonably be drawn from the data.     Writing the Conclusion  The conclusion should be written as a coherent discussion rather than a list of test statistics and p-values. Numerical results may be mentioned when useful, but the emphasis should be on what you learned from the data.   "
 }
 ]
 

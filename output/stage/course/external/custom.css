@@ -175,3 +175,67 @@ a.mathjax-link {
   break-before: page;
   page-break-before: always;
 }
+
+#def-categorical-data {
+  padding-bottom: 1in;
+}
+
+#def-numerical-data {
+  padding-bottom: 1in;
+}
+
+#def-frequency {
+  padding-bottom: 1in;
+}
+
+#def-proportion {
+  padding-bottom: 1in;
+}
+
+#ex-antibiotic-response-frequency {
+  padding-bottom: .5in;
+}
+
+#def-one-variable-frequency-distribution {
+  padding-bottom: 1in;
+}
+
+#ex-freq-anti-data {
+  padding-bottom: 2in;
+}
+
+#tab-pollinator-raw-data table tr:nth-child(2n) > * {
+  background-color: #F6E4FC;
+}
+
+#def-two-way-table {
+  padding-bottom: 1in;
+}
+
+#ex-antibiotic-response-proportion-table {
+  padding-bottom: 2in;
+}
+
+#tab-germination-raw-data table tr:nth-child(2n) > * {
+  background-color: #F6E4FC;
+}
+
+#def-bar-graph {
+  padding-bottom: 1in;
+}
+
+#bar-plot-in-R {
+  padding-bottom: 2in;
+}
+
+#two-var-bar-plot-in-R {
+  padding-bottom: 2in;
+}
+
+#ex-penguin-one-variable-frequency {
+  padding-bottom: 4in;
+}
+
+#ex-penguin-two-variable-frequency {
+  padding-bottom: 4in;
+}

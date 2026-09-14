@@ -25,6 +25,19 @@
       <xi:include href="./notes/marg-joint-cond-prob.ptx"/>
       <xi:include href="./notes/addition-complement-rules.ptx"/>
       <xi:include href="./notes/describing-categorical-data.ptx"/>
+      <xi:include href="./notes/binomial.ptx"/>
+    </chapter>
+
+    <chapter xml:id="projects">
+      <title>Projects</title>
+
+      <xi:include href="./projects/07-project-rubric.ptx"/>   
+      <xi:include href="./projects/01-data-set-selection.ptx"/>
+      <xi:include href="./projects/02-data-summary-research-questions.ptx"/>
+      <xi:include href="./projects/03-graphical-analysis.ptx"/>
+      <xi:include href="./projects/04-statistical-methods-computations.ptx"/>
+      <xi:include href="./projects/05-results-interpretation.ptx"/>
+      <xi:include href="./projects/06-conclusion.ptx"/>
     </chapter>
 
     </book>

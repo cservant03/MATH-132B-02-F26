@@ -1,0 +1,54 @@
+WARNING : Using CLI version 2.52.3 but project's `requirements.txt`
+WARNING : is configured to use 2.39.0. Consider either installing
+WARNING : CLI version 2.39.0 or running `pretext update-project`
+WARNING : to update `requirements.txt` and other managed files to match 2.52.3.
+INFO    : Since no target was supplied, we will use "course".
+
+INFO    : Building target course
+INFO    : XSL conversion of /home/cservant/Dropbox/SVSU/Semester Materials/MATH-132B-02-F26/source/main.ptx by /home/cservant/.ptx/2.52.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : messages from the log for XSL processing (prefaced with a *):
+WARNING : * PTX:DEPRECATE: (2026-07-30) the external directory is a property of your source, and is now declared with a "directories/@external" attribute within "docinfo".  The publication file entry "source/directories/@external" is honored meanwhile, but please relocate it.
+INFO    : successful application of /home/cservant/.ptx/2.52.3/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : discovering source file's directory name: /home/cservant/Dropbox/SVSU/Semester Materials/MATH-132B-02-F26/source
+WARNING : (2026-07-30) the external directory is a property of your source, and is now declared with a "directories/@external" attribute within "docinfo". The publisher file entry "source/directories/@external" is honored meanwhile, but please relocate it.
+INFO    : verifying and expanding input directory: /home/cservant/Dropbox/SVSU/Semester Materials/MATH-132B-02-F26/source/../assets
+INFO    : input directory expanded to absolute path: /home/cservant/Dropbox/SVSU/Semester Materials/MATH-132B-02-F26/assets
+INFO    : Generating any needed assets.
+INFO    : Finished generating assets.
+
+INFO    : Preparing to build into /home/cservant/Dropbox/SVSU/Semester Materials/MATH-132B-02-F26/output/course.
+INFO    : XSL conversion of /home/cservant/Dropbox/SVSU/Semester Materials/MATH-132B-02-F26/source/main.ptx by /home/cservant/.ptx/2.52.3/core/xsl/utilities/report-publisher-variables.xsl
+INFO    : successful application of /home/cservant/.ptx/2.52.3/core/xsl/utilities/report-publisher-variables.xsl
+INFO    : Downloading rs services file from https://runestone.academy/cdn/runestone/latest/webpack_static_imports.xml.
+INFO    : Runestone Services via online CDN query: version 8.2.11
+INFO    : Downloading Runestone Services, version 8.2.11
+INFO    : Extracting Runestone Services from archive file
+INFO    : Building custom css theme: theme-salem
+INFO    : converting /home/cservant/Dropbox/SVSU/Semester Materials/MATH-132B-02-F26/source/main.ptx to HTML in /tmp/ptx-d_zzk1ay
+INFO    : XSL conversion of /home/cservant/Dropbox/SVSU/Semester Materials/MATH-132B-02-F26/source/main.ptx by /home/cservant/.ptx/2.52.3/core/xsl/pretext-html.xsl
+INFO    : * PTX:INFO:   checking all deprecated elements.
+WARNING : * PTX:DEPRECATE: (2024-11-19) program/input now should be program/code. An automatic correction will be attempted. (3 times)
+INFO    : *              located at: pretext/book/chapter/section/subsection/example/program/input
+INFO    : *              located within: "pollinators-dist" (xml:id)
+INFO    : *              located within: "ex-germination-proportion-table-r" (xml:id), "Creating a Proportion Table in R" (title)
+INFO    : *              located at: pretext/book/chapter/section/subsection/program/input
+INFO    : *              located within: "subsec-large-categorical-dataset" (xml:id), "Working with a Larger Biological Dataset" (title)
+INFO    : * --------------
+WARNING : * PTX:DEPRECATE: (2026-05-11) the "me" and "men" elements have been deprecated.  The replacement is an "md" with no "mrow" children, and numbering is controlled by the "@number" attribute, or a global setting in "docinfo". (27 times)
+INFO    : *              located at: pretext/book/chapter/section/subsection/definition/me
+INFO    : *              located within: "drb-def-expected" (xml:id), "Expected Value" (title)
+INFO    : *              located at: pretext/book/chapter/section/subsection/example/solution/me
+INFO    : *              located within: "drb-ex-nest-mean" (xml:id), "Expected Number of Fledglings" (title)
+INFO    : *              located within: "drb-def-sd" (xml:id), "Variance and Standard Deviation" (title)
+INFO    : *              located within: "drb-ex-nest-sd" (xml:id), "Variation in Fledgling Counts" (title)
+INFO    : *              located within: "drb-ex-clinic" (xml:id), "Follow-up Visits" (title)
+INFO    : successful application of /home/cservant/.ptx/2.52.3/core/xsl/pretext-html.xsl
+INFO    : Removing temporary directory /tmp/ptx-d_zzk1ay
+INFO    : Removing temporary directory /tmp/ptx-lo1jw09c
+INFO    : 
+Finished build for target course. Run `pretext view course` to see the results.
+
+INFO    : 
+Success!  Built requested target(s) without errors.
+
+INFO    : 

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="subsec-cat-project-rubric">
+  <title>Inference for Categorical Data: Project Rubric</title>
+
+  <p>
+    The Categorical Data Project is worth <alert>30 points</alert>. The
+    rubric below expands the general project rubric from the syllabus to
+    describe the expectations for this particular project.
+  </p>
+
+  <paragraphs xml:id="rubric-cat-selection">
+    <title>Data Set Selection and Documentation: 2 points</title>
+    <ul>
+      <li><p><alert>1 point:</alert> The selected data set or data sets satisfy the requirements of the project and contain appropriate categorical variables for the required analyses.</p></li>
+      <li><p><alert>1 point:</alert> The source of each data set is clearly identified. The original source and relevant documentation are included when available, and important modifications to the original data are documented.</p></li>
+    </ul>
+  </paragraphs>
+
+  <paragraphs xml:id="rubric-cat-summary-questions">
+    <title>Data Set Summary and Research Questions: 4 points</title>
+    <ul>
+      <li><p><alert>1 point:</alert> The context, observational units, sample size, and population of interest are clearly explained.</p></li>
+      <li><p><alert>1 point:</alert> The variables and their categories are clearly identified and explained.</p></li>
+      <li><p><alert>2 point:</alert> The research questions are clearly stated, meaningful in the context of the data, and appropriate for the analyses performed. The entire section is no longer than one page.</p></li>
+    </ul>
+  </paragraphs>
+
+  <paragraphs xml:id="rubric-cat-graphical">
+    <title>Graphical Analysis: 5 points</title>
+    <ul>
+      <li><p><alert>1 point:</alert> Appropriate frequency or relative-frequency tables are constructed correctly.</p></li>
+      <li><p><alert>1 point:</alert> Appropriate contingency tables and relevant conditional proportions are constructed correctly.</p></li>
+      <li><p><alert>1 point:</alert> Appropriate bar plots are constructed correctly and support the research questions.</p></li>
+      <li><p><alert>1 point:</alert> Appropriate stacked bar plots are constructed correctly and support comparisons involving two categorical variables.</p></li>
+      <li><p><alert>1 point:</alert> Graphics and tables are readable and contain suitable titles, labels, category names, and legends. They are discussed in the report rather than presented without explanation.</p></li>
+    </ul>
+  </paragraphs>
+
+  <paragraphs xml:id="rubric-cat-statistical-methods">
+    <title>Statistical Methods and Computations: 5 points</title>
+    <ul>
+      <li><p><alert>1 point:</alert> The one-proportion z test or confidence interval is appropriate for the question and is performed correctly.</p></li>
+      <li><p><alert>1 point:</alert> The two-proportion z test is appropriate for the question and is performed correctly.</p></li>
+      <li><p><alert>1 point:</alert> The multinomial distribution test is appropriate for the question and is performed correctly using a justified expected distribution.</p></li>
+      <li><p><alert>1 point:</alert> The test of homogeneity or test of independence is selected appropriately and performed correctly.</p></li>
+      <li><p><alert>1 point:</alert> Hypotheses, parameters, relevant calculations, statistical notation, and required conditions or assumptions are handled appropriately throughout the analyses.</p></li>
+    </ul>
+  </paragraphs>
+
+  <paragraphs xml:id="rubric-cat-results">
+    <title>Results and Interpretation: 5 points</title>
+    <ul>
+      <li><p><alert>1 point:</alert> Results from the one-proportion analysis are reported accurately and interpreted in context.</p></li>
+      <li><p><alert>1 point:</alert> Results from the two-proportion analysis are reported accurately and interpreted in context.</p></li>
+      <li><p><alert>1 point:</alert> Results from the goodness-of-fit analysis are reported accurately and interpreted in context.</p></li>
+      <li><p><alert>1 point:</alert> Results from the homogeneity or independence analysis are reported accurately and interpreted in context.</p></li>
+      <li><p><alert>1 point:</alert> The discussion explains the meaning of the statistical findings rather than merely listing test statistics, p-values, confidence intervals, or software output.</p></li>
+    </ul>
+  </paragraphs>
+
+  <paragraphs xml:id="rubric-cat-conclusion">
+    <title>Conclusion: 5 points</title>
+    <ul>
+      <li><p><alert>2 points:</alert> The conclusion clearly answers the research questions and accurately summarizes the principal findings of the project.</p></li>
+      <li><p><alert>2 point:</alert> Statistical findings are explained in the context of the topic rather than simply repeated as numerical results.</p></li>
+      <li><p><alert>1 point:</alert> The conclusion is a clear and coherent summary and is no longer than one page.</p></li>
+    </ul>
+  </paragraphs>
+
+  <paragraphs xml:id="rubric-cat-organization">
+    <title>Organization and Presentation: 4 points</title>
+    <ul>
+      <li><p><alert>1 point:</alert> The report is organized into a logical sequence and the reader can easily follow the progression from the research questions to the analysis and conclusions.</p></li>
+      <li><p><alert>1 point:</alert> The report is written in complete sentences using clear, professional language.</p></li>
+      <li><p><alert>1 point:</alert> Tables, graphs, calculations, and statistical results are placed logically within the report and are referenced in the surrounding text.</p></li>
+      <li><p><alert>1 point:</alert> The finished report is readable and professionally presented, with consistent formatting and without unnecessary raw software output.</p></li>
+    </ul>
+  </paragraphs>
+
+  <tabular row-headers="yes"
+            halign="left"
+            valign="top"
+            top="medium"
+            left="medium"
+            bottom="medium"
+            right="medium">
+    <col width="82%"/>
+    <col width="18%"/>
+    <row header="yes" bottom="medium">
+      <cell>Criterion</cell>
+      <cell>Points</cell>
+    </row>
+    <row><cell>Data Set Selection and Documentation</cell><cell>2</cell></row>
+    <row><cell>Data Set Summary and Research Questions</cell><cell>4</cell></row>
+    <row><cell>Graphical Analysis</cell><cell>5</cell></row>
+    <row><cell>Statistical Methods and Computations</cell><cell>5</cell></row>
+    <row><cell>Results and Interpretation</cell><cell>5</cell></row>
+    <row><cell>Conclusion</cell><cell>5</cell></row>
+    <row><cell>Organization and Presentation</cell><cell>4</cell></row>
+    <row><cell><alert>Total</alert></cell><cell><alert>30</alert></cell></row>
+  </tabular>
+</section>

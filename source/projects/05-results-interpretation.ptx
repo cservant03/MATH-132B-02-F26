@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="subsec-cat-project-results">
+  <title>ICD: Results and Interpretation</title>
+
+  <p>
+    Statistical calculations are only useful when they are connected back
+    to the question being investigated. After each statistical analysis,
+    explain what the results mean in the context of your data.
+  </p>
+
+  <paragraphs>
+    <title>Reporting Your Results</title>
+
+    <p>
+      Report the important numerical results from each analysis. Depending
+      on the procedure, this may include:
+    </p>
+
+    <ul>
+      <li><p>sample proportions,</p></li>
+      <li><p>differences between sample proportions,</p></li>
+      <li><p>observed and expected counts,</p></li>
+      <li><p>test statistics,</p></li>
+      <li><p>degrees of freedom,</p></li>
+      <li><p>p-values, and</p></li>
+      <li><p>confidence intervals.</p></li>
+    </ul>
+
+    <p>
+      Do not simply paste software output into the report. Select the
+      results that are relevant to the analysis and present them clearly.
+    </p>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Interpreting Your Results</title>
+
+    <p>
+      Interpret statistical results using the context of your research
+      question.
+    </p>
+
+    <p>For a hypothesis test, your discussion should:</p>
+
+    <ul>
+      <li><p>state the statistical decision using the p-value and appropriate significance level,</p></li>
+      <li><p>explain what that decision means for the original research question, and</p></li>
+      <li><p>avoid claiming that a result proves that the null or alternative hypothesis is true.</p></li>
+    </ul>
+
+    <p>
+      For a confidence interval, explain the interval in terms of the
+      population parameter being estimated. Your interpretation should
+      make clear what the endpoints of the interval represent.
+    </p>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Connect the Analyses</title>
+
+    <p>
+      Your report should not read like four unrelated homework problems.
+      Explain how the results relate to your data and research questions.
+      When two analyses investigate related aspects of the data, discuss
+      how their findings fit together.
+    </p>
+  </paragraphs>
+</section>

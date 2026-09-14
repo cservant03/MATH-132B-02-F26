@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="subsec-cat-project-summary">
+  <title>ICD: Data Set Summary and Research Questions</title>
+
+  <p>
+    The next step is to explain your data and identify the questions that
+    you would like to investigate. Your reader should be able to understand
+    what the data represent without having to locate and study the original
+    data source.
+  </p>
+
+  <p>
+    Your <alert>Data Set Summary and Research Questions should be no more
+    than one page</alert>.
+  </p>
+
+  <paragraphs>
+    <title>Data Set Summary</title>
+
+    <p>
+      Write your summary in complete sentences. Include the following
+      information when it is available.
+    </p>
+
+    <ol marker="1)">
+      <li><p><alert>Context.</alert> What is the data set about? Briefly explain the topic being studied.</p></li>
+      <li><p><alert>Observational units.</alert> What does one row or one observation in the data represent?</p></li>
+      <li><p><alert>Sample size.</alert> How many observations are in the portion of the data that you plan to analyze?</p></li>
+      <li><p><alert>Population and sample.</alert> Who or what was actually observed? What larger population, if any, might the observations be intended to represent?</p></li>
+      <li><p><alert>Variables.</alert> Identify the categorical variables that you plan to use and explain what their categories represent.</p></li>
+      <li><p><alert>Data preparation.</alert> Describe any changes that you make to the original data. This includes filtering observations, removing missing values, combining categories, creating new categorical variables, or making other modifications.</p></li>
+    </ol>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Research Questions</title>
+
+    <p>
+      Write research questions that describe what you would like to learn
+      from the data. Your questions should refer to the variables and
+      populations in your actual data rather than simply naming a
+      statistical procedure.
+    </p>
+
+    <p>
+      By the end of the project, your questions should allow you to
+      investigate each of the following ideas.
+    </p>
+
+    <ol marker="1)">
+      <li><p>A question about the <alert>proportion</alert> of a population having a particular characteristic.</p></li>
+      <li><p>A question comparing the proportion with a particular characteristic between <alert>two groups</alert>.</p></li>
+      <li><p>A question comparing the distribution of a categorical variable with <alert>three or more categories</alert> to a meaningful expected distribution.</p></li>
+      <li><p>A question about whether there is a <alert>relationship between categorical variables</alert> or whether the distribution of a categorical outcome differs among several groups.</p></li>
+    </ol>
+
+    <p>
+      Your research questions may change slightly as you learn the
+      statistical procedures used to answer them. If a question changes,
+      revise it so that the final report contains the question that you
+      actually investigated.
+    </p>
+  </paragraphs>
+</section>

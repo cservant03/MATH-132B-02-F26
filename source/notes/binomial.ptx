@@ -1,0 +1,392 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="discrete-random-variables-binomial">
+  <title>Discrete Random Variables and the Binomial Distribution</title>
+
+  <objectives>
+    <ol marker="1)">
+      <li>
+        <p>Identify discrete random variables and verify discrete probability distributions.</p>
+      </li>
+      <li>
+        <p>Calculate and interpret the expected value and standard deviation of a discrete random variable.</p>
+      </li>
+      <li>
+        <p>Determine whether a setting satisfies the conditions for a binomial model.</p>
+      </li>
+      <li>
+        <p>Use the binomial probability formula and R to calculate probabilities.</p>
+      </li>
+      <li>
+        <p>Calculate and interpret the expected value and standard deviation of a binomial random variable.</p>
+      </li>
+    </ol>
+  </objectives>
+
+  <introduction>
+    <p>Counts occur throughout the life and environmental sciences: the number of hatchlings in a nest, contaminated water samples, or patients who respond to a treatment. A probability distribution describes which counts are possible and how likely they are. All probabilities and rates in these notes are hypothetical values chosen for instruction.</p>
+  </introduction>
+
+  <subsection xml:id="drb-discrete">
+    <title>Discrete Random Variables and Probability Distributions</title>
+
+    <definition xml:id="def-random-variable">
+      <title>Random Variable</title>
+      <p> </p>
+    </definition>
+
+    <definition xml:id="def-discrete">
+      <title>Discrete Random Variable</title>
+      <p> </p>
+    </definition>
+    
+    <definition xml:id="def-disc-dist">
+      <title>Discrete Probability Distribution</title>
+      <p> </p>
+    </definition>
+
+    <example xml:id="ex-nest-probs">
+      <title>Fledglings per Nest</title>
+      <statement>
+        <p>Let <m>X</m> be the number of young birds that fledge from a randomly selected nest. The table below gives the probability distribution of the number of young birds that fledge.</p>
+        
+        <tabular row-headers="yes" halign="center" valign="middle"
+         top="medium" bottom="medium" left="medium" right="medium">
+          <row bottom="medium">
+            <cell><m>x</m></cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>2</cell>
+            <cell>3</cell>
+          </row>
+          <row>
+            <cell><m>P(X=x)</m></cell>
+            <cell>.10</cell>
+            <cell>.20</cell>
+            <cell>.40</cell>
+            <cell>.30</cell>
+          </row>
+        </tabular>
+
+        <ol marker="a)">
+          <li>
+            <p>
+              Verify that this is a true distribution.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find the probability of no fledgings.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find the probability of at least two fledgings.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find the probability of fewer than two fledgings.
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </example>
+
+    <example xml:id="ex-missing">
+      <title>Missing Probability in a Water-Quality Model</title>
+      <statement>
+        <p>Let <m>X</m> be the number of samples that exceed a specified nitrate threshold among three samples. Find the missing probability.</p>
+                  
+        <tabular row-headers="yes" halign="center" valign="middle"
+         top="medium" bottom="medium" left="medium" right="medium">
+          <row bottom="medium">
+            <cell><m>x</m></cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>2</cell>
+            <cell>3</cell>
+          </row>
+          <row>
+            <cell><m>P(X=x)</m></cell>
+            <cell>.50</cell>
+            <cell>.30</cell>
+            <cell>?</cell>
+            <cell>.05</cell>
+          </row>
+        </tabular>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="drb-moments">
+    <title>Expected Value and Standard Deviation</title>
+
+    <definition xml:id="def-expected">
+      <title>Expected Value</title>
+      <p> </p>
+    </definition>
+
+    <example xml:id="ex-nest-mean">
+      <title>Expected Number of Fledglings</title>
+      <statement>
+        <p>Find and interpret the expected value for the distribution in <xref ref="ex-nest-probs"/>.</p>
+      </statement>
+    </example>
+
+    <definition xml:id="def-sd">
+      <title>Variance and Standard Deviation</title>
+      <p> </p>
+    </definition>
+
+    <example xml:id="ex-nest-sd">
+      <title>Variation in Fledgling Counts</title>
+      <statement>
+        <p>Calculate and interpret the standard deviation for the fledgling distribution.</p>
+      </statement>
+    </example>
+
+    <example xml:id="ex-clinic">
+      <title>Follow-up Visits</title>
+      <statement>
+        <p>Let <m>X</m> be the number of follow-up visits needed by a patient in a hypothetical program. Calculate the expected value and standard deviation using R.</p>
+        
+        <tabular row-headers="yes" halign="center" valign="middle"
+         top="medium" bottom="medium" left="medium" right="medium">
+          <row bottom="medium">
+            <cell><m>x</m></cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>2</cell>
+            <cell>3</cell>
+          </row>
+          <row>
+            <cell><m>P(X=x)</m></cell>
+            <cell>.40</cell>
+            <cell>.35</cell>
+            <cell>.20</cell>
+            <cell>.05</cell>
+          </row>
+        </tabular>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="drb-binomial">
+    <title>The Binomial Model and General Formula</title>
+
+    <definition xml:id="def-binomial">
+      <title>Binomial Random Variable</title>
+      <p> </p>
+    </definition>
+
+    <example xml:id="ex-conditions">
+      <title>Does a Binomial Model Fit?</title>
+      <statement>
+        <p>Decide whether each setting meets the binomial conditions.</p>
+        <ol marker="a)">
+          <li>
+            <p>Twenty seeds are grown in separate controlled containers. Each independently germinates with probability 0.80. Count the seeds that germinate.</p>
+          </li>
+          <li>
+            <p>Sample 10 fish without replacement from a tank containing 20 fish, exactly 8 of which carry a parasite. Count carriers.</p>
+          </li>
+          <li>
+            <p>Inspect water samples until the first contaminated sample is found. Count samples inspected.</p>
+          </li>
+          <li>
+            <p>Count infections among 15 animals housed together, where an infected animal can transmit the infection to others.</p>
+          </li>
+        </ol>
+      </statement>
+    </example>
+
+    <definition xml:id="def-formula">
+      <title>Binomial Probability Formula</title>
+      <p>If <m>X\sim\operatorname{Bin}(n,p)</m>, then</p>
+      <me>P(X=x)=\binom{n}{x}p^x(1-p)^{n-x},\qquad x=0,1,\ldots,n.</me>
+      
+      <p>The combination counts the ways to place the successes among the trials:</p>
+      <me>\binom{n}{x}=\frac{n!}{x!(n-x)!}.</me>
+      <p>Here <m>n!=n(n-1)\cdots 2\cdot 1</m> and <m>0!=1</m>. Each particular arrangement has <m>x</m> successes and <m>n-x</m> failures, giving probability <m>p^x(1-p)^{n-x}</m>.</p>
+    </definition>
+
+    <example xml:id="ex-formula">
+      <title>Exactly Three Seeds Germinate</title>
+      <statement>
+        <p>Five seeds are grown separately. Assume independent germination, each with probability 0.70. Find the probability that exactly three germinate.</p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="drb-r">
+    <title>Binomial Probabilities in R</title>
+    <p>R uses <c>size</c> for the number of trials and <c>prob</c> for the probability of success on each trial. These functions are available in base R's standard <c>stats</c> package.</p>
+    <table>
+      <title>Core R Functions</title>
+      <tabular row-headers="yes" halign="center" valign="middle" top="medium" bottom="medium" left="medium" right="medium">
+        <row header="yes" bottom="medium">
+          <cell>Function</cell>
+          <cell>Meaning</cell>
+        </row>
+        <row>
+          <cell>
+            <c>dbinom(x, size, prob)</c>
+          </cell>
+          <cell>
+            <m>P(X=x)</m>: exactly <m>x</m> successes.</cell>
+        </row>
+        <row>
+          <cell>
+            <c>pbinom(q, size, prob)</c>
+          </cell>
+          <cell>
+            <m>P(X\leq q)</m>: at most <m>q</m> successes.</cell>
+        </row>
+        <row>
+          <cell>
+            <c>pbinom(q, size, prob, lower.tail = FALSE)</c>
+          </cell>
+          <cell>
+            <m>P(X\gt q)</m>: more than <m>q</m> successes.</cell>
+        </row>
+      </tabular>
+    </table>
+    <p>For an integer cutoff <m>k</m>, use the following translations. Before calculating, list the counts the event includes.</p>
+    <table>
+      <title>Translating Words and Inequalities into R</title>
+      <tabular row-headers="yes" halign="center" valign="middle" top="medium" bottom="medium" left="medium" right="medium">
+        <row header="yes" bottom="medium">
+          <cell>Words</cell>
+          <cell>Event</cell>
+          <cell>R command</cell>
+        </row>
+        <row>
+          <cell>Exactly <m>k</m>
+          </cell>
+          <cell>
+            <m>X=k</m>
+          </cell>
+          <cell>
+            <c>dbinom(k, size = n, prob = p)</c>
+          </cell>
+        </row>
+        <row>
+          <cell>Fewer than <m>k</m>
+          </cell>
+          <cell>
+            <m>X\lt k</m>
+          </cell>
+          <cell>
+            <c>pbinom(k - 1, size = n, prob = p)</c>
+          </cell>
+        </row>
+        <row>
+          <cell>At most <m>k</m>
+          </cell>
+          <cell>
+            <m>X\leq k</m>
+          </cell>
+          <cell>
+            <c>pbinom(k, size = n, prob = p)</c>
+          </cell>
+        </row>
+        <row>
+          <cell>More than <m>k</m>
+          </cell>
+          <cell>
+            <m>X\gt k</m>
+          </cell>
+          <cell>
+            <c>pbinom(k, size = n, prob = p, lower.tail = FALSE)</c>
+          </cell>
+        </row>
+        <row>
+          <cell>At least <m>k</m>
+          </cell>
+          <cell>
+            <m>X\geq k</m>
+          </cell>
+          <cell>
+            <c>pbinom(k - 1, size = n, prob = p, lower.tail = FALSE)</c>
+          </cell>
+        </row>
+      </tabular>
+    </table>
+    <p>In particular, <m>P(X\lt k)=P(X\leq k-1)</m> and <m>P(X\geq k)=P(X\gt k-1)</m> because counts are integers. Also,</p>
+    <md>
+      <mrow>P(X\gt k)=1-P(X\leq k),</mrow>
+      <mrow>P(X\geq k)=1-P(X\leq k-1).</mrow>
+    </md>
+    <p>The option <c>lower.tail = FALSE</c> returns the upper-tail probability directly and can be more accurate than subtracting from 1 when that probability is very small.</p>
+
+    <example xml:id="ex-contaminated-samples">
+      <title>Contaminated Water Samples</title>
+      <statement>
+        <p>Ten water samples are collected independently. Each has probability
+          0.20 of contamination. Let <m>X</m> count contaminated samples.
+          Find the probability that:</p>
+        <ol marker="a)">
+          <li><p>Exactly two are contaminated.</p></li>
+          <li><p>Fewer than two are contaminated.</p></li>
+          <li><p>At most two are contaminated.</p></li>
+          <li><p>More than two are contaminated.</p></li>
+          <li><p>At least two are contaminated.</p></li>
+        </ol>
+      </statement>
+    </example>
+
+    <example xml:id="ex-health">
+      <title>Response to a Health Intervention</title>
+      <statement>
+        <p>Twelve patients participate in a hypothetical intervention. Assume their responses are independent and each patient has probability 0.60 of meeting a specified improvement criterion. Find each probability.</p>
+        <ol marker="a)">
+          <li>
+            <p>Exactly 7 patients meet the criterion.</p>
+          </li>
+          <li>
+            <p>Fewer than 7 patients meet the criterion.</p>
+          </li>
+          <li>
+            <p>At most 7 patients meet the criterion.</p>
+          </li>
+          <li>
+            <p>More than 7 patients meet the criterion.</p>
+          </li>
+          <li>
+            <p>At least 7 patients meet the criterion.</p>
+          </li>
+        </ol>
+      </statement>
+    </example>
+
+    <example xml:id="ex-intervals">
+      <title>A Range of Resistant Isolates</title>
+      <statement>
+        <p>Twenty bacterial isolates are sampled independently from a large source population. Each has probability 0.15 of resistance to a specified antibiotic. Let <m>X</m> count resistant isolates. Find the probability that more than two but fewer than five are resistant.</p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="drb-binomial-moments">
+    <title>Expected Value and Standard Deviation of a Binomial Variable</title>
+
+    <definition xml:id="def-binomial-moments">
+      <title>Binomial Mean and Standard Deviation</title>
+      <p> </p>
+    </definition>
+
+    <example xml:id="ex-restoration">
+      <title>Seedling Survival in a Restoration Project</title>
+      <statement>
+        <p>Fifty seedlings are planted under conditions that allow independent survival, each with probability 0.80 of surviving the first season. Find and interpret the expected value and standard deviation of the number surviving.</p>
+      </statement>
+    </example>
+
+    <example xml:id="ex-screening">
+      <title>Positive Screening Results</title>
+      <statement>
+        <p>A hypothetical screening program tests 25 independently selected people. Each has probability 0.10 of a positive result. Let <m>X</m> count positive results. Find the mean, standard deviation, and probability of more than the expected number of positive results.</p>
+      </statement>
+    </example>
+  </subsection>
+</section>

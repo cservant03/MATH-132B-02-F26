@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="subsec-cat-project-methods">
+  <title>ICD: Statistical Methods and Computations</title>
+
+  <p>
+    Use the statistical methods that we learn in class to answer your
+    research questions. Your report should make it clear which variables
+    are being analyzed, why each procedure is appropriate, and how the
+    calculations relate to your research question.
+  </p>
+
+  <paragraphs>
+    <title>Required Analyses</title>
+
+    <p>Your project must include each of the following.</p>
+
+    <ol marker="1)">
+      <li>
+        <p><alert>One-Proportion Analysis</alert></p>
+        <p>Perform a one-proportion z test or construct a confidence interval for one population proportion.</p>
+      </li>
+      <li>
+        <p><alert>Two-Proportion z Test</alert></p>
+        <p>Use a two-proportion z test to compare a categorical outcome between two groups.</p>
+      </li>
+      <li>
+        <p><alert>Multinomial Distribution Test</alert></p>
+        <p>Perform a multinomial distribution test to compare the observed distribution of a categorical variable with three or more categories to a justified expected distribution.</p>
+      </li>
+      <li>
+        <p><alert>Test of Homogeneity or Test of Independence</alert></p>
+        <p>Use either a test of homogeneity or a test of independence, depending on the structure of your data and the research question that you are investigating.</p>
+      </li>
+    </ol>
+  </paragraphs>
+
+  <paragraphs>
+    <title>For Each Statistical Procedure</title>
+
+    <p>
+      Include the information needed for the reader to understand and
+      evaluate your analysis.
+    </p>
+
+    <ul>
+      <li><p>Clearly identify the research question being answered.</p></li>
+      <li><p>State the appropriate null and alternative hypotheses when performing a hypothesis test.</p></li>
+      <li><p>Define the parameters used in your hypotheses.</p></li>
+      <li><p>Identify and check the required conditions or assumptions.</p></li>
+      <li><p>Include relevant sample statistics or observed counts.</p></li>
+      <li><p>Report the appropriate test statistic, degrees of freedom when applicable, p-value, confidence interval, or other required calculations.</p></li>
+      <li><p>Use appropriate statistical notation.</p></li>
+    </ul>
+
+    <p>
+      Software may be used to perform calculations, but software output
+      should support your analysis rather than replace it. Include the
+      relevant results in the report instead of pasting large amounts of
+      unexplained output.
+    </p>
+  </paragraphs>
+</section>

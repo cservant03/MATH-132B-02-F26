@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="subsec-cat-project-conclusion">
+  <title>ICD: Conclusion</title>
+
+  <p>
+    End your report with a concise conclusion that brings together the
+    important findings from the entire project.
+  </p>
+
+  <p>
+    Your conclusion should be <alert>no more than one page</alert>.
+  </p>
+
+  <paragraphs>
+    <title>What to Include</title>
+
+    <p>Your conclusion should:</p>
+
+    <ol marker="1)">
+      <li><p>return to the research questions that you introduced at the beginning of the project,</p></li>
+      <li><p>summarize the major findings from your tables, graphs, and statistical analyses,</p></li>
+      <li><p>explain what those findings mean in the context of the topic being studied, and</p></li>
+      <li><p>explain what conclusions can reasonably be drawn from the data.</p></li>
+    </ol>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Writing the Conclusion</title>
+
+    <p>
+      The conclusion should be written as a coherent discussion rather
+      than a list of test statistics and p-values. Numerical results may
+      be mentioned when useful, but the emphasis should be on what you
+      learned from the data.
+    </p>
+  </paragraphs>
+</section>

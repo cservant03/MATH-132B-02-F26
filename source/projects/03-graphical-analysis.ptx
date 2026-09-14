@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="subsec-cat-project-graphical">
+  <title>ICD: Graphical Analysis</title>
+
+  <p>
+    Before performing formal statistical tests, explore the categorical
+    variables involved in your research questions. Your tables and graphs
+    should help the reader understand the patterns in the data and should
+    support the analyses that you perform later.
+  </p>
+
+  <paragraphs>
+    <title>Required Tables</title>
+
+    <p>
+      Include appropriate tables that summarize the categorical variables
+      used in your project.
+    </p>
+
+    <ul>
+      <li><p>Create <alert>frequency tables</alert> for important individual categorical variables.</p></li>
+      <li><p>Include relative frequencies or proportions when they are useful for interpreting the data.</p></li>
+      <li><p>Create appropriate <alert>contingency tables</alert> when investigating two categorical variables or comparing a categorical outcome among groups.</p></li>
+      <li><p>Include row or column proportions when they make comparisons between groups easier to understand.</p></li>
+    </ul>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Required Graphs</title>
+
+    <p>
+      Your graphical analysis should include both
+      <alert>bar plots</alert> and <alert>stacked bar plots</alert>.
+      Select variables so that the graphs contribute to your research
+      questions rather than simply creating graphs of every categorical
+      variable in the data set.
+    </p>
+
+    <ul>
+      <li><p>Use bar plots to display the distribution of important categorical variables.</p></li>
+      <li><p>Use stacked bar plots to investigate relationships or compare distributions involving two categorical variables.</p></li>
+      <li><p>When comparing groups, consider whether frequencies or proportions provide the more useful comparison.</p></li>
+    </ul>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Presentation of Tables and Graphics</title>
+
+    <p>
+      Tables and graphs are part of your report and should be designed for
+      the reader. Do not submit an unexplained collection of R output.
+    </p>
+
+    <p>Each table or graph should:</p>
+
+    <ul>
+      <li><p>have a meaningful title,</p></li>
+      <li><p>use clear category and variable labels,</p></li>
+      <li><p>include a legend when one is necessary,</p></li>
+      <li><p>be large enough to read easily, and</p></li>
+      <li><p>be discussed in the surrounding text so that the reader understands why it is included and what pattern it illustrates.</p></li>
+    </ul>
+  </paragraphs>
+</section>

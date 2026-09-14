@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Describing Categorical Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<style>
+@counter-style ptx-marker-1 { system: extends decimal; prefix: ''; suffix: '. '; }
+@counter-style ptx-marker-2 { system: extends decimal; prefix: ''; suffix: ') '; }
+</style>
+<link rel="stylesheet" type="text/css" href="external/custom.css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Biostatistics">
+<meta property="og:title" content="Biostatistics">
+<meta property="book:title" content="Biostatistics">
+<meta name="twitter:description" content="MATH 132B Semester Fall 2026">
+<meta property="og:description" content="MATH 132B Semester Fall 2026">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.51"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.51"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.10';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.e3f9706509fcf6f7.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.c5ba0ffa5f963084.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.efe427683fc41f98.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="root-1-2.html"><span class="title">Biostatistics</span> <span class="subtitle">MATH 132B Semester Fall 2026</span></a></div>
+<p class="byline">Instructor Christopher</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-embed-button" class="ptx-embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><dialog class="ptx-dialog ptx-embed-popup" id="ptx-embed-popup"><div class="ptx-embed-popup-controls">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<button class="ptx-embed-close-button button" id="ptx-embed-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-embed-code-container">
+<textarea class="ptx-embed-code-textbox" id="ptx-embed-code-textbox" readonly aria-label="Embed"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button autofocus="autofocus" class="ptx-embed-copy-button button" id="ptx-embed-copy-button" title="Copy"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div></dialog><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="addition-complement-rules.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="notes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="course-documents.html" class="internal"><span class="title">Course Documents</span></a></div>
+<ul id="ptx-toc-group-course-documents" class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="syllabus.html" class="internal"><span class="title">Syllabus</span></a></div>
+<ul id="ptx-toc-group-syllabus" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#instructor-info" class="internal"><span class="title">Instructor Information</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#course-info" class="internal"><span class="title">Course Information</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#course-desc" class="internal"><span class="title">Course Description</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#course-materials" class="internal"><span class="title">Course Matrials</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#online-course-comp" class="internal"><span class="title">Online Course Component</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#course-outcomes" class="internal"><span class="title">Course Outcomes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#eval" class="internal"><span class="title">Evaluatation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#grade" class="internal"><span class="title">Grading</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#tips" class="internal"><span class="title">Tips for Success</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#academic-integrity" class="internal"><span class="title">Academic Integrity Policy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#withdrawal-policy" class="internal"><span class="title">Withdrawal Policy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#important-dates" class="internal"><span class="title">Important Dates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#disability-statement" class="internal"><span class="title">Disability Statement</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#nondiscrimination-statement" class="internal"><span class="title">Non-Discrimination Statement</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#land-acknowledgment" class="internal"><span class="title">Land Acknowledgment Statement</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#tentative-syllabus" class="internal"><span class="title">Tentative Syllabus</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="notes.html" class="internal"><span class="title">Notes</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-notes">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-intro-to-prob.html" class="internal"><span class="title">Introduction to Probability</span></a></div>
+<ul id="ptx-toc-group-notes-intro-to-prob" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-intro-to-prob.html#notes-intro-to-prob-3" class="internal"><span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-intro-to-prob.html#notes-intro-to-prob-4" class="internal"><span class="title">Exmaples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="marg-joint-cond-prob.html" class="internal"><span class="title">Marginal, Joint, and Conditional Probability</span></a></div>
+<ul id="ptx-toc-group-marg-joint-cond-prob" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-3" class="internal"><span class="title">Marginal Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-4" class="internal"><span class="title">Joint Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-5" class="internal"><span class="title">Multiplication for Independent Events</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-6" class="internal"><span class="title">Conditional Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-7" class="internal"><span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="addition-complement-rules.html" class="internal"><span class="title">The Addition and Complement Rules</span></a></div>
+<ul id="ptx-toc-group-addition-complement-rules" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="addition-complement-rules.html#addition-complement-rules-3" class="internal"><span class="title">The Addition Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="addition-complement-rules.html#addition-complement-rules-4" class="internal"><span class="title">The Complement Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="addition-complement-rules.html#addition-complement-rules-5" class="internal"><span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-describing-categorical-data.html" class="internal"><span class="title">Describing Categorical Data</span></a></div>
+<ul class="structural toc-item-list active" id="ptx-toc-group-sec-describing-categorical-data">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-types-of-data" class="internal"><span class="title">Categorical and Numerical Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-frequency-and-proportion" class="internal"><span class="title">Frequencies and Proportions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-one-variable-frequency-distributions" class="internal"><span class="title">Frequency Distributions for One Categorical Variable</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-two-variable-frequency-distributions" class="internal"><span class="title">Frequency Distributions for Two Categorical Variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-bar-graphs" class="internal"><span class="title">Bar Graphs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-large-categorical-dataset" class="internal"><span class="title">Working with a Larger Biological Dataset</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-describing-categorical-data">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Describing Categorical Data</span>
+</h1>
+<section class="introduction" id="sec-describing-categorical-data-2">
+<div class="para" id="sec-describing-categorical-data-2-1">A dataset contains information about <dfn class="terminology">individuals</dfn> or <dfn class="terminology">observational units</dfn>. For example, the individuals in a biological study might be bacterial isolates, patients, plants, or animals. A <dfn class="terminology">variable</dfn> records a characteristic of each individual. Before summarizing a variable, we must determine whether its data are categorical or numerical.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-describing-categorical-data-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="subsection" id="subsec-types-of-data">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Categorical and Numerical Data</span>
+</h2>
+<article class="definition definition-like" id="def-categorical-data"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">42</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Categorical Data.</span>
+</h3>
+<div class="para" id="def-categorical-data-2"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-categorical-data-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 42: Categorical Data"><a tabindex="-1" href="#def-categorical-data" title="Copy heading and permalink for Definition 42: Categorical Data" aria-label="Copy heading and permalink for Definition 42: Categorical Data">🔗</a></div>
+</article>
+<article class="definition definition-like" id="def-numerical-data"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">43</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Numerical Data.</span>
+</h3>
+<div class="para" id="def-numerical-data-2"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-numerical-data-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 43: Numerical Data"><a tabindex="-1" href="#def-numerical-data" title="Copy heading and permalink for Definition 43: Numerical Data" aria-label="Copy heading and permalink for Definition 43: Numerical Data">🔗</a></div>
+</article>
+<article class="note remark-like" id="rem-numerical-labels"><h3 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">44</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="rem-numerical-labels-1">A variable is not necessarily numerical just because numbers are used as its labels. For example, the numbers on jerseys are numbers that identify categories. Adding or averaging those numbers would not have a meaningful interpretation, so the variable is categorical.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-numerical-labels-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 44"><a tabindex="-1" href="#rem-numerical-labels" title="Copy heading and permalink for Note 44" aria-label="Copy heading and permalink for Note 44">🔗</a></div>
+</article>
+<article class="example example-like" id="ex-classify-biological-variables"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">45</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Classifying Biological Variables.</span>
+</h3>
+<div class="para" id="ex-classify-biological-variables-2">Determine whether each variable is categorical or numerical.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-classify-biological-variables-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" id="ex-classify-biological-variables-3">
+<li id="ex-classify-biological-variables-3-1">
+<div class="para" id="ex-classify-biological-variables-3-1-1">The blood type of a patient<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-classify-biological-variables-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#ex-classify-biological-variables-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="ex-classify-biological-variables-3-2">
+<div class="para" id="ex-classify-biological-variables-3-2-1">The number of bacterial colonies on a plate<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-classify-biological-variables-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#ex-classify-biological-variables-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="ex-classify-biological-variables-3-3">
+<div class="para" id="ex-classify-biological-variables-3-3-1">Whether a seed germinated<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-classify-biological-variables-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#ex-classify-biological-variables-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="ex-classify-biological-variables-3-4">
+<div class="para" id="ex-classify-biological-variables-3-4-1">The body mass of a penguin in grams<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-classify-biological-variables-3-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#ex-classify-biological-variables-3-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Example 45: Classifying Biological Variables"><a tabindex="-1" href="#ex-classify-biological-variables" title="Copy heading and permalink for Example 45: Classifying Biological Variables" aria-label="Copy heading and permalink for Example 45: Classifying Biological Variables">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection: Categorical and Numerical Data"><a tabindex="-1" href="#subsec-types-of-data" title="Copy heading and permalink for Subsection: Categorical and Numerical Data" aria-label="Copy heading and permalink for Subsection: Categorical and Numerical Data">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-frequency-and-proportion">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Frequencies and Proportions</span>
+</h2>
+<div class="para" id="subsec-frequency-and-proportion-2">We summarize a categorical variable by counting how often each category occurs. We can report these counts directly or express them as proportions.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-frequency-and-proportion-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-frequency"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">46</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Frequency.</span>
+</h3>
+<div class="para" id="def-frequency-2"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-frequency-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 46: Frequency"><a tabindex="-1" href="#def-frequency" title="Copy heading and permalink for Definition 46: Frequency" aria-label="Copy heading and permalink for Definition 46: Frequency">🔗</a></div>
+</article>
+<article class="definition definition-like" id="def-proportion"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">47</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Proportion.</span>
+</h3>
+<div class="para" id="def-proportion-2"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-proportion-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 47: Proportion"><a tabindex="-1" href="#def-proportion" title="Copy heading and permalink for Definition 47: Proportion" aria-label="Copy heading and permalink for Definition 47: Proportion">🔗</a></div>
+</article>
+<article class="example example-like" id="ex-antibiotic-response-frequency"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">48</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Antibiotic Responses of Bacterial Isolates.</span>
+</h3>
+<div class="para" id="ex-antibiotic-response-frequency-2">Twelve bacterial isolates were tested for their response to an antibiotic. Each isolate was classified as resistant, intermediate, or susceptible. The observed responses were:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-antibiotic-response-frequency-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-antibiotic-response-frequency-3">resistant, resistant, resistant, intermediate, susceptible, susceptible, resistant, intermediate, intermediate, susceptible, susceptible, susceptible.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-antibiotic-response-frequency-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-antibiotic-response-frequency-4">What is the frequency and proportion of isolates that are resistant?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-antibiotic-response-frequency-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 48: Antibiotic Responses of Bacterial Isolates"><a tabindex="-1" href="#ex-antibiotic-response-frequency" title="Copy heading and permalink for Example 48: Antibiotic Responses of Bacterial Isolates" aria-label="Copy heading and permalink for Example 48: Antibiotic Responses of Bacterial Isolates">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection: Frequencies and Proportions"><a tabindex="-1" href="#subsec-frequency-and-proportion" title="Copy heading and permalink for Subsection: Frequencies and Proportions" aria-label="Copy heading and permalink for Subsection: Frequencies and Proportions">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-one-variable-frequency-distributions">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Frequency Distributions for One Categorical Variable</span>
+</h2>
+<article class="definition definition-like" id="def-one-variable-frequency-distribution"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">49</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">One-Variable Frequency Distribution.</span>
+</h3>
+<div class="para" id="def-one-variable-frequency-distribution-2"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-one-variable-frequency-distribution-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 49: One-Variable Frequency Distribution"><a tabindex="-1" href="#def-one-variable-frequency-distribution" title="Copy heading and permalink for Definition 49: One-Variable Frequency Distribution" aria-label="Copy heading and permalink for Definition 49: One-Variable Frequency Distribution">🔗</a></div>
+</article>
+<article class="example example-like" id="ex-freq-anti-data"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">50</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Frequency Distribution for Bacteria Resistance.</span>
+</h3>
+<div class="para" id="ex-freq-anti-data-2">Use the antibiotic-response data from <a href="sec-describing-categorical-data.html#ex-antibiotic-response-frequency" class="xref" data-knowl="./knowl/xref/ex-antibiotic-response-frequency.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 48: Antibiotic Responses of Bacterial Isolates">Example 48</a> to produce a frequency distribution.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-freq-anti-data-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 50: Frequency Distribution for Bacteria Resistance"><a tabindex="-1" href="#ex-freq-anti-data" title="Copy heading and permalink for Example 50: Frequency Distribution for Bacteria Resistance" aria-label="Copy heading and permalink for Example 50: Frequency Distribution for Bacteria Resistance">🔗</a></div>
+</article>
+<article class="note remark-like" id="subsec-one-variable-frequency-distributions-4"><h3 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">51</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="subsec-one-variable-frequency-distributions-4-1">The frequencies must add to the total sample size. Except for small rounding differences, the proportions must add to 1 and the percentages must add to <span class="process-math">\(100\%\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-one-variable-frequency-distributions-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 51"><a tabindex="-1" href="#subsec-one-variable-frequency-distributions-4" title="Copy heading and permalink for Note 51" aria-label="Copy heading and permalink for Note 51">🔗</a></div>
+</article>
+<article class="example example-like" id="pollinators-dist"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">52</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="pollinators-dist-1">An ecologist studied insect visitors to common milkweed flowers in a restored prairie. During 19 separate observation periods, the ecologist recorded the type of the first insect that visited a selected flower. The categorical variable measured was pollinator type.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#pollinators-dist-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="tab-pollinator-raw-data"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">53<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Pollinator Types Recorded During 19 Observation Periods<div class="autopermalink" aria-hidden="true" data-description="Table 53: Pollinator Types Recorded During 19 Observation Periods"><a tabindex="-1" href="#tab-pollinator-raw-data" title="Copy heading and permalink for Table 53: Pollinator Types Recorded During 19 Observation Periods" aria-label="Copy heading and permalink for Table 53: Pollinator Types Recorded During 19 Observation Periods">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b2 r2 l2 t2 lines">Observation</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Pollinator Type</th>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">1</th>
+<td class="c m b2 r2 l0 t0 lines">Native bee</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">2</th>
+<td class="c m b2 r2 l0 t0 lines">Butterfly</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">3</th>
+<td class="c m b2 r2 l0 t0 lines">Honey bee</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">4</th>
+<td class="c m b2 r2 l0 t0 lines">Native bee</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">5</th>
+<td class="c m b2 r2 l0 t0 lines">Hoverfly</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">6</th>
+<td class="c m b2 r2 l0 t0 lines">Native bee</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">7</th>
+<td class="c m b2 r2 l0 t0 lines">Beetle</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">8</th>
+<td class="c m b2 r2 l0 t0 lines">Honey bee</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">9</th>
+<td class="c m b2 r2 l0 t0 lines">Native bee</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">10</th>
+<td class="c m b2 r2 l0 t0 lines">Butterfly</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">11</th>
+<td class="c m b2 r2 l0 t0 lines">Hoverfly</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">12</th>
+<td class="c m b2 r2 l0 t0 lines">Honey bee</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">13</th>
+<td class="c m b2 r2 l0 t0 lines">Beetle</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">14</th>
+<td class="c m b2 r2 l0 t0 lines">Native bee</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">15</th>
+<td class="c m b2 r2 l0 t0 lines">Honey bee</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">16</th>
+<td class="c m b2 r2 l0 t0 lines">Butterfly</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">17</th>
+<td class="c m b2 r2 l0 t0 lines">Native bee</td>
+</tr>
+</table></div>
+</figure>
+<div class="para" id="pollinators-dist-3">Let’s create a frequency distribution and a relative frequency distribution for this data. Since we will be typing this dat in let’s use some abbreviations.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#pollinators-dist-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="pollinators-dist-4">
+<dfn class="terminology">NB</dfn> = Native bee; <dfn class="terminology">HB</dfn> = Honey bee; <dfn class="terminology">BF</dfn> = Butterfly; <dfn class="terminology">HF</dfn> = Hoverfly; and <dfn class="terminology">BT</dfn> = Beetle.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#pollinators-dist-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program clipboardable"><code class="language-r">pollinator = c("NB", "BF", "HB", "NB", "HF", "NB", "BT", "HB", "NB", 
+"BF", "HF", "HB", "BT", "NB", "HB", "BF", "NB")
+
+poll.freq = table(pollinator)
+poll.freq
+
+poll.rel.freq = prop.table(poll.freq)
+poll.rel.freq
+</code></pre></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 52"><a tabindex="-1" href="#pollinators-dist" title="Copy heading and permalink for Example 52" aria-label="Copy heading and permalink for Example 52">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection: Frequency Distributions for One Categorical Variable"><a tabindex="-1" href="#subsec-one-variable-frequency-distributions" title="Copy heading and permalink for Subsection: Frequency Distributions for One Categorical Variable" aria-label="Copy heading and permalink for Subsection: Frequency Distributions for One Categorical Variable">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-two-variable-frequency-distributions">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Frequency Distributions for Two Categorical Variables</span>
+</h2>
+<article class="definition definition-like" id="def-two-way-table"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">54</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Two-Way Frequency Table.</span>
+</h3>
+<div class="para" id="def-two-way-table-2"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-two-way-table-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 54: Two-Way Frequency Table"><a tabindex="-1" href="#def-two-way-table" title="Copy heading and permalink for Definition 54: Two-Way Frequency Table" aria-label="Copy heading and permalink for Definition 54: Two-Way Frequency Table">🔗</a></div>
+</article>
+<article class="example example-like" id="ex-antibiotic-response-proportion-table"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">55</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Constructing a Proportion Table from a Frequency Table.</span>
+</h3>
+<div class="para" id="ex-antibiotic-response-proportion-table-2">Twelve bacterial isolates were tested for their response to an antibiotic. Six isolates came from hospital samples, and six came from community samples. The frequency distribution for antibiotic response and sample source is shown below.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-antibiotic-response-proportion-table-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="tab-antibiotic-response-frequency-example"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">56<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Antibiotic Response by Sample Source<div class="autopermalink" aria-hidden="true" data-description="Table 56: Antibiotic Response by Sample Source"><a tabindex="-1" href="#tab-antibiotic-response-frequency-example" title="Copy heading and permalink for Table 56: Antibiotic Response by Sample Source" aria-label="Copy heading and permalink for Table 56: Antibiotic Response by Sample Source">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b2 r2 l2 t2 lines">Sample Source</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Resistant</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Intermediate</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Susceptible</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Total</th>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">Hospital</th>
+<td class="c m b2 r2 l0 t0 lines">3</td>
+<td class="c m b2 r2 l0 t0 lines">1</td>
+<td class="c m b2 r2 l0 t0 lines">2</td>
+<td class="c m b2 r2 l0 t0 lines">6</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">Community</th>
+<td class="c m b2 r2 l0 t0 lines">1</td>
+<td class="c m b2 r2 l0 t0 lines">2</td>
+<td class="c m b2 r2 l0 t0 lines">3</td>
+<td class="c m b2 r2 l0 t0 lines">6</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">Total</th>
+<td class="c m b2 r2 l0 t0 lines">4</td>
+<td class="c m b2 r2 l0 t0 lines">3</td>
+<td class="c m b2 r2 l0 t0 lines">5</td>
+<td class="c m b2 r2 l0 t0 lines">12</td>
+</tr>
+</table></div>
+</figure>
+<div class="para" id="ex-antibiotic-response-proportion-table-4">Use the frequency table to construct a table containing the proportion of isolates.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-antibiotic-response-proportion-table-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 55: Constructing a Proportion Table from a Frequency Table"><a tabindex="-1" href="#ex-antibiotic-response-proportion-table" title="Copy heading and permalink for Example 55: Constructing a Proportion Table from a Frequency Table" aria-label="Copy heading and permalink for Example 55: Constructing a Proportion Table from a Frequency Table">🔗</a></div>
+</article>
+<article class="example example-like" id="ex-germination-proportion-table-r"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">57</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Creating a Proportion Table in R.</span>
+</h3>
+<div class="para" id="ex-germination-proportion-table-r-2">A botanist randomly assigned 10 seeds from the same plant species to one of two growing conditions. Five seeds received the control treatment, and five received a nutrient treatment. After 14 days, each seed was classified according to whether it germinated.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-germination-proportion-table-r-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-germination-proportion-table-r-3">The following abbreviations are used: <dfn class="terminology">C</dfn> = Control; <dfn class="terminology">NT</dfn> = Nutrient treatment; <dfn class="terminology">G</dfn> = Germinated; and <dfn class="terminology">NG</dfn> = Did not germinate.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-germination-proportion-table-r-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="tab-germination-raw-data"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">58<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Raw Seed-Germination Data<div class="autopermalink" aria-hidden="true" data-description="Table 58: Raw Seed-Germination Data"><a tabindex="-1" href="#tab-germination-raw-data" title="Copy heading and permalink for Table 58: Raw Seed-Germination Data" aria-label="Copy heading and permalink for Table 58: Raw Seed-Germination Data">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b2 r2 l2 t2 lines">Seed</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Treatment</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Outcome</th>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">1</th>
+<td class="c m b2 r2 l0 t0 lines">C</td>
+<td class="c m b2 r2 l0 t0 lines">G</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">2</th>
+<td class="c m b2 r2 l0 t0 lines">C</td>
+<td class="c m b2 r2 l0 t0 lines">NG</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">3</th>
+<td class="c m b2 r2 l0 t0 lines">C</td>
+<td class="c m b2 r2 l0 t0 lines">G</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">4</th>
+<td class="c m b2 r2 l0 t0 lines">C</td>
+<td class="c m b2 r2 l0 t0 lines">NG</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">5</th>
+<td class="c m b2 r2 l0 t0 lines">C</td>
+<td class="c m b2 r2 l0 t0 lines">G</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">6</th>
+<td class="c m b2 r2 l0 t0 lines">NT</td>
+<td class="c m b2 r2 l0 t0 lines">G</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">7</th>
+<td class="c m b2 r2 l0 t0 lines">NT</td>
+<td class="c m b2 r2 l0 t0 lines">G</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">8</th>
+<td class="c m b2 r2 l0 t0 lines">NT</td>
+<td class="c m b2 r2 l0 t0 lines">NG</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">9</th>
+<td class="c m b2 r2 l0 t0 lines">NT</td>
+<td class="c m b2 r2 l0 t0 lines">G</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">10</th>
+<td class="c m b2 r2 l0 t0 lines">NT</td>
+<td class="c m b2 r2 l0 t0 lines">G</td>
+</tr>
+</table></div>
+</figure>
+<div class="para" id="ex-germination-proportion-table-r-5">Use R to create a two-way frequency table and calculate the proportions within each treatment group.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-germination-proportion-table-r-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program clipboardable"><code class="language-r">trmt = c("C", "C", "C", "C", "C", "NT", "NT", "NT", "NT", "NT")
+
+outc = c("G", "NG", "G", "NG", "G", "G", "G", "NG", "G", "G")
+
+seed.data = data.frame(trmt, outc)
+seed.data
+
+seed.freq = table(seed.data)
+seed.freq
+
+seed.prop = prop.table(seed.freq)
+seed.prop
+</code></pre></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 57: Creating a Proportion Table in R"><a tabindex="-1" href="#ex-germination-proportion-table-r" title="Copy heading and permalink for Example 57: Creating a Proportion Table in R" aria-label="Copy heading and permalink for Example 57: Creating a Proportion Table in R">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection: Frequency Distributions for Two Categorical Variables"><a tabindex="-1" href="#subsec-two-variable-frequency-distributions" title="Copy heading and permalink for Subsection: Frequency Distributions for Two Categorical Variables" aria-label="Copy heading and permalink for Subsection: Frequency Distributions for Two Categorical Variables">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-bar-graphs">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Bar Graphs</span>
+</h2>
+<article class="definition definition-like" id="def-bar-graph"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">59</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Bar Graph.</span>
+</h3>
+<div class="para" id="def-bar-graph-2"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-bar-graph-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 59: Bar Graph"><a tabindex="-1" href="#def-bar-graph" title="Copy heading and permalink for Definition 59: Bar Graph" aria-label="Copy heading and permalink for Definition 59: Bar Graph">🔗</a></div>
+</article>
+<div class="para" id="subsec-bar-graphs-3">A useful bar graph has clearly labeled axes, identifies whether the bar heights represent frequencies or proportions, and begins its vertical axis at zero.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-bar-graphs-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="bar-plot-in-R"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">60</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="bar-plot-in-R-1">Using the pollinator data from <a href="sec-describing-categorical-data.html#pollinators-dist" class="xref" data-knowl="./knowl/xref/pollinators-dist.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 52">Example 52</a> create a barplot in R. Use <code class="code-inline tex2jax_ignore">?barplot</code> to get the help menu for <code class="code-inline tex2jax_ignore">barplot</code><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#bar-plot-in-R-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 60"><a tabindex="-1" href="#bar-plot-in-R" title="Copy heading and permalink for Example 60" aria-label="Copy heading and permalink for Example 60">🔗</a></div>
+</article>
+<article class="example example-like" id="two-var-bar-plot-in-R"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">61</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="two-var-bar-plot-in-R-1">Using the pollinator data from <a href="sec-describing-categorical-data.html#ex-germination-proportion-table-r" class="xref" data-knowl="./knowl/xref/ex-germination-proportion-table-r.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 57: Creating a Proportion Table in R">Example 57</a> create a side-by-side and stacked barplot in R. Use <code class="code-inline tex2jax_ignore">?barplot</code> to get the help menu for <code class="code-inline tex2jax_ignore">barplot</code><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#two-var-bar-plot-in-R-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 61"><a tabindex="-1" href="#two-var-bar-plot-in-R" title="Copy heading and permalink for Example 61" aria-label="Copy heading and permalink for Example 61">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection: Bar Graphs"><a tabindex="-1" href="#subsec-bar-graphs" title="Copy heading and permalink for Subsection: Bar Graphs" aria-label="Copy heading and permalink for Subsection: Bar Graphs">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-large-categorical-dataset">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Working with a Larger Biological Dataset</span>
+</h2>
+<div class="para" id="subsec-large-categorical-dataset-2">The <code class="code-inline tex2jax_ignore">penguins</code> dataset in the <code class="code-inline tex2jax_ignore">palmerpenguins</code> R package contains measurements and categorical information for 344 penguins from three species observed on three islands in the Palmer Archipelago, Antarctica. With a dataset of this size, using R is more efficient and less prone to counting errors than constructing frequency tables by hand.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-large-categorical-dataset-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program clipboardable"><code class="language-r">install.packages("palmerpenguins")
+library(palmerpenguins)
+
+dim(penguins)
+head(penguins)
+View(penguins)
+</code></pre></div>
+<article class="example example-like" id="ex-penguin-one-variable-frequency"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">62</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A One-Variable Distribution for a Large Dataset.</span>
+</h3>
+<div class="para" id="ex-penguin-one-variable-frequency-2">Create a frequency distribution for penguin species. To access a particular variable, or column, in an R data frame, use the <code class="code-inline tex2jax_ignore">$</code> operator. For example, <code class="code-inline tex2jax_ignore">penguins$species</code> accesses the <code class="code-inline tex2jax_ignore">species</code> column of the <code class="code-inline tex2jax_ignore">penguins</code> data frame. Then create a barplot of this data.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-penguin-one-variable-frequency-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 62: A One-Variable Distribution for a Large Dataset"><a tabindex="-1" href="#ex-penguin-one-variable-frequency" title="Copy heading and permalink for Example 62: A One-Variable Distribution for a Large Dataset" aria-label="Copy heading and permalink for Example 62: A One-Variable Distribution for a Large Dataset">🔗</a></div>
+</article>
+<article class="example example-like" id="ex-penguin-two-variable-frequency"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">63</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Two-Variable Distribution for a Large Dataset.</span>
+</h3>
+<div class="para" id="ex-penguin-two-variable-frequency-2">Create a contingency table to compare penguin species and sex. Then create a barplot of this data.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-penguin-two-variable-frequency-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 63: A Two-Variable Distribution for a Large Dataset"><a tabindex="-1" href="#ex-penguin-two-variable-frequency" title="Copy heading and permalink for Example 63: A Two-Variable Distribution for a Large Dataset" aria-label="Copy heading and permalink for Example 63: A Two-Variable Distribution for a Large Dataset">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection: Working with a Larger Biological Dataset"><a tabindex="-1" href="#subsec-large-categorical-dataset" title="Copy heading and permalink for Subsection: Working with a Larger Biological Dataset" aria-label="Copy heading and permalink for Subsection: Working with a Larger Biological Dataset">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section: Describing Categorical Data"><a tabindex="-1" href="#sec-describing-categorical-data" title="Copy heading and permalink for Section: Describing Categorical Data" aria-label="Copy heading and permalink for Section: Describing Categorical Data">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="addition-complement-rules.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
