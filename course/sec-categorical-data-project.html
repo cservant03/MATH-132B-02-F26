@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Project 1: Categorical Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<style>
+@counter-style ptx-marker-1 { system: extends decimal; prefix: ''; suffix: '. '; }
+@counter-style ptx-marker-2 { system: extends decimal; prefix: ''; suffix: ') '; }
+</style>
+<link rel="stylesheet" type="text/css" href="external/custom.css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Biostatistics">
+<meta property="og:title" content="Biostatistics">
+<meta property="book:title" content="Biostatistics">
+<meta name="twitter:description" content="MATH 132B Semester Fall 2026">
+<meta property="og:description" content="MATH 132B Semester Fall 2026">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.51"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.51"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.10';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.e3f9706509fcf6f7.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.c5ba0ffa5f963084.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.efe427683fc41f98.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="root-1-2.html"><span class="title">Biostatistics</span> <span class="subtitle">MATH 132B Semester Fall 2026</span></a></div>
+<p class="byline">Instructor Christopher</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-embed-button" class="ptx-embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><dialog class="ptx-dialog ptx-embed-popup" id="ptx-embed-popup"><div class="ptx-embed-popup-controls">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<button class="ptx-embed-close-button button" id="ptx-embed-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-embed-code-container">
+<textarea class="ptx-embed-code-textbox" id="ptx-embed-code-textbox" readonly aria-label="Embed"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button autofocus="autofocus" class="ptx-embed-copy-button button" id="ptx-embed-copy-button" title="Copy"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div></dialog><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="projects.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="projects.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="course-documents.html" class="internal"><span class="title">Course Documents</span></a></div>
+<ul id="ptx-toc-group-course-documents" class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="syllabus.html" class="internal"><span class="title">Syllabus</span></a></div>
+<ul id="ptx-toc-group-syllabus" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#instructor-info" class="internal"><span class="title">Instructor Information</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#course-info" class="internal"><span class="title">Course Information</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#course-desc" class="internal"><span class="title">Course Description</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#course-materials" class="internal"><span class="title">Course Matrials</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#online-course-comp" class="internal"><span class="title">Online Course Component</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#course-outcomes" class="internal"><span class="title">Course Outcomes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#eval" class="internal"><span class="title">Evaluatation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#grade" class="internal"><span class="title">Grading</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#tips" class="internal"><span class="title">Tips for Success</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#academic-integrity" class="internal"><span class="title">Academic Integrity Policy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#withdrawal-policy" class="internal"><span class="title">Withdrawal Policy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#important-dates" class="internal"><span class="title">Important Dates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#disability-statement" class="internal"><span class="title">Disability Statement</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#nondiscrimination-statement" class="internal"><span class="title">Non-Discrimination Statement</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#land-acknowledgment" class="internal"><span class="title">Land Acknowledgment Statement</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#tentative-syllabus" class="internal"><span class="title">Tentative Syllabus</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="notes.html" class="internal"><span class="title">Notes</span></a></div>
+<ul id="ptx-toc-group-notes" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-intro-to-prob.html" class="internal"><span class="title">Introduction to Probability</span></a></div>
+<ul id="ptx-toc-group-notes-intro-to-prob" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-intro-to-prob.html#notes-intro-to-prob-3" class="internal"><span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-intro-to-prob.html#notes-intro-to-prob-4" class="internal"><span class="title">Exmaples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="marg-joint-cond-prob.html" class="internal"><span class="title">Marginal, Joint, and Conditional Probability</span></a></div>
+<ul id="ptx-toc-group-marg-joint-cond-prob" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-3" class="internal"><span class="title">Marginal Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-4" class="internal"><span class="title">Joint Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-5" class="internal"><span class="title">Multiplication for Independent Events</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-6" class="internal"><span class="title">Conditional Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-7" class="internal"><span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="addition-complement-rules.html" class="internal"><span class="title">The Addition and Complement Rules</span></a></div>
+<ul id="ptx-toc-group-addition-complement-rules" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="addition-complement-rules.html#addition-complement-rules-3" class="internal"><span class="title">The Addition Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="addition-complement-rules.html#addition-complement-rules-4" class="internal"><span class="title">The Complement Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="addition-complement-rules.html#addition-complement-rules-5" class="internal"><span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-describing-categorical-data.html" class="internal"><span class="title">Describing Categorical Data</span></a></div>
+<ul id="ptx-toc-group-sec-describing-categorical-data" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-types-of-data" class="internal"><span class="title">Categorical and Numerical Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-frequency-and-proportion" class="internal"><span class="title">Frequencies and Proportions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-one-variable-frequency-distributions" class="internal"><span class="title">Frequency Distributions for One Categorical Variable</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-two-variable-frequency-distributions" class="internal"><span class="title">Frequency Distributions for Two Categorical Variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-bar-graphs" class="internal"><span class="title">Bar Graphs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-large-categorical-dataset" class="internal"><span class="title">Working with a Larger Biological Dataset</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="projects.html" class="internal"><span class="title">Projects</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-projects"><li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-categorical-data-project.html" class="internal"><span class="title">Project 1: Categorical Data</span></a></div>
+<ul class="structural toc-item-list active" id="ptx-toc-group-sec-categorical-data-project">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categorical-data-project.html#subsec-cat-project-now" class="internal"><span class="title">What You Need to Do First</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categorical-data-project.html#subsec-cat-project-data-check" class="internal"><span class="title">Data Selection Checklist</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categorical-data-project.html#subsec-cat-project-later" class="internal"><span class="title">What We Will Eventually Do With the Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categorical-data-project.html#subsec-cat-project-summary" class="internal"><span class="title">Data Set Summary</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categorical-data-project.html#subsec-cat-project-questions" class="internal"><span class="title">Preliminary Research Questions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categorical-data-project.html#subsec-cat-project-sources" class="internal"><span class="title">Places to Look for Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categorical-data-project.html#subsec-cat-project-report" class="internal"><span class="title">Final Project Requirements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-categorical-data-project.html#subsec-cat-project-rubric" class="internal"><span class="title">Grading Rubric</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-categorical-data-project">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Project 1: Categorical Data</span>
+</h1>
+<section class="introduction" id="sec-categorical-data-project-2">
+<div class="para" id="sec-categorical-data-project-2-1">In this project, you will choose a data set that interests you and use categorical data methods to investigate questions about the data. You will summarize the data with tables and graphs and, later in the semester, use statistical inference to answer several research questions.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-categorical-data-project-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-categorical-data-project-2-2">You are responsible for finding your own data. You may use <em class="alert">one data set</em> if it contains everything that you need, or you may use <em class="alert">two related or unrelated data sets</em> if one data set does not contain enough suitable categorical variables.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-categorical-data-project-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="subsection" id="subsec-cat-project-now">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">What You Need to Do First</span>
+</h2>
+<div class="para" id="subsec-cat-project-now-2">For now, concentrate on choosing your data and learning enough about the data to explain them to someone else. Do not begin performing statistical tests yet.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-now-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" style="list-style: ptx-marker-2;" id="subsec-cat-project-now-3">
+<li id="subsec-cat-project-now-3-1">
+<div class="para" id="subsec-cat-project-now-3-1-1">Find one or two data sets that contain suitable categorical variables.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-now-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#subsec-cat-project-now-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="subsec-cat-project-now-3-2">
+<div class="para" id="subsec-cat-project-now-3-2-1">Identify the original source of each data set. Save the link to both the data and, when available, the page that explains how the data were collected.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-now-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#subsec-cat-project-now-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="subsec-cat-project-now-3-3">
+<div class="para" id="subsec-cat-project-now-3-3-1">Determine what one row of the data represents. For example, one row might represent a person, patient, animal, plant, specimen, observation, county, or event.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-now-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#subsec-cat-project-now-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="subsec-cat-project-now-3-4">
+<div class="para" id="subsec-cat-project-now-3-4-1">Identify the categorical variables that you might use in the project and determine what the categories mean.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-now-3-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#subsec-cat-project-now-3-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="subsec-cat-project-now-3-5">
+<div class="para" id="subsec-cat-project-now-3-5-1">Check your data using the Data Selection Checklist below. You do not need to understand the statistical methods yet. The checklist is designed to help you find data that we will be able to analyze later.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-now-3-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5"><a tabindex="-1" href="#subsec-cat-project-now-3-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+<li id="subsec-cat-project-now-3-6">
+<div class="para" id="subsec-cat-project-now-3-6-1">Begin writing your Data Set Summary. The completed Data Set Summary should be no more than one page.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-now-3-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 6"><a tabindex="-1" href="#subsec-cat-project-now-3-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection: What You Need to Do First"><a tabindex="-1" href="#subsec-cat-project-now" title="Copy heading and permalink for Subsection: What You Need to Do First" aria-label="Copy heading and permalink for Subsection: What You Need to Do First">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-cat-project-data-check">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Data Selection Checklist</span>
+</h2>
+<div class="para" id="subsec-cat-project-data-check-2">A good data set for this project should contain individual observations rather than only percentages or already-computed summary statistics. Whenever possible, each row should represent one observational unit and each column should represent a variable.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-data-check-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-cat-project-data-check-3">Look for a data set with several categorical variables. In particular, your data should allow you to answer <em class="alert">yes</em> to the following questions.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-data-check-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="subsec-cat-project-data-check-4">
+<li id="subsec-cat-project-data-check-4-1">
+<div class="para" id="subsec-cat-project-data-check-4-1-1">Is there at least one categorical variable with <em class="alert">two possible outcomes</em>? Examples might include yes/no, positive/negative, present/absent, survived/did not survive, or another variable that can reasonably be separated into two categories.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-data-check-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#subsec-cat-project-data-check-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-cat-project-data-check-4-2">
+<div class="para" id="subsec-cat-project-data-check-4-2-1">Are there <em class="alert">two meaningful groups</em> that could be compared using the same two-category outcome? For example, you might be able to compare an outcome between two treatments, two populations, two locations, or two other groups.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-data-check-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#subsec-cat-project-data-check-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-cat-project-data-check-4-3">
+<div class="para" id="subsec-cat-project-data-check-4-3-1">Is there at least one categorical variable with <em class="alert">three or more categories</em>?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-data-check-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#subsec-cat-project-data-check-4-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-cat-project-data-check-4-4">
+<div class="para" id="subsec-cat-project-data-check-4-4-1">For a variable with three or more categories, can you find a reasonable outside source that describes what the distribution of those categories might be expected to look like? This could be a previously reported distribution, a scientific standard, a historical distribution, or another well-supported set of expected percentages.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-data-check-4-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#subsec-cat-project-data-check-4-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-cat-project-data-check-4-5">
+<div class="para" id="subsec-cat-project-data-check-4-5-1">Are there at least <em class="alert">two categorical variables recorded for the same observations</em> so that you can investigate whether those variables appear to be related?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-data-check-4-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#subsec-cat-project-data-check-4-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-cat-project-data-check-4-6">
+<div class="para" id="subsec-cat-project-data-check-4-6-1">Are there enough observations in the data that the categories are reasonably represented? A larger data set will generally be easier to use for this project. As a starting guideline, try to find data with at least 100 observations and avoid variables for which some categories contain only a few observations.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-data-check-4-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#subsec-cat-project-data-check-4-6" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="subsec-cat-project-data-check-5">The same variable may sometimes be useful for more than one part of the project. You do <em class="alert">not</em> need a different variable or a different data set for every analysis.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-data-check-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection: Data Selection Checklist"><a tabindex="-1" href="#subsec-cat-project-data-check" title="Copy heading and permalink for Subsection: Data Selection Checklist" aria-label="Copy heading and permalink for Subsection: Data Selection Checklist">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-cat-project-later">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">What We Will Eventually Do With the Data</span>
+</h2>
+<div class="para" id="subsec-cat-project-later-2">You do not need to understand the statistical procedures in this table yet. This table is included so that you can see why the Data Selection Checklist asks you to find particular kinds of variables.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-later-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="tab-cat-project-analysis-needs"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">64<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Data requirements for the project analyses<div class="autopermalink" aria-hidden="true" data-description="Table 64: Data requirements for the project analyses"><a tabindex="-1" href="#tab-cat-project-analysis-needs" title="Copy heading and permalink for Table 64: Data requirements for the project analyses" aria-label="Copy heading and permalink for Table 64: Data requirements for the project analyses">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l t b2 r2 l2 t2 lines">Statistical Method</th>
+<th scope="col" class="l t b2 r2 l0 t2 lines">What Your Data Need</th>
+<th scope="col" class="l t b2 r2 l0 t2 lines">Type of Question</th>
+</tr>
+<tr>
+<th scope="row" class="l t b2 r2 l2 t0 lines">One-Proportion z Test and/or Confidence Interval</th>
+<td class="l t b2 r2 l0 t0 lines">One categorical variable with two possible outcomes.</td>
+<td class="l t b2 r2 l0 t0 lines">What proportion of the population has a particular characteristic? If performing a test, is that proportion different from a meaningful benchmark?</td>
+</tr>
+<tr>
+<th scope="row" class="l t b2 r2 l2 t0 lines">Two-Proportion z Test</th>
+<td class="l t b2 r2 l0 t0 lines">A two-category outcome that can be compared between two meaningful groups.</td>
+<td class="l t b2 r2 l0 t0 lines">Is the proportion with a particular outcome different between two groups?</td>
+</tr>
+<tr>
+<th scope="row" class="l t b2 r2 l2 t0 lines">Multinomial Distribution Test (Goodness-of-Fit Test)</th>
+<td class="l t b2 r2 l0 t0 lines">One categorical variable with three or more categories and a reasonable expected distribution for those categories.</td>
+<td class="l t b2 r2 l0 t0 lines">Does the observed distribution of the categories differ from an expected or previously established distribution?</td>
+</tr>
+<tr>
+<th scope="row" class="l t b2 r2 l2 t0 lines">Test of Homogeneity or Test of Independence</th>
+<td class="l t b2 r2 l0 t0 lines">Two categorical variables with enough observations in the combinations of their categories.</td>
+<td class="l t b2 r2 l0 t0 lines">Does the distribution of one categorical variable differ among groups, or is there evidence of an association between two categorical variables?</td>
+</tr>
+</table></div>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Subsection: What We Will Eventually Do With the Data"><a tabindex="-1" href="#subsec-cat-project-later" title="Copy heading and permalink for Subsection: What We Will Eventually Do With the Data" aria-label="Copy heading and permalink for Subsection: What We Will Eventually Do With the Data">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-cat-project-summary">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Data Set Summary</span>
+</h2>
+<div class="para" id="subsec-cat-project-summary-2">Your Data Set Summary should explain the data clearly enough that a reader who has never seen the data can understand what they represent. The completed Data Set Summary should be <em class="alert">no more than one page</em>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-summary-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-cat-project-summary-3">Include the following information.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-summary-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" style="list-style: ptx-marker-2;" id="subsec-cat-project-summary-4">
+<li id="subsec-cat-project-summary-4-1">
+<div class="para" id="subsec-cat-project-summary-4-1-1">
+<em class="alert">Topic and context.</em> Explain what the data are about and why the topic is of interest.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-summary-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#subsec-cat-project-summary-4-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="subsec-cat-project-summary-4-2">
+<div class="para" id="subsec-cat-project-summary-4-2-1">
+<em class="alert">Source.</em> Identify where you obtained the data and provide the original source whenever it is available.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-summary-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#subsec-cat-project-summary-4-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="subsec-cat-project-summary-4-3">
+<div class="para" id="subsec-cat-project-summary-4-3-1">
+<em class="alert">Observational units.</em> Explain what one observation or one row in the data represents.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-summary-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#subsec-cat-project-summary-4-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="subsec-cat-project-summary-4-4">
+<div class="para" id="subsec-cat-project-summary-4-4-1">
+<em class="alert">Sample size.</em> State the number of observations in the data that you plan to use.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-summary-4-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#subsec-cat-project-summary-4-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="subsec-cat-project-summary-4-5">
+<div class="para" id="subsec-cat-project-summary-4-5-1">
+<em class="alert">Population and sample.</em> Explain, as well as you can from the available documentation, who or what was studied and the larger population that the data are intended to represent.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-summary-4-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5"><a tabindex="-1" href="#subsec-cat-project-summary-4-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+<li id="subsec-cat-project-summary-4-6">
+<div class="para" id="subsec-cat-project-summary-4-6-1">
+<em class="alert">Data collection.</em> Briefly explain how the data were collected, if that information is available.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-summary-4-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 6"><a tabindex="-1" href="#subsec-cat-project-summary-4-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
+</li>
+<li id="subsec-cat-project-summary-4-7">
+<div class="para" id="subsec-cat-project-summary-4-7-1">
+<em class="alert">Variables of interest.</em> Identify the categorical variables that you expect to use. Explain what each variable measures and what its categories mean.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-summary-4-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 7"><a tabindex="-1" href="#subsec-cat-project-summary-4-7" title="Copy heading and permalink for Item 7" aria-label="Copy heading and permalink for Item 7">🔗</a></div>
+</li>
+<li id="subsec-cat-project-summary-4-8">
+<div class="para" id="subsec-cat-project-summary-4-8-1">
+<em class="alert">Data preparation.</em> Describe any filtering, removal of missing observations, recategorization, or other changes that you make to the original data.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-summary-4-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 8"><a tabindex="-1" href="#subsec-cat-project-summary-4-8" title="Copy heading and permalink for Item 8" aria-label="Copy heading and permalink for Item 8">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection: Data Set Summary"><a tabindex="-1" href="#subsec-cat-project-summary" title="Copy heading and permalink for Subsection: Data Set Summary" aria-label="Copy heading and permalink for Subsection: Data Set Summary">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-cat-project-questions">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Preliminary Research Questions</span>
+</h2>
+<div class="para" id="subsec-cat-project-questions-2">Your exact research questions may change as we learn the statistical methods used in this project. For now, begin thinking about questions such as the following.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-questions-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="subsec-cat-project-questions-3">
+<li id="subsec-cat-project-questions-3-1">
+<div class="para" id="subsec-cat-project-questions-3-1-1">What proportion of the observations has a particular characteristic?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-questions-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#subsec-cat-project-questions-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-cat-project-questions-3-2">
+<div class="para" id="subsec-cat-project-questions-3-2-1">Does the proportion with a particular characteristic appear to be different between two groups?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-questions-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#subsec-cat-project-questions-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-cat-project-questions-3-3">
+<div class="para" id="subsec-cat-project-questions-3-3-1">Does the distribution of a variable with several categories appear to agree with a known or expected distribution?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-questions-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#subsec-cat-project-questions-3-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-cat-project-questions-3-4">
+<div class="para" id="subsec-cat-project-questions-3-4-1">Does one categorical variable appear to be related to another categorical variable?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-questions-3-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#subsec-cat-project-questions-3-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="subsec-cat-project-questions-4">At this stage, write these questions in ordinary language. You do not need to state hypotheses or identify statistical tests.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-questions-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection: Preliminary Research Questions"><a tabindex="-1" href="#subsec-cat-project-questions" title="Copy heading and permalink for Subsection: Preliminary Research Questions" aria-label="Copy heading and permalink for Subsection: Preliminary Research Questions">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-cat-project-sources">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Places to Look for Data</span>
+</h2>
+<div class="para" id="subsec-cat-project-sources-2">The following sites are good places to begin looking for data. You are not required to use one of these sites, but any data set you choose should have a reliable source and enough documentation for you to understand what the variables represent.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-sources-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="subsec-cat-project-sources-3">
+<li id="subsec-cat-project-sources-3-1">
+<div class="para" id="subsec-cat-project-sources-3-1-1">
+<a class="external" href="https://www.openintro.org/data/" target="_blank">OpenIntro Data Sets</a> contains many data sets used in introductory statistics courses, including biological, medical, and public-health examples. Many are available directly as CSV files.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-sources-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#subsec-cat-project-sources-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-cat-project-sources-3-2">
+<div class="para" id="subsec-cat-project-sources-3-2-1">
+<a class="external" href="https://github.com/rfordatascience/tidytuesday" target="_blank">TidyTuesday</a> provides a large collection of real-world data sets on many different topics. Each week’s data usually includes information about the original source.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-sources-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#subsec-cat-project-sources-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-cat-project-sources-3-3">
+<div class="para" id="subsec-cat-project-sources-3-3-1">
+<a class="external" href="https://data.cdc.gov/" target="_blank">CDC Open Data</a> contains public-health data from the Centers for Disease Control and Prevention. This is a particularly useful place to look for health-related categorical data.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-sources-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#subsec-cat-project-sources-3-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-cat-project-sources-3-4">
+<div class="para" id="subsec-cat-project-sources-3-4-1">
+<a class="external" href="https://archive.ics.uci.edu/" target="_blank">UCI Machine Learning Repository</a> contains data sets from many subject areas, including biology, medicine, and health. Many data sets include descriptions of each variable.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-sources-3-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#subsec-cat-project-sources-3-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-cat-project-sources-3-5">
+<div class="para" id="subsec-cat-project-sources-3-5-1">
+<a class="external" href="https://data.gov/" target="_blank">Data.gov</a> provides data from federal, state, and local government sources. Searching by a topic such as health, disease, environment, animals, or population can help narrow the results.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-sources-3-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#subsec-cat-project-sources-3-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="subsec-cat-project-sources-4">When a repository links to an original study or organization, you should also read the information from that original source. A data file by itself is usually not enough to understand how the data were collected or what the variables mean.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-sources-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection: Places to Look for Data"><a tabindex="-1" href="#subsec-cat-project-sources" title="Copy heading and permalink for Subsection: Places to Look for Data" aria-label="Copy heading and permalink for Subsection: Places to Look for Data">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-cat-project-report">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Final Project Requirements</span>
+</h2>
+<div class="para" id="subsec-cat-project-report-2">By the end of the project, your report will contain the following major components.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-report-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" style="list-style: ptx-marker-2;" id="subsec-cat-project-report-3">
+<li id="subsec-cat-project-report-3-1">
+<div class="para" id="subsec-cat-project-report-3-1-1">
+<em class="alert">Data Set Summary and Research Questions</em><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-report-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#subsec-cat-project-report-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="subsec-cat-project-report-3-2">
+<div class="para" id="subsec-cat-project-report-3-2-1">
+<em class="alert">Tables and Graphical Analysis</em>, including appropriate frequency tables, contingency tables, bar plots, and stacked bar plots.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-report-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#subsec-cat-project-report-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="subsec-cat-project-report-3-3">
+<div class="para" id="subsec-cat-project-report-3-3-1">
+<em class="alert">Statistical Analysis</em>, including a one-proportion z test and/or confidence interval, a two-proportion z test, a multinomial distribution goodness-of-fit test, and either a test of homogeneity or a test of independence.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-report-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#subsec-cat-project-report-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="subsec-cat-project-report-3-4">
+<div class="para" id="subsec-cat-project-report-3-4-1">
+<em class="alert">Summary of Results</em> that explains the statistical results in the context of your data rather than simply reporting computer output.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-report-3-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#subsec-cat-project-report-3-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="subsec-cat-project-report-3-5">
+<div class="para" id="subsec-cat-project-report-3-5-1">
+<em class="alert">Conclusion</em> that answers the research questions, discusses what you learned from the data, and identifies important limitations. The conclusion should be no more than one page.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-report-3-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5"><a tabindex="-1" href="#subsec-cat-project-report-3-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection: Final Project Requirements"><a tabindex="-1" href="#subsec-cat-project-report" title="Copy heading and permalink for Subsection: Final Project Requirements" aria-label="Copy heading and permalink for Subsection: Final Project Requirements">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-cat-project-rubric">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Grading Rubric</span>
+</h2>
+<div class="para" id="subsec-cat-project-rubric-2">The project is worth <em class="alert">50 points</em>. Full credit requires both correct statistical work and clear communication of what the results mean in the context of the data.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#subsec-cat-project-rubric-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<section class="paragraphs" id="rubric-cat-data-selection"><h3 class="heading"><span class="title">Data Set Selection and Documentation: 5 points.</span></h3>
+<ul class="disc" id="rubric-cat-data-selection-2">
+<li id="rubric-cat-data-selection-2-1">
+<div class="para" id="rubric-cat-data-selection-2-1-1">
+<em class="alert">2 points:</em> The selected data set or data sets are appropriate for the required categorical analyses and contain sufficient observations and suitable variables.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-data-selection-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-data-selection-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="rubric-cat-data-selection-2-2">
+<div class="para" id="rubric-cat-data-selection-2-2-1">
+<em class="alert">2 points:</em> The source of each data set is clearly identified and documented. The original source is included when available.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-data-selection-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-data-selection-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="rubric-cat-data-selection-2-3">
+<div class="para" id="rubric-cat-data-selection-2-3-1">
+<em class="alert">1 point:</em> Any filtering, recategorization, removal of observations, or other modification of the original data is clearly documented.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-data-selection-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-data-selection-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraphs: Data Set Selection and Documentation: 5 points"><a tabindex="-1" href="#rubric-cat-data-selection" title="Copy heading and permalink for Paragraphs: Data Set Selection and Documentation: 5 points" aria-label="Copy heading and permalink for Paragraphs: Data Set Selection and Documentation: 5 points">🔗</a></div>
+</section>
+<section class="paragraphs" id="rubric-cat-summary"><h3 class="heading"><span class="title">Data Set Summary and Research Questions: 5 points.</span></h3>
+<ul class="disc" id="rubric-cat-summary-2">
+<li id="rubric-cat-summary-2-1">
+<div class="para" id="rubric-cat-summary-2-1-1">
+<em class="alert">1 point:</em> The topic and context of the data are clearly explained.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-summary-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-summary-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="rubric-cat-summary-2-2">
+<div class="para" id="rubric-cat-summary-2-2-1">
+<em class="alert">1 point:</em> The observational units, sample, population, and sample size are identified as completely as the available information allows.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-summary-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-summary-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="rubric-cat-summary-2-3">
+<div class="para" id="rubric-cat-summary-2-3-1">
+<em class="alert">1 point:</em> Variables of interest and their categories are clearly defined.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-summary-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-summary-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="rubric-cat-summary-2-4">
+<div class="para" id="rubric-cat-summary-2-4-1">
+<em class="alert">2 points:</em> Research questions are clearly written, meaningful in the context of the data, and appropriate for the statistical analyses used in the project.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-summary-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-summary-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraphs: Data Set Summary and Research Questions: 5 points"><a tabindex="-1" href="#rubric-cat-summary" title="Copy heading and permalink for Paragraphs: Data Set Summary and Research Questions: 5 points" aria-label="Copy heading and permalink for Paragraphs: Data Set Summary and Research Questions: 5 points">🔗</a></div>
+</section>
+<section class="paragraphs" id="rubric-cat-graphs"><h3 class="heading"><span class="title">Tables and Graphical Analysis: 10 points.</span></h3>
+<ul class="disc" id="rubric-cat-graphs-2">
+<li id="rubric-cat-graphs-2-1">
+<div class="para" id="rubric-cat-graphs-2-1-1">
+<em class="alert">2 points:</em> Appropriate frequency and/or relative-frequency tables are included and are correct.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-graphs-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-graphs-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="rubric-cat-graphs-2-2">
+<div class="para" id="rubric-cat-graphs-2-2-1">
+<em class="alert">2 points:</em> Appropriate contingency tables are included and clearly organized.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-graphs-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-graphs-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="rubric-cat-graphs-2-3">
+<div class="para" id="rubric-cat-graphs-2-3-1">
+<em class="alert">2 points:</em> Appropriate bar plots are included and accurately represent the data.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-graphs-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-graphs-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="rubric-cat-graphs-2-4">
+<div class="para" id="rubric-cat-graphs-2-4-1">
+<em class="alert">2 points:</em> Appropriate stacked bar plots are included and help compare the categorical variables.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-graphs-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-graphs-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="rubric-cat-graphs-2-5">
+<div class="para" id="rubric-cat-graphs-2-5-1">
+<em class="alert">2 points:</em> Tables and graphs have meaningful titles, labels, category names, and other information needed for a reader to interpret them without referring to computer output.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-graphs-2-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-graphs-2-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraphs: Tables and Graphical Analysis: 10 points"><a tabindex="-1" href="#rubric-cat-graphs" title="Copy heading and permalink for Paragraphs: Tables and Graphical Analysis: 10 points" aria-label="Copy heading and permalink for Paragraphs: Tables and Graphical Analysis: 10 points">🔗</a></div>
+</section>
+<section class="paragraphs" id="rubric-cat-methods"><h3 class="heading"><span class="title">Statistical Methods and Computations: 10 points.</span></h3>
+<ul class="disc" id="rubric-cat-methods-2">
+<li id="rubric-cat-methods-2-1">
+<div class="para" id="rubric-cat-methods-2-1-1">
+<em class="alert">2 points:</em> The one-proportion z test and/or confidence interval is selected and performed correctly.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-methods-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-methods-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="rubric-cat-methods-2-2">
+<div class="para" id="rubric-cat-methods-2-2-1">
+<em class="alert">2 points:</em> The two-proportion z test is selected and performed correctly.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-methods-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-methods-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="rubric-cat-methods-2-3">
+<div class="para" id="rubric-cat-methods-2-3-1">
+<em class="alert">2 points:</em> The multinomial distribution goodness-of-fit test is selected and performed correctly.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-methods-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-methods-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="rubric-cat-methods-2-4">
+<div class="para" id="rubric-cat-methods-2-4-1">
+<em class="alert">2 points:</em> The test of homogeneity or test of independence is selected and performed correctly.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-methods-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-methods-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="rubric-cat-methods-2-5">
+<div class="para" id="rubric-cat-methods-2-5-1">
+<em class="alert">2 points:</em> Conditions and assumptions are addressed appropriately, and calculations, notation, and statistical output are used correctly.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-methods-2-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-methods-2-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraphs: Statistical Methods and Computations: 10 points"><a tabindex="-1" href="#rubric-cat-methods" title="Copy heading and permalink for Paragraphs: Statistical Methods and Computations: 10 points" aria-label="Copy heading and permalink for Paragraphs: Statistical Methods and Computations: 10 points">🔗</a></div>
+</section>
+<section class="paragraphs" id="rubric-cat-results"><h3 class="heading"><span class="title">Results and Interpretation: 10 points.</span></h3>
+<ul class="disc" id="rubric-cat-results-2">
+<li id="rubric-cat-results-2-1">
+<div class="para" id="rubric-cat-results-2-1-1">
+<em class="alert">2 points:</em> Results from the one-proportion analysis are accurately interpreted in context.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-results-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-results-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="rubric-cat-results-2-2">
+<div class="para" id="rubric-cat-results-2-2-1">
+<em class="alert">2 points:</em> Results from the two-proportion analysis are accurately interpreted in context.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-results-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-results-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="rubric-cat-results-2-3">
+<div class="para" id="rubric-cat-results-2-3-1">
+<em class="alert">2 points:</em> Results from the goodness-of-fit analysis are accurately interpreted in context.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-results-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-results-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="rubric-cat-results-2-4">
+<div class="para" id="rubric-cat-results-2-4-1">
+<em class="alert">2 points:</em> Results from the homogeneity or independence analysis are accurately interpreted in context.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-results-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-results-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="rubric-cat-results-2-5">
+<div class="para" id="rubric-cat-results-2-5-1">
+<em class="alert">2 points:</em> The report explains what the statistical results mean rather than simply listing statistics, p-values, or computer output.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-results-2-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-results-2-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraphs: Results and Interpretation: 10 points"><a tabindex="-1" href="#rubric-cat-results" title="Copy heading and permalink for Paragraphs: Results and Interpretation: 10 points" aria-label="Copy heading and permalink for Paragraphs: Results and Interpretation: 10 points">🔗</a></div>
+</section>
+<section class="paragraphs" id="rubric-cat-conclusion"><h3 class="heading"><span class="title">Conclusion: 10 points.</span></h3>
+<ul class="disc" id="rubric-cat-conclusion-2">
+<li id="rubric-cat-conclusion-2-1">
+<div class="para" id="rubric-cat-conclusion-2-1-1">
+<em class="alert">4 points:</em> The conclusion clearly answers the major research questions using the results of the statistical analyses.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-conclusion-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-conclusion-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="rubric-cat-conclusion-2-2">
+<div class="para" id="rubric-cat-conclusion-2-2-1">
+<em class="alert">2 points:</em> The results are connected back to the original topic and interpreted in meaningful, nontechnical language.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-conclusion-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-conclusion-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="rubric-cat-conclusion-2-3">
+<div class="para" id="rubric-cat-conclusion-2-3-1">
+<em class="alert">2 points:</em> Important limitations of the data, study design, or conclusions are identified and discussed.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-conclusion-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-conclusion-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="rubric-cat-conclusion-2-4">
+<div class="para" id="rubric-cat-conclusion-2-4-1">
+<em class="alert">2 points:</em> The conclusion is clear, organized, concise, and written as a coherent summary rather than a list of statistical results.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rubric-cat-conclusion-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#rubric-cat-conclusion-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraphs: Conclusion: 10 points"><a tabindex="-1" href="#rubric-cat-conclusion" title="Copy heading and permalink for Paragraphs: Conclusion: 10 points" aria-label="Copy heading and permalink for Paragraphs: Conclusion: 10 points">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Subsection: Grading Rubric"><a tabindex="-1" href="#subsec-cat-project-rubric" title="Copy heading and permalink for Subsection: Grading Rubric" aria-label="Copy heading and permalink for Subsection: Grading Rubric">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section: Project 1: Categorical Data"><a tabindex="-1" href="#sec-categorical-data-project" title="Copy heading and permalink for Section: Project 1: Categorical Data" aria-label="Copy heading and permalink for Section: Project 1: Categorical Data">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="projects.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
