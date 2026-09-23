@@ -1,0 +1,491 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="normal-and-chi-square-distributions">
+  <title>Normal and <m>\chi^2</m> Distributions</title>
+
+  <objectives>
+    <ol marker="1)">
+      <li>
+        <p>Interpret areas under density curves as probabilities.</p>
+      </li>
+      <li>
+        <p>Describe normal distributions and use standardized values.</p>
+      </li>
+      <li>
+        <p>Use R to find normal probabilities, percentiles, and cutoff values.</p>
+      </li>
+      <li>
+        <p>Describe the effect of degrees of freedom on a chi-square distribution and use R to find probabilities and cutoffs.</p>
+      </li>
+    </ol>
+  </objectives>
+
+  <introduction>
+    <p>Measurements such as height, temperature, and lung capacity are modeled with continuous random variables. We begin with a uniform distribution, develop the normal model, and then introduce the chi-square family. Numerical models and classification cutoffs in the application problems are assumptions for these exercises.</p>
+  </introduction>
+
+  <subsection xml:id="ncs-density">
+    <title>Continuous Random Variables and Density Curves</title>
+
+    <example xml:id="ncs-choose-two">
+      <title>Selecting Exactly Two</title>
+      <statement>
+        <p>Assume all listed choices are equally likely. What is the probability of selecting 2 from each set?</p>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>The whole numbers from 0 through 4.</p>
+            </li>
+            <li>
+              <p>The one-decimal-place values 0.0, 0.1, 0.2, ..., 4.9.</p>
+            </li>
+            <li>
+              <p>The two-decimal-place values 0.00, 0.01, 0.02, ..., 4.99.</p>
+            </li>
+            <li>
+              <p>A continuous uniform distribution on the interval from 0 to 5.</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+
+    <definition xml:id="ncs-density-def">
+      <title>Probability Density Function</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+
+    <example xml:id="ncs-density-height">
+      <title>Density Is Not Point Probability</title>
+      <statement>
+        <p>Let <m>X</m> be uniform on the interval from 0 to 5. Find the density function, <m>f(x)</m>, for this distribution. Find <m>f(2)</m> and <m>P(X=2)</m>. Explain the difference.</p>
+      </statement>
+    </example>
+
+    <remark xml:id="ncs-continuous-endpoints">
+      <title>Endpoints for Continuous Distributions</title>
+      <p>Because <m>P(X=a)=0</m> for a continuous random variable, including or excluding an endpoint does not change an interval probability.</p>
+      <p>
+        <md number="no">
+          <mrow>P(a&lt;X&lt;b)=P(a\leq X\leq b).</mrow>
+        </md>
+      </p>
+    </remark>
+
+    <example xml:id="ncs-uniform-area">
+      <title>Area Under a Uniform Density</title>
+      <statement>
+        <p>For the same uniform distribution as <xref ref="ncs-density-height"/>, find <m>P(1&lt;X&lt;3)</m>.</p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="ncs-normal">
+    <title>Normal and Standard Normal Distributions</title>
+
+    <definition xml:id="ncs-normal-def">
+      <title>Normal Distribution</title>
+
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+
+    <definition xml:id="ncs-standard-def">
+      <title>Standard Normal Distribution</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+
+    <figure>
+      <caption>The standard normal density curve.</caption>
+      <image source="images/standard-normal.png" width="70%">
+        <description>
+          <p>A symmetric bell-shaped density curve centered at z equals 0, with marked values from minus 3 to 3.</p>
+        </description>
+      </image>
+    </figure>
+    
+    <subsubsection>
+      <title>R-Commands for Normal Distribution</title>
+            
+      <p>Use <c>pnorm</c> when you know a value and want a probability. Use <c>qnorm</c> when you know a probability and want a value. The arguments <c>mean</c> and <c>sd</c> default to 0 and 1.</p>
+      <table xml:id="ncs-r-normal">
+        <title>Normal Probabilities and Cutoffs in R</title>
+        <tabular row-headers="yes" halign="center" valign="middle" top="medium" bottom="medium" left="medium" right="medium">
+          <row header="yes" bottom="medium">
+            <cell>R Command</cell>
+            <cell>Meaning</cell>
+          </row>
+          <row>
+            <cell>
+              <c>pnorm(k, mean = mu, sd = sigma)</c>
+            </cell>
+            <cell>
+              <m>P(X\leq k)</m>: area to the left of <m>k</m>.</cell>
+          </row>
+          <row>
+            <cell>
+              <line>
+                <c>pnorm(k, mean = mu, sd = sigma,</c>
+              </line>
+              <line>
+                <c>  lower.tail = FALSE)</c>
+              </line>
+            </cell>
+            <cell>
+              <m>P(X&gt;k)</m>: area to the right of <m>k</m>.</cell>
+          </row>
+          <row>
+            <cell>
+              <line>
+                <c>pnorm(b, mean = mu, sd = sigma) -</c>
+              </line>
+              <line>
+                <c>  pnorm(a, mean = mu, sd = sigma)</c>
+              </line>
+            </cell>
+            <cell>
+              <m>P(a&lt;X&lt;b)</m>: area between <m>a</m> and <m>b</m>.</cell>
+          </row>
+          <row>
+            <cell>
+              <c>qnorm(p, mean = mu, sd = sigma)</c>
+            </cell>
+            <cell>The cutoff <m>k</m> with <m>P(X\leq k)=p</m>.</cell>
+          </row>
+          <row>
+            <cell>
+              <line>
+                <c>qnorm(p, mean = mu, sd = sigma,</c>
+              </line>
+              <line>
+                <c>  lower.tail = FALSE)</c>
+              </line>
+            </cell>
+            <cell>The cutoff <m>k</m> with <m>P(X&gt;k)=p</m>.</cell>
+          </row>
+        </tabular>
+      </table>
+    </subsubsection>
+
+    <example xml:id="ncs-shade">
+      <title>Sketching Normal Probabilities</title>
+
+      <statement>
+        <p>Let <m>Z\sim N(0,1)</m>. Sketch a normal curve and shade the region for each probability.</p>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>
+                <m>P(Z&lt;-1.34)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>P(Z&gt;-0.51)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>P(Z&lt;-2\text{ or }Z&gt;2)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>P(-1&lt;Z&lt;3)</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+
+    <example xml:id="ncs-standard-probs">
+      <title>Calculating Standard Normal Probabilities</title>
+      <statement>
+        <p>Let <m>Z\sim N(0,1)</m>. Use R to calculate each probability.</p>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>
+                <m>P(Z&lt;2.56)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>P(Z&gt;1.65)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>P(Z&lt;-0.01\text{ or }Z&gt;3.25)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>P(-1.50&lt;Z&lt;1.50)</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+
+    <example xml:id="ncs-standard-cutoffs">
+      <title>Finding Standard Normal Cutoffs</title>
+      <statement>
+        <p>Find the cutoff value or values for each region under a standard normal curve.</p>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>The 51st percentile.</p>
+            </li>
+            <li>
+              <p>The top 10%.</p>
+            </li>
+            <li>
+              <p>The bottom 3% or the top 5%.</p>
+            </li>
+            <li>
+              <p>The middle 50%.</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+
+    <example xml:id="ncs-fvc">
+      <title>Standardized Lung Capacity</title>
+      <statement>
+        <p>Forced vital capacity (FVC) measures the volume of air expelled in a forceful exhalation after a full inhalation. Suppose FVC is standardized relative to a reference group of children of the same age, sex, and height, and the standardized values follow <m>N(0,1)</m>. Use the following exercise-specific classifications.</p>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>What percentage has a standardized FVC below -1.5?</p>
+            </li>
+            <li>
+              <p>What proportion is within 1.5 standard deviations of the mean?</p>
+            </li>
+            <li>
+              <p>What standardized FVC marks the top 10%?</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="ncs-applications">
+    <title>Normal Models for Measurements</title>
+
+    <definition xml:id="ncs-z-score">
+      <title><m>Z</m>-Score</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+
+    <example xml:id="ncs-heights">
+      <title>Heights in a Normal Model</title>
+      <statement>
+        <p>Suppose heights of boys in a hypothetical group follow a normal distribution with mean 60 inches and standard deviation 10 inches. Find the percentage of heights in each range.</p>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>Between 45 and 75 inches.</p>
+            </li>
+            <li>
+              <p>Between 30 and 90 inches.</p>
+            </li>
+            <li>
+              <p>Less than 50 inches.</p>
+            </li>
+            <li>
+              <p>45 inches or more.</p>
+            </li>
+            <li>
+              <p>75 inches or more.</p>
+            </li>
+            <li>
+              <p>Between 50 and 75 inches.</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+
+    <example xml:id="ncs-pulse">
+      <title>Pulse Rates</title>
+      <statement>
+        <p>Suppose pulse rates of adult males in a study are modeled by a normal distribution with mean 69.6 beats per minute and standard deviation 11.3 beats per minute. For this exercise, use 60 to 100 beats per minute as the target interval. What percentage falls in this interval?</p>
+      </statement>
+    </example>
+
+    <example xml:id="ncs-cholesterol">
+      <title>Serum Cholesterol</title>
+      <statement>
+        <p>Suppose serum cholesterol levels, measured in mg/dL, follow normal models in a hypothetical college population. The model for males has mean 195 and standard deviation 10; the model for females has mean 185 and standard deviation 12.</p>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>What cholesterol level marks the highest 5% of males?</p>
+            </li>
+            <li>
+              <p>What cholesterol level marks the highest 5% of females?</p>
+            </li>
+            <li>
+              <p>A campus has 10,000 students, equally divided between males and females. If a study flags values above 200, how many males and how many females would be expected to exceed that cutoff?</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+  </subsection>  
+  
+  <subsection xml:id="ncs-chi-square">
+    <title>An Introduction to the Chi-Square Distribution</title>
+
+    <definition xml:id="ncs-chi-def">
+      <title>Chi-Square Distribution</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+
+    <p>One connection to the normal distribution is especially useful: if <m>Z_1,\ldots,Z_\nu</m> are independent standard normal random variables, then</p>
+
+    <p>
+      <md number="no">
+        <mrow>Z_1^2+\cdots+Z_\nu^2\sim\chi^2_{\nu}.</mrow>
+      </md>
+    </p>
+
+    <p>Squaring and adding explains why chi-square values cannot be negative. For this construction, the degrees of freedom count the independent squared standard normal components. In statistical applications, the formula for degrees of freedom depends on the procedure.</p>
+
+    <p>
+      <ol marker="1)">
+        <li>
+          <p>Possible values are nonnegative, and the total area under the curve is 1.</p>
+        </li>
+        <li>
+          <p>The distribution is right-skewed. As the degrees of freedom increase, its relative skewness decreases and the curve becomes more nearly bell-shaped.</p>
+        </li>
+        <li>
+          <p>It is not symmetric for any finite degrees of freedom. It does not have negative values, even when its shape is close to normal.</p>
+        </li>
+        <li>
+          <p>Its mean is <m>\nu</m>, its variance is <m>2\nu</m>, and its standard deviation is <m>\sqrt{2\nu}</m>.</p>
+        </li>
+      </ol>
+    </p>
+
+    <figure>
+      <caption>Chi-square density curves for three degrees of freedom.</caption>
+      <image source="images/chi-square-shapes.png" width="70%">
+        <description>
+          <p>Chi-square densities for 2, 5, and 10 degrees of freedom. All lie on the nonnegative axis. As degrees of freedom increase, the center moves right and relative skewness decreases.</p>
+        </description>
+      </image>
+    </figure>
+
+    <p>Chi-square models will appear again when we compare observed and expected categorical counts, including goodness-of-fit, independence, and homogeneity tests. For now, focus on the distribution and areas under its curve.</p>
+
+    <subsubsection>
+      <title>R-Commands for <m>\chi^2</m> Distribution</title>
+      
+      <p>The R functions follow the same pattern as the normal functions. Use <c>pchisq</c> for probabilities and <c>qchisq</c> for cutoffs. Supply degrees of freedom using <c>df</c>.</p>
+
+      <table xml:id="ncs-chi-r">
+        <title>Chi-Square Probabilities and Cutoffs in R</title>
+        <tabular row-headers="yes" halign="center" valign="middle" top="medium" bottom="medium" left="medium" right="medium">
+          <row header="yes" bottom="medium">
+            <cell>R Command</cell>
+            <cell>Meaning</cell>
+          </row>
+          <row>
+            <cell>
+              <c>pchisq(k, df = nu)</c>
+            </cell>
+            <cell>
+              <m>P(X\leq k)</m>: area to the left of <m>k</m>.</cell>
+          </row>
+          <row>
+            <cell>
+              <line>
+                <c>pchisq(k, df = nu,</c>
+              </line>
+              <line>
+                <c>  lower.tail = FALSE)</c>
+              </line>
+            </cell>
+            <cell>
+              <m>P(X&gt;k)</m>: area to the right of <m>k</m>.</cell>
+          </row>
+          <row>
+            <cell>
+              <line>
+                <c>pchisq(b, df = nu) -</c>
+              </line>
+              <line>
+                <c>  pchisq(a, df = nu)</c>
+              </line>
+            </cell>
+            <cell>
+              <m>P(a&lt;X&lt;b)</m>: area between <m>a</m> and <m>b</m>.</cell>
+          </row>
+          <row>
+            <cell>
+              <c>qchisq(p, df = nu)</c>
+            </cell>
+            <cell>The cutoff <m>k</m> with <m>P(X\leq k)=p</m>.</cell>
+          </row>
+          <row>
+            <cell>
+              <line>
+                <c>qchisq(p, df = nu,</c>
+              </line>
+              <line>
+                <c>  lower.tail = FALSE)</c>
+              </line>
+            </cell>
+            <cell>The cutoff <m>k</m> with <m>P(X&gt;k)=p</m>.</cell>
+          </row>
+        </tabular>
+      </table>
+    </subsubsection>
+
+    <example xml:id="ncs-chi-example">
+      <title>Working with Four Degrees of Freedom</title>
+      <statement>
+        <p>Let <m>X\sim\chi^2_4</m>.</p>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>Find the mean and standard deviation.</p>
+            </li>
+            <li>
+              <p>Find <m>P(X&lt;3)</m>.</p>
+            </li>
+            <li>
+              <p>Find <m>P(X&gt;9)</m>.</p>
+            </li>
+            <li>
+              <p>Find <m>P(2&lt;X&lt;8)</m>.</p>
+            </li>
+            <li>
+              <p>Find the cutoff for the highest 5%.</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+
+    <remark xml:id="ncs-chi-continuous">
+      <title>Continuous Does Not Mean Normal</title>
+      <p>Normal and chi-square distributions are both continuous, so probabilities are areas and individual points have probability zero. Their shapes differ: a normal curve is symmetric and determined by a mean and standard deviation; a chi-square curve is right-skewed and determined by its degrees of freedom.</p>
+    </remark>
+  </subsection>
+</section>

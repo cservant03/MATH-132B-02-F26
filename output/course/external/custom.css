@@ -322,3 +322,65 @@ a.mathjax-link {
   break-before: page;
   page-break-before: always;
 }
+
+#ncs-density-def {
+  padding-bottom: 1in;
+}
+
+#ncs-density-height {
+  padding-bottom: 1.5in;
+}
+
+#ncs-uniform-area {
+  padding-bottom: 1in;
+}
+
+#ncs-normal-def {
+  padding-bottom: 2in;
+}
+
+#ncs-standard-def {
+  padding-bottom: 1in;
+  break-before: page;
+  page-break-before: always;
+}
+
+#ncs-shade ol > li {
+  padding-bottom: 0.6in;
+}
+
+#ncs-standard-probs ol > li {
+  padding-bottom: 0.6in;
+}
+
+#ncs-standard-cutoffs ol > li {
+  padding-bottom: 0.6in;
+}
+
+#ncs-fvc ol > li {
+  padding-bottom: 0.75in;
+}
+
+#ncs-z-score {
+  padding-bottom: 1in;
+}
+
+#ncs-heights ol > li {
+  padding-bottom: 0.6in;
+}
+
+#ncs-pulse {
+  padding-bottom: 1.5in;
+}
+
+#ncs-cholesterol ol > li {
+  padding-bottom: 0.9in;
+}
+
+#ncs-chi-def {
+  padding-bottom: 1in;
+}
+
+#ncs-chi-example ol > li {
+  padding-bottom: 1in;
+}
