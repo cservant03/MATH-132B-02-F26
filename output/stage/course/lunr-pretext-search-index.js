@@ -784,6 +784,222 @@ var ptx_lunr_docs = [
   "body": " Positive Screening Results   A hypothetical screening program tests 25 independently selected people. Each has probability 0.10 of a positive result. Let count positive results. Find the mean, standard deviation, and probability of more than the expected number of positive results.   "
 },
 {
+  "id": "normal-and-chi-square-distributions",
+  "level": "1",
+  "url": "normal-and-chi-square-distributions.html",
+  "type": "Section",
+  "number": "",
+  "title": "Normal and <span class=\"process-math\">\\(\\chi^2\\)<\/span> Distributions",
+  "body": " Normal and Distributions     Interpret areas under density curves as probabilities.    Describe normal distributions and use standardized values.    Use R to find normal probabilities, percentiles, and cutoff values.    Describe the effect of degrees of freedom on a chi-square distribution and use R to find probabilities and cutoffs.      Measurements such as height, temperature, and lung capacity are modeled with continuous random variables. We begin with a uniform distribution, develop the normal model, and then introduce the chi-square family. Numerical models and classification cutoffs in the application problems are assumptions for these exercises.    Continuous Random Variables and Density Curves   Selecting Exactly Two   Assume all listed choices are equally likely. What is the probability of selecting 2 from each set?     The whole numbers from 0 through 4.    The one-decimal-place values 0.0, 0.1, 0.2, ..., 4.9.    The two-decimal-place values 0.00, 0.01, 0.02, ..., 4.99.    A continuous uniform distribution on the interval from 0 to 5.        Probability Density Function        Density Is Not Point Probability   Let be uniform on the interval from 0 to 5. Find the density function, , for this distribution. Find and . Explain the difference.     Endpoints for Continuous Distributions  Because for a continuous random variable, including or excluding an endpoint does not change an interval probability.       Area Under a Uniform Density   For the same uniform distribution as , find .      Normal and Standard Normal Distributions   Normal Distribution        Standard Normal Distribution        The standard normal density curve.    A symmetric bell-shaped density curve centered at z equals 0, with marked values from minus 3 to 3.      R-Commands for Normal Distribution  Use pnorm when you know a value and want a probability. Use qnorm when you know a probability and want a value. The arguments mean and sd default to 0 and 1.   Normal Probabilities and Cutoffs in R    R Command  Meaning     pnorm(k, mean = mu, sd = sigma)    : area to the left of .      pnorm(k, mean = mu, sd = sigma,    lower.tail = FALSE)     : area to the right of .      pnorm(b, mean = mu, sd = sigma) -    pnorm(a, mean = mu, sd = sigma)     : area between and .     qnorm(p, mean = mu, sd = sigma)   The cutoff with .      qnorm(p, mean = mu, sd = sigma,    lower.tail = FALSE)    The cutoff with .       Sketching Normal Probabilities   Let . Sketch a normal curve and shade the region for each probability.                             Calculating Standard Normal Probabilities   Let . Use R to calculate each probability.                             Finding Standard Normal Cutoffs   Find the cutoff value or values for each region under a standard normal curve.     The 51st percentile.    The top 10%.    The bottom 3% or the top 5%.    The middle 50%.        Standardized Lung Capacity   Forced vital capacity (FVC) measures the volume of air expelled in a forceful exhalation after a full inhalation. Suppose FVC is standardized relative to a reference group of children of the same age, sex, and height, and the standardized values follow . Use the following exercise-specific classifications.     What percentage has a standardized FVC below -1.5?    What proportion is within 1.5 standard deviations of the mean?    What standardized FVC marks the top 10%?         Normal Models for Measurements   -Score        Heights in a Normal Model   Suppose heights of boys in a hypothetical group follow a normal distribution with mean 60 inches and standard deviation 10 inches. Find the percentage of heights in each range.     Between 45 and 75 inches.    Between 30 and 90 inches.    Less than 50 inches.    45 inches or more.    75 inches or more.    Between 50 and 75 inches.        Pulse Rates   Suppose pulse rates of adult males in a study are modeled by a normal distribution with mean 69.6 beats per minute and standard deviation 11.3 beats per minute. For this exercise, use 60 to 100 beats per minute as the target interval. What percentage falls in this interval?     Serum Cholesterol   Suppose serum cholesterol levels, measured in mg\/dL, follow normal models in a hypothetical college population. The model for males has mean 195 and standard deviation 10; the model for females has mean 185 and standard deviation 12.     What cholesterol level marks the highest 5% of males?    What cholesterol level marks the highest 5% of females?    A campus has 10,000 students, equally divided between males and females. If a study flags values above 200, how many males and how many females would be expected to exceed that cutoff?         An Introduction to the Chi-Square Distribution   Chi-Square Distribution       One connection to the normal distribution is especially useful: if are independent standard normal random variables, then     Squaring and adding explains why chi-square values cannot be negative. For this construction, the degrees of freedom count the independent squared standard normal components. In statistical applications, the formula for degrees of freedom depends on the procedure.     Possible values are nonnegative, and the total area under the curve is 1.    The distribution is right-skewed. As the degrees of freedom increase, its relative skewness decreases and the curve becomes more nearly bell-shaped.    It is not symmetric for any finite degrees of freedom. It does not have negative values, even when its shape is close to normal.    Its mean is , its variance is , and its standard deviation is .      Chi-square density curves for three degrees of freedom.    Chi-square densities for 2, 5, and 10 degrees of freedom. All lie on the nonnegative axis. As degrees of freedom increase, the center moves right and relative skewness decreases.     Chi-square models will appear again when we compare observed and expected categorical counts, including goodness-of-fit, independence, and homogeneity tests. For now, focus on the distribution and areas under its curve.   R-Commands for Distribution  The R functions follow the same pattern as the normal functions. Use pchisq for probabilities and qchisq for cutoffs. Supply degrees of freedom using df .   Chi-Square Probabilities and Cutoffs in R    R Command  Meaning     pchisq(k, df = nu)    : area to the left of .      pchisq(k, df = nu,    lower.tail = FALSE)     : area to the right of .      pchisq(b, df = nu) -    pchisq(a, df = nu)     : area between and .     qchisq(p, df = nu)   The cutoff with .      qchisq(p, df = nu,    lower.tail = FALSE)    The cutoff with .       Working with Four Degrees of Freedom   Let .     Find the mean and standard deviation.    Find .    Find .    Find .    Find the cutoff for the highest 5%.        Continuous Does Not Mean Normal  Normal and chi-square distributions are both continuous, so probabilities are areas and individual points have probability zero. Their shapes differ: a normal curve is symmetric and determined by a mean and standard deviation; a chi-square curve is right-skewed and determined by its degrees of freedom.    "
+},
+{
+  "id": "normal-and-chi-square-distributions-2",
+  "level": "2",
+  "url": "normal-and-chi-square-distributions.html#normal-and-chi-square-distributions-2",
+  "type": "Objectives",
+  "number": "",
+  "title": "",
+  "body": "   Interpret areas under density curves as probabilities.    Describe normal distributions and use standardized values.    Use R to find normal probabilities, percentiles, and cutoff values.    Describe the effect of degrees of freedom on a chi-square distribution and use R to find probabilities and cutoffs.    "
+},
+{
+  "id": "ncs-choose-two",
+  "level": "2",
+  "url": "normal-and-chi-square-distributions.html#ncs-choose-two",
+  "type": "Example",
+  "number": "86",
+  "title": "Selecting Exactly Two.",
+  "body": " Selecting Exactly Two   Assume all listed choices are equally likely. What is the probability of selecting 2 from each set?     The whole numbers from 0 through 4.    The one-decimal-place values 0.0, 0.1, 0.2, ..., 4.9.    The two-decimal-place values 0.00, 0.01, 0.02, ..., 4.99.    A continuous uniform distribution on the interval from 0 to 5.      "
+},
+{
+  "id": "ncs-density-def",
+  "level": "2",
+  "url": "normal-and-chi-square-distributions.html#ncs-density-def",
+  "type": "Definition",
+  "number": "87",
+  "title": "Probability Density Function.",
+  "body": " Probability Density Function      "
+},
+{
+  "id": "ncs-density-height",
+  "level": "2",
+  "url": "normal-and-chi-square-distributions.html#ncs-density-height",
+  "type": "Example",
+  "number": "88",
+  "title": "Density Is Not Point Probability.",
+  "body": " Density Is Not Point Probability   Let be uniform on the interval from 0 to 5. Find the density function, , for this distribution. Find and . Explain the difference.   "
+},
+{
+  "id": "ncs-continuous-endpoints",
+  "level": "2",
+  "url": "normal-and-chi-square-distributions.html#ncs-continuous-endpoints",
+  "type": "Remark",
+  "number": "89",
+  "title": "Endpoints for Continuous Distributions.",
+  "body": " Endpoints for Continuous Distributions  Because for a continuous random variable, including or excluding an endpoint does not change an interval probability.     "
+},
+{
+  "id": "ncs-uniform-area",
+  "level": "2",
+  "url": "normal-and-chi-square-distributions.html#ncs-uniform-area",
+  "type": "Example",
+  "number": "90",
+  "title": "Area Under a Uniform Density.",
+  "body": " Area Under a Uniform Density   For the same uniform distribution as , find .   "
+},
+{
+  "id": "ncs-normal-def",
+  "level": "2",
+  "url": "normal-and-chi-square-distributions.html#ncs-normal-def",
+  "type": "Definition",
+  "number": "91",
+  "title": "Normal Distribution.",
+  "body": " Normal Distribution      "
+},
+{
+  "id": "ncs-standard-def",
+  "level": "2",
+  "url": "normal-and-chi-square-distributions.html#ncs-standard-def",
+  "type": "Definition",
+  "number": "92",
+  "title": "Standard Normal Distribution.",
+  "body": " Standard Normal Distribution      "
+},
+{
+  "id": "ncs-normal-4",
+  "level": "2",
+  "url": "normal-and-chi-square-distributions.html#ncs-normal-4",
+  "type": "Figure",
+  "number": "93",
+  "title": "",
+  "body": " The standard normal density curve.    A symmetric bell-shaped density curve centered at z equals 0, with marked values from minus 3 to 3.    "
+},
+{
+  "id": "ncs-r-normal",
+  "level": "2",
+  "url": "normal-and-chi-square-distributions.html#ncs-r-normal",
+  "type": "Table",
+  "number": "94",
+  "title": "Normal Probabilities and Cutoffs in R",
+  "body": " Normal Probabilities and Cutoffs in R    R Command  Meaning     pnorm(k, mean = mu, sd = sigma)    : area to the left of .      pnorm(k, mean = mu, sd = sigma,    lower.tail = FALSE)     : area to the right of .      pnorm(b, mean = mu, sd = sigma) -    pnorm(a, mean = mu, sd = sigma)     : area between and .     qnorm(p, mean = mu, sd = sigma)   The cutoff with .      qnorm(p, mean = mu, sd = sigma,    lower.tail = FALSE)    The cutoff with .    "
+},
+{
+  "id": "ncs-shade",
+  "level": "2",
+  "url": "normal-and-chi-square-distributions.html#ncs-shade",
+  "type": "Example",
+  "number": "95",
+  "title": "Sketching Normal Probabilities.",
+  "body": " Sketching Normal Probabilities   Let . Sketch a normal curve and shade the region for each probability.                           "
+},
+{
+  "id": "ncs-standard-probs",
+  "level": "2",
+  "url": "normal-and-chi-square-distributions.html#ncs-standard-probs",
+  "type": "Example",
+  "number": "96",
+  "title": "Calculating Standard Normal Probabilities.",
+  "body": " Calculating Standard Normal Probabilities   Let . Use R to calculate each probability.                           "
+},
+{
+  "id": "ncs-standard-cutoffs",
+  "level": "2",
+  "url": "normal-and-chi-square-distributions.html#ncs-standard-cutoffs",
+  "type": "Example",
+  "number": "97",
+  "title": "Finding Standard Normal Cutoffs.",
+  "body": " Finding Standard Normal Cutoffs   Find the cutoff value or values for each region under a standard normal curve.     The 51st percentile.    The top 10%.    The bottom 3% or the top 5%.    The middle 50%.      "
+},
+{
+  "id": "ncs-fvc",
+  "level": "2",
+  "url": "normal-and-chi-square-distributions.html#ncs-fvc",
+  "type": "Example",
+  "number": "98",
+  "title": "Standardized Lung Capacity.",
+  "body": " Standardized Lung Capacity   Forced vital capacity (FVC) measures the volume of air expelled in a forceful exhalation after a full inhalation. Suppose FVC is standardized relative to a reference group of children of the same age, sex, and height, and the standardized values follow . Use the following exercise-specific classifications.     What percentage has a standardized FVC below -1.5?    What proportion is within 1.5 standard deviations of the mean?    What standardized FVC marks the top 10%?      "
+},
+{
+  "id": "ncs-z-score",
+  "level": "2",
+  "url": "normal-and-chi-square-distributions.html#ncs-z-score",
+  "type": "Definition",
+  "number": "99",
+  "title": "<span class=\"process-math\">\\(Z\\)<\/span>-Score.",
+  "body": " -Score      "
+},
+{
+  "id": "ncs-heights",
+  "level": "2",
+  "url": "normal-and-chi-square-distributions.html#ncs-heights",
+  "type": "Example",
+  "number": "100",
+  "title": "Heights in a Normal Model.",
+  "body": " Heights in a Normal Model   Suppose heights of boys in a hypothetical group follow a normal distribution with mean 60 inches and standard deviation 10 inches. Find the percentage of heights in each range.     Between 45 and 75 inches.    Between 30 and 90 inches.    Less than 50 inches.    45 inches or more.    75 inches or more.    Between 50 and 75 inches.      "
+},
+{
+  "id": "ncs-pulse",
+  "level": "2",
+  "url": "normal-and-chi-square-distributions.html#ncs-pulse",
+  "type": "Example",
+  "number": "101",
+  "title": "Pulse Rates.",
+  "body": " Pulse Rates   Suppose pulse rates of adult males in a study are modeled by a normal distribution with mean 69.6 beats per minute and standard deviation 11.3 beats per minute. For this exercise, use 60 to 100 beats per minute as the target interval. What percentage falls in this interval?   "
+},
+{
+  "id": "ncs-cholesterol",
+  "level": "2",
+  "url": "normal-and-chi-square-distributions.html#ncs-cholesterol",
+  "type": "Example",
+  "number": "102",
+  "title": "Serum Cholesterol.",
+  "body": " Serum Cholesterol   Suppose serum cholesterol levels, measured in mg\/dL, follow normal models in a hypothetical college population. The model for males has mean 195 and standard deviation 10; the model for females has mean 185 and standard deviation 12.     What cholesterol level marks the highest 5% of males?    What cholesterol level marks the highest 5% of females?    A campus has 10,000 students, equally divided between males and females. If a study flags values above 200, how many males and how many females would be expected to exceed that cutoff?      "
+},
+{
+  "id": "ncs-chi-def",
+  "level": "2",
+  "url": "normal-and-chi-square-distributions.html#ncs-chi-def",
+  "type": "Definition",
+  "number": "103",
+  "title": "Chi-Square Distribution.",
+  "body": " Chi-Square Distribution      "
+},
+{
+  "id": "ncs-chi-square-7",
+  "level": "2",
+  "url": "normal-and-chi-square-distributions.html#ncs-chi-square-7",
+  "type": "Figure",
+  "number": "104",
+  "title": "",
+  "body": " Chi-square density curves for three degrees of freedom.    Chi-square densities for 2, 5, and 10 degrees of freedom. All lie on the nonnegative axis. As degrees of freedom increase, the center moves right and relative skewness decreases.    "
+},
+{
+  "id": "ncs-chi-r",
+  "level": "2",
+  "url": "normal-and-chi-square-distributions.html#ncs-chi-r",
+  "type": "Table",
+  "number": "105",
+  "title": "Chi-Square Probabilities and Cutoffs in R",
+  "body": " Chi-Square Probabilities and Cutoffs in R    R Command  Meaning     pchisq(k, df = nu)    : area to the left of .      pchisq(k, df = nu,    lower.tail = FALSE)     : area to the right of .      pchisq(b, df = nu) -    pchisq(a, df = nu)     : area between and .     qchisq(p, df = nu)   The cutoff with .      qchisq(p, df = nu,    lower.tail = FALSE)    The cutoff with .    "
+},
+{
+  "id": "ncs-chi-example",
+  "level": "2",
+  "url": "normal-and-chi-square-distributions.html#ncs-chi-example",
+  "type": "Example",
+  "number": "106",
+  "title": "Working with Four Degrees of Freedom.",
+  "body": " Working with Four Degrees of Freedom   Let .     Find the mean and standard deviation.    Find .    Find .    Find .    Find the cutoff for the highest 5%.      "
+},
+{
+  "id": "ncs-chi-continuous",
+  "level": "2",
+  "url": "normal-and-chi-square-distributions.html#ncs-chi-continuous",
+  "type": "Remark",
+  "number": "107",
+  "title": "Continuous Does Not Mean Normal.",
+  "body": " Continuous Does Not Mean Normal  Normal and chi-square distributions are both continuous, so probabilities are areas and individual points have probability zero. Their shapes differ: a normal curve is symmetric and determined by a mean and standard deviation; a chi-square curve is right-skewed and determined by its degrees of freedom.  "
+},
+{
   "id": "subsec-cat-project-rubric",
   "level": "1",
   "url": "subsec-cat-project-rubric.html",

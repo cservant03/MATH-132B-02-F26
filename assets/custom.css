@@ -384,3 +384,72 @@ a.mathjax-link {
 #ncs-chi-example ol > li {
   padding-bottom: 1in;
 }
+
+#spp-def-population-proportion {
+  padding-bottom: 1in;
+}
+
+#spp-def-sample-proportion {
+  padding-bottom: 1in;
+}
+
+#spp-ex-seed-sample ol > li {
+  padding-bottom: 0.7in;
+}
+
+#spp-def-sampling-variability {
+  padding-bottom: 1in;
+}
+
+#spp-ex-five-samples {
+  padding-bottom: 1in;
+}
+
+#spp-def-sampling-distribution {
+  padding-bottom: 1in;
+}
+
+#spp-def-mean-standard-error {
+  padding-bottom: 1.5in;
+}
+
+#spp-def-unbiased {
+  padding-bottom: 1in;
+}
+
+#spp-ex-mean-se {
+  padding-bottom: 1in;
+}
+
+#spp-ex-sample-size {
+  padding-bottom: 1.5in;
+}
+
+#spp-ex-normality-checks ol > li {
+  padding-bottom: 0.5in;
+}
+
+#spp-ex-ten-percent {
+  padding-bottom: 0.7in;
+}
+
+#spp-ex-r-many-samples ol > li {
+  padding-bottom: 1in;
+}
+
+#spp-ex-wetlands-probabilities ol > li {
+  padding-bottom: 0.7in;
+}
+
+#spp-ex-unusual-result ol > li {
+  padding-bottom: 0.7in;
+}
+
+#spp-ex-percentile {
+  padding-bottom: 1.5in;
+}
+
+#spp-probabilities {
+  break-before: page;
+  page-break-before: always;
+}

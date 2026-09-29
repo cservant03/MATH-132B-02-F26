@@ -1,0 +1,397 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="sampling-distribution-of-sample-proportions">
+  <title>Sampling Distribution of <m>\hat{p}</m></title>
+
+  <objectives>
+    <ol marker="1)">
+      <li>
+        <p>Distinguish a population proportion from a sample proportion.</p>
+      </li>
+      <li>
+        <p>Describe a sampling distribution and explain why sample proportions vary.</p>
+      </li>
+      <li>
+        <p>Calculate and interpret the mean and standard error of a sample proportion.</p>
+      </li>
+      <li>
+        <p>Check the conditions for using a normal model for sample proportions.</p>
+      </li>
+      <li>
+        <p>Use a normal model and R to find probabilities involving sample proportions.</p>
+      </li>
+    </ol>
+  </objectives>
+
+  <introduction>
+    <p>A researcher may want to estimate the proportion of seeds that germinate, wetlands with an invasive plant, or patients who respond to a treatment. Usually, the researcher observes a sample rather than the entire population. Different random samples can produce different estimates. How much variation should we expect, and when would a sample result be surprising?</p>
+    <p>These notes connect the binomial and normal distributions to questions about proportions. All rates, populations, and data in the examples are hypothetical instructional settings.</p>
+  </introduction>
+
+  <subsection xml:id="spp-population-and-sample">
+    <title>Population Proportions and Sample Proportions</title>
+
+    <definition xml:id="spp-def-population-proportion">
+      <title>Population Proportion</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+
+    <definition xml:id="spp-def-sample-proportion">
+      <title>Sample Proportion</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+    <table xml:id="spp-notation">
+      <title>Notation for Proportions</title>
+      <tabular row-headers="yes" halign="left" valign="middle" top="medium" bottom="medium" left="medium" right="medium">
+        <row header="yes" bottom="medium">
+          <cell>Symbol</cell>
+          <cell>Meaning</cell>
+        </row>
+        <row>
+          <cell>
+            <m>p</m>
+          </cell>
+          <cell>Population proportion; a parameter.</cell>
+        </row>
+        <row>
+          <cell>
+            <m>n</m>
+          </cell>
+          <cell>Number of individuals in one sample.</cell>
+        </row>
+        <row>
+          <cell>
+            <m>x</m>
+          </cell>
+          <cell>Observed number of true values in that sample.</cell>
+        </row>
+        <row>
+          <cell>
+            <m>\hat{p}</m>
+          </cell>
+          <cell>Observed sample proportion, <m>x/n</m>; a statistic.</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <example xml:id="spp-ex-seed-sample">
+      <title>Seeds That Germinate</title>
+      <statement>
+        <p>Suppose 40% of seeds from a particular source would germinate under specified conditions. A researcher randomly selects 50 seeds and finds that 18 germinate.</p>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>Identify <m>p</m>, <m>n</m>, and <m>x</m>.</p>
+            </li>
+            <li>
+              <p>Calculate and interpret <m>\hat{p}</m>.</p>
+            </li>
+            <li>
+              <p>Would a second random sample have to give the same result?</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+
+    <definition xml:id="spp-def-sampling-variability">
+      <title>Sampling Variability</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+
+    <example xml:id="spp-ex-five-samples">
+      <title>Five Samples from the Same Source</title>
+      <statement>
+        <p>Five research teams each randomly select 50 seeds from the same large source. Their results are shown below. Calculate each sample proportion. What changes across samples, and what stays fixed?</p>
+        <table>
+          <title>Germination Results for Five Samples</title>
+          <tabular row-headers="yes" halign="center" valign="middle" top="medium" bottom="medium" left="medium" right="medium">
+            <row header="yes" bottom="medium">
+              <cell>Sample</cell>
+              <cell>1</cell>
+              <cell>2</cell>
+              <cell>3</cell>
+              <cell>4</cell>
+              <cell>5</cell>
+            </row>
+            <row>
+              <cell>Seeds that germinate, <m>x</m></cell>
+              <cell>18</cell>
+              <cell>22</cell>
+              <cell>20</cell>
+              <cell>17</cell>
+              <cell>23</cell>
+            </row>
+            <row>
+              <cell>Sample size, <m>n</m></cell>
+              <cell>50</cell>
+              <cell>50</cell>
+              <cell>50</cell>
+              <cell>50</cell>
+              <cell>50</cell>
+            </row>
+          </tabular>
+        </table>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="spp-sampling-distribution">
+    <title>What Is a Sampling Distribution?</title>
+
+    <definition xml:id="spp-def-sampling-distribution">
+      <title>Sampling Distribution of a Sample Proportion</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+    
+    <definition xml:id="spp-def-mean-standard-error">
+      <title>Mean and Standard Error</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+
+    <remark xml:id="spp-binomial-connection">
+      <title>Connection to the Binomial Distribution</title>
+      <p>If <m>X\sim\operatorname{Bin}(n,p)</m> counts the successes, then <m>\hat{p}=X/n</m>. Dividing a random variable by <m>n</m> divides both its mean and its standard deviation by <m>n</m>:</p>
+      <p>
+        <md number="no">
+          <mrow>\mu_{\hat{p}}=\frac{np}{n}=p,</mrow>
+          <mrow>\sigma_{\hat{p}}=\frac{\sqrt{np(1-p)}}{n}=\sqrt{\frac{p(1-p)}{n}}.</mrow>
+        </md>
+      </p>
+      <p>These formulas hold under the independent binomial model even when the sampling distribution is not approximately normal.</p>
+    </remark>
+
+    <definition xml:id="spp-def-unbiased">
+      <title>Unbiased Estimator</title>
+      <statement>
+        <p></p>
+      </statement>
+    </definition>
+
+    <example xml:id="spp-ex-mean-se">
+      <title>Interpreting the Spread of Germination Proportions</title>
+      <statement>
+        <p>Assume seed germination outcomes are independent, with <m>p=0.40</m>. Find and interpret the mean and standard error of <m>\hat{p}</m> for samples of 50 seeds.</p>
+      </statement>
+    </example>
+
+    <example xml:id="spp-ex-sample-size">
+      <title>What Happens When the Sample Size Increases?</title>
+      <statement>
+        <p>Keep the seed model with <m>p=0.40</m>. Compare the mean and standard error for samples of 50, 200, and 800 seeds.</p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="spp-normal-model">
+    <title>When Is a Normal Model Appropriate?</title>
+
+    <p>Before using a normal curve to calculate probabilities about <m>\hat{p}</m>, check the sampling method, independence, and expected counts.</p>
+    <p>
+      <ol marker="1)">
+        <li>
+          <p><em>Random sampling:</em> The sample should be selected randomly from the population of interest, or the problem should specify an appropriate independent chance model.</p>
+        </li>
+        <li>
+          <p><em>Independent observations:</em> One outcome should not determine or strongly influence another. For a simple random sample taken without replacement from a population of size <m>N</m>, check the <term>10% condition</term>:</p>
+          <p>
+            <md number="no">
+              <mrow>n\leq0.10N.</mrow>
+            </md>
+          </p>
+          <p>This makes the dependence from sampling without replacement small enough to use the usual standard error approximately. A small sampling fraction alone does not resolve dependence caused by a clustered sampling design.</p>
+        </li>
+        <li>
+          <p><em>Enough expected successes and failures:</em> Check both parts of the <term>success-failure condition</term>:</p>
+          <p>
+            <md number="no">
+              <mrow>np\geq10\qquad\text{and}\qquad n(1-p)\geq10.</mrow>
+            </md>
+          </p>
+          <p>These are expected counts under the assumed population proportion, not the observed counts in a particular sample.</p>
+        </li>
+      </ol>
+    </p>
+
+    <theorem xml:id="spp-normal-approximation">
+      <title>Normal Approximation for a Sample Proportion</title>
+      <p>When the conditions are satisfied, the sampling distribution of <m>\hat{p}</m> is approximately normal, with mean <m>p</m> and standard deviation <m>\sqrt{\frac{p(1-p)}{n}}</m>. We write</p>
+      <p>
+        <md number="no">
+          <mrow>\hat{p}\sim N\left(p,\sqrt{\frac{p(1-p)}{n}}\right).</mrow>
+        </md>
+      </p>
+      <p>As in our normal distribution notes, the first parameter is the mean and the second parameter is the standard deviation. This large-sample result is often called the central limit theorem for sample proportions.</p>
+    </theorem>
+
+    <example xml:id="spp-ex-normality-checks">
+      <title>Checking Expected Counts</title>
+      <statement>
+        <p>Assume random sampling and independence are appropriate in each setting. Determine whether a normal approximation is supported.</p>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>Seeds germinate with probability 0.40, and <m>n=50</m>.</p>
+            </li>
+            <li>
+              <p>Water samples contain a contaminant with probability 0.04, and <m>n=100</m>.</p>
+            </li>
+            <li>
+              <p>Laboratory cultures grow successfully with probability 0.96, and <m>n=100</m>.</p>
+            </li>
+            <li>
+              <p>Water samples contain the contaminant with probability 0.04, and <m>n=250</m>.</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+
+    <example xml:id="spp-ex-ten-percent">
+      <title>A Sample That Is a Large Fraction of the Population</title>
+      <statement>
+        <p>A reserve contains 600 marked turtles. A researcher takes a simple random sample of 100 turtles without replacement. Assume 40% of the turtles have a particular shell marking. Can we use the usual normal model under our stated conditions?</p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="spp-r-simulation">
+    <title>R Investigation: Repeated Samples of Seeds</title>
+
+    <p>We can approximate the sampling distribution without collecting thousands of actual samples. Suppose seeds germinate independently with probability 0.40. The following activity uses only functions included with R; no additional packages or data files are needed.</p>
+
+    <example xml:id="spp-ex-r-one-sample">
+      <title>Start with One Sample</title>
+      <statement>
+        <p>Run the following code. What does each of the two reported values represent?</p>
+        <program language="r">set.seed(132)
+x = rbinom(1, size = 50, prob = 0.40)
+x
+x / 50</program>
+      </statement>
+    </example>
+
+    <example xml:id="spp-ex-r-many-samples">
+      <title>Build a Simulated Sampling Distribution</title>
+      <statement>
+        <p>Before running the code, predict the center and approximate shape of the distribution. Then simulate 1,000 separate samples of 50 seeds and store one sample proportion per sample.</p>
+        <program language="r">set.seed(132)
+p = 0.40
+n = 50
+reps = 1000
+
+p_hat = rbinom(reps, size = n, prob = p) / n
+
+hist(p_hat,
+     breaks = seq(-0.02, 1.02, by = 0.04),
+     xlim = c(0, 1),
+     main = paste("Sample size =", n),
+     xlab = "Sample proportion of seeds that germinate",
+     ylab = "Number of simulated samples",
+     col = "lightblue", border = "white")
+abline(v = p, lwd = 2, lty = 2)
+
+c(simulated_mean = mean(p_hat),
+  theoretical_mean = p,
+  simulated_sd = sd(p_hat),
+  theoretical_se = sqrt(p * (1 - p) / n))</program>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>What does one value in <c>p_hat</c> represent? What does the height of a histogram bar count?</p>
+            </li>
+            <li>
+              <p>What is the sample size? How many separate samples were simulated?</p>
+            </li>
+            <li>
+              <p>Compare the simulated mean and standard deviation with the theoretical values.</p>
+            </li>
+            <li>
+              <p>Change only <c>n = 50</c> to <c>n = 200</c> and rerun the entire block. Predict and then describe the changes.</p>
+            </li>
+            <li>
+              <p>With <c>n = 200</c>, change <c>reps = 1000</c> to <c>reps = 10000</c>. Does this change the theoretical standard error?</p>
+            </li>
+            <li>
+              <p>
+                Set <c>p = 0.04</c>, <c>n = 50</c>, and <c>reps = 1000</c>. Describe the histogram. Then compute <m>np</m> and <m>n(1-p)</m> and use them to explain the shape of the histogram.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="spp-probabilities">
+    <title>Probabilities Involving Sample Proportions</title>
+    <definition xml:id="spp-def-z-score">
+      <title>Standardized Sample Proportion</title>
+      <statement>
+        <p>To measure how far an observed sample proportion is from the assumed population proportion, calculate</p>
+        <p>
+          <md number="no">
+            <mrow>z=\frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}}.</mrow>
+          </md>
+        </p>
+        <p>The result is the number of standard errors above or below <m>p</m>. When the normal approximation is appropriate, areas under the standard normal curve approximate sampling probabilities.</p>
+      </statement>
+    </definition>
+    
+    <example xml:id="spp-ex-wetlands-probabilities">
+      <title>Wetlands with an Invasive Plant</title>
+      <statement>
+        <p>Suppose 30% of the 20,000 wetlands in a region contain a particular invasive plant. A team takes a simple random sample of 200 wetlands without replacement. Let <m>\hat{p}</m> be the proportion of sampled wetlands containing the plant. Use a normal approximation to find each probability.</p>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>Fewer than 25% of the sampled wetlands contain the plant.</p>
+            </li>
+            <li>
+              <p>At least 38% of the sampled wetlands contain the plant.</p>
+            </li>
+            <li>
+              <p>Between 25% and 35%, inclusive, of the sampled wetlands contain the plant.</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+
+    <example xml:id="spp-ex-unusual-result">
+      <title>Is a Sample Result Surprising?</title>
+      <statement>
+        <p>In the wetland setting above, suppose the plant is found in 74 of the 200 sampled wetlands.</p>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>Calculate the sample proportion and its z-score under the assumption <m>p=0.30</m>.</p>
+            </li>
+            <li>
+              <p>Approximate the probability of a sample proportion at least this large.</p>
+            </li>
+            <li>
+              <p>Explain what the result suggests and what it does not establish.</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+
+    <example xml:id="spp-ex-percentile">
+      <title>A Cutoff for the Highest 10% of Sample Proportions</title>
+      <statement>
+        <p>For the same wetland model, use the normal approximation to find a cutoff with about 10% of sample proportions above it.</p>
+      </statement>
+    </example>
+  </subsection>
+</section>

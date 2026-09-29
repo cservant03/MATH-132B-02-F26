@@ -26,7 +26,8 @@
       <xi:include href="./notes/addition-complement-rules.ptx"/>
       <xi:include href="./notes/describing-categorical-data.ptx"/>
       <xi:include href="./notes/binomial.ptx"/>
-      <xi:include href="./notes/normal-and-chi-square-distributions.ptx" />
+      <xi:include href="./notes/normal-and-chi-square-distributions.ptx"/>
+      <xi:include href="./notes/sampling-distribution-for-p-hat.ptx"/>
     </chapter>
 
     <chapter xml:id="lab-reports">
