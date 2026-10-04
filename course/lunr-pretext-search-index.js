@@ -1216,6 +1216,258 @@ var ptx_lunr_docs = [
   "body": " A Cutoff for the Highest 10% of Sample Proportions   For the same wetland model, use the normal approximation to find a cutoff with about 10% of sample proportions above it.   "
 },
 {
+  "id": "confidence-intervals-for-a-population-proportion",
+  "level": "1",
+  "url": "confidence-intervals-for-a-population-proportion.html",
+  "type": "Section",
+  "number": "",
+  "title": "Inference for One Proportion Part 1",
+  "body": " Inference for One Proportion Part 1    Distinguish a point estimate from an interval estimate of a population proportion.  Explain the meaning of a confidence interval, confidence level, and margin of error.  Check the conditions for a one-proportion z-interval.  Find a normal critical value and construct a confidence interval by calculation and in R.  Interpret an interval in context and assess whether a proposed population proportion is compatible with it.  Explain how confidence level and sample size affect precision, and distinguish one-sided bounds from two-sided intervals.     What is Statistics?   Statistics        Population        Parameter        Sample        Statistic         What Is a Confidence Interval?   Point Estimate       For example, if 80 of 200 randomly selected seeds germinate, the point estimate of the population germination proportion is . This does not establish that exactly 40% of all seeds from that source will germinate. An interval estimate gives a range of values supported by the data and the statistical model.   Confidence Interval        Margin of Error        Reading an Estimate and a Margin of Error   A seed-germination report gives a point estimate of 40%, with a margin of error of 7 percentage points at the 95% confidence level.   Write the point estimate and margin of error as proportions.  Find the interval and its total width.  Is a population germination proportion of 0.45 compatible with this interval? What about 0.60?       What Does the Confidence Level Mean?   Confidence Level       Imagine taking a random sample, calculating an interval, and repeating this process many times. The sample proportion and interval endpoints change from sample to sample. The population proportion stays fixed. Some of the intervals capture it, and some miss it.   Twenty confidence intervals: 17 contain the population proportion p, and 3 red intervals miss it.   A vertical line marks the fixed population proportion . Twenty horizontal confidence intervals are arranged in rows numbered 1 through 20. Seventeen blue intervals cross the vertical line and contain .  Three red intervals miss : intervals 4 and 17 lie entirely to the right of the vertical line, and interval 11 lies entirely to the left.  Circles on the blue intervals and X-shaped markers on the red intervals mark the sample proportions, . The sample proportions and interval endpoints vary from sample to sample, while the population proportion stays fixed.     Interpreting an Interval in Context  A conventional interpretation is: We are 95% confident that the true proportion of [the population] who or which [have the characteristic] is between [lower limit] and [upper limit].  The confidence comes from the repeated-sampling performance of the method. Once an interval has been calculated, it either contains the fixed value of or it does not. The 95% is not a probability assigned to moving into that particular interval.  A 95% confidence interval also does not say that 95% of individuals have the characteristic, that 95% of sample proportions fall inside this particular interval, or that the next sample result is guaranteed to lie inside it.     The One-Proportion Z-Interval  In the sampling-distribution model, the standard deviation of is . When estimating , we do not know its value. We therefore estimate this standard error using the observed sample proportion.   Estimated Standard Error of a Sample Proportion        Requirements for a One-Proportion Z-Interval     Binary outcome: Each observation is classified as having or not having the characteristic being counted. Define a success before counting.  Appropriate sampling: The data should come from a random sample of the population of interest or from an appropriate independent binomial model. Consider how the observations were obtained and which population the conclusion can describe.  Independence: The observations should be independent, or approximately so. For a simple random sample without replacement from a finite population of size , use the 10% guideline .  Enough observed successes and failures: Check both  For this interval, we check the observed counts because is unknown. A large total sample size alone is insufficient if one category has very few observations. These conditions are a practical guideline; the normal interval still has approximate coverage.       Critical Value        Finding a Critical Value in R      Finding a 97% Critical Value   Find the critical value for a two-sided 97% confidence interval. Explain why entering qnorm(0.97) would not give the desired value.     One-Proportion Z-Interval   Component Formula  Point estimate  Estimated standard error  Critical value  Margin of error  Confidence interval   Equivalently,   This normal-approximation interval is also called the Wald interval .     Estimating Proportions in Context   Screwworm Control   Screwworm flies lay eggs in wounds of warm-blooded animals. In an experiment intended to control the population, screwworm pupae were exposed to a radiation dose of 2500 rad in hopes of sterilizing most males. Because females mate only once, mating with a sterilized male can result in sterile eggs. After radiation, 415 of 500 observed matings resulted in sterile eggs.  Construct a 95% confidence interval for , the proportion of matings that would result in sterile eggs under this radiation protocol.     Regular Smoking Among Individuals Age 16 and Under   A national survey was conducted to estimate the proportion of individuals age 16 and under who smoke regularly. Of 1000 individuals interviewed, 200 smoked regularly.   Construct a 99% confidence interval for the population proportion represented by the survey.  If an article claimed that this proportion was 0.23, would that value be surprising in light of the interval?      A Clinical Trial with Few Persistent Infections   In a clinical trial, 46 female patients with gonorrhea received a 4 gram daily dose of spectinomycin. At the one-week follow-up, four patients still had the infection.  Let be the proportion of comparable patients treated under this protocol who would still have the infection after one week. Construct a 90% confidence interval for     Neutrophils in a White Cell Count   A blood sample is spread on a glass slide, stained with Wright's stain, and examined under a microscope. Of 200 white cells counted, 98 are neutrophils.   Construct a 90% confidence interval for the proportion of this individual's circulating white cells that are neutrophils.  Using a reference range of 60% to 70% for this exercise, is there evidence that this individual's proportion is below that range?      Changing the Confidence Level   Use the screwworm results, with 415 of 500 matings producing sterile eggs, to compare 90%, 95%, and 99% confidence intervals. Predict which will be widest before calculating.     What Changes the Margin of Error?   Confidence level: Holding the data fixed, higher confidence increases the margin of error.  Sample size: Holding the confidence level and sample proportion fixed, larger samples decrease the margin of error. Multiplying by 4 cuts it in half.  Sample proportion: Holding the confidence level and sample size fixed, the margin of error is largest when , because is largest there.   The actual interval from a new sample can also shift because its sample proportion can change. A narrow interval is useful only when the sampling and measurement methods are appropriate: the stated margin of error does not account for selection bias, nonresponse bias, or systematic measurement errors.     One-Sided Confidence Bounds   Lower and Upper Confidence Bounds   A lower confidence bound gives a lower limit for the population parameter. An upper confidence bound gives an upper limit.   Because a proportion lies between 0 and 1, the corresponding one-sided intervals are and when the calculated bounds are within that range. The same normal-interval conditions must be checked.     Do Not Split the Tail Area for a One-Sided Bound  For a two-sided 90% interval, the 10% outside area is divided into two tails, and . For a one-sided 90% bound, all of that outside area is in one tail, and .  Choose whether the question requires a lower bound, upper bound, or two-sided interval before interpreting the result.    Lower and Upper Bounds for the Earlier Studies    Using the screwworm result of 415 successes in 500 matings, calculate a lower 90% confidence bound for the proportion of matings producing sterile eggs.  Using the white cell count of 98 neutrophils among 200 cells, calculate an upper 80% confidence bound for this individual's neutrophil proportion.      "
+},
+{
+  "id": "confidence-intervals-for-a-population-proportion-2",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#confidence-intervals-for-a-population-proportion-2",
+  "type": "Objectives",
+  "number": "",
+  "title": "",
+  "body": "  Distinguish a point estimate from an interval estimate of a population proportion.  Explain the meaning of a confidence interval, confidence level, and margin of error.  Check the conditions for a one-proportion z-interval.  Find a normal critical value and construct a confidence interval by calculation and in R.  Interpret an interval in context and assess whether a proposed population proportion is compatible with it.  Explain how confidence level and sample size affect precision, and distinguish one-sided bounds from two-sided intervals.   "
+},
+{
+  "id": "cip-def-statistics",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-def-statistics",
+  "type": "Definition",
+  "number": "130",
+  "title": "Statistics.",
+  "body": " Statistics      "
+},
+{
+  "id": "cip-def-population",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-def-population",
+  "type": "Definition",
+  "number": "131",
+  "title": "Population.",
+  "body": " Population      "
+},
+{
+  "id": "cip-def-parameter",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-def-parameter",
+  "type": "Definition",
+  "number": "132",
+  "title": "Parameter.",
+  "body": " Parameter      "
+},
+{
+  "id": "cip-def-sample",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-def-sample",
+  "type": "Definition",
+  "number": "133",
+  "title": "Sample.",
+  "body": " Sample      "
+},
+{
+  "id": "cip-def-stat",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-def-stat",
+  "type": "Definition",
+  "number": "134",
+  "title": "Statistic.",
+  "body": " Statistic      "
+},
+{
+  "id": "cip-def-point-estimate",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-def-point-estimate",
+  "type": "Definition",
+  "number": "135",
+  "title": "Point Estimate.",
+  "body": " Point Estimate      "
+},
+{
+  "id": "cip-def-confidence-interval",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-def-confidence-interval",
+  "type": "Definition",
+  "number": "136",
+  "title": "Confidence Interval.",
+  "body": " Confidence Interval      "
+},
+{
+  "id": "cip-def-margin-of-error",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-def-margin-of-error",
+  "type": "Definition",
+  "number": "137",
+  "title": "Margin of Error.",
+  "body": " Margin of Error      "
+},
+{
+  "id": "cip-ex-reported-interval",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-ex-reported-interval",
+  "type": "Example",
+  "number": "138",
+  "title": "Reading an Estimate and a Margin of Error.",
+  "body": " Reading an Estimate and a Margin of Error   A seed-germination report gives a point estimate of 40%, with a margin of error of 7 percentage points at the 95% confidence level.   Write the point estimate and margin of error as proportions.  Find the interval and its total width.  Is a population germination proportion of 0.45 compatible with this interval? What about 0.60?    "
+},
+{
+  "id": "cip-def-confidence-level",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-def-confidence-level",
+  "type": "Definition",
+  "number": "139",
+  "title": "Confidence Level.",
+  "body": " Confidence Level      "
+},
+{
+  "id": "cip-interpretation",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-interpretation",
+  "type": "Remark",
+  "number": "140",
+  "title": "Interpreting an Interval in Context.",
+  "body": " Interpreting an Interval in Context  A conventional interpretation is: We are 95% confident that the true proportion of [the population] who or which [have the characteristic] is between [lower limit] and [upper limit].  The confidence comes from the repeated-sampling performance of the method. Once an interval has been calculated, it either contains the fixed value of or it does not. The 95% is not a probability assigned to moving into that particular interval.  A 95% confidence interval also does not say that 95% of individuals have the characteristic, that 95% of sample proportions fall inside this particular interval, or that the next sample result is guaranteed to lie inside it.  "
+},
+{
+  "id": "cip-def-estimated-se",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-def-estimated-se",
+  "type": "Definition",
+  "number": "141",
+  "title": "Estimated Standard Error of a Sample Proportion.",
+  "body": " Estimated Standard Error of a Sample Proportion      "
+},
+{
+  "id": "cip-def-conditions",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-def-conditions",
+  "type": "Definition",
+  "number": "142",
+  "title": "Requirements for a One-Proportion Z-Interval.",
+  "body": " Requirements for a One-Proportion Z-Interval     Binary outcome: Each observation is classified as having or not having the characteristic being counted. Define a success before counting.  Appropriate sampling: The data should come from a random sample of the population of interest or from an appropriate independent binomial model. Consider how the observations were obtained and which population the conclusion can describe.  Independence: The observations should be independent, or approximately so. For a simple random sample without replacement from a finite population of size , use the 10% guideline .  Enough observed successes and failures: Check both  For this interval, we check the observed counts because is unknown. A large total sample size alone is insufficient if one category has very few observations. These conditions are a practical guideline; the normal interval still has approximate coverage.     "
+},
+{
+  "id": "cip-def-critical-value",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-def-critical-value",
+  "type": "Definition",
+  "number": "143",
+  "title": "Critical Value.",
+  "body": " Critical Value      "
+},
+{
+  "id": "tech-ci-critical-value-r",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#tech-ci-critical-value-r",
+  "type": "Technology",
+  "number": "144",
+  "title": "Finding a Critical Value in R.",
+  "body": " Finding a Critical Value in R    "
+},
+{
+  "id": "cip-ex-critical-value",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-ex-critical-value",
+  "type": "Example",
+  "number": "145",
+  "title": "Finding a 97% Critical Value.",
+  "body": " Finding a 97% Critical Value   Find the critical value for a two-sided 97% confidence interval. Explain why entering qnorm(0.97) would not give the desired value.   "
+},
+{
+  "id": "cip-formula-summary",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-formula-summary",
+  "type": "Formula",
+  "number": "146",
+  "title": "One-Proportion Z-Interval.",
+  "body": " One-Proportion Z-Interval   Component Formula  Point estimate  Estimated standard error  Critical value  Margin of error  Confidence interval   Equivalently,   This normal-approximation interval is also called the Wald interval .  "
+},
+{
+  "id": "cip-ex-screwworm",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-ex-screwworm",
+  "type": "Example",
+  "number": "147",
+  "title": "Screwworm Control.",
+  "body": " Screwworm Control   Screwworm flies lay eggs in wounds of warm-blooded animals. In an experiment intended to control the population, screwworm pupae were exposed to a radiation dose of 2500 rad in hopes of sterilizing most males. Because females mate only once, mating with a sterilized male can result in sterile eggs. After radiation, 415 of 500 observed matings resulted in sterile eggs.  Construct a 95% confidence interval for , the proportion of matings that would result in sterile eggs under this radiation protocol.   "
+},
+{
+  "id": "cip-ex-smoking",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-ex-smoking",
+  "type": "Example",
+  "number": "148",
+  "title": "Regular Smoking Among Individuals Age 16 and Under.",
+  "body": " Regular Smoking Among Individuals Age 16 and Under   A national survey was conducted to estimate the proportion of individuals age 16 and under who smoke regularly. Of 1000 individuals interviewed, 200 smoked regularly.   Construct a 99% confidence interval for the population proportion represented by the survey.  If an article claimed that this proportion was 0.23, would that value be surprising in light of the interval?    "
+},
+{
+  "id": "cip-ex-clinical-trial",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-ex-clinical-trial",
+  "type": "Example",
+  "number": "149",
+  "title": "A Clinical Trial with Few Persistent Infections.",
+  "body": " A Clinical Trial with Few Persistent Infections   In a clinical trial, 46 female patients with gonorrhea received a 4 gram daily dose of spectinomycin. At the one-week follow-up, four patients still had the infection.  Let be the proportion of comparable patients treated under this protocol who would still have the infection after one week. Construct a 90% confidence interval for   "
+},
+{
+  "id": "cip-ex-neutrophils",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-ex-neutrophils",
+  "type": "Example",
+  "number": "150",
+  "title": "Neutrophils in a White Cell Count.",
+  "body": " Neutrophils in a White Cell Count   A blood sample is spread on a glass slide, stained with Wright's stain, and examined under a microscope. Of 200 white cells counted, 98 are neutrophils.   Construct a 90% confidence interval for the proportion of this individual's circulating white cells that are neutrophils.  Using a reference range of 60% to 70% for this exercise, is there evidence that this individual's proportion is below that range?    "
+},
+{
+  "id": "cip-ex-confidence-width",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-ex-confidence-width",
+  "type": "Example",
+  "number": "151",
+  "title": "Changing the Confidence Level.",
+  "body": " Changing the Confidence Level   Use the screwworm results, with 415 of 500 matings producing sterile eggs, to compare 90%, 95%, and 99% confidence intervals. Predict which will be widest before calculating.   "
+},
+{
+  "id": "cip-width-factors",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-width-factors",
+  "type": "Remark",
+  "number": "152",
+  "title": "What Changes the Margin of Error?",
+  "body": " What Changes the Margin of Error?   Confidence level: Holding the data fixed, higher confidence increases the margin of error.  Sample size: Holding the confidence level and sample proportion fixed, larger samples decrease the margin of error. Multiplying by 4 cuts it in half.  Sample proportion: Holding the confidence level and sample size fixed, the margin of error is largest when , because is largest there.   The actual interval from a new sample can also shift because its sample proportion can change. A narrow interval is useful only when the sampling and measurement methods are appropriate: the stated margin of error does not account for selection bias, nonresponse bias, or systematic measurement errors.  "
+},
+{
+  "id": "cip-def-one-sided",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-def-one-sided",
+  "type": "Definition",
+  "number": "153",
+  "title": "Lower and Upper Confidence Bounds.",
+  "body": " Lower and Upper Confidence Bounds   A lower confidence bound gives a lower limit for the population parameter. An upper confidence bound gives an upper limit.   Because a proportion lies between 0 and 1, the corresponding one-sided intervals are and when the calculated bounds are within that range. The same normal-interval conditions must be checked.   "
+},
+{
+  "id": "cip-one-versus-two-tails",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-one-versus-two-tails",
+  "type": "Remark",
+  "number": "154",
+  "title": "Do Not Split the Tail Area for a One-Sided Bound.",
+  "body": " Do Not Split the Tail Area for a One-Sided Bound  For a two-sided 90% interval, the 10% outside area is divided into two tails, and . For a one-sided 90% bound, all of that outside area is in one tail, and .  Choose whether the question requires a lower bound, upper bound, or two-sided interval before interpreting the result.  "
+},
+{
+  "id": "cip-ex-one-sided",
+  "level": "2",
+  "url": "confidence-intervals-for-a-population-proportion.html#cip-ex-one-sided",
+  "type": "Example",
+  "number": "155",
+  "title": "Lower and Upper Bounds for the Earlier Studies.",
+  "body": " Lower and Upper Bounds for the Earlier Studies    Using the screwworm result of 415 successes in 500 matings, calculate a lower 90% confidence bound for the proportion of matings producing sterile eggs.  Using the white cell count of 98 neutrophils among 200 cells, calculate an upper 80% confidence bound for this individual's neutrophil proportion.    "
+},
+{
   "id": "subsec-cat-project-rubric",
   "level": "1",
   "url": "subsec-cat-project-rubric.html",
