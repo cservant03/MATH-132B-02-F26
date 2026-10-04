@@ -1,0 +1,1055 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="hypothesis-tests-for-a-population-proportion">
+  <title>Inference for One Proportion Part 2</title>
+
+  <objectives>
+    <ol marker="1)">
+      <li><p>Distinguish a point estimate from an interval estimate of a population proportion.</p></li>
+      <li><p>Explain the meaning of a confidence interval, confidence level, and margin of error.</p></li>
+      <li><p>Check the conditions for a one-proportion z-interval.</p></li>
+      <li><p>Find a normal critical value and construct a confidence interval by calculation and in R.</p></li>
+      <li><p>Interpret an interval in context and assess whether a proposed population proportion is compatible with it.</p></li>
+      <li><p>Explain how confidence level and sample size affect precision, and distinguish one-sided bounds from two-sided intervals.</p></li>
+      <li><p>Write null and alternative hypotheses about a population proportion and explain a p-value.</p></li>
+      <li><p>Perform a one-proportion z-test using critical values, p-values, and R, and recognize when an exact binomial test is needed.</p></li>
+      <li><p>Connect a hypothesis test with its matching confidence interval or bound.</p></li>
+      <li><p>Describe Type I and Type II errors in context and distinguish statistical significance from practical importance.</p></li>
+    </ol>
+  </objectives>
+
+  <introduction>
+    <p>In the previous section, we assumed that the population proportion <m>p</m> was known and asked which sample proportions would be likely. Now we reverse the question: we have observed a sample proportion, but the population proportion is unknown. How can we use the sample to estimate it?</p>
+    <p>A sample gives us a reasonable starting estimate, but another random sample would usually give a different answer. A confidence interval communicates both the estimate and the uncertainty caused by sampling variability.</p>
+    <p>We will also use the sampling distribution to evaluate claims about the population proportion. Confidence intervals describe a range of plausible values; hypothesis tests assess evidence against a specified value. Throughout this section, the outcome has two categories and our parameter is a proportion.</p>
+  </introduction>
+
+  <subsection xml:id="cip-point-and-interval">
+    <title>What Is a Confidence Interval?</title>
+
+    <definition xml:id="cip-def-point-estimate">
+      <title>Point Estimate</title>
+      <statement>
+        <p>A <term>point estimate</term> is a single number calculated from sample data and used to estimate an unknown population parameter. Our point estimate of a population proportion <m>p</m> is the sample proportion</p>
+        <p><md number="no"><mrow>\hat{p}=\frac{x}{n}.</mrow></md></p>
+        <p>Here, <m>x</m> is the number of sampled individuals with the characteristic of interest, and <m>n</m> is the sample size.</p>
+      </statement>
+    </definition>
+
+    <p>For example, if 80 of 200 randomly selected seeds germinate, the point estimate of the population germination proportion is <m>80/200=0.40</m>. This does not establish that exactly 40% of all seeds from that source will germinate. An interval estimate gives a range of values supported by the data and the statistical model.</p>
+
+    <definition xml:id="cip-def-confidence-interval">
+      <title>Confidence Interval</title>
+      <statement>
+        <p>A <term>confidence interval</term> is an interval calculated from sample data by a method designed to contain the unknown population parameter at a specified long-run rate. It provides a range of plausible values for the parameter, given the assumptions of the method.</p>
+        <p>The two endpoints are the <term>lower confidence limit</term> and the <term>upper confidence limit</term>.</p>
+      </statement>
+    </definition>
+
+    <definition xml:id="cip-def-margin-of-error">
+      <title>Margin of Error</title>
+      <statement>
+        <p>For a symmetric confidence interval, the <term>margin of error</term>, denoted by <m>E</m>, is the distance from the point estimate to either endpoint. The interval has the form</p>
+        <p><md number="no"><mrow>\text{point estimate}\pm\text{margin of error}.</mrow></md></p>
+        <p>For the one-proportion z-interval, this becomes</p>
+        <p><md number="no"><mrow>\hat{p}\pm E\qquad\text{or}\qquad(\hat{p}-E,\hat{p}+E).</mrow></md></p>
+        <p>The total width is <m>2E</m>. Not every method for a proportion produces an interval symmetric about <m>\hat{p}</m>.</p>
+      </statement>
+    </definition>
+
+    <example xml:id="cip-ex-reported-interval">
+      <title>Reading an Estimate and a Margin of Error</title>
+      <statement>
+        <p>A seed-germination report gives a point estimate of 40%, with a margin of error of 7 percentage points at the 95% confidence level.</p>
+        <p><ol marker="a)">
+          <li><p>Write the point estimate and margin of error as proportions.</p></li>
+          <li><p>Find the interval and its total width.</p></li>
+          <li><p>Is a population germination proportion of 0.45 compatible with this interval? What about 0.60?</p></li>
+        </ol></p>
+      </statement>
+      <solution>
+        <p><ol marker="a)">
+          <li><p><m>\hat{p}=0.40</m> and <m>E=0.07</m>. Seven percentage points means adding and subtracting 0.07, not 7% of 0.40.</p></li>
+          <li><p><md number="no"><mrow>(0.40-0.07,0.40+0.07)=(0.33,0.47).</mrow></md></p><p>The interval extends from 33% to 47%. Its width is <m>0.14</m>, or 14 percentage points.</p></li>
+          <li><p>The value 0.45 lies inside the interval and is compatible with it. The value 0.60 lies outside. An interval does not establish that an included value is the true value.</p></li>
+        </ol></p>
+      </solution>
+    </example>
+
+    <remark xml:id="cip-recover-center-and-margin">
+      <title>Working Backward from the Endpoints</title>
+      <p>For a symmetric interval <m>(L,U)</m>, recover its center and margin of error using</p>
+      <p><md number="no">
+        <mrow>\text{center}=\frac{L+U}{2},\qquad E=\frac{U-L}{2}.</mrow>
+      </md></p>
+      <p>For a one-proportion z-interval, the center is <m>\hat{p}</m>. This identification should not be assumed for an asymmetric interval.</p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="cip-confidence-meaning">
+    <title>What Does the Confidence Level Mean?</title>
+
+    <definition xml:id="cip-def-confidence-level">
+      <title>Confidence Level</title>
+      <statement>
+        <p>The <term>confidence level</term> describes the long-run proportion of intervals from a method that contain the fixed population parameter. For an approximate 95% confidence method, about 95% of the intervals from many repeated random samples are expected to contain <m>p</m>, provided the assumptions hold and the approximation is adequate.</p>
+      </statement>
+    </definition>
+
+    <p>Imagine taking a random sample, calculating an interval, and repeating this process many times. The sample proportion and interval endpoints change from sample to sample. The population proportion stays fixed. Some of the intervals capture it, and some miss it.</p>
+
+    <example xml:id="cip-ex-many-intervals">
+      <title>One Hundred Intervals</title>
+      <statement>
+        <p>One hundred research teams independently sample the same population using the same sample size. Each team constructs a 95% confidence interval using an appropriate method.</p>
+        <p><ol marker="a)">
+          <li><p>About how many intervals should contain the population proportion?</p></li>
+          <li><p>Must exactly that many contain it?</p></li>
+          <li><p>What is changing across teams: the population proportion or the intervals?</p></li>
+        </ol></p>
+      </statement>
+      <solution>
+        <p><ol marker="a)">
+          <li><p>About 95 intervals should contain <m>p</m>.</p></li>
+          <li><p>No. The number that capture <m>p</m> varies. A confidence level describes long-run performance, not an exact count in every group of samples.</p></li>
+          <li><p>The intervals change; the population proportion does not.</p></li>
+        </ol></p>
+      </solution>
+    </example>
+
+    <remark xml:id="cip-interpretation">
+      <title>Interpreting an Interval in Context</title>
+      <p>A conventional interpretation is: <q>We are 95% confident that the true proportion of [the population] who or which [have the characteristic] is between [lower limit] and [upper limit].</q></p>
+      <p>The confidence comes from the repeated-sampling performance of the method. Once an interval has been calculated, it either contains the fixed value of <m>p</m> or it does not. The 95% is not a probability assigned to <m>p</m> moving into that particular interval.</p>
+      <p>A 95% confidence interval also does not say that 95% of individuals have the characteristic, that 95% of sample proportions fall inside this particular interval, or that the next sample result is guaranteed to lie inside it.</p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="cip-one-proportion-z">
+    <title>The One-Proportion Z-Interval</title>
+
+    <p>In the sampling-distribution model, the standard deviation of <m>\hat{p}</m> is <m>\sqrt{p(1-p)/n}</m>. When estimating <m>p</m>, we do not know its value. We therefore estimate this standard error using the observed sample proportion.</p>
+
+    <definition xml:id="cip-def-estimated-se">
+      <title>Estimated Standard Error of a Sample Proportion</title>
+      <statement>
+        <p>The estimated standard error is</p>
+        <p><md number="no"><mrow>\widehat{SE}_{\hat{p}}=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}.</mrow></md></p>
+        <p>It estimates the amount of sampling variability in the sample proportion. The sampling distribution remains centered at the unknown <m>p</m>; observing <m>\hat{p}</m> does not make the population parameter known.</p>
+      </statement>
+    </definition>
+
+    <remark xml:id="cip-conditions">
+      <title>Requirements for a One-Proportion Z-Interval</title>
+      <p><ol marker="1)">
+        <li><p><em>Binary outcome:</em> Each observation is classified as having or not having the characteristic being counted. Define a success before counting.</p></li>
+        <li><p><em>Appropriate sampling:</em> The data should come from a random sample of the population of interest or from an appropriate independent binomial model. Consider how the observations were obtained and which population the conclusion can describe.</p></li>
+        <li><p><em>Independence:</em> The observations should be independent, or approximately so. For a simple random sample without replacement from a finite population of size <m>N</m>, use the 10% guideline <m>n\leq0.10N</m>.</p></li>
+        <li><p><em>Enough observed successes and failures:</em> Check both</p><p><md number="no"><mrow>n\hat{p}=x\geq10\qquad\text{and}\qquad n(1-\hat{p})=n-x\geq10.</mrow></md></p></li>
+      </ol></p>
+      <p>For this interval, we check the observed counts because <m>p</m> is unknown. A large total sample size alone is insufficient if one category has very few observations. These conditions are a practical guideline; the normal interval still has approximate coverage.</p>
+    </remark>
+
+    <definition xml:id="cip-def-critical-value">
+      <title>Critical Value</title>
+      <statement>
+        <p>A <term>critical value</term> determines how many estimated standard errors extend to either side of the point estimate. Let <m>C</m> be the confidence level written as a decimal and let <m>\alpha=1-C</m>.</p>
+        <p>For a two-sided interval, the positive critical value <m>z^*</m> leaves area <m>\alpha/2</m> in each tail of the standard normal curve:</p>
+        <p><md number="no"><mrow>P(-z^*\lt Z\lt z^*)=C.</mrow></md></p>
+        <p>Find it in R using <c>qnorm(1 - alpha / 2)</c>, or equivalently <c>qnorm((1 + conf_level) / 2)</c>.</p>
+      </statement>
+    </definition>
+
+    <table xml:id="cip-critical-values">
+      <title>Two-Sided Normal Critical Values</title>
+      <tabular row-headers="yes" halign="center" valign="middle" top="medium" bottom="medium" left="medium" right="medium">
+        <row header="yes" bottom="medium"><cell>Confidence level</cell><cell>Area in each tail</cell><cell>Area left of <m>z^*</m></cell><cell><m>z^*</m></cell></row>
+        <row><cell>90%</cell><cell>0.050</cell><cell>0.950</cell><cell>1.645</cell></row>
+        <row><cell>95%</cell><cell>0.025</cell><cell>0.975</cell><cell>1.960</cell></row>
+        <row><cell>97%</cell><cell>0.015</cell><cell>0.985</cell><cell>2.170</cell></row>
+        <row><cell>98%</cell><cell>0.010</cell><cell>0.990</cell><cell>2.326</cell></row>
+        <row><cell>99%</cell><cell>0.005</cell><cell>0.995</cell><cell>2.576</cell></row>
+      </tabular>
+    </table>
+
+    <example xml:id="cip-ex-critical-value">
+      <title>Finding a 97% Critical Value</title>
+      <statement>
+        <p>Find the critical value for a two-sided 97% confidence interval. Explain why entering <c>qnorm(0.97)</c> would not give the desired value.</p>
+      </statement>
+      <solution>
+        <p>The total area outside the middle 97% is 0.03. Each tail has area 0.015, so the area to the left of the positive cutoff is 0.985.</p>
+        <program language="r">qnorm(0.985)</program>
+        <p>Thus, <m>z^*\approx2.1701</m>. The command <c>qnorm(0.97)</c> puts the entire 0.03 outside area in the right tail; it does not split that area between two tails.</p>
+      </solution>
+    </example>
+
+    <remark xml:id="cip-formula-summary">
+      <title>Formula: One-Proportion Z-Interval</title>
+      <p>After checking the requirements, use the following quantities.</p>
+      <table>
+        <title>Components of the Interval</title>
+        <tabular row-headers="yes" halign="left" valign="middle" top="medium" bottom="medium" left="medium" right="medium">
+          <row header="yes" bottom="medium"><cell>Component</cell><cell>Formula</cell></row>
+          <row><cell>Point estimate</cell><cell><m>\hat{p}=x/n</m></cell></row>
+          <row><cell>Estimated standard error</cell><cell><m>\widehat{SE}_{\hat{p}}=\sqrt{\hat{p}(1-\hat{p})/n}</m></cell></row>
+          <row><cell>Critical value</cell><cell><m>z^*</m>, with area <m>(1+C)/2</m> to its left.</cell></row>
+          <row><cell>Margin of error</cell><cell><m>E=z^*\widehat{SE}_{\hat{p}}</m></cell></row>
+          <row><cell>Confidence interval</cell><cell><m>(\hat{p}-E,\hat{p}+E)</m></cell></row>
+        </tabular>
+      </table>
+      <p>Equivalently,</p>
+      <p><md number="no"><mrow>\hat{p}\pm z^*\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}.</mrow></md></p>
+      <p>This normal-approximation interval is also called the <term>Wald interval</term>. We will use it for the main calculations when its conditions are appropriate.</p>
+    </remark>
+
+    <p>Organize each solution by identifying the parameter and checking the conditions, calculating the point estimate and estimated standard error, finding the critical value, computing the margin of error and endpoints, and interpreting the interval in context. Keep full precision until the final rounding.</p>
+  </subsection>
+
+  <!-- The four examples in the next subsection retain the data and confidence
+       levels from Examples 1-4 of Section 8.1 Notes.pdf. -->
+  <subsection xml:id="cip-worked-examples">
+    <title>Estimating Proportions in Context</title>
+
+    <p>For these classroom calculations, assume independent outcomes and an appropriate random sampling or binomial model unless an issue is specifically identified. For sampling without replacement, assume the sampled fraction is at most 10%. In an actual study, these assumptions would need to be supported by the study design.</p>
+
+    <example xml:id="cip-ex-screwworm">
+      <title>Screwworm Control</title>
+      <statement>
+        <p>Screwworm flies lay eggs in wounds of warm-blooded animals. In an experiment intended to control the population, screwworm pupae were exposed to a radiation dose of 2500 rad in hopes of sterilizing most males. Because females mate only once, mating with a sterilized male can result in sterile eggs. After radiation, 415 of 500 observed matings resulted in sterile eggs.</p>
+        <p>Construct a 95% confidence interval for <m>p</m>, the proportion of matings that would result in sterile eggs under this radiation protocol.</p>
+      </statement>
+      <solution>
+        <p><ol marker="1)">
+          <li><p><em>Conditions:</em> A success is a mating that results in sterile eggs. There are 415 successes and <m>500-415=85</m> failures, so the observed-count requirement is met. The remaining sampling and independence assumptions are those stated for the exercise.</p></li>
+          <li><p><em>Point estimate and estimated standard error:</em></p><p><md number="no"><mrow>\hat{p}=\frac{415}{500}=0.83,\qquad\widehat{SE}_{\hat{p}}=\sqrt{\frac{0.83(0.17)}{500}}\approx0.016799.</mrow></md></p></li>
+          <li><p><em>Critical value:</em> For 95% confidence, <m>z^*\approx1.959964</m>.</p></li>
+          <li><p><em>Margin of error and interval:</em></p><p><md number="no"><mrow>E=1.959964\sqrt{\frac{0.83(0.17)}{500}}\approx0.032925,</mrow><mrow>0.83\pm0.032925\quad\Longrightarrow\quad(0.7971,0.8629).</mrow></md></p></li>
+          <li><p><em>Interpretation:</em> We are 95% confident that between approximately 79.71% and 86.29% of matings under this protocol would produce sterile eggs. The margin of error is about 3.29 percentage points.</p></li>
+        </ol></p>
+        <program language="r">x &lt;- 415
+n &lt;- 500
+conf_level &lt;- 0.95
+
+p_hat &lt;- x / n
+se &lt;- sqrt(p_hat * (1 - p_hat) / n)
+z_star &lt;- qnorm((1 + conf_level) / 2)
+E &lt;- z_star * se
+
+c(estimate = p_hat, SE = se, margin = E,
+  lower = p_hat - E, upper = p_hat + E)</program>
+        <p>The parameter concerns the proportion of matings producing sterile eggs. It is not automatically the proportion of males that were sterilized.</p>
+      </solution>
+    </example>
+
+    <example xml:id="cip-ex-smoking">
+      <title>Regular Smoking Among Individuals Age 16 and Under</title>
+      <statement>
+        <p>A national survey was conducted to estimate the proportion of individuals age 16 and under who smoke regularly. Of 1000 individuals interviewed, 200 smoked regularly.</p>
+        <p><ol marker="a)">
+          <li><p>Construct a 99% confidence interval for the population proportion represented by the survey.</p></li>
+          <li><p>If an article claimed that this proportion was 0.23, would that value be surprising in light of the interval?</p></li>
+        </ol></p>
+      </statement>
+      <solution>
+        <p><ol marker="a)">
+          <li><p>Let <m>p</m> be the proportion of the target population who smoke regularly. There are 200 successes and 800 failures, so the observed-count condition is met.</p><p><md number="no"><mrow>\hat{p}=\frac{200}{1000}=0.20,\qquad\widehat{SE}_{\hat{p}}=\sqrt{\frac{0.20(0.80)}{1000}}\approx0.012649,</mrow><mrow>z^*\approx2.575829,\qquad E\approx0.032582,</mrow><mrow>0.20\pm0.032582\quad\Longrightarrow\quad(0.1674,0.2326).</mrow></md></p><p>We are 99% confident that between approximately 16.74% and 23.26% of the population represented by the survey smoke regularly.</p></li>
+          <li><p>The value 0.23 is inside the 99% confidence interval, so it is compatible with this interval. Although it differs from the point estimate of 0.20, the interval does not give a reason to rule it out. This does not prove that the population proportion equals 0.23.</p></li>
+        </ol></p>
+        <program language="r">p_hat &lt;- 200 / 1000
+se &lt;- sqrt(p_hat * (1 - p_hat) / 1000)
+E &lt;- qnorm(0.995) * se
+c(lower = p_hat - E, upper = p_hat + E)</program>
+      </solution>
+    </example>
+
+    <example xml:id="cip-ex-clinical-trial">
+      <title>A Clinical Trial with Few Persistent Infections</title>
+      <statement>
+        <p>In a clinical trial, 46 female patients with gonorrhea received a 4 gram daily dose of spectinomycin. At the one-week follow-up, four patients still had the infection.</p>
+        <p>Let <m>p</m> be the proportion of comparable patients treated under this protocol who would still have the infection after one week.</p>
+        <p><ol marker="a)">
+          <li><p>Find the point estimate and check the conditions for a one-proportion z-interval.</p></li>
+          <li><p>If the normal interval is not appropriate, use R to obtain an exact 95% binomial confidence interval.</p></li>
+        </ol></p>
+      </statement>
+      <solution>
+        <p><ol marker="a)">
+          <li><p>Here, a success is a patient who still has the infection. Thus, <m>x=4</m> and</p><p><md number="no"><mrow>\hat{p}=\frac{4}{46}\approx0.0870.</mrow></md></p><p>There are four successes and 42 failures. Because <m>4\lt10</m>, the observed-count condition fails. A sample size above 30 does not fix this problem. We should not use the usual Wald interval.</p></li>
+          <li><p>Under an independent binomial model, an exact binomial interval does not require at least 10 observations in both categories. In R:</p><program language="r">binom.test(x = 4, n = 46, conf.level = 0.95)$conf.int</program><p>The interval is approximately</p><p><md number="no"><mrow>(0.0242,0.2079).</mrow></md></p><p>We are 95% confident that between approximately 2.42% and 20.79% of comparable patients under the protocol would still have the infection at the one-week follow-up.</p><p>This exact interval is asymmetric about the point estimate. Under the binomial model, its repeated-sampling coverage is at least the stated level; it can be conservative.</p></li>
+        </ol></p>
+        <p>The name <c>binom.test</c> includes other output, but <c>$conf.int</c> extracts only the confidence interval. The complementary interval for the proportion no longer infected is <m>(1-0.2079,1-0.0242)\approx(0.7921,0.9758)</m>.</p>
+      </solution>
+    </example>
+
+    <example xml:id="cip-ex-neutrophils">
+      <title>Neutrophils in a White Cell Count</title>
+      <statement>
+        <p>A blood sample is spread on a glass slide, stained with Wright's stain, and examined under a microscope. Of 200 white cells counted, 98 are neutrophils.</p>
+        <p><ol marker="a)">
+          <li><p>Construct a 90% confidence interval for the proportion of this individual's circulating white cells that are neutrophils.</p></li>
+          <li><p>Using a reference range of 60% to 70% for this exercise, is there evidence that this individual's proportion is below that range?</p></li>
+        </ol></p>
+      </statement>
+      <solution>
+        <p><ol marker="a)">
+          <li><p>Assume the counted cells are representative of the individual's circulating white cells and can be modeled as approximately independent. There are 98 successes and 102 failures.</p><p><md number="no"><mrow>\hat{p}=\frac{98}{200}=0.49,\qquad\widehat{SE}_{\hat{p}}=\sqrt{\frac{0.49(0.51)}{200}}\approx0.035348,</mrow><mrow>z^*\approx1.644854,\qquad E\approx0.058143,</mrow><mrow>0.49\pm0.058143\quad\Longrightarrow\quad(0.4319,0.5481).</mrow></md></p><p>We are 90% confident that between approximately 43.19% and 54.81% of this individual's circulating white cells are neutrophils.</p></li>
+          <li><p>The entire interval is below 0.60. Under the model, the data support a neutrophil proportion below the reference range given in the exercise.</p></li>
+        </ol></p>
+        <program language="r">p_hat &lt;- 98 / 200
+se &lt;- sqrt(p_hat * (1 - p_hat) / 200)
+E &lt;- qnorm(0.95) * se
+c(lower = p_hat - E, upper = p_hat + E)</program>
+        <p>The parameter describes this individual's cells. A sample of cells from one individual does not estimate the proportion of all people with a particular blood-cell profile.</p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="cip-precision">
+    <title>Confidence and Precision</title>
+
+    <p>An interval's width communicates precision. A narrower interval gives a more precise estimate. The margin of error for the normal interval is</p>
+    <p><md number="no"><mrow>E=z^*\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}.</mrow></md></p>
+
+    <example xml:id="cip-ex-confidence-width">
+      <title>Changing the Confidence Level</title>
+      <statement>
+        <p>Use the screwworm results, with 415 of 500 matings producing sterile eggs, to compare 90%, 95%, and 99% confidence intervals. Predict which will be widest before calculating.</p>
+      </statement>
+      <solution>
+        <table>
+          <title>Confidence Level and Interval Width for the Same Sample</title>
+          <tabular row-headers="yes" halign="center" valign="middle" top="medium" bottom="medium" left="medium" right="medium">
+            <row header="yes" bottom="medium"><cell>Confidence level</cell><cell>Margin of error</cell><cell>Interval</cell></row>
+            <row><cell>90%</cell><cell>0.0276</cell><cell><m>(0.8024,0.8576)</m></cell></row>
+            <row><cell>95%</cell><cell>0.0329</cell><cell><m>(0.7971,0.8629)</m></cell></row>
+            <row><cell>99%</cell><cell>0.0433</cell><cell><m>(0.7867,0.8733)</m></cell></row>
+          </tabular>
+        </table>
+        <p>All three intervals have the same point estimate, 0.83. Higher confidence requires a larger critical value and a wider interval. With the data fixed, greater confidence comes with less precision.</p>
+        <program language="r">p_hat &lt;- 415 / 500
+se &lt;- sqrt(p_hat * (1 - p_hat) / 500)
+conf_level &lt;- c(0.90, 0.95, 0.99)
+E &lt;- qnorm((1 + conf_level) / 2) * se
+data.frame(confidence = conf_level, margin = E,
+           lower = p_hat - E, upper = p_hat + E)</program>
+      </solution>
+    </example>
+
+    <remark xml:id="cip-width-factors">
+      <title>What Changes the Margin of Error?</title>
+      <p><ol marker="1)">
+        <li><p><em>Confidence level:</em> Holding the data fixed, higher confidence increases the margin of error.</p></li>
+        <li><p><em>Sample size:</em> Holding the confidence level and sample proportion fixed, larger samples decrease the margin of error. Multiplying <m>n</m> by 4 cuts it in half.</p></li>
+        <li><p><em>Sample proportion:</em> Holding the confidence level and sample size fixed, the margin of error is largest when <m>\hat{p}=0.50</m>, because <m>\hat{p}(1-\hat{p})</m> is largest there.</p></li>
+      </ol></p>
+      <p>The actual interval from a new sample can also shift because its sample proportion can change. A narrow interval is useful only when the sampling and measurement methods are appropriate: the stated margin of error does not account for selection bias, nonresponse bias, or systematic measurement errors.</p>
+    </remark>
+
+    <remark xml:id="cip-r-methods">
+      <title>Why an R Function May Give Different Endpoints</title>
+      <p>The step-by-step R calculations above implement the symmetric Wald formula. R can also calculate a <term>Wilson score interval</term>:</p>
+      <program language="r">prop.test(x = 415, n = 500, conf.level = 0.95,
+          correct = FALSE)$conf.int</program>
+      <p>This uses a different method, so its endpoints generally differ from the hand-calculated Wald endpoints. The option <c>correct = FALSE</c> turns off a continuity correction; it does not change the method into a Wald interval. Use the manual R calculation when matching the formula in these notes, and identify the method when reporting an interval.</p>
+      <p>For the clinical example with a sparse outcome category, we used the exact interval from <c>binom.test</c>. Changing the interval method does not remove the need for a suitable sampling design and independent observations.</p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="cip-one-sided">
+    <title>One-Sided Confidence Bounds</title>
+
+    <p>Sometimes the question asks for a lower bound or an upper bound, rather than limits on both sides. For example, we may want a lower bound for a sterilization success proportion or an upper bound for a contamination proportion.</p>
+
+    <definition xml:id="cip-def-one-sided">
+      <title>Lower and Upper Confidence Bounds</title>
+      <statement>
+        <p>A <term>lower confidence bound</term> gives a lower limit for the population parameter. An <term>upper confidence bound</term> gives an upper limit.</p>
+        <p>For a one-sided normal bound with confidence level <m>C</m>, let <m>z_C</m> have area <m>C</m> to its left. Find it with <c>qnorm(conf_level)</c>.</p>
+        <p><md number="no">
+          <mrow>L=\hat{p}-z_C\widehat{SE}_{\hat{p}}\qquad\text{(lower bound)},</mrow>
+          <mrow>U=\hat{p}+z_C\widehat{SE}_{\hat{p}}\qquad\text{(upper bound)}.</mrow>
+        </md></p>
+        <p>Because a proportion lies between 0 and 1, the corresponding one-sided intervals are <m>[L,1]</m> and <m>[0,U]</m> when the calculated bounds are within that range. The same normal-interval conditions must be checked.</p>
+      </statement>
+    </definition>
+
+    <remark xml:id="cip-one-versus-two-tails">
+      <title>Do Not Split the Tail Area for a One-Sided Bound</title>
+      <p>For a two-sided 90% interval, the 10% outside area is divided into two tails, and <m>z^*=\operatorname{qnorm}(0.95)\approx1.645</m>. For a one-sided 90% bound, all of that outside area is in one tail, and <m>z_C=\operatorname{qnorm}(0.90)\approx1.282</m>.</p>
+      <p>Choose whether the question requires a lower bound, upper bound, or two-sided interval before interpreting the result.</p>
+    </remark>
+
+    <example xml:id="cip-ex-one-sided">
+      <title>Lower and Upper Bounds for the Earlier Studies</title>
+      <statement>
+        <p><ol marker="a)">
+          <li><p>Using the screwworm result of 415 successes in 500 matings, calculate a lower 90% confidence bound for the proportion of matings producing sterile eggs.</p></li>
+          <li><p>Using the white cell count of 98 neutrophils among 200 cells, calculate an upper 80% confidence bound for this individual's neutrophil proportion.</p></li>
+        </ol></p>
+      </statement>
+      <solution>
+        <p>The observed-count requirements were checked in the earlier examples.</p>
+        <p><ol marker="a)">
+          <li><p>Use the one-sided critical value <m>z_C\approx1.281552</m>.</p><p><md number="no"><mrow>L=0.83-1.281552\sqrt{\frac{0.83(0.17)}{500}}\approx0.8085.</mrow></md></p><program language="r">p_hat &lt;- 415 / 500
+se &lt;- sqrt(p_hat * (1 - p_hat) / 500)
+lower &lt;- p_hat - qnorm(0.90) * se
+c(lower = lower, upper = 1)</program><p>We are 90% confident that at least approximately 80.85% of matings under the protocol would produce sterile eggs. The one-sided interval is approximately <m>[0.8085,1]</m>.</p></li>
+          <li><p>Use <m>z_C\approx0.841621</m>, which has 80% of the standard normal area to its left.</p><p><md number="no"><mrow>U=0.49+0.841621\sqrt{\frac{0.49(0.51)}{200}}\approx0.5197.</mrow></md></p><program language="r">p_hat &lt;- 98 / 200
+se &lt;- sqrt(p_hat * (1 - p_hat) / 200)
+upper &lt;- p_hat + qnorm(0.80) * se
+c(lower = 0, upper = upper)</program><p>We are 80% confident that at most approximately 51.97% of this individual's circulating white cells are neutrophils. The one-sided interval is approximately <m>[0,0.5197]</m>.</p></li>
+        </ol></p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="cip-r-investigation">
+    <title>R Investigation: Which Intervals Capture the Population Proportion?</title>
+
+    <p>In a real estimation problem, we do not know <m>p</m>, so we cannot identify which particular intervals contain it. In a simulation, we choose <m>p</m> and can check. Use the seed model from our sampling-distribution notes: independent germination outcomes with <m>p=0.40</m>.</p>
+
+    <example xml:id="cip-ex-simulation">
+      <title>Simulating One Thousand Confidence Intervals</title>
+      <statement>
+        <p>Predict approximately how many of 1000 nominal 95% intervals will capture <m>p=0.40</m>. Then run this code, which uses only functions included with R.</p>
+        <program language="r">set.seed(132)
+p_true &lt;- 0.40
+n &lt;- 200
+reps &lt;- 1000
+
+x &lt;- rbinom(reps, size = n, prob = p_true)
+p_hat &lt;- x / n
+se &lt;- sqrt(p_hat * (1 - p_hat) / n)
+z_star &lt;- qnorm(0.975)
+lower &lt;- p_hat - z_star * se
+upper &lt;- p_hat + z_star * se
+
+covered &lt;- lower &lt;= p_true &amp; p_true &lt;= upper
+c(intervals_covering = sum(covered),
+  fraction_covering = sum(covered) / reps)
+all(x &gt;= 10 &amp; n - x &gt;= 10)</program>
+        <p>The last line checks that all of these simulated samples meet the observed-count condition. To display the first 50 intervals, run the following code after the block above.</p>
+        <program language="r">i &lt;- 1:50
+plot(p_hat[i], i,
+     xlim = range(c(lower[i], upper[i], p_true)),
+     xlab = "Proportion", ylab = "Sample number",
+     main = "First 50 confidence intervals", pch = 16)
+segments(lower[i], i, upper[i], i,
+         col = ifelse(covered[i], "black", "darkorange3"),
+         lty = ifelse(covered[i], 1, 2), lwd = 2)
+abline(v = p_true, lty = 3, lwd = 2)</program>
+        <p>Each point marks a sample proportion, and each horizontal line is its confidence interval. Solid black intervals contain <m>p</m>; dashed orange intervals miss it. The dotted vertical line marks the fixed population proportion.</p>
+        <p><ol marker="a)">
+          <li><p>How close is the fraction of intervals that capture <m>p</m> to 0.95?</p></li>
+          <li><p>Why do the interval centers and endpoints change while the vertical line stays fixed?</p></li>
+          <li><p>Change <c>qnorm(0.975)</c> to <c>qnorm(0.995)</c> and rerun both blocks. What confidence level is represented, and what changes?</p></li>
+          <li><p>Restore 95% confidence and change the sample size to 800. What happens to the typical interval width?</p></li>
+        </ol></p>
+      </statement>
+      <solution>
+        <p><ol marker="a)">
+          <li><p>The fraction should be near 0.95, but it need not equal 0.95 exactly. There is simulation variability, and the Wald method has approximate rather than exact coverage.</p></li>
+          <li><p>Each sample gives a different estimate. The underlying population proportion is still 0.40, so the reference line does not move.</p></li>
+          <li><p>The intervals now have a nominal confidence level of 99%. For the same simulated samples, they are wider and capture the population proportion at least as often.</p></li>
+          <li><p>With four times as many observations in each sample, typical margins of error are about half as large. Individual intervals still vary because the sample proportions vary.</p></li>
+        </ol></p>
+        <p>Increasing <c>reps</c> makes the simulated coverage fraction more stable. It does not make the intervals from individual samples narrower; that requires more observations within each sample or a change in the confidence level.</p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="cip-practice">
+    <title>Confidence-Interval Practice</title>
+
+    <p>For calculations, assume appropriate random sampling, independence, and a sampling fraction at most 10%. Check the observed counts. Use the Wald interval when its conditions are appropriate, retain full precision during calculations, and round interval endpoints to four decimal places.</p>
+
+    <exercise xml:id="cip-practice-germination">
+      <title>Germination After a Seed Treatment</title>
+      <statement>
+        <p>Of 180 seeds selected from a treated batch, 126 germinate. Construct and interpret a 95% confidence interval for the batch's germination proportion under the tested conditions.</p>
+      </statement>
+      <answer>
+        <p>There are 126 successes and 54 failures. The point estimate is <m>\hat{p}=0.70</m>, the estimated standard error is approximately 0.034157, and the margin of error is approximately 0.066946.</p>
+        <p><md number="no"><mrow>(0.6331,0.7669).</mrow></md></p>
+        <p>We are 95% confident that between approximately 63.31% and 76.69% of the treated batch would germinate under the tested conditions.</p>
+        <program language="r">p_hat &lt;- 126 / 180
+E &lt;- qnorm(0.975) * sqrt(p_hat * (1 - p_hat) / 180)
+c(lower = p_hat - E, upper = p_hat + E)</program>
+      </answer>
+    </exercise>
+
+    <exercise xml:id="cip-practice-wetlands">
+      <title>Wetlands with an Invasive Plant</title>
+      <statement>
+        <p>In a random sample of 300 wetlands, 84 contain an invasive plant. Construct a 98% confidence interval for the population proportion containing the plant. Is a proposed population proportion of 0.25 compatible with your interval?</p>
+      </statement>
+      <answer>
+        <p>The observed counts are 84 and 216. We have <m>\hat{p}=0.28</m>, <m>z^*\approx2.326348</m>, <m>\widehat{SE}_{\hat{p}}\approx0.025923</m>, and <m>E\approx0.060306</m>.</p>
+        <p><md number="no"><mrow>(0.2197,0.3403).</mrow></md></p>
+        <p>We are 98% confident that approximately 21.97% to 34.03% of the population's wetlands contain the plant. The value 0.25 is inside the interval and is compatible with it.</p>
+        <program language="r">p_hat &lt;- 84 / 300
+E &lt;- qnorm(0.99) * sqrt(p_hat * (1 - p_hat) / 300)
+c(lower = p_hat - E, upper = p_hat + E)</program>
+      </answer>
+    </exercise>
+
+    <exercise xml:id="cip-practice-endpoints">
+      <title>Understanding a Reported Interval</title>
+      <statement>
+        <p>A symmetric 95% confidence interval for a population proportion is <m>(0.18,0.26)</m>.</p>
+        <p><ol marker="a)">
+          <li><p>Find the point estimate and margin of error.</p></li>
+          <li><p>Would a 99% interval from the same data be wider or narrower?</p></li>
+          <li><p>If the sample size were quadrupled and the sample proportion stayed the same, what would happen to the 95% margin of error?</p></li>
+        </ol></p>
+      </statement>
+      <answer>
+        <p><ol marker="a)">
+          <li><p><m>\hat{p}=(0.18+0.26)/2=0.22</m> and <m>E=(0.26-0.18)/2=0.04</m>.</p></li>
+          <li><p>Wider, because the critical value would increase.</p></li>
+          <li><p>The margin of error would be halved to 0.02, giving approximately <m>(0.20,0.24)</m>.</p></li>
+        </ol></p>
+      </answer>
+    </exercise>
+
+    <exercise xml:id="cip-practice-method-and-meaning">
+      <title>Check the Method and the Interpretation</title>
+      <statement>
+        <p><ol marker="a)">
+          <li><p>Only two of 80 sampled organisms carry a parasite. A student says the Wald interval is appropriate because <m>n\gt30</m>. Explain the problem and name an alternative available in R.</p></li>
+          <li><p>A student interprets a 95% confidence interval of <m>(0.10,0.18)</m> as saying that 95% of organisms have the characteristic. Correct the interpretation.</p></li>
+          <li><p>Which R command gives the critical value for an upper 90% normal confidence bound: <c>qnorm(0.90)</c> or <c>qnorm(0.95)</c>?</p></li>
+        </ol></p>
+      </statement>
+      <answer>
+        <p><ol marker="a)">
+          <li><p>There are only two observed successes, so the success-failure condition fails. An exact binomial interval is available through <c>binom.test(2, 80, conf.level = 0.95)$conf.int</c>, assuming an independent binomial model.</p></li>
+          <li><p>We are 95% confident that the population proportion with the characteristic is between 10% and 18%. The 95% describes the confidence method's long-run coverage.</p></li>
+          <li><p><c>qnorm(0.90)</c>, because this is a one-sided bound.</p></li>
+        </ol></p>
+      </answer>
+    </exercise>
+  </subsection>
+
+  <!-- Hypothesis-testing organization follows Section 4.3 Notes.pdf.
+       Examples 5-8 and the counseling activity from Section 8.1 Notes.pdf
+       supply the contexts. The parasite count and counseling practice data
+       are explicitly identified as adaptations rather than original data. -->
+  <subsection xml:id="cip-hypotheses">
+    <title>Introducing Hypothesis Testing</title>
+
+    <p>A confidence interval asks, <q>Which values of the population proportion are plausible?</q> A hypothesis test begins with a particular claim and asks, <q>Do the sample data provide convincing evidence against this claim?</q> Both questions depend on the sampling variability of <m>\hat{p}</m>.</p>
+    <p>Suppose opponents of a proposed dam claim that more than half of the residents oppose construction. A survey finds that 270 of 500 residents, or 54%, are opposed. The sample proportion is above 50%. But samples vary: could a result this high reasonably occur if the population were evenly divided? A hypothesis test gives us a way to assess that evidence.</p>
+
+    <definition xml:id="cip-def-hypothesis-test">
+      <title>Hypothesis Test</title>
+      <statement>
+        <p>A <term>hypothesis test</term> uses sample data to evaluate a claim about a population parameter. We compare what we observed with what a specified population model predicts.</p>
+      </statement>
+    </definition>
+    <definition xml:id="cip-def-null-alternative">
+      <title>Null and Alternative Hypotheses</title>
+      <statement>
+        <p>The <term>null hypothesis</term>, <m>H_0</m>, supplies the reference model for our calculation. In the one-proportion tests in these notes, we write</p>
+        <p><md number="no"><mrow>H_0:p=p_0,</mrow></md></p>
+        <p>where <m>p_0</m> is the proposed population proportion.</p>
+        <p>The <term>alternative hypothesis</term>, <m>H_a</m>, describes the departure from the null value that the study is investigating. It determines which sample results count as evidence against <m>H_0</m>.</p>
+      </statement>
+    </definition>
+    <table xml:id="cip-hypothesis-directions">
+      <title>Choosing the Alternative Hypothesis</title>
+      <tabular row-headers="yes" halign="left" valign="middle" top="medium" bottom="medium" left="medium" right="medium">
+        <row header="yes" bottom="medium"><cell>Research question</cell><cell>Alternative</cell><cell>Test</cell></row>
+        <row><cell>Is the proportion lower than <m>p_0</m>?</cell><cell><m>H_a:p\lt p_0</m></cell><cell>Left-tailed</cell></row>
+        <row><cell>Is the proportion higher than <m>p_0</m>?</cell><cell><m>H_a:p\gt p_0</m></cell><cell>Right-tailed</cell></row>
+        <row><cell>Is the proportion different from <m>p_0</m>?</cell><cell><m>H_a:p\ne p_0</m></cell><cell>Two-tailed</cell></row>
+      </tabular>
+    </table>
+    <p>Define <m>p</m> in words before writing the hypotheses. Hypotheses are statements about the unknown population proportion <m>p</m>, not the already observed sample proportion <m>\hat{p}</m>. Choose the alternative from the research question before examining the results.</p>
+    <p>For a directional claim, the equality in <m>H_0</m> is the boundary used for the calculation. For example, evidence for <m>p\gt0.50</m> must distinguish the claim from a population proportion at or below 0.50; the right-tail probability is largest at the boundary <m>p=0.50</m>.</p>
+
+    <example xml:id="cip-ex-writing-hypotheses">
+      <title>Writing Hypotheses from a Research Question</title>
+      <statement>
+        <p>Define the population proportion and write hypotheses for each question.</p>
+        <p><ol marker="a)">
+          <li><p>Does the death proportion among patients receiving a treatment fall below a historical benchmark of 0.70?</p></li>
+          <li><p>Does a majority of residents living along the New River oppose a proposed dam?</p></li>
+          <li><p>Among deaths in a specified group of workers, is the proportion attributed to cancer different from 0.20?</p></li>
+        </ol></p>
+      </statement>
+      <solution>
+        <p><ol marker="a)">
+          <li><p>Let <m>p</m> be the death proportion for comparable patients receiving the treatment over the specified follow-up period. Use <m>H_0:p=0.70</m> and <m>H_a:p\lt0.70</m>.</p></li>
+          <li><p>Let <m>p</m> be the proportion of all residents in the target area who oppose the dam. Use <m>H_0:p=0.50</m> and <m>H_a:p\gt0.50</m>.</p></li>
+          <li><p>Let <m>p</m> be the proportion of deaths in the defined worker population attributable to cancer. Use <m>H_0:p=0.20</m> and <m>H_a:p\ne0.20</m>. This is a proportion among deaths, not the probability that any worker develops cancer.</p></li>
+        </ol></p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="cip-p-values-and-decisions">
+    <title>Evidence, Significance, and Decisions</title>
+
+    <p>For the dam survey, imagine repeatedly sampling 500 residents from a population in which exactly half oppose the dam. Some samples would have more than half opposed, and some would have fewer. We measure evidence by asking how often this null model would produce a result at least as far in the direction of the alternative as the observed result.</p>
+    <definition xml:id="cip-def-p-value">
+      <title>P-Value</title>
+      <statement>
+        <p>A <term>p-value</term> is the probability, calculated under <m>H_0</m> and the test's assumptions, of obtaining a test statistic at least as extreme as the one observed in the direction or directions specified by <m>H_a</m>.</p>
+        <p>Smaller p-values indicate greater incompatibility between the data and the null model. A p-value is not the probability that <m>H_0</m> is true.</p>
+      </statement>
+    </definition>
+    <definition xml:id="cip-def-significance-level">
+      <title>Significance Level</title>
+      <statement>
+        <p>The <term>significance level</term>, <m>\alpha</m>, is the cutoff selected before analyzing the data for deciding whether to reject <m>H_0</m>. It sets the intended long-run limit on rejecting a true null hypothesis. For a normal approximation, this error rate is approximate.</p>
+      </statement>
+    </definition>
+    <table xml:id="cip-p-value-decision">
+      <title>The P-Value Decision Rule</title>
+      <tabular row-headers="yes" halign="left" valign="middle" top="medium" bottom="medium" left="medium" right="medium">
+        <row header="yes" bottom="medium"><cell>Comparison</cell><cell>Decision</cell><cell>Conclusion</cell></row>
+        <row><cell><m>\text{p-value}\leq\alpha</m></cell><cell>Reject <m>H_0</m>.</cell><cell>There is sufficient evidence for <m>H_a</m>.</cell></row>
+        <row><cell><m>\text{p-value}\gt\alpha</m></cell><cell>Fail to reject <m>H_0</m>.</cell><cell>There is insufficient evidence for <m>H_a</m>.</cell></row>
+      </tabular>
+    </table>
+    <p>A result meeting the rejection rule is <term>statistically significant</term> at the chosen level. Failing to reject does not establish that <m>H_0</m> is true. The sample may simply be too small to detect a departure from it.</p>
+
+    <example xml:id="cip-ex-interpret-pvalue">
+      <title>What Would a P-Value of 0.037 Tell Us?</title>
+      <statement>
+        <p>Suppose a right-tailed test of <m>H_0:p=0.50</m> for the dam survey gives a p-value of approximately 0.037. Explain its meaning and give the decisions at <m>\alpha=0.10</m> and <m>\alpha=0.01</m>.</p>
+      </statement>
+      <solution>
+        <p>If half of all residents oppose the dam and the sampling assumptions hold, the normal model gives about a 3.7% chance of a sample proportion at least as high as the one observed. This is not a 3.7% probability that the population is evenly divided.</p>
+        <p>We reject <m>H_0</m> at the 0.10 level because <m>0.037\lt0.10</m>. We fail to reject at the 0.01 level because <m>0.037\gt0.01</m>. These comparisons illustrate how the cutoff works; the study's significance level should be chosen before seeing the result.</p>
+      </solution>
+    </example>
+
+    <remark xml:id="cip-hypothesis-process">
+      <title>Process of a Hypothesis Test</title>
+      <p><ol marker="1)">
+        <li><p><em>Identify the claim and hypotheses.</em> Define <m>p</m>, write <m>H_0</m> and <m>H_a</m>, and identify the direction of the test.</p></li>
+        <li><p><em>Choose the significance level and draw a picture.</em> Mark the appropriate rejection tail or tails. Check the sampling, independence, and count conditions.</p></li>
+        <li><p><em>Calculate the test statistic.</em> Measure how far the sample result is from the null value in null standard errors.</p></li>
+        <li><p><em>Make a decision.</em> Compare the test statistic with the critical value or compare the p-value with <m>\alpha</m>. Both methods give the same decision when they use the same test.</p></li>
+        <li><p><em>Write a conclusion in context.</em> State whether there is sufficient evidence for the alternative claim, identifying the population and characteristic.</p></li>
+      </ol></p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="cip-one-proportion-test">
+    <title>The One-Proportion Z-Test</title>
+
+    <p>Under <m>H_0:p=p_0</m>, the sampling distribution of <m>\hat{p}</m> is centered at <m>p_0</m>. The null model therefore supplies both the center and the standard error needed for a test.</p>
+    <remark xml:id="cip-test-conditions">
+      <title>Requirements</title>
+      <p><ol marker="1)">
+        <li><p>The response has two categories, and success is clearly defined.</p></li>
+        <li><p>The observations come from an appropriate random sample or independent binomial model with a common success probability.</p></li>
+        <li><p>Observations are independent or approximately independent. For simple random sampling without replacement, use the guideline <m>n\leq0.10N</m>.</p></li>
+        <li><p>The null model has at least 10 expected successes and 10 expected failures:</p><p><md number="no"><mrow>np_0\geq10\qquad\text{and}\qquad n(1-p_0)\geq10.</mrow></md></p></li>
+      </ol></p>
+      <p>These are expected counts calculated from <m>p_0</m>, not the observed counts <m>x</m> and <m>n-x</m> used for the Wald confidence interval. If the expected-count condition fails, an exact binomial test may be appropriate when the binomial model is justified.</p>
+    </remark>
+    <remark xml:id="cip-test-formula">
+      <title>Formula: One-Proportion Z-Test</title>
+      <p>The observed sample proportion and null standard error are</p>
+      <p><md number="no"><mrow>\hat{p}=\frac{x}{n},\qquad SE_0=\sqrt{\frac{p_0(1-p_0)}{n}}.</mrow></md></p>
+      <p>The <term>test statistic</term> is</p>
+      <p><md number="no"><mrow>z=\frac{\hat{p}-p_0}{SE_0}=\frac{\hat{p}-p_0}{\sqrt{p_0(1-p_0)/n}}.</mrow></md></p>
+      <p>When <m>H_0</m> and the conditions hold, its reference distribution is approximately standard normal. A positive statistic places the sample proportion above <m>p_0</m>; a negative statistic places it below <m>p_0</m>.</p>
+    </remark>
+    <table xml:id="cip-interval-test-se">
+      <title>Which Proportion Goes into the Standard Error?</title>
+      <tabular row-headers="yes" halign="left" valign="middle" top="medium" bottom="medium" left="medium" right="medium">
+        <row header="yes" bottom="medium"><cell>Task</cell><cell>Standard error</cell><cell>Reason</cell></row>
+        <row><cell>Wald confidence interval</cell><cell><m>\sqrt{\hat{p}(1-\hat{p})/n}</m></cell><cell>Estimate variability using the sample.</cell></row>
+        <row><cell>One-proportion z-test</cell><cell><m>\sqrt{p_0(1-p_0)/n}</m></cell><cell>Assess variability under the null model.</cell></row>
+      </tabular>
+    </table>
+
+    <p>Let <m>Z</m> have the standard normal distribution, and let <m>z</m> be the observed test statistic. Use the alternative hypothesis to choose the p-value calculation.</p>
+    <table xml:id="cip-test-pvalues">
+      <title>Finding the P-Value in R</title>
+      <tabular row-headers="yes" halign="left" valign="middle" top="medium" bottom="medium" left="medium" right="medium">
+        <row header="yes" bottom="medium"><cell>Alternative</cell><cell>P-value</cell><cell>R command</cell></row>
+        <row><cell><m>p\lt p_0</m></cell><cell><m>P(Z\leq z)</m></cell><cell><c>pnorm(z)</c></cell></row>
+        <row><cell><m>p\gt p_0</m></cell><cell><m>P(Z\geq z)</m></cell><cell><c>pnorm(z, lower.tail = FALSE)</c></cell></row>
+        <row><cell><m>p\ne p_0</m></cell><cell><m>2P(Z\geq |z|)</m></cell><cell><c>2 * pnorm(-abs(z))</c></cell></row>
+      </tabular>
+    </table>
+    <p>For a two-tailed test, include departures of at least the observed magnitude on both sides of zero. Doubling the smaller normal tail, rather than automatically doubling the left tail, keeps the probability between 0 and 1.</p>
+
+    <definition xml:id="cip-def-rejection-region">
+      <title>Rejection Region</title>
+      <statement>
+        <p>A <term>rejection region</term> consists of test-statistic values that lead to rejection of <m>H_0</m>. Its boundary is determined by one or two critical values. Under the reference distribution, its total probability is <m>\alpha</m>.</p>
+      </statement>
+    </definition>
+    <table xml:id="cip-test-critical">
+      <title>Critical-Value Decision Rules</title>
+      <tabular row-headers="yes" halign="left" valign="middle" top="medium" bottom="medium" left="medium" right="medium">
+        <row header="yes" bottom="medium"><cell>Test</cell><cell>Critical value in R</cell><cell>Reject when</cell></row>
+        <row><cell>Left-tailed</cell><cell><c>qnorm(alpha)</c></cell><cell><m>z\leq z_{\mathrm{left}}</m></cell></row>
+        <row><cell>Right-tailed</cell><cell><c>qnorm(1 - alpha)</c></cell><cell><m>z\geq z_{\mathrm{right}}</m></cell></row>
+        <row><cell>Two-tailed</cell><cell><c>qnorm(1 - alpha / 2)</c> gives positive <m>z^*</m>.</cell><cell><m>|z|\geq z^*</m></cell></row>
+      </tabular>
+    </table>
+    <p>For example, at <m>\alpha=0.05</m>, the left-tail cutoff is approximately <m>-1.645</m>, the right-tail cutoff is approximately 1.645, and the two-tail cutoffs are approximately <m>\pm1.960</m>. Draw the curve centered at zero and shade the tail or tails beyond the appropriate cutoff.</p>
+
+    <remark xml:id="cip-test-r">
+      <title>Using prop.test in R</title>
+      <p>For one sample, <c>prop.test</c> performs the corresponding score test. Use <c>correct = FALSE</c> to match the uncorrected normal calculations in these notes. The choices <c>"less"</c>, <c>"greater"</c>, and <c>"two.sided"</c> specify the alternative.</p>
+      <program language="r"># Example: 270 of 500 residents oppose the dam.
+prop.test(x = 270, n = 500, p = 0.50,
+          alternative = "greater",
+          conf.level = 0.90, correct = FALSE)</program>
+      <p>R reports an <c>X-squared</c> statistic, which equals <m>z^2</m> for this one-proportion test, and the p-value for the requested alternative. To obtain the signed <m>z</m> statistic, use the formula above. The <c>conf.level</c> argument controls the accompanying interval; it does not set a rejection rule. Compare the reported p-value with your chosen <m>\alpha</m>.</p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="cip-test-examples">
+    <title>Hypothesis Tests in Context</title>
+
+    <p>The following examples reuse the proportion-testing contexts from Section 8.1. Treat the stated benchmark proportions as fixed. For the classroom calculations, assume an appropriate random-sampling or independent binomial model and, where relevant, a sampling fraction of at most 10%. Check the expected counts in each case. In practice, the study design must support these assumptions.</p>
+
+    <example xml:id="cip-ex-vidarabine-test">
+      <title>A Historical Treatment Study: Left-Tailed Test</title>
+      <statement>
+        <p>A historical classroom example uses a death proportion of 70% for herpes simplex virus encephalitis as its benchmark. In a study of vidarabine, 14 of 50 treated patients died. At the 0.01 significance level, is there evidence that the death proportion for comparable treated patients is below 0.70?</p>
+      </statement>
+      <solution>
+        <p><ol marker="1)">
+          <li><p><em>Parameter and hypotheses:</em> Let <m>p</m> be the death proportion for comparable treated patients over the same follow-up period. Use <m>H_0:p=0.70</m> and <m>H_a:p\lt0.70</m>.</p></li>
+          <li><p><em>Level, picture, and conditions:</em> Set <m>\alpha=0.01</m>. Draw a standard normal curve with 0.01 of its area in the left rejection tail. The expected counts are <m>50(0.70)=35</m> and <m>50(0.30)=15</m>, both at least 10.</p></li>
+          <li><p><em>Test statistic:</em></p><p><md number="no"><mrow>\hat{p}=\frac{14}{50}=0.28,\qquad z=\frac{0.28-0.70}{\sqrt{0.70(0.30)/50}}\approx-6.4807.</mrow></md></p></li>
+          <li><p><em>Decision:</em> The critical value is <m>-2.3263</m>, and <m>-6.4807\lt-2.3263</m>. Equivalently,</p><p><md number="no"><mrow>\text{p-value}=P(Z\leq-6.4807)\approx4.56\times10^{-11}\lt0.01.</mrow></md></p><p>Both methods reject <m>H_0</m>. This p-value is very small, not zero.</p></li>
+          <li><p><em>Conclusion:</em> At the 0.01 level, the data provide sufficient evidence that the death proportion for comparable treated patients is below the historical benchmark of 70%.</p></li>
+        </ol></p>
+        <program language="r">x &lt;- 14
+n &lt;- 50
+p0 &lt;- 0.70
+alpha &lt;- 0.01
+z &lt;- (x / n - p0) / sqrt(p0 * (1 - p0) / n)
+
+c(z = z, critical_value = qnorm(alpha),
+  p_value = pnorm(z))
+prop.test(x, n, p = p0, alternative = "less",
+          conf.level = 1 - alpha, correct = FALSE)</program>
+        <p>A comparison with a historical benchmark alone does not isolate a causal drug effect: patient characteristics and care may differ across studies. The statistical conclusion concerns the death proportion under the stated model.</p>
+      </solution>
+    </example>
+
+    <example xml:id="cip-ex-dam-test">
+      <title>Opposition to a Dam: Right-Tailed Test</title>
+      <statement>
+        <p>Opponents of a proposed dam on the New River claim that a majority of residents living along the river oppose construction. Of 500 surveyed residents, 270 oppose it. Test the claim at <m>\alpha=0.10</m>.</p>
+      </statement>
+      <solution>
+        <p><ol marker="1)">
+          <li><p><em>Parameter and hypotheses:</em> Let <m>p</m> be the proportion of residents in the target area who oppose the dam. Use <m>H_0:p=0.50</m> and <m>H_a:p\gt0.50</m>.</p></li>
+          <li><p><em>Level, picture, and conditions:</em> Shade the rightmost 0.10 of a standard normal curve. Under <m>H_0</m>, the expected counts are 250 opposed and 250 not opposed.</p></li>
+          <li><p><em>Test statistic:</em></p><p><md number="no"><mrow>\hat{p}=\frac{270}{500}=0.54,\qquad z=\frac{0.54-0.50}{\sqrt{0.50(0.50)/500}}\approx1.7889.</mrow></md></p></li>
+          <li><p><em>Decision:</em> The critical value is 1.2816, and <m>1.7889\gt1.2816</m>. The p-value is <m>P(Z\geq1.7889)\approx0.0368\lt0.10</m>. Reject <m>H_0</m>.</p></li>
+          <li><p><em>Conclusion:</em> There is sufficient evidence at the 0.10 level that a majority of residents in the target area oppose the dam.</p></li>
+        </ol></p>
+        <program language="r">x &lt;- 270
+n &lt;- 500
+p0 &lt;- 0.50
+alpha &lt;- 0.10
+z &lt;- (x / n - p0) / sqrt(p0 * (1 - p0) / n)
+
+c(z = z, critical_value = qnorm(1 - alpha),
+  p_value = pnorm(z, lower.tail = FALSE))
+prop.test(x, n, p = p0, alternative = "greater",
+          conf.level = 1 - alpha, correct = FALSE)</program>
+        <p>The sample estimate is 4 percentage points above 50%. Reporting this difference along with the test result helps describe the size of the departure. Statistical significance alone does not measure its practical importance.</p>
+      </solution>
+    </example>
+
+    <example xml:id="cip-ex-cancer-test">
+      <title>Proportional Mortality: Two-Tailed Test</title>
+      <statement>
+        <p>Among 56 deaths of male nuclear-power workers aged 55 to 64, 13 were attributed to cancer. A reference population has a corresponding proportion of 0.20. Test whether the proportion of deaths attributable to cancer in the defined worker population differs from 0.20, using <m>\alpha=0.05</m>.</p>
+      </statement>
+      <solution>
+        <p><ol marker="1)">
+          <li><p><em>Parameter and hypotheses:</em> Let <m>p</m> be the proportion of deaths in this worker population attributable to cancer. Use <m>H_0:p=0.20</m> and <m>H_a:p\ne0.20</m>.</p></li>
+          <li><p><em>Level, picture, and conditions:</em> Shade 0.025 in each tail of a standard normal curve. The expected counts are <m>56(0.20)=11.2</m> and <m>56(0.80)=44.8</m>, so the count condition is met.</p></li>
+          <li><p><em>Test statistic:</em></p><p><md number="no"><mrow>\hat{p}=\frac{13}{56}\approx0.2321,\qquad z=\frac{13/56-0.20}{\sqrt{0.20(0.80)/56}}\approx0.6013.</mrow></md></p></li>
+          <li><p><em>Decision:</em> The statistic lies between <m>-1.9600</m> and 1.9600. Equivalently,</p><p><md number="no"><mrow>\text{p-value}=2P(Z\geq0.6013)\approx0.5476\gt0.05.</mrow></md></p><p>Fail to reject <m>H_0</m>.</p></li>
+          <li><p><em>Conclusion:</em> There is insufficient evidence at the 0.05 level that the proportion of deaths attributable to cancer in this worker population differs from 20%. This does not establish that the proportion equals 20%.</p></li>
+        </ol></p>
+        <program language="r">x &lt;- 13
+n &lt;- 56
+p0 &lt;- 0.20
+alpha &lt;- 0.05
+z &lt;- (x / n - p0) / sqrt(p0 * (1 - p0) / n)
+
+c(z = z, negative_cutoff = qnorm(alpha / 2),
+  positive_cutoff = qnorm(1 - alpha / 2),
+  p_value = 2 * pnorm(-abs(z)))
+prop.test(x, n, p = p0, alternative = "two.sided",
+          conf.level = 1 - alpha, correct = FALSE)</program>
+        <p>The denominator is deaths, not all workers. This test does not directly compare the overall probability of dying from cancer in workers and nonworkers, and it does not establish whether a workplace exposure caused disease.</p>
+      </solution>
+    </example>
+
+    <example xml:id="cip-ex-birds-exact">
+      <title>A Rare Parasite: Check the Data and the Method</title>
+      <statement>
+        <p>A study description reports that 0.09% of 5200 migratory birds were infected with a parasite. The claim is that the population infection proportion exceeds 0.0005, with <m>\alpha=0.05</m>.</p>
+        <p><ol marker="a)">
+          <li><p>Write the hypotheses and check the expected counts for a z-test.</p></li>
+          <li><p>What problem arises when recovering the number of infected birds from the reported percentage?</p></li>
+          <li><p>For an explicitly revised practice version, suppose the actual count was <em>5 infected birds</em>. Perform an exact binomial test.</p></li>
+        </ol></p>
+      </statement>
+      <solution>
+        <p><ol marker="a)">
+          <li><p>Let <m>p</m> be the infection proportion in the target migratory-bird population. Use <m>H_0:p=0.0005</m> and <m>H_a:p\gt0.0005</m>. Under <m>H_0</m>, the expected counts are <m>5200(0.0005)=2.6</m> infected and 5197.4 uninfected. The success count is below 10, so use a method suited to rare events rather than the normal z-test.</p></li>
+          <li><p>The reported 0.09% is the proportion 0.0009, which gives <m>5200(0.0009)=4.68</m> birds. Counts must be integers. In fact, neither 4 nor 5 infections rounds to 0.09% to the nearest 0.01 percentage point. The original report needs clarification; do not silently round 4.68 and treat that as an observed count.</p></li>
+          <li><p>Using the stated practice count of 5, <m>\hat{p}=5/5200\approx0.0009615</m>, or approximately 0.0962%. If the independent binomial model is appropriate, calculate</p><p><md number="no"><mrow>\text{p-value}=P(X\geq5)\approx0.1225,\qquad X\sim\operatorname{Binomial}(5200,0.0005).</mrow></md></p><p>Because <m>0.1225\gt0.05</m>, fail to reject <m>H_0</m>. These revised data provide insufficient evidence that the infection proportion exceeds 0.0005.</p></li>
+        </ol></p>
+        <program language="r"># Explicit practice assumption: 5 infected birds.
+binom.test(x = 5, n = 5200, p = 0.0005,
+           alternative = "greater", conf.level = 0.95)
+
+# The same upper-tail probability, including X = 5:
+pbinom(4, size = 5200, prob = 0.0005, lower.tail = FALSE)</program>
+        <p>A large total sample size does not guarantee that a normal approximation is suitable. The expected counts depend on both <m>n</m> and the null proportion.</p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="cip-test-simulation">
+    <title>R Investigation: A P-Value from Repeated Samples</title>
+
+    <example xml:id="cip-ex-null-simulation">
+      <title>Could an Evenly Divided Population Produce the Dam Survey Result?</title>
+      <statement>
+        <p>Simulate surveys of 500 residents under <m>H_0:p=0.50</m>. Each simulated count records the number opposed. Count how often the simulated result is at least the observed 270.</p>
+        <program language="r">set.seed(42)
+reps &lt;- 10000
+n &lt;- 500
+p0 &lt;- 0.50
+observed_x &lt;- 270
+
+sim_x &lt;- rbinom(reps, size = n, prob = p0)
+sim_p_value &lt;- sum(sim_x &gt;= observed_x) / reps
+exact_p_value &lt;- pbinom(observed_x - 1, size = n,
+                        prob = p0, lower.tail = FALSE)
+z &lt;- (observed_x / n - p0) / sqrt(p0 * (1 - p0) / n)
+normal_p_value &lt;- pnorm(z, lower.tail = FALSE)
+c(simulated = sim_p_value, exact = exact_p_value,
+  normal_approximation = normal_p_value)
+
+hist(sim_x / n, breaks = seq(0, 1, by = 0.01),
+     xlim = c(0.40, 0.60),
+     main = "Surveys simulated under p = 0.50",
+     xlab = "Sample proportion opposed", col = "gray85")
+abline(v = observed_x / n, col = "darkorange3", lwd = 2)</program>
+        <p><ol marker="a)">
+          <li><p>Why do we generate the samples with <c>prob = 0.50</c> rather than 0.54?</p></li>
+          <li><p>Which simulated samples count toward the p-value?</p></li>
+          <li><p>Why is the simulated answer near 0.0405 rather than exactly equal to the z-test p-value of 0.0368?</p></li>
+          <li><p>What changes if you increase <c>reps</c>? Does this increase the original survey's sample size?</p></li>
+        </ol></p>
+      </statement>
+      <solution>
+        <p><ol marker="a)">
+          <li><p>A p-value assesses the data under the null model, so we use <m>p_0=0.50</m>.</p></li>
+          <li><p>Samples with 270 or more opposed, equivalently <m>\hat{p}\geq0.54</m>, count. The alternative is right-tailed.</p></li>
+          <li><p>The simulation estimates the exact binomial tail probability, approximately 0.0405. The uncorrected z-test uses a continuous normal approximation, giving approximately 0.0368. Simulation variability produces a further small difference. All three support the same decision here at <m>\alpha=0.10</m>.</p></li>
+          <li><p>More repetitions generally make the simulated probability more stable. Each simulated survey and the actual survey still contain 500 residents.</p></li>
+        </ol></p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="cip-ci-test-connection">
+    <title>The Relationship Between Confidence Intervals and Hypothesis Tests</title>
+
+    <p>A confidence interval and a hypothesis test both describe compatibility between sample data and a population model. When an interval is obtained by inverting a particular test, values rejected by that test lie outside the corresponding interval.</p>
+    <remark xml:id="cip-matched-methods">
+      <title>Match the Method, Confidence Level, and Direction</title>
+      <p>For a two-sided test at level <m>\alpha</m>, use its matching two-sided <m>100(1-\alpha)\%</m> confidence interval. A null value outside the interval is rejected; a value in its interior is not rejected. Endpoint cases require a consistent equality convention.</p>
+      <p>For a right-tailed test, use the matching <m>100(1-\alpha)\%</m> lower confidence bound. A null value below that bound is rejected. For a left-tailed test, use the matching upper bound. A one-sided test at level 0.05 therefore uses a 95% one-sided bound, not a 95% two-sided interval.</p>
+      <p>The Wald interval taught earlier uses <m>\hat{p}</m> in its standard error, while our z-test uses <m>p_0</m>. Consequently, the Wald interval is not the exact inverse of this test. The <term>Wilson score interval</term> returned by <c>prop.test(..., correct = FALSE)</c> matches the uncorrected score test. Use that matched pair for the comparisons below.</p>
+    </remark>
+
+    <example xml:id="cip-ex-test-intervals">
+      <title>Revisit the Three Normal Tests</title>
+      <statement>
+        <p>Use the confidence intervals or bounds returned by the same <c>prop.test</c> calls used in the treatment, dam, and cancer examples. Check whether each supports the corresponding test decision.</p>
+      </statement>
+      <solution>
+        <program language="r">treatment &lt;- prop.test(14, 50, p = 0.70,
+                       alternative = "less",
+                       conf.level = 0.99, correct = FALSE)
+dam &lt;- prop.test(270, 500, p = 0.50,
+                 alternative = "greater",
+                 conf.level = 0.90, correct = FALSE)
+cancer &lt;- prop.test(13, 56, p = 0.20,
+                    alternative = "two.sided",
+                    conf.level = 0.95, correct = FALSE)
+
+treatment$conf.int
+dam$conf.int
+cancer$conf.int</program>
+        <table>
+          <title>Matching Confidence Sets and Test Decisions</title>
+          <tabular row-headers="yes" halign="left" valign="middle" top="medium" bottom="medium" left="medium" right="medium">
+            <row header="yes" bottom="medium"><cell>Example</cell><cell>Matching confidence result</cell><cell>Comparison and decision</cell></row>
+            <row><cell>Treatment: left-tailed, <m>\alpha=0.01</m></cell><cell>99% upper bound <m>U\approx0.4434</m>.</cell><cell><m>0.70\gt U</m>; reject.</cell></row>
+            <row><cell>Dam: right-tailed, <m>\alpha=0.10</m></cell><cell>90% lower bound <m>L\approx0.5114</m>.</cell><cell><m>0.50\lt L</m>; reject.</cell></row>
+            <row><cell>Cancer: two-tailed, <m>\alpha=0.05</m></cell><cell>95% interval <m>(0.1410,0.3577)</m>.</cell><cell>0.20 is inside; fail to reject.</cell></row>
+          </tabular>
+        </table>
+        <p>For a proportion, R completes a one-sided confidence set with the natural boundary 0 or 1. Thus, the first output is approximately <m>[0,0.4434]</m>, and the second is approximately <m>[0.5114,1]</m>. These natural endpoints are not a second estimated bound.</p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="cip-test-errors">
+    <title>Type I and Type II Errors</title>
+
+    <p>A hypothesis test makes a decision from a sample. Because the sample does not reveal the population parameter exactly, the decision can be mistaken.</p>
+    <definition xml:id="cip-def-type-one">
+      <title>Type I Error</title>
+      <statement>
+        <p>A <term>Type I error</term> occurs when we reject <m>H_0</m> even though it is true. The significance level controls the long-run probability of this error under the null model, subject to the test's assumptions and approximation.</p>
+      </statement>
+    </definition>
+    <definition xml:id="cip-def-type-two">
+      <title>Type II Error</title>
+      <statement>
+        <p>A <term>Type II error</term> occurs when we fail to reject <m>H_0</m> even though the alternative is true. Its probability, denoted by <m>\beta</m>, depends on the particular true alternative proportion as well as the sample size and test.</p>
+      </statement>
+    </definition>
+    <table xml:id="cip-error-table">
+      <title>Decisions and the True Population Situation</title>
+      <tabular row-headers="yes" halign="left" valign="middle" top="medium" bottom="medium" left="medium" right="medium">
+        <row header="yes" bottom="medium"><cell>Decision</cell><cell><m>H_0</m> is true</cell><cell><m>H_a</m> is true</cell></row>
+        <row><cell>Reject <m>H_0</m>.</cell><cell>Type I error</cell><cell>Correct decision</cell></row>
+        <row><cell>Fail to reject <m>H_0</m>.</cell><cell>Correct decision</cell><cell>Type II error</cell></row>
+      </tabular>
+    </table>
+    <p>The <term>power</term> of a test is <m>1-\beta</m>: its probability of detecting a specified departure from <m>H_0</m>. With the sample size and alternative fixed, decreasing <m>\alpha</m> makes rejection harder and generally increases <m>\beta</m>. Increasing sample size generally improves power for a fixed departure and significance level. In general, <m>\beta</m> is not <m>1-\alpha</m>.</p>
+
+    <example xml:id="cip-ex-errors-in-context">
+      <title>What Error Could We Have Made?</title>
+      <statement>
+        <p>Describe the possible error after the decision in the dam example and after the decision in the cancer example. Can we tell from the decision alone whether an error actually occurred?</p>
+      </statement>
+      <solution>
+        <p>In the dam example, we rejected the null hypothesis. A possible Type I error is concluding that a majority oppose construction when the population does not have such a majority.</p>
+        <p>In the cancer example, we failed to reject. A possible Type II error is failing to find evidence of a difference from 20% when the true proportion of deaths attributable to cancer actually differs from 20%.</p>
+        <p>We do not know whether either error occurred because the true population proportions remain unknown. The significance level is not the probability that this particular reported decision is wrong.</p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="cip-counseling-r">
+    <title>R Practice with Individual Responses</title>
+
+    <example xml:id="cip-ex-counseling">
+      <title>Use of Counseling Services</title>
+      <statement>
+        <p>Earlier reports give 38% as a benchmark for college students' use of counseling services. Test whether use exceeds 0.38, first for all students in a sample and then for students with an anxiety score of at least 4. Use <m>\alpha=0.05</m>.</p>
+        <p>This self-contained version of the Section 8.1 activity uses <em>hypothetical practice data</em>: 84 of 200 students used counseling, including 32 of the 60 students with anxiety scores of at least 4. These counts are supplied for practice, not presented as findings from the original course dataset. Assume an appropriate sampling and independence model for each analysis and that the subgroup was selected before examining the results.</p>
+        <program language="r">students &lt;- data.frame(
+  Used_Counseling = c(rep(1, 32), rep(0, 28),
+                     rep(1, 52), rep(0, 88)),
+  Anxiety_Score = c(rep(4, 60), rep(2, 140))
+)
+
+# Here 1 means used counseling and 0 means did not.
+x_all &lt;- sum(students$Used_Counseling == 1)
+n_all &lt;- nrow(students)
+overall &lt;- prop.test(x_all, n_all, p = 0.38,
+                     alternative = "greater", correct = FALSE)
+
+high_anxiety &lt;- subset(students, Anxiety_Score &gt;= 4)
+x_high &lt;- sum(high_anxiety$Used_Counseling == 1)
+n_high &lt;- nrow(high_anxiety)
+subgroup &lt;- prop.test(x_high, n_high, p = 0.38,
+                      alternative = "greater", correct = FALSE)
+
+c(overall_estimate = x_all / n_all,
+  overall_p_value = overall$p.value,
+  subgroup_estimate = x_high / n_high,
+  subgroup_p_value = subgroup$p.value)</program>
+        <p>Define the parameter for each analysis, check the expected counts, and interpret both decisions. Does one significant result and one nonsignificant result establish a difference between the two populations?</p>
+      </statement>
+      <solution>
+        <p>For the overall analysis, <m>p</m> is the counseling-use proportion in the target student population. For the subgroup analysis, it is the counseling-use proportion among students in that population with anxiety scores of at least 4. Each test uses <m>H_0:p=0.38</m> and <m>H_a:p\gt0.38</m>, with the parameter interpreted for the relevant population.</p>
+        <p>The overall null expected counts are 76 and 124. For the subgroup, they are 22.8 and 37.2. Both pass the expected-count condition.</p>
+        <p>The overall estimate is 0.42, with p-value approximately 0.1219: fail to reject. There is insufficient evidence that overall use exceeds 38%. The subgroup estimate is approximately 0.5333, with p-value approximately 0.0072: reject. There is evidence that use in the high-anxiety subgroup exceeds 38%.</p>
+        <p>These are separate comparisons with 38%, not a direct test comparing groups. One significant result and one nonsignificant result do not establish a significant difference between the groups; moreover, the subgroup is part of the overall sample. Neither result shows that anxiety causes counseling use.</p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="cip-test-practice">
+    <title>Hypothesis-Testing Practice</title>
+
+    <exercise xml:id="cip-practice-test-germination">
+      <title>Does Germination Exceed 60%?</title>
+      <statement>
+        <p>Return to the treated batch in which 126 of 180 sampled seeds germinated. Assume appropriate random sampling, independence, and a sampling fraction at most 10%. At <m>\alpha=0.05</m>, test whether the batch's germination proportion exceeds 0.60. Use both decision methods and state what a Type I error would mean.</p>
+      </statement>
+      <answer>
+        <p>Let <m>p</m> be the batch's germination proportion under the tested conditions. Use <m>H_0:p=0.60</m> and <m>H_a:p\gt0.60</m>. The expected counts are 108 and 72, and <m>\hat{p}=0.70</m>.</p>
+        <p><md number="no"><mrow>z=\frac{0.70-0.60}{\sqrt{0.60(0.40)/180}}\approx2.7386.</mrow></md></p>
+        <p>The statistic exceeds the critical value 1.6449, and the p-value is approximately <m>0.0031\lt0.05</m>. Reject <m>H_0</m>. There is sufficient evidence that the germination proportion exceeds 60%. A Type I error would be concluding that it exceeds 60% when it does not.</p>
+        <program language="r">prop.test(126, 180, p = 0.60, alternative = "greater",
+          conf.level = 0.95, correct = FALSE)</program>
+      </answer>
+    </exercise>
+    <exercise xml:id="cip-practice-wrong-direction">
+      <title>The Sample Goes in the Opposite Direction</title>
+      <statement>
+        <p>A researcher suspects that a batch's germination proportion is below 0.80. In an appropriate independent sample of 100 seeds, 84 germinate. Write the hypotheses, calculate the z-test p-value, and decide at <m>\alpha=0.05</m>. Should the researcher switch to a right-tailed test after seeing the data?</p>
+      </statement>
+      <answer>
+        <p>Use <m>H_0:p=0.80</m> and <m>H_a:p\lt0.80</m>. The null expected counts are 80 and 20. The statistic is</p>
+        <p><md number="no"><mrow>z=\frac{0.84-0.80}{\sqrt{0.80(0.20)/100}}=1.</mrow></md></p>
+        <p>The left-tail p-value is <m>P(Z\leq1)\approx0.8413</m>. Fail to reject: there is insufficient evidence that the germination proportion is below 0.80. The sample result goes against the proposed direction. Do not change the alternative after observing the result.</p>
+      </answer>
+    </exercise>
+    <exercise xml:id="cip-practice-test-language">
+      <title>Correct the Interpretation</title>
+      <statement>
+        <p>Explain what is wrong with each statement.</p>
+        <p><ol marker="a)">
+          <li><p><q>The p-value is 0.04, so there is a 4% chance that the null hypothesis is true.</q></p></li>
+          <li><p><q>We failed to reject, so we have proved that the population proportion equals the benchmark.</q></p></li>
+          <li><p><q>The Wald interval contains the null value, so the score test must fail to reject.</q></p></li>
+          <li><p><q>We used a 5% significance level, so the probability of a Type II error is 95%.</q></p></li>
+        </ol></p>
+      </statement>
+      <answer>
+        <p><ol marker="a)">
+          <li><p>The p-value describes a probability of data at least as extreme under the null model, not the probability of the null hypothesis.</p></li>
+          <li><p>Failing to reject means that the evidence for the alternative is insufficient at the chosen level. It does not prove equality.</p></li>
+          <li><p>The Wald interval and score test use different constructions. Use the matching score interval, level, and direction for the test-interval relationship.</p></li>
+          <li><p><m>\alpha</m> controls Type I error. Type II error depends on the true alternative proportion and the study design; <m>\beta</m> is not generally <m>1-\alpha</m>.</p></li>
+        </ol></p>
+      </answer>
+    </exercise>
+  </subsection>
+
+
+  <conclusion>
+    <p>A confidence interval estimates an unknown population proportion while accounting for sampling variability. Always identify the parameter, check the conditions, choose the confidence level and interval type, and interpret the endpoints in context. Confidence describes the method's long-run performance; precision is reflected in the interval's width.</p>
+    <p>A hypothesis test evaluates evidence against a population claim. Define the hypotheses before analyzing the sample, use the null proportion in the test standard error, and interpret the decision in context. A small p-value supports rejecting the null model; a large p-value does not prove it. Connect tests and intervals using matching methods, and remember that either decision can be mistaken.</p>
+    <!-- The introductory organization and one-sided-bound coverage draw on
+         Section 4.2 Notes.pdf. Hypothesis-testing organization follows Section 4.3
+         Notes.pdf. All estimation and testing in this section use proportions. -->
+    <p>Companion readings: Hannah Seidler-Wright, <url href="https://stats.libretexts.org/Bookshelves/Introductory_Statistics/Introductory_Statistics_(Hannah_Seidler-Wright)/06%3A_Inference_Involving_a_Single_Population_Proportion/6.02%3A_Estimating_a_Population_Proportion">6.2: Estimating a Population Proportion</url>; and Michael R. Dohm, <url href="https://stats.libretexts.org/Bookshelves/Applied_Statistics/Mikes_Biostatistics_Book_(Dohm)/07%3A_Probability_and_Risk_Analysis/7.6%3A_Confidence_intervals">7.6: Confidence Intervals</url>, specifically its discussion of a single population proportion. Both readings are shared under <url href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</url>.</p>
+    <p>Further readings: Hannah Seidler-Wright, <url href="https://stats.libretexts.org/Bookshelves/Introductory_Statistics/Introductory_Statistics_(Hannah_Seidler-Wright)/06%3A_Inference_Involving_a_Single_Population_Proportion/6.03%3A_Introduction_to_Hypothesis_Testing">6.3: Introduction to Hypothesis Testing</url> and <url href="https://stats.libretexts.org/Bookshelves/Introductory_Statistics/Introductory_Statistics_(Hannah_Seidler-Wright)/06%3A_Inference_Involving_a_Single_Population_Proportion/6.04%3A_Hypothesis_Tests_for_a_Single_Population_Proportion">6.4: Hypothesis Tests for a Single Population Proportion</url>, shared under <url href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</url>.</p>
+    <p>R references: <url href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Normal.html">Normal Distribution Functions</url>, <url href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/prop.test.html">Proportion Tests and Score Intervals</url>, and <url href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/binom.test.html">Exact Binomial Tests and Intervals</url>.</p>
+  </conclusion>
+</section>

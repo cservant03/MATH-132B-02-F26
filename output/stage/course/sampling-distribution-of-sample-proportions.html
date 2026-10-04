@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Sampling Distribution of \hat{p}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<style>
+@counter-style ptx-marker-1 { system: extends decimal; prefix: ''; suffix: '. '; }
+@counter-style ptx-marker-2 { system: extends decimal; prefix: ''; suffix: ') '; }
+@counter-style ptx-marker-3 { system: extends lower-alpha; prefix: ''; suffix: ') '; }
+</style>
+<link rel="stylesheet" type="text/css" href="external/custom.css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Biostatistics">
+<meta property="og:title" content="Biostatistics">
+<meta property="book:title" content="Biostatistics">
+<meta name="twitter:description" content="MATH 132B Semester Fall 2026">
+<meta property="og:description" content="MATH 132B Semester Fall 2026">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.52"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.52"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.3.2';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.6ad113829064d43a.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.02090e9f6a81e70e.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.347e2ecdeacfed99.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="root-1-2.html"><span class="title">Biostatistics</span> <span class="subtitle">MATH 132B Semester Fall 2026</span></a></div>
+<p class="byline">Instructor Christopher</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-embed-button" class="ptx-embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><dialog class="ptx-dialog ptx-embed-popup" id="ptx-embed-popup"><div class="ptx-embed-popup-controls">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<button class="ptx-embed-close-button button" id="ptx-embed-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-embed-code-container">
+<textarea class="ptx-embed-code-textbox" id="ptx-embed-code-textbox" readonly aria-label="Embed"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button autofocus="autofocus" class="ptx-embed-copy-button button" id="ptx-embed-copy-button" title="Copy"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div></dialog><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="normal-and-chi-square-distributions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="notes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="lab-reports.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="course-documents.html" class="internal"><span class="title">Course Documents</span></a></div>
+<ul id="ptx-toc-group-course-documents" class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="syllabus.html" class="internal"><span class="title">Syllabus</span></a></div>
+<ul id="ptx-toc-group-syllabus" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#instructor-info" class="internal"><span class="title">Instructor Information</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#course-info" class="internal"><span class="title">Course Information</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#course-desc" class="internal"><span class="title">Course Description</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#course-materials" class="internal"><span class="title">Course Matrials</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#online-course-comp" class="internal"><span class="title">Online Course Component</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#course-outcomes" class="internal"><span class="title">Course Outcomes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#eval" class="internal"><span class="title">Evaluatation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#grade" class="internal"><span class="title">Grading</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#tips" class="internal"><span class="title">Tips for Success</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#academic-integrity" class="internal"><span class="title">Academic Integrity Policy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#withdrawal-policy" class="internal"><span class="title">Withdrawal Policy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#important-dates" class="internal"><span class="title">Important Dates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#disability-statement" class="internal"><span class="title">Disability Statement</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#nondiscrimination-statement" class="internal"><span class="title">Non-Discrimination Statement</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#land-acknowledgment" class="internal"><span class="title">Land Acknowledgment Statement</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#tentative-syllabus" class="internal"><span class="title">Tentative Syllabus</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="notes.html" class="internal"><span class="title">Notes</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-notes">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-intro-to-prob.html" class="internal"><span class="title">Introduction to Probability</span></a></div>
+<ul id="ptx-toc-group-notes-intro-to-prob" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-intro-to-prob.html#notes-intro-to-prob-3" class="internal"><span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-intro-to-prob.html#notes-intro-to-prob-4" class="internal"><span class="title">Exmaples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="marg-joint-cond-prob.html" class="internal"><span class="title">Marginal, Joint, and Conditional Probability</span></a></div>
+<ul id="ptx-toc-group-marg-joint-cond-prob" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-3" class="internal"><span class="title">Marginal Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-4" class="internal"><span class="title">Joint Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-5" class="internal"><span class="title">Multiplication for Independent Events</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-6" class="internal"><span class="title">Conditional Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-7" class="internal"><span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="addition-complement-rules.html" class="internal"><span class="title">The Addition and Complement Rules</span></a></div>
+<ul id="ptx-toc-group-addition-complement-rules" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="addition-complement-rules.html#addition-complement-rules-3" class="internal"><span class="title">The Addition Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="addition-complement-rules.html#addition-complement-rules-4" class="internal"><span class="title">The Complement Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="addition-complement-rules.html#addition-complement-rules-5" class="internal"><span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-describing-categorical-data.html" class="internal"><span class="title">Describing Categorical Data</span></a></div>
+<ul id="ptx-toc-group-sec-describing-categorical-data" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-types-of-data" class="internal"><span class="title">Categorical and Numerical Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-frequency-and-proportion" class="internal"><span class="title">Frequencies and Proportions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-one-variable-frequency-distributions" class="internal"><span class="title">Frequency Distributions for One Categorical Variable</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-two-variable-frequency-distributions" class="internal"><span class="title">Frequency Distributions for Two Categorical Variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-bar-graphs" class="internal"><span class="title">Bar Graphs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-large-categorical-dataset" class="internal"><span class="title">Working with a Larger Biological Dataset</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="discrete-random-variables-binomial.html" class="internal"><span class="title">Binomial Distribution</span></a></div>
+<ul id="ptx-toc-group-discrete-random-variables-binomial" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="discrete-random-variables-binomial.html#drb-discrete" class="internal"><span class="title">Discrete Random Variables and Probability Distributions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="discrete-random-variables-binomial.html#drb-moments" class="internal"><span class="title">Expected Value and Standard Deviation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="discrete-random-variables-binomial.html#drb-binomial" class="internal"><span class="title">The Binomial Model and General Formula</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="discrete-random-variables-binomial.html#drb-r" class="internal"><span class="title">Binomial Probabilities in R</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="discrete-random-variables-binomial.html#drb-binomial-moments" class="internal"><span class="title">Expected Value and Standard Deviation of a Binomial Variable</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="normal-and-chi-square-distributions.html" class="internal"><span class="title">Normal and <span class="process-math">\(\chi^2\)</span> Distributions</span></a></div>
+<ul id="ptx-toc-group-normal-and-chi-square-distributions" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="normal-and-chi-square-distributions.html#ncs-density" class="internal"><span class="title">Continuous Random Variables and Density Curves</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="normal-and-chi-square-distributions.html#ncs-normal" class="internal"><span class="title">Normal and Standard Normal Distributions</span></a></div>
+<ul id="ptx-toc-group-ncs-normal" class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="normal-and-chi-square-distributions.html#ncs-normal-5" class="internal"><span class="title">R-Commands for Normal Distribution</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="normal-and-chi-square-distributions.html#ncs-applications" class="internal"><span class="title">Normal Models for Measurements</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="normal-and-chi-square-distributions.html#ncs-chi-square" class="internal"><span class="title">An Introduction to the Chi-Square Distribution</span></a></div>
+<ul id="ptx-toc-group-ncs-chi-square" class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="normal-and-chi-square-distributions.html#ncs-chi-square-9" class="internal"><span class="title">R-Commands for <span class="process-math">\(\chi^2\)</span> Distribution</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sampling-distribution-of-sample-proportions.html" class="internal"><span class="title">Sampling Distribution of <span class="process-math">\(\hat{p}\)</span></span></a></div>
+<ul class="structural toc-item-list active" id="ptx-toc-group-sampling-distribution-of-sample-proportions">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sampling-distribution-of-sample-proportions.html#spp-population-and-sample" class="internal"><span class="title">Population Proportions and Sample Proportions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sampling-distribution-of-sample-proportions.html#spp-sampling-distribution" class="internal"><span class="title">What Is a Sampling Distribution?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sampling-distribution-of-sample-proportions.html#spp-normal-model" class="internal"><span class="title">When Is a Normal Model Appropriate?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sampling-distribution-of-sample-proportions.html#spp-r-simulation" class="internal"><span class="title">R Investigation: Repeated Samples of Seeds</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sampling-distribution-of-sample-proportions.html#spp-probabilities" class="internal"><span class="title">Probabilities Involving Sample Proportions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="lab-reports.html" class="internal"><span class="title">Lab Reports</span></a></div>
+<ul id="ptx-toc-group-lab-reports" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-cat-project-rubric.html" class="internal"><span class="title">Inference for Categorical Data: Lab Report Rubric</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-cat-project-data-selection.html" class="internal"><span class="title">ICD: Data Set Selection and Documentation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-cat-project-summary.html" class="internal"><span class="title">ICD: Data Set Summary and Research Questions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-cat-project-graphical.html" class="internal"><span class="title">ICD: Graphical Analysis</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-cat-project-methods.html" class="internal"><span class="title">ICD: Statistical Methods and Computations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-cat-project-results.html" class="internal"><span class="title">ICD: Results and Interpretation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-cat-project-conclusion.html" class="internal"><span class="title">ICD: Conclusion</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sampling-distribution-of-sample-proportions">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Sampling Distribution of <span class="process-math">\(\hat{p}\)</span></span>
+</h1>
+<article class="objectives goal-like" id="sampling-distribution-of-sample-proportions-2"><h2 class="heading"><span class="type">Objectives</span></h2>
+<ol class="decimal" style="list-style: ptx-marker-2;" id="sampling-distribution-of-sample-proportions-2-1">
+<li id="sampling-distribution-of-sample-proportions-2-1-1">
+<div class="para" id="sampling-distribution-of-sample-proportions-2-1-1-1">Distinguish a population proportion from a sample proportion.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sampling-distribution-of-sample-proportions-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Objective 1"><a tabindex="-1" href="#sampling-distribution-of-sample-proportions-2-1-1" title="Copy heading and permalink for Objective 1" aria-label="Copy heading and permalink for Objective 1">🔗</a></div>
+</li>
+<li id="sampling-distribution-of-sample-proportions-2-1-2">
+<div class="para" id="sampling-distribution-of-sample-proportions-2-1-2-1">Describe a sampling distribution and explain why sample proportions vary.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sampling-distribution-of-sample-proportions-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Objective 2"><a tabindex="-1" href="#sampling-distribution-of-sample-proportions-2-1-2" title="Copy heading and permalink for Objective 2" aria-label="Copy heading and permalink for Objective 2">🔗</a></div>
+</li>
+<li id="sampling-distribution-of-sample-proportions-2-1-3">
+<div class="para" id="sampling-distribution-of-sample-proportions-2-1-3-1">Calculate and interpret the mean and standard error of a sample proportion.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sampling-distribution-of-sample-proportions-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Objective 3"><a tabindex="-1" href="#sampling-distribution-of-sample-proportions-2-1-3" title="Copy heading and permalink for Objective 3" aria-label="Copy heading and permalink for Objective 3">🔗</a></div>
+</li>
+<li id="sampling-distribution-of-sample-proportions-2-1-4">
+<div class="para" id="sampling-distribution-of-sample-proportions-2-1-4-1">Check the conditions for using a normal model for sample proportions.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sampling-distribution-of-sample-proportions-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Objective 4"><a tabindex="-1" href="#sampling-distribution-of-sample-proportions-2-1-4" title="Copy heading and permalink for Objective 4" aria-label="Copy heading and permalink for Objective 4">🔗</a></div>
+</li>
+<li id="sampling-distribution-of-sample-proportions-2-1-5">
+<div class="para" id="sampling-distribution-of-sample-proportions-2-1-5-1">Use a normal model and R to find probabilities involving sample proportions.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sampling-distribution-of-sample-proportions-2-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Objective 5"><a tabindex="-1" href="#sampling-distribution-of-sample-proportions-2-1-5" title="Copy heading and permalink for Objective 5" aria-label="Copy heading and permalink for Objective 5">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Objectives"><a tabindex="-1" href="#sampling-distribution-of-sample-proportions-2" title="Copy heading and permalink for Objectives" aria-label="Copy heading and permalink for Objectives">🔗</a></div>
+</article>
+<section class="introduction" id="sampling-distribution-of-sample-proportions-3">
+<div class="para" id="sampling-distribution-of-sample-proportions-3-1">A researcher may want to estimate the proportion of seeds that germinate, wetlands with an invasive plant, or patients who respond to a treatment. Usually, the researcher observes a sample rather than the entire population. Different random samples can produce different estimates. How much variation should we expect, and when would a sample result be surprising?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sampling-distribution-of-sample-proportions-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sampling-distribution-of-sample-proportions-3-2">These notes connect the binomial and normal distributions to questions about proportions. All rates, populations, and data in the examples are hypothetical instructional settings.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sampling-distribution-of-sample-proportions-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="subsection" id="spp-population-and-sample">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Population Proportions and Sample Proportions</span>
+</h2>
+<article class="definition definition-like" id="spp-def-population-proportion"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">108</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Population Proportion.</span>
+</h3>
+<div class="para" id="spp-def-population-proportion-2-1"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-def-population-proportion-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 108: Population Proportion"><a tabindex="-1" href="#spp-def-population-proportion" title="Copy heading and permalink for Definition 108: Population Proportion" aria-label="Copy heading and permalink for Definition 108: Population Proportion">🔗</a></div>
+</article>
+<article class="definition definition-like" id="spp-def-sample-proportion"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">109</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Sample Proportion.</span>
+</h3>
+<div class="para" id="spp-def-sample-proportion-2-1"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-def-sample-proportion-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 109: Sample Proportion"><a tabindex="-1" href="#spp-def-sample-proportion" title="Copy heading and permalink for Definition 109: Sample Proportion" aria-label="Copy heading and permalink for Definition 109: Sample Proportion">🔗</a></div>
+</article>
+<figure class="table table-like" id="spp-notation"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">110<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Notation for Proportions<div class="autopermalink" aria-hidden="true" data-description="Table 110: Notation for Proportions"><a tabindex="-1" href="#spp-notation" title="Copy heading and permalink for Table 110: Notation for Proportions" aria-label="Copy heading and permalink for Table 110: Notation for Proportions">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b2 r2 l2 t2 lines">Symbol</th>
+<th scope="col" class="l m b2 r2 l0 t2 lines">Meaning</th>
+</tr>
+<tr>
+<th scope="row" class="l m b2 r2 l2 t0 lines"><span class="process-math">\(p\)</span></th>
+<td class="l m b2 r2 l0 t0 lines">Population proportion; a parameter.</td>
+</tr>
+<tr>
+<th scope="row" class="l m b2 r2 l2 t0 lines"><span class="process-math">\(n\)</span></th>
+<td class="l m b2 r2 l0 t0 lines">Number of individuals in one sample.</td>
+</tr>
+<tr>
+<th scope="row" class="l m b2 r2 l2 t0 lines"><span class="process-math">\(x\)</span></th>
+<td class="l m b2 r2 l0 t0 lines">Observed number of true values in that sample.</td>
+</tr>
+<tr>
+<th scope="row" class="l m b2 r2 l2 t0 lines"><span class="process-math">\(\hat{p}\)</span></th>
+<td class="l m b2 r2 l0 t0 lines">Observed sample proportion, <span class="process-math">\(x/n\text{;}\)</span> a statistic.</td>
+</tr>
+</table></div>
+</figure>
+<article class="example example-like" id="spp-ex-seed-sample"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">111</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Seeds That Germinate.</span>
+</h3>
+<div class="para" id="spp-ex-seed-sample-2-1">Suppose 40% of seeds from a particular source would germinate under specified conditions. A researcher randomly selects 50 seeds and finds that 18 germinate.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-seed-sample-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="spp-ex-seed-sample-2-2">
+<ol class="lower-alpha" style="list-style: ptx-marker-3;" id="spp-ex-seed-sample-2-2-1">
+<li id="spp-ex-seed-sample-2-2-1-1">
+<div class="para" id="spp-ex-seed-sample-2-2-1-1-1">Identify <span class="process-math">\(p\text{,}\)</span> <span class="process-math">\(n\text{,}\)</span> and <span class="process-math">\(x\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-seed-sample-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#spp-ex-seed-sample-2-2-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="spp-ex-seed-sample-2-2-1-2">
+<div class="para" id="spp-ex-seed-sample-2-2-1-2-1">Calculate and interpret <span class="process-math">\(\hat{p}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-seed-sample-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#spp-ex-seed-sample-2-2-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="spp-ex-seed-sample-2-2-1-3">
+<div class="para" id="spp-ex-seed-sample-2-2-1-3-1">Would a second random sample have to give the same result?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-seed-sample-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item c"><a tabindex="-1" href="#spp-ex-seed-sample-2-2-1-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-seed-sample-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 111: Seeds That Germinate"><a tabindex="-1" href="#spp-ex-seed-sample" title="Copy heading and permalink for Example 111: Seeds That Germinate" aria-label="Copy heading and permalink for Example 111: Seeds That Germinate">🔗</a></div>
+</article>
+<article class="definition definition-like" id="spp-def-sampling-variability"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">112</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Sampling Variability.</span>
+</h3>
+<div class="para" id="spp-def-sampling-variability-2-1"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-def-sampling-variability-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 112: Sampling Variability"><a tabindex="-1" href="#spp-def-sampling-variability" title="Copy heading and permalink for Definition 112: Sampling Variability" aria-label="Copy heading and permalink for Definition 112: Sampling Variability">🔗</a></div>
+</article>
+<article class="example example-like" id="spp-ex-five-samples"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">113</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Five Samples from the Same Source.</span>
+</h3>
+<div class="para" id="spp-ex-five-samples-2-1">Five research teams each randomly select 50 seeds from the same large source. Their results are shown below. Calculate each sample proportion. What changes across samples, and what stays fixed?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-five-samples-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="table table-like" id="spp-ex-five-samples-2-2"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">114<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Germination Results for Five Samples<div class="autopermalink" aria-hidden="true" data-description="Table 114: Germination Results for Five Samples"><a tabindex="-1" href="#spp-ex-five-samples-2-2" title="Copy heading and permalink for Table 114: Germination Results for Five Samples" aria-label="Copy heading and permalink for Table 114: Germination Results for Five Samples">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b2 r2 l2 t2 lines">Sample</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">1</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">2</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">3</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">4</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">5</th>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">Seeds that germinate, <span class="process-math">\(x\)</span>
+</th>
+<td class="c m b2 r2 l0 t0 lines">18</td>
+<td class="c m b2 r2 l0 t0 lines">22</td>
+<td class="c m b2 r2 l0 t0 lines">20</td>
+<td class="c m b2 r2 l0 t0 lines">17</td>
+<td class="c m b2 r2 l0 t0 lines">23</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">Sample size, <span class="process-math">\(n\)</span>
+</th>
+<td class="c m b2 r2 l0 t0 lines">50</td>
+<td class="c m b2 r2 l0 t0 lines">50</td>
+<td class="c m b2 r2 l0 t0 lines">50</td>
+<td class="c m b2 r2 l0 t0 lines">50</td>
+<td class="c m b2 r2 l0 t0 lines">50</td>
+</tr>
+</table></div>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Example 113: Five Samples from the Same Source"><a tabindex="-1" href="#spp-ex-five-samples" title="Copy heading and permalink for Example 113: Five Samples from the Same Source" aria-label="Copy heading and permalink for Example 113: Five Samples from the Same Source">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection: Population Proportions and Sample Proportions"><a tabindex="-1" href="#spp-population-and-sample" title="Copy heading and permalink for Subsection: Population Proportions and Sample Proportions" aria-label="Copy heading and permalink for Subsection: Population Proportions and Sample Proportions">🔗</a></div>
+</section>
+<section class="subsection" id="spp-sampling-distribution">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">What Is a Sampling Distribution?</span>
+</h2>
+<article class="definition definition-like" id="spp-def-sampling-distribution"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">115</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Sampling Distribution of a Sample Proportion.</span>
+</h3>
+<div class="para" id="spp-def-sampling-distribution-2-1"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-def-sampling-distribution-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 115: Sampling Distribution of a Sample Proportion"><a tabindex="-1" href="#spp-def-sampling-distribution" title="Copy heading and permalink for Definition 115: Sampling Distribution of a Sample Proportion" aria-label="Copy heading and permalink for Definition 115: Sampling Distribution of a Sample Proportion">🔗</a></div>
+</article>
+<article class="definition definition-like" id="spp-def-mean-standard-error"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">116</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Mean and Standard Error.</span>
+</h3>
+<div class="para" id="spp-def-mean-standard-error-2-1"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-def-mean-standard-error-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 116: Mean and Standard Error"><a tabindex="-1" href="#spp-def-mean-standard-error" title="Copy heading and permalink for Definition 116: Mean and Standard Error" aria-label="Copy heading and permalink for Definition 116: Mean and Standard Error">🔗</a></div>
+</article>
+<article class="remark remark-like" id="spp-binomial-connection"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">117</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Connection to the Binomial Distribution.</span>
+</h3>
+<div class="para" id="spp-binomial-connection-2">If <span class="process-math">\(X\sim\operatorname{Bin}(n,p)\)</span> counts the successes, then <span class="process-math">\(\hat{p}=X/n\text{.}\)</span> Dividing a random variable by <span class="process-math">\(n\)</span> divides both its mean and its standard deviation by <span class="process-math">\(n\text{:}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-binomial-connection-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="spp-binomial-connection-3">
+<div class="displaymath process-math" id="spp-binomial-connection-3-1">
+\begin{gather*}
+\mu_{\hat{p}}=\frac{np}{n}=p,\\
+\sigma_{\hat{p}}=\frac{\sqrt{np(1-p)}}{n}=\sqrt{\frac{p(1-p)}{n}}.
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-binomial-connection-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="spp-binomial-connection-4">These formulas hold under the independent binomial model even when the sampling distribution is not approximately normal.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-binomial-connection-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 117: Connection to the Binomial Distribution"><a tabindex="-1" href="#spp-binomial-connection" title="Copy heading and permalink for Remark 117: Connection to the Binomial Distribution" aria-label="Copy heading and permalink for Remark 117: Connection to the Binomial Distribution">🔗</a></div>
+</article>
+<article class="definition definition-like" id="spp-def-unbiased"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">118</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Unbiased Estimator.</span>
+</h3>
+<div class="para" id="spp-def-unbiased-2-1"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-def-unbiased-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 118: Unbiased Estimator"><a tabindex="-1" href="#spp-def-unbiased" title="Copy heading and permalink for Definition 118: Unbiased Estimator" aria-label="Copy heading and permalink for Definition 118: Unbiased Estimator">🔗</a></div>
+</article>
+<article class="example example-like" id="spp-ex-mean-se"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">119</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interpreting the Spread of Germination Proportions.</span>
+</h3>
+<div class="para" id="spp-ex-mean-se-2-1">Assume seed germination outcomes are independent, with <span class="process-math">\(p=0.40\text{.}\)</span> Find and interpret the mean and standard error of <span class="process-math">\(\hat{p}\)</span> for samples of 50 seeds.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-mean-se-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 119: Interpreting the Spread of Germination Proportions"><a tabindex="-1" href="#spp-ex-mean-se" title="Copy heading and permalink for Example 119: Interpreting the Spread of Germination Proportions" aria-label="Copy heading and permalink for Example 119: Interpreting the Spread of Germination Proportions">🔗</a></div>
+</article>
+<article class="example example-like" id="spp-ex-sample-size"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">120</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">What Happens When the Sample Size Increases?</span>
+</h3>
+<div class="para" id="spp-ex-sample-size-2-1">Keep the seed model with <span class="process-math">\(p=0.40\text{.}\)</span> Compare the mean and standard error for samples of 50, 200, and 800 seeds.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-sample-size-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 120: What Happens When the Sample Size Increases?"><a tabindex="-1" href="#spp-ex-sample-size" title="Copy heading and permalink for Example 120: What Happens When the Sample Size Increases?" aria-label="Copy heading and permalink for Example 120: What Happens When the Sample Size Increases?">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection: What Is a Sampling Distribution?"><a tabindex="-1" href="#spp-sampling-distribution" title="Copy heading and permalink for Subsection: What Is a Sampling Distribution?" aria-label="Copy heading and permalink for Subsection: What Is a Sampling Distribution?">🔗</a></div>
+</section>
+<section class="subsection" id="spp-normal-model">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">When Is a Normal Model Appropriate?</span>
+</h2>
+<div class="para" id="spp-normal-model-2">Before using a normal curve to calculate probabilities about <span class="process-math">\(\hat{p}\text{,}\)</span> check the sampling method, independence, and expected counts.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-normal-model-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="spp-normal-model-3">
+<ol class="decimal" style="list-style: ptx-marker-2;" id="spp-normal-model-3-1">
+<li id="spp-normal-model-3-1-1">
+<div class="para" id="spp-normal-model-3-1-1-1">
+<em class="emphasis">Random sampling:</em> The sample should be selected randomly from the population of interest, or the problem should specify an appropriate independent chance model.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-normal-model-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#spp-normal-model-3-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="spp-normal-model-3-1-2">
+<div class="para" id="spp-normal-model-3-1-2-1">
+<em class="emphasis">Independent observations:</em> One outcome should not determine or strongly influence another. For a simple random sample taken without replacement from a population of size <span class="process-math">\(N\text{,}\)</span> check the <dfn class="terminology">10% condition</dfn>:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-normal-model-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="spp-normal-model-3-1-2-2">
+<div class="displaymath process-math" id="spp-normal-model-3-1-2-2-1">
+\begin{gather*}
+n\leq0.10N.
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-normal-model-3-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="spp-normal-model-3-1-2-3">This makes the dependence from sampling without replacement small enough to use the usual standard error approximately. A small sampling fraction alone does not resolve dependence caused by a clustered sampling design.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-normal-model-3-1-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#spp-normal-model-3-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="spp-normal-model-3-1-3">
+<div class="para" id="spp-normal-model-3-1-3-1">
+<em class="emphasis">Enough expected successes and failures:</em> Check both parts of the <dfn class="terminology">success-failure condition</dfn>:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-normal-model-3-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="spp-normal-model-3-1-3-2">
+<div class="displaymath process-math" id="spp-normal-model-3-1-3-2-1">
+\begin{gather*}
+np\geq10\qquad\text{and}\qquad n(1-p)\geq10.
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-normal-model-3-1-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="spp-normal-model-3-1-3-3">These are expected counts under the assumed population proportion, not the observed counts in a particular sample.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-normal-model-3-1-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#spp-normal-model-3-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-normal-model-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="spp-normal-approximation"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">121</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Normal Approximation for a Sample Proportion.</span>
+</h3>
+<div class="para" id="spp-normal-approximation-2">When the conditions are satisfied, the sampling distribution of <span class="process-math">\(\hat{p}\)</span> is approximately normal, with mean <span class="process-math">\(p\)</span> and standard deviation <span class="process-math">\(\sqrt{\frac{p(1-p)}{n}}\text{.}\)</span> We write<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-normal-approximation-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="spp-normal-approximation-3">
+<div class="displaymath process-math" id="spp-normal-approximation-3-1">
+\begin{gather*}
+\hat{p}\sim N\left(p,\sqrt{\frac{p(1-p)}{n}}\right).
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-normal-approximation-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="spp-normal-approximation-4">As in our normal distribution notes, the first parameter is the mean and the second parameter is the standard deviation. This large-sample result is often called the central limit theorem for sample proportions.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-normal-approximation-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 121: Normal Approximation for a Sample Proportion"><a tabindex="-1" href="#spp-normal-approximation" title="Copy heading and permalink for Theorem 121: Normal Approximation for a Sample Proportion" aria-label="Copy heading and permalink for Theorem 121: Normal Approximation for a Sample Proportion">🔗</a></div>
+</article>
+<article class="example example-like" id="spp-ex-normality-checks"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">122</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Checking Expected Counts.</span>
+</h3>
+<div class="para" id="spp-ex-normality-checks-2-1">Assume random sampling and independence are appropriate in each setting. Determine whether a normal approximation is supported.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-normality-checks-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="spp-ex-normality-checks-2-2">
+<ol class="lower-alpha" style="list-style: ptx-marker-3;" id="spp-ex-normality-checks-2-2-1">
+<li id="spp-ex-normality-checks-2-2-1-1">
+<div class="para" id="spp-ex-normality-checks-2-2-1-1-1">Seeds germinate with probability 0.40, and <span class="process-math">\(n=50\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-normality-checks-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#spp-ex-normality-checks-2-2-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="spp-ex-normality-checks-2-2-1-2">
+<div class="para" id="spp-ex-normality-checks-2-2-1-2-1">Water samples contain a contaminant with probability 0.04, and <span class="process-math">\(n=100\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-normality-checks-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#spp-ex-normality-checks-2-2-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="spp-ex-normality-checks-2-2-1-3">
+<div class="para" id="spp-ex-normality-checks-2-2-1-3-1">Laboratory cultures grow successfully with probability 0.96, and <span class="process-math">\(n=100\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-normality-checks-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item c"><a tabindex="-1" href="#spp-ex-normality-checks-2-2-1-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+<li id="spp-ex-normality-checks-2-2-1-4">
+<div class="para" id="spp-ex-normality-checks-2-2-1-4-1">Water samples contain the contaminant with probability 0.04, and <span class="process-math">\(n=250\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-normality-checks-2-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item d"><a tabindex="-1" href="#spp-ex-normality-checks-2-2-1-4" title="Copy heading and permalink for Item d" aria-label="Copy heading and permalink for Item d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-normality-checks-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 122: Checking Expected Counts"><a tabindex="-1" href="#spp-ex-normality-checks" title="Copy heading and permalink for Example 122: Checking Expected Counts" aria-label="Copy heading and permalink for Example 122: Checking Expected Counts">🔗</a></div>
+</article>
+<article class="example example-like" id="spp-ex-ten-percent"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">123</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Sample That Is a Large Fraction of the Population.</span>
+</h3>
+<div class="para" id="spp-ex-ten-percent-2-1">A reserve contains 600 marked turtles. A researcher takes a simple random sample of 100 turtles without replacement. Assume 40% of the turtles have a particular shell marking. Can we use the usual normal model under our stated conditions?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-ten-percent-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 123: A Sample That Is a Large Fraction of the Population"><a tabindex="-1" href="#spp-ex-ten-percent" title="Copy heading and permalink for Example 123: A Sample That Is a Large Fraction of the Population" aria-label="Copy heading and permalink for Example 123: A Sample That Is a Large Fraction of the Population">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection: When Is a Normal Model Appropriate?"><a tabindex="-1" href="#spp-normal-model" title="Copy heading and permalink for Subsection: When Is a Normal Model Appropriate?" aria-label="Copy heading and permalink for Subsection: When Is a Normal Model Appropriate?">🔗</a></div>
+</section>
+<section class="subsection" id="spp-r-simulation">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">R Investigation: Repeated Samples of Seeds</span>
+</h2>
+<div class="para" id="spp-r-simulation-2">We can approximate the sampling distribution without collecting thousands of actual samples. Suppose seeds germinate independently with probability 0.40. The following activity uses only functions included with R; no additional packages or data files are needed.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-r-simulation-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="spp-ex-r-one-sample"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">124</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Start with One Sample.</span>
+</h3>
+<div class="para" id="spp-ex-r-one-sample-2-1">Run the following code. What does each of the two reported values represent?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-r-one-sample-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="code-box"><pre class="program clipboardable"><code class="language-r">set.seed(132)
+x = rbinom(1, size = 50, prob = 0.40)
+x
+x / 50
+</code></pre></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 124: Start with One Sample"><a tabindex="-1" href="#spp-ex-r-one-sample" title="Copy heading and permalink for Example 124: Start with One Sample" aria-label="Copy heading and permalink for Example 124: Start with One Sample">🔗</a></div>
+</article>
+<article class="example example-like" id="spp-ex-r-many-samples"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">125</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Build a Simulated Sampling Distribution.</span>
+</h3>
+<div class="para" id="spp-ex-r-many-samples-2-1">Before running the code, predict the center and approximate shape of the distribution. Then simulate 1,000 separate samples of 50 seeds and store one sample proportion per sample.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-r-many-samples-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="code-box"><pre class="program clipboardable"><code class="language-r">set.seed(132)
+p = 0.40
+n = 50
+reps = 1000
+
+p_hat = rbinom(reps, size = n, prob = p) / n
+
+hist(p_hat,
+     breaks = seq(-0.02, 1.02, by = 0.04),
+     xlim = c(0, 1),
+     main = paste("Sample size =", n),
+     xlab = "Sample proportion of seeds that germinate",
+     ylab = "Number of simulated samples",
+     col = "lightblue", border = "white")
+abline(v = p, lwd = 2, lty = 2)
+
+c(simulated_mean = mean(p_hat),
+  theoretical_mean = p,
+  simulated_sd = sd(p_hat),
+  theoretical_se = sqrt(p * (1 - p) / n))
+</code></pre></div> 
+<div class="para logical" id="spp-ex-r-many-samples-2-3">
+<ol class="lower-alpha" style="list-style: ptx-marker-3;" id="spp-ex-r-many-samples-2-3-1">
+<li id="spp-ex-r-many-samples-2-3-1-1">
+<div class="para" id="spp-ex-r-many-samples-2-3-1-1-1">What does one value in <code class="code-inline tex2jax_ignore">p_hat</code> represent? What does the height of a histogram bar count?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-r-many-samples-2-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#spp-ex-r-many-samples-2-3-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="spp-ex-r-many-samples-2-3-1-2">
+<div class="para" id="spp-ex-r-many-samples-2-3-1-2-1">What is the sample size? How many separate samples were simulated?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-r-many-samples-2-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#spp-ex-r-many-samples-2-3-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="spp-ex-r-many-samples-2-3-1-3">
+<div class="para" id="spp-ex-r-many-samples-2-3-1-3-1">Compare the simulated mean and standard deviation with the theoretical values.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-r-many-samples-2-3-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item c"><a tabindex="-1" href="#spp-ex-r-many-samples-2-3-1-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+<li id="spp-ex-r-many-samples-2-3-1-4">
+<div class="para" id="spp-ex-r-many-samples-2-3-1-4-1">Change only <code class="code-inline tex2jax_ignore">n = 50</code> to <code class="code-inline tex2jax_ignore">n = 200</code> and rerun the entire block. Predict and then describe the changes.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-r-many-samples-2-3-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item d"><a tabindex="-1" href="#spp-ex-r-many-samples-2-3-1-4" title="Copy heading and permalink for Item d" aria-label="Copy heading and permalink for Item d">🔗</a></div>
+</li>
+<li id="spp-ex-r-many-samples-2-3-1-5">
+<div class="para" id="spp-ex-r-many-samples-2-3-1-5-1">With <code class="code-inline tex2jax_ignore">n = 200</code>, change <code class="code-inline tex2jax_ignore">reps = 1000</code> to <code class="code-inline tex2jax_ignore">reps = 10000</code>. Does this change the theoretical standard error?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-r-many-samples-2-3-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item e"><a tabindex="-1" href="#spp-ex-r-many-samples-2-3-1-5" title="Copy heading and permalink for Item e" aria-label="Copy heading and permalink for Item e">🔗</a></div>
+</li>
+<li id="spp-ex-r-many-samples-2-3-1-6">
+<div class="para" id="spp-ex-r-many-samples-2-3-1-6-1">Set <code class="code-inline tex2jax_ignore">p = 0.04</code>, <code class="code-inline tex2jax_ignore">n = 50</code>, and <code class="code-inline tex2jax_ignore">reps = 1000</code>. Describe the histogram. Then compute <span class="process-math">\(np\)</span> and <span class="process-math">\(n(1-p)\)</span> and use them to explain the shape of the histogram.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-r-many-samples-2-3-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item f"><a tabindex="-1" href="#spp-ex-r-many-samples-2-3-1-6" title="Copy heading and permalink for Item f" aria-label="Copy heading and permalink for Item f">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-r-many-samples-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 125: Build a Simulated Sampling Distribution"><a tabindex="-1" href="#spp-ex-r-many-samples" title="Copy heading and permalink for Example 125: Build a Simulated Sampling Distribution" aria-label="Copy heading and permalink for Example 125: Build a Simulated Sampling Distribution">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection: R Investigation: Repeated Samples of Seeds"><a tabindex="-1" href="#spp-r-simulation" title="Copy heading and permalink for Subsection: R Investigation: Repeated Samples of Seeds" aria-label="Copy heading and permalink for Subsection: R Investigation: Repeated Samples of Seeds">🔗</a></div>
+</section>
+<section class="subsection" id="spp-probabilities">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Probabilities Involving Sample Proportions</span>
+</h2>
+<article class="definition definition-like" id="spp-def-z-score"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">126</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Standardized Sample Proportion.</span>
+</h3>
+<div class="para" id="spp-def-z-score-2-1">To measure how far an observed sample proportion is from the assumed population proportion, calculate<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-def-z-score-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="spp-def-z-score-2-2">
+<div class="displaymath process-math" id="spp-def-z-score-2-2-1">
+\begin{gather*}
+z=\frac{\hat{p}-p}{\sqrt{\frac{p(1-p)}{n}}}.
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-def-z-score-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="spp-def-z-score-2-3">The result is the number of standard errors above or below <span class="process-math">\(p\text{.}\)</span> When the normal approximation is appropriate, areas under the standard normal curve approximate sampling probabilities.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-def-z-score-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 126: Standardized Sample Proportion"><a tabindex="-1" href="#spp-def-z-score" title="Copy heading and permalink for Definition 126: Standardized Sample Proportion" aria-label="Copy heading and permalink for Definition 126: Standardized Sample Proportion">🔗</a></div>
+</article>
+<article class="example example-like" id="spp-ex-wetlands-probabilities"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">127</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Wetlands with an Invasive Plant.</span>
+</h3>
+<div class="para" id="spp-ex-wetlands-probabilities-2-1">Suppose 30% of the 20,000 wetlands in a region contain a particular invasive plant. A team takes a simple random sample of 200 wetlands without replacement. Let <span class="process-math">\(\hat{p}\)</span> be the proportion of sampled wetlands containing the plant. Use a normal approximation to find each probability.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-wetlands-probabilities-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="spp-ex-wetlands-probabilities-2-2">
+<ol class="lower-alpha" style="list-style: ptx-marker-3;" id="spp-ex-wetlands-probabilities-2-2-1">
+<li id="spp-ex-wetlands-probabilities-2-2-1-1">
+<div class="para" id="spp-ex-wetlands-probabilities-2-2-1-1-1">Fewer than 25% of the sampled wetlands contain the plant.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-wetlands-probabilities-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#spp-ex-wetlands-probabilities-2-2-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="spp-ex-wetlands-probabilities-2-2-1-2">
+<div class="para" id="spp-ex-wetlands-probabilities-2-2-1-2-1">At least 38% of the sampled wetlands contain the plant.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-wetlands-probabilities-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#spp-ex-wetlands-probabilities-2-2-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="spp-ex-wetlands-probabilities-2-2-1-3">
+<div class="para" id="spp-ex-wetlands-probabilities-2-2-1-3-1">Between 25% and 35%, inclusive, of the sampled wetlands contain the plant.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-wetlands-probabilities-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item c"><a tabindex="-1" href="#spp-ex-wetlands-probabilities-2-2-1-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-wetlands-probabilities-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 127: Wetlands with an Invasive Plant"><a tabindex="-1" href="#spp-ex-wetlands-probabilities" title="Copy heading and permalink for Example 127: Wetlands with an Invasive Plant" aria-label="Copy heading and permalink for Example 127: Wetlands with an Invasive Plant">🔗</a></div>
+</article>
+<article class="example example-like" id="spp-ex-unusual-result"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">128</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Is a Sample Result Surprising?</span>
+</h3>
+<div class="para" id="spp-ex-unusual-result-2-1">In the wetland setting above, suppose the plant is found in 74 of the 200 sampled wetlands.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-unusual-result-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="spp-ex-unusual-result-2-2">
+<ol class="lower-alpha" style="list-style: ptx-marker-3;" id="spp-ex-unusual-result-2-2-1">
+<li id="spp-ex-unusual-result-2-2-1-1">
+<div class="para" id="spp-ex-unusual-result-2-2-1-1-1">Calculate the sample proportion and its z-score under the assumption <span class="process-math">\(p=0.30\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-unusual-result-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#spp-ex-unusual-result-2-2-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="spp-ex-unusual-result-2-2-1-2">
+<div class="para" id="spp-ex-unusual-result-2-2-1-2-1">Approximate the probability of a sample proportion at least this large.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-unusual-result-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#spp-ex-unusual-result-2-2-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="spp-ex-unusual-result-2-2-1-3">
+<div class="para" id="spp-ex-unusual-result-2-2-1-3-1">Explain what the result suggests and what it does not establish.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-unusual-result-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item c"><a tabindex="-1" href="#spp-ex-unusual-result-2-2-1-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-unusual-result-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 128: Is a Sample Result Surprising?"><a tabindex="-1" href="#spp-ex-unusual-result" title="Copy heading and permalink for Example 128: Is a Sample Result Surprising?" aria-label="Copy heading and permalink for Example 128: Is a Sample Result Surprising?">🔗</a></div>
+</article>
+<article class="example example-like" id="spp-ex-percentile"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">129</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A Cutoff for the Highest 10% of Sample Proportions.</span>
+</h3>
+<div class="para" id="spp-ex-percentile-2-1">For the same wetland model, use the normal approximation to find a cutoff with about 10% of sample proportions above it.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#spp-ex-percentile-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 129: A Cutoff for the Highest 10% of Sample Proportions"><a tabindex="-1" href="#spp-ex-percentile" title="Copy heading and permalink for Example 129: A Cutoff for the Highest 10% of Sample Proportions" aria-label="Copy heading and permalink for Example 129: A Cutoff for the Highest 10% of Sample Proportions">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection: Probabilities Involving Sample Proportions"><a tabindex="-1" href="#spp-probabilities" title="Copy heading and permalink for Subsection: Probabilities Involving Sample Proportions" aria-label="Copy heading and permalink for Subsection: Probabilities Involving Sample Proportions">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section: Sampling Distribution of \hat{p}"><a tabindex="-1" href="#sampling-distribution-of-sample-proportions" title="Copy heading and permalink for Section: Sampling Distribution of \hat{p}" aria-label="Copy heading and permalink for Section: Sampling Distribution of \hat{p}">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="normal-and-chi-square-distributions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="lab-reports.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

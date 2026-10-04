@@ -28,6 +28,7 @@
       <xi:include href="./notes/binomial.ptx"/>
       <xi:include href="./notes/normal-and-chi-square-distributions.ptx"/>
       <xi:include href="./notes/sampling-distribution-for-p-hat.ptx"/>
+      <xi:include href="./notes/inference-for-one-proportion-part-one.ptx"/>
     </chapter>
 
     <chapter xml:id="lab-reports">

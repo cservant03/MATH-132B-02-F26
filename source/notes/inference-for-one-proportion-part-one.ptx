@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="confidence-intervals-for-a-population-proportion">
+  <title>Inference for One Proportion Part 1</title>
+
+  <objectives>
+    <ol marker="1)">
+      <li><p>Distinguish a point estimate from an interval estimate of a population proportion.</p></li>
+      <li><p>Explain the meaning of a confidence interval, confidence level, and margin of error.</p></li>
+      <li><p>Check the conditions for a one-proportion z-interval.</p></li>
+      <li><p>Find a normal critical value and construct a confidence interval by calculation and in R.</p></li>
+      <li><p>Interpret an interval in context and assess whether a proposed population proportion is compatible with it.</p></li>
+      <li><p>Explain how confidence level and sample size affect precision, and distinguish one-sided bounds from two-sided intervals.</p></li>
+    </ol>
+  </objectives>
+
+  <subsection xml:id="subsec-what-is-stats">
+    <title>What is Statistics?</title>
+    
+    <definition xml:id="cip-def-statistics">
+      <title>Statistics</title>
+      
+      <statement>
+        <p>
+          
+        </p>
+      </statement>
+    </definition>
+
+    <definition xml:id="cip-def-population">
+      <title>Population</title>
+      
+      <statement>
+        <p>
+          
+        </p>
+      </statement>
+    </definition>
+
+    <definition xml:id="cip-def-parameter">
+      <title>Parameter</title>
+      
+      <statement>
+        <p>
+          
+        </p>
+      </statement>
+    </definition>
+
+    <definition xml:id="cip-def-sample">
+      <title>Sample</title>
+      
+      <statement>
+        <p>
+          
+        </p>
+      </statement>
+    </definition>
+
+    <definition xml:id="cip-def-stat">
+      <title>Statistic</title>
+      
+      <statement>
+        <p>
+          
+        </p>
+      </statement>
+    </definition>
+  </subsection>
+
+  <subsection xml:id="cip-point-and-interval">
+    <title>What Is a Confidence Interval?</title>
+
+    <definition xml:id="cip-def-point-estimate">
+      <title>Point Estimate</title>
+      <statement>
+        <p>
+          
+        </p>
+      </statement>
+    </definition>
+
+    <p>For example, if 80 of 200 randomly selected seeds germinate, the point estimate of the population germination proportion is <m>80/200=0.40</m>. This does not establish that exactly 40% of all seeds from that source will germinate. An interval estimate gives a range of values supported by the data and the statistical model.</p>
+
+    <definition xml:id="cip-def-confidence-interval">
+      <title>Confidence Interval</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+
+    <definition xml:id="cip-def-margin-of-error">
+      <title>Margin of Error</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+
+    <example xml:id="cip-ex-reported-interval">
+      <title>Reading an Estimate and a Margin of Error</title>
+      <statement>
+        <p>A seed-germination report gives a point estimate of 40%, with a margin of error of 7 percentage points at the 95% confidence level.</p>
+        <p><ol marker="a)">
+          <li><p>Write the point estimate and margin of error as proportions.</p></li>
+          <li><p>Find the interval and its total width.</p></li>
+          <li><p>Is a population germination proportion of 0.45 compatible with this interval? What about 0.60?</p></li>
+        </ol></p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="cip-confidence-meaning">
+    <title>What Does the Confidence Level Mean?</title>
+
+    <definition xml:id="cip-def-confidence-level">
+      <title>Confidence Level</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+
+    <p>Imagine taking a random sample, calculating an interval, and repeating this process many times. The sample proportion and interval endpoints change from sample to sample. The population proportion stays fixed. Some of the intervals capture it, and some miss it.</p>
+
+    
+    <image source="images/proportion-confidence-intervals.png" width="75%">
+      <shortdescription>
+        Twenty confidence intervals: 17 contain the population proportion p,
+        and 3 red intervals miss it.
+      </shortdescription>
+
+      <description>
+        <p>
+          A vertical line marks the fixed population proportion <m>p</m>.
+          Twenty horizontal confidence intervals are arranged in rows
+          numbered 1 through 20. Seventeen blue intervals cross the
+          vertical line and contain <m>p</m>.
+        </p>
+        <p>
+          Three red intervals miss <m>p</m>: intervals 4 and 17 lie
+          entirely to the right of the vertical line, and interval 11
+          lies entirely to the left.
+        </p>
+        <p>
+          Circles on the blue intervals and X-shaped markers on the red
+          intervals mark the sample proportions, <m>\hat{p}</m>.
+          The sample proportions and interval endpoints vary from sample
+          to sample, while the population proportion stays fixed.
+        </p>
+      </description>
+    </image>
+
+    <remark xml:id="cip-interpretation">
+      <title>Interpreting an Interval in Context</title>
+      <p>A conventional interpretation is: <q>We are 95% confident that the true proportion of [the population] who or which [have the characteristic] is between [lower limit] and [upper limit].</q></p>
+      <p>The confidence comes from the repeated-sampling performance of the method. Once an interval has been calculated, it either contains the fixed value of <m>p</m> or it does not. The 95% is not a probability assigned to <m>p</m> moving into that particular interval.</p>
+      <p>A 95% confidence interval also does not say that 95% of individuals have the characteristic, that 95% of sample proportions fall inside this particular interval, or that the next sample result is guaranteed to lie inside it.</p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="cip-one-proportion-z">
+    <title>The One-Proportion Z-Interval</title>
+
+    <p>In the sampling-distribution model, the standard deviation of <m>\hat{p}</m> is <m>\sqrt{p(1-p)/n}</m>. When estimating <m>p</m>, we do not know its value. We therefore estimate this standard error using the observed sample proportion.</p>
+
+    <definition xml:id="cip-def-estimated-se">
+      <title>Estimated Standard Error of a Sample Proportion</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+
+    <definition xml:id="cip-def-conditions">
+      <title>Requirements for a One-Proportion Z-Interval</title>
+      <statement>
+        <p>
+          <ol marker="1)">
+            <li><p><em>Binary outcome:</em> Each observation is classified as having or not having the characteristic being counted. Define a success before counting.</p></li>
+            <li><p><em>Appropriate sampling:</em> The data should come from a random sample of the population of interest or from an appropriate independent binomial model. Consider how the observations were obtained and which population the conclusion can describe.</p></li>
+            <li><p><em>Independence:</em> The observations should be independent, or approximately so. For a simple random sample without replacement from a finite population of size <m>N</m>, use the 10% guideline <m>n\leq0.10N</m>.</p></li>
+            <li><p><em>Enough observed successes and failures:</em> Check both</p><p><md number="no"><mrow>n\hat{p}=x\geq10\qquad\text{and}\qquad n(1-\hat{p})=n-x\geq10.</mrow></md></p>
+            
+            <p>For this interval, we check the observed counts because <m>p</m> is unknown. A large total sample size alone is insufficient if one category has very few observations. These conditions are a practical guideline; the normal interval still has approximate coverage.</p></li>
+          </ol>
+        </p>
+      </statement>
+    </definition>
+
+    <definition xml:id="cip-def-critical-value">
+      <title>Critical Value</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+
+    <technology xml:id="tech-ci-critical-value-r">
+      <title>Finding a Critical Value in R</title>
+
+      <p> </p>
+    </technology>    
+
+    <example xml:id="cip-ex-critical-value">
+      <title>Finding a 97% Critical Value</title>
+      <statement>
+        <p>Find the critical value for a two-sided 97% confidence interval. Explain why entering <c>qnorm(0.97)</c> would not give the desired value.</p>
+      </statement>
+    </example>
+
+    <identity xml:id="cip-formula-summary">
+      <title>One-Proportion Z-Interval</title>
+      
+      <tabular row-headers="yes" halign="left" valign="middle" top="medium" bottom="medium" left="medium" right="medium">
+        <row header="yes" bottom="medium"><cell>Component</cell><cell>Formula</cell></row>
+        <row><cell>Point estimate</cell><cell><m>\hat{p}=x/n</m></cell></row>
+        <row><cell>Estimated standard error</cell><cell><m>SE=\sqrt{\hat{p}(1-\hat{p})/n}</m></cell></row>
+        <row><cell>Critical value</cell><cell><m>z^*</m></cell></row>
+        <row><cell>Margin of error</cell><cell><m>E=z^*\cdot SE</m></cell></row>
+        <row><cell>Confidence interval</cell><cell><m>(\hat{p}-E,\hat{p}+E)</m></cell></row>
+      </tabular>
+
+      <p>Equivalently,</p>
+      <p><md number="no"><mrow>\hat{p}\pm z^*\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}.</mrow></md></p>
+      <p>This normal-approximation interval is also called the <term>Wald interval</term>.</p>
+    </identity>
+  </subsection>
+  
+  <subsection xml:id="cip-worked-examples">
+    <title>Estimating Proportions in Context</title>
+
+    <example xml:id="cip-ex-screwworm">
+      <title>Screwworm Control</title>
+      <statement>
+        <p>Screwworm flies lay eggs in wounds of warm-blooded animals. In an experiment intended to control the population, screwworm pupae were exposed to a radiation dose of 2500 rad in hopes of sterilizing most males. Because females mate only once, mating with a sterilized male can result in sterile eggs. After radiation, 415 of 500 observed matings resulted in sterile eggs.</p>
+        <p>Construct a 95% confidence interval for <m>p</m>, the proportion of matings that would result in sterile eggs under this radiation protocol.</p>
+      </statement>
+    </example>
+
+    <example xml:id="cip-ex-smoking">
+      <title>Regular Smoking Among Individuals Age 16 and Under</title>
+      <statement>
+        <p>A national survey was conducted to estimate the proportion of individuals age 16 and under who smoke regularly. Of 1000 individuals interviewed, 200 smoked regularly.</p>
+        <p><ol marker="a)">
+          <li><p>Construct a 99% confidence interval for the population proportion represented by the survey.</p></li>
+          <li><p>If an article claimed that this proportion was 0.23, would that value be surprising in light of the interval?</p></li>
+        </ol></p>
+      </statement>
+    </example>
+
+    <example xml:id="cip-ex-clinical-trial">
+      <title>A Clinical Trial with Few Persistent Infections</title>
+      <statement>
+        <p>In a clinical trial, 46 female patients with gonorrhea received a 4 gram daily dose of spectinomycin. At the one-week follow-up, four patients still had the infection.</p>
+        <p>Let <m>p</m> be the proportion of comparable patients treated under this protocol who would still have the infection after one week. Construct a 90% confidence interval for <m>p</m></p>
+      </statement>
+    </example>
+
+    <example xml:id="cip-ex-neutrophils">
+      <title>Neutrophils in a White Cell Count</title>
+      <statement>
+        <p>A blood sample is spread on a glass slide, stained with Wright's stain, and examined under a microscope. Of 200 white cells counted, 98 are neutrophils.</p>
+        <p><ol marker="a)">
+          <li><p>Construct a 90% confidence interval for the proportion of this individual's circulating white cells that are neutrophils.</p></li>
+          <li><p>Using a reference range of 60% to 70% for this exercise, is there evidence that this individual's proportion is below that range?</p></li>
+        </ol></p>
+      </statement>
+    </example>
+
+    <example xml:id="cip-ex-confidence-width">
+      <title>Changing the Confidence Level</title>
+      <statement>
+        <p>Use the screwworm results, with 415 of 500 matings producing sterile eggs, to compare 90%, 95%, and 99% confidence intervals. Predict which will be widest before calculating.</p>
+      </statement>
+    </example>
+
+    <remark xml:id="cip-width-factors">
+      <title>What Changes the Margin of Error?</title>
+      <p><ol marker="1)">
+        <li><p><em>Confidence level:</em> Holding the data fixed, higher confidence increases the margin of error.</p></li>
+        <li><p><em>Sample size:</em> Holding the confidence level and sample proportion fixed, larger samples decrease the margin of error. Multiplying <m>n</m> by 4 cuts it in half.</p></li>
+        <li><p><em>Sample proportion:</em> Holding the confidence level and sample size fixed, the margin of error is largest when <m>\hat{p}=0.50</m>, because <m>\hat{p}(1-\hat{p})</m> is largest there.</p></li>
+      </ol></p>
+      <p>The actual interval from a new sample can also shift because its sample proportion can change. A narrow interval is useful only when the sampling and measurement methods are appropriate: the stated margin of error does not account for selection bias, nonresponse bias, or systematic measurement errors.</p>
+    </remark>
+  </subsection>
+
+  <subsection xml:id="cip-one-sided">
+    <title>One-Sided Confidence Bounds</title>
+
+    <definition xml:id="cip-def-one-sided">
+      <title>Lower and Upper Confidence Bounds</title>
+      <statement>
+        <p>A <term>lower confidence bound</term> gives a lower limit for the population parameter. An <term>upper confidence bound</term> gives an upper limit.</p>
+        
+        <p><md number="no">
+          <mrow>L=\hat{p}-z^* \cdot SE\qquad\text{(lower bound)},</mrow>
+          <mrow>U=\hat{p}+z^* \cdot SE\qquad\text{(upper bound)}.</mrow>
+        </md></p>
+        <p>Because a proportion lies between 0 and 1, the corresponding one-sided intervals are <m>[L,1]</m> and <m>[0,U]</m> when the calculated bounds are within that range. The same normal-interval conditions must be checked.</p>
+      </statement>
+    </definition>
+
+    <remark xml:id="cip-one-versus-two-tails">
+      <title>Do Not Split the Tail Area for a One-Sided Bound</title>
+      <p>For a two-sided 90% interval, the 10% outside area is divided into two tails, and <m>z^*=\operatorname{qnorm}(0.95)\approx1.645</m>. For a one-sided 90% bound, all of that outside area is in one tail, and <m>z^*=\operatorname{qnorm}(0.90)\approx1.282</m>.</p>
+      <p>Choose whether the question requires a lower bound, upper bound, or two-sided interval before interpreting the result.</p>
+    </remark>
+
+    <example xml:id="cip-ex-one-sided">
+      <title>Lower and Upper Bounds for the Earlier Studies</title>
+      <statement>
+        <p><ol marker="a)">
+          <li><p>Using the screwworm result of 415 successes in 500 matings, calculate a lower 90% confidence bound for the proportion of matings producing sterile eggs.</p></li>
+          <li><p>Using the white cell count of 98 neutrophils among 200 cells, calculate an upper 80% confidence bound for this individual's neutrophil proportion.</p></li>
+        </ol></p>
+      </statement>      
+    </example>
+  </subsection>
+</section>

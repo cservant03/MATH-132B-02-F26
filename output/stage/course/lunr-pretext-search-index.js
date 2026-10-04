@@ -1000,6 +1000,222 @@ var ptx_lunr_docs = [
   "body": " Continuous Does Not Mean Normal  Normal and chi-square distributions are both continuous, so probabilities are areas and individual points have probability zero. Their shapes differ: a normal curve is symmetric and determined by a mean and standard deviation; a chi-square curve is right-skewed and determined by its degrees of freedom.  "
 },
 {
+  "id": "sampling-distribution-of-sample-proportions",
+  "level": "1",
+  "url": "sampling-distribution-of-sample-proportions.html",
+  "type": "Section",
+  "number": "",
+  "title": "Sampling Distribution of <span class=\"process-math\">\\(\\hat{p}\\)<\/span>",
+  "body": " Sampling Distribution of     Distinguish a population proportion from a sample proportion.    Describe a sampling distribution and explain why sample proportions vary.    Calculate and interpret the mean and standard error of a sample proportion.    Check the conditions for using a normal model for sample proportions.    Use a normal model and R to find probabilities involving sample proportions.      A researcher may want to estimate the proportion of seeds that germinate, wetlands with an invasive plant, or patients who respond to a treatment. Usually, the researcher observes a sample rather than the entire population. Different random samples can produce different estimates. How much variation should we expect, and when would a sample result be surprising?  These notes connect the binomial and normal distributions to questions about proportions. All rates, populations, and data in the examples are hypothetical instructional settings.    Population Proportions and Sample Proportions   Population Proportion        Sample Proportion        Notation for Proportions    Symbol  Meaning       Population proportion; a parameter.       Number of individuals in one sample.       Observed number of true values in that sample.       Observed sample proportion, ; a statistic.      Seeds That Germinate   Suppose 40% of seeds from a particular source would germinate under specified conditions. A researcher randomly selects 50 seeds and finds that 18 germinate.     Identify , , and .    Calculate and interpret .    Would a second random sample have to give the same result?        Sampling Variability        Five Samples from the Same Source   Five research teams each randomly select 50 seeds from the same large source. Their results are shown below. Calculate each sample proportion. What changes across samples, and what stays fixed?   Germination Results for Five Samples    Sample  1  2  3  4  5    Seeds that germinate,  18  22  20  17  23    Sample size,  50  50  50  50  50         What Is a Sampling Distribution?   Sampling Distribution of a Sample Proportion        Mean and Standard Error        Connection to the Binomial Distribution  If counts the successes, then . Dividing a random variable by divides both its mean and its standard deviation by :     These formulas hold under the independent binomial model even when the sampling distribution is not approximately normal.    Unbiased Estimator       Interpreting the Spread of Germination Proportions   Assume seed germination outcomes are independent, with . Find and interpret the mean and standard error of for samples of 50 seeds.     What Happens When the Sample Size Increases?   Keep the seed model with . Compare the mean and standard error for samples of 50, 200, and 800 seeds.      When Is a Normal Model Appropriate?  Before using a normal curve to calculate probabilities about , check the sampling method, independence, and expected counts.     Random sampling: The sample should be selected randomly from the population of interest, or the problem should specify an appropriate independent chance model.    Independent observations: One outcome should not determine or strongly influence another. For a simple random sample taken without replacement from a population of size , check the 10% condition :     This makes the dependence from sampling without replacement small enough to use the usual standard error approximately. A small sampling fraction alone does not resolve dependence caused by a clustered sampling design.    Enough expected successes and failures: Check both parts of the success-failure condition :     These are expected counts under the assumed population proportion, not the observed counts in a particular sample.      Normal Approximation for a Sample Proportion  When the conditions are satisfied, the sampling distribution of is approximately normal, with mean and standard deviation . We write     As in our normal distribution notes, the first parameter is the mean and the second parameter is the standard deviation. This large-sample result is often called the central limit theorem for sample proportions.    Checking Expected Counts   Assume random sampling and independence are appropriate in each setting. Determine whether a normal approximation is supported.     Seeds germinate with probability 0.40, and .    Water samples contain a contaminant with probability 0.04, and .    Laboratory cultures grow successfully with probability 0.96, and .    Water samples contain the contaminant with probability 0.04, and .        A Sample That Is a Large Fraction of the Population   A reserve contains 600 marked turtles. A researcher takes a simple random sample of 100 turtles without replacement. Assume 40% of the turtles have a particular shell marking. Can we use the usual normal model under our stated conditions?      R Investigation: Repeated Samples of Seeds  We can approximate the sampling distribution without collecting thousands of actual samples. Suppose seeds germinate independently with probability 0.40. The following activity uses only functions included with R; no additional packages or data files are needed.   Start with One Sample   Run the following code. What does each of the two reported values represent?  set.seed(132) x = rbinom(1, size = 50, prob = 0.40) x x \/ 50     Build a Simulated Sampling Distribution   Before running the code, predict the center and approximate shape of the distribution. Then simulate 1,000 separate samples of 50 seeds and store one sample proportion per sample.  set.seed(132) p = 0.40 n = 50 reps = 1000 p_hat = rbinom(reps, size = n, prob = p) \/ n hist(p_hat, breaks = seq(-0.02, 1.02, by = 0.04), xlim = c(0, 1), main = paste(\"Sample size =\", n), xlab = \"Sample proportion of seeds that germinate\", ylab = \"Number of simulated samples\", col = \"lightblue\", border = \"white\") abline(v = p, lwd = 2, lty = 2) c(simulated_mean = mean(p_hat), theoretical_mean = p, simulated_sd = sd(p_hat), theoretical_se = sqrt(p * (1 - p) \/ n))     What does one value in p_hat represent? What does the height of a histogram bar count?    What is the sample size? How many separate samples were simulated?    Compare the simulated mean and standard deviation with the theoretical values.    Change only n = 50 to n = 200 and rerun the entire block. Predict and then describe the changes.    With n = 200 , change reps = 1000 to reps = 10000 . Does this change the theoretical standard error?    Set p = 0.04 , n = 50 , and reps = 1000 . Describe the histogram. Then compute and and use them to explain the shape of the histogram.         Probabilities Involving Sample Proportions   Standardized Sample Proportion   To measure how far an observed sample proportion is from the assumed population proportion, calculate     The result is the number of standard errors above or below . When the normal approximation is appropriate, areas under the standard normal curve approximate sampling probabilities.     Wetlands with an Invasive Plant   Suppose 30% of the 20,000 wetlands in a region contain a particular invasive plant. A team takes a simple random sample of 200 wetlands without replacement. Let be the proportion of sampled wetlands containing the plant. Use a normal approximation to find each probability.     Fewer than 25% of the sampled wetlands contain the plant.    At least 38% of the sampled wetlands contain the plant.    Between 25% and 35%, inclusive, of the sampled wetlands contain the plant.        Is a Sample Result Surprising?   In the wetland setting above, suppose the plant is found in 74 of the 200 sampled wetlands.     Calculate the sample proportion and its z-score under the assumption .    Approximate the probability of a sample proportion at least this large.    Explain what the result suggests and what it does not establish.        A Cutoff for the Highest 10% of Sample Proportions   For the same wetland model, use the normal approximation to find a cutoff with about 10% of sample proportions above it.     "
+},
+{
+  "id": "sampling-distribution-of-sample-proportions-2",
+  "level": "2",
+  "url": "sampling-distribution-of-sample-proportions.html#sampling-distribution-of-sample-proportions-2",
+  "type": "Objectives",
+  "number": "",
+  "title": "",
+  "body": "   Distinguish a population proportion from a sample proportion.    Describe a sampling distribution and explain why sample proportions vary.    Calculate and interpret the mean and standard error of a sample proportion.    Check the conditions for using a normal model for sample proportions.    Use a normal model and R to find probabilities involving sample proportions.    "
+},
+{
+  "id": "spp-def-population-proportion",
+  "level": "2",
+  "url": "sampling-distribution-of-sample-proportions.html#spp-def-population-proportion",
+  "type": "Definition",
+  "number": "108",
+  "title": "Population Proportion.",
+  "body": " Population Proportion      "
+},
+{
+  "id": "spp-def-sample-proportion",
+  "level": "2",
+  "url": "sampling-distribution-of-sample-proportions.html#spp-def-sample-proportion",
+  "type": "Definition",
+  "number": "109",
+  "title": "Sample Proportion.",
+  "body": " Sample Proportion      "
+},
+{
+  "id": "spp-notation",
+  "level": "2",
+  "url": "sampling-distribution-of-sample-proportions.html#spp-notation",
+  "type": "Table",
+  "number": "110",
+  "title": "Notation for Proportions",
+  "body": " Notation for Proportions    Symbol  Meaning       Population proportion; a parameter.       Number of individuals in one sample.       Observed number of true values in that sample.       Observed sample proportion, ; a statistic.    "
+},
+{
+  "id": "spp-ex-seed-sample",
+  "level": "2",
+  "url": "sampling-distribution-of-sample-proportions.html#spp-ex-seed-sample",
+  "type": "Example",
+  "number": "111",
+  "title": "Seeds That Germinate.",
+  "body": " Seeds That Germinate   Suppose 40% of seeds from a particular source would germinate under specified conditions. A researcher randomly selects 50 seeds and finds that 18 germinate.     Identify , , and .    Calculate and interpret .    Would a second random sample have to give the same result?      "
+},
+{
+  "id": "spp-def-sampling-variability",
+  "level": "2",
+  "url": "sampling-distribution-of-sample-proportions.html#spp-def-sampling-variability",
+  "type": "Definition",
+  "number": "112",
+  "title": "Sampling Variability.",
+  "body": " Sampling Variability      "
+},
+{
+  "id": "spp-ex-five-samples",
+  "level": "2",
+  "url": "sampling-distribution-of-sample-proportions.html#spp-ex-five-samples",
+  "type": "Example",
+  "number": "113",
+  "title": "Five Samples from the Same Source.",
+  "body": " Five Samples from the Same Source   Five research teams each randomly select 50 seeds from the same large source. Their results are shown below. Calculate each sample proportion. What changes across samples, and what stays fixed?   Germination Results for Five Samples    Sample  1  2  3  4  5    Seeds that germinate,  18  22  20  17  23    Sample size,  50  50  50  50  50      "
+},
+{
+  "id": "spp-def-sampling-distribution",
+  "level": "2",
+  "url": "sampling-distribution-of-sample-proportions.html#spp-def-sampling-distribution",
+  "type": "Definition",
+  "number": "115",
+  "title": "Sampling Distribution of a Sample Proportion.",
+  "body": " Sampling Distribution of a Sample Proportion      "
+},
+{
+  "id": "spp-def-mean-standard-error",
+  "level": "2",
+  "url": "sampling-distribution-of-sample-proportions.html#spp-def-mean-standard-error",
+  "type": "Definition",
+  "number": "116",
+  "title": "Mean and Standard Error.",
+  "body": " Mean and Standard Error      "
+},
+{
+  "id": "spp-binomial-connection",
+  "level": "2",
+  "url": "sampling-distribution-of-sample-proportions.html#spp-binomial-connection",
+  "type": "Remark",
+  "number": "117",
+  "title": "Connection to the Binomial Distribution.",
+  "body": " Connection to the Binomial Distribution  If counts the successes, then . Dividing a random variable by divides both its mean and its standard deviation by :     These formulas hold under the independent binomial model even when the sampling distribution is not approximately normal.  "
+},
+{
+  "id": "spp-def-unbiased",
+  "level": "2",
+  "url": "sampling-distribution-of-sample-proportions.html#spp-def-unbiased",
+  "type": "Definition",
+  "number": "118",
+  "title": "Unbiased Estimator.",
+  "body": " Unbiased Estimator     "
+},
+{
+  "id": "spp-ex-mean-se",
+  "level": "2",
+  "url": "sampling-distribution-of-sample-proportions.html#spp-ex-mean-se",
+  "type": "Example",
+  "number": "119",
+  "title": "Interpreting the Spread of Germination Proportions.",
+  "body": " Interpreting the Spread of Germination Proportions   Assume seed germination outcomes are independent, with . Find and interpret the mean and standard error of for samples of 50 seeds.   "
+},
+{
+  "id": "spp-ex-sample-size",
+  "level": "2",
+  "url": "sampling-distribution-of-sample-proportions.html#spp-ex-sample-size",
+  "type": "Example",
+  "number": "120",
+  "title": "What Happens When the Sample Size Increases?",
+  "body": " What Happens When the Sample Size Increases?   Keep the seed model with . Compare the mean and standard error for samples of 50, 200, and 800 seeds.   "
+},
+{
+  "id": "spp-normal-model-3",
+  "level": "2",
+  "url": "sampling-distribution-of-sample-proportions.html#spp-normal-model-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "10% condition success-failure condition "
+},
+{
+  "id": "spp-normal-approximation",
+  "level": "2",
+  "url": "sampling-distribution-of-sample-proportions.html#spp-normal-approximation",
+  "type": "Theorem",
+  "number": "121",
+  "title": "Normal Approximation for a Sample Proportion.",
+  "body": " Normal Approximation for a Sample Proportion  When the conditions are satisfied, the sampling distribution of is approximately normal, with mean and standard deviation . We write     As in our normal distribution notes, the first parameter is the mean and the second parameter is the standard deviation. This large-sample result is often called the central limit theorem for sample proportions.  "
+},
+{
+  "id": "spp-ex-normality-checks",
+  "level": "2",
+  "url": "sampling-distribution-of-sample-proportions.html#spp-ex-normality-checks",
+  "type": "Example",
+  "number": "122",
+  "title": "Checking Expected Counts.",
+  "body": " Checking Expected Counts   Assume random sampling and independence are appropriate in each setting. Determine whether a normal approximation is supported.     Seeds germinate with probability 0.40, and .    Water samples contain a contaminant with probability 0.04, and .    Laboratory cultures grow successfully with probability 0.96, and .    Water samples contain the contaminant with probability 0.04, and .      "
+},
+{
+  "id": "spp-ex-ten-percent",
+  "level": "2",
+  "url": "sampling-distribution-of-sample-proportions.html#spp-ex-ten-percent",
+  "type": "Example",
+  "number": "123",
+  "title": "A Sample That Is a Large Fraction of the Population.",
+  "body": " A Sample That Is a Large Fraction of the Population   A reserve contains 600 marked turtles. A researcher takes a simple random sample of 100 turtles without replacement. Assume 40% of the turtles have a particular shell marking. Can we use the usual normal model under our stated conditions?   "
+},
+{
+  "id": "spp-ex-r-one-sample",
+  "level": "2",
+  "url": "sampling-distribution-of-sample-proportions.html#spp-ex-r-one-sample",
+  "type": "Example",
+  "number": "124",
+  "title": "Start with One Sample.",
+  "body": " Start with One Sample   Run the following code. What does each of the two reported values represent?  set.seed(132) x = rbinom(1, size = 50, prob = 0.40) x x \/ 50   "
+},
+{
+  "id": "spp-ex-r-many-samples",
+  "level": "2",
+  "url": "sampling-distribution-of-sample-proportions.html#spp-ex-r-many-samples",
+  "type": "Example",
+  "number": "125",
+  "title": "Build a Simulated Sampling Distribution.",
+  "body": " Build a Simulated Sampling Distribution   Before running the code, predict the center and approximate shape of the distribution. Then simulate 1,000 separate samples of 50 seeds and store one sample proportion per sample.  set.seed(132) p = 0.40 n = 50 reps = 1000 p_hat = rbinom(reps, size = n, prob = p) \/ n hist(p_hat, breaks = seq(-0.02, 1.02, by = 0.04), xlim = c(0, 1), main = paste(\"Sample size =\", n), xlab = \"Sample proportion of seeds that germinate\", ylab = \"Number of simulated samples\", col = \"lightblue\", border = \"white\") abline(v = p, lwd = 2, lty = 2) c(simulated_mean = mean(p_hat), theoretical_mean = p, simulated_sd = sd(p_hat), theoretical_se = sqrt(p * (1 - p) \/ n))     What does one value in p_hat represent? What does the height of a histogram bar count?    What is the sample size? How many separate samples were simulated?    Compare the simulated mean and standard deviation with the theoretical values.    Change only n = 50 to n = 200 and rerun the entire block. Predict and then describe the changes.    With n = 200 , change reps = 1000 to reps = 10000 . Does this change the theoretical standard error?    Set p = 0.04 , n = 50 , and reps = 1000 . Describe the histogram. Then compute and and use them to explain the shape of the histogram.      "
+},
+{
+  "id": "spp-def-z-score",
+  "level": "2",
+  "url": "sampling-distribution-of-sample-proportions.html#spp-def-z-score",
+  "type": "Definition",
+  "number": "126",
+  "title": "Standardized Sample Proportion.",
+  "body": " Standardized Sample Proportion   To measure how far an observed sample proportion is from the assumed population proportion, calculate     The result is the number of standard errors above or below . When the normal approximation is appropriate, areas under the standard normal curve approximate sampling probabilities.   "
+},
+{
+  "id": "spp-ex-wetlands-probabilities",
+  "level": "2",
+  "url": "sampling-distribution-of-sample-proportions.html#spp-ex-wetlands-probabilities",
+  "type": "Example",
+  "number": "127",
+  "title": "Wetlands with an Invasive Plant.",
+  "body": " Wetlands with an Invasive Plant   Suppose 30% of the 20,000 wetlands in a region contain a particular invasive plant. A team takes a simple random sample of 200 wetlands without replacement. Let be the proportion of sampled wetlands containing the plant. Use a normal approximation to find each probability.     Fewer than 25% of the sampled wetlands contain the plant.    At least 38% of the sampled wetlands contain the plant.    Between 25% and 35%, inclusive, of the sampled wetlands contain the plant.      "
+},
+{
+  "id": "spp-ex-unusual-result",
+  "level": "2",
+  "url": "sampling-distribution-of-sample-proportions.html#spp-ex-unusual-result",
+  "type": "Example",
+  "number": "128",
+  "title": "Is a Sample Result Surprising?",
+  "body": " Is a Sample Result Surprising?   In the wetland setting above, suppose the plant is found in 74 of the 200 sampled wetlands.     Calculate the sample proportion and its z-score under the assumption .    Approximate the probability of a sample proportion at least this large.    Explain what the result suggests and what it does not establish.      "
+},
+{
+  "id": "spp-ex-percentile",
+  "level": "2",
+  "url": "sampling-distribution-of-sample-proportions.html#spp-ex-percentile",
+  "type": "Example",
+  "number": "129",
+  "title": "A Cutoff for the Highest 10% of Sample Proportions.",
+  "body": " A Cutoff for the Highest 10% of Sample Proportions   For the same wetland model, use the normal approximation to find a cutoff with about 10% of sample proportions above it.   "
+},
+{
   "id": "subsec-cat-project-rubric",
   "level": "1",
   "url": "subsec-cat-project-rubric.html",
