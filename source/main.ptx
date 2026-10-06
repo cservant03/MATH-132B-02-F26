@@ -16,6 +16,7 @@
       <title>Course Documents</title>
 
       <xi:include href="./syllabus/syllabus.ptx" />
+      <xi:include href="./syllabus/tutor-verification-third-attempt.ptx"/>
     </chapter>
 
     <chapter xml:id="notes">
