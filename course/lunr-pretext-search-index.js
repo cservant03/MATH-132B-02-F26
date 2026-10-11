@@ -1477,6 +1477,213 @@ var ptx_lunr_docs = [
   "body": " Lower and Upper Bounds for the Earlier Studies    Using the screwworm result of 415 successes in 500 matings, calculate a lower 90% confidence bound for the proportion of matings producing sterile eggs.  Using the white cell count of 98 neutrophils among 200 cells, calculate an upper 80% confidence bound for this individual's neutrophil proportion.    "
 },
 {
+  "id": "hypothesis-tests-for-a-population-proportion",
+  "level": "1",
+  "url": "hypothesis-tests-for-a-population-proportion.html",
+  "type": "Section",
+  "number": "",
+  "title": "Inference for One Proportion Part 2",
+  "body": " Inference for One Proportion Part 2    Write null and alternative hypotheses about a population proportion and explain a p-value.  Perform a one-proportion z-test using critical values, p-values, and R, and recognize when an exact binomial test is needed.  Connect a hypothesis test with its matching confidence interval or bound.  Describe Type I and Type II errors in context and distinguish statistical significance from practical importance.     Introducing Hypothesis Testing  A confidence interval asks, Which values of the population proportion are plausible? A hypothesis test begins with a particular claim and asks, Do the sample data provide convincing evidence against this claim? Both questions depend on the sampling variability of .  Suppose opponents of a proposed dam claim that more than half of the residents oppose construction. A survey finds that 270 of 500 residents, or 54%, are opposed. The sample proportion is above 50%. But samples vary: could a result this high reasonably occur if the population were evenly divided? A hypothesis test gives us a way to assess that evidence.   Hypothesis Test        Null and Alternative Hypotheses        Research question Alternative Test  Is the proportion lower than ? Left-tailed  Is the proportion higher than ? Right-tailed  Is the proportion different from ? Two-tailed    Writing Hypotheses from a Research Question   Define the population proportion and write hypotheses for each question.   Does the death proportion among patients receiving a treatment fall below a historical benchmark of 0.70?  Does a majority of residents living along the New River oppose a proposed dam?  Among deaths in a specified group of workers, is the proportion attributed to cancer different from 0.20?       P-values and Decisions  For the dam survey, imagine repeatedly sampling 500 residents from a population in which exactly half oppose the dam. Some samples would have more than half opposed, and some would have fewer. We measure evidence by asking how often this null model would produce a result at least as far in the direction of the alternative as the observed result.   P-Value        Significance Level        Comparison Decision about Decision about  Reject . Support .  Fail to reject . Fail to support .   A result meeting the rejection rule is statistically significant at the chosen level. Failing to reject does not establish that is true. The sample may simply be too small to detect a departure from it.   What Would a P-Value of 0.037 Tell Us?   Suppose a right-tailed test of for the dam survey gives a p-value of approximately 0.037. Explain its meaning and give the decisions at and .     Hypothesis Test   Identify the claim and hypotheses. Define , write and , and identify the direction of the test.  Choose the significance level and draw a picture. Mark the appropriate rejection tail or tails. Check the sampling, independence, and count conditions.  Calculate the test statistic. Measure how far the sample result is from the null value in null standard errors.  Make a decision. Compare the test statistic with the critical value or compare the p-value with . Both methods give the same decision when they use the same test.  Write a conclusion in context. State whether there is sufficient evidence for the claim, identifying the population and characteristic.      The One-Proportion Z-Test   Requirements   The response has two categories, and success is clearly defined.  The observations come from an appropriate random sample or independent binomial model with a common success probability.  Observations are independent or approximately independent. For simple random sampling without replacement, use the guideline .  The null model has at least 10 expected successes and 10 expected failures:   These are expected counts calculated from , not the observed counts and used for the Wald confidence interval.    One-Proportion Z-Test  The observed sample proportion and null standard error are   The test statistic is     Alternative P-value R command  pnorm(z, 0, 1)  pnorm(z, 0, 1, lower.tail = FALSE)  2 * pnorm(abs(z), 0, 1, lower.tail = FALSE)    Rejection Region        Test Critical value in R Reject when  Left-tailed qnorm(alpha, 0, 1)  Right-tailed qnorm(alpha, 0, 1, lower.tail = F)  Two-tailed qnorm(alpha \/ 2, 0, 1, lower.tail = F) or   For example, at , the left-tail cutoff is approximately , the right-tail cutoff is approximately 1.645, and the two-tail cutoffs are approximately . Draw the curve centered at zero and shade the tail or tails beyond the appropriate cutoff.    Hypothesis Tests in Context   A Historical Treatment Study: Left-Tailed Test   Until recently the death rate from a highly fatal viral infection of the brain, herpes simplex virus encephalitis, has been 70%. A study is run to test the new drug vidarabine for use in treating this disease. Of 50 subjects tested, 14 died. Is this sufficient evidence to support that vidarabine is effective with a 0.01 significance level?     Opposition to a Dam: Right-Tailed Test   Opponents of the construction of a dam on the New River claim that a majority of residents living along the river are also opposed to its constructions. A survey is conducted to gain support for this point of view. Of 500 people surveyed, 270 opposed the construction. Is this sufficient evidence to claim that a majority of residents are opposed using     Proportional Mortality: Two-Tailed Test   The safety of those who work at or live close to nuclear power plants has been the subject of widely publicized debate in recent years. One possible health hazard due to radiation exposure is an excess of cancer deaths among those exposed. One problem with studying this question is that the number of deaths attributable to either cancer in general or specific types of cancer is small, and reaching statistically significant conclusions is difficult, except after long periods of follow-up. An alternative approach is to perform a proportional-mortality study, whereby the proportion of deaths attributed to a specific cause in an exposed group is compared with the corresponding proportion in a large population. Suppose, for example, that 56 deaths have occurred among 55 to 64 year old male workers in a nuclear power plant and that in 13 of them the cause of death was cancer. Assume, based on vital-statistics reports, that approximately 20\\% of all deaths can be attributed to some form of cancer. Is this result significant? Use a significance level of 0.05.     A Rare Parasite: Check the Data and the Method   A research team conducted a study on 5,200 migratory birds to investigate the prevalence of a newly discovered avian parasite. The researchers found that 0.09%of the sampled birds were infected with the parasite. Test the claim that the true proportion of migratory birds infected with this parasite is greater than 0.0005 at the significance level.      R Practice   Use of Counseling Services   Mental health concerns among college students have become a growing public health issue. Universities often provide counseling services to support students coping with stress, anxiety, or depression. Researchers are interested in understanding how frequently students actually make use of these counseling services and whether that rate is increasing compared to what has been seen in past reports. They are in particular interested in the proportion of students who reported an Anxiety_Score of 4 or higher that used counseling services.  Suppose earlier data suggested that approximately 38\\% of students seek counseling services at some point during their studies.      The Relationship Between Confidence Intervals and Hypothesis Tests  A confidence interval and a hypothesis test both describe compatibility between sample data and a population model. When an interval is obtained by inverting a particular test, values rejected by that test lie outside the corresponding interval.   Revisit the Three Normal Tests   Calculate the confidence intervals in the treatment, dam, and cancer examples. Check whether each supports the corresponding test decision.      Type I and Type II Errors  A hypothesis test makes a decision from a sample. Because the sample does not reveal the population parameter exactly, the decision can be mistaken.   Type I Error        Type II Error        Decisions and the True Population Situation   Decision is true is true  Reject . Type I error Correct decision  Fail to reject . Correct decision Type II error     What Error Could We Have Made?   Describe the possible error after the decision in the dam example and after the decision in the cancer example. Can we tell from the decision alone whether an error actually occurred?     "
+},
+{
+  "id": "hypothesis-tests-for-a-population-proportion-2",
+  "level": "2",
+  "url": "hypothesis-tests-for-a-population-proportion.html#hypothesis-tests-for-a-population-proportion-2",
+  "type": "Objectives",
+  "number": "",
+  "title": "",
+  "body": "  Write null and alternative hypotheses about a population proportion and explain a p-value.  Perform a one-proportion z-test using critical values, p-values, and R, and recognize when an exact binomial test is needed.  Connect a hypothesis test with its matching confidence interval or bound.  Describe Type I and Type II errors in context and distinguish statistical significance from practical importance.   "
+},
+{
+  "id": "cip-def-hypothesis-test",
+  "level": "2",
+  "url": "hypothesis-tests-for-a-population-proportion.html#cip-def-hypothesis-test",
+  "type": "Definition",
+  "number": "156",
+  "title": "Hypothesis Test.",
+  "body": " Hypothesis Test      "
+},
+{
+  "id": "cip-def-null-alternative",
+  "level": "2",
+  "url": "hypothesis-tests-for-a-population-proportion.html#cip-def-null-alternative",
+  "type": "Definition",
+  "number": "157",
+  "title": "Null and Alternative Hypotheses.",
+  "body": " Null and Alternative Hypotheses      "
+},
+{
+  "id": "cip-ex-writing-hypotheses",
+  "level": "2",
+  "url": "hypothesis-tests-for-a-population-proportion.html#cip-ex-writing-hypotheses",
+  "type": "Example",
+  "number": "158",
+  "title": "Writing Hypotheses from a Research Question.",
+  "body": " Writing Hypotheses from a Research Question   Define the population proportion and write hypotheses for each question.   Does the death proportion among patients receiving a treatment fall below a historical benchmark of 0.70?  Does a majority of residents living along the New River oppose a proposed dam?  Among deaths in a specified group of workers, is the proportion attributed to cancer different from 0.20?    "
+},
+{
+  "id": "cip-def-p-value",
+  "level": "2",
+  "url": "hypothesis-tests-for-a-population-proportion.html#cip-def-p-value",
+  "type": "Definition",
+  "number": "159",
+  "title": "P-Value.",
+  "body": " P-Value      "
+},
+{
+  "id": "cip-def-significance-level",
+  "level": "2",
+  "url": "hypothesis-tests-for-a-population-proportion.html#cip-def-significance-level",
+  "type": "Definition",
+  "number": "160",
+  "title": "Significance Level.",
+  "body": " Significance Level      "
+},
+{
+  "id": "cip-p-values-and-decisions-6",
+  "level": "2",
+  "url": "hypothesis-tests-for-a-population-proportion.html#cip-p-values-and-decisions-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "statistically significant "
+},
+{
+  "id": "cip-ex-interpret-pvalue",
+  "level": "2",
+  "url": "hypothesis-tests-for-a-population-proportion.html#cip-ex-interpret-pvalue",
+  "type": "Example",
+  "number": "161",
+  "title": "What Would a P-Value of 0.037 Tell Us?",
+  "body": " What Would a P-Value of 0.037 Tell Us?   Suppose a right-tailed test of for the dam survey gives a p-value of approximately 0.037. Explain its meaning and give the decisions at and .   "
+},
+{
+  "id": "cip-hypothesis-process",
+  "level": "2",
+  "url": "hypothesis-tests-for-a-population-proportion.html#cip-hypothesis-process",
+  "type": "Process",
+  "number": "162",
+  "title": "Hypothesis Test.",
+  "body": " Hypothesis Test   Identify the claim and hypotheses. Define , write and , and identify the direction of the test.  Choose the significance level and draw a picture. Mark the appropriate rejection tail or tails. Check the sampling, independence, and count conditions.  Calculate the test statistic. Measure how far the sample result is from the null value in null standard errors.  Make a decision. Compare the test statistic with the critical value or compare the p-value with . Both methods give the same decision when they use the same test.  Write a conclusion in context. State whether there is sufficient evidence for the claim, identifying the population and characteristic.   "
+},
+{
+  "id": "cip-test-conditions",
+  "level": "2",
+  "url": "hypothesis-tests-for-a-population-proportion.html#cip-test-conditions",
+  "type": "Definition",
+  "number": "163",
+  "title": "Requirements.",
+  "body": " Requirements   The response has two categories, and success is clearly defined.  The observations come from an appropriate random sample or independent binomial model with a common success probability.  Observations are independent or approximately independent. For simple random sampling without replacement, use the guideline .  The null model has at least 10 expected successes and 10 expected failures:   These are expected counts calculated from , not the observed counts and used for the Wald confidence interval.  "
+},
+{
+  "id": "cip-test-formula",
+  "level": "2",
+  "url": "hypothesis-tests-for-a-population-proportion.html#cip-test-formula",
+  "type": "Formula",
+  "number": "164",
+  "title": "One-Proportion Z-Test.",
+  "body": " One-Proportion Z-Test  The observed sample proportion and null standard error are   The test statistic is   "
+},
+{
+  "id": "cip-def-rejection-region",
+  "level": "2",
+  "url": "hypothesis-tests-for-a-population-proportion.html#cip-def-rejection-region",
+  "type": "Definition",
+  "number": "165",
+  "title": "Rejection Region.",
+  "body": " Rejection Region      "
+},
+{
+  "id": "cip-ex-vidarabine-test",
+  "level": "2",
+  "url": "hypothesis-tests-for-a-population-proportion.html#cip-ex-vidarabine-test",
+  "type": "Example",
+  "number": "166",
+  "title": "A Historical Treatment Study: Left-Tailed Test.",
+  "body": " A Historical Treatment Study: Left-Tailed Test   Until recently the death rate from a highly fatal viral infection of the brain, herpes simplex virus encephalitis, has been 70%. A study is run to test the new drug vidarabine for use in treating this disease. Of 50 subjects tested, 14 died. Is this sufficient evidence to support that vidarabine is effective with a 0.01 significance level?   "
+},
+{
+  "id": "cip-ex-dam-test",
+  "level": "2",
+  "url": "hypothesis-tests-for-a-population-proportion.html#cip-ex-dam-test",
+  "type": "Example",
+  "number": "167",
+  "title": "Opposition to a Dam: Right-Tailed Test.",
+  "body": " Opposition to a Dam: Right-Tailed Test   Opponents of the construction of a dam on the New River claim that a majority of residents living along the river are also opposed to its constructions. A survey is conducted to gain support for this point of view. Of 500 people surveyed, 270 opposed the construction. Is this sufficient evidence to claim that a majority of residents are opposed using   "
+},
+{
+  "id": "cip-ex-cancer-test",
+  "level": "2",
+  "url": "hypothesis-tests-for-a-population-proportion.html#cip-ex-cancer-test",
+  "type": "Example",
+  "number": "168",
+  "title": "Proportional Mortality: Two-Tailed Test.",
+  "body": " Proportional Mortality: Two-Tailed Test   The safety of those who work at or live close to nuclear power plants has been the subject of widely publicized debate in recent years. One possible health hazard due to radiation exposure is an excess of cancer deaths among those exposed. One problem with studying this question is that the number of deaths attributable to either cancer in general or specific types of cancer is small, and reaching statistically significant conclusions is difficult, except after long periods of follow-up. An alternative approach is to perform a proportional-mortality study, whereby the proportion of deaths attributed to a specific cause in an exposed group is compared with the corresponding proportion in a large population. Suppose, for example, that 56 deaths have occurred among 55 to 64 year old male workers in a nuclear power plant and that in 13 of them the cause of death was cancer. Assume, based on vital-statistics reports, that approximately 20\\% of all deaths can be attributed to some form of cancer. Is this result significant? Use a significance level of 0.05.   "
+},
+{
+  "id": "cip-ex-birds-test",
+  "level": "2",
+  "url": "hypothesis-tests-for-a-population-proportion.html#cip-ex-birds-test",
+  "type": "Example",
+  "number": "169",
+  "title": "A Rare Parasite: Check the Data and the Method.",
+  "body": " A Rare Parasite: Check the Data and the Method   A research team conducted a study on 5,200 migratory birds to investigate the prevalence of a newly discovered avian parasite. The researchers found that 0.09%of the sampled birds were infected with the parasite. Test the claim that the true proportion of migratory birds infected with this parasite is greater than 0.0005 at the significance level.   "
+},
+{
+  "id": "cip-ex-counseling",
+  "level": "2",
+  "url": "hypothesis-tests-for-a-population-proportion.html#cip-ex-counseling",
+  "type": "Example",
+  "number": "170",
+  "title": "Use of Counseling Services.",
+  "body": " Use of Counseling Services   Mental health concerns among college students have become a growing public health issue. Universities often provide counseling services to support students coping with stress, anxiety, or depression. Researchers are interested in understanding how frequently students actually make use of these counseling services and whether that rate is increasing compared to what has been seen in past reports. They are in particular interested in the proportion of students who reported an Anxiety_Score of 4 or higher that used counseling services.  Suppose earlier data suggested that approximately 38\\% of students seek counseling services at some point during their studies.   "
+},
+{
+  "id": "cip-ex-test-intervals",
+  "level": "2",
+  "url": "hypothesis-tests-for-a-population-proportion.html#cip-ex-test-intervals",
+  "type": "Example",
+  "number": "171",
+  "title": "Revisit the Three Normal Tests.",
+  "body": " Revisit the Three Normal Tests   Calculate the confidence intervals in the treatment, dam, and cancer examples. Check whether each supports the corresponding test decision.   "
+},
+{
+  "id": "cip-def-type-one",
+  "level": "2",
+  "url": "hypothesis-tests-for-a-population-proportion.html#cip-def-type-one",
+  "type": "Definition",
+  "number": "172",
+  "title": "Type I Error.",
+  "body": " Type I Error      "
+},
+{
+  "id": "cip-def-type-two",
+  "level": "2",
+  "url": "hypothesis-tests-for-a-population-proportion.html#cip-def-type-two",
+  "type": "Definition",
+  "number": "173",
+  "title": "Type II Error.",
+  "body": " Type II Error      "
+},
+{
+  "id": "cip-error-table",
+  "level": "2",
+  "url": "hypothesis-tests-for-a-population-proportion.html#cip-error-table",
+  "type": "Table",
+  "number": "174",
+  "title": "Decisions and the True Population Situation",
+  "body": " Decisions and the True Population Situation   Decision is true is true  Reject . Type I error Correct decision  Fail to reject . Correct decision Type II error   "
+},
+{
+  "id": "cip-ex-errors-in-context",
+  "level": "2",
+  "url": "hypothesis-tests-for-a-population-proportion.html#cip-ex-errors-in-context",
+  "type": "Example",
+  "number": "175",
+  "title": "What Error Could We Have Made?",
+  "body": " What Error Could We Have Made?   Describe the possible error after the decision in the dam example and after the decision in the cancer example. Can we tell from the decision alone whether an error actually occurred?   "
+},
+{
   "id": "subsec-cat-project-rubric",
   "level": "1",
   "url": "subsec-cat-project-rubric.html",
