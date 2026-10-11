@@ -36,4 +36,5 @@
   <!-- <cross-references text="type-global" /> -->
 
   <rename element="identity">Formula</rename>
+  <rename element="fact">Process</rename>
 </docinfo>

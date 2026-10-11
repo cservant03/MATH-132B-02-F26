@@ -19,21 +19,27 @@
       <xi:include href="./syllabus/tutor-verification-third-attempt.ptx"/>
     </chapter>
 
-    <chapter xml:id="notes">
-      <title>Notes</title>
+    <chapter>
+      <title>Probability</title>
 
       <xi:include href="./notes/intro-to-prob.ptx"/>
       <xi:include href="./notes/marg-joint-cond-prob.ptx"/>
       <xi:include href="./notes/addition-complement-rules.ptx"/>
+    </chapter>
+
+    <chapter>
+      <title>Categorical Data</title>
+
       <xi:include href="./notes/describing-categorical-data.ptx"/>
       <xi:include href="./notes/binomial.ptx"/>
       <xi:include href="./notes/normal-and-chi-square-distributions.ptx"/>
       <xi:include href="./notes/sampling-distribution-for-p-hat.ptx"/>
       <xi:include href="./notes/inference-for-one-proportion-part-one.ptx"/>
+      <xi:include href="./notes/inference-for-one-proportion-part-two.ptx"/>
     </chapter>
 
-    <chapter xml:id="lab-reports">
-      <title>Lab Reports</title>
+    <chapter>
+      <title>Inference on Categorical Data</title>
 
       <xi:include href="./projects/07-project-rubric.ptx"/>   
       <xi:include href="./projects/01-data-set-selection.ptx"/>
