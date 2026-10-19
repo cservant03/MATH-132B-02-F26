@@ -537,3 +537,74 @@ a.mathjax-link {
 #cip-ex-one-sided ol > li {
   padding-bottom: 1.5in;
 }
+
+/* ---------- Inference for One Proportion Part 2 ---------- */
+
+#cip-def-hypothesis-test {
+  padding-bottom: 0.7in;
+}
+
+#cip-def-null-alternative {
+  padding-bottom: 1.5in;
+}
+
+#cip-ex-writing-hypotheses ol > li {
+  padding-bottom: 0.7in;
+}
+
+#cip-def-p-value {
+  padding-bottom: 0.7in;
+}
+
+#cip-def-significance-level {
+  padding-bottom: 0.7in;
+}
+
+#cip-ex-interpret-pvalue {
+  padding-bottom: 1in;
+}
+
+#cip-def-rejection-region {
+  padding-bottom: 1in;
+}
+
+#cip-ex-vidarabine-test {
+  padding-bottom: 2.3in;
+}
+
+#cip-ex-dam-test {
+  padding-bottom: 2.3in;
+}
+
+#cip-ex-cancer-test {
+  padding-bottom: 2in;
+}
+
+#cip-ex-birds-test {
+  padding-bottom: 1in;
+}
+
+#cip-ex-test-intervals {
+  padding-bottom: 5.5in;
+}
+
+#cip-def-type-one {
+  padding-bottom: 0.7in;
+}
+
+#cip-def-type-two {
+  padding-bottom: 0.7in;
+}
+
+#cip-ex-errors-in-context {
+  padding-bottom: 1.5in;
+}
+
+#cip-ex-counseling {
+  padding-bottom: 5.5in;
+}
+
+#cip-test-errors {
+  break-before: page;
+  page-break-before: always;
+}

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="inf-two-prop-notes">
+  <title>Inference for Two Proportions</title>
+
+  <objectives>
+    <ol marker="1)">
+        <li>
+            <p>Identify situations appropriate for a two-proportion <m>z</m>-test and verify the conditions required for its use.</p>
+        </li>
+        <li>
+            <p>Perform a hypothesis test comparing two population proportions.</p>
+        </li>
+    </ol>
+  </objectives>
+
+  <identity xml:id="form-two-prop-z-test">
+    <title>Testing Two Proportions, <m>p_1</m> and <m>p_2</m></title>
+        
+    <statement>
+        <p>
+            <em>Requirements</em>
+            <ol marker="1)">
+                <li><p>The response has two categories.</p></li>
+                <li><p>The observations come from an appropriate random sample.</p></li>
+                <li><p>Observations are independent or approximately independent. For simple random sampling without replacement, use the guideline <m>n\leq0.10N</m>.</p></li>
+                <li><p>Each sample has at least 10 success and 10 failures.</p></li>
+            </ol>
+        </p>
+        <p>
+            <em>Test Statistic</em>
+            <p>
+                <md>z=\dfrac{(\hat{p}_1 - \hat{p}_2) - (p_1 - p_2)}{\sqrt{\bar{p} (1 - \bar{p}) \left( \dfrac{1}{n_1} + \dfrac{1}{n_2} \right)}} \qquad where \qquad \bar{p} = \dfrac{x_1 + x_2}{n_1 + n_2}</md>
+            </p>
+        </p>
+        <p>
+            <em>R Functions</em>
+            <ul>
+                <li>
+                    <p>For p-values use <c>pnorm</c></p>
+                </li>
+                <li>
+                    <p>For critical values use <c>qnorm</c></p>
+                </li>
+            </ul>         
+        </p>
+    </statement>
+  </identity>
+
+  <example xml:id="ex-seatbelts">
+    <title>Proportion of Seatbelt Wearers</title>
+    
+    <p>
+        A study of 200 randomly selected occupants in passenger cars and 250 randomly selected occupants in pickup trucks shows that 91.0% of occupants in passenger cars and 83.2% of occupants in pickup trucks wear seat belts. At <m>\alpha = 0.10</m> can you reject the claim that the proportion of occupants who wear seat belts is the same for passenger cars and pickup trucks?
+    </p>
+  </example>
+
+  <example xml:id="ex-cholesterol">
+    <title>Death Rate due to Heart Disease</title>
+    
+    <p>
+        A medical research team conducted a study to test the effect of a cholesterol-reducing medication. At the end of the study, the researchers found that of the 4700 randomly selected subjects who took the medication, 301 died of heart disease. Of the 4300 randomly selected subjects who took a placebo, 357 died of heart disease. At <m>\alpha = 0.01</m>, can you support the claim that the death rate due to heart disease is lower for those who took the medication than for those who took the placebo?
+    </p>
+  </example>
+
+  <example xml:id="ex-chocolate">
+    <title>Old Wives' Tale</title>
+    
+    <p>
+        There is an old wives' tale that women who eat chocolate during pregnancy are more likely to have happy babies. A pregnancy magazine wants to test the is claim, and they gather 100 pregnant women for their study. Half of the group agrees to eat chocolate at least once a day, while the other group agrees to forego chocolate for the duration of their pregnancy. A year later, the ladies complete a survey regarding the overall happiness and contentedness of their babies. The results are given in the table below. At <m>\alpha = 0.01</m> test the old wives' tale.
+    </p>
+
+    <tabular row-headers="yes" halign="center" valign="middle" top="medium" bottom="medium" left="medium" right="medium">
+        <col right="medium"/>
+        <col right="medium"/>
+        <col/>
+
+        <row header="yes" bottom="medium">
+            <cell/>
+            <cell>Happy Babies</cell>
+            <cell>Unhappy Babies</cell>
+        </row>
+        <row bottom="medium">
+            <cell>With Chocolate</cell>
+            <cell>24</cell>
+            <cell>26</cell>
+        </row>
+        <row>
+            <cell>Without Chocolate</cell>
+            <cell>22</cell>
+            <cell>28</cell>
+        </row>
+        </tabular>
+  </example>
+
+  <example xml:id="ex-seed-germ">
+    <title>Seed Germination</title>
+
+    <statement>
+        <p>
+        A botanist claims that the proportion of bean seeds that germinate in a new soil mixture is at least as high asthe proportion that germinate in a standard soil mixture. The botanist randomly assigns 300 bean seeds to two groups of 150 seeds each. Each seed is grown in a separate container under otherwise identical conditions. In the new soil mixture, 108 seeds germinate. In the standard soil mixture, 126 seeds germinate. At <m>\alpha = 0.05</m>, is there sufficient evidence to reject the botanist's claim?
+        </p>
+    </statement>
+  </example>
+
+  <example xml:id="two-prop-large-sample">
+    <title>Large Sample Example</title>
+    
+    <p>
+        In earlier work, we examined whether the overall proportion of students who sought counseling services was greater than 38%. Today, we extend that analysis to compare two distinct groups of students: those who report a family history of mental health issues and those who do not. It is often suggested that students who have seen the impact of mental health challenges in their families may be more aware of available support resources and, consequently, more likely to seek counseling themselves.
+    </p>
+    <p>
+        Test the claim that the proportion of students with a family history of mental health issues who have used counseling services is greater than the proportion without such a history, using a 0.05 significance level.
+    </p>
+  </example>
+</section>

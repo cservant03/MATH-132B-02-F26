@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="inf-more-than-two-prop">
+  <title>Inference for More than Two Proportions</title>
+
+  <objectives>
+    <ol marker="1)">
+        <li>
+            <p>Perform a hypothesis test of homogenity.</p>
+        </li>
+        <li>
+            <p>Perform a hypothesis test of independence.</p>
+        </li>
+        <li>
+            <p>Perform a hypothesis test of multinomial distribution.</p>
+        </li>
+    </ol>
+  </objectives>
+
+  <subsection xml:id="homegenity">
+    <title>Homogenity</title>
+    
+    <identity xml:id="form-test-homogenity">
+        <title>Testing Homogenity</title>
+            
+        <statement>
+            <p>
+                <em>Requirements</em>
+                <ol marker="1)">
+                    <li><p>All of the samples must be simple random samples.</p></li>
+                    <li><p>All of the samples are independent of each other.</p></li>
+                    <li><p>All expected values must be at least five.</p></li>
+                </ol>
+            </p>
+            <p>
+                <em>Hypotheses</em>
+
+                <p><m>H_0:</m> The probability distribution is the same for all samples.</p>
+                <p><m>H_a:</m> At least one sample is different.</p>
+            </p>
+            <p><em>Contingency Table</em></p>
+
+            <p>Given Information (Observed Values)</p>
+
+            <tabular row-headers="yes" halign="center" valign="middle"
+                    top="medium" bottom="medium" left="medium" right="medium">
+            <col right="medium"/>
+            <col right="medium"/>
+            <col right="medium"/>
+            <col right="medium"/>
+            <col/>
+
+            <row header="yes" bottom="medium">
+                <cell/>
+                <cell>Sample 1</cell>
+                <cell>Sample 2</cell>
+                <cell>Sample 3</cell>
+                <cell/>
+            </row>
+            <row bottom="medium">
+                <cell>Category 1</cell>
+                <cell><m>O_{11}</m></cell>
+                <cell><m>O_{12}</m></cell>
+                <cell><m>O_{13}</m></cell>
+                <cell>Row 1 Total</cell>
+            </row>
+            <row bottom="medium">
+                <cell>Category 2</cell>
+                <cell><m>O_{21}</m></cell>
+                <cell><m>O_{22}</m></cell>
+                <cell><m>O_{23}</m></cell>
+                <cell>Row 2 Total</cell>
+            </row>
+            <row>
+                <cell/>
+                <cell>Column 1 Total</cell>
+                <cell>Column 2 Total</cell>
+                <cell>Column 3 Total</cell>
+                <cell>Grand Total</cell>
+            </row>
+            </tabular>
+
+            <p>Need to Calculate (Expected Values)</p>
+
+            <tabular row-headers="yes" halign="center" valign="middle"
+                    top="medium" bottom="medium" left="medium" right="medium">
+            <col right="medium"/>
+            <col right="medium"/>
+            <col right="medium"/>
+            <col right="medium"/>
+            <col/>
+
+            <row header="yes" bottom="medium">
+                <cell/>
+                <cell>Sample 1</cell>
+                <cell>Sample 2</cell>
+                <cell>Sample 3</cell>
+                <cell/>
+            </row>
+            <row bottom="medium">
+                <cell>Category 1</cell>
+                <cell><m>E_{11}</m></cell>
+                <cell><m>E_{12}</m></cell>
+                <cell><m>E_{13}</m></cell>
+                <cell>Row 1 Total</cell>
+            </row>
+            <row bottom="medium">
+                <cell>Category 2</cell>
+                <cell><m>E_{21}</m></cell>
+                <cell><m>E_{22}</m></cell>
+                <cell><m>E_{23}</m></cell>
+                <cell>Row 2 Total</cell>
+            </row>
+            <row>
+                <cell/>
+                <cell>Column 1 Total</cell>
+                <cell>Column 2 Total</cell>
+                <cell>Column 3 Total</cell>
+                <cell>Grand Total</cell>
+            </row>
+            </tabular>
+
+            <p>
+            <me>
+                E_{ij} =
+                \dfrac{\text{Row } i \text{ Total} \cdot \text{Column } j \text{ Total}}
+                {\text{Grand Total}}
+            </me>
+            </p>
+
+            <p><em>Test Statistic</em></p>
+
+            <p>
+            <me>
+                \chi^2 =
+                \sum_{i=1}^{r}\sum_{j=1}^{c}
+                \dfrac{\left(O_{ij}-E_{ij}\right)^2}{E_{ij}}
+                \qquad
+                \text{df}=(r-1)\cdot(c-1)
+            </me>
+            </p>
+            <p>
+                <em>R Functions</em>
+                <ul>
+                    <li>
+                        <p>For p-values use <c>pnorm</c></p>
+                    </li>
+                    <li>
+                        <p>For critical values use <c>qnorm</c></p>
+                    </li>
+                </ul>         
+            </p>
+        </statement>
+    </identity>
+  </subsection>
+</section>
