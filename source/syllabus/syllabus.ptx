@@ -209,12 +209,6 @@
         <li>
           <p>Linear Regression</p>
         </li>
-        <li>
-          <p>Inference for Correlation Coefficient</p>
-        </li>
-        <li>
-          <p>Nonparametric Tests</p>
-        </li>
       </ol>
     </p>
   </subsection>
@@ -287,15 +281,6 @@
                   appropriate chi-square test.
                 </p>
               </li>
-
-              <li>
-                <title>Regression</title>
-                <p>
-                  The data set must contain at least two quantitative variables with
-                  paired observations. There must be enough observations to construct
-                  and analyze a regression model.
-                </p>
-              </li>
             </ol>
           </p>
 
@@ -353,7 +338,7 @@
           </p>
 
           <p>
-            Each lab report is worth 50 points and will be evaluated using the
+            Each lab report is worth 30 points and will be evaluated using the
             following rubric.
           </p>
 
@@ -508,37 +493,37 @@
 
     <row>
       <cell>A</cell>
-      <cell>162-180</cell>
-      <cell>40-45</cell>
-      <cell>77-90</cell>
+      <cell>144-160</cell>
+      <cell>35-42</cell>
+      <cell>52-60</cell>
     </row>
 
     <row>
       <cell>B</cell>
-      <cell>144-161</cell>
-      <cell>33-39</cell>
-      <cell>63-76</cell>
+      <cell>128-143</cell>
+      <cell>28-34</cell>
+      <cell>42-51</cell>
     </row>
 
     <row>
       <cell>C</cell>
-      <cell>126-143</cell>
-      <cell>27-32</cell>
-      <cell>50-62</cell>
+      <cell>112-127</cell>
+      <cell>21-27</cell>
+      <cell>33-41</cell>
     </row>
 
     <row>
       <cell>D</cell>
-      <cell>108-125</cell>
-      <cell>18-26</cell>
-      <cell>36-49</cell>
+      <cell>96-111</cell>
+      <cell>14-20</cell>
+      <cell>24-32</cell>
     </row>
 
     <row>
       <cell>F</cell>
-      <cell>0-107</cell>
-      <cell>0-17</cell>
-      <cell>0-35</cell>
+      <cell>0-95</cell>
+      <cell>0-13</cell>
+      <cell>0-23</cell>
     </row>
 
   </tabular>
