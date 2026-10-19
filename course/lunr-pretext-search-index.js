@@ -1684,6 +1684,78 @@ var ptx_lunr_docs = [
   "body": " What Error Could We Have Made?   Describe the possible error after the decision in the dam example and after the decision in the cancer example. Can we tell from the decision alone whether an error actually occurred?   "
 },
 {
+  "id": "inf-two-prop-notes",
+  "level": "1",
+  "url": "inf-two-prop-notes.html",
+  "type": "Section",
+  "number": "",
+  "title": "Inference for Two Proportions",
+  "body": " Inference for Two Proportions     Identify situations appropriate for a two-proportion -test and verify the conditions required for its use.    Perform a hypothesis test comparing two population proportions.      Testing Two Proportions, and    Requirements   The response has two categories.  The observations come from an appropriate random sample.  Observations are independent or approximately independent. For simple random sampling without replacement, use the guideline .  Each sample has at least 10 success and 10 failures.     Test Statistic       R Functions    For p-values use pnorm    For critical values use qnorm        Proportion of Seatbelt Wearers  A study of 200 randomly selected occupants in passenger cars and 250 randomly selected occupants in pickup trucks shows that 91.0% of occupants in passenger cars and 83.2% of occupants in pickup trucks wear seat belts. At can you reject the claim that the proportion of occupants who wear seat belts is the same for passenger cars and pickup trucks?    Death Rate due to Heart Disease  A medical research team conducted a study to test the effect of a cholesterol-reducing medication. At the end of the study, the researchers found that of the 4700 randomly selected subjects who took the medication, 301 died of heart disease. Of the 4300 randomly selected subjects who took a placebo, 357 died of heart disease. At , can you support the claim that the death rate due to heart disease is lower for those who took the medication than for those who took the placebo?    Old Wives' Tale  There is an old wives' tale that women who eat chocolate during pregnancy are more likely to have happy babies. A pregnancy magazine wants to test the is claim, and they gather 100 pregnant women for their study. Half of the group agrees to eat chocolate at least once a day, while the other group agrees to forego chocolate for the duration of their pregnancy. A year later, the ladies complete a survey regarding the overall happiness and contentedness of their babies. The results are given in the table below. At test the old wives' tale.        Happy Babies  Unhappy Babies    With Chocolate  24  26    Without Chocolate  22  28      Seed Germination   A botanist claims that the proportion of bean seeds that germinate in a new soil mixture is at least as high asthe proportion that germinate in a standard soil mixture. The botanist randomly assigns 300 bean seeds to two groups of 150 seeds each. Each seed is grown in a separate container under otherwise identical conditions. In the new soil mixture, 108 seeds germinate. In the standard soil mixture, 126 seeds germinate. At , is there sufficient evidence to reject the botanist's claim?     Large Sample Example  In earlier work, we examined whether the overall proportion of students who sought counseling services was greater than 38%. Today, we extend that analysis to compare two distinct groups of students: those who report a family history of mental health issues and those who do not. It is often suggested that students who have seen the impact of mental health challenges in their families may be more aware of available support resources and, consequently, more likely to seek counseling themselves.  Test the claim that the proportion of students with a family history of mental health issues who have used counseling services is greater than the proportion without such a history, using a 0.05 significance level.   "
+},
+{
+  "id": "inf-two-prop-notes-2",
+  "level": "2",
+  "url": "inf-two-prop-notes.html#inf-two-prop-notes-2",
+  "type": "Objectives",
+  "number": "",
+  "title": "",
+  "body": "   Identify situations appropriate for a two-proportion -test and verify the conditions required for its use.    Perform a hypothesis test comparing two population proportions.    "
+},
+{
+  "id": "form-two-prop-z-test",
+  "level": "2",
+  "url": "inf-two-prop-notes.html#form-two-prop-z-test",
+  "type": "Formula",
+  "number": "176",
+  "title": "Testing Two Proportions, <span class=\"process-math\">\\(p_1\\)<\/span> and <span class=\"process-math\">\\(p_2\\)<\/span>.",
+  "body": " Testing Two Proportions, and    Requirements   The response has two categories.  The observations come from an appropriate random sample.  Observations are independent or approximately independent. For simple random sampling without replacement, use the guideline .  Each sample has at least 10 success and 10 failures.     Test Statistic       R Functions    For p-values use pnorm    For critical values use qnorm      "
+},
+{
+  "id": "ex-seatbelts",
+  "level": "2",
+  "url": "inf-two-prop-notes.html#ex-seatbelts",
+  "type": "Example",
+  "number": "177",
+  "title": "Proportion of Seatbelt Wearers.",
+  "body": " Proportion of Seatbelt Wearers  A study of 200 randomly selected occupants in passenger cars and 250 randomly selected occupants in pickup trucks shows that 91.0% of occupants in passenger cars and 83.2% of occupants in pickup trucks wear seat belts. At can you reject the claim that the proportion of occupants who wear seat belts is the same for passenger cars and pickup trucks?  "
+},
+{
+  "id": "ex-cholesterol",
+  "level": "2",
+  "url": "inf-two-prop-notes.html#ex-cholesterol",
+  "type": "Example",
+  "number": "178",
+  "title": "Death Rate due to Heart Disease.",
+  "body": " Death Rate due to Heart Disease  A medical research team conducted a study to test the effect of a cholesterol-reducing medication. At the end of the study, the researchers found that of the 4700 randomly selected subjects who took the medication, 301 died of heart disease. Of the 4300 randomly selected subjects who took a placebo, 357 died of heart disease. At , can you support the claim that the death rate due to heart disease is lower for those who took the medication than for those who took the placebo?  "
+},
+{
+  "id": "ex-chocolate",
+  "level": "2",
+  "url": "inf-two-prop-notes.html#ex-chocolate",
+  "type": "Example",
+  "number": "179",
+  "title": "Old Wives’ Tale.",
+  "body": " Old Wives' Tale  There is an old wives' tale that women who eat chocolate during pregnancy are more likely to have happy babies. A pregnancy magazine wants to test the is claim, and they gather 100 pregnant women for their study. Half of the group agrees to eat chocolate at least once a day, while the other group agrees to forego chocolate for the duration of their pregnancy. A year later, the ladies complete a survey regarding the overall happiness and contentedness of their babies. The results are given in the table below. At test the old wives' tale.        Happy Babies  Unhappy Babies    With Chocolate  24  26    Without Chocolate  22  28    "
+},
+{
+  "id": "ex-seed-germ",
+  "level": "2",
+  "url": "inf-two-prop-notes.html#ex-seed-germ",
+  "type": "Example",
+  "number": "180",
+  "title": "Seed Germination.",
+  "body": " Seed Germination   A botanist claims that the proportion of bean seeds that germinate in a new soil mixture is at least as high asthe proportion that germinate in a standard soil mixture. The botanist randomly assigns 300 bean seeds to two groups of 150 seeds each. Each seed is grown in a separate container under otherwise identical conditions. In the new soil mixture, 108 seeds germinate. In the standard soil mixture, 126 seeds germinate. At , is there sufficient evidence to reject the botanist's claim?   "
+},
+{
+  "id": "two-prop-large-sample",
+  "level": "2",
+  "url": "inf-two-prop-notes.html#two-prop-large-sample",
+  "type": "Example",
+  "number": "181",
+  "title": "Large Sample Example.",
+  "body": " Large Sample Example  In earlier work, we examined whether the overall proportion of students who sought counseling services was greater than 38%. Today, we extend that analysis to compare two distinct groups of students: those who report a family history of mental health issues and those who do not. It is often suggested that students who have seen the impact of mental health challenges in their families may be more aware of available support resources and, consequently, more likely to seek counseling themselves.  Test the claim that the proportion of students with a family history of mental health issues who have used counseling services is greater than the proportion without such a history, using a 0.05 significance level.  "
+},
+{
   "id": "subsec-cat-project-rubric",
   "level": "1",
   "url": "subsec-cat-project-rubric.html",
