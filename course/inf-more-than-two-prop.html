@@ -271,7 +271,11 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="inf-two-prop-notes.html" class="internal"><span class="title">Inference for Two Proportions</span></a></div></li>
 <li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="inf-more-than-two-prop.html" class="internal"><span class="title">Inference for More than Two Proportions</span></a></div>
-<ul class="structural toc-item-list active" id="ptx-toc-group-inf-more-than-two-prop"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="inf-more-than-two-prop.html#homegenity" class="internal"><span class="title">Homogenity</span></a></div></li></ul>
+<ul class="structural toc-item-list active" id="ptx-toc-group-inf-more-than-two-prop">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="inf-more-than-two-prop.html#homegenity" class="internal"><span class="title">Homogenity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="inf-more-than-two-prop.html#independence" class="internal"><span class="title">Test of Independence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="inf-more-than-two-prop.html#goodness-of-fit" class="internal"><span class="title">Test of Goodness-of-Fit</span></a></div></li>
+</ul>
 </li>
 </ul>
 </li>
@@ -320,41 +324,52 @@ eBookConfig.enable_chatcodes =  false;
 <article class="identity theorem-like" id="form-test-homogenity"><h3 class="heading">
 <span class="type">Formula</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">182</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Testing Homogenity.</span>
 </h3>
-<div class="para logical" id="form-test-homogenity-2-1">
-<div class="para"><em class="emphasis">Requirements</em></div>
-<ol class="decimal" style="list-style: ptx-marker-2;" id="form-test-homogenity-2-1-2">
-<li id="form-test-homogenity-2-1-2-1">
-<div class="para" id="form-test-homogenity-2-1-2-1-1">All of the samples must be simple random samples.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="sidebyside">
+<div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;grid-template-columns:63.1578947368421% 31.5789473684211%;column-gap:5%;">
+<div class="sbspanel sbspanel--top top" style="">
+<div class="para" id="form-test-homogenity-2-1-1-1">
+<em class="emphasis">Requirements</em><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#form-test-homogenity-2-1-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+<ol class="decimal" style="list-style: ptx-marker-2;" id="form-test-homogenity-2-1-1-2">
+<li id="form-test-homogenity-2-1-1-2-1">
+<div class="para" id="form-test-homogenity-2-1-1-2-1-1">There must be two categorical variables of two or more independent samples.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-1-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#form-test-homogenity-2-1-1-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
-<li id="form-test-homogenity-2-1-2-2">
-<div class="para" id="form-test-homogenity-2-1-2-2-1">All of the samples are independent of each other.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="form-test-homogenity-2-1-1-2-2">
+<div class="para" id="form-test-homogenity-2-1-1-2-2-1">All of the samples must be simple random samples.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-1-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#form-test-homogenity-2-1-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#form-test-homogenity-2-1-1-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
-<li id="form-test-homogenity-2-1-2-3">
-<div class="para" id="form-test-homogenity-2-1-2-3-1">All expected values must be at least five.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-1-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="form-test-homogenity-2-1-1-2-3">
+<div class="para" id="form-test-homogenity-2-1-1-2-3-1">All of the samples are independent of each other.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-1-1-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#form-test-homogenity-2-1-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#form-test-homogenity-2-1-1-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="form-test-homogenity-2-1-1-2-4">
+<div class="para" id="form-test-homogenity-2-1-1-2-4-1">All expected values must be at least five.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-1-1-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#form-test-homogenity-2-1-1-2-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="sbspanel sbspanel--top top" style="">
+<div class="para" id="form-test-homogenity-2-1-2-1">
+<em class="emphasis">Hypotheses</em><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="form-test-homogenity-2-1-2-2">
+<span class="process-math">\(H_0:\)</span> The probability distribution is the same for all samples.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="form-test-homogenity-2-1-2-3">
+<span class="process-math">\(H_a:\)</span> At least one sample is different.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-1-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+</div>
 </div> 
 <div class="para" id="form-test-homogenity-2-2">
-<em class="emphasis">Hypotheses</em> 
-<div class="para" id="form-test-homogenity-2-2-2">
-<span class="process-math">\(H_0:\)</span> The probability distribution is the same for all samples.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<em class="emphasis">Contingency Table</em><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
-<div class="para" id="form-test-homogenity-2-2-3">
-<span class="process-math">\(H_a:\)</span> At least one sample is different.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> 
-<div class="para" id="form-test-homogenity-2-3">
-<em class="emphasis">Contingency Table</em><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> 
-<div class="para" id="form-test-homogenity-2-4">Given Information (Observed Values)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="form-test-homogenity-2-3">Given Information (Observed Values)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="tabular-box natural-width"><table class="tabular">
 <tr class="header-horizontal">
 <td class="c m b2 r2 l2 t2 lines"></td>
@@ -385,7 +400,7 @@ eBookConfig.enable_chatcodes =  false;
 <td class="c m b2 r2 l0 t0 lines">Grand Total</td>
 </tr>
 </table></div> 
-<div class="para" id="form-test-homogenity-2-6">Need to Calculate (Expected Values)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="form-test-homogenity-2-5">Need to Calculate (Expected Values)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="tabular-box natural-width"><table class="tabular">
 <tr class="header-horizontal">
 <td class="c m b2 r2 l2 t2 lines"></td>
@@ -416,21 +431,21 @@ eBookConfig.enable_chatcodes =  false;
 <td class="c m b2 r2 l0 t0 lines">Grand Total</td>
 </tr>
 </table></div> 
-<div class="para logical" id="form-test-homogenity-2-8">
-<div class="displaymath process-math" id="form-test-homogenity-2-8-1">
+<div class="para logical" id="form-test-homogenity-2-7">
+<div class="displaymath process-math" id="form-test-homogenity-2-7-1">
 \begin{equation*}
 E_{ij} =
 \dfrac{\text{Row } i \text{ Total} \cdot \text{Column } j \text{ Total}}
 {\text{Grand Total}}
 \end{equation*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
-<div class="para" id="form-test-homogenity-2-9">
-<em class="emphasis">Test Statistic</em><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="form-test-homogenity-2-8">
+<em class="emphasis">Test Statistic</em><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
-<div class="para logical" id="form-test-homogenity-2-10">
-<div class="displaymath process-math" id="form-test-homogenity-2-10-1">
+<div class="para logical" id="form-test-homogenity-2-9">
+<div class="displaymath process-math" id="form-test-homogenity-2-9-1">
 \begin{equation*}
 \chi^2 =
 \sum_{i=1}^{r}\sum_{j=1}^{c}
@@ -439,26 +454,513 @@ E_{ij} =
 \text{df}=(r-1)\cdot(c-1)
 \end{equation*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> 
-<div class="para logical" id="form-test-homogenity-2-11">
-<div class="para"><em class="emphasis">R Functions</em></div>
-<ul class="disc" id="form-test-homogenity-2-11-2">
-<li id="form-test-homogenity-2-11-2-1">
-<div class="para" id="form-test-homogenity-2-11-2-1-1">For p-values use <code class="code-inline tex2jax_ignore">pnorm</code><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-11-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#form-test-homogenity-2-11-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="form-test-homogenity-2-11-2-2">
-<div class="para" id="form-test-homogenity-2-11-2-2-1">For critical values use <code class="code-inline tex2jax_ignore">qnorm</code><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-11-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#form-test-homogenity-2-11-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-</ul>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-homogenity-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Formula 182: Testing Homogenity"><a tabindex="-1" href="#form-test-homogenity" title="Copy heading and permalink for Formula 182: Testing Homogenity" aria-label="Copy heading and permalink for Formula 182: Testing Homogenity">🔗</a></div>
+</article>
+<article class="algorithm theorem-like" id="homegenity-3"><h3 class="heading">
+<span class="type">Algorithm</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">183</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Matrix.</span>
+</h3>
+<div class="para" id="homegenity-3-2-1">
+<code class="code-inline tex2jax_ignore">data = matrix(c(1,2,3,4,5,6,7,8,9), nrow = 1, ncol = 1, byrow = T)</code><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#homegenity-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="homegenity-3-2-2">
+<code class="code-inline tex2jax_ignore">rownames(data) = c("First", "Second", ..., "Last")</code><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#homegenity-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="homegenity-3-2-3">
+<code class="code-inline tex2jax_ignore">colnames(data) = c("First", "Second", ..., "Last")</code><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#homegenity-3-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="homegenity-3-2-4">
+<ul class="disc" id="homegenity-3-2-4-1">
+<li id="homegenity-3-2-4-1-1">
+<div class="para" id="homegenity-3-2-4-1-1-1">For p-values use <code class="code-inline tex2jax_ignore">pchisq</code><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#homegenity-3-2-4-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#homegenity-3-2-4-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="homegenity-3-2-4-1-2">
+<div class="para" id="homegenity-3-2-4-1-2-1">For critical values use <code class="code-inline tex2jax_ignore">qchisq</code><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#homegenity-3-2-4-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#homegenity-3-2-4-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="homegenity-3-2-4-1-3">
+<div class="para" id="homegenity-3-2-4-1-3-1">For test statistic use <code class="code-inline tex2jax_ignore">chisq.test(data as a table or matrix)</code><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#homegenity-3-2-4-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#homegenity-3-2-4-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="homegenity-3-2-4-1-4">
+<div class="para" id="homegenity-3-2-4-1-4-1">For expected values use <code class="code-inline tex2jax_ignore">chisq.test(data as a table or matrix)$expected</code><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#homegenity-3-2-4-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#homegenity-3-2-4-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#homegenity-3-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Algorithm 183: Matrix"><a tabindex="-1" href="#homegenity-3" title="Copy heading and permalink for Algorithm 183: Matrix" aria-label="Copy heading and permalink for Algorithm 183: Matrix">🔗</a></div>
+</article>
+<article class="example example-like" id="im2p-ex-personalities"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">184</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Distribution of Personality Types.</span>
+</h3>
+<div class="para" id="im2p-ex-personalities-2-1">A psychologist is interested in testing whether there is a difference in the distribution of personality types for business majors and social science majors. Test at a 5% level of significance.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#im2p-ex-personalities-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<td class="c m b2 r2 l2 t2 lines"></td>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Open</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Conscientious</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Extrovert</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Agreeable</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Neurotic</th>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">Business</th>
+<td class="c m b2 r2 l0 t0 lines">41</td>
+<td class="c m b2 r2 l0 t0 lines">52</td>
+<td class="c m b2 r2 l0 t0 lines">46</td>
+<td class="c m b2 r2 l0 t0 lines">61</td>
+<td class="c m b2 r2 l0 t0 lines">58</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">Social Science</th>
+<td class="c m b2 r2 l0 t0 lines">72</td>
+<td class="c m b2 r2 l0 t0 lines">75</td>
+<td class="c m b2 r2 l0 t0 lines">63</td>
+<td class="c m b2 r2 l0 t0 lines">80</td>
+<td class="c m b2 r2 l0 t0 lines">65</td>
+</tr>
+</table></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 184: Distribution of Personality Types"><a tabindex="-1" href="#im2p-ex-personalities" title="Copy heading and permalink for Example 184: Distribution of Personality Types" aria-label="Copy heading and permalink for Example 184: Distribution of Personality Types">🔗</a></div>
+</article>
+<article class="example example-like" id="im2p-ex-exercise"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">185</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercise Programs.</span>
+</h3>
+<div class="para" id="im2p-ex-exercise-2-1">A public health researcher wants to examine if different exercise programs (Yoga, Aerobics, and Strength Training) have different impacts on blood pressure categories in patients. Test at a 2% level of significance.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#im2p-ex-exercise-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<td class="c m b2 r2 l2 t2 lines"></td>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Normal</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Elevated</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Hypertension Stage 1</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Hypertension Stage 2</th>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">Yoga</th>
+<td class="c m b2 r2 l0 t0 lines">65</td>
+<td class="c m b2 r2 l0 t0 lines">60</td>
+<td class="c m b2 r2 l0 t0 lines">15</td>
+<td class="c m b2 r2 l0 t0 lines">5</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">Aerobics</th>
+<td class="c m b2 r2 l0 t0 lines">35</td>
+<td class="c m b2 r2 l0 t0 lines">60</td>
+<td class="c m b2 r2 l0 t0 lines">40</td>
+<td class="c m b2 r2 l0 t0 lines">30</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">Strength Training</th>
+<td class="c m b2 r2 l0 t0 lines">50</td>
+<td class="c m b2 r2 l0 t0 lines">55</td>
+<td class="c m b2 r2 l0 t0 lines">35</td>
+<td class="c m b2 r2 l0 t0 lines">25</td>
+</tr>
+</table></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 185: Exercise Programs"><a tabindex="-1" href="#im2p-ex-exercise" title="Copy heading and permalink for Example 185: Exercise Programs" aria-label="Copy heading and permalink for Example 185: Exercise Programs">🔗</a></div>
 </article><div class="autopermalink" aria-hidden="true" data-description="Subsection: Homogenity"><a tabindex="-1" href="#homegenity" title="Copy heading and permalink for Subsection: Homogenity" aria-label="Copy heading and permalink for Subsection: Homogenity">🔗</a></div>
+</section>
+<section class="subsection" id="independence">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Test of Independence</span>
+</h2>
+<article class="identity theorem-like" id="form-test-independence"><h3 class="heading">
+<span class="type">Formula</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">186</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Testing Independence.</span>
+</h3>
+<div class="sidebyside">
+<div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;grid-template-columns:71.7948717948718% 25.6410256410256%;column-gap:2.5%;">
+<div class="sbspanel sbspanel--top top" style="">
+<div class="para" id="form-test-independence-2-1-1-1">
+<em class="emphasis">Requirements</em><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-independence-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" style="list-style: ptx-marker-2;" id="form-test-independence-2-1-1-2">
+<li id="form-test-independence-2-1-1-2-1">
+<div class="para" id="form-test-independence-2-1-1-2-1-1">There must be two categorical variables of one sample.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-independence-2-1-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#form-test-independence-2-1-1-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="form-test-independence-2-1-1-2-2">
+<div class="para" id="form-test-independence-2-1-1-2-2-1">The sample must be a simple random sample.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-independence-2-1-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#form-test-independence-2-1-1-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="form-test-independence-2-1-1-2-3">
+<div class="para" id="form-test-independence-2-1-1-2-3-1">The observations are independent of each other.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-independence-2-1-1-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#form-test-independence-2-1-1-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="form-test-independence-2-1-1-2-4">
+<div class="para" id="form-test-independence-2-1-1-2-4-1">All expected values must be at least five.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-independence-2-1-1-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#form-test-independence-2-1-1-2-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+</div>
+<div class="sbspanel sbspanel--top top" style="">
+<div class="para" id="form-test-independence-2-1-2-1">
+<em class="emphasis">Hypotheses</em><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-independence-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="form-test-independence-2-1-2-2">
+<span class="process-math">\(H_0:\)</span> The two categorical variables are independent.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-independence-2-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="form-test-independence-2-1-2-3">
+<span class="process-math">\(H_a:\)</span> The two categorical variables are dependent.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-independence-2-1-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+</div>
+</div> 
+<div class="para" id="remove-white-sp">
+<em class="emphasis">Contingency Table</em><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#remove-white-sp" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="form-test-independence-2-3">Given Information (Observed Values)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-independence-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<td class="c m b2 r2 l2 t2 lines"></td>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Category 1</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Category 2</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Category 3</th>
+<td class="c m b2 r2 l0 t2 lines"></td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">Category 1</th>
+<td class="c m b2 r2 l0 t0 lines"><span class="process-math">\(O_{11}\)</span></td>
+<td class="c m b2 r2 l0 t0 lines"><span class="process-math">\(O_{12}\)</span></td>
+<td class="c m b2 r2 l0 t0 lines"><span class="process-math">\(O_{13}\)</span></td>
+<td class="c m b2 r2 l0 t0 lines">Row 1 Total</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">Category 2</th>
+<td class="c m b2 r2 l0 t0 lines"><span class="process-math">\(O_{21}\)</span></td>
+<td class="c m b2 r2 l0 t0 lines"><span class="process-math">\(O_{22}\)</span></td>
+<td class="c m b2 r2 l0 t0 lines"><span class="process-math">\(O_{23}\)</span></td>
+<td class="c m b2 r2 l0 t0 lines">Row 2 Total</td>
+</tr>
+<tr>
+<td class="c m b2 r2 l2 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines">Column 1 Total</td>
+<td class="c m b2 r2 l0 t0 lines">Column 2 Total</td>
+<td class="c m b2 r2 l0 t0 lines">Column 3 Total</td>
+<td class="c m b2 r2 l0 t0 lines">Grand Total</td>
+</tr>
+</table></div> 
+<div class="para" id="form-test-independence-2-5">Need to Calculate (Expected Values)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-independence-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<td class="c m b2 r2 l2 t2 lines"></td>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Category 1</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Category 2</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Category 3</th>
+<td class="c m b2 r2 l0 t2 lines"></td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">Category 1</th>
+<td class="c m b2 r2 l0 t0 lines"><span class="process-math">\(E_{11}\)</span></td>
+<td class="c m b2 r2 l0 t0 lines"><span class="process-math">\(E_{12}\)</span></td>
+<td class="c m b2 r2 l0 t0 lines"><span class="process-math">\(E_{13}\)</span></td>
+<td class="c m b2 r2 l0 t0 lines">Row 1 Total</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">Category 2</th>
+<td class="c m b2 r2 l0 t0 lines"><span class="process-math">\(E_{21}\)</span></td>
+<td class="c m b2 r2 l0 t0 lines"><span class="process-math">\(E_{22}\)</span></td>
+<td class="c m b2 r2 l0 t0 lines"><span class="process-math">\(E_{23}\)</span></td>
+<td class="c m b2 r2 l0 t0 lines">Row 2 Total</td>
+</tr>
+<tr>
+<td class="c m b2 r2 l2 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines">Column 1 Total</td>
+<td class="c m b2 r2 l0 t0 lines">Column 2 Total</td>
+<td class="c m b2 r2 l0 t0 lines">Column 3 Total</td>
+<td class="c m b2 r2 l0 t0 lines">Grand Total</td>
+</tr>
+</table></div> 
+<div class="para logical" id="form-test-independence-2-7">
+<div class="displaymath process-math" id="form-test-independence-2-7-1">
+\begin{equation*}
+E_{ij} =
+\dfrac{\text{Row } i \text{ Total} \cdot \text{Column } j \text{ Total}}
+{\text{Grand Total}}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-independence-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="form-test-independence-2-8">
+<em class="emphasis">Test Statistic</em><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-independence-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="form-test-independence-2-9">
+<div class="displaymath process-math" id="form-test-independence-2-9-1">
+\begin{equation*}
+\chi^2 =
+\sum_{i=1}^{r}\sum_{j=1}^{c}
+\dfrac{\left(O_{ij}-E_{ij}\right)^2}{E_{ij}}
+\qquad
+\text{df}=(r-1)\cdot(c-1)
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-independence-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Formula 186: Testing Independence"><a tabindex="-1" href="#form-test-independence" title="Copy heading and permalink for Formula 186: Testing Independence" aria-label="Copy heading and permalink for Formula 186: Testing Independence">🔗</a></div>
+</article>
+<article class="example example-like" id="im2p-ex-HIV"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">187</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">NVP versus LPV.</span>
+</h3>
+<div class="para" id="im2p-ex-HIV-2">When a newborn is HIV-positive, should he or she be treated with nevirapine (NVP) or a more expensive drug, lopinavir (LPV)? In this context, treatment success means preventing virologic failure, or the growth of the virus. Researchers conducted a randomized study to investigate a possible association between treatment and outcome. Among the 147 children who received NVP, approximately 41% experienced virologic failure, compared to about 19% of the 140 children treated with LPV. Test whether their is an association at a significance level of 0.01.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#im2p-ex-HIV-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 187: NVP versus LPV"><a tabindex="-1" href="#im2p-ex-HIV" title="Copy heading and permalink for Example 187: NVP versus LPV" aria-label="Copy heading and permalink for Example 187: NVP versus LPV">🔗</a></div>
+</article>
+<article class="example example-like" id="im2p-ex-peanut-exposure"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">188</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Peanut Exposure.</span>
+</h3>
+<div class="para" id="im2p-ex-peanut-exposure-2">A study examined whether exposure to peanut products reduce the rate of a child developing peanut allergies. Children were randomized either to the peanut avoidance or the peanut consumption group; at 5 years of age, each child was tested for peanut allergy using an oral food challenge (OFC). The results of the OFC are reproduced in the table below. Failing the food challenge indicates an allergic reaction. Assess whether there is evidence for exposure to peanut allergy reducing the chance of developing peanut allergies using <span class="process-math">\(\alpha = 0.05\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#im2p-ex-peanut-exposure-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<td class="l m b2 r2 l2 t2 lines"></td>
+<th scope="col" class="c m b2 r2 l0 t2 lines">FAIL OFC</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">PASS OFC</th>
+</tr>
+<tr>
+<th scope="row" class="l m b2 r2 l2 t0 lines">Peanut Avoidance</th>
+<td class="c m b2 r2 l0 t0 lines">36</td>
+<td class="c m b2 r2 l0 t0 lines">227</td>
+</tr>
+<tr>
+<th scope="row" class="l m b2 r2 l2 t0 lines">Peanut Consumption</th>
+<td class="c m b2 r2 l0 t0 lines">5</td>
+<td class="c m b2 r2 l0 t0 lines">262</td>
+</tr>
+</table></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 188: Peanut Exposure"><a tabindex="-1" href="#im2p-ex-peanut-exposure" title="Copy heading and permalink for Example 188: Peanut Exposure" aria-label="Copy heading and permalink for Example 188: Peanut Exposure">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection: Test of Independence"><a tabindex="-1" href="#independence" title="Copy heading and permalink for Subsection: Test of Independence" aria-label="Copy heading and permalink for Subsection: Test of Independence">🔗</a></div>
+</section>
+<section class="subsection" id="goodness-of-fit">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Test of Goodness-of-Fit</span>
+</h2>
+<article class="identity theorem-like" id="form-test-goodness-of-fit"><h3 class="heading">
+<span class="type">Formula</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">189</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Multinomial Proportion Test.</span>
+</h3>
+<div class="sidebyside">
+<div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;grid-template-columns:61.5384615384615% 35.8974358974359%;column-gap:2.5%;">
+<div class="sbspanel sbspanel--top top" style="">
+<div class="para" id="form-test-goodness-of-fit-2-1-1-1">
+<em class="emphasis">Requirements</em><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-goodness-of-fit-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" style="list-style: ptx-marker-2;" id="form-test-goodness-of-fit-2-1-1-2">
+<li id="form-test-goodness-of-fit-2-1-1-2-1">
+<div class="para" id="form-test-goodness-of-fit-2-1-1-2-1-1">There must be one categorical variable with two or more categories.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-goodness-of-fit-2-1-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#form-test-goodness-of-fit-2-1-1-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="form-test-goodness-of-fit-2-1-1-2-2">
+<div class="para" id="form-test-goodness-of-fit-2-1-1-2-2-1">The sample must be a simple random sample.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-goodness-of-fit-2-1-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#form-test-goodness-of-fit-2-1-1-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="form-test-goodness-of-fit-2-1-1-2-3">
+<div class="para" id="form-test-goodness-of-fit-2-1-1-2-3-1">The observations are independent of each other.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-goodness-of-fit-2-1-1-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#form-test-goodness-of-fit-2-1-1-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="form-test-goodness-of-fit-2-1-1-2-4">
+<div class="para" id="form-test-goodness-of-fit-2-1-1-2-4-1">All expected values must be at least five.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-goodness-of-fit-2-1-1-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#form-test-goodness-of-fit-2-1-1-2-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+</div>
+<div class="sbspanel sbspanel--top top" style="">
+<div class="para" id="form-test-goodness-of-fit-2-1-2-1">
+<em class="emphasis">Hypotheses</em><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-goodness-of-fit-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="form-test-goodness-of-fit-2-1-2-2">
+<span class="process-math">\(H_0:\)</span> The population follows the specified probability distribution.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-goodness-of-fit-2-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="form-test-goodness-of-fit-2-1-2-3">
+<span class="process-math">\(H_a:\)</span> The population does not follow the specified probability distribution.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-goodness-of-fit-2-1-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+</div>
+</div> 
+<div class="para" id="remove-white-sp-gof">
+<em class="emphasis">Probability Table</em><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#remove-white-sp-gof" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="form-test-goodness-of-fit-2-3">Given Information (Observed Values)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-goodness-of-fit-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<td class="c m b2 r2 l2 t2 lines"></td>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Category 1</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Category 2</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Category 3</th>
+<td class="c m b2 r2 l0 t2 lines"></td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">Frequency</th>
+<td class="c m b2 r2 l0 t0 lines"><span class="process-math">\(O_1\)</span></td>
+<td class="c m b2 r2 l0 t0 lines"><span class="process-math">\(O_2\)</span></td>
+<td class="c m b2 r2 l0 t0 lines"><span class="process-math">\(O_3\)</span></td>
+<td class="c m b2 r2 l0 t0 lines">Total</td>
+</tr>
+</table></div> 
+<div class="para" id="form-test-goodness-of-fit-2-5">Need to Calculate (Expected Values)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-goodness-of-fit-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<td class="c m b2 r2 l2 t2 lines"></td>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Category 1</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Category 2</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">Category 3</th>
+<td class="c m b2 r2 l0 t2 lines"></td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">Frequency</th>
+<td class="c m b2 r2 l0 t0 lines"><span class="process-math">\(E_1\)</span></td>
+<td class="c m b2 r2 l0 t0 lines"><span class="process-math">\(E_2\)</span></td>
+<td class="c m b2 r2 l0 t0 lines"><span class="process-math">\(E_3\)</span></td>
+<td class="c m b2 r2 l0 t0 lines">Total</td>
+</tr>
+</table></div> 
+<div class="para logical" id="form-test-goodness-of-fit-2-7">
+<div class="displaymath process-math" id="form-test-goodness-of-fit-2-7-1">
+\begin{equation*}
+E_i = n \cdot p_i
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-goodness-of-fit-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="form-test-goodness-of-fit-2-8">
+<em class="emphasis">Test Statistic</em><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-goodness-of-fit-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="form-test-goodness-of-fit-2-9">
+<div class="displaymath process-math" id="form-test-goodness-of-fit-2-9-1">
+\begin{equation*}
+\chi^2 =
+\sum_{i=1}^{k}
+\dfrac{\left(O_i-E_i\right)^2}{E_i}
+\qquad
+\text{df}=k-1
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#form-test-goodness-of-fit-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Formula 189: Multinomial Proportion Test"><a tabindex="-1" href="#form-test-goodness-of-fit" title="Copy heading and permalink for Formula 189: Multinomial Proportion Test" aria-label="Copy heading and permalink for Formula 189: Multinomial Proportion Test">🔗</a></div>
+</article>
+<article class="example example-like" id="im2p-ex-last-digits"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">190</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Last Digits of Weights.</span>
+</h3>
+<div class="para" id="im2p-ex-last-digits-2">A random sample of 100 weights of Californians is obtained, and the last digits of those weights are summarized in the table below. When obtaining weights of subjects, it is extremely important to actually measure their weights instead of asking them to report their weights. By analyzing the last digits of weights, researchers can verify that they were obtained through actual measurements instead of being reported.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#im2p-ex-last-digits-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="im2p-ex-last-digits-3">When people report weights, they tend to round down, sometimes substantially. For example, a weight of 197 lb might be reported as 170 lb. Reported weights tend to have many last digits consisting of 0 or 5. In contrast, if people are actually weighed, the last digits tend to be uniformly distributed, with 0, 1, 2, ..., 9 all occurring with roughly the same frequencies.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#im2p-ex-last-digits-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="im2p-ex-last-digits-4">Test the claim that the last digits do not follow a uniform distribution.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#im2p-ex-last-digits-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b2 r2 l2 t2 lines">Last Digit</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">0</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">1</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">2</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">3</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">4</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">5</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">6</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">7</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">8</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">9</th>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">Observed Frequency</th>
+<td class="c m b2 r2 l0 t0 lines">46</td>
+<td class="c m b2 r2 l0 t0 lines">1</td>
+<td class="c m b2 r2 l0 t0 lines">2</td>
+<td class="c m b2 r2 l0 t0 lines">3</td>
+<td class="c m b2 r2 l0 t0 lines">3</td>
+<td class="c m b2 r2 l0 t0 lines">30</td>
+<td class="c m b2 r2 l0 t0 lines">4</td>
+<td class="c m b2 r2 l0 t0 lines">0</td>
+<td class="c m b2 r2 l0 t0 lines">8</td>
+<td class="c m b2 r2 l0 t0 lines">3</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">Expected Frequency</th>
+<td class="c m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines"></td>
+</tr>
+</table></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 190: Last Digits of Weights"><a tabindex="-1" href="#im2p-ex-last-digits" title="Copy heading and permalink for Example 190: Last Digits of Weights" aria-label="Copy heading and permalink for Example 190: Last Digits of Weights">🔗</a></div>
+</article>
+<article class="example example-like" id="im2p-ex-benfords-law"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">191</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Benford’s Law.</span>
+</h3>
+<div class="para" id="im2p-ex-benfords-law-2">According to Benford’s law, a variety of different data sets include numbers with leading digits that follow the distribution shown in the first two rows of the table below. Data sets that tend to follow Benford’s law include a class of errors in clinical trials, as well as magnitudes of gradients from magnetic resonance imaging (MRI) scans, computed tomography (CT) scans, and ultrasound images.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#im2p-ex-benfords-law-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="im2p-ex-benfords-law-3">The bottom row of the table lists the frequencies of leading digits of the magnitudes of gradients from an ultrasound image. Do the frequencies of leading digits appear to fit the distribution of Benford’s law, as expected, or does it appear that the image may have been corrupted with a substantial amount of noise because the leading digits do not fit the distribution of Benford’s law?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#im2p-ex-benfords-law-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b2 r2 l2 t2 lines">Leading Digit</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">1</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">2</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">3</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">4</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">5</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">6</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">7</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">8</th>
+<th scope="col" class="c m b2 r2 l0 t2 lines">9</th>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">Benford’s Law</th>
+<td class="c m b2 r2 l0 t0 lines">30.1%</td>
+<td class="c m b2 r2 l0 t0 lines">17.6%</td>
+<td class="c m b2 r2 l0 t0 lines">12.5%</td>
+<td class="c m b2 r2 l0 t0 lines">9.7%</td>
+<td class="c m b2 r2 l0 t0 lines">7.9%</td>
+<td class="c m b2 r2 l0 t0 lines">6.7%</td>
+<td class="c m b2 r2 l0 t0 lines">5.8%</td>
+<td class="c m b2 r2 l0 t0 lines">5.1%</td>
+<td class="c m b2 r2 l0 t0 lines">4.6%</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">Observed Frequency</th>
+<td class="c m b2 r2 l0 t0 lines">69</td>
+<td class="c m b2 r2 l0 t0 lines">40</td>
+<td class="c m b2 r2 l0 t0 lines">42</td>
+<td class="c m b2 r2 l0 t0 lines">26</td>
+<td class="c m b2 r2 l0 t0 lines">25</td>
+<td class="c m b2 r2 l0 t0 lines">16</td>
+<td class="c m b2 r2 l0 t0 lines">16</td>
+<td class="c m b2 r2 l0 t0 lines">17</td>
+<td class="c m b2 r2 l0 t0 lines">20</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r2 l2 t0 lines">Expected Frequency</th>
+<td class="c m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines"></td>
+<td class="c m b2 r2 l0 t0 lines"></td>
+</tr>
+</table></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 191: Benford’s Law"><a tabindex="-1" href="#im2p-ex-benfords-law" title="Copy heading and permalink for Example 191: Benford’s Law" aria-label="Copy heading and permalink for Example 191: Benford’s Law">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection: Test of Goodness-of-Fit"><a tabindex="-1" href="#goodness-of-fit" title="Copy heading and permalink for Subsection: Test of Goodness-of-Fit" aria-label="Copy heading and permalink for Subsection: Test of Goodness-of-Fit">🔗</a></div>
 </section><div class="autopermalink" aria-hidden="true" data-description="Section: Inference for More than Two Proportions"><a tabindex="-1" href="#inf-more-than-two-prop" title="Copy heading and permalink for Section: Inference for More than Two Proportions" aria-label="Copy heading and permalink for Section: Inference for More than Two Proportions">🔗</a></div>
 </section>
 </div>

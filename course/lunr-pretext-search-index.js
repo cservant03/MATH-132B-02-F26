@@ -1756,6 +1756,114 @@ var ptx_lunr_docs = [
   "body": " Large Sample Example  In earlier work, we examined whether the overall proportion of students who sought counseling services was greater than 38%. Today, we extend that analysis to compare two distinct groups of students: those who report a family history of mental health issues and those who do not. It is often suggested that students who have seen the impact of mental health challenges in their families may be more aware of available support resources and, consequently, more likely to seek counseling themselves.  Test the claim that the proportion of students with a family history of mental health issues who have used counseling services is greater than the proportion without such a history, using a 0.05 significance level.  "
 },
 {
+  "id": "inf-more-than-two-prop",
+  "level": "1",
+  "url": "inf-more-than-two-prop.html",
+  "type": "Section",
+  "number": "",
+  "title": "Inference for More than Two Proportions",
+  "body": " Inference for More than Two Proportions     Perform a hypothesis test of homogenity.    Perform a hypothesis test of independence.    Perform a hypothesis test of multinomial distribution.      Homogenity   Testing Homogenity     Requirements   There must be two categorical variables of two or more independent samples.  All of the samples must be simple random samples.  All of the samples are independent of each other.  All expected values must be at least five.     Hypotheses  The probability distribution is the same for all samples.  At least one sample is different.    Contingency Table  Given Information (Observed Values)          Sample 1  Sample 2  Sample 3     Category 1     Row 1 Total    Category 2     Row 2 Total     Column 1 Total  Column 2 Total  Column 3 Total  Grand Total    Need to Calculate (Expected Values)          Sample 1  Sample 2  Sample 3     Category 1     Row 1 Total    Category 2     Row 2 Total     Column 1 Total  Column 2 Total  Column 3 Total  Grand Total       Test Statistic        Matrix    data = matrix(c(1,2,3,4,5,6,7,8,9), nrow = 1, ncol = 1, byrow = T)    rownames(data) = c(\"First\", \"Second\", ..., \"Last\")    colnames(data) = c(\"First\", \"Second\", ..., \"Last\")     For p-values use pchisq    For critical values use qchisq    For test statistic use chisq.test(data as a table or matrix)    For expected values use chisq.test(data as a table or matrix)$expected        Distribution of Personality Types   A psychologist is interested in testing whether there is a difference in the distribution of personality types for business majors and social science majors. Test at a 5% level of significance.           Open  Conscientious  Extrovert  Agreeable  Neurotic    Business  41  52  46  61  58    Social Science  72  75  63  80  65       Exercise Programs   A public health researcher wants to examine if different exercise programs (Yoga, Aerobics, and Strength Training) have different impacts on blood pressure categories in patients. Test at a 2% level of significance.          Normal  Elevated  Hypertension Stage 1  Hypertension Stage 2    Yoga  65  60  15  5    Aerobics  35  60  40  30    Strength Training  50  55  35  25        Test of Independence   Testing Independence     Requirements   There must be two categorical variables of one sample.  The sample must be a simple random sample.  The observations are independent of each other.  All expected values must be at least five.     Hypotheses  The two categorical variables are independent.  The two categorical variables are dependent.    Contingency Table  Given Information (Observed Values)          Category 1  Category 2  Category 3     Category 1     Row 1 Total    Category 2     Row 2 Total     Column 1 Total  Column 2 Total  Column 3 Total  Grand Total    Need to Calculate (Expected Values)          Category 1  Category 2  Category 3     Category 1     Row 1 Total    Category 2     Row 2 Total     Column 1 Total  Column 2 Total  Column 3 Total  Grand Total       Test Statistic        NVP versus LPV  When a newborn is HIV-positive, should he or she be treated with nevirapine (NVP) or a more expensive drug, lopinavir (LPV)? In this context, treatment success means preventing virologic failure, or the growth of the virus. Researchers conducted a randomized study to investigate a possible association between treatment and outcome. Among the 147 children who received NVP, approximately 41% experienced virologic failure, compared to about 19% of the 140 children treated with LPV. Test whether their is an association at a significance level of 0.01.    Peanut Exposure  A study examined whether exposure to peanut products reduce the rate of a child developing peanut allergies. Children were randomized either to the peanut avoidance or the peanut consumption group; at 5 years of age, each child was tested for peanut allergy using an oral food challenge (OFC). The results of the OFC are reproduced in the table below. Failing the food challenge indicates an allergic reaction. Assess whether there is evidence for exposure to peanut allergy reducing the chance of developing peanut allergies using         FAIL OFC  PASS OFC    Peanut Avoidance  36  227    Peanut Consumption  5  262       Test of Goodness-of-Fit   Multinomial Proportion Test     Requirements   There must be one categorical variable with two or more categories.  The sample must be a simple random sample.  The observations are independent of each other.  All expected values must be at least five.     Hypotheses  The population follows the specified probability distribution.  The population does not follow the specified probability distribution.    Probability Table  Given Information (Observed Values)          Category 1  Category 2  Category 3     Frequency     Total    Need to Calculate (Expected Values)          Category 1  Category 2  Category 3     Frequency     Total       Test Statistic        Last Digits of Weights  A random sample of 100 weights of Californians is obtained, and the last digits of those weights are summarized in the table below. When obtaining weights of subjects, it is extremely important to actually measure their weights instead of asking them to report their weights. By analyzing the last digits of weights, researchers can verify that they were obtained through actual measurements instead of being reported.  When people report weights, they tend to round down, sometimes substantially. For example, a weight of 197 lb might be reported as 170 lb. Reported weights tend to have many last digits consisting of 0 or 5. In contrast, if people are actually weighed, the last digits tend to be uniformly distributed, with 0, 1, 2, ..., 9 all occurring with roughly the same frequencies.  Test the claim that the last digits do not follow a uniform distribution.               Last Digit  0  1  2  3  4  5  6  7  8  9    Observed Frequency  46  1  2  3  3  30  4  0  8  3    Expected Frequency                Benford's Law  According to Benford's law, a variety of different data sets include numbers with leading digits that follow the distribution shown in the first two rows of the table below. Data sets that tend to follow Benford's law include a class of errors in clinical trials, as well as magnitudes of gradients from magnetic resonance imaging (MRI) scans, computed tomography (CT) scans, and ultrasound images.  The bottom row of the table lists the frequencies of leading digits of the magnitudes of gradients from an ultrasound image. Do the frequencies of leading digits appear to fit the distribution of Benford's law, as expected, or does it appear that the image may have been corrupted with a substantial amount of noise because the leading digits do not fit the distribution of Benford's law?              Leading Digit  1  2  3  4  5  6  7  8  9    Benford's Law  30.1%  17.6%  12.5%  9.7%  7.9%  6.7%  5.8%  5.1%  4.6%    Observed Frequency  69  40  42  26  25  16  16  17  20    Expected Frequency               "
+},
+{
+  "id": "inf-more-than-two-prop-2",
+  "level": "2",
+  "url": "inf-more-than-two-prop.html#inf-more-than-two-prop-2",
+  "type": "Objectives",
+  "number": "",
+  "title": "",
+  "body": "   Perform a hypothesis test of homogenity.    Perform a hypothesis test of independence.    Perform a hypothesis test of multinomial distribution.    "
+},
+{
+  "id": "form-test-homogenity",
+  "level": "2",
+  "url": "inf-more-than-two-prop.html#form-test-homogenity",
+  "type": "Formula",
+  "number": "182",
+  "title": "Testing Homogenity.",
+  "body": " Testing Homogenity     Requirements   There must be two categorical variables of two or more independent samples.  All of the samples must be simple random samples.  All of the samples are independent of each other.  All expected values must be at least five.     Hypotheses  The probability distribution is the same for all samples.  At least one sample is different.    Contingency Table  Given Information (Observed Values)          Sample 1  Sample 2  Sample 3     Category 1     Row 1 Total    Category 2     Row 2 Total     Column 1 Total  Column 2 Total  Column 3 Total  Grand Total    Need to Calculate (Expected Values)          Sample 1  Sample 2  Sample 3     Category 1     Row 1 Total    Category 2     Row 2 Total     Column 1 Total  Column 2 Total  Column 3 Total  Grand Total       Test Statistic      "
+},
+{
+  "id": "homegenity-3",
+  "level": "2",
+  "url": "inf-more-than-two-prop.html#homegenity-3",
+  "type": "Algorithm",
+  "number": "183",
+  "title": "Matrix.",
+  "body": " Matrix    data = matrix(c(1,2,3,4,5,6,7,8,9), nrow = 1, ncol = 1, byrow = T)    rownames(data) = c(\"First\", \"Second\", ..., \"Last\")    colnames(data) = c(\"First\", \"Second\", ..., \"Last\")     For p-values use pchisq    For critical values use qchisq    For test statistic use chisq.test(data as a table or matrix)    For expected values use chisq.test(data as a table or matrix)$expected      "
+},
+{
+  "id": "im2p-ex-personalities",
+  "level": "2",
+  "url": "inf-more-than-two-prop.html#im2p-ex-personalities",
+  "type": "Example",
+  "number": "184",
+  "title": "Distribution of Personality Types.",
+  "body": " Distribution of Personality Types   A psychologist is interested in testing whether there is a difference in the distribution of personality types for business majors and social science majors. Test at a 5% level of significance.           Open  Conscientious  Extrovert  Agreeable  Neurotic    Business  41  52  46  61  58    Social Science  72  75  63  80  65     "
+},
+{
+  "id": "im2p-ex-exercise",
+  "level": "2",
+  "url": "inf-more-than-two-prop.html#im2p-ex-exercise",
+  "type": "Example",
+  "number": "185",
+  "title": "Exercise Programs.",
+  "body": " Exercise Programs   A public health researcher wants to examine if different exercise programs (Yoga, Aerobics, and Strength Training) have different impacts on blood pressure categories in patients. Test at a 2% level of significance.          Normal  Elevated  Hypertension Stage 1  Hypertension Stage 2    Yoga  65  60  15  5    Aerobics  35  60  40  30    Strength Training  50  55  35  25     "
+},
+{
+  "id": "form-test-independence",
+  "level": "2",
+  "url": "inf-more-than-two-prop.html#form-test-independence",
+  "type": "Formula",
+  "number": "186",
+  "title": "Testing Independence.",
+  "body": " Testing Independence     Requirements   There must be two categorical variables of one sample.  The sample must be a simple random sample.  The observations are independent of each other.  All expected values must be at least five.     Hypotheses  The two categorical variables are independent.  The two categorical variables are dependent.    Contingency Table  Given Information (Observed Values)          Category 1  Category 2  Category 3     Category 1     Row 1 Total    Category 2     Row 2 Total     Column 1 Total  Column 2 Total  Column 3 Total  Grand Total    Need to Calculate (Expected Values)          Category 1  Category 2  Category 3     Category 1     Row 1 Total    Category 2     Row 2 Total     Column 1 Total  Column 2 Total  Column 3 Total  Grand Total       Test Statistic      "
+},
+{
+  "id": "im2p-ex-HIV",
+  "level": "2",
+  "url": "inf-more-than-two-prop.html#im2p-ex-HIV",
+  "type": "Example",
+  "number": "187",
+  "title": "NVP versus LPV.",
+  "body": " NVP versus LPV  When a newborn is HIV-positive, should he or she be treated with nevirapine (NVP) or a more expensive drug, lopinavir (LPV)? In this context, treatment success means preventing virologic failure, or the growth of the virus. Researchers conducted a randomized study to investigate a possible association between treatment and outcome. Among the 147 children who received NVP, approximately 41% experienced virologic failure, compared to about 19% of the 140 children treated with LPV. Test whether their is an association at a significance level of 0.01.  "
+},
+{
+  "id": "im2p-ex-peanut-exposure",
+  "level": "2",
+  "url": "inf-more-than-two-prop.html#im2p-ex-peanut-exposure",
+  "type": "Example",
+  "number": "188",
+  "title": "Peanut Exposure.",
+  "body": " Peanut Exposure  A study examined whether exposure to peanut products reduce the rate of a child developing peanut allergies. Children were randomized either to the peanut avoidance or the peanut consumption group; at 5 years of age, each child was tested for peanut allergy using an oral food challenge (OFC). The results of the OFC are reproduced in the table below. Failing the food challenge indicates an allergic reaction. Assess whether there is evidence for exposure to peanut allergy reducing the chance of developing peanut allergies using         FAIL OFC  PASS OFC    Peanut Avoidance  36  227    Peanut Consumption  5  262    "
+},
+{
+  "id": "form-test-goodness-of-fit",
+  "level": "2",
+  "url": "inf-more-than-two-prop.html#form-test-goodness-of-fit",
+  "type": "Formula",
+  "number": "189",
+  "title": "Multinomial Proportion Test.",
+  "body": " Multinomial Proportion Test     Requirements   There must be one categorical variable with two or more categories.  The sample must be a simple random sample.  The observations are independent of each other.  All expected values must be at least five.     Hypotheses  The population follows the specified probability distribution.  The population does not follow the specified probability distribution.    Probability Table  Given Information (Observed Values)          Category 1  Category 2  Category 3     Frequency     Total    Need to Calculate (Expected Values)          Category 1  Category 2  Category 3     Frequency     Total       Test Statistic      "
+},
+{
+  "id": "im2p-ex-last-digits",
+  "level": "2",
+  "url": "inf-more-than-two-prop.html#im2p-ex-last-digits",
+  "type": "Example",
+  "number": "190",
+  "title": "Last Digits of Weights.",
+  "body": " Last Digits of Weights  A random sample of 100 weights of Californians is obtained, and the last digits of those weights are summarized in the table below. When obtaining weights of subjects, it is extremely important to actually measure their weights instead of asking them to report their weights. By analyzing the last digits of weights, researchers can verify that they were obtained through actual measurements instead of being reported.  When people report weights, they tend to round down, sometimes substantially. For example, a weight of 197 lb might be reported as 170 lb. Reported weights tend to have many last digits consisting of 0 or 5. In contrast, if people are actually weighed, the last digits tend to be uniformly distributed, with 0, 1, 2, ..., 9 all occurring with roughly the same frequencies.  Test the claim that the last digits do not follow a uniform distribution.               Last Digit  0  1  2  3  4  5  6  7  8  9    Observed Frequency  46  1  2  3  3  30  4  0  8  3    Expected Frequency              "
+},
+{
+  "id": "im2p-ex-benfords-law",
+  "level": "2",
+  "url": "inf-more-than-two-prop.html#im2p-ex-benfords-law",
+  "type": "Example",
+  "number": "191",
+  "title": "Benford’s Law.",
+  "body": " Benford's Law  According to Benford's law, a variety of different data sets include numbers with leading digits that follow the distribution shown in the first two rows of the table below. Data sets that tend to follow Benford's law include a class of errors in clinical trials, as well as magnitudes of gradients from magnetic resonance imaging (MRI) scans, computed tomography (CT) scans, and ultrasound images.  The bottom row of the table lists the frequencies of leading digits of the magnitudes of gradients from an ultrasound image. Do the frequencies of leading digits appear to fit the distribution of Benford's law, as expected, or does it appear that the image may have been corrupted with a substantial amount of noise because the leading digits do not fit the distribution of Benford's law?              Leading Digit  1  2  3  4  5  6  7  8  9    Benford's Law  30.1%  17.6%  12.5%  9.7%  7.9%  6.7%  5.8%  5.1%  4.6%    Observed Frequency  69  40  42  26  25  16  16  17  20    Expected Frequency             "
+},
+{
   "id": "subsec-cat-project-rubric",
   "level": "1",
   "url": "subsec-cat-project-rubric.html",
