@@ -25,12 +25,8 @@ INFO    : Runestone Services via online CDN query: version 8.3.6
 INFO    : Downloading Runestone Services, version 8.3.6
 INFO    : Extracting Runestone Services from archive file
 INFO    : Building custom css theme: theme-salem
-INFO    : converting /home/cservant/Dropbox/SVSU/Semester Materials/MATH-132B-02-F26/source/main.ptx to HTML in /tmp/ptx-e62s6sqf
+INFO    : converting /home/cservant/Dropbox/SVSU/Semester Materials/MATH-132B-02-F26/source/main.ptx to HTML in /tmp/ptx-h5iugquv
 INFO    : XSL conversion of /home/cservant/Dropbox/SVSU/Semester Materials/MATH-132B-02-F26/source/main.ptx by /home/cservant/.ptx/2.55.0/core/xsl/pretext-html.xsl
-ERROR   : * PTX:ERROR: the @xml:id value "inf-two-prop-notes" should be unique, but is authored multiple times.
-INFO    : *            Results will be unpredictable, and likely incorrect.  Information on the locations follows:
-INFO    : *              located at: pretext/book/chapter/section
-INFO    : *              located within: "inf-two-prop-notes" (xml:id), "Inference for Two Proportions" (title)
 WARNING : * PTX:WARNING: In a subsection containing subsubsections, any content that is not inside a subsubsection needs to be inside an <introduction> and/or  <conclusion>.
 INFO    : *              located at: pretext/book/chapter/section/subsection
 INFO    : *              located within: "ncs-chi-square" (xml:id), "An Introduction to the Chi-Square Distribution" (title)
@@ -42,23 +38,20 @@ INFO    : *              located within: "ex-germination-proportion-table-r" (xm
 INFO    : *              located at: pretext/book/chapter/section/subsection/program/input
 INFO    : *              located within: "subsec-large-categorical-dataset" (xml:id), "Working with a Larger Biological Dataset" (title)
 INFO    : * --------------
-WARNING : * PTX:DEPRECATE: (2026-05-11) the "me" and "men" elements have been deprecated.  The replacement is an "md" with no "mrow" children, and numbering is controlled by the "@number" attribute, or a global setting in "docinfo". (4 times)
+WARNING : * PTX:DEPRECATE: (2026-05-11) the "me" and "men" elements have been deprecated.  The replacement is an "md" with no "mrow" children, and numbering is controlled by the "@number" attribute, or a global setting in "docinfo". (8 times)
 INFO    : *              located at: pretext/book/chapter/section/subsection/definition/me
 INFO    : *              located within: "def-formula" (xml:id), "Binomial Probability Formula" (title)
 INFO    : *              located at: pretext/book/chapter/section/subsection/identity/statement/p/me
 INFO    : *              located within: "form-test-homogenity" (xml:id), "Testing Homogenity" (title)
+INFO    : *              located within: "form-test-independence" (xml:id), "Testing Independence" (title)
+INFO    : *              located within: "form-test-goodness-of-fit" (xml:id), "Multinomial Proportion Test" (title)
 INFO    : successful application of /home/cservant/.ptx/2.55.0/core/xsl/pretext-html.xsl
-INFO    : Removing temporary directory /tmp/ptx-e62s6sqf
-INFO    : Removing temporary directory /tmp/ptx-ifae8mg8
+INFO    : Removing temporary directory /tmp/ptx-h5iugquv
+INFO    : Removing temporary directory /tmp/ptx-8lm5q_si
 INFO    : 
 Finished build for target course. Run `pretext view course` to see the results.
 
-FATAL   : There were errors during the build.  See above.
-INFO    : ------------------------
-exit    : Failed to build without errors.  Exiting...
 INFO    : 
-----------------------------------------------------
-INFO    : While running pretext, the following errors occurred:
+Success!  Built requested target(s) without errors.
 
-INFO    : (see log messages above or in the 'logs' folder for more information)
-INFO    : ----------------------------------------------------
+INFO    : 

@@ -37,7 +37,7 @@
       <xi:include href="./notes/inference-for-one-proportion-part-one.ptx"/>
       <xi:include href="./notes/inference-for-one-proportion-part-two.ptx"/>
       <xi:include href="./notes/inference-for-two-proportions.ptx"/>
-      <!-- <xi:include href="./notes/inference-for-more-than-two-proportions.ptx"/> -->
+      <xi:include href="./notes/inference-for-more-than-two-proportions.ptx"/>
     </chapter>
 
     <chapter>

@@ -23,20 +23,22 @@
         <title>Testing Homogenity</title>
             
         <statement>
-            <p>
-                <em>Requirements</em>
-                <ol marker="1)">
-                    <li><p>All of the samples must be simple random samples.</p></li>
-                    <li><p>All of the samples are independent of each other.</p></li>
-                    <li><p>All expected values must be at least five.</p></li>
-                </ol>
-            </p>
-            <p>
-                <em>Hypotheses</em>
-
-                <p><m>H_0:</m> The probability distribution is the same for all samples.</p>
-                <p><m>H_a:</m> At least one sample is different.</p>
-            </p>
+            <sidebyside widths="60% 30%">
+                <stack>
+                    <p><em>Requirements</em></p>
+                    <ol marker="1)">
+                        <li><p>There must be two categorical variables of two or more independent samples.</p></li>
+                        <li><p>All of the samples must be simple random samples.</p></li>
+                        <li><p>All of the samples are independent of each other.</p></li>
+                        <li><p>All expected values must be at least five.</p></li>
+                    </ol>
+                </stack>
+                <stack>
+                    <p><em>Hypotheses</em></p>
+                    <p><m>H_0:</m> The probability distribution is the same for all samples.</p>
+                    <p><m>H_a:</m> At least one sample is different.</p>
+                </stack>
+            </sidebyside>
             <p><em>Contingency Table</em></p>
 
             <p>Given Information (Observed Values)</p>
@@ -138,18 +140,528 @@
                 \text{df}=(r-1)\cdot(c-1)
             </me>
             </p>
+        </statement>
+    </identity>
+    
+    <algorithm>
+        <title>Matrix</title>
+        <statement>
             <p>
-                <em>R Functions</em>
-                <ul>
-                    <li>
-                        <p>For p-values use <c>pnorm</c></p>
-                    </li>
-                    <li>
-                        <p>For critical values use <c>qnorm</c></p>
-                    </li>
-                </ul>         
+                <c>data = matrix(c(1,2,3,4,5,6,7,8,9), nrow = 1, ncol = 1, byrow = T)</c>
+            </p>
+            <p>
+                <c>rownames(data) = c("First", "Second", ..., "Last")</c>
+            </p>
+            <p>
+                <c>colnames(data) = c("First", "Second", ..., "Last")</c>
+            </p>
+
+            <p><ul>
+                <li>
+                    <p>For p-values use <c>pchisq</c></p>
+                </li>
+                <li>
+                    <p>For critical values use <c>qchisq</c></p>
+                </li>
+                <li>
+                    <p>For test statistic use <c>chisq.test(data as a table or matrix)</c></p>
+                </li>
+                <li>
+                    <p>For expected values use <c>chisq.test(data as a table or matrix)$expected</c></p>
+                </li>
+            </ul> </p>
+        </statement>
+    </algorithm>
+
+    <example xml:id="im2p-ex-personalities">
+        <title>Distribution of Personality Types</title>
+        <statement>
+            <p>
+                A psychologist is interested in testing whether there is a difference in the distribution of personality types for business majors and social science majors. Test at a 5% level of significance.
+            </p>
+
+            <tabular row-headers="yes" halign="center" valign="middle"
+                    top="medium" bottom="medium" left="medium" right="medium">
+                <col right="medium"/>
+                <col right="medium"/>
+                <col right="medium"/>
+                <col right="medium"/>
+                <col right="medium"/>
+                <col/>
+                <row header = "yes">
+                    <cell></cell>
+                    <cell>Open</cell>
+                    <cell>Conscientious</cell>
+                    <cell>Extrovert</cell>
+                    <cell>Agreeable</cell>
+                    <cell>Neurotic</cell>
+                </row>
+                <row>
+                    <cell>Business</cell>
+                    <cell>41</cell>
+                    <cell>52</cell>
+                    <cell>46</cell>
+                    <cell>61</cell>
+                    <cell>58</cell>
+                </row>
+                <row>
+                    <cell>Social Science</cell>
+                    <cell>72</cell>
+                    <cell>75</cell>
+                    <cell>63</cell>
+                    <cell>80</cell>
+                    <cell>65</cell>
+                </row>
+            </tabular>
+        </statement>        
+    </example>
+
+    <example xml:id="im2p-ex-exercise">
+        <title>Exercise Programs</title>
+        <statement>
+            <p>
+                A public health researcher wants to examine if different exercise programs (Yoga, Aerobics, and Strength Training) have different impacts on blood pressure categories in patients. Test at a 2% level of significance.
+            </p>
+
+            <tabular row-headers="yes" halign="center" valign="middle"
+                    top="medium" bottom="medium" left="medium" right="medium">
+                <col right="medium"/>
+                <col right="medium"/>
+                <col right="medium"/>
+                <col right="medium"/>
+                <col/>
+                <row header = "yes">
+                    <cell></cell>
+                    <cell>Normal</cell>
+                    <cell>Elevated</cell>
+                    <cell>Hypertension Stage 1</cell>
+                    <cell>Hypertension Stage 2</cell>
+                </row>
+
+                <row>
+                    <cell>
+                        Yoga
+                    </cell>
+                    <cell>65</cell>
+                    <cell>60</cell>
+                    <cell>15</cell>
+                    <cell>5</cell>
+                </row>
+
+                <row>
+                    <cell>Aerobics</cell>
+                    <cell>35</cell>
+                    <cell>60</cell>
+                    <cell>40</cell>
+                    <cell>30</cell>
+                </row>
+
+                <row>
+                    <cell>Strength Training</cell>
+                    <cell>50</cell>
+                    <cell>55</cell>
+                    <cell>35</cell>
+                    <cell>25</cell>
+                </row>
+            </tabular>
+        </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="independence">
+    <title>Test of Independence</title>
+
+    <identity xml:id="form-test-independence">
+        <title>Testing Independence</title>
+            
+        <statement>
+            <sidebyside widths="70% 25%">
+                <stack>
+                    <p><em>Requirements</em></p>
+                    <ol marker="1)">
+                        <li><p>There must be two categorical variables of one sample.</p></li>
+                        <li><p>The sample must be a simple random sample.</p></li>
+                        <li><p>The observations are independent of each other.</p></li>
+                        <li><p>All expected values must be at least five.</p></li>
+                    </ol>
+                </stack>
+                <stack>
+                    <p><em>Hypotheses</em></p>
+                    <p><m>H_0:</m> The two categorical variables are independent.</p>
+                    <p><m>H_a:</m> The two categorical variables are dependent.</p>
+                </stack>
+            </sidebyside>
+
+            <p xml:id="remove-white-sp"><em>Contingency Table</em></p>
+
+            <p>Given Information (Observed Values)</p>
+
+            <tabular row-headers="yes" halign="center" valign="middle"
+                    top="medium" bottom="medium" left="medium" right="medium">
+            <col right="medium"/>
+            <col right="medium"/>
+            <col right="medium"/>
+            <col right="medium"/>
+            <col/>
+
+            <row header="yes" bottom="medium">
+                <cell/>
+                <cell>Category 1</cell>
+                <cell>Category 2</cell>
+                <cell>Category 3</cell>
+                <cell/>
+            </row>
+            <row bottom="medium">
+                <cell>Category 1</cell>
+                <cell><m>O_{11}</m></cell>
+                <cell><m>O_{12}</m></cell>
+                <cell><m>O_{13}</m></cell>
+                <cell>Row 1 Total</cell>
+            </row>
+            <row bottom="medium">
+                <cell>Category 2</cell>
+                <cell><m>O_{21}</m></cell>
+                <cell><m>O_{22}</m></cell>
+                <cell><m>O_{23}</m></cell>
+                <cell>Row 2 Total</cell>
+            </row>
+            <row>
+                <cell/>
+                <cell>Column 1 Total</cell>
+                <cell>Column 2 Total</cell>
+                <cell>Column 3 Total</cell>
+                <cell>Grand Total</cell>
+            </row>
+            </tabular>
+
+            <p>Need to Calculate (Expected Values)</p>
+
+            <tabular row-headers="yes" halign="center" valign="middle"
+                    top="medium" bottom="medium" left="medium" right="medium">
+            <col right="medium"/>
+            <col right="medium"/>
+            <col right="medium"/>
+            <col right="medium"/>
+            <col/>
+
+            <row header="yes" bottom="medium">
+                <cell/>
+                <cell>Category 1</cell>
+                <cell>Category 2</cell>
+                <cell>Category 3</cell>
+                <cell/>
+            </row>
+            <row bottom="medium">
+                <cell>Category 1</cell>
+                <cell><m>E_{11}</m></cell>
+                <cell><m>E_{12}</m></cell>
+                <cell><m>E_{13}</m></cell>
+                <cell>Row 1 Total</cell>
+            </row>
+            <row bottom="medium">
+                <cell>Category 2</cell>
+                <cell><m>E_{21}</m></cell>
+                <cell><m>E_{22}</m></cell>
+                <cell><m>E_{23}</m></cell>
+                <cell>Row 2 Total</cell>
+            </row>
+            <row>
+                <cell/>
+                <cell>Column 1 Total</cell>
+                <cell>Column 2 Total</cell>
+                <cell>Column 3 Total</cell>
+                <cell>Grand Total</cell>
+            </row>
+            </tabular>
+
+            <p>
+            <me>
+                E_{ij} =
+                \dfrac{\text{Row } i \text{ Total} \cdot \text{Column } j \text{ Total}}
+                {\text{Grand Total}}
+            </me>
+            </p>
+
+            <p><em>Test Statistic</em></p>
+
+            <p>
+            <me>
+                \chi^2 =
+                \sum_{i=1}^{r}\sum_{j=1}^{c}
+                \dfrac{\left(O_{ij}-E_{ij}\right)^2}{E_{ij}}
+                \qquad
+                \text{df}=(r-1)\cdot(c-1)
+            </me>
             </p>
         </statement>
     </identity>
+
+    <example xml:id="im2p-ex-HIV">
+        <title>NVP versus LPV</title>
+        
+        <p>When a newborn is HIV-positive, should he or she be treated with nevirapine (NVP) or a more expensive drug, lopinavir (LPV)? In this context, treatment success means preventing virologic failure, or the growth of the virus. Researchers conducted a randomized study to investigate a possible association between treatment and outcome. Among the 147 children who received NVP, approximately 41% experienced virologic failure, compared to about 19% of the 140 children treated with LPV. Test whether their is an association at a significance level of 0.01.</p>
+    </example>
+
+    <example xml:id="im2p-ex-peanut-exposure">
+        <title>Peanut Exposure</title>
+        
+        <p>A study examined whether exposure to peanut products reduce the rate of a child developing peanut allergies. Children were randomized either to the peanut avoidance or the peanut consumption group; at 5 years of age, each child was tested for peanut allergy using an oral food challenge (OFC). The results of the OFC are reproduced in the table below. Failing the food challenge indicates an allergic reaction. Assess whether there is evidence for exposure to peanut allergy reducing the chance of developing peanut allergies using <m>\alpha = 0.05</m></p>
+
+        <tabular row-headers="yes" halign="center" valign="middle" top="medium" bottom="medium" left="medium" right="medium">
+            <col right="medium" halign="left"/>
+            <col right="medium" halign="center"/>
+            <col right="medium" halign="center"/>
+            <col right="medium" halign="center"/>
+            <row header="yes" bottom="medium">
+                <cell/>
+                <cell>FAIL OFC</cell>
+                <cell>PASS OFC</cell>
+            </row>
+            <row>
+                <cell>Peanut Avoidance</cell>
+                <cell>36</cell>
+                <cell>227</cell>
+            </row>
+            <row bottom="medium">
+                <cell>Peanut Consumption</cell>
+                <cell>5</cell>
+                <cell>262</cell>
+            </row>
+        </tabular>
+    </example>
   </subsection>
+
+  <subsection xml:id="goodness-of-fit">
+    <title>Test of Goodness-of-Fit</title>
+
+    <identity xml:id="form-test-goodness-of-fit">
+        <title>Multinomial Proportion Test</title>
+        <statement>
+            <sidebyside widths="60% 35%">
+                <stack>
+                    <p><em>Requirements</em></p>
+                    <ol marker="1)">
+                        <li><p>There must be one categorical variable with two or more categories.</p></li>
+                        <li><p>The sample must be a simple random sample.</p></li>
+                        <li><p>The observations are independent of each other.</p></li>
+                        <li><p>All expected values must be at least five.</p></li>
+                    </ol>
+                </stack>
+                <stack>
+                    <p><em>Hypotheses</em></p>
+                    <p><m>H_0:</m> The population follows the specified probability distribution.</p>
+                    <p><m>H_a:</m> The population does not follow the specified probability distribution.</p>
+                </stack>
+            </sidebyside>
+
+            <p xml:id="remove-white-sp-gof"><em>Probability Table</em></p>
+
+            <p>Given Information (Observed Values)</p>
+
+            <tabular row-headers="yes" halign="center" valign="middle"
+                     top="medium" bottom="medium" left="medium" right="medium">
+                <col right="medium"/>
+                <col right="medium"/>
+                <col right="medium"/>
+                <col right="medium"/>
+                <col/>
+
+                <row header="yes" bottom="medium">
+                    <cell/>
+                    <cell>Category 1</cell>
+                    <cell>Category 2</cell>
+                    <cell>Category 3</cell>
+                    <cell/>
+                </row>
+                <row>
+                    <cell>Frequency</cell>
+                    <cell><m>O_1</m></cell>
+                    <cell><m>O_2</m></cell>
+                    <cell><m>O_3</m></cell>
+                    <cell>Total</cell>
+                </row>
+            </tabular>
+
+            <p>Need to Calculate (Expected Values)</p>
+
+            <tabular row-headers="yes" halign="center" valign="middle"
+                     top="medium" bottom="medium" left="medium" right="medium">
+                <col right="medium"/>
+                <col right="medium"/>
+                <col right="medium"/>
+                <col right="medium"/>
+                <col/>
+
+                <row header="yes" bottom="medium">
+                    <cell/>
+                    <cell>Category 1</cell>
+                    <cell>Category 2</cell>
+                    <cell>Category 3</cell>
+                    <cell/>
+                </row>
+                <row>
+                    <cell>Frequency</cell>
+                    <cell><m>E_1</m></cell>
+                    <cell><m>E_2</m></cell>
+                    <cell><m>E_3</m></cell>
+                    <cell>Total</cell>
+                </row>
+            </tabular>
+
+            <p>
+                <me>
+                    E_i = n \cdot p_i
+                </me>
+            </p>
+
+            <p><em>Test Statistic</em></p>
+
+            <p>
+                <me>
+                    \chi^2 =
+                    \sum_{i=1}^{k}
+                    \dfrac{\left(O_i-E_i\right)^2}{E_i}
+                    \qquad
+                    \text{df}=k-1
+                </me>
+            </p>
+        </statement>
+    </identity>
+
+    <example xml:id="im2p-ex-last-digits">
+        <title>Last Digits of Weights</title>
+
+        <p>A random sample of 100 weights of Californians is obtained, and the last digits of those weights are summarized in the table below. When obtaining weights of subjects, it is extremely important to actually measure their weights instead of asking them to report their weights. By analyzing the last digits of weights, researchers can verify that they were obtained through actual measurements instead of being reported.</p>
+
+        <p>When people report weights, they tend to round down, sometimes substantially. For example, a weight of 197 lb might be reported as 170 lb. Reported weights tend to have many last digits consisting of 0 or 5. In contrast, if people are actually weighed, the last digits tend to be uniformly distributed, with 0, 1, 2, ..., 9 all occurring with roughly the same frequencies.</p>
+
+        <p>Test the claim that the last digits do not follow a uniform distribution.</p>
+
+        <tabular row-headers="yes" halign="center" valign="middle"
+                 top="medium" bottom="medium" left="medium" right="medium">
+            <col right="medium"/>
+            <col right="medium"/>
+            <col right="medium"/>
+            <col right="medium"/>
+            <col right="medium"/>
+            <col right="medium"/>
+            <col right="medium"/>
+            <col right="medium"/>
+            <col right="medium"/>
+            <col right="medium"/>
+            <col/>
+
+            <row header="yes" bottom="medium">
+                <cell>Last Digit</cell>
+                <cell>0</cell>
+                <cell>1</cell>
+                <cell>2</cell>
+                <cell>3</cell>
+                <cell>4</cell>
+                <cell>5</cell>
+                <cell>6</cell>
+                <cell>7</cell>
+                <cell>8</cell>
+                <cell>9</cell>
+            </row>
+            <row bottom="medium">
+                <cell>Observed Frequency</cell>
+                <cell>46</cell>
+                <cell>1</cell>
+                <cell>2</cell>
+                <cell>3</cell>
+                <cell>3</cell>
+                <cell>30</cell>
+                <cell>4</cell>
+                <cell>0</cell>
+                <cell>8</cell>
+                <cell>3</cell>
+            </row>
+            <row>
+                <cell>Expected Frequency</cell>
+                <cell/>
+                <cell/>
+                <cell/>
+                <cell/>
+                <cell/>
+                <cell/>
+                <cell/>
+                <cell/>
+                <cell/>
+                <cell/>
+            </row>
+        </tabular>
+    </example>
+
+    <example xml:id="im2p-ex-benfords-law">
+        <title>Benford's Law</title>
+
+        <p>According to Benford's law, a variety of different data sets include numbers with leading digits that follow the distribution shown in the first two rows of the table below. Data sets that tend to follow Benford's law include a class of errors in clinical trials, as well as magnitudes of gradients from magnetic resonance imaging (MRI) scans, computed tomography (CT) scans, and ultrasound images.</p>
+
+        <p>The bottom row of the table lists the frequencies of leading digits of the magnitudes of gradients from an ultrasound image. Do the frequencies of leading digits appear to fit the distribution of Benford's law, as expected, or does it appear that the image may have been corrupted with a substantial amount of noise because the leading digits do not fit the distribution of Benford's law?</p>
+
+        <tabular row-headers="yes" halign="center" valign="middle"
+                 top="medium" bottom="medium" left="medium" right="medium">
+            <col right="medium"/>
+            <col right="medium"/>
+            <col right="medium"/>
+            <col right="medium"/>
+            <col right="medium"/>
+            <col right="medium"/>
+            <col right="medium"/>
+            <col right="medium"/>
+            <col right="medium"/>
+            <col/>
+
+            <row header="yes" bottom="medium">
+                <cell>Leading Digit</cell>
+                <cell>1</cell>
+                <cell>2</cell>
+                <cell>3</cell>
+                <cell>4</cell>
+                <cell>5</cell>
+                <cell>6</cell>
+                <cell>7</cell>
+                <cell>8</cell>
+                <cell>9</cell>
+            </row>
+            <row bottom="medium">
+                <cell>Benford's Law</cell>
+                <cell>30.1%</cell>
+                <cell>17.6%</cell>
+                <cell>12.5%</cell>
+                <cell>9.7%</cell>
+                <cell>7.9%</cell>
+                <cell>6.7%</cell>
+                <cell>5.8%</cell>
+                <cell>5.1%</cell>
+                <cell>4.6%</cell>
+            </row>
+            <row bottom="medium">
+                <cell>Observed Frequency</cell>
+                <cell>69</cell>
+                <cell>40</cell>
+                <cell>42</cell>
+                <cell>26</cell>
+                <cell>25</cell>
+                <cell>16</cell>
+                <cell>16</cell>
+                <cell>17</cell>
+                <cell>20</cell>
+            </row>
+            <row>
+                <cell>Expected Frequency</cell>
+                <cell/>
+                <cell/>
+                <cell/>
+                <cell/>
+                <cell/>
+                <cell/>
+                <cell/>
+                <cell/>
+                <cell/>
+            </row>
+        </tabular>
+    </example>
+</subsection>
 </section>
