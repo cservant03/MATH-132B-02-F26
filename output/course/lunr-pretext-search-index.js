@@ -1864,6 +1864,195 @@ var ptx_lunr_docs = [
   "body": " Benford's Law  According to Benford's law, a variety of different data sets include numbers with leading digits that follow the distribution shown in the first two rows of the table below. Data sets that tend to follow Benford's law include a class of errors in clinical trials, as well as magnitudes of gradients from magnetic resonance imaging (MRI) scans, computed tomography (CT) scans, and ultrasound images.  The bottom row of the table lists the frequencies of leading digits of the magnitudes of gradients from an ultrasound image. Do the frequencies of leading digits appear to fit the distribution of Benford's law, as expected, or does it appear that the image may have been corrupted with a substantial amount of noise because the leading digits do not fit the distribution of Benford's law?              Leading Digit  1  2  3  4  5  6  7  8  9    Benford's Law  30.1%  17.6%  12.5%  9.7%  7.9%  6.7%  5.8%  5.1%  4.6%    Observed Frequency  69  40  42  26  25  16  16  17  20    Expected Frequency             "
 },
 {
+  "id": "describing-numerical-data",
+  "level": "1",
+  "url": "describing-numerical-data.html",
+  "type": "Section",
+  "number": "",
+  "title": "Describing Numerical Data",
+  "body": " Describing Numerical Data   We describe numerical data using measures of center, measures of spread, and graphs. Together, these summaries help us understand a typical value, how much the observations vary, the shape of the distribution, and any unusual observations.    Measures of Center   Mean        Important Properties of the Mean   The mean uses every data value.  Changing even one observation changes the mean.  An extreme observation can change the mean substantially. The mean is not robust .  We use for a population mean and for a sample mean.  The mean has the same units as the original data.     Finding a Mean   Find the mean of the following data set.      Median        Important Properties of the Median   Always put the data in order before finding the median.  If the number of observations is odd, the median is the middle observation.  If the number of observations is even, the median is the mean of the two middle observations.  The median depends on the middle position or positions, rather than directly using the magnitude of every observation.  The median is robust : changing an extreme observation often has little or no effect on it.  In these notes, we use for a population median and for a sample median.     Finding Medians   Find the median of each sample.          Measures of Spread  Measures of center do not tell the whole story. The two illustrative groups below have the same mean and median, 70 beats per minute, but their pulse rates have different amounts of spread.   Two stacked dot plots on the same pulse-rate scale. Both distributions are symmetric about 70 beats per minute. Group A ranges from 62 to 78, while Group B ranges from 68 to 72. Group A has greater spread even though both groups have mean and median 70.   One way to study spread is to examine how far the observations are from the mean.   Average Distance from the Mean   Find the mean of the following data set. Then find each observation's distance from the mean and calculate the average of those distances.      Standard Deviation        Variance        Important Properties of Standard Deviation   Standard deviation is never negative. It equals zero only when all observations are equal.  Larger standard deviations indicate greater spread around the mean.  Standard deviation uses every observation and is not robust.  Standard deviation has the same units as the data. Variance has squared units.  We use for a sample standard deviation and for a population standard deviation.  The sample variance uses in the denominator. For independent random observations from a population with finite variance, is an unbiased estimator of ; is generally a biased estimator of .     Sample Standard Deviation   Find the standard deviation of the following sample data.      Population Standard Deviation   Find the standard deviation of the following data set, treating it as the entire population .      Range      The range uses only the smallest and largest observations, so it is not robust.    Quartiles        Finding Quartiles by Hand   Order the data from smallest to largest.  Find the median, .  Split the ordered data into a lower half and an upper half. Exclude the overall median from both halves.  , the median of the lower half, and , the median of the upper half.     Interquartile Range (IQR)      Important Properties of the IQR   The IQR describes the spread of the middle 50 percent of the data.  The IQR is robust.  The IQR does not directly use the magnitude of every observation.  The IQR has the same units as the data.     Finding Interquartile Ranges   Find the quartiles and IQR of each sample using the convention above.          Robustness  A numerical summary is robust , or resistant, if a small number of extreme observations have relatively little effect on it.  Return to the data used to find a mean in . Suppose the largest value, 68, is changed to 168 while all other values stay the same.   Two dot plots on a common horizontal scale. The original data are clustered from 38 to 68. In the second plot, the observation at 68 moves to 168; the other eleven observations remain in their original positions.    Effect of changing one extreme observation. Standard deviations are sample standard deviations.        Data set Median IQR  Original data 57.5 20 55.00 10.72  68 changed to 168 57.5 20 63.33 34.42    Which summaries changed? Which remained the same? Explain how the results illustrate robustness.   Choosing Summaries   For approximately symmetric data without influential outliers, the mean and standard deviation are often useful summaries.  For strongly skewed data or data with influential outliers, the median and IQR are often more useful descriptions of a typical value and spread.   Robust does not mean that a summary can never change. Also, an unusual observation is not automatically an error; investigate it before deciding whether to exclude it.     Histograms  A histogram groups numerical observations into intervals called classes , or bins . Each bar shows how many observations, or what percentage of observations, fall in its interval.   Properties of a Histogram   Choose nonoverlapping intervals that cover all the observations. Use equal class widths for the frequency or percent histograms in these notes.  Use evenly spaced tick marks on the horizontal axis. Mark class boundaries or class midpoints consistently.  Label the horizontal axis with the variable and its units, when units are known.  Use evenly spaced tick marks on the vertical axis and start its scale at zero. Label it Frequency or Percent .  Draw bars across the class intervals. Adjacent bars touch at their class boundaries; an empty class has a bar of height zero.   For the examples below, include the left endpoint of each interval and exclude the right endpoint. Include the final right endpoint if needed to include the largest observation.    Constructing a Histogram   Construct a histogram of the following data. Use classes of width 2.    Blank histogram axes. The horizontal axis is labeled Data value, with class boundaries 90, 92, 94, 96, 98, and 100. The vertical axis is labeled Frequency and runs from 0 to 10.      Constructing Another Histogram   Construct a histogram of the following data. Use classes of width 10.    Blank histogram axes. The horizontal axis is labeled Data value, with class boundaries from 10 to 90 in increments of 10. The vertical axis is labeled Frequency and runs from 0 to 8.       Interpreting Histograms  When describing a histogram, discuss its shape, center, spread, and any unusual features. Look for clusters, gaps, and possible outliers. A histogram can suggest possible recording errors, but the graph alone cannot establish that an observation is incorrect.    Bell-shaped   A histogram with one central peak. Frequencies decrease in a roughly balanced way on both sides of the center.     Approximately uniform   A histogram with bars of approximately equal height across equal-width classes.       Skewed right   A histogram with most observations at lower values and a long tail extending toward higher values on the right.     Skewed left   A histogram with most observations at higher values and a long tail extending toward lower values on the left.      Name the Direction of the Tail  Skewness is named for the direction of the longer tail, not the side containing the tallest bars.   Possible outliers are observations unusually far from the rest of the data.   A histogram with most observations in the lower classes and one observation in a far-right class, separated from the main cluster by several empty classes.     Box Plots  The five-number summary consists of the minimum, , median, , and maximum. A box plot uses quartiles to display a distribution's center and spread. We will use a modified box plot that displays potential outliers separately.   Properties of a Box Plot   Draw the box plot above a horizontal number line or beside a vertical number line.  Use evenly spaced tick marks. Label the scale with the variable and its units, when units are known.  Draw the box from to and draw a line inside the box at the median.  Use the outlier fences to identify potential outliers.  Extend the whiskers to the smallest and largest observed values that are not beyond the fences.  Plot observations beyond the fences individually.     Outlier Fences   A potential outlier is strictly below the lower fence or strictly above the upper fence. The fences are cutoff values; they are not necessarily observed data values or whisker endpoints .   The minimum and maximum always belong to the five-number summary, even if they are plotted as outliers. When there are no outliers, the whiskers end at the minimum and maximum.   Five-Number Summary and Box Plot   Calculate the five-number summary and IQR of the following data. Find the outlier fences, identify any potential outliers, and construct a box plot.    A blank horizontal number line for a box plot. The scale extends from 190 to 350, with labeled tick marks every 20 units from 200 to 340.       Matching Histograms and Box Plots  Histograms and box plots emphasize different features of the same data. A histogram shows the pattern of frequencies across intervals. A box plot highlights the median, quartiles, spread, and potential outliers.   Three schematic distributions with corresponding box plots. The left-skewed distribution has a longer left tail and a box plot extending farther toward smaller values. The symmetric distribution has a centered median and balanced box and whiskers. The right-skewed distribution has a longer right tail and a box plot extending farther toward larger values. The quartiles beneath each curve align with the box and median below it.    Compare the centers of the distributions and the locations of the medians.  Compare the overall spread and the spread of the middle half of the observations.  Look for evidence of a longer tail and for possible outliers.   The patterns in the illustration are typical, not guaranteed. A box plot does not show every detail of a distribution: different histograms can have the same box plot, and peaks or gaps may be hidden.   "
+},
+{
+  "id": "dnd-def-mean",
+  "level": "2",
+  "url": "describing-numerical-data.html#dnd-def-mean",
+  "type": "Definition",
+  "number": "192",
+  "title": "Mean.",
+  "body": " Mean      "
+},
+{
+  "id": "dnd-ex-find-mean",
+  "level": "2",
+  "url": "describing-numerical-data.html#dnd-ex-find-mean",
+  "type": "Example",
+  "number": "193",
+  "title": "Finding a Mean.",
+  "body": " Finding a Mean   Find the mean of the following data set.    "
+},
+{
+  "id": "dnd-def-median",
+  "level": "2",
+  "url": "describing-numerical-data.html#dnd-def-median",
+  "type": "Definition",
+  "number": "194",
+  "title": "Median.",
+  "body": " Median      "
+},
+{
+  "id": "dnd-ex-find-median",
+  "level": "2",
+  "url": "describing-numerical-data.html#dnd-ex-find-median",
+  "type": "Example",
+  "number": "195",
+  "title": "Finding Medians.",
+  "body": " Finding Medians   Find the median of each sample.       "
+},
+{
+  "id": "dnd-ex-find-avg-dist-mean",
+  "level": "2",
+  "url": "describing-numerical-data.html#dnd-ex-find-avg-dist-mean",
+  "type": "Example",
+  "number": "196",
+  "title": "Average Distance from the Mean.",
+  "body": " Average Distance from the Mean   Find the mean of the following data set. Then find each observation's distance from the mean and calculate the average of those distances.    "
+},
+{
+  "id": "dnd-def-sd",
+  "level": "2",
+  "url": "describing-numerical-data.html#dnd-def-sd",
+  "type": "Definition",
+  "number": "197",
+  "title": "Standard Deviation.",
+  "body": " Standard Deviation      "
+},
+{
+  "id": "dnd-def-var",
+  "level": "2",
+  "url": "describing-numerical-data.html#dnd-def-var",
+  "type": "Definition",
+  "number": "198",
+  "title": "Variance.",
+  "body": " Variance      "
+},
+{
+  "id": "dnd-ex-find-sd1",
+  "level": "2",
+  "url": "describing-numerical-data.html#dnd-ex-find-sd1",
+  "type": "Example",
+  "number": "199",
+  "title": "Sample Standard Deviation.",
+  "body": " Sample Standard Deviation   Find the standard deviation of the following sample data.    "
+},
+{
+  "id": "dnd-ex-find-sd2",
+  "level": "2",
+  "url": "describing-numerical-data.html#dnd-ex-find-sd2",
+  "type": "Example",
+  "number": "200",
+  "title": "Population Standard Deviation.",
+  "body": " Population Standard Deviation   Find the standard deviation of the following data set, treating it as the entire population .    "
+},
+{
+  "id": "dnd-def-range",
+  "level": "2",
+  "url": "describing-numerical-data.html#dnd-def-range",
+  "type": "Definition",
+  "number": "201",
+  "title": "Range.",
+  "body": " Range    "
+},
+{
+  "id": "dnd-def-quartiles",
+  "level": "2",
+  "url": "describing-numerical-data.html#dnd-def-quartiles",
+  "type": "Definition",
+  "number": "202",
+  "title": "Quartiles.",
+  "body": " Quartiles      "
+},
+{
+  "id": "dnd-def-iqr",
+  "level": "2",
+  "url": "describing-numerical-data.html#dnd-def-iqr",
+  "type": "Definition",
+  "number": "203",
+  "title": "Interquartile Range (IQR).",
+  "body": " Interquartile Range (IQR)    "
+},
+{
+  "id": "dnd-ex-find-iqr",
+  "level": "2",
+  "url": "describing-numerical-data.html#dnd-ex-find-iqr",
+  "type": "Example",
+  "number": "204",
+  "title": "Finding Interquartile Ranges.",
+  "body": " Finding Interquartile Ranges   Find the quartiles and IQR of each sample using the convention above.       "
+},
+{
+  "id": "numerical-robustness-2",
+  "level": "2",
+  "url": "describing-numerical-data.html#numerical-robustness-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "robust "
+},
+{
+  "id": "numerical-robust-comparison-table",
+  "level": "2",
+  "url": "describing-numerical-data.html#numerical-robust-comparison-table",
+  "type": "Table",
+  "number": "205",
+  "title": "Effect of changing one extreme observation. Standard deviations are sample standard deviations.",
+  "body": " Effect of changing one extreme observation. Standard deviations are sample standard deviations.        Data set Median IQR  Original data 57.5 20 55.00 10.72  68 changed to 168 57.5 20 63.33 34.42   "
+},
+{
+  "id": "numerical-histograms-2",
+  "level": "2",
+  "url": "describing-numerical-data.html#numerical-histograms-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "histogram classes bins "
+},
+{
+  "id": "numerical-example-7",
+  "level": "2",
+  "url": "describing-numerical-data.html#numerical-example-7",
+  "type": "Example",
+  "number": "206",
+  "title": "Constructing a Histogram.",
+  "body": " Constructing a Histogram   Construct a histogram of the following data. Use classes of width 2.    Blank histogram axes. The horizontal axis is labeled Data value, with class boundaries 90, 92, 94, 96, 98, and 100. The vertical axis is labeled Frequency and runs from 0 to 10.    "
+},
+{
+  "id": "numerical-example-8",
+  "level": "2",
+  "url": "describing-numerical-data.html#numerical-example-8",
+  "type": "Example",
+  "number": "207",
+  "title": "Constructing Another Histogram.",
+  "body": " Constructing Another Histogram   Construct a histogram of the following data. Use classes of width 10.    Blank histogram axes. The horizontal axis is labeled Data value, with class boundaries from 10 to 90 in increments of 10. The vertical axis is labeled Frequency and runs from 0 to 8.    "
+},
+{
+  "id": "numerical-box-plots-2",
+  "level": "2",
+  "url": "describing-numerical-data.html#numerical-box-plots-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "five-number summary box plot "
+},
+{
+  "id": "numerical-example-9",
+  "level": "2",
+  "url": "describing-numerical-data.html#numerical-example-9",
+  "type": "Example",
+  "number": "208",
+  "title": "Five-Number Summary and Box Plot.",
+  "body": " Five-Number Summary and Box Plot   Calculate the five-number summary and IQR of the following data. Find the outlier fences, identify any potential outliers, and construct a box plot.    A blank horizontal number line for a box plot. The scale extends from 190 to 350, with labeled tick marks every 20 units from 200 to 340.    "
+},
+{
   "id": "subsec-cat-project-rubric",
   "level": "1",
   "url": "subsec-cat-project-rubric.html",

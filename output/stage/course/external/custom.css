@@ -630,3 +630,39 @@ a.mathjax-link {
 #two-prop-large-sample {
   padding-bottom: 5.5in;
 }
+
+/* ---------- Inference for Two or More Proportions ---------- */
+
+#im2p-ex-personalities {
+  padding-bottom: 1.9in;
+  break-before: page;
+  page-break-before: always;
+}
+
+#im2p-ex-exercise {
+  padding-bottom: 1.9in;
+}
+
+#remove-white-sp {
+  margin-top: 0;
+}
+
+#im2p-ex-HIV {
+  padding-bottom: 1.6in;
+}
+
+#im2p-ex-peanut-exposure {
+  padding-bottom: 1.6in;
+}
+
+#im2p-ex-last-digits {
+  padding-bottom: 3.5in;
+  break-before: page;
+  page-break-before: always;
+}
+
+#im2p-ex-benfords-law {
+  padding-bottom: 3.5in;
+  break-before: page;
+  page-break-before: always;
+}

@@ -1,0 +1,356 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<section xml:id="describing-numerical-data">
+  <title>Describing Numerical Data</title>
+
+  <introduction>
+    <p>We describe numerical data using measures of center, measures of spread, and graphs. Together, these summaries help us understand a typical value, how much the observations vary, the shape of the distribution, and any unusual observations.</p>
+  </introduction>
+
+  <subsection xml:id="numerical-measures-of-center">
+    <title>Measures of Center</title>
+
+    <definition xml:id="dnd-def-mean">
+      <title>Mean</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+
+    <assemblage>
+      <title>Important Properties of the Mean</title>
+      <p><ul>
+        <li><p>The mean uses every data value.</p></li>
+        <li><p>Changing even one observation changes the mean.</p></li>
+        <li><p>An extreme observation can change the mean substantially. The mean is <em>not robust</em>.</p></li>
+        <li><p>We use <m>\mu</m> for a population mean and <m>\bar{x}</m> for a sample mean.</p></li>
+        <li><p>The mean has the same units as the original data.</p></li>
+      </ul></p>
+    </assemblage>
+
+    <example xml:id="dnd-ex-find-mean">
+      <title>Finding a Mean</title>
+      <statement>
+        <p>Find the mean of the following data set.</p>
+        <p><md>59,\ 44,\ 38,\ 41,\ 67,\ 54,\ 44,\ 62,\ 68,\ 56,\ 61,\ 66</md></p>
+      </statement>
+    </example>
+
+    <definition xml:id="dnd-def-median">
+      <title>Median</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+
+    <assemblage>
+      <title>Important Properties of the Median</title>
+      <p><ul>
+        <li><p>Always put the data in order before finding the median.</p></li>
+        <li><p>If the number of observations is odd, the median is the middle observation.</p></li>
+        <li><p>If the number of observations is even, the median is the mean of the two middle observations.</p></li>
+        <li><p>The median depends on the middle position or positions, rather than directly using the magnitude of every observation.</p></li>
+        <li><p>The median is <em>robust</em>: changing an extreme observation often has little or no effect on it.</p></li>
+        <li><p>In these notes, we use <m>M</m> for a population median and <m>m</m> for a sample median.</p></li>
+      </ul></p>
+    </assemblage>
+
+    <example xml:id="dnd-ex-find-median">
+      <title>Finding Medians</title>
+      <statement>
+        <p>Find the median of each sample.</p>
+        <p><ol marker="(a)">
+          <li><p><m>16,\ 95,\ 22,\ 27,\ 13,\ 49,\ 38,\ 49,\ 64,\ 47,\ 28,\ 13,\ 82,\ 64,\ 49</m></p></li>
+          <li><p><m>51,\ 48,\ 39,\ 37,\ 47,\ 59,\ 48,\ 33,\ 49,\ 32,\ 60,\ 57,\ 51,\ 60,\ 41,\ 46,\ 40,\ 37</m></p></li>
+        </ol></p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="numerical-measures-of-spread">
+    <title>Measures of Spread</title>
+
+    <p>Measures of center do not tell the whole story. The two illustrative groups below have the same mean and median, 70 beats per minute, but their pulse rates have different amounts of spread.</p>
+    <image source="images/numdata-same-center-different-spread.png" width="80%">
+      <description><p>Two stacked dot plots on the same pulse-rate scale. Both distributions are symmetric about 70 beats per minute. Group A ranges from 62 to 78, while Group B ranges from 68 to 72. Group A has greater spread even though both groups have mean and median 70.</p></description>
+    </image>
+    <p>One way to study spread is to examine how far the observations are from the mean.</p>
+
+    <example xml:id="dnd-ex-find-avg-dist-mean">
+      <title>Average Distance from the Mean</title>
+      <statement>
+        <p>Find the mean of the following data set. Then find each observation's distance from the mean and calculate the average of those distances.</p>
+        <p><md>58,\ 72,\ 66,\ 72,\ 90,\ 93,\ 99,\ 100</md></p>
+      </statement>
+    </example>
+
+    <definition xml:id="dnd-def-sd">
+      <title>Standard Deviation</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+
+    <definition xml:id="dnd-def-var">
+      <title>Variance</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+
+    <assemblage>
+      <title>Important Properties of Standard Deviation</title>
+      <p><ul>
+        <li><p>Standard deviation is never negative. It equals zero only when all observations are equal.</p></li>
+        <li><p>Larger standard deviations indicate greater spread around the mean.</p></li>
+        <li><p>Standard deviation uses every observation and is not robust.</p></li>
+        <li><p>Standard deviation has the same units as the data. Variance has squared units.</p></li>
+        <li><p>We use <m>s</m> for a sample standard deviation and <m>\sigma</m> for a population standard deviation.</p></li>
+        <li><p>The sample variance uses <m>n-1</m> in the denominator. For independent random observations from a population with finite variance, <m>s^2</m> is an unbiased estimator of <m>\sigma^2</m>; <m>s</m> is generally a biased estimator of <m>\sigma</m>.</p></li>
+      </ul></p>
+    </assemblage>
+
+    <example xml:id="dnd-ex-find-sd1">
+      <title>Sample Standard Deviation</title>
+      <statement>
+        <p>Find the standard deviation of the following <em>sample</em> data.</p>
+        <p><md>58,\ 72,\ 66,\ 72,\ 90,\ 93,\ 99,\ 100</md></p>
+      </statement>
+    </example>
+
+    <example xml:id="dnd-ex-find-sd2">
+      <title>Population Standard Deviation</title>
+      <statement>
+        <p>Find the standard deviation of the following data set, treating it as the entire <em>population</em>.</p>
+        <p><md>102,\ 75,\ 83,\ 59,\ 64,\ 77,\ 105,\ 78,\ 58,\ 83,\ 82,\ 72</md></p>
+      </statement>
+    </example>
+
+    <definition xml:id="dnd-def-range">
+      <title>Range</title>
+      <statement><p> </p></statement>
+    </definition>
+
+    <assemblage>
+      <p>The range uses only the smallest and largest observations, so it is not robust.</p>
+    </assemblage>
+    
+    <definition xml:id="dnd-def-quartiles">
+      <title>Quartiles</title>
+      <statement>
+        <p> </p>
+      </statement>
+    </definition>
+
+    <assemblage>
+      <title>Finding Quartiles by Hand</title>
+      <p><ol marker="1.">
+        <li><p>Order the data from smallest to largest.</p></li>
+        <li><p>Find the median, <m>Q_2</m>.</p></li>
+        <li><p>Split the ordered data into a lower half and an upper half. Exclude the overall median from both halves.</p></li>
+        <li><p><m>Q_1</m>, the median of the lower half, and <m>Q_3</m>, the median of the upper half.</p></li>
+      </ol></p>
+    </assemblage>
+
+    <definition xml:id="dnd-def-iqr">
+      <title>Interquartile Range (IQR)</title>
+      <statement><p> </p></statement>
+    </definition>
+
+    <assemblage>
+      <title>Important Properties of the IQR</title>
+      <p><ul>
+        <li><p>The IQR describes the spread of the middle 50 percent of the data.</p></li>
+        <li><p>The IQR is robust.</p></li>
+        <li><p>The IQR does not directly use the magnitude of every observation.</p></li>
+        <li><p>The IQR has the same units as the data.</p></li>
+      </ul></p>
+    </assemblage>
+
+    <example xml:id="dnd-ex-find-iqr">
+      <title>Finding Interquartile Ranges</title>
+      <statement>
+        <p>Find the quartiles and IQR of each sample using the convention above.</p>
+        <p><ol marker="(a)">
+          <li><p><m>16,\ 95,\ 22,\ 27,\ 13,\ 49,\ 38,\ 49,\ 64,\ 47,\ 28,\ 13,\ 82,\ 64,\ 49</m></p></li>
+          <li><p><m>51,\ 48,\ 39,\ 37,\ 47,\ 59,\ 48,\ 33,\ 49,\ 32,\ 60,\ 57,\ 51,\ 60,\ 41,\ 46,\ 40,\ 37</m></p></li>
+        </ol></p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="numerical-robustness">
+    <title>Robustness</title>
+    <p>A numerical summary is <term>robust</term>, or resistant, if a small number of extreme observations have relatively little effect on it.</p>
+    <p>Return to the data used to find a mean in <xref ref="dnd-ex-find-mean"/>. Suppose the largest value, 68, is changed to 168 while all other values stay the same.</p>
+    <image source="images/numdata-robust-comparison.png" width="85%">
+      <description><p>Two dot plots on a common horizontal scale. The original data are clustered from 38 to 68. In the second plot, the observation at 68 moves to 168; the other eleven observations remain in their original positions.</p></description>
+    </image>
+    <table xml:id="numerical-robust-comparison-table">
+      <title>Effect of changing one extreme observation. Standard deviations are sample standard deviations.</title>
+      <tabular halign="center" valign="middle" row-headers="yes" top="medium" bottom="medium">
+        <col width="40%"/>
+        <col width="15%"/>
+        <col width="15%"/>
+        <col width="15%"/>
+        <col width="15%"/>
+        <row header="yes" bottom="minor"><cell>Data set</cell><cell>Median</cell><cell>IQR</cell><cell><m>\bar{x}</m></cell><cell><m>s</m></cell></row>
+        <row><cell>Original data</cell><cell>57.5</cell><cell>20</cell><cell>55.00</cell><cell>10.72</cell></row>
+        <row><cell>68 changed to 168</cell><cell>57.5</cell><cell>20</cell><cell>63.33</cell><cell>34.42</cell></row>
+      </tabular>
+    </table>
+
+    <p xml:id="dnd-work-space-1">Which summaries changed? Which remained the same? Explain how the results illustrate robustness.</p>
+
+    <assemblage>
+      <title>Choosing Summaries</title>
+      <p><ul>
+        <li><p>For approximately symmetric data without influential outliers, the mean and standard deviation are often useful summaries.</p></li>
+        <li><p>For strongly skewed data or data with influential outliers, the median and IQR are often more useful descriptions of a typical value and spread.</p></li>
+      </ul></p>
+      <p>Robust does not mean that a summary can never change. Also, an unusual observation is not automatically an error; investigate it before deciding whether to exclude it.</p>
+    </assemblage>
+  </subsection>
+
+  <subsection xml:id="numerical-histograms">
+    <title>Histograms</title>
+    <p>A <term>histogram</term> groups numerical observations into intervals called <term>classes</term>, or <term>bins</term>. Each bar shows how many observations, or what percentage of observations, fall in its interval.</p>
+
+    <assemblage>
+      <title>Properties of a Histogram</title>
+      <p><ol marker="1.">
+        <li><p>Choose nonoverlapping intervals that cover all the observations. Use equal class widths for the frequency or percent histograms in these notes.</p></li>
+        <li><p>Use evenly spaced tick marks on the horizontal axis. Mark class boundaries or class midpoints consistently.</p></li>
+        <li><p>Label the horizontal axis with the variable and its units, when units are known.</p></li>
+        <li><p>Use evenly spaced tick marks on the vertical axis and start its scale at zero. Label it <em>Frequency</em> or <em>Percent</em>.</p></li>
+        <li><p>Draw bars across the class intervals. Adjacent bars touch at their class boundaries; an empty class has a bar of height zero.</p></li>
+      </ol></p>
+      <p>For the examples below, include the left endpoint of each interval and exclude the right endpoint. Include the final right endpoint if needed to include the largest observation.</p>
+    </assemblage>
+
+    <example xml:id="numerical-example-7">
+      <title>Constructing a Histogram</title>
+      <statement>
+        <p>Construct a histogram of the following data. Use classes of width 2.</p>
+        <p><md>
+          <mrow>95.7,\ 98.2,\ 98.1,\ 97.4,\ 99.4,\ 94.7,\ 96.2,\ 98.3,\ 90.7,\ 90.5</mrow>
+          <mrow>97.9,\ 98.6,\ 98.4,\ 94.8,\ 98.8,\ 92.1,\ 98.9,\ 95.8,\ 96.3,\ 96.7</mrow>
+        </md></p>
+        <image source="images/numdata-histogram-grid-decimal.png" width="67%">
+          <description><p>Blank histogram axes. The horizontal axis is labeled Data value, with class boundaries 90, 92, 94, 96, 98, and 100. The vertical axis is labeled Frequency and runs from 0 to 10.</p></description>
+        </image>
+      </statement>
+    </example>
+
+    <example xml:id="numerical-example-8">
+      <title>Constructing Another Histogram</title>
+      <statement>
+        <p>Construct a histogram of the following data. Use classes of width 10.</p>
+        <p><md>
+          <mrow>31,\ 82,\ 72,\ 55,\ 11,\ 40,\ 58,\ 63,\ 57,\ 47,\ 24,\ 53,\ 57,\ 33,\ 25,\ 14,\ 45,\ 48,\ 23,\ 64</mrow>
+        </md></p>
+        <image source="images/numdata-histogram-grid-integer.png" width="67%">
+          <description><p>Blank histogram axes. The horizontal axis is labeled Data value, with class boundaries from 10 to 90 in increments of 10. The vertical axis is labeled Frequency and runs from 0 to 8.</p></description>
+        </image>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="numerical-interpreting-histograms">
+    <title>Interpreting Histograms</title>
+    <p>When describing a histogram, discuss its shape, center, spread, and any unusual features. Look for clusters, gaps, and possible outliers. A histogram can suggest possible recording errors, but the graph alone cannot establish that an observation is incorrect.</p>
+
+    <sidebyside widths="47% 47%" valigns="top top">
+      <stack>
+        <p><em>Bell-shaped</em></p>
+        <image source="images/numdata-shape-bell.png" width="80%">
+          <description><p>A histogram with one central peak. Frequencies decrease in a roughly balanced way on both sides of the center.</p></description>
+        </image>
+      </stack>
+      <stack>
+        <p><em>Approximately uniform</em></p>
+        <image source="images/numdata-shape-uniform.png" width="80%">
+          <description><p>A histogram with bars of approximately equal height across equal-width classes.</p></description>
+        </image>
+      </stack>
+    </sidebyside>
+
+    <sidebyside widths="47% 47%" valigns="top top">
+      <stack>
+        <p><em>Skewed right</em></p>
+        <image source="images/numdata-shape-right.png" width="80%">
+          <description><p>A histogram with most observations at lower values and a long tail extending toward higher values on the right.</p></description>
+        </image>
+      </stack>
+      <stack>
+        <p><em>Skewed left</em></p>
+        <image source="images/numdata-shape-left.png" width="80%">
+          <description><p>A histogram with most observations at higher values and a long tail extending toward lower values on the left.</p></description>
+        </image>
+      </stack>
+    </sidebyside>
+
+    <assemblage>
+      <title>Name the Direction of the Tail</title>
+      <p>Skewness is named for the direction of the longer tail, not the side containing the tallest bars.</p>
+    </assemblage>
+
+    <p><em>Possible outliers</em> are observations unusually far from the rest of the data.</p>
+    <image source="images/numdata-shape-outlier.png" width="55%">
+      <description><p>A histogram with most observations in the lower classes and one observation in a far-right class, separated from the main cluster by several empty classes.</p></description>
+    </image>
+  </subsection>
+
+  <subsection xml:id="numerical-box-plots">
+    <title>Box Plots</title>
+    <p>The <term>five-number summary</term> consists of the minimum, <m>Q_1</m>, median, <m>Q_3</m>, and maximum. A <term>box plot</term> uses quartiles to display a distribution's center and spread. We will use a modified box plot that displays potential outliers separately.</p>
+
+    <assemblage>
+      <title>Properties of a Box Plot</title>
+      <p><ol marker="1.">
+        <li><p>Draw the box plot above a horizontal number line or beside a vertical number line.</p></li>
+        <li><p>Use evenly spaced tick marks. Label the scale with the variable and its units, when units are known.</p></li>
+        <li><p>Draw the box from <m>Q_1</m> to <m>Q_3</m> and draw a line inside the box at the median.</p></li>
+        <li><p>Use the outlier fences to identify potential outliers.</p></li>
+        <li><p>Extend the whiskers to the smallest and largest observed values that are not beyond the fences.</p></li>
+        <li><p>Plot observations beyond the fences individually.</p></li>
+      </ol></p>
+    </assemblage>
+
+    <assemblage xml:id="numerical-outlier-fences">
+      <title>Outlier Fences</title>
+      <p><md>
+        <mrow>\text{Lower fence}=Q_1-1.5\cdot\mathrm{IQR}</mrow>
+        <mrow>\text{Upper fence}=Q_3+1.5\cdot\mathrm{IQR}</mrow>
+      </md></p>
+      <p>A potential outlier is strictly below the lower fence or strictly above the upper fence. The fences are cutoff values; they are <em>not necessarily observed data values or whisker endpoints</em>.</p>
+    </assemblage>
+
+    <p>The minimum and maximum always belong to the five-number summary, even if they are plotted as outliers. When there are no outliers, the whiskers end at the minimum and maximum.</p>
+
+    <example xml:id="numerical-example-9">
+      <title>Five-Number Summary and Box Plot</title>
+      <statement>
+        <p>Calculate the five-number summary and IQR of the following data. Find the outlier fences, identify any potential outliers, and construct a box plot.</p>
+        <p><md>199,\ 201,\ 236,\ 269,\ 271,\ 278,\ 283,\ 291,\ 301,\ 303,\ 341</md></p>
+        <image source="images/numdata-boxplot-grid.png" width="90%">
+          <description><p>A blank horizontal number line for a box plot. The scale extends from 190 to 350, with labeled tick marks every 20 units from 200 to 340.</p></description>
+        </image>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="numerical-matching-displays">
+    <title>Matching Histograms and Box Plots</title>
+    <p>Histograms and box plots emphasize different features of the same data. A histogram shows the pattern of frequencies across intervals. A box plot highlights the median, quartiles, spread, and potential outliers.</p>
+    <image source="images/numdata-shape-and-boxplot.png" width="100%">
+      <description><p>Three schematic distributions with corresponding box plots. The left-skewed distribution has a longer left tail and a box plot extending farther toward smaller values. The symmetric distribution has a centered median and balanced box and whiskers. The right-skewed distribution has a longer right tail and a box plot extending farther toward larger values. The quartiles beneath each curve align with the box and median below it.</p></description>
+    </image>
+    <p><ol marker="1.">
+      <li><p>Compare the centers of the distributions and the locations of the medians.</p></li>
+      <li><p>Compare the overall spread and the spread of the middle half of the observations.</p></li>
+      <li><p>Look for evidence of a longer tail and for possible outliers.</p></li>
+    </ol></p>
+    <p>The patterns in the illustration are typical, not guaranteed. A box plot does not show every detail of a distribution: different histograms can have the same box plot, and peaks or gaps may be hidden.</p>
+  </subsection>
+</section>

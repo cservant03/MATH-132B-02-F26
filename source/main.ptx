@@ -41,6 +41,11 @@
     </chapter>
 
     <chapter>
+      <title>Numerical Data</title>
+      <xi:include href="./notes/describing-numerical-data.ptx"/>
+    </chapter>
+
+    <chapter>
       <title>Inference on Categorical Data</title>
 
       <xi:include href="./projects/07-project-rubric.ptx"/>   
