@@ -2053,6 +2053,231 @@ var ptx_lunr_docs = [
   "body": " Five-Number Summary and Box Plot   Calculate the five-number summary and IQR of the following data. Find the outlier fences, identify any potential outliers, and construct a box plot.    A blank horizontal number line for a box plot. The scale extends from 190 to 350, with labeled tick marks every 20 units from 200 to 340.    "
 },
 {
+  "id": "t-and-f-distributions",
+  "level": "1",
+  "url": "t-and-f-distributions.html",
+  "type": "Section",
+  "number": "",
+  "title": "Student <span class=\"process-math\">\\(t\\)<\/span> and <span class=\"process-math\">\\(F\\)<\/span> Distributions",
+  "body": " Student and Distributions   Properties of the t-Distribution   Student's t-Distribution   The Student's t-distribution is a set of continuous, symmetric, bell-shaped distributions described by one parameter, the degrees of freedom . The notation to say something follows the t-distribution is when the degrees of freedom are df.     Possible values extend from to . The curve is symmetric about 0, with half of the area on each side.    The total area under the curve is 1. Probabilities are areas; the probability at any single value is 0.    Compared with the standard normal curve, a t-curve has heavier tails. With small degrees of freedom, values far from 0 are more likely.    As the degrees of freedom increase, the t-curve approaches the standard normal curve. It does not become exactly normal at 30 degrees of freedom.    The median and mode are 0. The mean is also 0 when . The standard deviation is larger than 1 when it is finite; it approaches 1 as the degrees of freedom increase.    Degrees of freedom are positive and may be nonintegers. The statistical procedure determines which degrees of freedom to use.        Student's t-curves approach the standard normal curve as degrees of freedom increase.    Symmetric t-density curves with 2, 5, and 20 degrees of freedom are compared with the standard normal density. The t-curves with fewer degrees of freedom have lower centers and heavier tails.     The sample mean procedures in the next notes use a t-distribution because the population standard deviation is unknown and is estimated from the sample.    t-Probabilities and Critical Values   t-Probabilities and Cutoffs in R    Task  R command        pt(k, df = nu)          pt(k, df = nu,    lower.tail = FALSE)      Cutoff with area to its left   qt(p, df = nu)     Cutoff with area to its right   qt(p, df = nu, lower.tail = FALSE)      Use pt() when a value is known and an area is wanted. Use qt() when an area is known and a value is wanted. The input df is required.   Splitting an area between two tails changes the critical value.    Two t-curves with 12 degrees of freedom. The first shades two equal tails totaling 0.05 beyond minus c and c. The second shades only a right tail of 0.05; its positive cutoff is closer to zero.      Comparing t-Curves   Consider t-distributions with 4 and 30 degrees of freedom and the standard normal distribution.     Which has the heaviest tails? Which is most concentrated near 0?    For each distribution, find the probability of a value below 0 without using R.    Predict which distribution has the largest . Check the probabilities using R.        Probabilities for a t-Statistic   A statistic used in a hypothetical lung-function study follows a t-distribution with 11 degrees of freedom under the study’s model. Sketch the relevant area and use R to find each probability.                             Cutoffs for a t-Distribution   Let . Find each cutoff or pair of cutoffs using R. Sketch the specified area.     The 10th percentile.    The cutoff for the highest 5%.    The two cutoffs containing the middle 95%.    The two cutoffs containing the middle 99%.         Properties of the F-Distribution   F-Distribution   The F-distribution is a family of continuous distributions described by two degrees of freedom. We write . The first parameter is the numerator degrees of freedom ; the second is the denominator degrees of freedom .     F-values are nonnegative, and the continuous distribution has support on positive values. In particular, and .    The total area is 1. An interval probability is an area under the density curve.    The curve is right-skewed. It is not symmetric, and its tails should not be treated as mirror images.    Both degrees of freedom affect the shape. Their order matters: and are different distributions.    When both degrees of freedom become large, the distribution becomes concentrated near 1. Its mean is not generally 1.        Both degrees of freedom influence the shape of an F-distribution.    Two panels show right-skewed F-density curves. The left varies numerator degrees of freedom from 3 to 8 to 20 with denominator degrees of freedom fixed at 20. The right varies denominator degrees of freedom from 5 to 15 to 60 with numerator degrees of freedom fixed at 5.       F-Probabilities and Critical Values   F-Probabilities and Cutoffs in R    Task  R command        pf(k, df1 = nu1, df2 = nu2)          pf(k, df1 = nu1, df2 = nu2,    lower.tail = FALSE)      Cutoff with area to its left   qf(p, df1 = nu1, df2 = nu2)     Cutoff with area to its right  qf(p, df1 = nu1, df2 = nu2, lower.tail = FALSE)     For both distribution families, a d function gives density heights and an r function simulates observations. These notes focus on the p and q functions.   An upper-tail F cutoff leaves the specified area to its right.    An F-density curve with numerator degrees of freedom 4 and denominator degrees of freedom 20. The area to the right of c is shaded and equals 0.05.      Reading the Two Degrees of Freedom   Three F-distributions have degree-of-freedom pairs , , and .     Identify the numerator and denominator degrees of freedom for each.    Find and for each distribution without using R.        Areas Under an F-Curve   Let . Sketch the requested region and use R to find each probability.                             F Cutoffs for Comparing Groups   A later comparison of four treatments will use an F-distribution with 3 numerator and 36 denominator degrees of freedom.     Find the cutoff for the highest 5%.    Find the cutoff for the highest 1%.    Find the lower and upper cutoffs leaving 2.5% in each tail. Are they symmetric about 1?    For the highest 5%, compare the cutoff with the one obtained after interchanging the degrees of freedom.        "
+},
+{
+  "id": "tf-t-definition",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-t-definition",
+  "type": "Definition",
+  "number": "209",
+  "title": "Student’s t-Distribution.",
+  "body": " Student's t-Distribution   The Student's t-distribution is a set of continuous, symmetric, bell-shaped distributions described by one parameter, the degrees of freedom . The notation to say something follows the t-distribution is when the degrees of freedom are df.     Possible values extend from to . The curve is symmetric about 0, with half of the area on each side.    The total area under the curve is 1. Probabilities are areas; the probability at any single value is 0.    Compared with the standard normal curve, a t-curve has heavier tails. With small degrees of freedom, values far from 0 are more likely.    As the degrees of freedom increase, the t-curve approaches the standard normal curve. It does not become exactly normal at 30 degrees of freedom.    The median and mode are 0. The mean is also 0 when . The standard deviation is larger than 1 when it is finite; it approaches 1 as the degrees of freedom increase.    Degrees of freedom are positive and may be nonintegers. The statistical procedure determines which degrees of freedom to use.      "
+},
+{
+  "id": "tf-t-properties-3",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-t-properties-3",
+  "type": "Figure",
+  "number": "210",
+  "title": "",
+  "body": " Student's t-curves approach the standard normal curve as degrees of freedom increase.    Symmetric t-density curves with 2, 5, and 20 degrees of freedom are compared with the standard normal density. The t-curves with fewer degrees of freedom have lower centers and heavier tails.    "
+},
+{
+  "id": "tf-t-r",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-t-r",
+  "type": "Table",
+  "number": "211",
+  "title": "t-Probabilities and Cutoffs in R",
+  "body": " t-Probabilities and Cutoffs in R    Task  R command        pt(k, df = nu)          pt(k, df = nu,    lower.tail = FALSE)      Cutoff with area to its left   qt(p, df = nu)     Cutoff with area to its right   qt(p, df = nu, lower.tail = FALSE)     "
+},
+{
+  "id": "tf-t-calculations-4",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-t-calculations-4",
+  "type": "Figure",
+  "number": "212",
+  "title": "",
+  "body": " Splitting an area between two tails changes the critical value.    Two t-curves with 12 degrees of freedom. The first shades two equal tails totaling 0.05 beyond minus c and c. The second shades only a right tail of 0.05; its positive cutoff is closer to zero.    "
+},
+{
+  "id": "tf-t-properties-example",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-t-properties-example",
+  "type": "Example",
+  "number": "213",
+  "title": "Comparing t-Curves.",
+  "body": " Comparing t-Curves   Consider t-distributions with 4 and 30 degrees of freedom and the standard normal distribution.     Which has the heaviest tails? Which is most concentrated near 0?    For each distribution, find the probability of a value below 0 without using R.    Predict which distribution has the largest . Check the probabilities using R.      "
+},
+{
+  "id": "tf-t-probabilities",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-t-probabilities",
+  "type": "Example",
+  "number": "214",
+  "title": "Probabilities for a t-Statistic.",
+  "body": " Probabilities for a t-Statistic   A statistic used in a hypothetical lung-function study follows a t-distribution with 11 degrees of freedom under the study’s model. Sketch the relevant area and use R to find each probability.                           "
+},
+{
+  "id": "tf-t-cutoffs",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-t-cutoffs",
+  "type": "Example",
+  "number": "215",
+  "title": "Cutoffs for a t-Distribution.",
+  "body": " Cutoffs for a t-Distribution   Let . Find each cutoff or pair of cutoffs using R. Sketch the specified area.     The 10th percentile.    The cutoff for the highest 5%.    The two cutoffs containing the middle 95%.    The two cutoffs containing the middle 99%.      "
+},
+{
+  "id": "tf-f-definition",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-f-definition",
+  "type": "Definition",
+  "number": "216",
+  "title": "F-Distribution.",
+  "body": " F-Distribution   The F-distribution is a family of continuous distributions described by two degrees of freedom. We write . The first parameter is the numerator degrees of freedom ; the second is the denominator degrees of freedom .     F-values are nonnegative, and the continuous distribution has support on positive values. In particular, and .    The total area is 1. An interval probability is an area under the density curve.    The curve is right-skewed. It is not symmetric, and its tails should not be treated as mirror images.    Both degrees of freedom affect the shape. Their order matters: and are different distributions.    When both degrees of freedom become large, the distribution becomes concentrated near 1. Its mean is not generally 1.      "
+},
+{
+  "id": "tf-f-properties-3",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-f-properties-3",
+  "type": "Figure",
+  "number": "217",
+  "title": "",
+  "body": " Both degrees of freedom influence the shape of an F-distribution.    Two panels show right-skewed F-density curves. The left varies numerator degrees of freedom from 3 to 8 to 20 with denominator degrees of freedom fixed at 20. The right varies denominator degrees of freedom from 5 to 15 to 60 with numerator degrees of freedom fixed at 5.    "
+},
+{
+  "id": "tf-f-r",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-f-r",
+  "type": "Table",
+  "number": "218",
+  "title": "F-Probabilities and Cutoffs in R",
+  "body": " F-Probabilities and Cutoffs in R    Task  R command        pf(k, df1 = nu1, df2 = nu2)          pf(k, df1 = nu1, df2 = nu2,    lower.tail = FALSE)      Cutoff with area to its left   qf(p, df1 = nu1, df2 = nu2)     Cutoff with area to its right  qf(p, df1 = nu1, df2 = nu2, lower.tail = FALSE)    "
+},
+{
+  "id": "tf-f-calculations-4",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-f-calculations-4",
+  "type": "Figure",
+  "number": "219",
+  "title": "",
+  "body": " An upper-tail F cutoff leaves the specified area to its right.    An F-density curve with numerator degrees of freedom 4 and denominator degrees of freedom 20. The area to the right of c is shaded and equals 0.05.    "
+},
+{
+  "id": "tf-f-properties-example",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-f-properties-example",
+  "type": "Example",
+  "number": "220",
+  "title": "Reading the Two Degrees of Freedom.",
+  "body": " Reading the Two Degrees of Freedom   Three F-distributions have degree-of-freedom pairs , , and .     Identify the numerator and denominator degrees of freedom for each.    Find and for each distribution without using R.      "
+},
+{
+  "id": "tf-f-probabilities",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-f-probabilities",
+  "type": "Example",
+  "number": "221",
+  "title": "Areas Under an F-Curve.",
+  "body": " Areas Under an F-Curve   Let . Sketch the requested region and use R to find each probability.                           "
+},
+{
+  "id": "tf-f-cutoffs",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-f-cutoffs",
+  "type": "Example",
+  "number": "222",
+  "title": "F Cutoffs for Comparing Groups.",
+  "body": " F Cutoffs for Comparing Groups   A later comparison of four treatments will use an F-distribution with 3 numerator and 36 denominator degrees of freedom.     Find the cutoff for the highest 5%.    Find the cutoff for the highest 1%.    Find the lower and upper cutoffs leaving 2.5% in each tail. Are they symmetric about 1?    For the highest 5%, compare the cutoff with the one obtained after interchanging the degrees of freedom.      "
+},
+{
+  "id": "one-sample-t-inference",
+  "level": "1",
+  "url": "one-sample-t-inference.html",
+  "type": "Section",
+  "number": "",
+  "title": "Inference for One Mean",
+  "body": " Inference for One Mean   Requirements and Notation   Requirements for One-Sample t-Inference     The response is quantitative, and the target parameter is a population mean . The population standard deviation is unknown.    The observations come from an appropriate random sample and are independent. When sampling without replacement, the sample should be no more than about 10% of the population.    For a small sample, a roughly normal population with no serious outliers is needed. For a larger sample, inference is more tolerant of moderate nonnormality, but strong skewness and influential outliers still need attention.    Use a histogram or normal Q-Q plot to inspect raw data. A Shapiro-Wilk result may supplement the plots; a large p-value does not establish normality.      Use for the sample mean, for the sample standard deviation, and for the number of observations. For these procedures, and .  hist(x) qqnorm(x) qqline(x) # Optional supplemental check: shapiro.test(x)  All studies and small data sets in these notes are hypothetical classroom examples. The larger health-study file is simulated and contains no patient records.  Keep full precision in intermediate calculations. Round probabilities to four decimal places and final measurements to a sensible precision for their units.    One-Sample t-Intervals   Confidence Intervals for One Population Mean   Two-sided interval:      The margin of error is .   Lower one-sided interval:       Upper one-sided interval:       With supplied summary statistics, substitute into the formula and use qt() for the critical value. With raw observations stored in x , R can calculate the interval directly:  # Two-sided 95% interval t.test(x, conf.level = 0.95)$conf.int # Lower 95% confidence bound: (L, Inf) t.test(x, alternative = \"greater\", conf.level = 0.95)$conf.int # Upper 95% confidence bound: (-Inf, U) t.test(x, alternative = \"less\", conf.level = 0.95)$conf.int  For interval-only work, read conf.int ; the test of the default mean 0 is not the question being asked. A confidence interval estimates the population mean, not the range containing a stated percentage of individual observations.   Leaf Chlorophyll   A simple random sample of 25 leaves from a large greenhouse population has mean chlorophyll concentration 42.6 micrograms per square centimeter and sample standard deviation 6.0. Assume the population distribution is approximately normal. Construct and interpret a 95% confidence interval for the population mean.     Fish Hemoglobin   Researchers randomly sample 12 adult fish from a large managed population. Hemoglobin concentrations, in grams per deciliter, are recorded below. Inspect the data and construct a 99% confidence interval for the population mean.  hemoglobin = c(8.7, 9.1, 8.9, 9.5, 9.8, 8.8, 9.2, 9.6, 9.0, 9.4, 9.7, 9.3)     Bacterial Concentration   For a hypothetical monitoring study, 18 independent water samples have a mean bacterial concentration of 48.2 units per milliliter and a sample standard deviation of 6.4. Assume an approximately normal population. The study's target is a population mean below 52 units per milliliter. Find a one-sided 95% upper confidence bound. State the interval and explain whether the bound supports a mean below the benchmark.      One-Sample t-Tests   One-Sample t-Test  For a hypothesized population mean , use     The alternative can be , , or . For a directional test, the equality in is the boundary used for the calculation.   For summary-statistics problems, compute the statistic from the formula; do not invent observations to pass to t.test() . For raw data, use the appropriate command below. Replace mu0 with the claimed or benchmark mean.  t.test(x, mu = mu0, alternative = \"two.sided\") t.test(x, mu = mu0, alternative = \"less\") t.test(x, mu = mu0, alternative = \"greater\")   Mean Body Temperature   A researcher claims that the population mean body temperature under a specified measurement protocol is 37.0 degrees Celsius. A simple random sample of 36 healthy adults gives and degrees Celsius. At , is there sufficient evidence to reject the researcher's claim? Use the formula and R for the p-value.     Dissolved Oxygen   A restoration team claims that the mean dissolved oxygen concentration in a large set of eligible ponds exceeds 6.0 milligrams per liter. A simple random sample of 12 ponds gives the values below. At , do the data support the claim? Inspect the data and use t.test() .  oxygen = c(6.2, 6.8, 6.5, 5.9, 6.3, 6.7, 6.1, 6.4, 6.9, 6.0, 6.6, 6.2)     Recovery Time   A clinic claims that the population mean recovery time for a specified outpatient procedure is less than 12 days. A random sample of 20 independent patients has mean 11.6 days and sample standard deviation 2.0 days. At , is there sufficient evidence to support the claim?      Types of Error in Context   Errors in the Body-Temperature Study   Use and for the body-temperature study.     Describe a Type I error in the language of this study.    Describe a Type II error in the language of this study.    If the actual population mean is 37.0 but the study rejects the claim, which error occurred?    If the study does not reject the claim, can we determine from that decision alone whether an error occurred? Explain.        Errors in the Pond Study   The restoration team is testing whether the population mean dissolved oxygen concentration exceeds 6.0 milligrams per liter.     Describe the mistake made by concluding that the mean exceeds 6.0 when the population mean is actually 6.0.    Describe the mistake made by failing to find evidence that the mean exceeds 6.0 when the population mean is actually 6.5.    Label each mistake as Type I or Type II and give one plausible consequence for evaluating the restoration effort.         A Larger Health Data Set   Large Data Example: Baseline Blood Pressure   The supplied file contains simulated data for 360 adults. In the hypothetical design, a simple random sample is selected from a large population of eligible adults, and participants are randomly assigned to Control, Walking, or Combined programs, with 120 in each group. Control receives usual information, Walking adds a walking program, and Combined adds walking plus nutrition counseling. Systolic blood pressure is recorded before assignment and after eight weeks. Each row is one participant; both measurements are in millimeters of mercury. The simulation is for statistical practice and does not establish clinical effects.     Verify that there are 360 observations. Use a histogram and a normal Q-Q plot to examine baseline blood pressure.    Construct and interpret a two-sided 95% confidence interval for the mean baseline systolic blood pressure in the eligible population.    Find a one-sided 95% lower confidence bound for the same mean. Interpret the bound.    A planning report claims that the eligible population's mean baseline systolic blood pressure is 130 mmHg. At , test whether the claim should be rejected. State the hypotheses and identify where the claim belongs.    Describe a Type I error and a Type II error for the test in part (d).    Explain why baseline and week-eight readings should not be stacked into one sample of 720 independent observations.         "
+},
+{
+  "id": "os-ci-summary",
+  "level": "2",
+  "url": "one-sample-t-inference.html#os-ci-summary",
+  "type": "Example",
+  "number": "223",
+  "title": "Leaf Chlorophyll.",
+  "body": " Leaf Chlorophyll   A simple random sample of 25 leaves from a large greenhouse population has mean chlorophyll concentration 42.6 micrograms per square centimeter and sample standard deviation 6.0. Assume the population distribution is approximately normal. Construct and interpret a 95% confidence interval for the population mean.   "
+},
+{
+  "id": "os-ci-raw",
+  "level": "2",
+  "url": "one-sample-t-inference.html#os-ci-raw",
+  "type": "Example",
+  "number": "224",
+  "title": "Fish Hemoglobin.",
+  "body": " Fish Hemoglobin   Researchers randomly sample 12 adult fish from a large managed population. Hemoglobin concentrations, in grams per deciliter, are recorded below. Inspect the data and construct a 99% confidence interval for the population mean.  hemoglobin = c(8.7, 9.1, 8.9, 9.5, 9.8, 8.8, 9.2, 9.6, 9.0, 9.4, 9.7, 9.3)   "
+},
+{
+  "id": "os-ci-one-sided",
+  "level": "2",
+  "url": "one-sample-t-inference.html#os-ci-one-sided",
+  "type": "Example",
+  "number": "225",
+  "title": "Bacterial Concentration.",
+  "body": " Bacterial Concentration   For a hypothetical monitoring study, 18 independent water samples have a mean bacterial concentration of 48.2 units per milliliter and a sample standard deviation of 6.4. Assume an approximately normal population. The study's target is a population mean below 52 units per milliliter. Find a one-sided 95% upper confidence bound. State the interval and explain whether the bound supports a mean below the benchmark.   "
+},
+{
+  "id": "os-test-null-claim",
+  "level": "2",
+  "url": "one-sample-t-inference.html#os-test-null-claim",
+  "type": "Example",
+  "number": "226",
+  "title": "Mean Body Temperature.",
+  "body": " Mean Body Temperature   A researcher claims that the population mean body temperature under a specified measurement protocol is 37.0 degrees Celsius. A simple random sample of 36 healthy adults gives and degrees Celsius. At , is there sufficient evidence to reject the researcher's claim? Use the formula and R for the p-value.   "
+},
+{
+  "id": "os-test-raw",
+  "level": "2",
+  "url": "one-sample-t-inference.html#os-test-raw",
+  "type": "Example",
+  "number": "227",
+  "title": "Dissolved Oxygen.",
+  "body": " Dissolved Oxygen   A restoration team claims that the mean dissolved oxygen concentration in a large set of eligible ponds exceeds 6.0 milligrams per liter. A simple random sample of 12 ponds gives the values below. At , do the data support the claim? Inspect the data and use t.test() .  oxygen = c(6.2, 6.8, 6.5, 5.9, 6.3, 6.7, 6.1, 6.4, 6.9, 6.0, 6.6, 6.2)   "
+},
+{
+  "id": "os-test-left",
+  "level": "2",
+  "url": "one-sample-t-inference.html#os-test-left",
+  "type": "Example",
+  "number": "228",
+  "title": "Recovery Time.",
+  "body": " Recovery Time   A clinic claims that the population mean recovery time for a specified outpatient procedure is less than 12 days. A random sample of 20 independent patients has mean 11.6 days and sample standard deviation 2.0 days. At , is there sufficient evidence to support the claim?   "
+},
+{
+  "id": "os-errors-temperature",
+  "level": "2",
+  "url": "one-sample-t-inference.html#os-errors-temperature",
+  "type": "Example",
+  "number": "229",
+  "title": "Errors in the Body-Temperature Study.",
+  "body": " Errors in the Body-Temperature Study   Use and for the body-temperature study.     Describe a Type I error in the language of this study.    Describe a Type II error in the language of this study.    If the actual population mean is 37.0 but the study rejects the claim, which error occurred?    If the study does not reject the claim, can we determine from that decision alone whether an error occurred? Explain.      "
+},
+{
+  "id": "os-errors-oxygen",
+  "level": "2",
+  "url": "one-sample-t-inference.html#os-errors-oxygen",
+  "type": "Example",
+  "number": "230",
+  "title": "Errors in the Pond Study.",
+  "body": " Errors in the Pond Study   The restoration team is testing whether the population mean dissolved oxygen concentration exceeds 6.0 milligrams per liter.     Describe the mistake made by concluding that the mean exceeds 6.0 when the population mean is actually 6.0.    Describe the mistake made by failing to find evidence that the mean exceeds 6.0 when the population mean is actually 6.5.    Label each mistake as Type I or Type II and give one plausible consequence for evaluating the restoration effort.      "
+},
+{
+  "id": "os-large-study",
+  "level": "2",
+  "url": "one-sample-t-inference.html#os-large-study",
+  "type": "Example",
+  "number": "231",
+  "title": "Large Data Example: Baseline Blood Pressure.",
+  "body": " Large Data Example: Baseline Blood Pressure   The supplied file contains simulated data for 360 adults. In the hypothetical design, a simple random sample is selected from a large population of eligible adults, and participants are randomly assigned to Control, Walking, or Combined programs, with 120 in each group. Control receives usual information, Walking adds a walking program, and Combined adds walking plus nutrition counseling. Systolic blood pressure is recorded before assignment and after eight weeks. Each row is one participant; both measurements are in millimeters of mercury. The simulation is for statistical practice and does not establish clinical effects.     Verify that there are 360 observations. Use a histogram and a normal Q-Q plot to examine baseline blood pressure.    Construct and interpret a two-sided 95% confidence interval for the mean baseline systolic blood pressure in the eligible population.    Find a one-sided 95% lower confidence bound for the same mean. Interpret the bound.    A planning report claims that the eligible population's mean baseline systolic blood pressure is 130 mmHg. At , test whether the claim should be rejected. State the hypotheses and identify where the claim belongs.    Describe a Type I error and a Type II error for the test in part (d).    Explain why baseline and week-eight readings should not be stacked into one sample of 720 independent observations.      "
+},
+{
   "id": "subsec-cat-project-rubric",
   "level": "1",
   "url": "subsec-cat-project-rubric.html",

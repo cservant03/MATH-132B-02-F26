@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="one-sample-t-inference">
+  <title>Inference for One Mean</title>
+  
+  <subsection xml:id="os-conditions">
+    <title>Requirements and Notation</title>
+    <assemblage xml:id="os-requirements">
+      <title>Requirements for One-Sample t-Inference</title>
+      <p>
+        <ol marker="1)">
+          <li>
+            <p>The response is quantitative, and the target parameter is a population mean <m>\mu</m>. The population standard deviation <m>\sigma</m> is unknown.</p>
+          </li>
+          <li>
+            <p>The observations come from an appropriate random sample and are independent. When sampling without replacement, the sample should be no more than about 10% of the population.</p>
+          </li>
+          <li>
+            <p>For a small sample, a roughly normal population with no serious outliers is needed. For a larger sample, inference is more tolerant of moderate nonnormality, but strong skewness and influential outliers still need attention.</p>
+          </li>
+          <li>
+            <p>Use a histogram or normal Q-Q plot to inspect raw data. A Shapiro-Wilk result may supplement the plots; a large p-value does not establish normality.</p>
+          </li>
+        </ol>
+      </p>
+    </assemblage>
+    <p>Use <m>\bar{x}</m> for the sample mean, <m>s</m> for the sample standard deviation, and <m>n</m> for the number of observations. For these procedures, <m>df=n-1</m> and <m>SE=\dfrac{s}{\sqrt{n}}</m>.</p>
+    <program language="r">
+hist(x)
+qqnorm(x)
+qqline(x)
+# Optional supplemental check:
+shapiro.test(x)
+</program>
+    <p>All studies and small data sets in these notes are hypothetical classroom examples. The larger health-study file is simulated and contains no patient records.</p>
+    <p>Keep full precision in intermediate calculations. Round probabilities to four decimal places and final measurements to a sensible precision for their units.</p>
+  </subsection>
+  <subsection xml:id="os-confidence-intervals">
+    <title>One-Sample t-Intervals</title>
+    <assemblage xml:id="os-ci-formulas">
+      <title>Confidence Intervals for One Population Mean</title>
+      <p>
+        <em>Two-sided interval:</em>
+      </p>
+      <p>
+        <md number="no">
+          <mrow>\left( \bar{x} - t^*\dfrac{s}{\sqrt{n}}, \bar{x} - t^*\dfrac{s}{\sqrt{n}} \right)</mrow>
+        </md>
+      </p>
+      <p>The margin of error is <m>E=t^*\dfrac{s}{\sqrt{n}}</m>.</p>
+      <p>
+        <em>Lower one-sided interval:</em>
+      </p>
+      <p>
+        <md number="no">
+          <mrow>\left(\bar{x}-t^*\dfrac{s}{\sqrt{n}},\ \infty\right)</mrow>
+        </md>
+      </p>
+      <p>
+        <em>Upper one-sided interval:</em>
+      </p>
+      <p>
+        <md number="no">
+          <mrow>\left(-\infty,\ \bar{x}+t^*\dfrac{s}{\sqrt{n}}\right)</mrow>
+        </md>
+      </p>
+    </assemblage>
+    <p>With supplied summary statistics, substitute into the formula and use <c>qt()</c> for the critical value. With raw observations stored in <c>x</c>, R can calculate the interval directly:</p>
+    <program language="r">
+# Two-sided 95% interval
+t.test(x, conf.level = 0.95)$conf.int
+
+# Lower 95% confidence bound: (L, Inf)
+t.test(x, alternative = "greater", conf.level = 0.95)$conf.int
+
+# Upper 95% confidence bound: (-Inf, U)
+t.test(x, alternative = "less", conf.level = 0.95)$conf.int
+</program>
+    <p>For interval-only work, read <c>conf.int</c>; the test of the default mean 0 is not the question being asked. A confidence interval estimates the population mean, not the range containing a stated percentage of individual observations.</p>
+
+    <example xml:id="os-ci-summary">
+      <title>Leaf Chlorophyll</title>
+      <statement>
+        <p>A simple random sample of 25 leaves from a large greenhouse population has mean chlorophyll concentration 42.6 micrograms per square centimeter and sample standard deviation 6.0. Assume the population distribution is approximately normal. Construct and interpret a 95% confidence interval for the population mean.</p>
+      </statement>
+    </example>
+
+    <example xml:id="os-ci-raw">
+      <title>Fish Hemoglobin</title>
+      <statement>
+        <p>Researchers randomly sample 12 adult fish from a large managed population. Hemoglobin concentrations, in grams per deciliter, are recorded below. Inspect the data and construct a 99% confidence interval for the population mean.</p>
+        <program language="r">
+hemoglobin = c(8.7, 9.1, 8.9, 9.5, 9.8, 8.8, 9.2, 9.6, 9.0, 9.4, 9.7, 9.3)
+</program>
+      </statement>
+    </example>
+
+    <example xml:id="os-ci-one-sided">
+      <title>Bacterial Concentration</title>
+      <statement>
+        <p>For a hypothetical monitoring study, 18 independent water samples have a mean bacterial concentration of 48.2 units per milliliter and a sample standard deviation of 6.4. Assume an approximately normal population. The study's target is a population mean below 52 units per milliliter. Find a one-sided 95% upper confidence bound. State the interval and explain whether the bound supports a mean below the benchmark.</p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="os-tests">
+    <title>One-Sample t-Tests</title>
+
+    <assemblage xml:id="os-test-formula">
+      <title>One-Sample t-Test</title>
+      <p>For a hypothesized population mean <m>\mu_0</m>, use</p>
+      <p>
+        <md number="no">
+          <mrow>H_0:\mu=\mu_0,\qquad t=\dfrac{\bar{x}-\mu_0}{\dfrac{s}{\sqrt{n}}},\qquad df=n-1.</mrow>
+        </md>
+      </p>
+      <p>The alternative can be <m>\mu&lt;\mu_0</m>, <m>\mu&gt;\mu_0</m>, or <m>\mu\ne\mu_0</m>. For a directional test, the equality in <m>H_0</m> is the boundary used for the calculation.</p>
+    </assemblage>
+    
+    <p>For summary-statistics problems, compute the statistic from the formula; do not invent observations to pass to <c>t.test()</c>. For raw data, use the appropriate command below. Replace <c>mu0</c> with the claimed or benchmark mean.</p>
+    <program language="r">
+t.test(x, mu = mu0, alternative = "two.sided")
+t.test(x, mu = mu0, alternative = "less")
+t.test(x, mu = mu0, alternative = "greater")
+</program>
+
+    <example xml:id="os-test-null-claim">
+      <title>Mean Body Temperature</title>
+      <statement>
+        <p>A researcher claims that the population mean body temperature under a specified measurement protocol is 37.0 degrees Celsius. A simple random sample of 36 healthy adults gives <m>\bar{x}=36.8</m> and <m>s=0.45</m> degrees Celsius. At <m>\alpha=0.05</m>, is there sufficient evidence to reject the researcher's claim? Use the formula and R for the p-value.</p>
+      </statement>
+    </example>
+
+    <example xml:id="os-test-raw">
+      <title>Dissolved Oxygen</title>
+      <statement>
+        <p>A restoration team claims that the mean dissolved oxygen concentration in a large set of eligible ponds exceeds 6.0 milligrams per liter. A simple random sample of 12 ponds gives the values below. At <m>\alpha=0.05</m>, do the data support the claim? Inspect the data and use <c>t.test()</c>.</p>
+        <program language="r">
+oxygen = c(6.2, 6.8, 6.5, 5.9, 6.3, 6.7, 6.1, 6.4, 6.9, 6.0, 6.6, 6.2)
+</program>
+      </statement>
+    </example>
+
+    <example xml:id="os-test-left">
+      <title>Recovery Time</title>
+      <statement>
+        <p>A clinic claims that the population mean recovery time for a specified outpatient procedure is less than 12 days. A random sample of 20 independent patients has mean 11.6 days and sample standard deviation 2.0 days. At <m>\alpha=0.05</m>, is there sufficient evidence to support the claim?</p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="os-types-of-error">
+    <title>Types of Error in Context</title>
+
+    <example xml:id="os-errors-temperature">
+      <title>Errors in the Body-Temperature Study</title>
+      <statement>
+        <p>Use <m>H_0:\mu=37.0</m> and <m>H_a:\mu\ne37.0</m> for the body-temperature study.</p>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>Describe a Type I error in the language of this study.</p>
+            </li>
+            <li>
+              <p>Describe a Type II error in the language of this study.</p>
+            </li>
+            <li>
+              <p>If the actual population mean is 37.0 but the study rejects the claim, which error occurred?</p>
+            </li>
+            <li>
+              <p>If the study does not reject the claim, can we determine from that decision alone whether an error occurred? Explain.</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+
+    <example xml:id="os-errors-oxygen">
+      <title>Errors in the Pond Study</title>
+      <statement>
+        <p>The restoration team is testing whether the population mean dissolved oxygen concentration exceeds 6.0 milligrams per liter.</p>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>Describe the mistake made by concluding that the mean exceeds 6.0 when the population mean is actually 6.0.</p>
+            </li>
+            <li>
+              <p>Describe the mistake made by failing to find evidence that the mean exceeds 6.0 when the population mean is actually 6.5.</p>
+            </li>
+            <li>
+              <p>Label each mistake as Type I or Type II and give one plausible consequence for evaluating the restoration effort.</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="os-large-data">
+    <title>A Larger Health Data Set</title>
+    <example xml:id="os-large-study">
+      <title>Large Data Example: Baseline Blood Pressure</title>
+      <statement>
+        <p>The supplied file contains simulated data for 360 adults. In the hypothetical design, a simple random sample is selected from a large population of eligible adults, and participants are randomly assigned to Control, Walking, or Combined programs, with 120 in each group. Control receives usual information, Walking adds a walking program, and Combined adds walking plus nutrition counseling. Systolic blood pressure is recorded before assignment and after eight weeks. Each row is one participant; both measurements are in millimeters of mercury. The simulation is for statistical practice and does not establish clinical effects.</p>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>Verify that there are 360 observations. Use a histogram and a normal Q-Q plot to examine baseline blood pressure.</p>
+            </li>
+            <li>
+              <p>Construct and interpret a two-sided 95% confidence interval for the mean baseline systolic blood pressure in the eligible population.</p>
+            </li>
+            <li>
+              <p>Find a one-sided 95% lower confidence bound for the same mean. Interpret the bound.</p>
+            </li>
+            <li>
+              <p>A planning report claims that the eligible population's mean baseline systolic blood pressure is 130 mmHg. At <m>\alpha=0.05</m>, test whether the claim should be rejected. State the hypotheses and identify where the claim belongs.</p>
+            </li>
+            <li>
+              <p>Describe a Type I error and a Type II error for the test in part (d).</p>
+            </li>
+            <li>
+              <p>Explain why baseline and week-eight readings should not be stacked into one sample of 720 independent observations.</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <!-- Sources checked: https://stat.ethz.ch/R-manual/R-patched/library/stats/html/t.test.html ; https://stat.ethz.ch/R-manual/R-patched/library/stats/html/TDist.html -->
+</section>

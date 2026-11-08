@@ -666,3 +666,66 @@ a.mathjax-link {
   break-before: page;
   page-break-before: always;
 }
+
+/* ---------- Describing Numerical Data ---------- */
+
+#dnd-def-mean {
+  padding-bottom: 0.7in;
+}
+
+#dnd-ex-find-mean {
+  padding-bottom: 0.7in;
+}
+
+#dnd-def-median {
+  padding-bottom: 0.7in;
+}
+
+#dnd-ex-find-median ol > li {
+  padding-bottom: 0.7in;
+}
+
+#dnd-ex-find-avg-dist-mean {
+  padding-bottom: 1.4in;
+}
+
+#dnd-def-sd {
+  padding-bottom: 1.05in;
+}
+
+#dnd-def-var {
+  padding-bottom: 1.05in;
+}
+
+#dnd-ex-find-sd1 {
+  padding-bottom: 0.7in;
+}
+
+#dnd-ex-find-sd2 {
+  padding-bottom: 1.05in;
+}
+
+#dnd-def-range {
+  padding-bottom: 0.7in;
+}
+
+#dnd-def-quartiles {
+  padding-bottom: 1.4in;
+}
+
+#dnd-def-iqr {
+  padding-bottom: 0.7in;
+}
+
+#dnd-ex-find-iqr ol > li {
+  padding-bottom: 0.5in;
+}
+
+#dnd-work-space-1 {
+  padding-bottom: 1.5in;
+}
+
+#numerical-matching-displays {
+  break-before: page;
+  page-break-before: always;
+}

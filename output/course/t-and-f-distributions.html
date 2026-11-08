@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Student t and F Distributions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="_static/pretext/fonts/material-symbols-outlined.css">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<style>
+@counter-style ptx-marker-1 { system: extends decimal; prefix: ''; suffix: '. '; }
+@counter-style ptx-marker-2 { system: extends decimal; prefix: ''; suffix: ') '; }
+@counter-style ptx-marker-3 { system: extends lower-alpha; prefix: ''; suffix: ') '; }
+@counter-style ptx-marker-4 { system: extends lower-alpha; prefix: '('; suffix: ') '; }
+</style>
+<link rel="stylesheet" type="text/css" href="external/custom.css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer data-pretext-mathjax="true" onerror="this.dataset.loadFailed = 'true';" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Biostatistics">
+<meta property="og:title" content="Biostatistics">
+<meta property="book:title" content="Biostatistics">
+<meta name="twitter:description" content="MATH 132B Semester Fall 2026">
+<meta property="og:description" content="MATH 132B Semester Fall 2026">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.55"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.55"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.4.0';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.7e2ee203f2ecd6c8.bundle.js"></script><script src="_static/prefix-23.7d27cb317c36911a.bundle.js"></script><script src="_static/prefix-runestone.35a40fea06647cf2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-runestone.7062ede5334282a6.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="root-1-2.html"><span class="title">Biostatistics</span> <span class="subtitle">MATH 132B Semester Fall 2026</span></a></div>
+<p class="byline">Instructor Christopher</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-embed-button" class="ptx-embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><dialog class="ptx-dialog ptx-embed-popup" id="ptx-embed-popup"><div class="ptx-embed-popup-controls">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<button class="ptx-embed-close-button button" id="ptx-embed-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-embed-code-container">
+<textarea class="ptx-embed-code-textbox" id="ptx-embed-code-textbox" readonly aria-label="Embed"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button autofocus="autofocus" class="ptx-embed-copy-button button" id="ptx-embed-copy-button" title="Copy"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div></dialog><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="describing-numerical-data.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="root-1-2-7.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="one-sample-t-inference.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="course-documents.html" class="internal"><span class="title">Course Documents</span></a></div>
+<ul id="ptx-toc-group-course-documents" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="syllabus.html" class="internal"><span class="title">Syllabus</span></a></div>
+<ul id="ptx-toc-group-syllabus" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#instructor-info" class="internal"><span class="title">Instructor Information</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#course-info" class="internal"><span class="title">Course Information</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#course-desc" class="internal"><span class="title">Course Description</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#course-materials" class="internal"><span class="title">Course Matrials</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#online-course-comp" class="internal"><span class="title">Online Course Component</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#course-outcomes" class="internal"><span class="title">Course Outcomes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#eval" class="internal"><span class="title">Evaluatation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#grade" class="internal"><span class="title">Grading</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#tips" class="internal"><span class="title">Tips for Success</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#academic-integrity" class="internal"><span class="title">Academic Integrity Policy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#withdrawal-policy" class="internal"><span class="title">Withdrawal Policy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#important-dates" class="internal"><span class="title">Important Dates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#disability-statement" class="internal"><span class="title">Disability Statement</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#nondiscrimination-statement" class="internal"><span class="title">Non-Discrimination Statement</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#land-acknowledgment" class="internal"><span class="title">Land Acknowledgment Statement</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#tentative-syllabus" class="internal"><span class="title">Tentative Syllabus</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="tutor-verification-third-attempt.html" class="internal"><span class="title">Tutoring Verification for Third Attempt</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="root-1-2-5.html" class="internal"><span class="title">Probability</span></a></div>
+<ul id="ptx-toc-group-root-1-2-5" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-intro-to-prob.html" class="internal"><span class="title">Introduction to Probability</span></a></div>
+<ul id="ptx-toc-group-notes-intro-to-prob" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-intro-to-prob.html#notes-intro-to-prob-3" class="internal"><span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-intro-to-prob.html#notes-intro-to-prob-4" class="internal"><span class="title">Exmaples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="marg-joint-cond-prob.html" class="internal"><span class="title">Marginal, Joint, and Conditional Probability</span></a></div>
+<ul id="ptx-toc-group-marg-joint-cond-prob" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-3" class="internal"><span class="title">Marginal Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-4" class="internal"><span class="title">Joint Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-5" class="internal"><span class="title">Multiplication for Independent Events</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-6" class="internal"><span class="title">Conditional Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="marg-joint-cond-prob.html#marg-joint-cond-prob-7" class="internal"><span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="addition-complement-rules.html" class="internal"><span class="title">The Addition and Complement Rules</span></a></div>
+<ul id="ptx-toc-group-addition-complement-rules" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="addition-complement-rules.html#addition-complement-rules-3" class="internal"><span class="title">The Addition Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="addition-complement-rules.html#addition-complement-rules-4" class="internal"><span class="title">The Complement Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="addition-complement-rules.html#addition-complement-rules-5" class="internal"><span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="root-1-2-6.html" class="internal"><span class="title">Categorical Data</span></a></div>
+<ul id="ptx-toc-group-root-1-2-6" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-describing-categorical-data.html" class="internal"><span class="title">Describing Categorical Data</span></a></div>
+<ul id="ptx-toc-group-sec-describing-categorical-data" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-types-of-data" class="internal"><span class="title">Categorical and Numerical Data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-frequency-and-proportion" class="internal"><span class="title">Frequencies and Proportions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-one-variable-frequency-distributions" class="internal"><span class="title">Frequency Distributions for One Categorical Variable</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-two-variable-frequency-distributions" class="internal"><span class="title">Frequency Distributions for Two Categorical Variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-bar-graphs" class="internal"><span class="title">Bar Graphs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-describing-categorical-data.html#subsec-large-categorical-dataset" class="internal"><span class="title">Working with a Larger Biological Dataset</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="discrete-random-variables-binomial.html" class="internal"><span class="title">Binomial Distribution</span></a></div>
+<ul id="ptx-toc-group-discrete-random-variables-binomial" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="discrete-random-variables-binomial.html#drb-discrete" class="internal"><span class="title">Discrete Random Variables and Probability Distributions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="discrete-random-variables-binomial.html#drb-moments" class="internal"><span class="title">Expected Value and Standard Deviation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="discrete-random-variables-binomial.html#drb-binomial" class="internal"><span class="title">The Binomial Model and General Formula</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="discrete-random-variables-binomial.html#drb-r" class="internal"><span class="title">Binomial Probabilities in R</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="discrete-random-variables-binomial.html#drb-binomial-moments" class="internal"><span class="title">Expected Value and Standard Deviation of a Binomial Variable</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="normal-and-chi-square-distributions.html" class="internal"><span class="title">Normal and <span class="process-math">\(\chi^2\)</span> Distributions</span></a></div>
+<ul id="ptx-toc-group-normal-and-chi-square-distributions" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="normal-and-chi-square-distributions.html#ncs-density" class="internal"><span class="title">Continuous Random Variables and Density Curves</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="normal-and-chi-square-distributions.html#ncs-normal" class="internal"><span class="title">Normal and Standard Normal Distributions</span></a></div>
+<ul id="ptx-toc-group-ncs-normal" class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="normal-and-chi-square-distributions.html#ncs-normal-5" class="internal"><span class="title">R-Commands for Normal Distribution</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="normal-and-chi-square-distributions.html#ncs-applications" class="internal"><span class="title">Normal Models for Measurements</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="normal-and-chi-square-distributions.html#ncs-chi-square" class="internal"><span class="title">An Introduction to the Chi-Square Distribution</span></a></div>
+<ul id="ptx-toc-group-ncs-chi-square" class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="normal-and-chi-square-distributions.html#ncs-chi-square-9" class="internal"><span class="title">R-Commands for <span class="process-math">\(\chi^2\)</span> Distribution</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sampling-distribution-of-sample-proportions.html" class="internal"><span class="title">Sampling Distribution of <span class="process-math">\(\hat{p}\)</span></span></a></div>
+<ul id="ptx-toc-group-sampling-distribution-of-sample-proportions" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sampling-distribution-of-sample-proportions.html#spp-population-and-sample" class="internal"><span class="title">Population Proportions and Sample Proportions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sampling-distribution-of-sample-proportions.html#spp-sampling-distribution" class="internal"><span class="title">What Is a Sampling Distribution?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sampling-distribution-of-sample-proportions.html#spp-normal-model" class="internal"><span class="title">When Is a Normal Model Appropriate?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sampling-distribution-of-sample-proportions.html#spp-r-simulation" class="internal"><span class="title">R Investigation: Repeated Samples of Seeds</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sampling-distribution-of-sample-proportions.html#spp-probabilities" class="internal"><span class="title">Probabilities Involving Sample Proportions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="confidence-intervals-for-a-population-proportion.html" class="internal"><span class="title">Inference for One Proportion Part 1</span></a></div>
+<ul id="ptx-toc-group-confidence-intervals-for-a-population-proportion" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="confidence-intervals-for-a-population-proportion.html#subsec-what-is-stats" class="internal"><span class="title">What is Statistics?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="confidence-intervals-for-a-population-proportion.html#cip-point-and-interval" class="internal"><span class="title">What Is a Confidence Interval?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="confidence-intervals-for-a-population-proportion.html#cip-confidence-meaning" class="internal"><span class="title">What Does the Confidence Level Mean?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="confidence-intervals-for-a-population-proportion.html#cip-one-proportion-z" class="internal"><span class="title">The One-Proportion Z-Interval</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="confidence-intervals-for-a-population-proportion.html#cip-worked-examples" class="internal"><span class="title">Estimating Proportions in Context</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="confidence-intervals-for-a-population-proportion.html#cip-one-sided" class="internal"><span class="title">One-Sided Confidence Bounds</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="hypothesis-tests-for-a-population-proportion.html" class="internal"><span class="title">Inference for One Proportion Part 2</span></a></div>
+<ul id="ptx-toc-group-hypothesis-tests-for-a-population-proportion" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="hypothesis-tests-for-a-population-proportion.html#cip-hypotheses" class="internal"><span class="title">Introducing Hypothesis Testing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="hypothesis-tests-for-a-population-proportion.html#cip-p-values-and-decisions" class="internal"><span class="title">P-values and Decisions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="hypothesis-tests-for-a-population-proportion.html#cip-one-proportion-test" class="internal"><span class="title">The One-Proportion Z-Test</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="hypothesis-tests-for-a-population-proportion.html#cip-test-examples" class="internal"><span class="title">Hypothesis Tests in Context</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="hypothesis-tests-for-a-population-proportion.html#cip-counseling-r" class="internal"><span class="title">R Practice</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="hypothesis-tests-for-a-population-proportion.html#cip-ci-test-connection" class="internal"><span class="title">The Relationship Between Confidence Intervals and Hypothesis Tests</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="hypothesis-tests-for-a-population-proportion.html#cip-test-errors" class="internal"><span class="title">Type I and Type II Errors</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="inf-two-prop-notes.html" class="internal"><span class="title">Inference for Two Proportions</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="inf-more-than-two-prop.html" class="internal"><span class="title">Inference for More than Two Proportions</span></a></div>
+<ul id="ptx-toc-group-inf-more-than-two-prop" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="inf-more-than-two-prop.html#homegenity" class="internal"><span class="title">Homogenity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="inf-more-than-two-prop.html#independence" class="internal"><span class="title">Test of Independence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="inf-more-than-two-prop.html#goodness-of-fit" class="internal"><span class="title">Test of Goodness-of-Fit</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="root-1-2-7.html" class="internal"><span class="title">Numerical Data</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-root-1-2-7">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="describing-numerical-data.html" class="internal"><span class="title">Describing Numerical Data</span></a></div>
+<ul id="ptx-toc-group-describing-numerical-data" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="describing-numerical-data.html#numerical-measures-of-center" class="internal"><span class="title">Measures of Center</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="describing-numerical-data.html#numerical-measures-of-spread" class="internal"><span class="title">Measures of Spread</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="describing-numerical-data.html#numerical-robustness" class="internal"><span class="title">Robustness</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="describing-numerical-data.html#numerical-histograms" class="internal"><span class="title">Histograms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="describing-numerical-data.html#numerical-interpreting-histograms" class="internal"><span class="title">Interpreting Histograms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="describing-numerical-data.html#numerical-box-plots" class="internal"><span class="title">Box Plots</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="describing-numerical-data.html#numerical-matching-displays" class="internal"><span class="title">Matching Histograms and Box Plots</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="t-and-f-distributions.html" class="internal"><span class="title">Student <span class="process-math">\(t\)</span> and <span class="process-math">\(F\)</span> Distributions</span></a></div>
+<ul class="structural toc-item-list active" id="ptx-toc-group-t-and-f-distributions">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="t-and-f-distributions.html#tf-t-properties" class="internal"><span class="title">Properties of the t-Distribution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="t-and-f-distributions.html#tf-t-calculations" class="internal"><span class="title">t-Probabilities and Critical Values</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="t-and-f-distributions.html#tf-f-properties" class="internal"><span class="title">Properties of the F-Distribution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="t-and-f-distributions.html#tf-f-calculations" class="internal"><span class="title">F-Probabilities and Critical Values</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="one-sample-t-inference.html" class="internal"><span class="title">Inference for One Mean</span></a></div>
+<ul id="ptx-toc-group-one-sample-t-inference" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="one-sample-t-inference.html#os-conditions" class="internal"><span class="title">Requirements and Notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="one-sample-t-inference.html#os-confidence-intervals" class="internal"><span class="title">One-Sample t-Intervals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="one-sample-t-inference.html#os-tests" class="internal"><span class="title">One-Sample t-Tests</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="one-sample-t-inference.html#os-types-of-error" class="internal"><span class="title">Types of Error in Context</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="one-sample-t-inference.html#os-large-data" class="internal"><span class="title">A Larger Health Data Set</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="root-1-2-8.html" class="internal"><span class="title">Inference on Categorical Data</span></a></div>
+<ul id="ptx-toc-group-root-1-2-8" class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-cat-project-rubric.html" class="internal"><span class="title">Inference for Categorical Data: Lab Report Rubric</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-cat-project-data-selection.html" class="internal"><span class="title">ICD: Data Set Selection and Documentation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-cat-project-summary.html" class="internal"><span class="title">ICD: Data Set Summary and Research Questions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-cat-project-graphical.html" class="internal"><span class="title">ICD: Graphical Analysis</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-cat-project-methods.html" class="internal"><span class="title">ICD: Statistical Methods and Computations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-cat-project-results.html" class="internal"><span class="title">ICD: Results and Interpretation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="subsec-cat-project-conclusion.html" class="internal"><span class="title">ICD: Conclusion</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="t-and-f-distributions">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Student <span class="process-math">\(t\)</span> and <span class="process-math">\(F\)</span> Distributions</span>
+</h1>
+<section class="subsection" id="tf-t-properties">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Properties of the t-Distribution</span>
+</h2>
+<article class="definition definition-like" id="tf-t-definition"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">209</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Student’s t-Distribution.</span>
+</h3>
+<div class="para" id="tf-t-definition-2-1">The <dfn class="terminology">Student’s t-distribution</dfn> is a set of continuous, symmetric, bell-shaped distributions described by one parameter, the <dfn class="terminology">degrees of freedom</dfn>. The notation to say something follows the t-distribution is <span class="process-math">\(X \sim t \left( \rm{df} \right)\)</span> when the degrees of freedom are df.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-definition-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="tf-t-definition-2-2">
+<ol class="decimal" style="list-style: ptx-marker-2;" id="tf-t-definition-2-2-1">
+<li id="tf-t-definition-2-2-1-1">
+<div class="para" id="tf-t-definition-2-2-1-1-1">Possible values extend from <span class="process-math">\(-\infty\)</span> to <span class="process-math">\(\infty\text{.}\)</span> The curve is symmetric about 0, with half of the area on each side.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-definition-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#tf-t-definition-2-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="tf-t-definition-2-2-1-2">
+<div class="para" id="tf-t-definition-2-2-1-2-1">The total area under the curve is 1. Probabilities are areas; the probability at any single value is 0.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-definition-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#tf-t-definition-2-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="tf-t-definition-2-2-1-3">
+<div class="para" id="tf-t-definition-2-2-1-3-1">Compared with the standard normal curve, a t-curve has heavier tails. With small degrees of freedom, values far from 0 are more likely.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-definition-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#tf-t-definition-2-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="tf-t-definition-2-2-1-4">
+<div class="para" id="tf-t-definition-2-2-1-4-1">As the degrees of freedom increase, the t-curve approaches the standard normal curve. It does not become exactly normal at 30 degrees of freedom.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-definition-2-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#tf-t-definition-2-2-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="tf-t-definition-2-2-1-5">
+<div class="para" id="tf-t-definition-2-2-1-5-1">The median and mode are 0. The mean is also 0 when <span class="process-math">\(\nu&gt;1\text{.}\)</span> The standard deviation is larger than 1 when it is finite; it approaches 1 as the degrees of freedom increase.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-definition-2-2-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5"><a tabindex="-1" href="#tf-t-definition-2-2-1-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+<li id="tf-t-definition-2-2-1-6">
+<div class="para" id="tf-t-definition-2-2-1-6-1">Degrees of freedom are positive and may be nonintegers. The statistical procedure determines which degrees of freedom to use.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-definition-2-2-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 6"><a tabindex="-1" href="#tf-t-definition-2-2-1-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-definition-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 209: Student’s t-Distribution"><a tabindex="-1" href="#tf-t-definition" title="Copy heading and permalink for Definition 209: Student’s t-Distribution" aria-label="Copy heading and permalink for Definition 209: Student’s t-Distribution">🔗</a></div>
+</article>
+<figure class="figure figure-like" id="tf-t-properties-3"><div class="image-box" style="width: 95%; margin-left: 2.5%; margin-right: 2.5%;">
+<img src="external/images/t-distribution-shapes.png" class="contained" alt="described in detail following the image" aria-describedby="tf-t-properties-3-2-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="tf-t-properties-3-2-description">
+<div class="para" id="tf-t-properties-3-2-1-1">Symmetric t-density curves with 2, 5, and 20 degrees of freedom are compared with the standard normal density. The t-curves with fewer degrees of freedom have lower centers and heavier tails.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-properties-3-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">210<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Student’s t-curves approach the standard normal curve as degrees of freedom increase.<div class="autopermalink" aria-hidden="true" data-description="Figure 210"><a tabindex="-1" href="#tf-t-properties-3" title="Copy heading and permalink for Figure 210" aria-label="Copy heading and permalink for Figure 210">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="tf-t-properties-4">The sample mean procedures in the next notes use a t-distribution because the population standard deviation is unknown and is estimated from the sample.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-properties-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection: Properties of the t-Distribution"><a tabindex="-1" href="#tf-t-properties" title="Copy heading and permalink for Subsection: Properties of the t-Distribution" aria-label="Copy heading and permalink for Subsection: Properties of the t-Distribution">🔗</a></div>
+</section>
+<section class="subsection" id="tf-t-calculations">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">t-Probabilities and Critical Values</span>
+</h2>
+<figure class="table table-like" id="tf-t-r"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">211<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>t-Probabilities and Cutoffs in R<div class="autopermalink" aria-hidden="true" data-description="Table 211: t-Probabilities and Cutoffs in R"><a tabindex="-1" href="#tf-t-r" title="Copy heading and permalink for Table 211: t-Probabilities and Cutoffs in R" aria-label="Copy heading and permalink for Table 211: t-Probabilities and Cutoffs in R">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b2 r0 l0 t2 lines">Task</th>
+<th scope="col" class="c m b2 r0 l0 t2 lines">R command</th>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r0 l0 t0 lines"><span class="process-math">\(P(T&lt;k)\)</span></th>
+<td class="c m b2 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">pt(k, df = nu)</code></td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r0 l0 t0 lines"><span class="process-math">\(P(T&gt;k)\)</span></th>
+<td class="c m b2 r0 l0 t0 lines">
+<code class="code-inline tex2jax_ignore">pt(k, df = nu,</code><br><code class="code-inline tex2jax_ignore">   lower.tail = FALSE)</code>
+</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r0 l0 t0 lines">Cutoff with area <span class="process-math">\(p\)</span> to its left</th>
+<td class="c m b2 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">qt(p, df = nu)</code></td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r0 l0 t0 lines">Cutoff with area <span class="process-math">\(p\)</span> to its right</th>
+<td class="c m b2 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">qt(p, df = nu, lower.tail = FALSE)</code></td>
+</tr>
+</table></div>
+</figure>
+<div class="para" id="tf-t-calculations-3">Use <code class="code-inline tex2jax_ignore">pt()</code> when a value is known and an area is wanted. Use <code class="code-inline tex2jax_ignore">qt()</code> when an area is known and a value is wanted. The input <code class="code-inline tex2jax_ignore">df</code> is required.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-calculations-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="tf-t-calculations-4"><div class="image-box" style="width: 95%; margin-left: 2.5%; margin-right: 2.5%;">
+<img src="external/images/t-critical-regions.png" class="contained" alt="described in detail following the image" aria-describedby="tf-t-calculations-4-2-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="tf-t-calculations-4-2-description">
+<div class="para" id="tf-t-calculations-4-2-1-1">Two t-curves with 12 degrees of freedom. The first shades two equal tails totaling 0.05 beyond minus c and c. The second shades only a right tail of 0.05; its positive cutoff is closer to zero.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-calculations-4-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">212<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Splitting an area between two tails changes the critical value.<div class="autopermalink" aria-hidden="true" data-description="Figure 212"><a tabindex="-1" href="#tf-t-calculations-4" title="Copy heading and permalink for Figure 212" aria-label="Copy heading and permalink for Figure 212">🔗</a></div></figcaption>
+</figure>
+<article class="example example-like" id="tf-t-properties-example"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">213</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Comparing t-Curves.</span>
+</h3>
+<div class="para" id="tf-t-properties-example-2-1">Consider t-distributions with 4 and 30 degrees of freedom and the standard normal distribution.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-properties-example-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="tf-t-properties-example-2-2">
+<ol class="lower-alpha" style="list-style: ptx-marker-3;" id="tf-t-properties-example-2-2-1">
+<li id="tf-t-properties-example-2-2-1-1">
+<div class="para" id="tf-t-properties-example-2-2-1-1-1">Which has the heaviest tails? Which is most concentrated near 0?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-properties-example-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#tf-t-properties-example-2-2-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="tf-t-properties-example-2-2-1-2">
+<div class="para" id="tf-t-properties-example-2-2-1-2-1">For each distribution, find the probability of a value below 0 without using R.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-properties-example-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#tf-t-properties-example-2-2-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="tf-t-properties-example-2-2-1-3">
+<div class="para" id="tf-t-properties-example-2-2-1-3-1">Predict which distribution has the largest <span class="process-math">\(P(|T|&gt;2)\text{.}\)</span> Check the probabilities using R.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-properties-example-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item c"><a tabindex="-1" href="#tf-t-properties-example-2-2-1-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-properties-example-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 213: Comparing t-Curves"><a tabindex="-1" href="#tf-t-properties-example" title="Copy heading and permalink for Example 213: Comparing t-Curves" aria-label="Copy heading and permalink for Example 213: Comparing t-Curves">🔗</a></div>
+</article>
+<article class="example example-like" id="tf-t-probabilities"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">214</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Probabilities for a t-Statistic.</span>
+</h3>
+<div class="para" id="tf-t-probabilities-2-1">A statistic used in a hypothetical lung-function study follows a t-distribution with 11 degrees of freedom under the study’s model. Sketch the relevant area and use R to find each probability.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-probabilities-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="tf-t-probabilities-2-2">
+<ol class="lower-alpha" style="list-style: ptx-marker-3;" id="tf-t-probabilities-2-2-1">
+<li id="tf-t-probabilities-2-2-1-1">
+<div class="para" id="tf-t-probabilities-2-2-1-1-1">
+<span class="process-math">\(\displaystyle P(T&lt;-1.80)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-probabilities-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#tf-t-probabilities-2-2-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="tf-t-probabilities-2-2-1-2">
+<div class="para" id="tf-t-probabilities-2-2-1-2-1">
+<span class="process-math">\(\displaystyle P(T&gt;2.10)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-probabilities-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#tf-t-probabilities-2-2-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="tf-t-probabilities-2-2-1-3">
+<div class="para" id="tf-t-probabilities-2-2-1-3-1">
+<span class="process-math">\(\displaystyle P(-1.25&lt;T&lt;2.00)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-probabilities-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item c"><a tabindex="-1" href="#tf-t-probabilities-2-2-1-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+<li id="tf-t-probabilities-2-2-1-4">
+<div class="para" id="tf-t-probabilities-2-2-1-4-1">
+<span class="process-math">\(\displaystyle P(T&lt;-2.20\text{ or }T&gt;2.20)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-probabilities-2-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item d"><a tabindex="-1" href="#tf-t-probabilities-2-2-1-4" title="Copy heading and permalink for Item d" aria-label="Copy heading and permalink for Item d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-probabilities-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 214: Probabilities for a t-Statistic"><a tabindex="-1" href="#tf-t-probabilities" title="Copy heading and permalink for Example 214: Probabilities for a t-Statistic" aria-label="Copy heading and permalink for Example 214: Probabilities for a t-Statistic">🔗</a></div>
+</article>
+<article class="example example-like" id="tf-t-cutoffs"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">215</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Cutoffs for a t-Distribution.</span>
+</h3>
+<div class="para" id="tf-t-cutoffs-2-1">Let <span class="process-math">\(X \sim t \left( 19 \right)\text{.}\)</span> Find each cutoff or pair of cutoffs using R. Sketch the specified area.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-cutoffs-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="tf-t-cutoffs-2-2">
+<ol class="lower-alpha" style="list-style: ptx-marker-3;" id="tf-t-cutoffs-2-2-1">
+<li id="tf-t-cutoffs-2-2-1-1">
+<div class="para" id="tf-t-cutoffs-2-2-1-1-1">The 10th percentile.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-cutoffs-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#tf-t-cutoffs-2-2-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="tf-t-cutoffs-2-2-1-2">
+<div class="para" id="tf-t-cutoffs-2-2-1-2-1">The cutoff for the highest 5%.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-cutoffs-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#tf-t-cutoffs-2-2-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="tf-t-cutoffs-2-2-1-3">
+<div class="para" id="tf-t-cutoffs-2-2-1-3-1">The two cutoffs containing the middle 95%.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-cutoffs-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item c"><a tabindex="-1" href="#tf-t-cutoffs-2-2-1-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+<li id="tf-t-cutoffs-2-2-1-4">
+<div class="para" id="tf-t-cutoffs-2-2-1-4-1">The two cutoffs containing the middle 99%.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-cutoffs-2-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item d"><a tabindex="-1" href="#tf-t-cutoffs-2-2-1-4" title="Copy heading and permalink for Item d" aria-label="Copy heading and permalink for Item d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-t-cutoffs-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 215: Cutoffs for a t-Distribution"><a tabindex="-1" href="#tf-t-cutoffs" title="Copy heading and permalink for Example 215: Cutoffs for a t-Distribution" aria-label="Copy heading and permalink for Example 215: Cutoffs for a t-Distribution">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection: t-Probabilities and Critical Values"><a tabindex="-1" href="#tf-t-calculations" title="Copy heading and permalink for Subsection: t-Probabilities and Critical Values" aria-label="Copy heading and permalink for Subsection: t-Probabilities and Critical Values">🔗</a></div>
+</section>
+<section class="subsection" id="tf-f-properties">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Properties of the F-Distribution</span>
+</h2>
+<article class="definition definition-like" id="tf-f-definition"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">216</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">F-Distribution.</span>
+</h3>
+<div class="para" id="tf-f-definition-2-1">The <dfn class="terminology">F-distribution</dfn> is a family of continuous distributions described by two degrees of freedom. We write <span class="process-math">\(X \sim F \left( \rm{df}_1, \rm{df}_2 \right)\text{.}\)</span> The first parameter is the <dfn class="terminology">numerator degrees of freedom</dfn>; the second is the <dfn class="terminology">denominator degrees of freedom</dfn>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-definition-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="tf-f-definition-2-2">
+<ol class="decimal" style="list-style: ptx-marker-2;" id="tf-f-definition-2-2-1">
+<li id="tf-f-definition-2-2-1-1">
+<div class="para" id="tf-f-definition-2-2-1-1-1">F-values are nonnegative, and the continuous distribution has support on positive values. In particular, <span class="process-math">\(P(F&lt;0)=0\)</span> and <span class="process-math">\(P(F=0)=0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-definition-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#tf-f-definition-2-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="tf-f-definition-2-2-1-2">
+<div class="para" id="tf-f-definition-2-2-1-2-1">The total area is 1. An interval probability is an area under the density curve.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-definition-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#tf-f-definition-2-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="tf-f-definition-2-2-1-3">
+<div class="para" id="tf-f-definition-2-2-1-3-1">The curve is right-skewed. It is not symmetric, and its tails should not be treated as mirror images.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-definition-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#tf-f-definition-2-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="tf-f-definition-2-2-1-4">
+<div class="para" id="tf-f-definition-2-2-1-4-1">Both degrees of freedom affect the shape. Their order matters: <span class="process-math">\(F_{5,20}\)</span> and <span class="process-math">\(F_{20,5}\)</span> are different distributions.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-definition-2-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#tf-f-definition-2-2-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="tf-f-definition-2-2-1-5">
+<div class="para" id="tf-f-definition-2-2-1-5-1">When both degrees of freedom become large, the distribution becomes concentrated near 1. Its mean is not generally 1.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-definition-2-2-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5"><a tabindex="-1" href="#tf-f-definition-2-2-1-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-definition-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 216: F-Distribution"><a tabindex="-1" href="#tf-f-definition" title="Copy heading and permalink for Definition 216: F-Distribution" aria-label="Copy heading and permalink for Definition 216: F-Distribution">🔗</a></div>
+</article>
+<figure class="figure figure-like" id="tf-f-properties-3"><div class="image-box" style="width: 95%; margin-left: 2.5%; margin-right: 2.5%;">
+<img src="external/images/f-distribution-shapes.png" class="contained" alt="described in detail following the image" aria-describedby="tf-f-properties-3-2-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="tf-f-properties-3-2-description">
+<div class="para" id="tf-f-properties-3-2-1-1">Two panels show right-skewed F-density curves. The left varies numerator degrees of freedom from 3 to 8 to 20 with denominator degrees of freedom fixed at 20. The right varies denominator degrees of freedom from 5 to 15 to 60 with numerator degrees of freedom fixed at 5.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-properties-3-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">217<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Both degrees of freedom influence the shape of an F-distribution.<div class="autopermalink" aria-hidden="true" data-description="Figure 217"><a tabindex="-1" href="#tf-f-properties-3" title="Copy heading and permalink for Figure 217" aria-label="Copy heading and permalink for Figure 217">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Subsection: Properties of the F-Distribution"><a tabindex="-1" href="#tf-f-properties" title="Copy heading and permalink for Subsection: Properties of the F-Distribution" aria-label="Copy heading and permalink for Subsection: Properties of the F-Distribution">🔗</a></div>
+</section>
+<section class="subsection" id="tf-f-calculations">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">F-Probabilities and Critical Values</span>
+</h2>
+<figure class="table table-like" id="tf-f-r"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">218<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>F-Probabilities and Cutoffs in R<div class="autopermalink" aria-hidden="true" data-description="Table 218: F-Probabilities and Cutoffs in R"><a tabindex="-1" href="#tf-f-r" title="Copy heading and permalink for Table 218: F-Probabilities and Cutoffs in R" aria-label="Copy heading and permalink for Table 218: F-Probabilities and Cutoffs in R">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b2 r0 l0 t2 lines">Task</th>
+<th scope="col" class="c m b2 r0 l0 t2 lines">R command</th>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r0 l0 t0 lines"><span class="process-math">\(P(F&lt;k)\)</span></th>
+<td class="c m b2 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">pf(k, df1 = nu1, df2 = nu2)</code></td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r0 l0 t0 lines"><span class="process-math">\(P(F&gt;k)\)</span></th>
+<td class="c m b2 r0 l0 t0 lines">
+<code class="code-inline tex2jax_ignore">pf(k, df1 = nu1, df2 = nu2,</code><br><code class="code-inline tex2jax_ignore">   lower.tail = FALSE)</code>
+</td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r0 l0 t0 lines">Cutoff with area to its left</th>
+<td class="c m b2 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">qf(p, df1 = nu1, df2 = nu2)</code></td>
+</tr>
+<tr>
+<th scope="row" class="c m b2 r0 l0 t0 lines">Cutoff with area <span class="process-math">\(p\)</span> to its right</th>
+<td class="c m b2 r0 l0 t0 lines">qf(p, df1 = nu1, df2 = nu2, lower.tail = FALSE)</td>
+</tr>
+</table></div>
+</figure>
+<div class="para" id="tf-f-calculations-3">For both distribution families, a <code class="code-inline tex2jax_ignore">d</code> function gives density heights and an <code class="code-inline tex2jax_ignore">r</code> function simulates observations. These notes focus on the <code class="code-inline tex2jax_ignore">p</code> and <code class="code-inline tex2jax_ignore">q</code> functions.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-calculations-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="tf-f-calculations-4"><div class="image-box" style="width: 95%; margin-left: 2.5%; margin-right: 2.5%;">
+<img src="external/images/f-upper-tail.png" class="contained" alt="described in detail following the image" aria-describedby="tf-f-calculations-4-2-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="tf-f-calculations-4-2-description">
+<div class="para" id="tf-f-calculations-4-2-1-1">An F-density curve with numerator degrees of freedom 4 and denominator degrees of freedom 20. The area to the right of c is shaded and equals 0.05.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-calculations-4-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">219<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>An upper-tail F cutoff leaves the specified area to its right.<div class="autopermalink" aria-hidden="true" data-description="Figure 219"><a tabindex="-1" href="#tf-f-calculations-4" title="Copy heading and permalink for Figure 219" aria-label="Copy heading and permalink for Figure 219">🔗</a></div></figcaption>
+</figure>
+<article class="example example-like" id="tf-f-properties-example"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">220</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Reading the Two Degrees of Freedom.</span>
+</h3>
+<div class="para" id="tf-f-properties-example-2-1">Three F-distributions have degree-of-freedom pairs <span class="process-math">\((4,24)\text{,}\)</span> <span class="process-math">\((24,4)\text{,}\)</span> and <span class="process-math">\((12,60)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-properties-example-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="tf-f-properties-example-2-2">
+<ol class="lower-alpha" style="list-style: ptx-marker-3;" id="tf-f-properties-example-2-2-1">
+<li id="tf-f-properties-example-2-2-1-1">
+<div class="para" id="tf-f-properties-example-2-2-1-1-1">Identify the numerator and denominator degrees of freedom for each.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-properties-example-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#tf-f-properties-example-2-2-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="tf-f-properties-example-2-2-1-2">
+<div class="para" id="tf-f-properties-example-2-2-1-2-1">Find <span class="process-math">\(P(F&lt;0)\)</span> and <span class="process-math">\(P(F=2)\)</span> for each distribution without using R.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-properties-example-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#tf-f-properties-example-2-2-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-properties-example-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 220: Reading the Two Degrees of Freedom"><a tabindex="-1" href="#tf-f-properties-example" title="Copy heading and permalink for Example 220: Reading the Two Degrees of Freedom" aria-label="Copy heading and permalink for Example 220: Reading the Two Degrees of Freedom">🔗</a></div>
+</article>
+<article class="example example-like" id="tf-f-probabilities"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">221</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Areas Under an F-Curve.</span>
+</h3>
+<div class="para" id="tf-f-probabilities-2-1">Let <span class="process-math">\(X \sim F \left(4, 24 \right)}\text{.}\)</span> Sketch the requested region and use R to find each probability.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-probabilities-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="tf-f-probabilities-2-2">
+<ol class="lower-alpha" style="list-style: ptx-marker-3;" id="tf-f-probabilities-2-2-1">
+<li id="tf-f-probabilities-2-2-1-1">
+<div class="para" id="tf-f-probabilities-2-2-1-1-1">
+<span class="process-math">\(\displaystyle P(X&lt;1.20)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-probabilities-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#tf-f-probabilities-2-2-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="tf-f-probabilities-2-2-1-2">
+<div class="para" id="tf-f-probabilities-2-2-1-2-1">
+<span class="process-math">\(\displaystyle P(X&gt;3.00)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-probabilities-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#tf-f-probabilities-2-2-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="tf-f-probabilities-2-2-1-3">
+<div class="para" id="tf-f-probabilities-2-2-1-3-1">
+<span class="process-math">\(\displaystyle P(0.50&lt;X&lt;2.00)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-probabilities-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item c"><a tabindex="-1" href="#tf-f-probabilities-2-2-1-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+<li id="tf-f-probabilities-2-2-1-4">
+<div class="para" id="tf-f-probabilities-2-2-1-4-1">
+<span class="process-math">\(\displaystyle P(X&lt;0.40\text{ or }X&gt;3.50)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-probabilities-2-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item d"><a tabindex="-1" href="#tf-f-probabilities-2-2-1-4" title="Copy heading and permalink for Item d" aria-label="Copy heading and permalink for Item d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-probabilities-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 221: Areas Under an F-Curve"><a tabindex="-1" href="#tf-f-probabilities" title="Copy heading and permalink for Example 221: Areas Under an F-Curve" aria-label="Copy heading and permalink for Example 221: Areas Under an F-Curve">🔗</a></div>
+</article>
+<article class="example example-like" id="tf-f-cutoffs"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">222</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">F Cutoffs for Comparing Groups.</span>
+</h3>
+<div class="para" id="tf-f-cutoffs-2-1">A later comparison of four treatments will use an F-distribution with 3 numerator and 36 denominator degrees of freedom.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-cutoffs-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="tf-f-cutoffs-2-2">
+<ol class="lower-alpha" style="list-style: ptx-marker-3;" id="tf-f-cutoffs-2-2-1">
+<li id="tf-f-cutoffs-2-2-1-1">
+<div class="para" id="tf-f-cutoffs-2-2-1-1-1">Find the cutoff for the highest 5%.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-cutoffs-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#tf-f-cutoffs-2-2-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="tf-f-cutoffs-2-2-1-2">
+<div class="para" id="tf-f-cutoffs-2-2-1-2-1">Find the cutoff for the highest 1%.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-cutoffs-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#tf-f-cutoffs-2-2-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="tf-f-cutoffs-2-2-1-3">
+<div class="para" id="tf-f-cutoffs-2-2-1-3-1">Find the lower and upper cutoffs leaving 2.5% in each tail. Are they symmetric about 1?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-cutoffs-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item c"><a tabindex="-1" href="#tf-f-cutoffs-2-2-1-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+<li id="tf-f-cutoffs-2-2-1-4">
+<div class="para" id="tf-f-cutoffs-2-2-1-4-1">For the highest 5%, compare the cutoff with the one obtained after interchanging the degrees of freedom.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-cutoffs-2-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item d"><a tabindex="-1" href="#tf-f-cutoffs-2-2-1-4" title="Copy heading and permalink for Item d" aria-label="Copy heading and permalink for Item d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#tf-f-cutoffs-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 222: F Cutoffs for Comparing Groups"><a tabindex="-1" href="#tf-f-cutoffs" title="Copy heading and permalink for Example 222: F Cutoffs for Comparing Groups" aria-label="Copy heading and permalink for Example 222: F Cutoffs for Comparing Groups">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection: F-Probabilities and Critical Values"><a tabindex="-1" href="#tf-f-calculations" title="Copy heading and permalink for Subsection: F-Probabilities and Critical Values" aria-label="Copy heading and permalink for Subsection: F-Probabilities and Critical Values">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section: Student t and F Distributions"><a tabindex="-1" href="#t-and-f-distributions" title="Copy heading and permalink for Section: Student t and F Distributions" aria-label="Copy heading and permalink for Section: Student t and F Distributions">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="describing-numerical-data.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="one-sample-t-inference.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" alt="Runestone Academy logo" src="data:image/png;base64,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"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" alt="MathJax logo" src="data:image/png;base64,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"></a>
+</div>
+</body>
+</html>

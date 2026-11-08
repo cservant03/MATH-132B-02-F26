@@ -1,0 +1,356 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="t-and-f-distributions">
+  <title>Student <m>t</m> and <m>F</m> Distributions</title>
+  
+  <subsection xml:id="tf-t-properties">
+    <title>Properties of the t-Distribution</title>
+
+    <definition xml:id="tf-t-definition">
+      <title>Student's t-Distribution</title>
+      <statement>
+        <p>The <term>Student's t-distribution</term> is a set of continuous, symmetric, bell-shaped distributions described by one parameter, the <term>degrees of freedom</term>. The notation to say something follows the t-distribution is <m>X \sim t \left( \rm{df} \right)</m> when the degrees of freedom are df.</p>
+        <p>
+          <ol marker="1)">
+            <li>
+              <p>Possible values extend from <m>-\infty</m> to <m>\infty</m>. The curve is symmetric about 0, with half of the area on each side.</p>
+            </li>
+            <li>
+              <p>The total area under the curve is 1. Probabilities are areas; the probability at any single value is 0.</p>
+            </li>
+            <li>
+              <p>Compared with the standard normal curve, a t-curve has heavier tails. With small degrees of freedom, values far from 0 are more likely.</p>
+            </li>
+            <li>
+              <p>As the degrees of freedom increase, the t-curve approaches the standard normal curve. It does not become exactly normal at 30 degrees of freedom.</p>
+            </li>
+            <li>
+              <p>The median and mode are 0. The mean is also 0 when <m>\nu&gt;1</m>. The standard deviation is larger than 1 when it is finite; it approaches 1 as the degrees of freedom increase.</p>
+            </li>
+            <li>
+              <p>Degrees of freedom are positive and may be nonintegers. The statistical procedure determines which degrees of freedom to use.</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </definition>
+
+    <figure>
+      <caption>Student's t-curves approach the standard normal curve as degrees of freedom increase.</caption>
+      <image source="images/t-distribution-shapes.png" width="95%">
+        <description>
+          <p>Symmetric t-density curves with 2, 5, and 20 degrees of freedom are compared with the standard normal density. The t-curves with fewer degrees of freedom have lower centers and heavier tails.</p>
+        </description>
+      </image>
+    </figure>
+
+    <p>The sample mean procedures in the next notes use a t-distribution because the population standard deviation is unknown and is estimated from the sample.</p>
+  </subsection>
+
+  <subsection xml:id="tf-t-calculations">
+    <title>t-Probabilities and Critical Values</title>
+
+    <table xml:id="tf-t-r">
+      <title>t-Probabilities and Cutoffs in R</title>
+      <tabular row-headers="yes" halign="center" valign="middle" top="medium" bottom="medium">
+        <row header="yes" bottom="medium">
+          <cell>Task</cell>
+          <cell>R command</cell>
+        </row>
+        <row>
+          <cell>
+            <m>P(T&lt;k)</m>
+          </cell>
+          <cell>
+            <c>pt(k, df = nu)</c>
+          </cell>
+        </row>
+        <row>
+          <cell>
+            <m>P(T&gt;k)</m>
+          </cell>
+          <cell>
+            <line>
+              <c>pt(k, df = nu,</c>
+            </line>
+            <line>
+              <c>   lower.tail = FALSE)</c>
+            </line>
+          </cell>
+        </row>
+        <row>
+          <cell>
+            Cutoff with area <m>p</m> to its left
+          </cell>
+          <cell>
+            <c>qt(p, df = nu)</c>
+          </cell>
+        </row>
+        <row>
+          <cell>
+            Cutoff with area <m>p</m> to its right
+          </cell>
+          <cell>
+              <c>qt(p, df = nu, lower.tail = FALSE)</c> 
+          </cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>Use <c>pt()</c> when a value is known and an area is wanted. Use <c>qt()</c> when an area is known and a value is wanted. The input <c>df</c> is required.</p>
+
+    <figure>
+      <caption>Splitting an area between two tails changes the critical value.</caption>
+      <image source="images/t-critical-regions.png" width="95%">
+        <description>
+          <p>Two t-curves with 12 degrees of freedom. The first shades two equal tails totaling 0.05 beyond minus c and c. The second shades only a right tail of 0.05; its positive cutoff is closer to zero.</p>
+        </description>
+      </image>
+    </figure>
+
+    <example xml:id="tf-t-properties-example">
+      <title>Comparing t-Curves</title>
+      <statement>
+        <p>Consider t-distributions with 4 and 30 degrees of freedom and the standard normal distribution.</p>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>Which has the heaviest tails? Which is most concentrated near 0?</p>
+            </li>
+            <li>
+              <p>For each distribution, find the probability of a value below 0 without using R.</p>
+            </li>
+            <li>
+              <p>Predict which distribution has the largest <m>P(|T|&gt;2)</m>. Check the probabilities using R.</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+
+    <example xml:id="tf-t-probabilities">
+      <title>Probabilities for a t-Statistic</title>
+      <statement>
+        <p>A statistic used in a hypothetical lung-function study follows a t-distribution with 11 degrees of freedom under the study’s model. Sketch the relevant area and use R to find each probability.</p>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>
+                <m>P(T&lt;-1.80)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>P(T&gt;2.10)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>P(-1.25&lt;T&lt;2.00)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>P(T&lt;-2.20\text{ or }T&gt;2.20)</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+
+    <example xml:id="tf-t-cutoffs">
+      <title>Cutoffs for a t-Distribution</title>
+      <statement>
+        <p>Let <m>X \sim t \left( 19 \right)</m>. Find each cutoff or pair of cutoffs using R. Sketch the specified area.</p>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>The 10th percentile.</p>
+            </li>
+            <li>
+              <p>The cutoff for the highest 5%.</p>
+            </li>
+            <li>
+              <p>The two cutoffs containing the middle 95%.</p>
+            </li>
+            <li>
+              <p>The two cutoffs containing the middle 99%.</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+  </subsection>
+
+  <subsection xml:id="tf-f-properties">
+    <title>Properties of the F-Distribution</title>
+
+    <definition xml:id="tf-f-definition">
+      <title>F-Distribution</title>
+      <statement>
+        <p>The <term>F-distribution</term> is a family of continuous distributions described by two degrees of freedom. We write <m>X \sim F \left( \rm{df}_1, \rm{df}_2 \right)</m>. The first parameter is the <term>numerator degrees of freedom</term>; the second is the <term>denominator degrees of freedom</term>.</p>
+        <p>
+          <ol marker="1)">
+            <li>
+              <p>F-values are nonnegative, and the continuous distribution has support on positive values. In particular, <m>P(F&lt;0)=0</m> and <m>P(F=0)=0</m>.</p>
+            </li>
+            <li>
+              <p>The total area is 1. An interval probability is an area under the density curve.</p>
+            </li>
+            <li>
+              <p>The curve is right-skewed. It is not symmetric, and its tails should not be treated as mirror images.</p>
+            </li>
+            <li>
+              <p>Both degrees of freedom affect the shape. Their order matters: <m>F_{5,20}</m> and <m>F_{20,5}</m> are different distributions.</p>
+            </li>
+            <li>
+              <p>When both degrees of freedom become large, the distribution becomes concentrated near 1. Its mean is not generally 1.</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </definition>
+
+    <figure>
+      <caption>Both degrees of freedom influence the shape of an F-distribution.</caption>
+      <image source="images/f-distribution-shapes.png" width="95%">
+        <description>
+          <p>Two panels show right-skewed F-density curves. The left varies numerator degrees of freedom from 3 to 8 to 20 with denominator degrees of freedom fixed at 20. The right varies denominator degrees of freedom from 5 to 15 to 60 with numerator degrees of freedom fixed at 5.</p>
+        </description>
+      </image>
+    </figure>
+  </subsection>
+
+  <subsection xml:id="tf-f-calculations">
+    <title>F-Probabilities and Critical Values</title>
+
+    <table xml:id="tf-f-r">
+      <title>F-Probabilities and Cutoffs in R</title>
+      <tabular row-headers="yes" halign="center" valign="middle" top="medium" bottom="medium">
+        <row header="yes" bottom="medium">
+          <cell>Task</cell>
+          <cell>R command</cell>
+        </row>
+        <row>
+          <cell>
+            <m>P(F&lt;k)</m>
+          </cell>
+          <cell>
+            <c>pf(k, df1 = nu1, df2 = nu2)</c>
+          </cell>
+        </row>
+        <row>
+          <cell>
+            <m>P(F&gt;k)</m>
+          </cell>
+          <cell>
+            <line>
+              <c>pf(k, df1 = nu1, df2 = nu2,</c>
+            </line>
+            <line>
+              <c>   lower.tail = FALSE)</c>
+            </line>
+          </cell>
+        </row>
+        <row>
+          <cell>
+            Cutoff with area to its left
+          </cell>
+          <cell>
+            <c>qf(p, df1 = nu1, df2 = nu2)</c>
+          </cell>
+        </row>
+        <row>
+          <cell>
+            Cutoff with area <m>p</m> to its right
+          </cell>
+          <cell>
+            qf(p, df1 = nu1, df2 = nu2, lower.tail = FALSE)
+          </cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>For both distribution families, a <c>d</c> function gives density heights and an <c>r</c> function simulates observations. These notes focus on the <c>p</c> and <c>q</c> functions.</p>
+
+    <figure>
+      <caption>An upper-tail F cutoff leaves the specified area to its right.</caption>
+      <image source="images/f-upper-tail.png" width="95%">
+        <description>
+          <p>An F-density curve with numerator degrees of freedom 4 and denominator degrees of freedom 20. The area to the right of c is shaded and equals 0.05.</p>
+        </description>
+      </image>
+    </figure>
+
+    <example xml:id="tf-f-properties-example">
+      <title>Reading the Two Degrees of Freedom</title>
+      <statement>
+        <p>Three F-distributions have degree-of-freedom pairs <m>(4,24)</m>, <m>(24,4)</m>, and <m>(12,60)</m>.</p>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>Identify the numerator and denominator degrees of freedom for each.</p>
+            </li>
+            <li>
+              <p>Find <m>P(F&lt;0)</m> and <m>P(F=2)</m> for each distribution without using R.</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+
+    <example xml:id="tf-f-probabilities">
+      <title>Areas Under an F-Curve</title>
+      <statement>
+        <p>Let <m>X \sim F \left(4, 24 \right)}</m>. Sketch the requested region and use R to find each probability.</p>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>
+                <m>P(X&lt;1.20)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>P(X&gt;3.00)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>P(0.50&lt;X&lt;2.00)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>P(X&lt;0.40\text{ or }X&gt;3.50)</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+
+    <example xml:id="tf-f-cutoffs">
+      <title>F Cutoffs for Comparing Groups</title>
+      <statement>
+        <p>A later comparison of four treatments will use an F-distribution with 3 numerator and 36 denominator degrees of freedom.</p>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>Find the cutoff for the highest 5%.</p>
+            </li>
+            <li>
+              <p>Find the cutoff for the highest 1%.</p>
+            </li>
+            <li>
+              <p>Find the lower and upper cutoffs leaving 2.5% in each tail. Are they symmetric about 1?</p>
+            </li>
+            <li>
+              <p>For the highest 5%, compare the cutoff with the one obtained after interchanging the degrees of freedom.</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+  </subsection>
+</section>

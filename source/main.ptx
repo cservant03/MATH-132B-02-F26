@@ -43,6 +43,8 @@
     <chapter>
       <title>Numerical Data</title>
       <xi:include href="./notes/describing-numerical-data.ptx"/>
+      <xi:include href="./notes/t-and-f-distributions.ptx"/>
+      <xi:include href="./notes/one-sample-t-inference.ptx"/>
     </chapter>
 
     <chapter>

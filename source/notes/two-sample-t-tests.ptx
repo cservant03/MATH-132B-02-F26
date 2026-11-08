@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<section xml:id="two-sample-t-tests">
+  <title>Paired and Independent t-Tests</title>
+  <objectives>
+    <ol marker="1)">
+      <li>
+        <p>Distinguish paired samples from independent samples.</p>
+      </li>
+      <li>
+        <p>Carry out paired t-tests from differences and raw paired observations.</p>
+      </li>
+      <li>
+        <p>Carry out Welch’s two-sample t-test from summary statistics and raw data.</p>
+      </li>
+    </ol>
+  </objectives>
+  <subsection xml:id="ts-design">
+    <title>Identify the Sampling Design</title>
+    <definition xml:id="ts-sampling-designs">
+      <title>Dependent and Independent Samples</title>
+      <statement>
+        <p><term>Dependent samples</term>, also called <term>paired samples</term>, contain observations with a meaningful one-to-one match. Examples include two measurements on the same person or measurements on matched biological units.</p>
+        <p><term>Independent samples</term> contain observations from separate groups with no individual matching. Knowing the sample sizes are equal does not establish pairing. The study design determines the method.</p>
+      </statement>
+    </definition>
+    <example xml:id="ts-identify-design">
+      <title>Choose the Appropriate Design</title>
+      <statement>
+        <p>For each study, identify whether the samples are dependent or independent. Identify the experimental or sampling unit and, when appropriate, the pairing.</p>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>Blood glucose is measured before and after treatment in the same 30 patients.</p>
+            </li>
+            <li>
+              <p>Twenty-four mice are randomly assigned to a supplement and a different 24 mice are assigned to a control diet.</p>
+            </li>
+            <li>
+              <p>For each of 15 plants, one leaf is randomly assigned a spray and a matched leaf from the same plant is left untreated. The response is leaf damage.</p>
+            </li>
+            <li>
+              <p>Researchers separately sample 18 fish from one large lake and 18 fish from another large lake.</p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+    <p>All studies and small data sets in these notes are hypothetical classroom examples. The larger health-study file is simulated and contains no patient records.</p>
+    <p>Keep full precision in intermediate calculations. Round probabilities to four decimal places and final measurements to a sensible precision for their units.</p>
+  </subsection>
+  <subsection xml:id="ts-paired">
+    <title>Dependent Samples: Paired t-Tests</title>
+    <assemblage xml:id="ts-paired-formula">
+      <title>Paired t-Test</title>
+      <p>Choose an order and define one difference for each complete pair, <m>d_i=x_i-y_i</m>. Let <m>\mu_d</m> be the population mean difference; <m>\bar d</m> and <m>s_d</m> are the sample mean and sample standard deviation of the differences. If the hypothesized mean difference is <m>\Delta_0</m>, then</p>
+      <p>
+        <md number="no">
+          <mrow>H_0:\mu_d=\Delta_0,\qquad t=\dfrac{\bar d-\Delta_0}{s_d/\sqrt n},\qquad df=n-1.</mrow>
+        </md>
+      </p>
+      <p>Here <m>n</m> is the number of complete pairs. Usually <m>\Delta_0=0</m>. The alternative is <m>\mu_d&lt;\Delta_0</m>, <m>\mu_d&gt;\Delta_0</m>, or <m>\mu_d\ne\Delta_0</m>.</p>
+    </assemblage>
+    <p>
+      <ol marker="1)">
+        <li>
+          <p>The response is quantitative and each pair has a defensible match. Pairs are sampled or assigned appropriately and are independent of other pairs.</p>
+        </li>
+        <li>
+          <p>For small samples, the distribution of the <em>differences</em> should be approximately normal with no serious outliers. Examine the differences rather than requiring each original measurement column to look normal.</p>
+        </li>
+        <li>
+          <p>Use the standard deviation of the differences. The two separate sample standard deviations are not enough to recover it without information about the pairing.</p>
+        </li>
+        <li>
+          <p>State the subtraction order before interpreting the sign. For <m>d=\text{before}-\text{after}</m>, a positive difference means the measurement decreased.</p>
+        </li>
+      </ol>
+    </p>
+    <program language="r">
+# x and y must be in the same participant order.
+d &lt;- x - y
+hist(d)
+qqnorm(d)
+qqline(d)
+
+# Two equivalent ways to perform a two-sided paired test:
+t.test(x, y, paired = TRUE, mu = 0,
+       alternative = "two.sided")
+t.test(d, mu = 0, alternative = "two.sided")
+</program>
+    <p>With summary statistics for the differences, calculate <m>t</m> from the formula and use <c>pt()</c>. With raw paired data, <c>t.test(x, y, paired = TRUE)</c> uses the differences <c>x - y</c>. Use <c>"greater"</c> or <c>"less"</c> when that matches the alternative. If a measurement is missing, omit the entire incomplete pair and count the remaining pairs; never remove missing values separately and then pair the shortened columns.</p>
+    <p>For each test example, define the parameter and subtraction order, state the hypotheses, identify where the claim belongs, check the requirements, find the test statistic, degrees of freedom, and p-value, make the decision, and conclude in context.</p>
+    <example xml:id="ts-paired-summary">
+      <title>Blood-Pressure Reduction: Summary Statistics</title>
+      <statement>
+        <p>A random sample of 16 eligible adults participates in a program. Each adult’s systolic blood pressure is measured before and after the program. Let <m>d=\text{before}-\text{after}</m>. The differences have mean 5.2 mmHg and sample standard deviation 6.4 mmHg. Assume the population of differences is approximately normal. At <m>\alpha=0.05</m>, test the claim that the mean reduction is positive. Use the formula. Explain why evidence of an average decrease, by itself, does not establish that the program caused it in this study without a comparison group.</p>
+      </statement>
+    </example>
+    <example xml:id="ts-paired-raw">
+      <title>Two Measurement Devices: Raw Paired Data</title>
+      <statement>
+        <p>Two devices measure systolic blood pressure on each of 10 randomly selected adults. The measurement order is randomized within each adult. A manufacturer claims that the two devices have the same population mean reading. Define differences as Device A minus Device B. At <m>\alpha=0.05</m>, is there sufficient evidence to reject the claim? Use <c>t.test()</c>. Matching positions in the vectors belong to the same adult.</p>
+        <program language="r">
+device_a &lt;- c(128, 135, 142, 126, 151,
+              137, 133, 145, 139, 130)
+device_b &lt;- c(129, 134, 141, 128, 149,
+              138, 132, 146, 141, 131)
+</program>
+        <p>Explain why failing to reject equal means would not establish that the devices are interchangeable for individual patients.</p>
+      </statement>
+    </example>
+    <example xml:id="ts-paired-left">
+      <title>Matched Root Samples: A Directional Claim</title>
+      <statement>
+        <p>Researchers select 20 independent plants. Within each plant, two comparable root samples are randomly assigned to a treatment or control condition. Define <m>d=\text{treated root length}-\text{control root length}</m>. The mean difference is <m>-0.8</m> millimeters and the sample standard deviation of the differences is 2.4 millimeters. Assume approximately normal differences. At <m>\alpha=0.05</m>, do the results support the claim that the treatment decreases mean root length? Use the formula.</p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection xml:id="ts-independent">
+    <title>Independent Samples: Welch’s t-Test</title>
+    <assemblage xml:id="ts-welch-formula">
+      <title>Welch’s Independent Two-Sample t-Test</title>
+      <p>Let <m>\mu_1-\mu_2</m> be the difference between the two population means, with sample summaries <m>(n_1,\bar x_1,s_1)</m> and <m>(n_2,\bar x_2,s_2)</m>. For <m>H_0:\mu_1-\mu_2=\Delta_0</m>, use</p>
+      <p>
+        <md number="no">
+          <mrow>SE=\sqrt{\dfrac{s_1^2}{n_1}+\dfrac{s_2^2}{n_2}},\qquad t=\dfrac{(\bar x_1-\bar x_2)-\Delta_0}{SE}.</mrow>
+        </md>
+      </p>
+      <p>The approximate degrees of freedom are</p>
+      <p>
+        <md number="no">
+          <mrow>\nu=\dfrac{\left(\dfrac{s_1^2}{n_1}+\dfrac{s_2^2}{n_2}\right)^2}{\dfrac{(s_1^2/n_1)^2}{n_1-1}+\dfrac{(s_2^2/n_2)^2}{n_2-1}}.</mrow>
+        </md>
+      </p>
+      <p>Use the decimal value of <m>\nu</m> in R. Usually <m>\Delta_0=0</m>. The alternative compares <m>\mu_1-\mu_2</m> with <m>\Delta_0</m> using <m>&lt;</m>, <m>&gt;</m>, or <m>\ne</m>.</p>
+    </assemblage>
+    <p>
+      <ol marker="1)">
+        <li>
+          <p>The response is quantitative. Observations are independent within each sample and between the groups, with appropriate random sampling or random assignment.</p>
+        </li>
+        <li>
+          <p>For small samples, each population should be approximately normal without serious outliers. Examine each group separately. Larger samples allow more tolerance for moderate nonnormality.</p>
+        </li>
+        <li>
+          <p>Welch’s procedure does not assume equal population variances. An equal-variance test is not a prerequisite for choosing Welch’s test.</p>
+        </li>
+        <li>
+          <p>Label Groups 1 and 2 explicitly. The sign of the statistic and the direction of a one-sided test depend on that order.</p>
+        </li>
+      </ol>
+    </p>
+    <p>For supplied summary statistics, use the formulas. The following R template performs the arithmetic after the summary values and hypothesized difference have been entered:</p>
+    <program language="r">
+v1 &lt;- s1^2 / n1
+v2 &lt;- s2^2 / n2
+se &lt;- sqrt(v1 + v2)
+t_stat &lt;- (xbar1 - xbar2 - delta0) / se
+nu &lt;- (v1 + v2)^2 /
+      (v1^2 / (n1 - 1) + v2^2 / (n2 - 1))
+
+# Choose the one p-value matching the alternative.
+pt(t_stat, df = nu)                       # less
+pt(t_stat, df = nu, lower.tail = FALSE)   # greater
+2 * pt(-abs(t_stat), df = nu)             # two-sided
+</program>
+    <p>For raw observations, use the vector order <c>group1, group2</c>. The option <c>var.equal = FALSE</c> selects Welch’s method and is also R’s default.</p>
+    <program language="r">
+t.test(group1, group2, mu = 0,
+       alternative = "two.sided", var.equal = FALSE)
+</program>
+    <example xml:id="ts-welch-summary">
+      <title>Two Fish Populations: A Claim of Equal Means</title>
+      <statement>
+        <p>Independent random samples are taken from two large fish populations. Population 1 has a sample of 30 fish with mean body mass 14.2 grams and sample standard deviation 2.1 grams. Population 2 has a sample of 26 fish with mean 12.8 grams and sample standard deviation 3.4 grams. Assume the conditions for Welch’s test are reasonable. At <m>\alpha=0.05</m>, is there sufficient evidence to reject a biologist’s claim that the population mean body masses are equal? Use the formulas.</p>
+      </statement>
+    </example>
+    <example xml:id="ts-welch-raw">
+      <title>Recovery Under Two Treatments: Raw Data</title>
+      <statement>
+        <p>Twenty-two eligible animals are randomly assigned to one of two treatments, with 12 assigned to New and 10 to Standard. The response is recovery time in days. The researchers claim that New produces a lower population mean recovery time. Let Group 1 be New and Group 2 be Standard. Inspect each group and test the claim at <m>\alpha=0.05</m> using <c>t.test()</c>.</p>
+        <program language="r">
+new &lt;- c(11, 13, 12, 10, 14, 12,
+         11, 15, 13, 12, 14, 11)
+standard &lt;- c(15, 16, 14, 17, 16,
+              15, 18, 14, 16, 17)
+</program>
+      </statement>
+    </example>
+    <example xml:id="ts-welch-right">
+      <title>Nutrition and Growth: Summary Statistics</title>
+      <statement>
+        <p>Independent groups of laboratory animals are randomly assigned to two diets. In the Supplement group, 18 animals have mean weight gain 7.4 grams and sample standard deviation 1.2 grams. In the Control group, 22 animals have mean gain 6.3 grams and sample standard deviation 1.6 grams. Assume the two populations are approximately normal without serious outliers. At <m>\alpha=0.01</m>, test the claim that the Supplement diet produces a greater population mean gain. Use Supplement minus Control and the Welch formulas.</p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection xml:id="ts-large-data">
+    <title>A Larger Health Data Set</title>
+    <example xml:id="ts-large-study">
+      <title>Large Data Example: Changes Within and Between Groups</title>
+      <statement>
+        <p>The supplied file <c>data/health-study-360.csv</c> contains simulated data for 360 adults. In the hypothetical design, a simple random sample is selected from a large population of eligible adults, and participants are randomly assigned to Control, Walking, or Combined programs, with 120 in each group. Control receives usual information, Walking adds a walking program, and Combined adds walking plus nutrition counseling. Systolic blood pressure is recorded before assignment and after eight weeks. Each row is one participant; both measurements are in millimeters of mercury. The simulation is for statistical practice and does not establish clinical effects.</p>
+        <program language="r">
+health &lt;- read.csv("data/health-study-360.csv")
+health$group &lt;- factor(health$group,
+                       levels = c("Control", "Walking", "Combined"))
+health$reduction &lt;- health$baseline_sbp - health$week8_sbp
+</program>
+        <p>Define <c>reduction = baseline_sbp - week8_sbp</c>, so a positive value means blood pressure decreased. Use <m>\alpha=0.05</m> for both tests below.</p>
+        <p>
+          <ol marker="a)">
+            <li>
+              <p>Select the Walking participants and verify that there are 120 complete pairs. Examine the distribution of their reductions.</p>
+            </li>
+            <li>
+              <p>Use a paired t-test to assess the claim that the Walking group has a positive population mean reduction. State the parameter, subtraction order, hypotheses, p-value, and conclusion.</p>
+            </li>
+            <li>
+              <p>Compare reductions for the Combined and Walking groups using Welch’s independent two-sample test. A researcher claims that the Combined program has a larger mean reduction. Use Combined minus Walking and state the full test conclusion.</p>
+            </li>
+            <li>
+              <p>Obtain each group’s sample size, mean reduction, and standard deviation. Use the Welch formulas to reproduce the statistic and degrees of freedom for part (c).</p>
+            </li>
+            <li>
+              <p>Explain why part (b) is paired but part (c) is independent, even though both analyses use before-and-after measurements.</p>
+            </li>
+            <li>
+              <p>Explain why a decrease within the Walking group alone does not isolate the program’s effect, while a comparison between randomized groups addresses a treatment contrast. State the population to which the hypothetical sampling design permits generalization.</p>
+            </li>
+          </ol>
+        </p>
+        <program language="r">
+walking &lt;- subset(health, group == "Walking")
+combined &lt;- subset(health, group == "Combined")
+
+# Before minus after within the Walking group
+t.test(walking$baseline_sbp, walking$week8_sbp,
+       paired = TRUE, alternative = "greater", mu = 0)
+
+# Combined minus Walking, using one reduction per adult
+t.test(combined$reduction, walking$reduction,
+       alternative = "greater", mu = 0,
+       var.equal = FALSE)
+</program>
+      </statement>
+    </example>
+  </subsection>
+  <!-- Sources checked: https://stat.ethz.ch/R-manual/R-patched/library/stats/html/t.test.html ; https://www.itl.nist.gov/div898/handbook/eda/section3/eda353.htm -->
+</section>
