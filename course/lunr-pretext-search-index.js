@@ -2278,6 +2278,105 @@ var ptx_lunr_docs = [
   "body": " Large Data Example: Baseline Blood Pressure   The supplied file contains simulated data for 360 adults. In the hypothetical design, a simple random sample is selected from a large population of eligible adults, and participants are randomly assigned to Control, Walking, or Combined programs, with 120 in each group. Control receives usual information, Walking adds a walking program, and Combined adds walking plus nutrition counseling. Systolic blood pressure is recorded before assignment and after eight weeks. Each row is one participant; both measurements are in millimeters of mercury. The simulation is for statistical practice and does not establish clinical effects.     Verify that there are 360 observations. Use a histogram and a normal Q-Q plot to examine baseline blood pressure.    Construct and interpret a two-sided 95% confidence interval for the mean baseline systolic blood pressure in the eligible population.    Find a one-sided 95% lower confidence bound for the same mean. Interpret the bound.    A planning report claims that the eligible population's mean baseline systolic blood pressure is 130 mmHg. At , test whether the claim should be rejected. State the hypotheses and identify where the claim belongs.    Describe a Type I error and a Type II error for the test in part (d).    Explain why baseline and week-eight readings should not be stacked into one sample of 720 independent observations.      "
 },
 {
+  "id": "two-sample-t-tests",
+  "level": "1",
+  "url": "two-sample-t-tests.html",
+  "type": "Section",
+  "number": "",
+  "title": "Inference for Two Means",
+  "body": " Inference for Two Means   Identify the Sampling Design   Dependent Samples        Independent Samples        Choose the Appropriate Design   For each study, identify whether the samples are dependent or independent. Identify, when appropriate, the pairing.     Blood glucose is measured before and after treatment in the same 30 patients.    Twenty-four mice are randomly assigned to a supplement and a different 24 mice are assigned to a control diet.    For each of 15 plants, one leaf is randomly assigned a spray and a matched leaf from the same plant is left untreated. The response is leaf damage.    Researchers separately sample 18 fish from one large lake and 18 fish from another large lake.         Dependent Samples: Paired t-Test   Requirements for Paired t-Test     The response is quantitative, and the target parameter is a population mean . The population standard deviation is unknown.    The data must be paired and the pairs should be independent from each other.    The observations come from an appropriate random sample. When sampling without replacement, the sample should be no more than about 10% of the population.    For a small sample, the differences should be roughly normal with no serious outliers. For a larger sample, inference is more tolerant of moderate nonnormality, but strong skewness and influential outliers still need attention.    Use a histogram or normal Q-Q plot to inspect raw data. A Shapiro-Wilk result may supplement the plots; a large p-value does not establish normality.       Paired t-Test  Choose an order and define one difference for each complete pair, . Let and are the sample mean and sample standard deviation of the differences. If the hypothesized mean difference is , then     Here is the number of complete pairs. Usually . The alternative is , , or .   # x and y must be in the same participant order. d = x - y hist(d) qqnorm(d) qqline(d) # Two equivalent ways to perform a two-sided paired test: t.test(x, y, paired = TRUE, mu = 0, alternative = \"two.sided\") t.test(d, mu = 0, alternative = \"two.sided\")  With summary statistics for the differences, calculate from the formula and use pt() . With raw paired data, t.test(x, y, paired = TRUE) uses the differences x - y . Use \"greater\" or \"less\" when that matches the alternative. If a measurement is missing, omit the entire incomplete pair and count the remaining pairs; never remove missing values separately and then pair the shortened columns.  For each test example, define the parameter and subtraction order, state the hypotheses, identify where the claim belongs, check the requirements, find the test statistic, degrees of freedom, and p-value, make the decision, and conclude in context.   Blood-Pressure Reduction   A random sample of 16 eligible adults participates in a program. Each adults systolic blood pressure is measured before and after the program. Let . The differences have mean 5.2 mmHg and sample standard deviation 6.4 mmHg. Assume the population of differences is approximately normal. At , test the claim that the mean reduction is positive.     Two Measurement Devices   Two devices measure systolic blood pressure on each of 10 randomly selected adults. The measurement order is randomized within each adult. A manufacturer claims that the two devices have the same population mean reading. Define differences as Device A minus Device B. At , is there sufficient evidence to reject the claim?  device_a = c(128, 135, 142, 126, 151, 137, 133, 145, 139, 130) device_b = c(129, 134, 141, 128, 149, 138, 132, 146, 141, 131)     Matched Root Samples: A Directional Claim   Researchers select 20 independent plants. Within each plant, two comparable root samples are randomly assigned to a treatment or control condition. Define . The mean difference is millimeters and the sample standard deviation of the differences is 2.4 millimeters. At , do the results support the claim that the treatment decreases mean root length?      Independent Samples: Welch’s t-Test   Welch’s Independent Two-Sample t-Test  Let be the difference between the two population means, with sample summaries and . For , use     The approximate degrees of freedom are     Use the decimal value of in R. Usually . The alternative compares with using , , or .      The response is quantitative. Observations are independent within each sample and between the groups, with appropriate random sampling or random assignment.    For small samples, each population should be approximately normal without serious outliers. Examine each group separately. Larger samples allow more tolerance for moderate nonnormality.    Welch’s procedure does not assume equal population variances. An equal-variance test is not a prerequisite for choosing Welch’s test.    Label Groups 1 and 2 explicitly. The sign of the statistic and the direction of a one-sided test depend on that order.     For supplied summary statistics, use the formulas. The following R template performs the arithmetic after the summary values and hypothesized difference have been entered:  v1 <- s1^2 \/ n1 v2 <- s2^2 \/ n2 se <- sqrt(v1 + v2) t_stat <- (xbar1 - xbar2 - delta0) \/ se nu <- (v1 + v2)^2 \/ (v1^2 \/ (n1 - 1) + v2^2 \/ (n2 - 1)) # Choose the one p-value matching the alternative. pt(t_stat, df = nu) # less pt(t_stat, df = nu, lower.tail = FALSE) # greater 2 * pt(-abs(t_stat), df = nu) # two-sided  For raw observations, use the vector order group1, group2 . The option var.equal = FALSE selects Welch’s method and is also R’s default.  t.test(group1, group2, mu = 0, alternative = \"two.sided\", var.equal = FALSE)   Two Fish Populations: A Claim of Equal Means   Independent random samples are taken from two large fish populations. Population 1 has a sample of 30 fish with mean body mass 14.2 grams and sample standard deviation 2.1 grams. Population 2 has a sample of 26 fish with mean 12.8 grams and sample standard deviation 3.4 grams. Assume the conditions for Welch’s test are reasonable. At , is there sufficient evidence to reject a biologist’s claim that the population mean body masses are equal? Use the formulas.     Recovery Under Two Treatments: Raw Data   Twenty-two eligible animals are randomly assigned to one of two treatments, with 12 assigned to New and 10 to Standard. The response is recovery time in days. The researchers claim that New produces a lower population mean recovery time. Let Group 1 be New and Group 2 be Standard. Inspect each group and test the claim at using t.test() .  new <- c(11, 13, 12, 10, 14, 12, 11, 15, 13, 12, 14, 11) standard <- c(15, 16, 14, 17, 16, 15, 18, 14, 16, 17)     Nutrition and Growth: Summary Statistics   Independent groups of laboratory animals are randomly assigned to two diets. In the Supplement group, 18 animals have mean weight gain 7.4 grams and sample standard deviation 1.2 grams. In the Control group, 22 animals have mean gain 6.3 grams and sample standard deviation 1.6 grams. Assume the two populations are approximately normal without serious outliers. At , test the claim that the Supplement diet produces a greater population mean gain. Use Supplement minus Control and the Welch formulas.      A Larger Health Data Set   Large Data Example: Changes Within and Between Groups   The supplied file data\/health-study-360.csv contains simulated data for 360 adults. In the hypothetical design, a simple random sample is selected from a large population of eligible adults, and participants are randomly assigned to Control, Walking, or Combined programs, with 120 in each group. Control receives usual information, Walking adds a walking program, and Combined adds walking plus nutrition counseling. Systolic blood pressure is recorded before assignment and after eight weeks. Each row is one participant; both measurements are in millimeters of mercury. The simulation is for statistical practice and does not establish clinical effects.  health <- read.csv(\"data\/health-study-360.csv\") health$group <- factor(health$group, levels = c(\"Control\", \"Walking\", \"Combined\")) health$reduction <- health$baseline_sbp - health$week8_sbp  Define reduction = baseline_sbp - week8_sbp , so a positive value means blood pressure decreased. Use for both tests below.     Select the Walking participants and verify that there are 120 complete pairs. Examine the distribution of their reductions.    Use a paired t-test to assess the claim that the Walking group has a positive population mean reduction. State the parameter, subtraction order, hypotheses, p-value, and conclusion.    Compare reductions for the Combined and Walking groups using Welch’s independent two-sample test. A researcher claims that the Combined program has a larger mean reduction. Use Combined minus Walking and state the full test conclusion.    Obtain each group’s sample size, mean reduction, and standard deviation. Use the Welch formulas to reproduce the statistic and degrees of freedom for part (c).    Explain why part (b) is paired but part (c) is independent, even though both analyses use before-and-after measurements.    Explain why a decrease within the Walking group alone does not isolate the program’s effect, while a comparison between randomized groups addresses a treatment contrast. State the population to which the hypothetical sampling design permits generalization.     walking <- subset(health, group == \"Walking\") combined <- subset(health, group == \"Combined\") # Before minus after within the Walking group t.test(walking$baseline_sbp, walking$week8_sbp, paired = TRUE, alternative = \"greater\", mu = 0) # Combined minus Walking, using one reduction per adult t.test(combined$reduction, walking$reduction, alternative = \"greater\", mu = 0, var.equal = FALSE)      "
+},
+{
+  "id": "ts-def-dep-samples",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-def-dep-samples",
+  "type": "Definition",
+  "number": "232",
+  "title": "Dependent Samples.",
+  "body": " Dependent Samples      "
+},
+{
+  "id": "ts-def-indep-samples",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-def-indep-samples",
+  "type": "Definition",
+  "number": "233",
+  "title": "Independent Samples.",
+  "body": " Independent Samples      "
+},
+{
+  "id": "ts-ex-id-design",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-ex-id-design",
+  "type": "Example",
+  "number": "234",
+  "title": "Choose the Appropriate Design.",
+  "body": " Choose the Appropriate Design   For each study, identify whether the samples are dependent or independent. Identify, when appropriate, the pairing.     Blood glucose is measured before and after treatment in the same 30 patients.    Twenty-four mice are randomly assigned to a supplement and a different 24 mice are assigned to a control diet.    For each of 15 plants, one leaf is randomly assigned a spray and a matched leaf from the same plant is left untreated. The response is leaf damage.    Researchers separately sample 18 fish from one large lake and 18 fish from another large lake.      "
+},
+{
+  "id": "ts-paired-summary",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-paired-summary",
+  "type": "Example",
+  "number": "235",
+  "title": "Blood-Pressure Reduction.",
+  "body": " Blood-Pressure Reduction   A random sample of 16 eligible adults participates in a program. Each adults systolic blood pressure is measured before and after the program. Let . The differences have mean 5.2 mmHg and sample standard deviation 6.4 mmHg. Assume the population of differences is approximately normal. At , test the claim that the mean reduction is positive.   "
+},
+{
+  "id": "ts-paired-raw",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-paired-raw",
+  "type": "Example",
+  "number": "236",
+  "title": "Two Measurement Devices.",
+  "body": " Two Measurement Devices   Two devices measure systolic blood pressure on each of 10 randomly selected adults. The measurement order is randomized within each adult. A manufacturer claims that the two devices have the same population mean reading. Define differences as Device A minus Device B. At , is there sufficient evidence to reject the claim?  device_a = c(128, 135, 142, 126, 151, 137, 133, 145, 139, 130) device_b = c(129, 134, 141, 128, 149, 138, 132, 146, 141, 131)   "
+},
+{
+  "id": "ts-paired-left",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-paired-left",
+  "type": "Example",
+  "number": "237",
+  "title": "Matched Root Samples: A Directional Claim.",
+  "body": " Matched Root Samples: A Directional Claim   Researchers select 20 independent plants. Within each plant, two comparable root samples are randomly assigned to a treatment or control condition. Define . The mean difference is millimeters and the sample standard deviation of the differences is 2.4 millimeters. At , do the results support the claim that the treatment decreases mean root length?   "
+},
+{
+  "id": "ts-welch-summary",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-welch-summary",
+  "type": "Example",
+  "number": "238",
+  "title": "Two Fish Populations: A Claim of Equal Means.",
+  "body": " Two Fish Populations: A Claim of Equal Means   Independent random samples are taken from two large fish populations. Population 1 has a sample of 30 fish with mean body mass 14.2 grams and sample standard deviation 2.1 grams. Population 2 has a sample of 26 fish with mean 12.8 grams and sample standard deviation 3.4 grams. Assume the conditions for Welch’s test are reasonable. At , is there sufficient evidence to reject a biologist’s claim that the population mean body masses are equal? Use the formulas.   "
+},
+{
+  "id": "ts-welch-raw",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-welch-raw",
+  "type": "Example",
+  "number": "239",
+  "title": "Recovery Under Two Treatments: Raw Data.",
+  "body": " Recovery Under Two Treatments: Raw Data   Twenty-two eligible animals are randomly assigned to one of two treatments, with 12 assigned to New and 10 to Standard. The response is recovery time in days. The researchers claim that New produces a lower population mean recovery time. Let Group 1 be New and Group 2 be Standard. Inspect each group and test the claim at using t.test() .  new <- c(11, 13, 12, 10, 14, 12, 11, 15, 13, 12, 14, 11) standard <- c(15, 16, 14, 17, 16, 15, 18, 14, 16, 17)   "
+},
+{
+  "id": "ts-welch-right",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-welch-right",
+  "type": "Example",
+  "number": "240",
+  "title": "Nutrition and Growth: Summary Statistics.",
+  "body": " Nutrition and Growth: Summary Statistics   Independent groups of laboratory animals are randomly assigned to two diets. In the Supplement group, 18 animals have mean weight gain 7.4 grams and sample standard deviation 1.2 grams. In the Control group, 22 animals have mean gain 6.3 grams and sample standard deviation 1.6 grams. Assume the two populations are approximately normal without serious outliers. At , test the claim that the Supplement diet produces a greater population mean gain. Use Supplement minus Control and the Welch formulas.   "
+},
+{
+  "id": "ts-large-study",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-large-study",
+  "type": "Example",
+  "number": "241",
+  "title": "Large Data Example: Changes Within and Between Groups.",
+  "body": " Large Data Example: Changes Within and Between Groups   The supplied file data\/health-study-360.csv contains simulated data for 360 adults. In the hypothetical design, a simple random sample is selected from a large population of eligible adults, and participants are randomly assigned to Control, Walking, or Combined programs, with 120 in each group. Control receives usual information, Walking adds a walking program, and Combined adds walking plus nutrition counseling. Systolic blood pressure is recorded before assignment and after eight weeks. Each row is one participant; both measurements are in millimeters of mercury. The simulation is for statistical practice and does not establish clinical effects.  health <- read.csv(\"data\/health-study-360.csv\") health$group <- factor(health$group, levels = c(\"Control\", \"Walking\", \"Combined\")) health$reduction <- health$baseline_sbp - health$week8_sbp  Define reduction = baseline_sbp - week8_sbp , so a positive value means blood pressure decreased. Use for both tests below.     Select the Walking participants and verify that there are 120 complete pairs. Examine the distribution of their reductions.    Use a paired t-test to assess the claim that the Walking group has a positive population mean reduction. State the parameter, subtraction order, hypotheses, p-value, and conclusion.    Compare reductions for the Combined and Walking groups using Welch’s independent two-sample test. A researcher claims that the Combined program has a larger mean reduction. Use Combined minus Walking and state the full test conclusion.    Obtain each group’s sample size, mean reduction, and standard deviation. Use the Welch formulas to reproduce the statistic and degrees of freedom for part (c).    Explain why part (b) is paired but part (c) is independent, even though both analyses use before-and-after measurements.    Explain why a decrease within the Walking group alone does not isolate the program’s effect, while a comparison between randomized groups addresses a treatment contrast. State the population to which the hypothetical sampling design permits generalization.     walking <- subset(health, group == \"Walking\") combined <- subset(health, group == \"Combined\") # Before minus after within the Walking group t.test(walking$baseline_sbp, walking$week8_sbp, paired = TRUE, alternative = \"greater\", mu = 0) # Combined minus Walking, using one reduction per adult t.test(combined$reduction, walking$reduction, alternative = \"greater\", mu = 0, var.equal = FALSE)   "
+},
+{
   "id": "subsec-cat-project-rubric",
   "level": "1",
   "url": "subsec-cat-project-rubric.html",
