@@ -2278,6 +2278,105 @@ var ptx_lunr_docs = [
   "body": " Large Data Example: Baseline Blood Pressure   The supplied file contains simulated data for 360 adults. In the hypothetical design, a simple random sample is selected from a large population of eligible adults, and participants are randomly assigned to Control, Walking, or Combined programs, with 120 in each group. Control receives usual information, Walking adds a walking program, and Combined adds walking plus nutrition counseling. Systolic blood pressure is recorded before assignment and after eight weeks. Each row is one participant; both measurements are in millimeters of mercury. The simulation is for statistical practice and does not establish clinical effects.     Verify that there are 360 observations. Use a histogram and a normal Q-Q plot to examine baseline blood pressure.    Construct and interpret a two-sided 95% confidence interval for the mean baseline systolic blood pressure in the eligible population.    Find a one-sided 95% lower confidence bound for the same mean. Interpret the bound.    A planning report claims that the eligible population's mean baseline systolic blood pressure is 130 mmHg. At , test whether the claim should be rejected. State the hypotheses and identify where the claim belongs.    Describe a Type I error and a Type II error for the test in part (d).    Explain why baseline and week-eight readings should not be stacked into one sample of 720 independent observations.      "
 },
 {
+  "id": "two-sample-t-tests",
+  "level": "1",
+  "url": "two-sample-t-tests.html",
+  "type": "Section",
+  "number": "",
+  "title": "Inference for Two Means",
+  "body": " Inference for Two Means   Identify the Sampling Design   Dependent Samples        Independent Samples        Choose the Appropriate Design   For each study, identify whether the samples are dependent or independent. Identify, when appropriate, the pairing.     Blood glucose is measured before and after treatment in the same 30 patients.    Twenty-four mice are randomly assigned to a supplement and a different 24 mice are assigned to a control diet.    For each of 15 plants, one leaf is randomly assigned a spray and a matched leaf from the same plant is left untreated. The response is leaf damage.    Researchers separately sample 18 fish from one large lake and 18 fish from another large lake.         Dependent Samples: Paired t-Test   Requirements for Paired t-Test     The response is quantitative, and the target parameter is a population mean . The population standard deviation is unknown.    The data must be paired and the pairs should be independent from each other.    The observations come from an appropriate random sample. When sampling without replacement, the sample should be no more than about 10% of the population.    For a small sample, the differences should be roughly normal with no serious outliers. For a larger sample, inference is more tolerant of moderate nonnormality, but strong skewness and influential outliers still need attention.    Use a histogram or normal Q-Q plot to inspect raw data. A Shapiro-Wilk result may supplement the plots; a large p-value does not establish normality.       Paired t-Test  Choose an order and define one difference for each complete pair, . Let and are the sample mean and sample standard deviation of the differences. If the hypothesized mean difference is , then     Here is the number of complete pairs. Usually . The alternative is , , or .   # x and y must be in the same participant order. d = x - y hist(d) qqnorm(d) qqline(d) # Two equivalent ways to perform a two-sided paired test: t.test(x, y, paired = TRUE, mu = 0, alternative = \"two.sided\") t.test(d, mu = 0, alternative = \"two.sided\")  With summary statistics for the differences, calculate from the formula and use pt() . With raw paired data, t.test(x, y, paired = TRUE) uses the differences x - y . Use \"greater\" or \"less\" when that matches the alternative. If a measurement is missing, omit the entire incomplete pair and count the remaining pairs; never remove missing values separately and then pair the shortened columns.  For each test example, define the parameter and subtraction order, state the hypotheses, identify where the claim belongs, check the requirements, find the test statistic, degrees of freedom, and p-value, make the decision, and conclude in context.   Blood-Pressure Reduction   A random sample of 16 eligible adults participates in a program. Each adults systolic blood pressure is measured before and after the program. Let . The differences have mean 5.2 mmHg and sample standard deviation 6.4 mmHg. Assume the population of differences is approximately normal. At , test the claim that the mean reduction is positive.     Two Measurement Devices   Two devices measure systolic blood pressure on each of 10 randomly selected adults. The measurement order is randomized within each adult. A manufacturer claims that the two devices have the same population mean reading. Define differences as Device A minus Device B. At , is there sufficient evidence to reject the claim?  device_a = c(128, 135, 142, 126, 151, 137, 133, 145, 139, 130) device_b = c(129, 134, 141, 128, 149, 138, 132, 146, 141, 131)     Matched Root Samples: A Directional Claim   Researchers select 20 independent plants. Within each plant, two comparable root samples are randomly assigned to a treatment or control condition. Define . The mean difference is millimeters and the sample standard deviation of the differences is 2.4 millimeters. At , do the results support the claim that the treatment decreases mean root length?      Independent Samples: Welch's t-Test   Requirements for Two-Sample t-Test     The response is quantitative. Observations are independent within each sample and between the groups, with appropriate random sampling or random assignment.    For small samples, each population should be approximately normal without serious outliers. Examine each group separately. Larger samples allow more tolerance for moderate nonnormality.    Welch's procedure does not assume equal population variances.    Label Groups 1 and 2 explicitly. The sign of the statistic and the direction of a one-sided test depend on that order.       Welch's Independent Two-Sample t-Test     The degrees of freedom are     We will approximate df when doing calculations by hand with      For raw observations, use the vector order group1, group2 . The option var.equal = FALSE selects Welchss method and is also Rss default.  t.test(group1, group2, mu = 0, alternative = \"two.sided\", var.equal = FALSE)   Math Test   The results of a state mathematics test for random samples of students taught by two different teachers at the same school are shown in the table below. Can you conclude that there is a difference in the mean mathematics test scores for the students of the two teachers? Use and assume that the populations are normally distributed and the population variances are not equal.      Teacher 1  Teacher 2                   Engineering   An engineer wants to compare the tensile strengths of steel bars that are produced using a conventional method and an experimental method. To do so, the engineer randomly selects steel bars that are manufactured using each method and records the tensile strength (in Newtons per square mm) listed below  Experimental Method:   Conventional Method:   At , can the engineer support the claim that the experimental method produces steel with a greater mean tensile strength? Assume that the populations are normally distributed and that the population variances are not equal.     Marine Biologist   A marine researcher claims that the stomachs of blue crabs from one location contain less fish than the stomachs of blue crabs from another location. The stomach contents of a sample of 35 blue crabs from Location A contain a mean of 280 milligrams of fish and a standard deviation of 80 milligrams. The stomach contents of a sample of 30 blue crabs from Location B contain a mean of 320 milligrams of fish and a standard deviation of 60 milligrams. At can you support the marine researcher's claim? Assume the population variances are not equal.      A Larger Health Data Set   Large Data Example: Changes Within and Between Groups   The supplied file contains simulated data for 360 adults. In the hypothetical design, a simple random sample is selected from a large population of eligible adults, and participants are randomly assigned to Control, Walking, or Combined programs, with 120 in each group. Control receives usual information, Walking adds a walking program, and Combined adds walking plus nutrition counseling. Systolic blood pressure is recorded before assignment and after eight weeks. Each row is one participant; both measurements are in millimeters of mercury.  Define reduction = baseline_sbp - week8_sbp , so a positive value means blood pressure decreased. Use for both tests below.     Select the Walking participants and examine the distribution of their reductions.    Use a paired t-test to assess the claim that the Walking group has a positive population mean reduction.    Compare reductions for the Combined and Walking groups using Welch's independent two-sample test. A researcher claims that the Combined program has a larger mean reduction. Use Combined minus Walking and state the full test conclusion.    Explain why part (b) is paired but part (c) is independent, even though both analyses use before-and-after measurements.        "
+},
+{
+  "id": "ts-def-dep-samples",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-def-dep-samples",
+  "type": "Definition",
+  "number": "232",
+  "title": "Dependent Samples.",
+  "body": " Dependent Samples      "
+},
+{
+  "id": "ts-def-indep-samples",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-def-indep-samples",
+  "type": "Definition",
+  "number": "233",
+  "title": "Independent Samples.",
+  "body": " Independent Samples      "
+},
+{
+  "id": "ts-ex-id-design",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-ex-id-design",
+  "type": "Example",
+  "number": "234",
+  "title": "Choose the Appropriate Design.",
+  "body": " Choose the Appropriate Design   For each study, identify whether the samples are dependent or independent. Identify, when appropriate, the pairing.     Blood glucose is measured before and after treatment in the same 30 patients.    Twenty-four mice are randomly assigned to a supplement and a different 24 mice are assigned to a control diet.    For each of 15 plants, one leaf is randomly assigned a spray and a matched leaf from the same plant is left untreated. The response is leaf damage.    Researchers separately sample 18 fish from one large lake and 18 fish from another large lake.      "
+},
+{
+  "id": "ts-paired-summary",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-paired-summary",
+  "type": "Example",
+  "number": "235",
+  "title": "Blood-Pressure Reduction.",
+  "body": " Blood-Pressure Reduction   A random sample of 16 eligible adults participates in a program. Each adults systolic blood pressure is measured before and after the program. Let . The differences have mean 5.2 mmHg and sample standard deviation 6.4 mmHg. Assume the population of differences is approximately normal. At , test the claim that the mean reduction is positive.   "
+},
+{
+  "id": "ts-paired-raw",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-paired-raw",
+  "type": "Example",
+  "number": "236",
+  "title": "Two Measurement Devices.",
+  "body": " Two Measurement Devices   Two devices measure systolic blood pressure on each of 10 randomly selected adults. The measurement order is randomized within each adult. A manufacturer claims that the two devices have the same population mean reading. Define differences as Device A minus Device B. At , is there sufficient evidence to reject the claim?  device_a = c(128, 135, 142, 126, 151, 137, 133, 145, 139, 130) device_b = c(129, 134, 141, 128, 149, 138, 132, 146, 141, 131)   "
+},
+{
+  "id": "ts-paired-left",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-paired-left",
+  "type": "Example",
+  "number": "237",
+  "title": "Matched Root Samples: A Directional Claim.",
+  "body": " Matched Root Samples: A Directional Claim   Researchers select 20 independent plants. Within each plant, two comparable root samples are randomly assigned to a treatment or control condition. Define . The mean difference is millimeters and the sample standard deviation of the differences is 2.4 millimeters. At , do the results support the claim that the treatment decreases mean root length?   "
+},
+{
+  "id": "ts-math-test",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-math-test",
+  "type": "Example",
+  "number": "238",
+  "title": "Math Test.",
+  "body": " Math Test   The results of a state mathematics test for random samples of students taught by two different teachers at the same school are shown in the table below. Can you conclude that there is a difference in the mean mathematics test scores for the students of the two teachers? Use and assume that the populations are normally distributed and the population variances are not equal.      Teacher 1  Teacher 2                 "
+},
+{
+  "id": "ts-engineer",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-engineer",
+  "type": "Example",
+  "number": "239",
+  "title": "Engineering.",
+  "body": " Engineering   An engineer wants to compare the tensile strengths of steel bars that are produced using a conventional method and an experimental method. To do so, the engineer randomly selects steel bars that are manufactured using each method and records the tensile strength (in Newtons per square mm) listed below  Experimental Method:   Conventional Method:   At , can the engineer support the claim that the experimental method produces steel with a greater mean tensile strength? Assume that the populations are normally distributed and that the population variances are not equal.   "
+},
+{
+  "id": "ts-marine",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-marine",
+  "type": "Example",
+  "number": "240",
+  "title": "Marine Biologist.",
+  "body": " Marine Biologist   A marine researcher claims that the stomachs of blue crabs from one location contain less fish than the stomachs of blue crabs from another location. The stomach contents of a sample of 35 blue crabs from Location A contain a mean of 280 milligrams of fish and a standard deviation of 80 milligrams. The stomach contents of a sample of 30 blue crabs from Location B contain a mean of 320 milligrams of fish and a standard deviation of 60 milligrams. At can you support the marine researcher's claim? Assume the population variances are not equal.   "
+},
+{
+  "id": "ts-large-study",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-large-study",
+  "type": "Example",
+  "number": "241",
+  "title": "Large Data Example: Changes Within and Between Groups.",
+  "body": " Large Data Example: Changes Within and Between Groups   The supplied file contains simulated data for 360 adults. In the hypothetical design, a simple random sample is selected from a large population of eligible adults, and participants are randomly assigned to Control, Walking, or Combined programs, with 120 in each group. Control receives usual information, Walking adds a walking program, and Combined adds walking plus nutrition counseling. Systolic blood pressure is recorded before assignment and after eight weeks. Each row is one participant; both measurements are in millimeters of mercury.  Define reduction = baseline_sbp - week8_sbp , so a positive value means blood pressure decreased. Use for both tests below.     Select the Walking participants and examine the distribution of their reductions.    Use a paired t-test to assess the claim that the Walking group has a positive population mean reduction.    Compare reductions for the Combined and Walking groups using Welch's independent two-sample test. A researcher claims that the Combined program has a larger mean reduction. Use Combined minus Walking and state the full test conclusion.    Explain why part (b) is paired but part (c) is independent, even though both analyses use before-and-after measurements.      "
+},
+{
   "id": "subsec-cat-project-rubric",
   "level": "1",
   "url": "subsec-cat-project-rubric.html",

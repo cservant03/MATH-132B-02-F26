@@ -793,3 +793,61 @@ a.mathjax-link {
 #os-large-study ol > li {
   padding-bottom: 0.7in;
 }
+
+/* ---------- Inference for Two Means ---------- */
+
+#ts-def-dep-samples {
+  padding-bottom: 0.5in;
+}
+
+#ts-def-indep-samples {
+  padding-bottom: 0.5in;
+}
+
+#ts-ex-id-design ol > li {
+  padding-bottom: 0.4in;
+}
+
+#ts-paired-req,
+#ts-paired-req .assemblage-like {
+    padding-bottom: 0.5in !important;
+}
+
+#ts-paired-formula,
+#ts-paired-formula .assemblage-like {
+    padding-bottom: 0.5in !important;
+}
+
+#ts-paired-summary {
+  padding-bottom: 2.5in;
+}
+
+#ts-paired-raw {
+  padding-bottom: 2.2in;
+}
+
+#ts-paired-left {
+  padding-bottom: 2.2in;
+}
+
+#ts-ind-t-test,
+#ts-ind-t-test .assemblage-like {
+    padding-bottom: 0.5in !important;
+}
+
+#ts-math-test {
+  padding-bottom: 4.2in;
+}
+
+#ts-engineer {
+  padding-bottom: 4.2in;
+}
+
+#ts-marine {
+  padding-bottom: 4.2in;
+}
+
+#ts-large-data {
+  break-before: page;
+  page-break-before: always;
+}

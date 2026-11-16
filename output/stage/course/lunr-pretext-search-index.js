@@ -2053,6 +2053,330 @@ var ptx_lunr_docs = [
   "body": " Five-Number Summary and Box Plot   Calculate the five-number summary and IQR of the following data. Find the outlier fences, identify any potential outliers, and construct a box plot.    A blank horizontal number line for a box plot. The scale extends from 190 to 350, with labeled tick marks every 20 units from 200 to 340.    "
 },
 {
+  "id": "t-and-f-distributions",
+  "level": "1",
+  "url": "t-and-f-distributions.html",
+  "type": "Section",
+  "number": "",
+  "title": "Student <span class=\"process-math\">\\(t\\)<\/span> and <span class=\"process-math\">\\(F\\)<\/span> Distributions",
+  "body": " Student and Distributions   Properties of the t-Distribution   Student's t-Distribution   The Student's t-distribution is a set of continuous, symmetric, bell-shaped distributions described by one parameter, the degrees of freedom . The notation to say something follows the t-distribution is when the degrees of freedom are df.     Possible values extend from to . The curve is symmetric about 0, with half of the area on each side.    The total area under the curve is 1. Probabilities are areas; the probability at any single value is 0.    Compared with the standard normal curve, a t-curve has heavier tails. With small degrees of freedom, values far from 0 are more likely.    As the degrees of freedom increase, the t-curve approaches the standard normal curve. It does not become exactly normal at 30 degrees of freedom.    The median and mode are 0. The mean is also 0 when . The standard deviation is larger than 1 when it is finite; it approaches 1 as the degrees of freedom increase.    Degrees of freedom are positive and may be nonintegers. The statistical procedure determines which degrees of freedom to use.        Student's t-curves approach the standard normal curve as degrees of freedom increase.    Symmetric t-density curves with 2, 5, and 20 degrees of freedom are compared with the standard normal density. The t-curves with fewer degrees of freedom have lower centers and heavier tails.     The sample mean procedures in the next notes use a t-distribution because the population standard deviation is unknown and is estimated from the sample.    t-Probabilities and Critical Values   t-Probabilities and Cutoffs in R    Task  R command        pt(k, df = nu)          pt(k, df = nu,    lower.tail = FALSE)      Cutoff with area to its left   qt(p, df = nu)     Cutoff with area to its right   qt(p, df = nu, lower.tail = FALSE)      Use pt() when a value is known and an area is wanted. Use qt() when an area is known and a value is wanted. The input df is required.   Splitting an area between two tails changes the critical value.    Two t-curves with 12 degrees of freedom. The first shades two equal tails totaling 0.05 beyond minus c and c. The second shades only a right tail of 0.05; its positive cutoff is closer to zero.      Comparing t-Curves   Consider t-distributions with 4 and 30 degrees of freedom and the standard normal distribution.     Which has the heaviest tails? Which is most concentrated near 0?    For each distribution, find the probability of a value below 0 without using R.    Predict which distribution has the largest . Check the probabilities using R.        Probabilities for a t-Statistic   A statistic used in a hypothetical lung-function study follows a t-distribution with 11 degrees of freedom under the study’s model. Sketch the relevant area and use R to find each probability.                             Cutoffs for a t-Distribution   Let . Find each cutoff or pair of cutoffs using R. Sketch the specified area.     The 10th percentile.    The cutoff for the highest 5%.    The two cutoffs containing the middle 95%.    The two cutoffs containing the middle 99%.         Properties of the F-Distribution   F-Distribution   The F-distribution is a family of continuous distributions described by two degrees of freedom. We write . The first parameter is the numerator degrees of freedom ; the second is the denominator degrees of freedom .     F-values are nonnegative, and the continuous distribution has support on positive values. In particular, and .    The total area is 1. An interval probability is an area under the density curve.    The curve is right-skewed. It is not symmetric, and its tails should not be treated as mirror images.    Both degrees of freedom affect the shape. Their order matters: and are different distributions.    When both degrees of freedom become large, the distribution becomes concentrated near 1. Its mean is not generally 1.        Both degrees of freedom influence the shape of an F-distribution.    Two panels show right-skewed F-density curves. The left varies numerator degrees of freedom from 3 to 8 to 20 with denominator degrees of freedom fixed at 20. The right varies denominator degrees of freedom from 5 to 15 to 60 with numerator degrees of freedom fixed at 5.       F-Probabilities and Critical Values   F-Probabilities and Cutoffs in R    Task  R command        pf(k, df1 = nu1, df2 = nu2)          pf(k, df1 = nu1, df2 = nu2,    lower.tail = FALSE)      Cutoff with area to its left   qf(p, df1 = nu1, df2 = nu2)     Cutoff with area to its right  qf(p, df1 = nu1, df2 = nu2, lower.tail = FALSE)     For both distribution families, a d function gives density heights and an r function simulates observations. These notes focus on the p and q functions.   An upper-tail F cutoff leaves the specified area to its right.    An F-density curve with numerator degrees of freedom 4 and denominator degrees of freedom 20. The area to the right of c is shaded and equals 0.05.      Reading the Two Degrees of Freedom   Three F-distributions have degree-of-freedom pairs , , and .     Identify the numerator and denominator degrees of freedom for each.    Find and for each distribution without using R.        Areas Under an F-Curve   Let . Sketch the requested region and use R to find each probability.                             F Cutoffs for Comparing Groups   A later comparison of four treatments will use an F-distribution with 3 numerator and 36 denominator degrees of freedom.     Find the cutoff for the highest 5%.    Find the cutoff for the highest 1%.    Find the lower and upper cutoffs leaving 2.5% in each tail. Are they symmetric about 1?    For the highest 5%, compare the cutoff with the one obtained after interchanging the degrees of freedom.        "
+},
+{
+  "id": "tf-t-definition",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-t-definition",
+  "type": "Definition",
+  "number": "209",
+  "title": "Student’s t-Distribution.",
+  "body": " Student's t-Distribution   The Student's t-distribution is a set of continuous, symmetric, bell-shaped distributions described by one parameter, the degrees of freedom . The notation to say something follows the t-distribution is when the degrees of freedom are df.     Possible values extend from to . The curve is symmetric about 0, with half of the area on each side.    The total area under the curve is 1. Probabilities are areas; the probability at any single value is 0.    Compared with the standard normal curve, a t-curve has heavier tails. With small degrees of freedom, values far from 0 are more likely.    As the degrees of freedom increase, the t-curve approaches the standard normal curve. It does not become exactly normal at 30 degrees of freedom.    The median and mode are 0. The mean is also 0 when . The standard deviation is larger than 1 when it is finite; it approaches 1 as the degrees of freedom increase.    Degrees of freedom are positive and may be nonintegers. The statistical procedure determines which degrees of freedom to use.      "
+},
+{
+  "id": "tf-t-properties-3",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-t-properties-3",
+  "type": "Figure",
+  "number": "210",
+  "title": "",
+  "body": " Student's t-curves approach the standard normal curve as degrees of freedom increase.    Symmetric t-density curves with 2, 5, and 20 degrees of freedom are compared with the standard normal density. The t-curves with fewer degrees of freedom have lower centers and heavier tails.    "
+},
+{
+  "id": "tf-t-r",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-t-r",
+  "type": "Table",
+  "number": "211",
+  "title": "t-Probabilities and Cutoffs in R",
+  "body": " t-Probabilities and Cutoffs in R    Task  R command        pt(k, df = nu)          pt(k, df = nu,    lower.tail = FALSE)      Cutoff with area to its left   qt(p, df = nu)     Cutoff with area to its right   qt(p, df = nu, lower.tail = FALSE)     "
+},
+{
+  "id": "tf-t-calculations-4",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-t-calculations-4",
+  "type": "Figure",
+  "number": "212",
+  "title": "",
+  "body": " Splitting an area between two tails changes the critical value.    Two t-curves with 12 degrees of freedom. The first shades two equal tails totaling 0.05 beyond minus c and c. The second shades only a right tail of 0.05; its positive cutoff is closer to zero.    "
+},
+{
+  "id": "tf-t-properties-example",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-t-properties-example",
+  "type": "Example",
+  "number": "213",
+  "title": "Comparing t-Curves.",
+  "body": " Comparing t-Curves   Consider t-distributions with 4 and 30 degrees of freedom and the standard normal distribution.     Which has the heaviest tails? Which is most concentrated near 0?    For each distribution, find the probability of a value below 0 without using R.    Predict which distribution has the largest . Check the probabilities using R.      "
+},
+{
+  "id": "tf-t-probabilities",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-t-probabilities",
+  "type": "Example",
+  "number": "214",
+  "title": "Probabilities for a t-Statistic.",
+  "body": " Probabilities for a t-Statistic   A statistic used in a hypothetical lung-function study follows a t-distribution with 11 degrees of freedom under the study’s model. Sketch the relevant area and use R to find each probability.                           "
+},
+{
+  "id": "tf-t-cutoffs",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-t-cutoffs",
+  "type": "Example",
+  "number": "215",
+  "title": "Cutoffs for a t-Distribution.",
+  "body": " Cutoffs for a t-Distribution   Let . Find each cutoff or pair of cutoffs using R. Sketch the specified area.     The 10th percentile.    The cutoff for the highest 5%.    The two cutoffs containing the middle 95%.    The two cutoffs containing the middle 99%.      "
+},
+{
+  "id": "tf-f-definition",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-f-definition",
+  "type": "Definition",
+  "number": "216",
+  "title": "F-Distribution.",
+  "body": " F-Distribution   The F-distribution is a family of continuous distributions described by two degrees of freedom. We write . The first parameter is the numerator degrees of freedom ; the second is the denominator degrees of freedom .     F-values are nonnegative, and the continuous distribution has support on positive values. In particular, and .    The total area is 1. An interval probability is an area under the density curve.    The curve is right-skewed. It is not symmetric, and its tails should not be treated as mirror images.    Both degrees of freedom affect the shape. Their order matters: and are different distributions.    When both degrees of freedom become large, the distribution becomes concentrated near 1. Its mean is not generally 1.      "
+},
+{
+  "id": "tf-f-properties-3",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-f-properties-3",
+  "type": "Figure",
+  "number": "217",
+  "title": "",
+  "body": " Both degrees of freedom influence the shape of an F-distribution.    Two panels show right-skewed F-density curves. The left varies numerator degrees of freedom from 3 to 8 to 20 with denominator degrees of freedom fixed at 20. The right varies denominator degrees of freedom from 5 to 15 to 60 with numerator degrees of freedom fixed at 5.    "
+},
+{
+  "id": "tf-f-r",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-f-r",
+  "type": "Table",
+  "number": "218",
+  "title": "F-Probabilities and Cutoffs in R",
+  "body": " F-Probabilities and Cutoffs in R    Task  R command        pf(k, df1 = nu1, df2 = nu2)          pf(k, df1 = nu1, df2 = nu2,    lower.tail = FALSE)      Cutoff with area to its left   qf(p, df1 = nu1, df2 = nu2)     Cutoff with area to its right  qf(p, df1 = nu1, df2 = nu2, lower.tail = FALSE)    "
+},
+{
+  "id": "tf-f-calculations-4",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-f-calculations-4",
+  "type": "Figure",
+  "number": "219",
+  "title": "",
+  "body": " An upper-tail F cutoff leaves the specified area to its right.    An F-density curve with numerator degrees of freedom 4 and denominator degrees of freedom 20. The area to the right of c is shaded and equals 0.05.    "
+},
+{
+  "id": "tf-f-properties-example",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-f-properties-example",
+  "type": "Example",
+  "number": "220",
+  "title": "Reading the Two Degrees of Freedom.",
+  "body": " Reading the Two Degrees of Freedom   Three F-distributions have degree-of-freedom pairs , , and .     Identify the numerator and denominator degrees of freedom for each.    Find and for each distribution without using R.      "
+},
+{
+  "id": "tf-f-probabilities",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-f-probabilities",
+  "type": "Example",
+  "number": "221",
+  "title": "Areas Under an F-Curve.",
+  "body": " Areas Under an F-Curve   Let . Sketch the requested region and use R to find each probability.                           "
+},
+{
+  "id": "tf-f-cutoffs",
+  "level": "2",
+  "url": "t-and-f-distributions.html#tf-f-cutoffs",
+  "type": "Example",
+  "number": "222",
+  "title": "F Cutoffs for Comparing Groups.",
+  "body": " F Cutoffs for Comparing Groups   A later comparison of four treatments will use an F-distribution with 3 numerator and 36 denominator degrees of freedom.     Find the cutoff for the highest 5%.    Find the cutoff for the highest 1%.    Find the lower and upper cutoffs leaving 2.5% in each tail. Are they symmetric about 1?    For the highest 5%, compare the cutoff with the one obtained after interchanging the degrees of freedom.      "
+},
+{
+  "id": "one-sample-t-inference",
+  "level": "1",
+  "url": "one-sample-t-inference.html",
+  "type": "Section",
+  "number": "",
+  "title": "Inference for One Mean",
+  "body": " Inference for One Mean   Requirements and Notation   Requirements for One-Sample t-Inference     The response is quantitative, and the target parameter is a population mean . The population standard deviation is unknown.    The observations come from an appropriate random sample and are independent. When sampling without replacement, the sample should be no more than about 10% of the population.    For a small sample, a roughly normal population with no serious outliers is needed. For a larger sample, inference is more tolerant of moderate nonnormality, but strong skewness and influential outliers still need attention.    Use a histogram or normal Q-Q plot to inspect raw data. A Shapiro-Wilk result may supplement the plots; a large p-value does not establish normality.      Use for the sample mean, for the sample standard deviation, and for the number of observations. For these procedures, and .  hist(x) qqnorm(x) qqline(x) # Optional supplemental check: shapiro.test(x)  All studies and small data sets in these notes are hypothetical classroom examples. The larger health-study file is simulated and contains no patient records.  Keep full precision in intermediate calculations. Round probabilities to four decimal places and final measurements to a sensible precision for their units.    One-Sample t-Intervals   Confidence Intervals for One Population Mean   Two-sided interval:      The margin of error is .   Lower one-sided interval:       Upper one-sided interval:       With supplied summary statistics, substitute into the formula and use qt() for the critical value. With raw observations stored in x , R can calculate the interval directly:  # Two-sided 95% interval t.test(x, conf.level = 0.95)$conf.int # Lower 95% confidence bound: (L, Inf) t.test(x, alternative = \"greater\", conf.level = 0.95)$conf.int # Upper 95% confidence bound: (-Inf, U) t.test(x, alternative = \"less\", conf.level = 0.95)$conf.int  For interval-only work, read conf.int ; the test of the default mean 0 is not the question being asked. A confidence interval estimates the population mean, not the range containing a stated percentage of individual observations.   Leaf Chlorophyll   A simple random sample of 25 leaves from a large greenhouse population has mean chlorophyll concentration 42.6 micrograms per square centimeter and sample standard deviation 6.0. Assume the population distribution is approximately normal. Construct and interpret a 95% confidence interval for the population mean.     Fish Hemoglobin   Researchers randomly sample 12 adult fish from a large managed population. Hemoglobin concentrations, in grams per deciliter, are recorded below. Inspect the data and construct a 99% confidence interval for the population mean.  hemoglobin = c(8.7, 9.1, 8.9, 9.5, 9.8, 8.8, 9.2, 9.6, 9.0, 9.4, 9.7, 9.3)     Bacterial Concentration   For a hypothetical monitoring study, 18 independent water samples have a mean bacterial concentration of 48.2 units per milliliter and a sample standard deviation of 6.4. Assume an approximately normal population. The study's target is a population mean below 52 units per milliliter. Find a one-sided 95% upper confidence bound. State the interval and explain whether the bound supports a mean below the benchmark.      One-Sample t-Tests   One-Sample t-Test  For a hypothesized population mean , use     The alternative can be , , or . For a directional test, the equality in is the boundary used for the calculation.   For summary-statistics problems, compute the statistic from the formula; do not invent observations to pass to t.test() . For raw data, use the appropriate command below. Replace mu0 with the claimed or benchmark mean.  t.test(x, mu = mu0, alternative = \"two.sided\") t.test(x, mu = mu0, alternative = \"less\") t.test(x, mu = mu0, alternative = \"greater\")   Mean Body Temperature   A researcher claims that the population mean body temperature under a specified measurement protocol is 37.0 degrees Celsius. A simple random sample of 36 healthy adults gives and degrees Celsius. At , is there sufficient evidence to reject the researcher's claim? Use the formula and R for the p-value.     Dissolved Oxygen   A restoration team claims that the mean dissolved oxygen concentration in a large set of eligible ponds exceeds 6.0 milligrams per liter. A simple random sample of 12 ponds gives the values below. At , do the data support the claim? Inspect the data and use t.test() .  oxygen = c(6.2, 6.8, 6.5, 5.9, 6.3, 6.7, 6.1, 6.4, 6.9, 6.0, 6.6, 6.2)     Recovery Time   A clinic claims that the population mean recovery time for a specified outpatient procedure is less than 12 days. A random sample of 20 independent patients has mean 11.6 days and sample standard deviation 2.0 days. At , is there sufficient evidence to support the claim?      Types of Error in Context   Errors in the Body-Temperature Study   Use and for the body-temperature study.     Describe a Type I error in the language of this study.    Describe a Type II error in the language of this study.    If the actual population mean is 37.0 but the study rejects the claim, which error occurred?    If the study does not reject the claim, can we determine from that decision alone whether an error occurred? Explain.        Errors in the Pond Study   The restoration team is testing whether the population mean dissolved oxygen concentration exceeds 6.0 milligrams per liter.     Describe the mistake made by concluding that the mean exceeds 6.0 when the population mean is actually 6.0.    Describe the mistake made by failing to find evidence that the mean exceeds 6.0 when the population mean is actually 6.5.    Label each mistake as Type I or Type II and give one plausible consequence for evaluating the restoration effort.         A Larger Health Data Set   Large Data Example: Baseline Blood Pressure   The supplied file contains simulated data for 360 adults. In the hypothetical design, a simple random sample is selected from a large population of eligible adults, and participants are randomly assigned to Control, Walking, or Combined programs, with 120 in each group. Control receives usual information, Walking adds a walking program, and Combined adds walking plus nutrition counseling. Systolic blood pressure is recorded before assignment and after eight weeks. Each row is one participant; both measurements are in millimeters of mercury. The simulation is for statistical practice and does not establish clinical effects.     Verify that there are 360 observations. Use a histogram and a normal Q-Q plot to examine baseline blood pressure.    Construct and interpret a two-sided 95% confidence interval for the mean baseline systolic blood pressure in the eligible population.    Find a one-sided 95% lower confidence bound for the same mean. Interpret the bound.    A planning report claims that the eligible population's mean baseline systolic blood pressure is 130 mmHg. At , test whether the claim should be rejected. State the hypotheses and identify where the claim belongs.    Describe a Type I error and a Type II error for the test in part (d).    Explain why baseline and week-eight readings should not be stacked into one sample of 720 independent observations.         "
+},
+{
+  "id": "os-ci-summary",
+  "level": "2",
+  "url": "one-sample-t-inference.html#os-ci-summary",
+  "type": "Example",
+  "number": "223",
+  "title": "Leaf Chlorophyll.",
+  "body": " Leaf Chlorophyll   A simple random sample of 25 leaves from a large greenhouse population has mean chlorophyll concentration 42.6 micrograms per square centimeter and sample standard deviation 6.0. Assume the population distribution is approximately normal. Construct and interpret a 95% confidence interval for the population mean.   "
+},
+{
+  "id": "os-ci-raw",
+  "level": "2",
+  "url": "one-sample-t-inference.html#os-ci-raw",
+  "type": "Example",
+  "number": "224",
+  "title": "Fish Hemoglobin.",
+  "body": " Fish Hemoglobin   Researchers randomly sample 12 adult fish from a large managed population. Hemoglobin concentrations, in grams per deciliter, are recorded below. Inspect the data and construct a 99% confidence interval for the population mean.  hemoglobin = c(8.7, 9.1, 8.9, 9.5, 9.8, 8.8, 9.2, 9.6, 9.0, 9.4, 9.7, 9.3)   "
+},
+{
+  "id": "os-ci-one-sided",
+  "level": "2",
+  "url": "one-sample-t-inference.html#os-ci-one-sided",
+  "type": "Example",
+  "number": "225",
+  "title": "Bacterial Concentration.",
+  "body": " Bacterial Concentration   For a hypothetical monitoring study, 18 independent water samples have a mean bacterial concentration of 48.2 units per milliliter and a sample standard deviation of 6.4. Assume an approximately normal population. The study's target is a population mean below 52 units per milliliter. Find a one-sided 95% upper confidence bound. State the interval and explain whether the bound supports a mean below the benchmark.   "
+},
+{
+  "id": "os-test-null-claim",
+  "level": "2",
+  "url": "one-sample-t-inference.html#os-test-null-claim",
+  "type": "Example",
+  "number": "226",
+  "title": "Mean Body Temperature.",
+  "body": " Mean Body Temperature   A researcher claims that the population mean body temperature under a specified measurement protocol is 37.0 degrees Celsius. A simple random sample of 36 healthy adults gives and degrees Celsius. At , is there sufficient evidence to reject the researcher's claim? Use the formula and R for the p-value.   "
+},
+{
+  "id": "os-test-raw",
+  "level": "2",
+  "url": "one-sample-t-inference.html#os-test-raw",
+  "type": "Example",
+  "number": "227",
+  "title": "Dissolved Oxygen.",
+  "body": " Dissolved Oxygen   A restoration team claims that the mean dissolved oxygen concentration in a large set of eligible ponds exceeds 6.0 milligrams per liter. A simple random sample of 12 ponds gives the values below. At , do the data support the claim? Inspect the data and use t.test() .  oxygen = c(6.2, 6.8, 6.5, 5.9, 6.3, 6.7, 6.1, 6.4, 6.9, 6.0, 6.6, 6.2)   "
+},
+{
+  "id": "os-test-left",
+  "level": "2",
+  "url": "one-sample-t-inference.html#os-test-left",
+  "type": "Example",
+  "number": "228",
+  "title": "Recovery Time.",
+  "body": " Recovery Time   A clinic claims that the population mean recovery time for a specified outpatient procedure is less than 12 days. A random sample of 20 independent patients has mean 11.6 days and sample standard deviation 2.0 days. At , is there sufficient evidence to support the claim?   "
+},
+{
+  "id": "os-errors-temperature",
+  "level": "2",
+  "url": "one-sample-t-inference.html#os-errors-temperature",
+  "type": "Example",
+  "number": "229",
+  "title": "Errors in the Body-Temperature Study.",
+  "body": " Errors in the Body-Temperature Study   Use and for the body-temperature study.     Describe a Type I error in the language of this study.    Describe a Type II error in the language of this study.    If the actual population mean is 37.0 but the study rejects the claim, which error occurred?    If the study does not reject the claim, can we determine from that decision alone whether an error occurred? Explain.      "
+},
+{
+  "id": "os-errors-oxygen",
+  "level": "2",
+  "url": "one-sample-t-inference.html#os-errors-oxygen",
+  "type": "Example",
+  "number": "230",
+  "title": "Errors in the Pond Study.",
+  "body": " Errors in the Pond Study   The restoration team is testing whether the population mean dissolved oxygen concentration exceeds 6.0 milligrams per liter.     Describe the mistake made by concluding that the mean exceeds 6.0 when the population mean is actually 6.0.    Describe the mistake made by failing to find evidence that the mean exceeds 6.0 when the population mean is actually 6.5.    Label each mistake as Type I or Type II and give one plausible consequence for evaluating the restoration effort.      "
+},
+{
+  "id": "os-large-study",
+  "level": "2",
+  "url": "one-sample-t-inference.html#os-large-study",
+  "type": "Example",
+  "number": "231",
+  "title": "Large Data Example: Baseline Blood Pressure.",
+  "body": " Large Data Example: Baseline Blood Pressure   The supplied file contains simulated data for 360 adults. In the hypothetical design, a simple random sample is selected from a large population of eligible adults, and participants are randomly assigned to Control, Walking, or Combined programs, with 120 in each group. Control receives usual information, Walking adds a walking program, and Combined adds walking plus nutrition counseling. Systolic blood pressure is recorded before assignment and after eight weeks. Each row is one participant; both measurements are in millimeters of mercury. The simulation is for statistical practice and does not establish clinical effects.     Verify that there are 360 observations. Use a histogram and a normal Q-Q plot to examine baseline blood pressure.    Construct and interpret a two-sided 95% confidence interval for the mean baseline systolic blood pressure in the eligible population.    Find a one-sided 95% lower confidence bound for the same mean. Interpret the bound.    A planning report claims that the eligible population's mean baseline systolic blood pressure is 130 mmHg. At , test whether the claim should be rejected. State the hypotheses and identify where the claim belongs.    Describe a Type I error and a Type II error for the test in part (d).    Explain why baseline and week-eight readings should not be stacked into one sample of 720 independent observations.      "
+},
+{
+  "id": "two-sample-t-tests",
+  "level": "1",
+  "url": "two-sample-t-tests.html",
+  "type": "Section",
+  "number": "",
+  "title": "Inference for Two Means",
+  "body": " Inference for Two Means   Identify the Sampling Design   Dependent Samples        Independent Samples        Choose the Appropriate Design   For each study, identify whether the samples are dependent or independent. Identify, when appropriate, the pairing.     Blood glucose is measured before and after treatment in the same 30 patients.    Twenty-four mice are randomly assigned to a supplement and a different 24 mice are assigned to a control diet.    For each of 15 plants, one leaf is randomly assigned a spray and a matched leaf from the same plant is left untreated. The response is leaf damage.    Researchers separately sample 18 fish from one large lake and 18 fish from another large lake.         Dependent Samples: Paired t-Test   Requirements for Paired t-Test     The response is quantitative, and the target parameter is a population mean . The population standard deviation is unknown.    The data must be paired and the pairs should be independent from each other.    The observations come from an appropriate random sample. When sampling without replacement, the sample should be no more than about 10% of the population.    For a small sample, the differences should be roughly normal with no serious outliers. For a larger sample, inference is more tolerant of moderate nonnormality, but strong skewness and influential outliers still need attention.    Use a histogram or normal Q-Q plot to inspect raw data. A Shapiro-Wilk result may supplement the plots; a large p-value does not establish normality.       Paired t-Test  Choose an order and define one difference for each complete pair, . Let and are the sample mean and sample standard deviation of the differences. If the hypothesized mean difference is , then     Here is the number of complete pairs. Usually . The alternative is , , or .   # x and y must be in the same participant order. d = x - y hist(d) qqnorm(d) qqline(d) # Two equivalent ways to perform a two-sided paired test: t.test(x, y, paired = TRUE, mu = 0, alternative = \"two.sided\") t.test(d, mu = 0, alternative = \"two.sided\")  With summary statistics for the differences, calculate from the formula and use pt() . With raw paired data, t.test(x, y, paired = TRUE) uses the differences x - y . Use \"greater\" or \"less\" when that matches the alternative. If a measurement is missing, omit the entire incomplete pair and count the remaining pairs; never remove missing values separately and then pair the shortened columns.  For each test example, define the parameter and subtraction order, state the hypotheses, identify where the claim belongs, check the requirements, find the test statistic, degrees of freedom, and p-value, make the decision, and conclude in context.   Blood-Pressure Reduction   A random sample of 16 eligible adults participates in a program. Each adults systolic blood pressure is measured before and after the program. Let . The differences have mean 5.2 mmHg and sample standard deviation 6.4 mmHg. Assume the population of differences is approximately normal. At , test the claim that the mean reduction is positive.     Two Measurement Devices   Two devices measure systolic blood pressure on each of 10 randomly selected adults. The measurement order is randomized within each adult. A manufacturer claims that the two devices have the same population mean reading. Define differences as Device A minus Device B. At , is there sufficient evidence to reject the claim?  device_a = c(128, 135, 142, 126, 151, 137, 133, 145, 139, 130) device_b = c(129, 134, 141, 128, 149, 138, 132, 146, 141, 131)     Matched Root Samples: A Directional Claim   Researchers select 20 independent plants. Within each plant, two comparable root samples are randomly assigned to a treatment or control condition. Define . The mean difference is millimeters and the sample standard deviation of the differences is 2.4 millimeters. At , do the results support the claim that the treatment decreases mean root length?      Independent Samples: Welch’s t-Test   Welch’s Independent Two-Sample t-Test  Let be the difference between the two population means, with sample summaries and . For , use     The approximate degrees of freedom are     Use the decimal value of in R. Usually . The alternative compares with using , , or .      The response is quantitative. Observations are independent within each sample and between the groups, with appropriate random sampling or random assignment.    For small samples, each population should be approximately normal without serious outliers. Examine each group separately. Larger samples allow more tolerance for moderate nonnormality.    Welch’s procedure does not assume equal population variances. An equal-variance test is not a prerequisite for choosing Welch’s test.    Label Groups 1 and 2 explicitly. The sign of the statistic and the direction of a one-sided test depend on that order.     For supplied summary statistics, use the formulas. The following R template performs the arithmetic after the summary values and hypothesized difference have been entered:  v1 <- s1^2 \/ n1 v2 <- s2^2 \/ n2 se <- sqrt(v1 + v2) t_stat <- (xbar1 - xbar2 - delta0) \/ se nu <- (v1 + v2)^2 \/ (v1^2 \/ (n1 - 1) + v2^2 \/ (n2 - 1)) # Choose the one p-value matching the alternative. pt(t_stat, df = nu) # less pt(t_stat, df = nu, lower.tail = FALSE) # greater 2 * pt(-abs(t_stat), df = nu) # two-sided  For raw observations, use the vector order group1, group2 . The option var.equal = FALSE selects Welch’s method and is also R’s default.  t.test(group1, group2, mu = 0, alternative = \"two.sided\", var.equal = FALSE)   Two Fish Populations: A Claim of Equal Means   Independent random samples are taken from two large fish populations. Population 1 has a sample of 30 fish with mean body mass 14.2 grams and sample standard deviation 2.1 grams. Population 2 has a sample of 26 fish with mean 12.8 grams and sample standard deviation 3.4 grams. Assume the conditions for Welch’s test are reasonable. At , is there sufficient evidence to reject a biologist’s claim that the population mean body masses are equal? Use the formulas.     Recovery Under Two Treatments: Raw Data   Twenty-two eligible animals are randomly assigned to one of two treatments, with 12 assigned to New and 10 to Standard. The response is recovery time in days. The researchers claim that New produces a lower population mean recovery time. Let Group 1 be New and Group 2 be Standard. Inspect each group and test the claim at using t.test() .  new <- c(11, 13, 12, 10, 14, 12, 11, 15, 13, 12, 14, 11) standard <- c(15, 16, 14, 17, 16, 15, 18, 14, 16, 17)     Nutrition and Growth: Summary Statistics   Independent groups of laboratory animals are randomly assigned to two diets. In the Supplement group, 18 animals have mean weight gain 7.4 grams and sample standard deviation 1.2 grams. In the Control group, 22 animals have mean gain 6.3 grams and sample standard deviation 1.6 grams. Assume the two populations are approximately normal without serious outliers. At , test the claim that the Supplement diet produces a greater population mean gain. Use Supplement minus Control and the Welch formulas.      A Larger Health Data Set   Large Data Example: Changes Within and Between Groups   The supplied file data\/health-study-360.csv contains simulated data for 360 adults. In the hypothetical design, a simple random sample is selected from a large population of eligible adults, and participants are randomly assigned to Control, Walking, or Combined programs, with 120 in each group. Control receives usual information, Walking adds a walking program, and Combined adds walking plus nutrition counseling. Systolic blood pressure is recorded before assignment and after eight weeks. Each row is one participant; both measurements are in millimeters of mercury. The simulation is for statistical practice and does not establish clinical effects.  health <- read.csv(\"data\/health-study-360.csv\") health$group <- factor(health$group, levels = c(\"Control\", \"Walking\", \"Combined\")) health$reduction <- health$baseline_sbp - health$week8_sbp  Define reduction = baseline_sbp - week8_sbp , so a positive value means blood pressure decreased. Use for both tests below.     Select the Walking participants and verify that there are 120 complete pairs. Examine the distribution of their reductions.    Use a paired t-test to assess the claim that the Walking group has a positive population mean reduction. State the parameter, subtraction order, hypotheses, p-value, and conclusion.    Compare reductions for the Combined and Walking groups using Welch’s independent two-sample test. A researcher claims that the Combined program has a larger mean reduction. Use Combined minus Walking and state the full test conclusion.    Obtain each group’s sample size, mean reduction, and standard deviation. Use the Welch formulas to reproduce the statistic and degrees of freedom for part (c).    Explain why part (b) is paired but part (c) is independent, even though both analyses use before-and-after measurements.    Explain why a decrease within the Walking group alone does not isolate the program’s effect, while a comparison between randomized groups addresses a treatment contrast. State the population to which the hypothetical sampling design permits generalization.     walking <- subset(health, group == \"Walking\") combined <- subset(health, group == \"Combined\") # Before minus after within the Walking group t.test(walking$baseline_sbp, walking$week8_sbp, paired = TRUE, alternative = \"greater\", mu = 0) # Combined minus Walking, using one reduction per adult t.test(combined$reduction, walking$reduction, alternative = \"greater\", mu = 0, var.equal = FALSE)      "
+},
+{
+  "id": "ts-def-dep-samples",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-def-dep-samples",
+  "type": "Definition",
+  "number": "232",
+  "title": "Dependent Samples.",
+  "body": " Dependent Samples      "
+},
+{
+  "id": "ts-def-indep-samples",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-def-indep-samples",
+  "type": "Definition",
+  "number": "233",
+  "title": "Independent Samples.",
+  "body": " Independent Samples      "
+},
+{
+  "id": "ts-ex-id-design",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-ex-id-design",
+  "type": "Example",
+  "number": "234",
+  "title": "Choose the Appropriate Design.",
+  "body": " Choose the Appropriate Design   For each study, identify whether the samples are dependent or independent. Identify, when appropriate, the pairing.     Blood glucose is measured before and after treatment in the same 30 patients.    Twenty-four mice are randomly assigned to a supplement and a different 24 mice are assigned to a control diet.    For each of 15 plants, one leaf is randomly assigned a spray and a matched leaf from the same plant is left untreated. The response is leaf damage.    Researchers separately sample 18 fish from one large lake and 18 fish from another large lake.      "
+},
+{
+  "id": "ts-paired-summary",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-paired-summary",
+  "type": "Example",
+  "number": "235",
+  "title": "Blood-Pressure Reduction.",
+  "body": " Blood-Pressure Reduction   A random sample of 16 eligible adults participates in a program. Each adults systolic blood pressure is measured before and after the program. Let . The differences have mean 5.2 mmHg and sample standard deviation 6.4 mmHg. Assume the population of differences is approximately normal. At , test the claim that the mean reduction is positive.   "
+},
+{
+  "id": "ts-paired-raw",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-paired-raw",
+  "type": "Example",
+  "number": "236",
+  "title": "Two Measurement Devices.",
+  "body": " Two Measurement Devices   Two devices measure systolic blood pressure on each of 10 randomly selected adults. The measurement order is randomized within each adult. A manufacturer claims that the two devices have the same population mean reading. Define differences as Device A minus Device B. At , is there sufficient evidence to reject the claim?  device_a = c(128, 135, 142, 126, 151, 137, 133, 145, 139, 130) device_b = c(129, 134, 141, 128, 149, 138, 132, 146, 141, 131)   "
+},
+{
+  "id": "ts-paired-left",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-paired-left",
+  "type": "Example",
+  "number": "237",
+  "title": "Matched Root Samples: A Directional Claim.",
+  "body": " Matched Root Samples: A Directional Claim   Researchers select 20 independent plants. Within each plant, two comparable root samples are randomly assigned to a treatment or control condition. Define . The mean difference is millimeters and the sample standard deviation of the differences is 2.4 millimeters. At , do the results support the claim that the treatment decreases mean root length?   "
+},
+{
+  "id": "ts-welch-summary",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-welch-summary",
+  "type": "Example",
+  "number": "238",
+  "title": "Two Fish Populations: A Claim of Equal Means.",
+  "body": " Two Fish Populations: A Claim of Equal Means   Independent random samples are taken from two large fish populations. Population 1 has a sample of 30 fish with mean body mass 14.2 grams and sample standard deviation 2.1 grams. Population 2 has a sample of 26 fish with mean 12.8 grams and sample standard deviation 3.4 grams. Assume the conditions for Welch’s test are reasonable. At , is there sufficient evidence to reject a biologist’s claim that the population mean body masses are equal? Use the formulas.   "
+},
+{
+  "id": "ts-welch-raw",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-welch-raw",
+  "type": "Example",
+  "number": "239",
+  "title": "Recovery Under Two Treatments: Raw Data.",
+  "body": " Recovery Under Two Treatments: Raw Data   Twenty-two eligible animals are randomly assigned to one of two treatments, with 12 assigned to New and 10 to Standard. The response is recovery time in days. The researchers claim that New produces a lower population mean recovery time. Let Group 1 be New and Group 2 be Standard. Inspect each group and test the claim at using t.test() .  new <- c(11, 13, 12, 10, 14, 12, 11, 15, 13, 12, 14, 11) standard <- c(15, 16, 14, 17, 16, 15, 18, 14, 16, 17)   "
+},
+{
+  "id": "ts-welch-right",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-welch-right",
+  "type": "Example",
+  "number": "240",
+  "title": "Nutrition and Growth: Summary Statistics.",
+  "body": " Nutrition and Growth: Summary Statistics   Independent groups of laboratory animals are randomly assigned to two diets. In the Supplement group, 18 animals have mean weight gain 7.4 grams and sample standard deviation 1.2 grams. In the Control group, 22 animals have mean gain 6.3 grams and sample standard deviation 1.6 grams. Assume the two populations are approximately normal without serious outliers. At , test the claim that the Supplement diet produces a greater population mean gain. Use Supplement minus Control and the Welch formulas.   "
+},
+{
+  "id": "ts-large-study",
+  "level": "2",
+  "url": "two-sample-t-tests.html#ts-large-study",
+  "type": "Example",
+  "number": "241",
+  "title": "Large Data Example: Changes Within and Between Groups.",
+  "body": " Large Data Example: Changes Within and Between Groups   The supplied file data\/health-study-360.csv contains simulated data for 360 adults. In the hypothetical design, a simple random sample is selected from a large population of eligible adults, and participants are randomly assigned to Control, Walking, or Combined programs, with 120 in each group. Control receives usual information, Walking adds a walking program, and Combined adds walking plus nutrition counseling. Systolic blood pressure is recorded before assignment and after eight weeks. Each row is one participant; both measurements are in millimeters of mercury. The simulation is for statistical practice and does not establish clinical effects.  health <- read.csv(\"data\/health-study-360.csv\") health$group <- factor(health$group, levels = c(\"Control\", \"Walking\", \"Combined\")) health$reduction <- health$baseline_sbp - health$week8_sbp  Define reduction = baseline_sbp - week8_sbp , so a positive value means blood pressure decreased. Use for both tests below.     Select the Walking participants and verify that there are 120 complete pairs. Examine the distribution of their reductions.    Use a paired t-test to assess the claim that the Walking group has a positive population mean reduction. State the parameter, subtraction order, hypotheses, p-value, and conclusion.    Compare reductions for the Combined and Walking groups using Welch’s independent two-sample test. A researcher claims that the Combined program has a larger mean reduction. Use Combined minus Walking and state the full test conclusion.    Obtain each group’s sample size, mean reduction, and standard deviation. Use the Welch formulas to reproduce the statistic and degrees of freedom for part (c).    Explain why part (b) is paired but part (c) is independent, even though both analyses use before-and-after measurements.    Explain why a decrease within the Walking group alone does not isolate the program’s effect, while a comparison between randomized groups addresses a treatment contrast. State the population to which the hypothetical sampling design permits generalization.     walking <- subset(health, group == \"Walking\") combined <- subset(health, group == \"Combined\") # Before minus after within the Walking group t.test(walking$baseline_sbp, walking$week8_sbp, paired = TRUE, alternative = \"greater\", mu = 0) # Combined minus Walking, using one reduction per adult t.test(combined$reduction, walking$reduction, alternative = \"greater\", mu = 0, var.equal = FALSE)   "
+},
+{
   "id": "subsec-cat-project-rubric",
   "level": "1",
   "url": "subsec-cat-project-rubric.html",

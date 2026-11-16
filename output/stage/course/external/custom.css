@@ -729,3 +729,103 @@ a.mathjax-link {
   break-before: page;
   page-break-before: always;
 }
+
+/* ---------- Student 𝑡 and 𝐹 Distributions ---------- */
+
+#tf-t-properties-example ol > li {
+  padding-bottom: 0.9in;
+}
+
+#tf-t-probabilities ol > li {
+  padding-bottom: 0.7in;
+}
+
+#tf-t-cutoffs ol > li {
+  padding-bottom: 0.7in;
+}
+
+#tf-f-properties-example ol > li {
+  padding-bottom: 0.7in;
+}
+
+#tf-f-probabilities ol > li {
+  padding-bottom: 0.7in;
+}
+
+#tf-f-cutoffs ol > li {
+  padding-bottom: 0.7in;
+}
+
+/* ---------- Inference for One Mean ---------- */
+
+#os-ci-summary {
+  padding-bottom: 2.5in;
+}
+
+#os-ci-raw {
+  padding-bottom: 2.5in;
+}
+
+#os-ci-one-sided {
+  padding-bottom: 1.8in;
+}
+
+#os-test-null-claim {
+  padding-bottom: 2.4in;
+}
+
+#os-test-raw {
+  padding-bottom: 2.4in;
+}
+
+#os-test-left {
+  padding-bottom: 1.8in;
+}
+
+#os-errors-temperature ol > li {
+  padding-bottom: 0.5in;
+}
+
+#os-errors-oxygen ol > li {
+  padding-bottom: 0.7in;
+}
+
+#os-large-study ol > li {
+  padding-bottom: 0.7in;
+}
+
+/* ---------- Inference for Two Means ---------- */
+
+#ts-def-dep-samples {
+  padding-bottom: 0.5in;
+}
+
+#ts-def-indep-samples {
+  padding-bottom: 0.5in;
+}
+
+#ts-ex-id-design ol > li {
+  padding-bottom: 0.4in;
+}
+
+#ts-paired-req,
+#ts-paired-req .assemblage-like {
+    padding-bottom: 0.5in !important;
+}
+
+#ts-paired-formula,
+#ts-paired-formula .assemblage-like {
+    padding-bottom: 0.5in !important;
+}
+
+#ts-paired-summary {
+  padding-bottom: 2.5in;
+}
+
+#ts-paired-raw {
+  padding-bottom: 2.2in;
+}
+
+#ts-paired-left {
+  padding-bottom: 2.2in;
+}
