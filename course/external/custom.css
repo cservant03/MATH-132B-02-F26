@@ -829,3 +829,25 @@ a.mathjax-link {
 #ts-paired-left {
   padding-bottom: 2.2in;
 }
+
+#ts-ind-t-test,
+#ts-ind-t-test .assemblage-like {
+    padding-bottom: 0.5in !important;
+}
+
+#ts-math-test {
+  padding-bottom: 4.2in;
+}
+
+#ts-engineer {
+  padding-bottom: 4.2in;
+}
+
+#ts-marine {
+  padding-bottom: 4.2in;
+}
+
+#ts-large-data {
+  break-before: page;
+  page-break-before: always;
+}

@@ -318,7 +318,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list active" id="ptx-toc-group-two-sample-t-tests">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="two-sample-t-tests.html#ts-design" class="internal"><span class="title">Identify the Sampling Design</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="two-sample-t-tests.html#ts-paired" class="internal"><span class="title">Dependent Samples: Paired t-Test</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="two-sample-t-tests.html#ts-independent" class="internal"><span class="title">Independent Samples: Welch’s t-Test</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="two-sample-t-tests.html#two-sample-t-tests-4" class="internal"><span class="title">Independent Samples: Welch’s t-Test</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="two-sample-t-tests.html#ts-large-data" class="internal"><span class="title">A Larger Health Data Set</span></a></div></li>
 </ul>
 </li>
@@ -480,104 +480,133 @@ device_b = c(129, 134, 141, 128, 149, 138, 132, 146, 141, 131)
 <div class="autopermalink" aria-hidden="true" data-description="Example 237: Matched Root Samples: A Directional Claim"><a tabindex="-1" href="#ts-paired-left" title="Copy heading and permalink for Example 237: Matched Root Samples: A Directional Claim" aria-label="Copy heading and permalink for Example 237: Matched Root Samples: A Directional Claim">🔗</a></div>
 </article><div class="autopermalink" aria-hidden="true" data-description="Subsection: Dependent Samples: Paired t-Test"><a tabindex="-1" href="#ts-paired" title="Copy heading and permalink for Subsection: Dependent Samples: Paired t-Test" aria-label="Copy heading and permalink for Subsection: Dependent Samples: Paired t-Test">🔗</a></div>
 </section>
-<section class="subsection" id="ts-independent">
+<section class="subsection" id="two-sample-t-tests-4">
 <h2 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Independent Samples: Welch’s t-Test</span>
 </h2>
-<article class="assemblage assemblage-like" id="ts-welch-formula"><h3 class="heading"><span class="title">Welch’s Independent Two-Sample t-Test.</span></h3>
-<div class="para" id="ts-welch-formula-2">Let <span class="process-math">\(\mu_1-\mu_2\)</span> be the difference between the two population means, with sample summaries <span class="process-math">\((n_1,\bar x_1,s_1)\)</span> and <span class="process-math">\((n_2,\bar x_2,s_2)\text{.}\)</span> For <span class="process-math">\(H_0:\mu_1-\mu_2=\Delta_0\text{,}\)</span> use<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-welch-formula-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="assemblage assemblage-like" id="two-sample-t-tests-4-2"><h3 class="heading"><span class="title">Requirements for Two-Sample t-Test.</span></h3>
+<div class="para logical" id="two-sample-t-tests-4-2-2">
+<ol class="decimal" style="list-style: ptx-marker-2;" id="two-sample-t-tests-4-2-2-1">
+<li id="two-sample-t-tests-4-2-2-1-1">
+<div class="para" id="two-sample-t-tests-4-2-2-1-1-1">The response is quantitative. Observations are independent within each sample and between the groups, with appropriate random sampling or random assignment.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#two-sample-t-tests-4-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="ts-welch-formula-3">
-<div class="displaymath process-math" id="ts-welch-formula-3-1">
-\begin{gather*}
-SE=\sqrt{\dfrac{s_1^2}{n_1}+\dfrac{s_2^2}{n_2}},\qquad t=\dfrac{(\bar x_1-\bar x_2)-\Delta_0}{SE}.
-\end{gather*}
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-welch-formula-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="ts-welch-formula-4">The approximate degrees of freedom are<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-welch-formula-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="ts-welch-formula-5">
-<div class="displaymath process-math" id="ts-welch-formula-5-1">
-\begin{gather*}
-\nu=\dfrac{\left(\dfrac{s_1^2}{n_1}+\dfrac{s_2^2}{n_2}\right)^2}{\dfrac{(s_1^2/n_1)^2}{n_1-1}+\dfrac{(s_2^2/n_2)^2}{n_2-1}}.
-\end{gather*}
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-welch-formula-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="ts-welch-formula-6">Use the decimal value of <span class="process-math">\(\nu\)</span> in R. Usually <span class="process-math">\(\Delta_0=0\text{.}\)</span> The alternative compares <span class="process-math">\(\mu_1-\mu_2\)</span> with <span class="process-math">\(\Delta_0\)</span> using <span class="process-math">\(&lt;\text{,}\)</span> <span class="process-math">\(&gt;\text{,}\)</span> or <span class="process-math">\(\ne\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-welch-formula-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="Assemblage: Welch’s Independent Two-Sample t-Test"><a tabindex="-1" href="#ts-welch-formula" title="Copy heading and permalink for Assemblage: Welch’s Independent Two-Sample t-Test" aria-label="Copy heading and permalink for Assemblage: Welch’s Independent Two-Sample t-Test">🔗</a></div>
-</article>
-<div class="para logical" id="ts-independent-3">
-<ol class="decimal" style="list-style: ptx-marker-2;" id="ts-independent-3-1">
-<li id="ts-independent-3-1-1">
-<div class="para" id="ts-independent-3-1-1-1">The response is quantitative. Observations are independent within each sample and between the groups, with appropriate random sampling or random assignment.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-independent-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#ts-independent-3-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#two-sample-t-tests-4-2-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
-<li id="ts-independent-3-1-2">
-<div class="para" id="ts-independent-3-1-2-1">For small samples, each population should be approximately normal without serious outliers. Examine each group separately. Larger samples allow more tolerance for moderate nonnormality.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-independent-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="two-sample-t-tests-4-2-2-1-2">
+<div class="para" id="two-sample-t-tests-4-2-2-1-2-1">For small samples, each population should be approximately normal without serious outliers. Examine each group separately. Larger samples allow more tolerance for moderate nonnormality.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#two-sample-t-tests-4-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#ts-independent-3-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#two-sample-t-tests-4-2-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
-<li id="ts-independent-3-1-3">
-<div class="para" id="ts-independent-3-1-3-1">Welch’s procedure does not assume equal population variances. An equal-variance test is not a prerequisite for choosing Welch’s test.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-independent-3-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="two-sample-t-tests-4-2-2-1-3">
+<div class="para" id="two-sample-t-tests-4-2-2-1-3-1">Welch’s procedure does not assume equal population variances.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#two-sample-t-tests-4-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#ts-independent-3-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#two-sample-t-tests-4-2-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
 </li>
-<li id="ts-independent-3-1-4">
-<div class="para" id="ts-independent-3-1-4-1">Label Groups 1 and 2 explicitly. The sign of the statistic and the direction of a one-sided test depend on that order.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-independent-3-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="two-sample-t-tests-4-2-2-1-4">
+<div class="para" id="two-sample-t-tests-4-2-2-1-4-1">Label Groups 1 and 2 explicitly. The sign of the statistic and the direction of a one-sided test depend on that order.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#two-sample-t-tests-4-2-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#ts-independent-3-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#two-sample-t-tests-4-2-2-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-independent-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#two-sample-t-tests-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ts-independent-4">For supplied summary statistics, use the formulas. The following R template performs the arithmetic after the summary values and hypothesized difference have been entered:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-independent-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="code-box"><pre class="program clipboardable"><code class="language-r">v1 &lt;- s1^2 / n1
-v2 &lt;- s2^2 / n2
-se &lt;- sqrt(v1 + v2)
-t_stat &lt;- (xbar1 - xbar2 - delta0) / se
-nu &lt;- (v1 + v2)^2 /
-      (v1^2 / (n1 - 1) + v2^2 / (n2 - 1))
-
-# Choose the one p-value matching the alternative.
-pt(t_stat, df = nu)                       # less
-pt(t_stat, df = nu, lower.tail = FALSE)   # greater
-2 * pt(-abs(t_stat), df = nu)             # two-sided
-</code></pre></div>
-<div class="para" id="ts-independent-6">For raw observations, use the vector order <code class="code-inline tex2jax_ignore">group1, group2</code>. The option <code class="code-inline tex2jax_ignore">var.equal = FALSE</code> selects Welch’s method and is also R’s default.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-independent-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="code-box"><pre class="program clipboardable"><code class="language-r">t.test(group1, group2, mu = 0,
-       alternative = "two.sided", var.equal = FALSE)
-</code></pre></div>
-<article class="example example-like" id="ts-welch-summary"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">238</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Two Fish Populations: A Claim of Equal Means.</span>
-</h3>
-<div class="para" id="ts-welch-summary-2-1">Independent random samples are taken from two large fish populations. Population 1 has a sample of 30 fish with mean body mass 14.2 grams and sample standard deviation 2.1 grams. Population 2 has a sample of 26 fish with mean 12.8 grams and sample standard deviation 3.4 grams. Assume the conditions for Welch’s test are reasonable. At <span class="process-math">\(\alpha=0.05\text{,}\)</span> is there sufficient evidence to reject a biologist’s claim that the population mean body masses are equal? Use the formulas.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-welch-summary-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="Example 238: Two Fish Populations: A Claim of Equal Means"><a tabindex="-1" href="#ts-welch-summary" title="Copy heading and permalink for Example 238: Two Fish Populations: A Claim of Equal Means" aria-label="Copy heading and permalink for Example 238: Two Fish Populations: A Claim of Equal Means">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Assemblage: Requirements for Two-Sample t-Test"><a tabindex="-1" href="#two-sample-t-tests-4-2" title="Copy heading and permalink for Assemblage: Requirements for Two-Sample t-Test" aria-label="Copy heading and permalink for Assemblage: Requirements for Two-Sample t-Test">🔗</a></div>
 </article>
-<article class="example example-like" id="ts-welch-raw"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">239</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Recovery Under Two Treatments: Raw Data.</span>
-</h3>
-<div class="para" id="ts-welch-raw-2-1">Twenty-two eligible animals are randomly assigned to one of two treatments, with 12 assigned to New and 10 to Standard. The response is recovery time in days. The researchers claim that New produces a lower population mean recovery time. Let Group 1 be New and Group 2 be Standard. Inspect each group and test the claim at <span class="process-math">\(\alpha=0.05\)</span> using <code class="code-inline tex2jax_ignore">t.test()</code>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-welch-raw-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="code-box"><pre class="program clipboardable"><code class="language-r">new &lt;- c(11, 13, 12, 10, 14, 12,
-         11, 15, 13, 12, 14, 11)
-standard &lt;- c(15, 16, 14, 17, 16,
-              15, 18, 14, 16, 17)
-</code></pre></div>
-<div class="autopermalink" aria-hidden="true" data-description="Example 239: Recovery Under Two Treatments: Raw Data"><a tabindex="-1" href="#ts-welch-raw" title="Copy heading and permalink for Example 239: Recovery Under Two Treatments: Raw Data" aria-label="Copy heading and permalink for Example 239: Recovery Under Two Treatments: Raw Data">🔗</a></div>
-</article>
-<article class="example example-like" id="ts-welch-right"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">240</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Nutrition and Growth: Summary Statistics.</span>
-</h3>
-<div class="para" id="ts-welch-right-2-1">Independent groups of laboratory animals are randomly assigned to two diets. In the Supplement group, 18 animals have mean weight gain 7.4 grams and sample standard deviation 1.2 grams. In the Control group, 22 animals have mean gain 6.3 grams and sample standard deviation 1.6 grams. Assume the two populations are approximately normal without serious outliers. At <span class="process-math">\(\alpha=0.01\text{,}\)</span> test the claim that the Supplement diet produces a greater population mean gain. Use Supplement minus Control and the Welch formulas.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-welch-right-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="assemblage assemblage-like" id="ts-ind-t-test"><h3 class="heading"><span class="title">Welch’s Independent Two-Sample t-Test.</span></h3>
+<div class="para logical" id="ts-ind-t-test-2">
+<div class="displaymath process-math" id="ts-ind-t-test-2-1">
+\begin{equation*}
+t=\dfrac{(\bar x_1-\bar x_2)-\Delta_0}{\sqrt{\dfrac{s_1^2}{n_1}+\dfrac{s_2^2}{n_2}}}
+\end{equation*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Example 240: Nutrition and Growth: Summary Statistics"><a tabindex="-1" href="#ts-welch-right" title="Copy heading and permalink for Example 240: Nutrition and Growth: Summary Statistics" aria-label="Copy heading and permalink for Example 240: Nutrition and Growth: Summary Statistics">🔗</a></div>
-</article><div class="autopermalink" aria-hidden="true" data-description="Subsection: Independent Samples: Welch’s t-Test"><a tabindex="-1" href="#ts-independent" title="Copy heading and permalink for Subsection: Independent Samples: Welch’s t-Test" aria-label="Copy heading and permalink for Subsection: Independent Samples: Welch’s t-Test">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-ind-t-test-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ts-ind-t-test-3">The degrees of freedom are<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-ind-t-test-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ts-ind-t-test-4">
+<div class="displaymath process-math" id="ts-ind-t-test-4-1">
+\begin{equation*}
+\rm{df}=\dfrac{\left(\dfrac{s_1^2}{n_1}+\dfrac{s_2^2}{n_2}\right)^2}{\dfrac{(s_1^2/n_1)^2}{n_1-1}+\dfrac{(s_2^2/n_2)^2}{n_2-1}}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-ind-t-test-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ts-ind-t-test-5">We will approximate df when doing calculations by hand with<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-ind-t-test-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ts-ind-t-test-6">
+<div class="displaymath process-math" id="ts-ind-t-test-6-1">
+\begin{equation*}
+\rm{df} = \min \left( n_1 - 1, n_2 - 1 \right)
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-ind-t-test-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Assemblage: Welch’s Independent Two-Sample t-Test"><a tabindex="-1" href="#ts-ind-t-test" title="Copy heading and permalink for Assemblage: Welch’s Independent Two-Sample t-Test" aria-label="Copy heading and permalink for Assemblage: Welch’s Independent Two-Sample t-Test">🔗</a></div>
+</article>
+<div class="para" id="two-sample-t-tests-4-4">For raw observations, use the vector order <code class="code-inline tex2jax_ignore">group1, group2</code>. The option <code class="code-inline tex2jax_ignore">var.equal = FALSE</code> selects Welchss method and is also Rss default.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#two-sample-t-tests-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="code-box"><pre class="program clipboardable"><code class="language-r">t.test(group1, group2, mu = 0, alternative = "two.sided", var.equal = FALSE)
+</code></pre></div>
+<article class="example example-like" id="ts-math-test"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">238</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Math Test.</span>
+</h3>
+<div class="para" id="ts-math-test-2-1">The results of a state mathematics test for random samples of students taught by two different teachers at the same school are shown in the table below. Can you conclude that there is a difference in the mean mathematics test scores for the students of the two teachers? Use <span class="process-math">\(\alpha = 0.10\)</span> and assume that the populations are normally distributed and the population variances are not equal.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-math-test-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b2 r2 l1 t1 lines">Teacher 1</th>
+<th scope="col" class="c m b2 r1 l0 t1 lines">Teacher 2</th>
+</tr>
+<tr>
+<td class="c m b1 r2 l1 t0 lines"><span class="process-math">\(\bar{x}_{1}=473\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(\bar{x}_{2}=459\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r2 l1 t0 lines"><span class="process-math">\(s_{1}=39.7\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(s_{2}=24.5\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r2 l1 t0 lines"><span class="process-math">\(n_{1}=8\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(n_{2}=18\)</span></td>
+</tr>
+</table></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 238: Math Test"><a tabindex="-1" href="#ts-math-test" title="Copy heading and permalink for Example 238: Math Test" aria-label="Copy heading and permalink for Example 238: Math Test">🔗</a></div>
+</article>
+<article class="example example-like" id="ts-engineer"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">239</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Engineering.</span>
+</h3>
+<div class="para" id="ts-engineer-2-1">An engineer wants to compare the tensile strengths of steel bars that are produced using a conventional method and an experimental method. To do so, the engineer randomly selects steel bars that are manufactured using each method and records the tensile strength (in Newtons per square mm) listed below<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-engineer-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="ts-engineer-2-2">
+<div class="para">Experimental Method:</div>
+<div class="displaymath process-math" id="ts-engineer-2-2-1">
+\begin{gather*}
+395 \quad 389 \quad 421 \quad 394 \quad 407 \quad 411 \quad 389 \quad 402 \quad 422 \quad 416 \quad 402 \quad 408 \quad 400 \\
+386 \quad 411 \quad 405 \quad 389 \quad 410 
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-engineer-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="ts-engineer-2-3">
+<div class="para">Conventional Method:</div>
+<div class="displaymath process-math" id="ts-engineer-2-3-1">
+\begin{gather*}
+362 \quad 352 \quad 380 \quad 382 \quad 413 \quad 384 \quad 400 \quad 378 \quad 419 \quad 379 \quad 384 \quad 388 \\
+372 \quad 383 
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-engineer-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="ts-engineer-2-4">At <span class="process-math">\(\alpha = 0.05\text{,}\)</span> can the engineer support the claim that the experimental method produces steel with a greater mean tensile strength? Assume that the populations are normally distributed and that the population variances are not equal.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-engineer-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 239: Engineering"><a tabindex="-1" href="#ts-engineer" title="Copy heading and permalink for Example 239: Engineering" aria-label="Copy heading and permalink for Example 239: Engineering">🔗</a></div>
+</article>
+<article class="example example-like" id="ts-marine"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">240</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Marine Biologist.</span>
+</h3>
+<div class="para" id="ts-marine-2-1">A marine researcher claims that the stomachs of blue crabs from one location contain less fish than the stomachs of blue crabs from another location. The stomach contents of a sample of 35 blue crabs from Location A contain a mean of 280 milligrams of fish and a standard deviation of 80 milligrams. The stomach contents of a sample of 30 blue crabs from Location B contain a mean of 320 milligrams of fish and a standard deviation of 60 milligrams. At <span class="process-math">\(\alpha = 0.01\)</span> can you support the marine researcher’s claim? Assume the population variances are not equal.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-marine-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 240: Marine Biologist"><a tabindex="-1" href="#ts-marine" title="Copy heading and permalink for Example 240: Marine Biologist" aria-label="Copy heading and permalink for Example 240: Marine Biologist">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection: Independent Samples: Welch’s t-Test"><a tabindex="-1" href="#two-sample-t-tests-4" title="Copy heading and permalink for Subsection: Independent Samples: Welch’s t-Test" aria-label="Copy heading and permalink for Subsection: Independent Samples: Welch’s t-Test">🔗</a></div>
 </section>
 <section class="subsection" id="ts-large-data">
 <h2 class="heading hide-type">
@@ -586,60 +615,35 @@ standard &lt;- c(15, 16, 14, 17, 16,
 <article class="example example-like" id="ts-large-study"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">241</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Large Data Example: Changes Within and Between Groups.</span>
 </h3>
-<div class="para" id="ts-large-study-2-1">The supplied file <code class="code-inline tex2jax_ignore">data/health-study-360.csv</code> contains simulated data for 360 adults. In the hypothetical design, a simple random sample is selected from a large population of eligible adults, and participants are randomly assigned to Control, Walking, or Combined programs, with 120 in each group. Control receives usual information, Walking adds a walking program, and Combined adds walking plus nutrition counseling. Systolic blood pressure is recorded before assignment and after eight weeks. Each row is one participant; both measurements are in millimeters of mercury. The simulation is for statistical practice and does not establish clinical effects.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-large-study-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="code-box"><pre class="program clipboardable"><code class="language-r">health &lt;- read.csv("data/health-study-360.csv")
-health$group &lt;- factor(health$group,
-                       levels = c("Control", "Walking", "Combined"))
-health$reduction &lt;- health$baseline_sbp - health$week8_sbp
-</code></pre></div> 
-<div class="para" id="ts-large-study-2-3">Define <code class="code-inline tex2jax_ignore">reduction = baseline_sbp - week8_sbp</code>, so a positive value means blood pressure decreased. Use <span class="process-math">\(\alpha=0.05\)</span> for both tests below.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-large-study-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ts-large-study-2-1">The supplied file contains simulated data for 360 adults. In the hypothetical design, a simple random sample is selected from a large population of eligible adults, and participants are randomly assigned to Control, Walking, or Combined programs, with 120 in each group. Control receives usual information, Walking adds a walking program, and Combined adds walking plus nutrition counseling. Systolic blood pressure is recorded before assignment and after eight weeks. Each row is one participant; both measurements are in millimeters of mercury.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-large-study-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
-<div class="para logical" id="ts-large-study-2-4">
-<ol class="lower-alpha" style="list-style: ptx-marker-3;" id="ts-large-study-2-4-1">
-<li id="ts-large-study-2-4-1-1">
-<div class="para" id="ts-large-study-2-4-1-1-1">Select the Walking participants and verify that there are 120 complete pairs. Examine the distribution of their reductions.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-large-study-2-4-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ts-large-study-2-2">Define <code class="code-inline tex2jax_ignore">reduction = baseline_sbp - week8_sbp</code>, so a positive value means blood pressure decreased. Use <span class="process-math">\(\alpha=0.05\)</span> for both tests below.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-large-study-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="ts-large-study-2-3">
+<ol class="lower-alpha" style="list-style: ptx-marker-3;" id="ts-large-study-2-3-1">
+<li id="ts-large-study-2-3-1-1">
+<div class="para" id="ts-large-study-2-3-1-1-1">Select the Walking participants and examine the distribution of their reductions.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-large-study-2-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#ts-large-study-2-4-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#ts-large-study-2-3-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
 </li>
-<li id="ts-large-study-2-4-1-2">
-<div class="para" id="ts-large-study-2-4-1-2-1">Use a paired t-test to assess the claim that the Walking group has a positive population mean reduction. State the parameter, subtraction order, hypotheses, p-value, and conclusion.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-large-study-2-4-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="ts-large-study-2-3-1-2">
+<div class="para" id="ts-large-study-2-3-1-2-1">Use a paired t-test to assess the claim that the Walking group has a positive population mean reduction.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-large-study-2-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#ts-large-study-2-4-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#ts-large-study-2-3-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
 </li>
-<li id="ts-large-study-2-4-1-3">
-<div class="para" id="ts-large-study-2-4-1-3-1">Compare reductions for the Combined and Walking groups using Welch’s independent two-sample test. A researcher claims that the Combined program has a larger mean reduction. Use Combined minus Walking and state the full test conclusion.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-large-study-2-4-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="ts-large-study-2-3-1-3">
+<div class="para" id="ts-large-study-2-3-1-3-1">Compare reductions for the Combined and Walking groups using Welch’s independent two-sample test. A researcher claims that the Combined program has a larger mean reduction. Use Combined minus Walking and state the full test conclusion.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-large-study-2-3-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item c"><a tabindex="-1" href="#ts-large-study-2-4-1-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item c"><a tabindex="-1" href="#ts-large-study-2-3-1-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
 </li>
-<li id="ts-large-study-2-4-1-4">
-<div class="para" id="ts-large-study-2-4-1-4-1">Obtain each group’s sample size, mean reduction, and standard deviation. Use the Welch formulas to reproduce the statistic and degrees of freedom for part (c).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-large-study-2-4-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="ts-large-study-2-3-1-4">
+<div class="para" id="ts-large-study-2-3-1-4-1">Explain why part (b) is paired but part (c) is independent, even though both analyses use before-and-after measurements.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-large-study-2-3-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item d"><a tabindex="-1" href="#ts-large-study-2-4-1-4" title="Copy heading and permalink for Item d" aria-label="Copy heading and permalink for Item d">🔗</a></div>
-</li>
-<li id="ts-large-study-2-4-1-5">
-<div class="para" id="ts-large-study-2-4-1-5-1">Explain why part (b) is paired but part (c) is independent, even though both analyses use before-and-after measurements.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-large-study-2-4-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="Item e"><a tabindex="-1" href="#ts-large-study-2-4-1-5" title="Copy heading and permalink for Item e" aria-label="Copy heading and permalink for Item e">🔗</a></div>
-</li>
-<li id="ts-large-study-2-4-1-6">
-<div class="para" id="ts-large-study-2-4-1-6-1">Explain why a decrease within the Walking group alone does not isolate the program’s effect, while a comparison between randomized groups addresses a treatment contrast. State the population to which the hypothetical sampling design permits generalization.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-large-study-2-4-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="Item f"><a tabindex="-1" href="#ts-large-study-2-4-1-6" title="Copy heading and permalink for Item f" aria-label="Copy heading and permalink for Item f">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item d"><a tabindex="-1" href="#ts-large-study-2-3-1-4" title="Copy heading and permalink for Item d" aria-label="Copy heading and permalink for Item d">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-large-study-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="code-box"><pre class="program clipboardable"><code class="language-r">walking &lt;- subset(health, group == "Walking")
-combined &lt;- subset(health, group == "Combined")
-
-# Before minus after within the Walking group
-t.test(walking$baseline_sbp, walking$week8_sbp,
-       paired = TRUE, alternative = "greater", mu = 0)
-
-# Combined minus Walking, using one reduction per adult
-t.test(combined$reduction, walking$reduction,
-       alternative = "greater", mu = 0,
-       var.equal = FALSE)
-</code></pre></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ts-large-study-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="autopermalink" aria-hidden="true" data-description="Example 241: Large Data Example: Changes Within and Between Groups"><a tabindex="-1" href="#ts-large-study" title="Copy heading and permalink for Example 241: Large Data Example: Changes Within and Between Groups" aria-label="Copy heading and permalink for Example 241: Large Data Example: Changes Within and Between Groups">🔗</a></div>
 </article><div class="autopermalink" aria-hidden="true" data-description="Subsection: A Larger Health Data Set"><a tabindex="-1" href="#ts-large-data" title="Copy heading and permalink for Subsection: A Larger Health Data Set" aria-label="Copy heading and permalink for Subsection: A Larger Health Data Set">🔗</a></div>
 </section><div class="autopermalink" aria-hidden="true" data-description="Section: Inference for Two Means"><a tabindex="-1" href="#two-sample-t-tests" title="Copy heading and permalink for Section: Inference for Two Means" aria-label="Copy heading and permalink for Section: Inference for Two Means">🔗</a></div>
