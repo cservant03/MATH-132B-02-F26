@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<subsection xml:id="subsec-num-project-methods">
+  <title>Statistical Methods and Computations</title>
+
+  <p>
+    Complete three analyses: one analysis of a single population mean,
+    one hypothesis test comparing two means, and a one-way ANOVA. Use R
+    to perform the analyses and present the information needed to
+    understand and evaluate your work.
+  </p>
+
+  <paragraphs xml:id="num-project-method-one-mean">
+    <title>Analysis 1: One Population Mean</title>
+    <p>
+      Choose either a one-mean <m>t</m> confidence interval
+      or a one-mean <m>t</m> hypothesis test. Either option
+      satisfies this component. You may include both when they address
+      your research question.
+    </p>
+    <p>
+      For the confidence-interval option, state the confidence level and
+      report the interval endpoints with units. For the hypothesis-test
+      option, justify the benchmark <m>\mu_0</m>, state <m>H_0</m> and
+      <m>H_a</m>, state the significance level, and report the <m>t</m>
+      statistic, degrees of freedom, and <m>p</m>-value. For a one-sample
+      <m>t</m> procedure, the degrees of freedom are <m>n-1</m>.
+    </p>
+  </paragraphs>
+
+  <paragraphs xml:id="num-project-method-two-means">
+    <title>Analysis 2: A Hypothesis Test Comparing Two Means</title>
+    <p>
+      Choose either a paired <m>t</m> hypothesis test or
+      an independent-samples Welch <m>t</m> hypothesis test.
+      The structure of the data determines the appropriate procedure.
+    </p>
+    <p>
+      <alert>Paired option:</alert> Explain the pairing and define the
+      difference, such as <m>d=\text{after}-\text{before}</m>. Define
+      <m>\mu_d</m> as the population mean difference in that order. State hypotheses about <m>\mu_d</m>.
+    </p>
+    <p>
+      <alert>Independent option:</alert> Identify group 1 and group 2,
+      define <m>\mu_1-\mu_2</m> in that order, and explain why the
+      samples are independent. State hypotheses about the difference in
+      population means and assess the distribution and sample size
+      within each group. Report <m>t</m>,
+      the Welch degrees of freedom from R, and the <m>p</m>-value.
+    </p>
+    <p>
+      For either option, state the significance level and use a test
+      direction justified by your research question. Keep the subtraction
+      order consistent in the hypotheses, R analysis, and interpretation.
+      The hypothesis test fulfills this component; a two-mean confidence
+      interval is optional.
+    </p>
+  </paragraphs>
+
+  <paragraphs xml:id="num-project-method-anova">
+    <title>Analysis 3: One-Way ANOVA</title>
+    <p>
+      Compare the population mean of a numerical response across
+      three or more independent groups. Identify the
+      response, units, grouping variable, and group labels. In R, make
+      sure that group labels are treated as a factor, including when
+      they are stored as numerical codes.
+    </p>
+    <p>
+      Define <m>\mu_i</m> as the population mean for group <m>i</m>,
+      where <m>k</m> is the number of groups. State the hypotheses.
+    </p>
+    <p>
+      Use a classical one-way ANOVA to obtain the
+      ANOVA table. Include the relevant table and
+      report the significance level, <m>F</m> statistic, numerator and
+      denominator degrees of freedom, and <m>p</m>-value. For <m>N</m>
+      total observations across <m>k</m> groups, the degrees of freedom
+      are <m>k-1</m> and <m>N-k</m>, respectively. Use the observations
+      actually included in the fitted model when identifying <m>N</m>.
+    </p>
+    <p>
+      If the ANOVA is statistically significant, use
+      <alert>Tukey comparisons</alert> on the
+      ANOVA model. Report the adjusted <m>p</m>-values, identify
+      significant pairs, and describe the direction and size of the
+      observed mean differences. Compare adjusted <m>p</m>-values
+      directly with your significance level. If the ANOVA is not
+      statistically significant, state that result and explain why
+      follow-up comparisons are not pursued for this project.
+    </p>
+  </paragraphs>
+</subsection>

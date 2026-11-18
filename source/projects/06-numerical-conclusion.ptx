@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<subsection xml:id="subsec-num-project-conclusion">
+  <title>Conclusion</title>
+
+  <p>
+    End the report with a coherent conclusion that brings together the
+    important findings from the entire numerical-data project. Your
+    conclusion should be <alert>no more than one page</alert>.
+  </p>
+
+  <paragraphs xml:id="num-project-conclusion-content">
+    <title>What to Include</title>
+    <p>
+      Your conclusion should:
+      <ol marker="1)">
+        <li><p>return to all three research questions and answer them
+        using the analyses you performed,</p></li>
+        <li><p>summarize the main findings of the one-mean analysis,
+        the paired or independent two-mean test, and the one-way ANOVA,
+        including Tukey findings when applicable,</p></li>
+        <li><p>explain the biological, health, or scientific meaning
+        of the findings, including the sizes of observed differences
+        when relevant,</p></li>
+        <li><p>discuss the most important limitations of your data
+        and analyses, and</p></li>
+        <li><p>explain what conclusions are supported and how broadly
+        they can reasonably be applied.</p></li>
+      </ol>
+    </p>
+  </paragraphs>
+
+  <paragraphs xml:id="num-project-conclusion-writing">
+    <title>Writing the Conclusion</title>
+    <p>
+      Write a connected discussion that emphasizes what you learned from
+      the data. Include important numerical findings when they clarify
+      the message. Keep the conclusion consistent with the results,
+      including findings that were not statistically significant.
+    </p>
+  </paragraphs>
+</subsection>

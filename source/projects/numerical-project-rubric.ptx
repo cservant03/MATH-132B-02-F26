@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section>
+  <title>Project Rubric</title>
+
+  <p>
+    The Numerical Data Project is worth <alert>30 points</alert>. This
+    rubric expands the general project rubric to describe the expectations
+    for this report.
+  </p>
+  <p>
+    Complete a one-mean <m>t</m> confidence interval or hypothesis test,
+    a paired <m>t</m> or independent-samples Welch <m>t</m> hypothesis
+    test, and a one-way ANOVA with three or more independent groups.
+    Include Tukey comparisons when the ANOVA is statistically significant.
+    Either option in each choice receives the same available credit.
+    Credit depends on the quality of the work rather than whether a
+    hypothesis test is statistically significant.
+  </p>
+
+  <paragraphs>
+    <title>Data Set Selection and Documentation: 2 points</title>
+    <p>
+      <ul>
+        <li><p><alert>1 point:</alert> The data contain appropriate
+        numerical responses and the group or paired structure needed
+        for the selected one-mean analysis, two-mean test, and one-way
+        ANOVA with at least three independent groups.</p></li>
+        <li><p><alert>1 point:</alert> The source of each data set and
+        relevant documentation are identified. Data preparation and
+        important modifications are documented.</p></li>
+      </ul>
+    </p>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Data Set Summary and Research Questions: 4 points</title>
+    <p>
+      <ul>
+        <li><p><alert>1 point:</alert> The context, observational units,
+        population of interest, and usable sample sizes for the analyses
+        are clearly explained.</p></li>
+        <li><p><alert>1 point:</alert> The numerical responses and units,
+        group labels, and any pairing or difference order are clearly
+        identified.</p></li>
+        <li><p><alert>1 point:</alert> Data collection and relevant data
+        preparation are described when that information is available.</p></li>
+        <li><p><alert>1 point:</alert> Three meaningful research questions
+        match the selected one-mean analysis, two-mean hypothesis test,
+        and one-way ANOVA. The entire section is no longer than one page.</p></li>
+      </ul>
+    </p>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Graphical Analysis: 5 points</title>
+    <p>
+      <ul>
+        <li><p><alert>1 point:</alert> Numerical summary tables correctly
+        report sample sizes, means, and standard deviations for the
+        relevant samples or groups and, for the paired option, for the
+        differences.</p></li>
+        <li><p><alert>1 point:</alert> An appropriate histogram of the
+        one-mean sample is constructed and used to describe its distribution.</p></li>
+        <li><p><alert>1 point:</alert> Side-by-side boxplots correctly
+        compare all ANOVA groups, with attention to centers, spreads,
+        and unusual observations.</p></li>
+        <li><p><alert>1 point:</alert> The selected two-mean test is
+        supported by an appropriate plot of paired differences or a
+        comparison of the two independent group distributions. Graphs
+        may be reused when the relevant groups are clearly identified.</p></li>
+        <li><p><alert>1 point:</alert> Tables and graphs are readable,
+        use suitable titles, labels, units, scales, and legends, and
+        are discussed in relation to the questions and procedure conditions.</p></li>
+      </ul>
+    </p>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Statistical Methods and Computations: 5 points</title>
+    <p>
+      <ul>
+        <li><p><alert>1 point:</alert> The selected one-mean <m>t</m>
+        confidence interval or hypothesis test is appropriate and
+        performed correctly with the relevant sample statistics.</p></li>
+        <li><p><alert>1 point:</alert> The paired <m>t</m> or independent
+        Welch <m>t</m> hypothesis test matches the study design and is
+        performed correctly, including the pairing or group order and
+        relevant sample statistics.</p></li>
+        <li><p><alert>1 point:</alert> The one-way ANOVA is performed
+        correctly for at least three independent groups. The ANOVA
+        table and relevant calculations are reported, and Tukey
+        comparisons are performed correctly when the ANOVA is <alert>significant</alert>.</p></li>
+        <li><p><alert>1 point:</alert> The conditions for the selected
+        procedures are assessed using the study design and relevant
+        numerical and graphical evidence, including paired differences
+        or within-group distributions as appropriate.</p></li>
+        <li><p><alert>1 point:</alert> Population parameters, hypotheses
+        for tests, confidence or significance levels, statistical notation,
+        degrees of freedom, and relevant R commands are handled appropriately.</p></li>
+      </ul>
+    </p>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Results and Interpretation: 5 points</title>
+    <p>
+      <ul>
+        <li><p><alert>1 point:</alert> The one-mean confidence interval
+        or hypothesis-test result is reported accurately and interpreted
+        in terms of the population mean and the original research question.</p></li>
+        <li><p><alert>1 point:</alert> The paired or independent two-mean
+        test result is reported accurately and interpreted in context,
+        with the correct difference direction and a conclusion supported
+        by the <m>p</m>-value or critical value.</p></li>
+        <li><p><alert>1 point:</alert> The ANOVA result is reported
+        accurately and interpreted as evidence about whether all
+        population means are equal, without claiming that a significant
+        ANOVA identifies the differing pairs.</p></li>
+        <li><p><alert>1 point:</alert> When the ANOVA is significant,
+        Tukey adjusted <m>p</m>-values are interpreted correctly and
+        significant pairs are described with direction and observed
+        differences. When the ANOVA is not significant, the report
+        accurately explains the result and why follow-up comparisons
+        are not pursued for this project.</p></li>
+        <li><p><alert>1 point:</alert> The discussion connects numerical
+        findings to the research questions and their practical meaning,
+        and keeps generalizations and causal claims consistent with
+        the study design.</p></li>
+      </ul>
+    </p>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Conclusion: 5 points</title>
+    <p>
+      <ul>
+        <li><p><alert>2 points:</alert> The conclusion answers all three
+        research questions and accurately summarizes the principal
+        findings, including Tukey findings when applicable.</p></li>
+        <li><p><alert>1 point:</alert> The findings are explained in
+        the scientific context, including the practical meaning of
+        observed means or differences when relevant.</p></li>
+        <li><p><alert>1 point:</alert> Important limitations of the data,
+        sampling, study design, or procedure conditions are discussed.</p></li>
+        <li><p><alert>1 point:</alert> The conclusion is a clear,
+        coherent discussion and is no longer than one page.</p></li>
+      </ul>
+    </p>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Organization and Presentation: 4 points</title>
+    <p>
+      <ul>
+        <li><p><alert>1 point:</alert> The report follows a logical
+        sequence from the research questions through the analyses
+        to the conclusions.</p></li>
+        <li><p><alert>1 point:</alert> The report uses complete
+        sentences and clear, professional language.</p></li>
+        <li><p><alert>1 point:</alert> Tables, graphs, computations,
+        and statistical results are placed logically and referenced
+        in the surrounding text.</p></li>
+        <li><p><alert>1 point:</alert> The report uses readable,
+        consistent formatting, appropriate rounding, and selected
+        software output with explanations.</p></li>
+      </ul>
+    </p>
+  </paragraphs>
+
+  <table xml:id="tab-num-project-rubric-summary">
+    <title>Project Point Summary</title>
+    <tabular row-headers="yes" halign="left" valign="top"
+             top="medium" left="medium" bottom="medium" right="medium">
+      <col width="82%"/>
+      <col width="18%"/>
+      <row header="yes" bottom="medium">
+        <cell>Criterion</cell><cell>Points</cell>
+      </row>
+      <row><cell>Data Set Selection and Documentation</cell><cell>2</cell></row>
+      <row><cell>Data Set Summary and Research Questions</cell><cell>4</cell></row>
+      <row><cell>Graphical Analysis</cell><cell>5</cell></row>
+      <row><cell>Statistical Methods and Computations</cell><cell>5</cell></row>
+      <row><cell>Results and Interpretation</cell><cell>5</cell></row>
+      <row><cell>Conclusion</cell><cell>5</cell></row>
+      <row><cell>Organization and Presentation</cell><cell>4</cell></row>
+      <row top="medium"><cell><alert>Total</alert></cell><cell><alert>30</alert></cell></row>
+    </tabular>
+  </table>
+</section>

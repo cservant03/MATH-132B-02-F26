@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<subsection xml:id="subsec-num-project-graphical">
+  <title>Graphical Analysis</title>
+
+  <p>
+    Explore the numerical variables before performing inference. Use
+    summary statistics and graphs to describe the observations, compare
+    groups, and assess the conditions for the selected procedures.
+    Focus on the observations actually used in each analysis.
+  </p>
+
+  <paragraphs xml:id="num-project-summary-tables">
+    <title>Required Numerical Summaries</title>
+    <p>
+      Include a readable summary table containing the sample size, sample
+      mean, and sample standard deviation for the one-mean analysis and
+      for each independent group used in the two-mean test or ANOVA.
+      Identify the response variable and its units.
+    </p>
+    <p>
+      If you choose a paired test, also summarize the paired differences:
+      the number of complete pairs, the mean difference, and the standard
+      deviation of the differences. State the subtraction order. The
+      standard deviation of the differences is calculated from the
+      individual differences, rather than by subtracting the two original
+      standard deviations.
+    </p>
+  </paragraphs>
+
+  <paragraphs xml:id="num-project-required-graphs">
+    <title>Required Graphs</title>
+    <p>
+      Include histograms and boxplots that support the research questions.
+      A graph may support more than one analysis when the relevant
+      observations or groups are clearly identified.
+      <ul>
+        <li><p><alert>One-mean analysis:</alert> Include a histogram of
+        the numerical observations used in this analysis. Discuss shape,
+        center, variability, and any unusual observations.</p></li>
+        <li><p><alert>Paired-test option:</alert> Include a histogram of the paired differences. Discuss the shape and unusual
+        values in the differences. Plots of the two original measurements
+        can provide additional context.</p></li>
+        <li><p><alert>Independent-test option:</alert> Include two histograms of the two data sets. Include side-by-side
+        boxplots comparing the two groups. Discuss differences in center,
+        variability, and unusual observations.</p></li>
+        <li><p><alert>ANOVA:</alert> Include side-by-side boxplots of the
+        numerical response for all three or more groups. Examine the
+        distributions within groups using histograms or other appropriate
+        plots as needed. Discuss group centers, spreads, and outliers.</p></li>
+      </ul>
+    </p>
+  </paragraphs>
+
+  <paragraphs xml:id="num-project-graphic-presentation">
+    <title>Presentation and Discussion</title>
+    <p>
+      Give each table and graph a meaningful title, clear variable and
+      group labels, measurement units, and a legend when needed. Use
+      readable scales and comparable axes when displaying group
+      distributions separately. Include a brief discussion explaining
+      what the reader should notice and how it relates to the research
+      questions and procedure conditions.
+    </p>
+    <p>
+      Describe potential outliers and check for data-entry or measurement
+      issues. Document any exclusions and their scientific or data-quality
+      justification. A boxplot alone does not determine whether a
+      measurement should be removed.
+    </p>
+  </paragraphs>
+</subsection>

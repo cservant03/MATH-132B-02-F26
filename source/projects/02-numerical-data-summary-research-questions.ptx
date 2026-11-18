@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<subsection xml:id="subsec-num-project-summary">
+  <title>Data Set Summary and Research Questions</title>
+
+  <p>
+    Explain what your data represent and identify the questions you will
+    investigate. Your reader should be able to understand the study
+    without locating the original data source. This section should be
+    <alert>no more than one page</alert>.
+  </p>
+
+  <paragraphs xml:id="num-project-summary-content">
+    <title>Data Set Summary</title>
+    <p>
+      Write in complete sentences. Include the following information when
+      it is available.
+      <ol marker="1)">
+        <li><p><alert>Context:</alert> Briefly explain the biological,
+        health, or other scientific topic being studied.</p></li>
+        <li><p><alert>Observational units:</alert> Explain what one
+        observation represents. If the data contain repeated measurements,
+        identify the individuals or matched pairs.</p></li>
+        <li><p><alert>Population and sample:</alert> Identify who or what
+        was observed and the population to which you hope the findings
+        apply.</p></li>
+        <li><p><alert>Sample sizes:</alert> State the number of usable
+        observations for the one-mean analysis, the number in each
+        independent group or the number of complete pairs for the
+        two-mean analysis, and the number in each ANOVA group.</p></li>
+        <li><p><alert>Data collection:</alert> Describe how the data were
+        collected, including whether the study was observational or
+        experimental and whether random sampling or random assignment
+        was used, when known.</p></li>
+        <li><p><alert>Variables:</alert> Identify the numerical response
+        variables, their units, the group labels, and any pairing. For
+        paired data, state the order used to calculate differences.</p></li>
+        <li><p><alert>Data preparation:</alert> Describe filtering,
+        missing values, unit conversions, and other changes that affect
+        the observations included in the analyses.</p></li>
+      </ol>
+    </p>
+    <p>
+      If you use two data sets, summarize both and explain which analyses
+      use each one. Refer to your source documentation rather than
+      guessing about unavailable study details.
+    </p>
+  </paragraphs>
+
+  <paragraphs xml:id="num-project-research-questions">
+    <title>Research Questions</title>
+    <p>
+      State three clear research questions using the actual variables,
+      groups, and populations in your data.
+      <ol marker="1)">
+        <li>
+          <p><alert>One population mean:</alert> Ask either an estimation
+          question to answer with a one-mean <m>t</m> confidence interval,
+          or a question comparing a population mean with a justified
+          benchmark to answer with a one-mean <m>t</m> hypothesis test.</p>
+        </li>
+        <li>
+          <p><alert>A comparison of two means:</alert> Ask whether there
+          is evidence of a mean difference within paired measurements or
+          between two independent groups. Explain which design applies.
+          A directional question is appropriate when its direction is
+          justified before examining the test results.</p>
+        </li>
+        <li>
+          <p><alert>A comparison of three or more means:</alert> Ask
+          whether the population mean of a numerical response differs
+          among at least three independent groups. Identify the grouping
+          variable and the groups to be compared using one-way ANOVA.</p>
+        </li>
+      </ol>
+    </p>
+  </paragraphs>
+</subsection>

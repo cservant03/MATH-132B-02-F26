@@ -60,5 +60,16 @@
       <xi:include href="./projects/06-conclusion.ptx"/>
     </chapter>
 
+    <chapter>
+      <title>Inference on Numerical Data</title>
+      
+      <xi:include href="./projects/numerical-project-rubric.ptx"/>   
+      <xi:include href="./projects/01-numerical-data-set-selection.ptx"/>
+      <xi:include href="./projects/02-numerical-data-summary-research-questions.ptx"/>
+      <xi:include href="./projects/03-numerical-graphical-analysis.ptx"/>
+      <xi:include href="./projects/04-numerical-statistical-methods-computations.ptx"/>
+      <xi:include href="./projects/05-numerical-results-interpretation.ptx"/>
+      <xi:include href="./projects/06-numerical-conclusion.ptx"/>
+    </chapter>
     </book>
   </pretext>

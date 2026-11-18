@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<subsection xml:id="subsec-num-project-results">
+  <title>Results and Interpretation</title>
+
+  <p>
+    Explain what the statistical results mean for the three research
+    questions. Report the relevant numerical findings and connect them
+    to the populations, variables, and units in your study.
+  </p>
+
+  <paragraphs xml:id="num-project-result-one-mean">
+    <title>One-Mean Analysis</title>
+    <p>
+      If you chose a confidence interval, report the sample mean,
+      confidence level, and endpoints with units. Interpret the interval
+      as an estimate of the population mean.
+    </p>
+    <p>
+      If you chose a hypothesis test, report the sample mean, benchmark,
+      <m>t</m> statistic, degrees of freedom, and <m>p</m>-value or critical value. CState whether you
+      reject or do not reject <m>H_0</m>, and explain what the decision
+      means for the original question. Match the conclusion to the
+      direction of the alternative hypothesis.
+    </p>
+  </paragraphs>
+
+  <paragraphs xml:id="num-project-result-two-means">
+    <title>Paired or Independent Two-Mean Test</title>
+    <p>
+      For a paired test, report and interpret the mean paired difference
+      using the stated subtraction order. Explain whether there is
+      sufficient evidence of the change or difference specified in the
+      alternative hypothesis. A negative difference must be interpreted
+      using the order in which the measurements were subtracted.
+    </p>
+    <p>
+      For an independent test, report the two sample means and their
+      observed difference. Explain whether there is sufficient evidence
+      of a difference in population means, or of the directional
+      difference specified by your alternative. Identify the groups by
+      name and keep their subtraction order consistent.
+    </p>
+    <p>
+      In either case, report <m>t</m>, degrees of freedom, the
+      <m>p</m>-value or critical vaule, and the statistical decision. Explain the size
+      of the observed difference in the measurement units as well as
+      whether it is statistically significant.
+    </p>
+  </paragraphs>
+
+  <paragraphs xml:id="num-project-result-anova">
+    <title>One-Way ANOVA and Follow-Up Comparisons</title>
+    <p>
+      Report the group sample means, <m>F</m> statistic, both degrees
+      of freedom, and the ANOVA <m>p</m>-value. State the decision and
+      answer the question about the population means.
+    </p>
+    <p>
+      If the ANOVA is significant, interpret the Tukey comparisons.
+      Identify the pairs with adjusted <m>p</m>-values below the
+      significance level and describe the direction and observed size
+      of those differences. If no individual pair is significant after
+      adjustment, report that finding accurately. For other pairs,
+      describe the evidence as insufficient rather than concluding
+      that their population means are identical.
+    </p>
+    <p>
+      If the ANOVA is not significant, explain that there is insufficient
+      evidence of a difference among the population means and state
+      that follow-up comparisons are not pursued for this project.
+      This outcome can receive full credit when the analysis and
+      explanation are correct.
+    </p>
+  </paragraphs>
+</subsection>
