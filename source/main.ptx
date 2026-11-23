@@ -46,6 +46,7 @@
       <xi:include href="./notes/t-and-f-distributions.ptx"/>
       <xi:include href="./notes/one-sample-t-inference.ptx"/>
       <xi:include href="./notes/two-sample-t-tests.ptx"/>
+      <xi:include href="./notes/one-way-anova.ptx"/>
     </chapter>
 
     <chapter>

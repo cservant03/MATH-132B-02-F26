@@ -851,3 +851,22 @@ a.mathjax-link {
   break-before: page;
   page-break-before: always;
 }
+
+/* ---------- Inference for More than Two Means ---------- */
+
+#av-examples {
+  break-before: page;
+  page-break-before: always;
+}
+
+#av-summary-example {
+  padding-bottom: 3.5in;
+}
+
+#av-raw-example {
+  padding-bottom: 6.5in;
+}
+
+#av-tukey-raw {
+  padding-bottom: 3.5in;
+}

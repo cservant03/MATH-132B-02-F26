@@ -2377,6 +2377,96 @@ var ptx_lunr_docs = [
   "body": " Large Data Example: Changes Within and Between Groups   The supplied file contains simulated data for 360 adults. In the hypothetical design, a simple random sample is selected from a large population of eligible adults, and participants are randomly assigned to Control, Walking, or Combined programs, with 120 in each group. Control receives usual information, Walking adds a walking program, and Combined adds walking plus nutrition counseling. Systolic blood pressure is recorded before assignment and after eight weeks. Each row is one participant; both measurements are in millimeters of mercury.  Define reduction = baseline_sbp - week8_sbp , so a positive value means blood pressure decreased. Use for both tests below.     Select the Walking participants and examine the distribution of their reductions.    Use a paired t-test to assess the claim that the Walking group has a positive population mean reduction.    Compare reductions for the Combined and Walking groups using Welch's independent two-sample test. A researcher claims that the Combined program has a larger mean reduction. Use Combined minus Walking and state the full test conclusion.    Explain why part (b) is paired but part (c) is independent, even though both analyses use before-and-after measurements.      "
 },
 {
+  "id": "one-way-anova",
+  "level": "1",
+  "url": "one-way-anova.html",
+  "type": "Section",
+  "number": "",
+  "title": "Inference for More than Two Means",
+  "body": " Inference for More than Two Means   Comparing Several Population Means   One-Way Analysis of Variance   One-way analysis of variance , or one-way ANOVA , compares population means for groups defined by one categorical explanatory variable. The response variable is quantitative. The categorical variable is the factor , and its categories are the levels .    Let be the number of groups, the sample size in Group , and the total sample size. The group population means are .   Hypotheses for One-Way ANOVA        The alternative does not say that every mean differs from every other mean. Rejecting the null establishes evidence of some difference; follow-up comparisons identify which differences are supported.    Requirements for Classical One-Way ANOVA     One quantitative response is measured. Groups are formed by one factor, and data come from an appropriate random sample.    The populations within groups are approximately normal.    The population variances are approximately equal across groups.        Variation and the ANOVA Table   Between-Group and Within-Group Variation   Between-group variation describes how far the group sample means are from the overall mean. Within-group variation describes how far individual observations are from their own group mean. ANOVA compares these sources of variation.    The grand mean is the mean of all observations, . A sum of squares (SS) measures variation. A mean square (MS) is a sum of squares divided by its degrees of freedom.   Relationships Used to Complete an ANOVA Table              Under the null hypothesis and the model requirements, compare the statistic with . The p-value is the right-tail area.    One-Way ANOVA Table    Source  df  SS  MS  F    Between groups                 Within groups  (error)            —    Total        —  —     A larger F-statistic means the group means are more separated relative to the variation within groups. R labels the within-group row Residuals and usually omits the Total row. Empty F and MS entries in the Total row are not missing calculations.    One-Way ANOVA in R  Put the response in one numeric columnand the group labels in a factor column. The formula response ~ group tells R which variable is the response and which variable defines the groups.  data = c(data1,data2,data3,...) group = factor(c(rep(\"Group1\", length(data1)), rep(\"Group2\", length(data2)), rep(\"Group3\", length(data3)),...)) summary(aov(data~group))  Read the factor row in summary() . Its F value is the test statistic and its Pr(>F) entry is the p-value.    ANOVA Examples   Growth Media: A Partially Completed Table   Independent cultures are randomly assigned to one of three growth media, with 10 cultures per medium. The response is biomass after a fixed time, in grams. A researcher claims that all three population mean biomasses are equal. Assume the ANOVA requirements are reasonable. The following summaries and partial ANOVA table are supplied; use the displayed relationships to fill the blanks.    Medium  n  Mean biomass  Sample SD    A  10  12.0  2.0    B  10  14.0  2.0    C  10  16.0  2.0      Source  df  SS  MS  F    Medium  ___  80  ___  ___    Residuals  27  108  ___  —    Total  ___  ___  —  —    Fill in the rest of the table and test the researchers claim at .     Seedling Growth   Twenty-four seedlings are randomly assigned to Control, Nutrient A, or Nutrient B, with eight seedlings per group. Each seedling is grown independently under otherwise comparable conditions. The response is final height in centimeters. A biologist claims that at least one population mean differs. Test the claim at    Control  18 22 20 25  19 23 21 20    NutrientA  24 28 26 31  25 29 27 26    NutrientB  25 29 27 32  26 30 28 27       Enzyme Activity: Interpreting Output   Twenty-four independent cultures are randomly assigned to three preparation methods, eight per method. The response is enzyme activity in units per liter. A researcher claims that at least one population mean differs. A condensed ANOVA output table is shown below.   ANOVA Output for Enzyme Activity    Source  Df  Sum Sq  Mean Sq  F value  Pr(>F)    Method  2  4.75  2.375  0.5816  0.5677    Residuals  21  85.75  4.083  —  —        Identify the numerator and denominator degrees of freedom and the test statistic.    At , do the data support the researcher’s claim?    Does your decision establish that all three population means are equal? Explain.         Bonferoni Comparisons   Bonferoni Pairwise Comparisons   Bonferoni comparisons compare each pair of group population means while accounting for the collection of comparisons.    pairwise.t.test(data,group,p.adjust.method = \"bonferroni\")   Seedlings: Generate and Interpret Tukey Output   Using the ANOVA model you fitted to the raw seedling heights, run Bonferonni's follow-up test to compare all three pairs of treatment groups. Which pairs show a statistically significant difference in mean seedling height?     "
+},
+{
+  "id": "one-way-anova-2-2",
+  "level": "2",
+  "url": "one-way-anova.html#one-way-anova-2-2",
+  "type": "Definition",
+  "number": "242",
+  "title": "One-Way Analysis of Variance.",
+  "body": " One-Way Analysis of Variance   One-way analysis of variance , or one-way ANOVA , compares population means for groups defined by one categorical explanatory variable. The response variable is quantitative. The categorical variable is the factor , and its categories are the levels .   "
+},
+{
+  "id": "one-way-anova-3-2",
+  "level": "2",
+  "url": "one-way-anova.html#one-way-anova-3-2",
+  "type": "Definition",
+  "number": "243",
+  "title": "Between-Group and Within-Group Variation.",
+  "body": " Between-Group and Within-Group Variation   Between-group variation describes how far the group sample means are from the overall mean. Within-group variation describes how far individual observations are from their own group mean. ANOVA compares these sources of variation.   "
+},
+{
+  "id": "one-way-anova-3-3",
+  "level": "2",
+  "url": "one-way-anova.html#one-way-anova-3-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "grand mean sum of squares mean square "
+},
+{
+  "id": "one-way-anova-3-5",
+  "level": "2",
+  "url": "one-way-anova.html#one-way-anova-3-5",
+  "type": "Table",
+  "number": "244",
+  "title": "One-Way ANOVA Table",
+  "body": " One-Way ANOVA Table    Source  df  SS  MS  F    Between groups                 Within groups  (error)            —    Total        —  —    "
+},
+{
+  "id": "av-summary-example",
+  "level": "2",
+  "url": "one-way-anova.html#av-summary-example",
+  "type": "Example",
+  "number": "245",
+  "title": "Growth Media: A Partially Completed Table.",
+  "body": " Growth Media: A Partially Completed Table   Independent cultures are randomly assigned to one of three growth media, with 10 cultures per medium. The response is biomass after a fixed time, in grams. A researcher claims that all three population mean biomasses are equal. Assume the ANOVA requirements are reasonable. The following summaries and partial ANOVA table are supplied; use the displayed relationships to fill the blanks.    Medium  n  Mean biomass  Sample SD    A  10  12.0  2.0    B  10  14.0  2.0    C  10  16.0  2.0      Source  df  SS  MS  F    Medium  ___  80  ___  ___    Residuals  27  108  ___  —    Total  ___  ___  —  —    Fill in the rest of the table and test the researchers claim at .   "
+},
+{
+  "id": "av-raw-example",
+  "level": "2",
+  "url": "one-way-anova.html#av-raw-example",
+  "type": "Example",
+  "number": "246",
+  "title": "Seedling Growth.",
+  "body": " Seedling Growth   Twenty-four seedlings are randomly assigned to Control, Nutrient A, or Nutrient B, with eight seedlings per group. Each seedling is grown independently under otherwise comparable conditions. The response is final height in centimeters. A biologist claims that at least one population mean differs. Test the claim at    Control  18 22 20 25  19 23 21 20    NutrientA  24 28 26 31  25 29 27 26    NutrientB  25 29 27 32  26 30 28 27     "
+},
+{
+  "id": "av-output-example",
+  "level": "2",
+  "url": "one-way-anova.html#av-output-example",
+  "type": "Example",
+  "number": "247",
+  "title": "Enzyme Activity: Interpreting Output.",
+  "body": " Enzyme Activity: Interpreting Output   Twenty-four independent cultures are randomly assigned to three preparation methods, eight per method. The response is enzyme activity in units per liter. A researcher claims that at least one population mean differs. A condensed ANOVA output table is shown below.   ANOVA Output for Enzyme Activity    Source  Df  Sum Sq  Mean Sq  F value  Pr(>F)    Method  2  4.75  2.375  0.5816  0.5677    Residuals  21  85.75  4.083  —  —        Identify the numerator and denominator degrees of freedom and the test statistic.    At , do the data support the researcher’s claim?    Does your decision establish that all three population means are equal? Explain.      "
+},
+{
+  "id": "one-way-anova-6-2",
+  "level": "2",
+  "url": "one-way-anova.html#one-way-anova-6-2",
+  "type": "Definition",
+  "number": "249",
+  "title": "Bonferoni Pairwise Comparisons.",
+  "body": " Bonferoni Pairwise Comparisons   Bonferoni comparisons compare each pair of group population means while accounting for the collection of comparisons.   "
+},
+{
+  "id": "av-tukey-raw",
+  "level": "2",
+  "url": "one-way-anova.html#av-tukey-raw",
+  "type": "Example",
+  "number": "250",
+  "title": "Seedlings: Generate and Interpret Tukey Output.",
+  "body": " Seedlings: Generate and Interpret Tukey Output   Using the ANOVA model you fitted to the raw seedling heights, run Bonferonni's follow-up test to compare all three pairs of treatment groups. Which pairs show a statistically significant difference in mean seedling height?   "
+},
+{
   "id": "subsec-cat-project-rubric",
   "level": "1",
   "url": "subsec-cat-project-rubric.html",
@@ -2453,7 +2543,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "root-1-2-9-2.html#tab-num-project-rubric-summary",
   "type": "Table",
-  "number": "242",
+  "number": "251",
   "title": "Project Point Summary",
   "body": " Project Point Summary      Criterion Points   Data Set Selection and Documentation 2  Data Set Summary and Research Questions 4  Graphical Analysis 5  Statistical Methods and Computations 5  Results and Interpretation 5  Conclusion 5  Organization and Presentation 4  Total 30   "
 },
